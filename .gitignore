@@ -1,0 +1,35 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# --- Secrets and local config ---
+.env
+.env.*
+!.env.example
+
+# --- macOS and editors ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Chrome extension (Node) ---
+node_modules/
+extension/dist/
+
+# --- Models and training outputs (too big for git, published on Hugging Face instead) ---
+*.gguf
+*.safetensors
+*.bin
+adapters/
+models/
+training/data/*.jsonl
+training/runs/
+
+# --- Notebooks ---
+.ipynb_checkpoints/
