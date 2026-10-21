@@ -43,6 +43,8 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 - [ ] **Phase 5:** Chrome extension
 - [ ] **Phase 6:** In-browser model, Hugging Face release, Chrome Web Store
 
+The full plan lives in [docs/spec.json](docs/spec.json). It covers the help dial, intents, context block, bug injection, training, evaluation, the extension, and the commit list for every phase.
+
 ## License
 
 [MIT](LICENSE)
