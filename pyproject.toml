@@ -1,0 +1,39 @@
+# Python side of Owlgo: problem bank, code runner client, companion prompt and
+# spoiler guard, training data pipeline and evaluation. The Chrome extension
+# lives separately in extension/ (TypeScript).
+
+[project]
+name = "owlgo"
+# 0.1.0 is reserved for the first Chrome Web Store release (Phase 6).
+version = "0.0.1"
+description = "Owlgo: a DSA practice companion that hoots hints, not answers."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "santu-1506" }]
+requires-python = ">=3.11"
+# Runtime dependencies are added phase by phase with `uv add <package>`.
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.11.22,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+# Allow slightly longer lines than the default 88, since the code is heavily commented.
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# E/F: pycodestyle and pyflakes basics, I: sorted imports,
+# B: common bug patterns, UP: modern Python syntax.
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+# Only look for tests in tests/, so pytest never wanders into data folders.
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]

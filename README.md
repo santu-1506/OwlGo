@@ -6,7 +6,7 @@ Owlgo is an open-source DSA practice companion. It sits beside the LeetCode edit
 
 It is not a mock interviewer. There is no timer, no grading and no grilling. Think of it as a friend who is good at DSA sitting next to you while you practice.
 
-> **Status:** Phase 0 (project setup). Nothing usable yet. See the [roadmap](#roadmap).
+> **Status:** Phase 0 (project setup) is done. Phase 1 (problem bank) is next. Nothing usable yet. See the [roadmap](#roadmap).
 
 ## The Help Dial
 
@@ -35,7 +35,7 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 
 ## Roadmap
 
-- [ ] **Phase 0:** Project setup
+- [x] **Phase 0:** Project setup
 - [ ] **Phase 1:** Problem bank and code runner (for training data only)
 - [ ] **Phase 2:** Prompted baseline and evaluation (a score to beat)
 - [ ] **Phase 3:** Training data (solver personas, bug injection)
@@ -44,6 +44,20 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 - [ ] **Phase 6:** In-browser model, Hugging Face release, Chrome Web Store
 
 The full plan lives in [docs/spec.json](docs/spec.json). It covers the help dial, intents, context block, bug injection, training, evaluation, the extension, and the commit list for every phase.
+
+## Development
+
+You need Python 3.11+ and [uv](https://docs.astral.sh/uv/).
+
+```bash
+# Create the virtual env and install dev tools (pytest, ruff)
+uv sync
+
+# Lint, check formatting, and run the tests
+uv run ruff check .
+uv run ruff format --check .
+uv run pytest
+```
 
 ## License
 
