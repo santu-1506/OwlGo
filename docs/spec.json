@@ -1,5 +1,20 @@
 {
-  "spec_version": "1.0",
+  "spec_version": "1.1",
+
+  "changelog": [
+    { "version": "1.0", "changes": ["Initial companion spec."] },
+    {
+      "version": "1.1",
+      "changes": [
+        "Problems can be function style or stdio style (needed for TACO and real-bug datasets).",
+        "Added real human bug datasets with verified licenses; banned LeetCode-derived and unlicensed datasets.",
+        "Bug injection uses LibCST and adds pattern-specific bugs.",
+        "Added MLE and output-limit verdicts and the runtime error line to last_run.",
+        "Added the hidden diagnosis experiment and a DPO stage with cross-level preference pairs.",
+        "Added anti-repetition rules, Monaco multi-model handling and a 'still stuck' dial chip."
+      ]
+    }
+  ],
 
   "project": {
     "name": "Owlgo",
@@ -35,7 +50,9 @@
   "hard_constraints": {
     "legal": [
       "Do not scrape LeetCode, GeeksforGeeks, InterviewBit or similar. Their terms forbid it and problem text is copyrighted.",
-      "Allowed problem sources for training and eval: APPS dataset (MIT), TACO dataset (Apache 2.0), and original problems written for this project. Record source and license in every problem JSON.",
+      "Allowed problem sources for training and eval: original problems written for this project, APPS (MIT), and TACO (Apache 2.0) with its leetcode, geeksforgeeks and hackerrank sources filtered out (TACO's own card says HackerRank's data rights are unknown). Record source, license and upstream URL in every problem JSON.",
+      "Allowed real-bug sources (Phase 3): CodeContests incorrect_solutions (CC BY 4.0), IERD Codeforces Subtle Bugs (CC BY 4.0), and FixEval (MIT, but its submissions come from CodeNet, so check CodeNet's terms too). Keep the attribution these licenses require.",
+      "Datasets built from LeetCode content, such as DebugBench, are not allowed as training or eval data. Datasets with no license, such as socratic-quest-gen and CodeContests-O (no license listed when checked in Oct 2026), are not allowed as data either. Reusing their ideas (a bug taxonomy, judge label categories) is fine.",
       "The extension may read the page the user has open, in their own browser, to help them. It must never keep problem text beyond local chat history, send it anywhere except the model endpoint the user configured, or use it for training.",
       "The extension must be disabled on contest pages (leetcode.com/contest/*). LeetCode's contest rules ban AI assistance, and a second offense permanently deactivates the account.",
       "Do not use 'LeetCode' in the product name, icon or store title. 'Works on LeetCode' in the description is fine.",
@@ -163,7 +180,8 @@
       "problem.statement": "string, truncated to 1500 characters",
       "language": "python | cpp | java | javascript",
       "code": "the user's current editor content, truncated to 200 lines",
-      "last_run": "null, or { kind: run | submit, status: accepted | wrong_answer | runtime_error | time_limit_exceeded | compile_error, input, expected, output, error }"
+      "last_run": "null, or { kind: run | submit, status: accepted | wrong_answer | time_limit_exceeded | memory_limit_exceeded | runtime_error | output_limit_exceeded | compile_error, input, expected, output, error, error_line (line number from the stack trace, if any) }",
+      "history": "The chat so far follows the system message, capped at the last 6 messages, so the model sees its own earlier hints and doesn't repeat them."
     },
     "template": "You are Owlgo, a friendly DSA practice companion. Never give more help than the help level allows.\n\n## Help level\n{help_level} ({help_level_name}): {help_level_rule}\n\n## Problem\n{title} ({difficulty}){solved_marker}\n{statement}\n\n## Language\n{language}\n\n## User's code\n{code}\n\n## Last run\n{last_run_or_none}",
     "prompt_variants": {
@@ -212,6 +230,7 @@
         "source": "original",
         "license": "MIT",
         "difficulty": "medium",
+        "io_mode": "function",
         "patterns": ["sliding_window", "hashing"],
         "statement": "Given a string s, return the length of the longest substring that has no repeated characters.",
         "constraints": ["0 <= len(s) <= 50000", "s contains printable ASCII characters"],
@@ -229,10 +248,13 @@
           { "input": { "s": "bbbbb" }, "output": 1 },
           { "input": { "s": "" }, "output": 0, "purpose": "empty input" },
           { "input": { "s": "abba" }, "output": 2, "purpose": "left pointer must never move backwards" },
-          { "input_generator": "cycle_printable_ascii(50000)", "output": 95, "purpose": "catches O(n^2) or worse" }
+          { "generated_inputs": { "s": { "fn": "cycle_printable_ascii", "args": { "n": 50000 } } }, "output": 95, "stress": true, "purpose": "catches O(n^2) or worse" }
         ],
         "reference_solutions": {
           "python": "def solve(s: str) -> int:\n    last = {}\n    left = 0\n    best = 0\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n"
+        },
+        "slow_solutions": {
+          "python": "def solve(s: str) -> int:\n    best = 0\n    for i in range(len(s)):\n        for j in range(i + 1, len(s) + 1):\n            if len(set(s[i:j])) == j - i:\n                best = max(best, j - i)\n    return best\n"
         },
         "optimal": { "time": "O(n)", "space": "O(min(n, charset))", "approach_name": "sliding window with last-seen index map" },
         "acceptable_suboptimal": [{ "time": "O(n^2)", "note": "Fine as a first idea; the companion can help push for better if asked." }],
@@ -248,7 +270,10 @@
         ]
       },
       "notes": [
-        "common_mistakes seed the bug injector.",
+        "io_mode is 'function' (call solve() with named arguments, LeetCode style) or 'stdio' (read stdin, write stdout, competitive programming style). stdio is needed for TACO and the real-bug datasets.",
+        "A test has either a literal 'input', or 'generated_inputs' that build large inputs from a named, seeded generator. 'stress': true marks tests that exist to catch slow solutions.",
+        "common_mistakes seed the bug injector. Every common_mistake must have at least one test that catches it.",
+        "slow_solutions are correct but too slow. They feed the brute_force_tle bug type and prove the stress tests actually catch slow code.",
         "hint_ladder is reference material for the teacher model and the judge. The fine-tuned model never sees it at inference time."
       ]
     },
@@ -295,11 +320,34 @@
       { "id": "stale_state", "example": "state not reset between iterations or test cases" },
       { "id": "wrong_return", "example": "return the wrong variable, or return inside the loop" },
       { "id": "integer_overflow", "example": "long becomes int (C++ and Java only)" },
-      { "id": "brute_force_tle", "example": "a correct but slow version that times out on the stress test" }
+      { "id": "brute_force_tle", "example": "a slow_solution that times out on the stress test" }
     ],
+    "pattern_specific_bugs": {
+      "why": "Most people get stuck on bugs tied to the pattern, not on random operator swaps. Pick mutations based on the problem's 'patterns'.",
+      "backtracking": ["res.append(path) instead of res.append(path[:]) (shared mutable list)", "forgetting to undo state after the recursive call"],
+      "binary_search": ["left = mid with mid = (left + right) // 2, an infinite loop on a 2-element range", "while left < right vs left <= right mismatched with the update rule"],
+      "stack": ["strict vs non-strict comparison in a monotonic stack when the input has duplicates"],
+      "sliding_window": ["updating the answer before shrinking an invalid window", "left pointer moving backwards"],
+      "dynamic_programming": ["wrong loop direction on a 1D row, turning 0/1 knapsack into unbounded knapsack", "checking the memo before the out-of-bounds base case"],
+      "graphs_bfs_dfs": ["marking visited when popping instead of when pushing, causing duplicate work", "missing visited set on an undirected graph"]
+    },
+    "tools": {
+      "python": "LibCST. It keeps the original formatting, so the bug's line number matches the code the user sees (ast.unparse would reformat the whole file).",
+      "other_languages": "tree-sitter, when C++, Java and JavaScript are added."
+    },
+    "real_bug_sources": {
+      "why": "Real human bugs (wrong greedy choice, bad DP state) are hard to synthesize with mutations. Mix them in with the injected bugs.",
+      "sources": [
+        "CodeContests incorrect_solutions (CC BY 4.0): pair a failed submission with the closest accepted one to locate the bug.",
+        "IERD Codeforces Subtle Bugs (CC BY 4.0): ready-made single-line mutations with failing tests.",
+        "FixEval (MIT, CodeNet upstream): buggy submissions with the user's own fix, so the diff is the bug."
+      ],
+      "note": "These are all stdio-style competitive programming problems. Keep them a minority of the data, because the extension's users mostly solve function-style problems."
+    },
+    "taxonomy_reference": "DebugBench's bug taxonomy is a good checklist for bug_types. Its data is LeetCode-derived, so use the idea only, never the data.",
     "process": [
-      "1. For each problem and language with a reference solution, parse the code (Python: the ast module).",
-      "2. Apply one mutation at a time to create a candidate buggy version. Also hand-write bugs from the problem's common_mistakes.",
+      "1. For each problem and language with a reference solution, parse the code (Python: LibCST).",
+      "2. Apply one mutation at a time to create a candidate buggy version, preferring the pattern_specific_bugs for the problem's patterns. Also hand-write bugs from the problem's common_mistakes.",
       "3. Run every candidate on all tests in Piston.",
       "4. Keep only candidates that fail at least one test. Drop ones that still pass (equivalent mutants).",
       "5. Record the first failing test (smallest input first), the status, the actual output and any error message.",
@@ -335,6 +383,7 @@
       "help_level_sampling": { "0": 0.1, "1": 0.3, "2": 0.25, "3": 0.2, "4": 0.1, "5": 0.05 },
       "dial_changes": "About 20 percent of conversations include the user turning the dial up mid-conversation. Later context blocks show the new level.",
       "user_turn_style": "Natural: typos, fragments, lowercase, impatience. Not polished prose.",
+      "repeated_stuck": "Include users who say 'still stuck' several times at the same level. The companion must try a fresh angle each time and, after two tries, offer to turn the dial up.",
       "target_conversations_generated": 3000,
       "expected_after_filtering": 2000
     },
@@ -345,6 +394,7 @@
       "Drop it if the judge says a reply didn't answer what the user asked.",
       "Drop debug conversations where the teacher never pointed toward the injected bug's region.",
       "Drop near-duplicates (embedding similarity above 0.95).",
+      "Drop a conversation if a companion reply nearly repeats one of its earlier replies (similarity above 0.9).",
       "Manually review a random 5 percent and fix or remove bad ones."
     ],
     "splits": {
@@ -358,7 +408,7 @@
         "Qwen/Qwen3-4B-Instruct-2507 (Apache 2.0): main choice for Ollama, fits an M4 at Q4.",
         "Qwen/Qwen3-1.7B (Apache 2.0): for the in-browser WebLLM build. Disable thinking mode in the chat template."
       ],
-      "note": "Check Hugging Face for newer small instruct models with a permissive license before starting. Bug localization is harder than pure conversation, so prefer the larger model if it fits."
+      "note": "Check Hugging Face for newer small instruct models with a permissive license before starting. Bug localization is harder than pure conversation, so prefer the larger model if it fits. Qwen3-4B-Instruct-2507 has no thinking mode. If the hidden diagnosis experiment wins, either train the diagnosis tags into it or switch to the hybrid Qwen/Qwen3-4B, which already has <think> tags in its chat template."
     },
     "lora_hyperparameters_starting_point": {
       "rank": 16,
@@ -371,6 +421,28 @@
       "gradient_accumulation_steps": 8,
       "train_on": "final assistant reply only",
       "note": "Tune learning rate and epochs using valid loss and the eval metrics, not loss alone."
+    },
+    "hidden_diagnosis_experiment": {
+      "idea": "A small model struggles to find a bug AND hold itself at level 1 in the same first few tokens. Let it write a short hidden diagnosis first, then the visible reply.",
+      "format": "<think>intent: debug_failing_test | level: 1 | bug: line 6, missing 'last[ch] >= left' check | trace: on 'abba', left jumps back to 1 at the last 'a'</think> then the visible reply.",
+      "training_target": "Built from the injected_bug ground truth, so the diagnosis is always correct. The model learns to find the bug, and the reply learns to hide it.",
+      "rules": [
+        "Keep the diagnosis under 60 tokens; every hidden token delays the first visible token.",
+        "The extension never shows the diagnosis (it contains the answer). The spoiler guard checks only the visible reply.",
+        "Previous turns in history keep only the visible reply, never old diagnoses."
+      ],
+      "decision": "A/B test in Phase 4: plain SFT vs SFT with diagnosis. Adopt it only if bug_localization improves without breaking the time_to_first_visible_token target."
+    },
+    "dpo_stage": {
+      "idea": "SFT teaches style, but small models drift up the dial under pressure. A short DPO run after SFT targets exactly that.",
+      "pairs": [
+        "Too much help: same context and user message at level L. Chosen = the level-L reply. Rejected = a reply generated for level L+2 or higher.",
+        "Too little help: same context at level 3 or above. Chosen = the level-L reply. Rejected = a level-0 or level-1 reply. This stops DPO from teaching 'always be vague'.",
+        "Pressure: answer_beggar turns. Chosen = stays at level and offers the dial. Rejected = gives in."
+      ],
+      "size": "2000 to 5000 pairs, 300 to 500 steps, low learning rate (about 5e-6).",
+      "tooling": "Unsloth with TRL's DPOTrainer on Colab or Kaggle. As far as known, official mlx-lm only does SFT, so check for DPO support before trying it on the Mac.",
+      "decision": "Keep the DPO model only if dial_adherence goes up and answered_the_question does not drop."
     },
     "mac_training_command": "mlx_lm.lora --model Qwen/Qwen3-4B-Instruct-2507 --train --data ./training/data --iters 1000 --batch-size 2 --num-layers 16 --learning-rate 1e-4 --mask-prompt",
     "export_steps": [
@@ -401,12 +473,15 @@
       "false_praise_rate": { "how": "Judge flags praise for wrong or incomplete answers.", "target": "below 3 percent" },
       "factual_error_rate": { "how": "Judge flags wrong technical claims, such as a wrong complexity.", "target": "below 5 percent" },
       "reply_length_words": { "how": "Mean words per reply at levels 0 to 2.", "target": "between 10 and 45" },
+      "repetition_rate": { "how": "Percent of 'still stuck' follow-ups where the reply nearly repeats an earlier hint.", "target": "below 5 percent" },
+      "time_to_first_visible_token": { "how": "Seconds from sending to the first visible (non-diagnosis) token, 4B Q4 on an M4 via Ollama.", "target": "under 1.5 seconds" },
       "human_preference": { "how": "Blind test: 10 students compare transcripts without knowing which model.", "target": "fine-tuned preferred over prompted base" }
     },
     "llm_as_judge": {
       "judge_model": "The strongest model available, from a different family than the companion if possible.",
       "judge_inputs": ["context block", "help level", "intent", "the reply", "reference solution", "injected bug ground truth when present", "this spec's help_dial and behavior spec"],
-      "judge_output_format": "JSON with boolean flags (exceeds_level, spoiler, false_praise, factual_error, answered_question, points_at_bug) and a 1 to 5 quality score with a one-line reason.",
+      "judge_output_format": "JSON with boolean flags (exceeds_level, spoiler, premature, irrelevant, repeated, false_praise, factual_error, answered_question, points_at_bug) and a 1 to 5 quality score with a one-line reason.",
+      "flag_source": "premature, spoiler, irrelevant and repeated follow the invalid-question categories from the Socratic debugging research (umass-ml4ed). That dataset has no license, so use the categories only, not the data.",
       "calibration": "Hand-label 100 replies and check the judge agrees at least 85 percent of the time before trusting it."
     },
     "success_condition": "The fine-tuned small model must clearly beat the prompted base small model on dial_adherence, bug_localization and human_preference. If it does not, improve the data before changing anything else."
@@ -420,11 +495,14 @@
     "reading_page_context": {
       "problem": "Read title, difficulty and statement from the page DOM. Keep every selector in one file (selectors.ts) because LeetCode changes its DOM.",
       "code": "LeetCode's editor is Monaco. Content scripts run in an isolated world and cannot see the page's window.monaco, so inject a small reader with chrome.scripting.executeScript({ world: 'MAIN' }) that returns the editor's text and language. Verify window.monaco is exposed; if not, fall back to asking the user to paste their code.",
-      "last_run": "Watch the result panel with a MutationObserver and parse status, input, expected, output and error after each Run or Submit."
+      "multiple_monaco_models": "The page can hold several Monaco models (the code editor, the custom testcase box, diff views). Never take getModels()[0] blindly. Prefer the model attached to the main editor instance, and skip models whose language is 'plaintext'.",
+      "last_run": "Watch the result panel with a MutationObserver and parse every verdict: Accepted, Wrong Answer, Time Limit Exceeded, Memory Limit Exceeded, Runtime Error (with the line number from the stack trace), Output Limit Exceeded and Compile Error. A TLE needs a very different hint from a WA."
     },
     "ui": [
       "Side panel with the chat, the Help Dial slider (0 to 5, with a confirm dialog when moving to 5), and a collapsible context preview so the user sees exactly what Owlgo sees.",
       "Hotkey: the _execute_action command (suggested Alt+Shift+O) with chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).",
+      "'Still stuck' chip: when the user asks again on the same code snapshot at the same level, show a one-click 'Turn up to level N+1' chip under the reply.",
+      "Hidden diagnosis: if the model emits a <think> block, strip it before display and before the spoiler guard. Show it only in a developer build.",
       "No pop-ups and no unprompted messages."
     ],
     "model_backends": {
@@ -500,7 +578,7 @@
         "feat(problems): add 10 original problems across 5 patterns with reference solutions",
         "feat(runner): add Piston docker-compose and Python test harness",
         "test(problems): validate schemas and check reference solutions pass all tests",
-        "feat(problems): import APPS/TACO subset with source and license fields"
+        "feat(problems): import TACO subset (no LeetCode/GFG/HackerRank) with source and license fields"
       ],
       "acceptance_criteria": [
         "150 problems across the 15 patterns (original plus imported), each with source and license.",
@@ -535,6 +613,7 @@
       "commits": [
         "feat(data): add bug injector (off-by-one, bad init, missing edge case, ...)",
         "feat(data): run injected bugs in Piston and capture real failing tests",
+        "feat(data): import real human bugs from CodeContests, IERD and FixEval",
         "feat(data): add solver personas and intent catalog",
         "feat(data): simulate conversations with teacher and solver models",
         "feat(data): add quality filter and near-duplicate removal",
@@ -552,6 +631,8 @@
       "commits": [
         "feat(train): add mlx-lm LoRA config and train script (assistant-only loss)",
         "feat(train): add Unsloth Colab notebook for larger model",
+        "feat(train): add hidden diagnosis training format and A/B eval",
+        "feat(train): add DPO stage with cross-level preference pairs",
         "feat(export): fuse adapter, convert to GGUF Q4_K_M, add Ollama Modelfile",
         "docs(eval): add base vs prompted vs fine-tuned comparison table"
       ],
@@ -569,7 +650,7 @@
         "feat(ext): scaffold MV3 extension with Vite, TypeScript and side panel",
         "feat(ext): read problem title and statement on leetcode.com/problems/*",
         "feat(ext): read editor code and language via MAIN-world script",
-        "feat(ext): capture last Run result (input, expected, output, error)",
+        "feat(ext): capture last Run result (WA, TLE, MLE, RE with line, CE)",
         "feat(ext): stream replies from local Ollama with help dial UI",
         "feat(ext): add summon hotkey and port spoiler guard to TypeScript",
         "feat(ext): disable on contest pages",
@@ -605,7 +686,9 @@
     { "risk": "Model gives more help than the dial allows.", "mitigation": "The spoiler guard stays on in production. Add more answer_beggar data." },
     { "risk": "LeetCode changes its DOM and the extension breaks.", "mitigation": "All selectors in one file, and a graceful fallback that asks the user to paste code or the error." },
     { "risk": "Synthetic chats feel robotic.", "mitigation": "Short replies, messy natural user turns, and manual review." },
-    { "risk": "WebLLM download is too large or too slow.", "mitigation": "Keep Ollama as the main backend. Ship the 1.7B model for WebLLM only." }
+    { "risk": "WebLLM download is too large or too slow.", "mitigation": "Keep Ollama as the main backend. Ship the 1.7B model for WebLLM only." },
+    { "risk": "The hidden diagnosis makes replies feel slow.", "mitigation": "Cap it at 60 tokens and track time_to_first_visible_token. Drop it if the A/B gain is small." },
+    { "risk": "DPO makes the model vague and unhelpful.", "mitigation": "Include 'too little help' pairs, and reject the DPO model if answered_the_question drops." }
   ],
 
   "stretch_goals": [

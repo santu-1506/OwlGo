@@ -31,7 +31,7 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 
 - **Off during contests.** Owlgo switches itself off on `leetcode.com/contest/*`. LeetCode's contest rules ban AI help.
 - **Your data stays with you.** Page text and code go only to the model endpoint you configure, which is local by default. No analytics.
-- **No LeetCode content in training.** Training and eval use original problems and open-licensed datasets (APPS, TACO) only.
+- **No LeetCode content in training.** Training and eval use original problems and permissively licensed datasets only (APPS, TACO without its LeetCode/GFG/HackerRank parts, CodeContests).
 
 ## Roadmap
 
