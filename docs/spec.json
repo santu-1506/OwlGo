@@ -1,5 +1,5 @@
 {
-  "spec_version": "1.1",
+  "spec_version": "1.2",
 
   "changelog": [
     { "version": "1.0", "changes": ["Initial companion spec."] },
@@ -12,6 +12,17 @@
         "Added MLE and output-limit verdicts and the runtime error line to last_run.",
         "Added the hidden diagnosis experiment and a DPO stage with cross-level preference pairs.",
         "Added anti-repetition rules, Monaco multi-model handling and a 'still stuck' dial chip."
+      ]
+    },
+    {
+      "version": "1.2",
+      "changes": [
+        "Added the anti_hallucination section: every fact in the data is verified by execution or ground truth.",
+        "Phase 1 assembles verified open data (EvalPlus) plus a few hand-written problems instead of writing a large bank by hand.",
+        "Common mistakes carry a Python implementation that must fail at least one test.",
+        "Main model candidates are Gemma 4 12B and Qwen3.5-9B, decided in Phase 2. The small version is Qwen3.5-4B or Gemma 4 E4B.",
+        "The model is served from a hosted API behind a proxy; local mode through Ollama stays as an option.",
+        "Piston and the TACO import move to Phase 3, when untrusted code first needs a sandbox."
       ]
     }
   ],
@@ -50,7 +61,7 @@
   "hard_constraints": {
     "legal": [
       "Do not scrape LeetCode, GeeksforGeeks, InterviewBit or similar. Their terms forbid it and problem text is copyrighted.",
-      "Allowed problem sources for training and eval: original problems written for this project, APPS (MIT), and TACO (Apache 2.0) with its leetcode, geeksforgeeks and hackerrank sources filtered out (TACO's own card says HackerRank's data rights are unknown). Record source, license and upstream URL in every problem JSON.",
+      "Allowed problem sources for training and eval: original problems written for this project, EvalPlus MBPP+ (Apache 2.0; MBPP itself is CC BY 4.0) and HumanEval+ (Apache 2.0; HumanEval itself is MIT), APPS (MIT), and TACO (Apache 2.0) with its leetcode, geeksforgeeks and hackerrank sources filtered out (TACO's own card says HackerRank's data rights are unknown). Record source, license and upstream URL in every problem JSON.",
       "Allowed real-bug sources (Phase 3): CodeContests incorrect_solutions (CC BY 4.0), IERD Codeforces Subtle Bugs (CC BY 4.0), and FixEval (MIT, but its submissions come from CodeNet, so check CodeNet's terms too). Keep the attribution these licenses require.",
       "Datasets built from LeetCode content, such as DebugBench, are not allowed as training or eval data. Datasets with no license, such as socratic-quest-gen and CodeContests-O (no license listed when checked in Oct 2026), are not allowed as data either. Reusing their ideas (a bug taxonomy, judge label categories) is fine.",
       "The extension may read the page the user has open, in their own browser, to help them. It must never keep problem text beyond local chat history, send it anywhere except the model endpoint the user configured, or use it for training.",
@@ -63,6 +74,30 @@
       "The companion never gives more help than the current help level allows (see 'help_dial').",
       "The companion speaks only when the user asks. No automatic pop-ups or unprompted messages.",
       "Train, valid and test splits are made BY PROBLEM, so no test problem ever appears in training data."
+    ]
+  },
+
+  "anti_hallucination": {
+    "principle": "Never train on, or show, a claim nobody verified. Verify by running code or by checking against ground truth.",
+    "data_rules": [
+      "A problem enters the bank only if it passes the verification gate: its reference solution passes every test, twice, with different hash seeds (catches order-dependent tests). Problems that fail are dropped, never patched by hand-waving.",
+      "Prefer human-written or execution-verified tests (EvalPlus, TACO, CodeContests). Model-generated tests are allowed only after a reference solution passes them.",
+      "Every common mistake comes with a Python implementation of the mistake, and the gate checks that it fails at least one test. So every mistake the model learns about is real and catchable.",
+      "Slow solutions must pass every normal test and time out on at least one stress test. This proves the stress tests catch slow code.",
+      "Every injected bug is confirmed by running it (see bug_injection).",
+      "Model-drafted hints are judged against the reference solution before they are kept.",
+      "Before a teacher conversation is kept, every concrete claim in it is checked: suggested counterexample inputs are run on the user's code and must really fail, complexity claims must match the problem's known complexity, and line references must point at real lines.",
+      "The teacher sees privileged ground truth (reference solution, bug line), so its guidance starts correct."
+    ],
+    "model_behavior_rules": [
+      "State facts only from the context block: the run result, the code and the statement. Never invent test results, constraints or outputs.",
+      "When unsure, suggest a test ('try running it on [2, 2]') or ask, instead of asserting.",
+      "Training data includes cases where information is missing (no run yet, code truncated) and the right reply asks for it.",
+      "At low dial levels the companion mostly asks questions, which are naturally harder to get wrong than assertions."
+    ],
+    "inference_rules": [
+      "Low temperature (about 0.3) for debugging and complexity questions.",
+      "Optional verified-claims mode once the hosted API exists: the backend runs any input the model suggests on the user's code in a sandbox, and drops the claim if the code does not actually fail."
     ]
   },
 
@@ -231,9 +266,11 @@
         "license": "MIT",
         "difficulty": "medium",
         "io_mode": "function",
-        "patterns": ["sliding_window", "hashing"],
+        "patterns": ["sliding_window", "arrays_and_hashing"],
         "statement": "Given a string s, return the length of the longest substring that has no repeated characters.",
         "constraints": ["0 <= len(s) <= 50000", "s contains printable ASCII characters"],
+        "entry_point": "solve",
+        "params": ["s"],
         "function_signature": {
           "python": "def solve(s: str) -> int:",
           "cpp": "int solve(string s)",
@@ -265,14 +302,24 @@
           { "level": 4, "hint": "Store the last index of each character; when the current character was last seen at or after left, set left to that index plus one." }
         ],
         "common_mistakes": [
-          "Moving the left pointer backwards when the repeated character is outside the current window.",
-          "Forgetting the empty string case."
+          {
+            "description": "Moving the left pointer backwards when the repeated character is outside the current window.",
+            "python": "def solve(s: str) -> int:\n    last = {}\n    left = 0\n    best = 0\n    for right, ch in enumerate(s):\n        if ch in last:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n"
+          },
+          {
+            "description": "Starting best at 1, which is wrong for the empty string.",
+            "python": "def solve(s: str) -> int:\n    last = {}\n    left = 0\n    best = 1\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n"
+          }
         ]
       },
+      "full_file": "problems/original/longest-substring-no-repeat.json",
       "notes": [
         "io_mode is 'function' (call solve() with named arguments, LeetCode style) or 'stdio' (read stdin, write stdout, competitive programming style). stdio is needed for TACO and the real-bug datasets.",
-        "A test has either a literal 'input', or 'generated_inputs' that build large inputs from a named, seeded generator. 'stress': true marks tests that exist to catch slow solutions.",
-        "common_mistakes seed the bug injector. Every common_mistake must have at least one test that catches it.",
+        "A test has either a literal 'input', or 'generated_inputs' that build large inputs from a named, seeded generator. 'stress': true marks tests that exist to catch slow solutions. Large expected outputs can use 'generated_output'.",
+        "params lists the function's parameters in order. Tests call the function positionally in that order, so user code with renamed parameters still works.",
+        "Values that JSON can't hold (tuples, sets, inf) use a small tagged encoding, for example {\"$tuple\": [1, 2]}.",
+        "comparison is 'exact' (default) or 'set', with an optional atol for floats, following EvalPlus semantics.",
+        "Each common_mistake has a description and, where possible, a Python implementation of the mistake. The verification gate runs it and it must fail at least one test. These also seed the bug injector.",
         "slow_solutions are correct but too slow. They feed the brute_force_tle bug type and prove the stress tests actually catch slow code.",
         "hint_ladder is reference material for the teacher model and the judge. The fine-tuned model never sees it at inference time."
       ]
@@ -358,13 +405,14 @@
   "fine_tuning_plan": {
     "goal": "Teach a small model companion behavior: stay at the help level, read the code and failing test, point at the right spot, stay short and human.",
     "problem_bank": {
-      "total": 150,
+      "total": "At least 500 verified problems: EvalPlus MBPP+ and HumanEval+ (about 500, mostly easy), hand-written problems (reserved for the test split), and TACO (medium and hard, Phase 3).",
       "patterns": [
         "arrays_and_hashing", "two_pointers", "sliding_window", "stack", "binary_search",
         "linked_list", "trees", "tries", "heap", "backtracking",
         "graphs_bfs_dfs", "dynamic_programming_1d", "dynamic_programming_2d", "greedy", "intervals"
       ],
-      "per_pattern": 10,
+      "extra_patterns_for_simple_problems": ["basics", "math", "strings", "sorting", "bit_manipulation"],
+      "per_pattern_target": "At least 10 problems for each of the 15 core patterns, mostly from TACO.",
       "difficulty_mix": { "easy": 0.3, "medium": 0.5, "hard": 0.2 }
     },
     "synthetic_data_generation": {
@@ -399,16 +447,19 @@
     ],
     "splits": {
       "method": "Split by problem id, never by conversation. The 15 test problems are frozen in Phase 2, before any data is generated.",
-      "train": "120 problems",
-      "valid": "15 problems",
-      "test": "15 problems (never seen in training, used for final eval)"
+      "train": "80 percent of problems",
+      "valid": "10 percent of problems",
+      "test": "10 percent of problems, always including every hand-written problem (never seen in training, used for final eval)"
     },
     "base_model": {
+      "checked": "2026-10-21",
       "candidates": [
-        "Qwen/Qwen3-4B-Instruct-2507 (Apache 2.0): main choice for Ollama, fits an M4 at Q4.",
-        "Qwen/Qwen3-1.7B (Apache 2.0): for the in-browser WebLLM build. Disable thinking mode in the chat template."
+        "google/gemma-4-12B-it (Apache 2.0): LiveCodeBench v6 72.0 on its card. Standard attention, mature tooling.",
+        "Qwen/Qwen3.5-9B (Apache 2.0): LiveCodeBench v6 65.6 and IFEval 91.5 on its card. Hybrid linear attention, so some tools may lag."
       ],
-      "note": "Check Hugging Face for newer small instruct models with a permissive license before starting. Bug localization is harder than pure conversation, so prefer the larger model if it fits. Qwen3-4B-Instruct-2507 has no thinking mode. If the hidden diagnosis experiment wins, either train the diagnosis tags into it or switch to the hybrid Qwen/Qwen3-4B, which already has <think> tags in its chat template."
+      "small_version": "Qwen/Qwen3.5-4B or google/gemma-4-E4B-it, for local or in-browser use.",
+      "decision": "Phase 2 runs both main candidates on our own eval set, and the winner is fine-tuned. Card scores are vendor-reported and measure solving, not tutoring.",
+      "note": "Both are thinking models. Train and serve with thinking off, except in the hidden diagnosis experiment, where their native <think> tags can hold the diagnosis. Both ship a vision encoder we don't use. Check Hugging Face again before Phase 4."
     },
     "lora_hyperparameters_starting_point": {
       "rank": 16,
@@ -444,12 +495,14 @@
       "tooling": "Unsloth with TRL's DPOTrainer on Colab or Kaggle. As far as known, official mlx-lm only does SFT, so check for DPO support before trying it on the Mac.",
       "decision": "Keep the DPO model only if dial_adherence goes up and answered_the_question does not drop."
     },
-    "mac_training_command": "mlx_lm.lora --model Qwen/Qwen3-4B-Instruct-2507 --train --data ./training/data --iters 1000 --batch-size 2 --num-layers 16 --learning-rate 1e-4 --mask-prompt",
+    "training_where": "9B to 12B models: Unsloth QLoRA on Colab, Kaggle or a rented GPU. The 4B small version can train on the 16 GB M4 Mac with mlx-lm, if mlx-lm supports its architecture.",
+    "mac_training_command": "mlx_lm.lora --model Qwen/Qwen3.5-4B --train --data ./training/data --iters 1000 --batch-size 1 --num-layers 16 --learning-rate 1e-4 --mask-prompt --grad-checkpoint",
     "export_steps": [
       "Fuse the LoRA adapter into the base model (mlx_lm.fuse, or Unsloth save_pretrained_merged).",
       "Convert to GGUF with llama.cpp and quantize to Q4_K_M.",
       "Write an Ollama Modelfile with the chat template and stop tokens.",
-      "ollama create owlgo -f training/export/Modelfile",
+      "ollama create owlgo -f training/export/Modelfile (local mode).",
+      "Deploy the merged model, or base model plus adapter, to the hosted endpoint (see deployment).",
       "Point the config model name to owlgo."
     ]
   },
@@ -471,7 +524,8 @@
       "bug_localization": { "how": "On debug items, percent of replies whose guidance points at the injected bug's line or region (judge sees the ground truth).", "target": "above 70 percent, and above the prompted base" },
       "answered_the_question": { "how": "Judge checks the reply addresses the user's actual intent.", "target": "above 90 percent" },
       "false_praise_rate": { "how": "Judge flags praise for wrong or incomplete answers.", "target": "below 3 percent" },
-      "factual_error_rate": { "how": "Judge flags wrong technical claims, such as a wrong complexity.", "target": "below 5 percent" },
+      "factual_error_rate": { "how": "Judge flags wrong technical claims, such as a wrong complexity.", "target": "below 2 percent" },
+      "counterexample_validity": { "how": "Percent of inputs the companion says will break the user's code that really do fail when run. Measured by execution, not by a judge.", "target": "above 95 percent" },
       "reply_length_words": { "how": "Mean words per reply at levels 0 to 2.", "target": "between 10 and 45" },
       "repetition_rate": { "how": "Percent of 'still stuck' follow-ups where the reply nearly repeats an earlier hint.", "target": "below 5 percent" },
       "time_to_first_visible_token": { "how": "Seconds from sending to the first visible (non-diagnosis) token, 4B Q4 on an M4 via Ollama.", "target": "under 1.5 seconds" },
@@ -487,10 +541,17 @@
     "success_condition": "The fine-tuned small model must clearly beat the prompted base small model on dial_adherence, bug_localization and human_preference. If it does not, improve the data before changing anything else."
   },
 
+  "deployment": {
+    "hosted_api": "The fine-tuned model runs on a dedicated GPU endpoint with scale-to-zero (Hugging Face Inference Endpoints, Modal or RunPod; compare current prices in Phase 4). Custom LoRA models generally need a dedicated deployment rather than per-token serverless pricing.",
+    "proxy": "A tiny proxy (for example a Cloudflare Worker) sits between the extension and the endpoint. It holds the API key and rate-limits each user. Never put an API key inside the extension, because anyone can unpack it.",
+    "local_mode": "The same model, quantized to GGUF, runs through Ollama for users who want privacy or offline use.",
+    "privacy": "In hosted mode, the user's code and the problem text go to our server. The Chrome Web Store listing needs a privacy policy that says so."
+  },
+
   "chrome_extension": {
     "manifest_version": 3,
     "permissions": ["sidePanel", "storage", "scripting"],
-    "host_permissions": ["https://leetcode.com/problems/*", "http://localhost:11434/*"],
+    "host_permissions": ["https://leetcode.com/problems/*", "https://<owlgo-proxy-domain>/*", "http://localhost:11434/*"],
     "where_it_runs": "Content scripts match https://leetcode.com/problems/* only. Contest problems live under /contest/, so they are not matched. The panel also checks the active tab URL and shows 'Owlgo is off during contests' if it starts with /contest/.",
     "reading_page_context": {
       "problem": "Read title, difficulty and statement from the page DOM. Keep every selector in one file (selectors.ts) because LeetCode changes its DOM.",
@@ -506,7 +567,8 @@
       "No pop-ups and no unprompted messages."
     ],
     "model_backends": {
-      "ollama": "Phase 5 default. Calls http://localhost:11434 with streaming. If Ollama returns 403, start it with OLLAMA_ORIGINS=\"chrome-extension://*\".",
+      "owlgo_api": "Phase 5 default. Streams from the Owlgo proxy, which forwards to the hosted model.",
+      "ollama": "Local mode. Calls http://localhost:11434 with streaming. If Ollama returns 403, start it with OLLAMA_ORIGINS=\"chrome-extension://*\".",
       "webllm": "Phase 6. Runs the fine-tuned model inside Chrome with WebGPU (@mlc-ai/web-llm). Convert weights with mlc_llm convert_weight and gen_config. No install, no server, works offline.",
       "openai_compatible": "Optional. The user's own endpoint and key. Warn clearly that page text and code are sent to that provider."
     },
@@ -524,7 +586,7 @@
       "libraries": "pydantic v2, openai SDK (pointed at any OpenAI-compatible base_url), httpx"
     },
     "code_runner": {
-      "tool": "Piston, self-hosted with Docker. Used by the data pipeline only.",
+      "tool": "LocalRunner (a subprocess with per-test time limits) for trusted code: our own solutions and dataset reference solutions. From Phase 3, a real sandbox (Piston with Docker, or a throwaway Colab or Kaggle VM) for untrusted code.",
       "languages_supported_initially": ["python", "cpp", "java", "javascript"],
       "limits": { "time_limit_seconds": 3, "memory_limit_mb": 256, "max_output_kb": 64 }
     },
@@ -541,8 +603,9 @@
     "pyproject.toml": "Python project managed by uv",
     "src/owlgo/config.py": "Settings: model base_url, model name, Piston URL",
     "src/owlgo/llm_client.py": "Single OpenAI-compatible wrapper used for all model calls",
-    "src/owlgo/problems/": "schema.py (pydantic model), loader.py, import_taco.py",
-    "src/owlgo/runner/": "piston_client.py and harness/ (per-language wrappers that call solve() and compare outputs)",
+    "src/owlgo/values.py": "Tagged JSON encoding for Python values (tuples, sets, inf) used in tests",
+    "src/owlgo/problems/": "schema.py, generators.py (seeded large inputs), loader.py, verify.py (verification gate), import_evalplus.py; import_taco.py in Phase 3",
+    "src/owlgo/runner/": "harness.py (runs inside the sandbox), local.py (LocalRunner), results.py; piston_client.py in Phase 3",
     "src/owlgo/companion/": "context.py (renders the context block), prompt.py, guard.py (spoiler guard)",
     "src/owlgo/cli.py": "Terminal playground to chat with the companion on a problem",
     "src/owlgo/data/": "bug_injector.py, verify_bugs.py, personas.py, simulate.py, quality_filter.py, dedupe.py, split.py",
@@ -551,7 +614,8 @@
     "eval/": "test_problems.json (frozen test split), eval items, hand labels",
     "training/": "mlx/train.sh, colab/unsloth_finetune.ipynb, export/Modelfile, data/ (git-ignored JSONL), bugs/",
     "extension/": "Chrome MV3 extension (Vite + TypeScript)",
-    "docker-compose.yml": "Piston",
+    "deploy/": "Proxy and endpoint config (Phase 4)",
+    "docker-compose.yml": "Piston (Phase 3)",
     "docs/spec.json": "This spec",
     "tests/": "pytest tests"
   },
@@ -572,18 +636,18 @@
     },
     {
       "phase": 1,
-      "name": "Problem bank and code runner (for training data only)",
+      "name": "Problem bank and code runner, assembled from verified open data",
       "commits": [
-        "feat(problems): add problem JSON schema and pydantic model",
-        "feat(problems): add 10 original problems across 5 patterns with reference solutions",
-        "feat(runner): add Piston docker-compose and Python test harness",
-        "test(problems): validate schemas and check reference solutions pass all tests",
-        "feat(problems): import TACO subset (no LeetCode/GFG/HackerRank) with source and license fields"
+        "feat(problems): add problem schema, value codec, seeded generators and loader",
+        "feat(runner): add local Python harness with per-test time limits",
+        "feat(problems): add verification gate and hand-written problems for the test split",
+        "feat(problems): import MBPP+ and HumanEval+ through the verification gate"
       ],
       "acceptance_criteria": [
-        "150 problems across the 15 patterns (original plus imported), each with source and license.",
-        "Every problem passes schema validation and its reference solution passes all its tests in Piston.",
-        "Hint ladders may be drafted by a model but are reviewed by hand."
+        "Every problem in the bank passes the verification gate (see anti_hallucination.data_rules).",
+        "At least 450 verified problems imported from EvalPlus, each with source and license.",
+        "5 hand-written LeetCode-style problems with full teaching material: hint ladder, optimal complexity, slow solution and executable common mistakes.",
+        "An import report lists every dropped problem and the reason."
       ]
     },
     {
@@ -591,6 +655,7 @@
       "name": "Prompted baseline and evaluation (a score to beat)",
       "commits": [
         "feat(llm): add OpenAI-compatible client wrapper with config-driven model",
+        "feat(problems): draft patterns, hints and mistakes with a strong model, verified by execution",
         "feat(companion): add context builder (problem, code, run result, help level)",
         "feat(companion): add system prompt for help dial levels 0-5",
         "feat(guard): add rule-based spoiler guard with regenerate-once fallback",
@@ -611,6 +676,8 @@
       "phase": 3,
       "name": "Training data",
       "commits": [
+        "feat(runner): add sandboxed runner for untrusted code (Piston or Colab)",
+        "feat(problems): import TACO subset (no LeetCode/GFG/HackerRank) through the verification gate",
         "feat(data): add bug injector (off-by-one, bad init, missing edge case, ...)",
         "feat(data): run injected bugs in Piston and capture real failing tests",
         "feat(data): import real human bugs from CodeContests, IERD and FixEval",
@@ -634,6 +701,7 @@
         "feat(train): add hidden diagnosis training format and A/B eval",
         "feat(train): add DPO stage with cross-level preference pairs",
         "feat(export): fuse adapter, convert to GGUF Q4_K_M, add Ollama Modelfile",
+        "feat(deploy): serve the fine-tuned model from a hosted endpoint behind a proxy",
         "docs(eval): add base vs prompted vs fine-tuned comparison table"
       ],
       "acceptance_criteria": [
@@ -651,15 +719,15 @@
         "feat(ext): read problem title and statement on leetcode.com/problems/*",
         "feat(ext): read editor code and language via MAIN-world script",
         "feat(ext): capture last Run result (WA, TLE, MLE, RE with line, CE)",
-        "feat(ext): stream replies from local Ollama with help dial UI",
+        "feat(ext): stream replies from the Owlgo API with help dial UI",
         "feat(ext): add summon hotkey and port spoiler guard to TypeScript",
         "feat(ext): disable on contest pages",
-        "docs(ext): add Ollama setup guide with OLLAMA_ORIGINS"
+        "docs(ext): add local mode guide (Ollama with OLLAMA_ORIGINS)"
       ],
       "acceptance_criteria": [
         "Loads unpacked in Chrome. The hotkey opens the side panel on a problem page.",
         "The context preview shows the right problem, code and last run.",
-        "Replies stream from local Ollama, and the spoiler guard runs on every reply.",
+        "Replies stream from the Owlgo API, and from Ollama in local mode. The spoiler guard runs on every reply.",
         "On a contest URL it shows 'off during contests' and sends nothing.",
         "DevTools Network shows no requests except to the chosen model backend."
       ]
@@ -688,7 +756,9 @@
     { "risk": "Synthetic chats feel robotic.", "mitigation": "Short replies, messy natural user turns, and manual review." },
     { "risk": "WebLLM download is too large or too slow.", "mitigation": "Keep Ollama as the main backend. Ship the 1.7B model for WebLLM only." },
     { "risk": "The hidden diagnosis makes replies feel slow.", "mitigation": "Cap it at 60 tokens and track time_to_first_visible_token. Drop it if the A/B gain is small." },
-    { "risk": "DPO makes the model vague and unhelpful.", "mitigation": "Include 'too little help' pairs, and reject the DPO model if answered_the_question drops." }
+    { "risk": "DPO makes the model vague and unhelpful.", "mitigation": "Include 'too little help' pairs, and reject the DPO model if answered_the_question drops." },
+    { "risk": "EvalPlus problems are easier and differently worded than LeetCode.", "mitigation": "Add TACO medium and hard problems in Phase 3, and keep the hand-written LeetCode-style problems in the test split." },
+    { "risk": "Hosting costs grow with users.", "mitigation": "Scale-to-zero endpoint, per-user rate limits in the proxy, and local mode for heavy users." }
   ],
 
   "stretch_goals": [

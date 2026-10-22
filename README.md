@@ -25,18 +25,19 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 
 - **It reads your context.** Problem, code, language and the last Run result, so it helps with *your* bug, not a generic one.
 - **Bug-injection training data.** Real bugs are added to correct solutions and verified by actually running them. That lets us measure whether the model points at the right line.
-- **Small, local, private.** A fine-tuned small model running on your machine (Ollama first, in-browser WebLLM later). Free and offline.
+- **Grounded, not guessed.** Every fact Owlgo learns from is verified by running code. Tests, bugs and "this input breaks your code" claims are all checked by execution.
+- **A small fine-tuned model.** Served from the Owlgo API, with a local mode through Ollama for privacy and offline use.
 
 ## Ground rules
 
 - **Off during contests.** Owlgo switches itself off on `leetcode.com/contest/*`. LeetCode's contest rules ban AI help.
-- **Your data stays with you.** Page text and code go only to the model endpoint you configure, which is local by default. No analytics.
+- **Clear about your data.** Page text and code go only to the Owlgo API, or stay on your machine in local mode. No analytics.
 - **No LeetCode content in training.** Training and eval use original problems and permissively licensed datasets only (APPS, TACO without its LeetCode/GFG/HackerRank parts, CodeContests).
 
 ## Roadmap
 
 - [x] **Phase 0:** Project setup
-- [ ] **Phase 1:** Problem bank and code runner (for training data only)
+- [ ] **Phase 1:** Problem bank and code runner, assembled from verified open data
 - [ ] **Phase 2:** Prompted baseline and evaluation (a score to beat)
 - [ ] **Phase 3:** Training data (solver personas, bug injection)
 - [ ] **Phase 4:** Fine-tuning and export to Ollama
