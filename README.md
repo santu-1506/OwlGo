@@ -60,6 +60,16 @@ uv run ruff format --check .
 uv run pytest
 ```
 
+### macOS: "No module named 'owlgo'"
+
+Some Macs set the hidden flag on everything inside `.venv`. Python 3.11.15 and newer skip hidden `.pth` files, so the editable install disappears. Check with `ls -lO .venv/lib/python3.11/site-packages/*.pth`. If the flags column says `hidden`, keep the real environment in `venv/` and link `.venv` to it:
+
+```bash
+rm -rf .venv
+UV_PROJECT_ENVIRONMENT=venv uv sync
+ln -s venv .venv
+```
+
 ## License
 
 [MIT](LICENSE)

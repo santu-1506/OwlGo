@@ -12,7 +12,9 @@ license = "MIT"
 authors = [{ name = "santu-1506" }]
 requires-python = ">=3.11"
 # Runtime dependencies are added phase by phase with `uv add <package>`.
-dependencies = []
+dependencies = [
+    "pydantic>=2.14.1",
+]
 
 [build-system]
 requires = ["uv_build>=0.11.22,<0.12.0"]
@@ -31,6 +33,9 @@ select = ["E", "F", "I", "B", "UP"]
 [tool.pytest.ini_options]
 # Only look for tests in tests/, so pytest never wanders into data folders.
 testpaths = ["tests"]
+# Import owlgo straight from src/. This keeps tests working even when macOS marks the
+# venv's .pth file as hidden, which makes Python 3.11.15+ skip it (see README).
+pythonpath = ["src"]
 
 [dependency-groups]
 dev = [
