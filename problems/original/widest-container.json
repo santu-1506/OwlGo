@@ -1,0 +1,205 @@
+{
+  "id": "widest-container",
+  "title": "Widest Water Container",
+  "source": "original",
+  "license": "MIT",
+  "io_mode": "function",
+  "entry_point": "solve",
+  "difficulty": "medium",
+  "patterns": [
+    "two_pointers",
+    "greedy"
+  ],
+  "statement": "heights[i] is the height of a wall standing at position i on a line. Pick two walls: together with the ground they hold water up to the height of the shorter wall, across the distance between them. Return the largest amount of water (height times distance) any two walls can hold.",
+  "constraints": [
+    "2 <= len(heights) <= 100000",
+    "0 <= heights[i] <= 100000"
+  ],
+  "params": [
+    "heights"
+  ],
+  "function_signature": {
+    "python": "def solve(heights: list[int]) -> int:",
+    "cpp": "long long solve(vector<int>& heights)",
+    "java": "public long solve(int[] heights)",
+    "javascript": "function solve(heights)"
+  },
+  "examples": [
+    {
+      "input": {
+        "heights": [
+          1,
+          8,
+          6,
+          2,
+          5,
+          4,
+          8,
+          3,
+          7
+        ]
+      },
+      "output": 49,
+      "explanation": "Walls at positions 1 and 8: min(8, 7) * (8 - 1) = 49."
+    },
+    {
+      "input": {
+        "heights": [
+          1,
+          1
+        ]
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "heights": [
+          1,
+          8,
+          6,
+          2,
+          5,
+          4,
+          8,
+          3,
+          7
+        ]
+      },
+      "output": 49
+    },
+    {
+      "input": {
+        "heights": [
+          1,
+          1
+        ]
+      },
+      "output": 1,
+      "purpose": "smallest input"
+    },
+    {
+      "input": {
+        "heights": [
+          4,
+          3,
+          2,
+          1,
+          4
+        ]
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "heights": [
+          1,
+          2,
+          1
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "heights": [
+          1,
+          8,
+          1
+        ]
+      },
+      "output": 2,
+      "purpose": "the shorter wall decides the height"
+    },
+    {
+      "input": {
+        "heights": [
+          0,
+          0,
+          0
+        ]
+      },
+      "output": 0,
+      "purpose": "zero heights"
+    },
+    {
+      "input": {
+        "heights": [
+          2,
+          3,
+          4,
+          5,
+          18,
+          17,
+          6
+        ]
+      },
+      "output": 17,
+      "purpose": "best pair is close together"
+    },
+    {
+      "generated_inputs": {
+        "heights": {
+          "fn": "arange",
+          "args": {
+            "start": 1,
+            "stop": 100001
+          }
+        }
+      },
+      "output": 2500000000,
+      "stress": true,
+      "purpose": "catches O(n^2); the answer also overflows 32-bit ints"
+    }
+  ],
+  "reference_solutions": {
+    "python": "def solve(heights: list[int]) -> int:\n    left, right = 0, len(heights) - 1\n    best = 0\n    while left < right:\n        width = right - left\n        best = max(best, min(heights[left], heights[right]) * width)\n        if heights[left] < heights[right]:\n            left += 1\n        else:\n            right -= 1\n    return best\n"
+  },
+  "slow_solutions": {
+    "python": "def solve(heights: list[int]) -> int:\n    best = 0\n    for i in range(len(heights)):\n        for j in range(i + 1, len(heights)):\n            best = max(best, min(heights[i], heights[j]) * (j - i))\n    return best\n"
+  },
+  "optimal": {
+    "time": "O(n)",
+    "space": "O(1)",
+    "approach_name": "two pointers from both ends, always moving the shorter wall"
+  },
+  "acceptable_suboptimal": [
+    {
+      "time": "O(n^2)",
+      "note": "Trying every pair is a fine first idea."
+    }
+  ],
+  "hint_ladder": [
+    {
+      "level": 1,
+      "hint": "Start with the two walls farthest apart. Which of the two is limiting the water there?"
+    },
+    {
+      "level": 2,
+      "hint": "Two pointers, one at each end, can explore the pairs without checking all of them."
+    },
+    {
+      "level": 3,
+      "hint": "Start with the widest pair. Moving the taller wall inward can never help: the width shrinks and the shorter wall still limits the height. So always move the shorter wall."
+    },
+    {
+      "level": 4,
+      "hint": "left = 0, right = n - 1. While left < right: update the best with min(h[left], h[right]) * (right - left), then move whichever pointer has the shorter wall."
+    }
+  ],
+  "common_mistakes": [
+    {
+      "description": "Moving the pointer of the taller wall instead of the shorter one.",
+      "python": "def solve(heights: list[int]) -> int:\n    left, right = 0, len(heights) - 1\n    best = 0\n    while left < right:\n        best = max(best, min(heights[left], heights[right]) * (right - left))\n        if heights[left] > heights[right]:\n            left += 1\n        else:\n            right -= 1\n    return best\n"
+    },
+    {
+      "description": "Using the taller wall's height instead of the shorter one's.",
+      "python": "def solve(heights: list[int]) -> int:\n    left, right = 0, len(heights) - 1\n    best = 0\n    while left < right:\n        best = max(best, max(heights[left], heights[right]) * (right - left))\n        if heights[left] < heights[right]:\n            left += 1\n        else:\n            right -= 1\n    return best\n"
+    },
+    {
+      "description": "Counting the distance as right - left + 1.",
+      "python": "def solve(heights: list[int]) -> int:\n    left, right = 0, len(heights) - 1\n    best = 0\n    while left < right:\n        best = max(best, min(heights[left], heights[right]) * (right - left + 1))\n        if heights[left] < heights[right]:\n            left += 1\n        else:\n            right -= 1\n    return best\n"
+    }
+  ]
+}

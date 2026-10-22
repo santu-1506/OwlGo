@@ -1,0 +1,160 @@
+{
+  "id": "longest-substring-no-repeat",
+  "title": "Longest Substring Without Repeating Characters",
+  "source": "original",
+  "license": "MIT",
+  "io_mode": "function",
+  "entry_point": "solve",
+  "difficulty": "medium",
+  "patterns": [
+    "sliding_window",
+    "arrays_and_hashing"
+  ],
+  "statement": "You are given a string s. Find the length of the longest stretch of consecutive characters in s in which no character appears twice.",
+  "constraints": [
+    "0 <= len(s) <= 50000",
+    "s contains printable ASCII characters"
+  ],
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def solve(s: str) -> int:",
+    "cpp": "int solve(string s)",
+    "java": "public int solve(String s)",
+    "javascript": "function solve(s)"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "abcabcbb"
+      },
+      "output": 3,
+      "explanation": "\"abc\" is the longest stretch with no repeats."
+    },
+    {
+      "input": {
+        "s": "bbbbb"
+      },
+      "output": 1,
+      "explanation": "Every stretch longer than 1 repeats 'b'."
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "abcabcbb"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "bbbbb"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": 0,
+      "purpose": "empty input"
+    },
+    {
+      "input": {
+        "s": "abba"
+      },
+      "output": 2,
+      "purpose": "left pointer must never move backwards"
+    },
+    {
+      "input": {
+        "s": "pwwkew"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": " "
+      },
+      "output": 1,
+      "purpose": "a space is a character too"
+    },
+    {
+      "input": {
+        "s": "dvdf"
+      },
+      "output": 3,
+      "purpose": "a repeat must not clear the whole window"
+    },
+    {
+      "input": {
+        "s": "au"
+      },
+      "output": 2,
+      "purpose": "no repeats at all"
+    },
+    {
+      "generated_inputs": {
+        "s": {
+          "fn": "cycle_printable_ascii",
+          "args": {
+            "n": 50000
+          }
+        }
+      },
+      "output": 95,
+      "stress": true,
+      "purpose": "catches O(n^2) or worse"
+    }
+  ],
+  "reference_solutions": {
+    "python": "def solve(s: str) -> int:\n    last = {}\n    left = 0\n    best = 0\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n"
+  },
+  "slow_solutions": {
+    "python": "def solve(s: str) -> int:\n    best = 0\n    for i in range(len(s)):\n        for j in range(i + 1, len(s) + 1):\n            if len(set(s[i:j])) == j - i:\n                best = max(best, j - i)\n    return best\n"
+  },
+  "optimal": {
+    "time": "O(n)",
+    "space": "O(min(n, charset))",
+    "approach_name": "sliding window with last-seen index map"
+  },
+  "acceptable_suboptimal": [
+    {
+      "time": "O(n^2)",
+      "note": "Checking every start with a set is fine as a first idea."
+    }
+  ],
+  "hint_ladder": [
+    {
+      "level": 1,
+      "hint": "Do you really need to recheck every substring from scratch?"
+    },
+    {
+      "level": 2,
+      "hint": "Think about keeping a window of characters with no repeats, and how it changes as you move right."
+    },
+    {
+      "level": 3,
+      "hint": "When you see a repeat, the left side of the window should jump past the previous occurrence. You need to remember where each character was last seen."
+    },
+    {
+      "level": 4,
+      "hint": "Store the last index of each character; when the current character was last seen at or after left, set left to that index plus one."
+    }
+  ],
+  "common_mistakes": [
+    {
+      "description": "Moving the left pointer backwards when the repeated character is outside the current window.",
+      "python": "def solve(s: str) -> int:\n    last = {}\n    left = 0\n    best = 0\n    for right, ch in enumerate(s):\n        if ch in last:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n"
+    },
+    {
+      "description": "Starting best at 1, which is wrong for the empty string.",
+      "python": "def solve(s: str) -> int:\n    last = {}\n    left = 0\n    best = 1\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n"
+    },
+    {
+      "description": "Clearing the whole window on a repeat instead of moving left just past the earlier copy.",
+      "python": "def solve(s: str) -> int:\n    seen = set()\n    best = 0\n    for ch in s:\n        if ch in seen:\n            seen = {ch}\n        else:\n            seen.add(ch)\n        best = max(best, len(seen))\n    return best\n"
+    }
+  ]
+}

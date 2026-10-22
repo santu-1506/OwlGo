@@ -1,0 +1,252 @@
+{
+  "id": "days-until-warmer",
+  "title": "Days Until Warmer",
+  "source": "original",
+  "license": "MIT",
+  "io_mode": "function",
+  "entry_point": "solve",
+  "difficulty": "medium",
+  "patterns": [
+    "stack"
+  ],
+  "statement": "temps[i] is the temperature on day i. For each day, return how many days you have to wait until a strictly warmer day. If no warmer day ever comes, the answer for that day is 0.",
+  "constraints": [
+    "1 <= len(temps) <= 100000",
+    "0 <= temps[i] <= 100"
+  ],
+  "params": [
+    "temps"
+  ],
+  "function_signature": {
+    "python": "def solve(temps: list[int]) -> list[int]:",
+    "cpp": "vector<int> solve(vector<int>& temps)",
+    "java": "public int[] solve(int[] temps)",
+    "javascript": "function solve(temps)"
+  },
+  "examples": [
+    {
+      "input": {
+        "temps": [
+          73,
+          74,
+          75,
+          71,
+          69,
+          72,
+          76,
+          73
+        ]
+      },
+      "output": [
+        1,
+        1,
+        4,
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "explanation": "Day 2 (75) waits 4 days for 76 on day 6."
+    },
+    {
+      "input": {
+        "temps": [
+          30,
+          60,
+          90
+        ]
+      },
+      "output": [
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "temps": [
+          73,
+          74,
+          75,
+          71,
+          69,
+          72,
+          76,
+          73
+        ]
+      },
+      "output": [
+        1,
+        1,
+        4,
+        2,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "temps": [
+          30,
+          40,
+          50,
+          60
+        ]
+      },
+      "output": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "temps": [
+          30,
+          60,
+          90
+        ]
+      },
+      "output": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "temps": [
+          50
+        ]
+      },
+      "output": [
+        0
+      ],
+      "purpose": "single day"
+    },
+    {
+      "input": {
+        "temps": [
+          70,
+          70,
+          70
+        ]
+      },
+      "output": [
+        0,
+        0,
+        0
+      ],
+      "purpose": "an equal temperature is not warmer"
+    },
+    {
+      "input": {
+        "temps": [
+          90,
+          80,
+          70,
+          60
+        ]
+      },
+      "output": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "purpose": "it never gets warmer"
+    },
+    {
+      "input": {
+        "temps": [
+          55,
+          50,
+          50,
+          60
+        ]
+      },
+      "output": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "purpose": "equal temperatures waiting together"
+    },
+    {
+      "generated_inputs": {
+        "temps": {
+          "fn": "repeat",
+          "args": {
+            "value": 50,
+            "n": 100000
+          }
+        }
+      },
+      "generated_output": {
+        "fn": "repeat",
+        "args": {
+          "value": 0,
+          "n": 100000
+        }
+      },
+      "stress": true,
+      "purpose": "catches O(n^2): nobody ever finds a warmer day"
+    }
+  ],
+  "reference_solutions": {
+    "python": "def solve(temps: list[int]) -> list[int]:\n    answer = [0] * len(temps)\n    stack = []\n    for day, temp in enumerate(temps):\n        while stack and temps[stack[-1]] < temp:\n            waiting_day = stack.pop()\n            answer[waiting_day] = day - waiting_day\n        stack.append(day)\n    return answer\n"
+  },
+  "slow_solutions": {
+    "python": "def solve(temps: list[int]) -> list[int]:\n    answer = [0] * len(temps)\n    for i in range(len(temps)):\n        for j in range(i + 1, len(temps)):\n            if temps[j] > temps[i]:\n                answer[i] = j - i\n                break\n    return answer\n"
+  },
+  "optimal": {
+    "time": "O(n)",
+    "space": "O(n)",
+    "approach_name": "monotonic decreasing stack of day indices"
+  },
+  "acceptable_suboptimal": [
+    {
+      "time": "O(n^2)",
+      "note": "Scanning forward from every day is a fine first idea."
+    }
+  ],
+  "hint_ladder": [
+    {
+      "level": 1,
+      "hint": "When you reach a warm day, which earlier days does it answer all at once?"
+    },
+    {
+      "level": 2,
+      "hint": "A stack can hold the days that are still waiting for a warmer day."
+    },
+    {
+      "level": 3,
+      "hint": "Keep the waiting days in a stack whose temperatures decrease from bottom to top. A new warmer day settles every colder waiting day, starting from the top."
+    },
+    {
+      "level": 4,
+      "hint": "Push day indices. For each new day, while the day on top is colder, pop it and set its answer to the difference of the indices. Then push the new day."
+    }
+  ],
+  "common_mistakes": [
+    {
+      "description": "Treating an equal temperature as warmer (<= instead of <).",
+      "python": "def solve(temps: list[int]) -> list[int]:\n    answer = [0] * len(temps)\n    stack = []\n    for day, temp in enumerate(temps):\n        while stack and temps[stack[-1]] <= temp:\n            waiting_day = stack.pop()\n            answer[waiting_day] = day - waiting_day\n        stack.append(day)\n    return answer\n"
+    },
+    {
+      "description": "Leaving days that never get a warmer day as -1 instead of 0.",
+      "python": "def solve(temps: list[int]) -> list[int]:\n    answer = [-1] * len(temps)\n    stack = []\n    for day, temp in enumerate(temps):\n        while stack and temps[stack[-1]] < temp:\n            waiting_day = stack.pop()\n            answer[waiting_day] = day - waiting_day\n        stack.append(day)\n    return answer\n"
+    },
+    {
+      "description": "Pushing temperatures instead of day indices, then guessing the day with temps.index(), which breaks on repeated temperatures.",
+      "python": "def solve(temps: list[int]) -> list[int]:\n    answer = [0] * len(temps)\n    stack = []\n    for day, temp in enumerate(temps):\n        while stack and stack[-1] < temp:\n            waiting_day = temps.index(stack.pop())\n            answer[waiting_day] = day - waiting_day\n        stack.append(temp)\n    return answer\n"
+    }
+  ]
+}

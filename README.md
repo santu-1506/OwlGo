@@ -46,6 +46,23 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 
 The full plan lives in [docs/spec.json](docs/spec.json). It covers the help dial, intents, context block, bug injection, training, evaluation, the extension, and the commit list for every phase.
 
+## Problem bank
+
+Problems live in `problems/`, one JSON file each. The format is `data_schemas.problem` in [docs/spec.json](docs/spec.json). A problem only gets in if the **verification gate** proves everything in it by running code:
+
+1. The correct solution passes every test, twice, under two different hash seeds.
+2. Every example shown in the statement is correct.
+3. The slow solution passes the normal tests but times out on a stress test.
+4. Every listed common mistake is real code that fails at least one test.
+
+```bash
+uv run python -m owlgo.problems.verify   # verify the whole bank
+```
+
+| Folder | Problems | Source |
+|---|---|---|
+| `problems/original/` | 5 | Hand-written, LeetCode-style, with full hints and executable mistakes. Reserved for the test split. |
+
 ## Development
 
 You need Python 3.11+ and [uv](https://docs.astral.sh/uv/).

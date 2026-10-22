@@ -1,0 +1,226 @@
+{
+  "id": "min-daily-capacity",
+  "title": "Minimum Daily Belt Capacity",
+  "source": "original",
+  "license": "MIT",
+  "io_mode": "function",
+  "entry_point": "solve",
+  "difficulty": "medium",
+  "patterns": [
+    "binary_search",
+    "greedy"
+  ],
+  "statement": "A conveyor belt must move boxes in the given order. weights[i] is the weight of box i. Each day the belt carries boxes from the front of the line, as many as fit, as long as that day's total weight stays at or below the belt's capacity. Boxes can't be split or reordered. Return the smallest capacity that moves every box within `days` days.",
+  "constraints": [
+    "1 <= len(weights) <= 50000",
+    "1 <= weights[i] <= 500",
+    "1 <= days <= len(weights)"
+  ],
+  "params": [
+    "weights",
+    "days"
+  ],
+  "function_signature": {
+    "python": "def solve(weights: list[int], days: int) -> int:",
+    "cpp": "int solve(vector<int>& weights, int days)",
+    "java": "public int solve(int[] weights, int days)",
+    "javascript": "function solve(weights, days)"
+  },
+  "examples": [
+    {
+      "input": {
+        "weights": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "days": 5
+      },
+      "output": 15,
+      "explanation": "Days: [1, 2, 3, 4, 5], [6, 7], [8], [9], [10]."
+    },
+    {
+      "input": {
+        "weights": [
+          3,
+          2,
+          2,
+          4,
+          1,
+          4
+        ],
+        "days": 3
+      },
+      "output": 6,
+      "explanation": "Days: [3, 2], [2, 4], [1, 4]."
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "weights": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "days": 5
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "weights": [
+          3,
+          2,
+          2,
+          4,
+          1,
+          4
+        ],
+        "days": 3
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "weights": [
+          1,
+          2,
+          3,
+          1,
+          1
+        ],
+        "days": 4
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "weights": [
+          10
+        ],
+        "days": 2
+      },
+      "output": 10,
+      "purpose": "capacity can't be below the heaviest box"
+    },
+    {
+      "input": {
+        "weights": [
+          5,
+          5,
+          5
+        ],
+        "days": 3
+      },
+      "output": 5,
+      "purpose": "one box per day"
+    },
+    {
+      "input": {
+        "weights": [
+          7,
+          2,
+          5,
+          10,
+          8
+        ],
+        "days": 1
+      },
+      "output": 32,
+      "purpose": "everything in one day"
+    },
+    {
+      "input": {
+        "weights": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "days": 4
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "days": 1
+      },
+      "generated_inputs": {
+        "weights": {
+          "fn": "repeat",
+          "args": {
+            "value": 500,
+            "n": 50000
+          }
+        }
+      },
+      "output": 25000000,
+      "stress": true,
+      "purpose": "catches trying every capacity one by one"
+    }
+  ],
+  "reference_solutions": {
+    "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        if days_needed(weights, mid) <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n\n\ndef days_needed(weights, capacity):\n    used, load = 1, 0\n    for weight in weights:\n        if load + weight > capacity:\n            used += 1\n            load = 0\n        load += weight\n    return used\n"
+  },
+  "slow_solutions": {
+    "python": "def solve(weights: list[int], days: int) -> int:\n    capacity = max(weights)\n    while True:\n        used, load = 1, 0\n        for weight in weights:\n            if load + weight > capacity:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            return capacity\n        capacity += 1\n"
+  },
+  "optimal": {
+    "time": "O(n log S), S = sum(weights)",
+    "space": "O(1)",
+    "approach_name": "binary search on the capacity with a greedy day count"
+  },
+  "acceptable_suboptimal": [
+    {
+      "time": "O(n * S)",
+      "note": "Trying every capacity from the heaviest box upward is correct but too slow."
+    }
+  ],
+  "hint_ladder": [
+    {
+      "level": 1,
+      "hint": "If some capacity works, does every bigger capacity work too?"
+    },
+    {
+      "level": 2,
+      "hint": "That 'works or doesn't' pattern means you can binary search on the capacity itself."
+    },
+    {
+      "level": 3,
+      "hint": "The answer is between the heaviest box and the total weight. For a guessed capacity, count days greedily (fill each day until the next box doesn't fit), then shrink the range toward capacities that work."
+    },
+    {
+      "level": 4,
+      "hint": "low = max(weights), high = sum(weights). While low < high: mid = (low + high) // 2; if days_needed(mid) <= days, high = mid, else low = mid + 1. Return low."
+    }
+  ],
+  "common_mistakes": [
+    {
+      "description": "Starting the search below the heaviest box, so a box that can never fit goes unnoticed.",
+      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = 1, sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        used, load = 1, 0\n        for weight in weights:\n            if load + weight > mid:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n"
+    },
+    {
+      "description": "Counting days from 0 instead of 1, so every capacity looks like it needs one day less.",
+      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        used, load = 0, 0\n        for weight in weights:\n            if load + weight > mid:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n"
+    },
+    {
+      "description": "Setting high = mid - 1 when mid works, which can skip over the answer.",
+      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        used, load = 1, 0\n        for weight in weights:\n            if load + weight > mid:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return low\n"
+    }
+  ]
+}
