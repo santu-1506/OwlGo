@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-285-text-match-two-three",
+  "title": "Text Match Two Three",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that checks whether a string contains the 'a' character followed by two or three 'b' characters.",
+  "entry_point": "text_match_two_three",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def text_match_two_three(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "ac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "dc"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "ac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "dc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abbbba"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxhxicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "iicixcxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxhxicixxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhicicxhxicixxhxhhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icxiicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "KDZlWIDTdR"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicixcxhicicxhxicxiicixcxhxhhicixxhxhhxhicxhxicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icich"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhicicxhxicicicxhxicixxhxhhixxhxhhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxhicxchxicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "iicxhxicicicxhxicixxhxhhixxhxhhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "hicxiicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "hicxiicixcxxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhicicxhiicixcxhxhxicixxhxhhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhxicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicixcxhicicxhxicxiicixcxhxhhicixxhxhhxhicxhxicixcxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcicixcxhxicixcxhxhhxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicixcxhicicxhxiicixcxhicicxhxicixxhxhhxhcxiicixcxhxhhicixxhxhhxhicxhxicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxhxicihh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "hiicxiicixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icxiichh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhicicxhxicixxxhxhhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "hiicxiiciixcxhxhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icxiicixhh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixcxhxchicxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "iicxhxicicicxhxhicixxhxhhixxhxhhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "KDZDlWIDTdR"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icixh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicxhx"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "icicichxhxh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "hiicxiicixcxhchh"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef text_match_two_three(text):\n    patterns = 'ab{2,3}'\n    return re.search(patterns, text) is not None\n"
+  }
+}

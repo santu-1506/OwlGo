@@ -1,0 +1,491 @@
+{
+  "id": "humaneval-159-eat",
+  "title": "Eat",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You're a hungry rabbit, and you already have eaten a certain number of carrots,\nbut now you need to eat more carrots to complete the day's meals.\nyou should return an array of [ total number of eaten carrots after your meals,\n                                the number of carrots left after your meals ]\nif there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.\n\nExample:\n* eat(5, 6, 10) -> [11, 4]\n* eat(4, 8, 9) -> [12, 1]\n* eat(1, 10, 10) -> [11, 0]\n* eat(2, 11, 5) -> [7, 0]\n\nVariables:\n@number : integer\n    the number of carrots that you have eaten.\n@need : integer\n    the number of carrots that you need to eat.\n@remaining : integer\n    the number of remaining carrots thet exist in stock\n\nConstrain:\n* 0 <= number <= 1000\n* 0 <= need <= 1000\n* 0 <= remaining <= 1000\n\nHave fun :)",
+  "entry_point": "eat",
+  "params": [
+    "number",
+    "need",
+    "remaining"
+  ],
+  "function_signature": {
+    "python": "def eat(number, need, remaining):"
+  },
+  "examples": [
+    {
+      "input": {
+        "number": 5,
+        "need": 6,
+        "remaining": 10
+      },
+      "output": [
+        11,
+        4
+      ]
+    },
+    {
+      "input": {
+        "number": 4,
+        "need": 8,
+        "remaining": 9
+      },
+      "output": [
+        12,
+        1
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "number": 5,
+        "need": 6,
+        "remaining": 10
+      },
+      "output": [
+        11,
+        4
+      ]
+    },
+    {
+      "input": {
+        "number": 4,
+        "need": 8,
+        "remaining": 9
+      },
+      "output": [
+        12,
+        1
+      ]
+    },
+    {
+      "input": {
+        "number": 1,
+        "need": 10,
+        "remaining": 10
+      },
+      "output": [
+        11,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 2,
+        "need": 11,
+        "remaining": 5
+      },
+      "output": [
+        7,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 4,
+        "need": 5,
+        "remaining": 7
+      },
+      "output": [
+        9,
+        2
+      ]
+    },
+    {
+      "input": {
+        "number": 4,
+        "need": 5,
+        "remaining": 1
+      },
+      "output": [
+        5,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 0,
+        "remaining": 0
+      },
+      "output": [
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 10,
+        "need": 0,
+        "remaining": 10
+      },
+      "output": [
+        10,
+        10
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 10,
+        "remaining": 5
+      },
+      "output": [
+        5,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 5,
+        "need": 0,
+        "remaining": 5
+      },
+      "output": [
+        5,
+        5
+      ]
+    },
+    {
+      "input": {
+        "number": 2,
+        "need": 2,
+        "remaining": 2
+      },
+      "output": [
+        4,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 1,
+        "remaining": 0
+      },
+      "output": [
+        999,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 999,
+        "remaining": 1
+      },
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 500,
+        "need": 500,
+        "remaining": 1000
+      },
+      "output": [
+        1000,
+        500
+      ]
+    },
+    {
+      "input": {
+        "number": 1,
+        "need": 10,
+        "remaining": 5
+      },
+      "output": [
+        6,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 0,
+        "remaining": 5
+      },
+      "output": [
+        0,
+        5
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 0,
+        "remaining": 1
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 5,
+        "remaining": 5
+      },
+      "output": [
+        1004,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 5,
+        "remaining": 500
+      },
+      "output": [
+        1004,
+        495
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 10,
+        "remaining": 5
+      },
+      "output": [
+        1004,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 5,
+        "need": 6,
+        "remaining": 6
+      },
+      "output": [
+        11,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 2,
+        "remaining": 1
+      },
+      "output": [
+        1000,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 5,
+        "need": 5,
+        "remaining": 5
+      },
+      "output": [
+        10,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 10,
+        "remaining": 500
+      },
+      "output": [
+        10,
+        490
+      ]
+    },
+    {
+      "input": {
+        "number": 5,
+        "need": 10,
+        "remaining": 5
+      },
+      "output": [
+        10,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 1,
+        "need": 0,
+        "remaining": 1
+      },
+      "output": [
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "number": 6,
+        "need": 0,
+        "remaining": 6
+      },
+      "output": [
+        6,
+        6
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 4,
+        "remaining": 0
+      },
+      "output": [
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 10,
+        "need": 999,
+        "remaining": 4
+      },
+      "output": [
+        14,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 9,
+        "need": 0,
+        "remaining": 10
+      },
+      "output": [
+        9,
+        10
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 2,
+        "remaining": 500
+      },
+      "output": [
+        1001,
+        498
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 0,
+        "remaining": 0
+      },
+      "output": [
+        999,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 7,
+        "need": 7,
+        "remaining": 6
+      },
+      "output": [
+        13,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 9,
+        "need": 1000,
+        "remaining": 10
+      },
+      "output": [
+        19,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 4,
+        "need": 10,
+        "remaining": 4
+      },
+      "output": [
+        8,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 999,
+        "need": 1,
+        "remaining": 999
+      },
+      "output": [
+        1000,
+        998
+      ]
+    },
+    {
+      "input": {
+        "number": 0,
+        "need": 5,
+        "remaining": 1
+      },
+      "output": [
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 3,
+        "need": 9,
+        "remaining": 4
+      },
+      "output": [
+        7,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 7,
+        "need": 6,
+        "remaining": 6
+      },
+      "output": [
+        13,
+        0
+      ]
+    },
+    {
+      "input": {
+        "number": 10,
+        "need": 5,
+        "remaining": 10
+      },
+      "output": [
+        15,
+        5
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef eat(number, need, remaining):\n    \"\"\"\n    You're a hungry rabbit, and you already have eaten a certain number of carrots,\n    but now you need to eat more carrots to complete the day's meals.\n    you should return an array of [ total number of eaten carrots after your meals,\n                                    the number of carrots left after your meals ]\n    if there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.\n    \n    Example:\n    * eat(5, 6, 10) -> [11, 4]\n    * eat(4, 8, 9) -> [12, 1]\n    * eat(1, 10, 10) -> [11, 0]\n    * eat(2, 11, 5) -> [7, 0]\n    \n    Variables:\n    @number : integer\n        the number of carrots that you have eaten.\n    @need : integer\n        the number of carrots that you need to eat.\n    @remaining : integer\n        the number of remaining carrots thet exist in stock\n    \n    Constrain:\n    * 0 <= number <= 1000\n    * 0 <= need <= 1000\n    * 0 <= remaining <= 1000\n\n    Have fun :)\n    \"\"\"\n\n\n    if need <= remaining:\n        return [number + need, remaining - need]\n    else:\n        return [number + remaining, 0]\n\n"
+  }
+}

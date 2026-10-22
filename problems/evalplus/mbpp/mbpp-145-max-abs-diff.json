@@ -1,0 +1,518 @@
+{
+  "id": "mbpp-145-max-abs-diff",
+  "title": "Max Abs Diff",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the maximum difference between any two elements in a given array.",
+  "entry_point": "max_Abs_Diff",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def max_Abs_Diff(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          5,
+          3
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          2,
+          5,
+          1
+        ]
+      },
+      "output": 8
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          5,
+          3
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          2,
+          5,
+          1
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          -3,
+          2,
+          0,
+          -5,
+          1,
+          11,
+          -7
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "arr": [
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2,
+          -1
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          1,
+          2,
+          -2
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          0,
+          -2,
+          -1
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          4,
+          0,
+          1,
+          2,
+          -2
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          0,
+          -3,
+          -1
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          -7,
+          2
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          3,
+          0,
+          1,
+          2,
+          -2
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          -6,
+          -3,
+          0,
+          -3,
+          -1
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          3,
+          0,
+          -2
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "arr": [
+          -7,
+          -7,
+          2
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          -3,
+          0,
+          -2,
+          -1
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          0,
+          1,
+          2,
+          -2,
+          2
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          -3,
+          5
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          -3,
+          2,
+          -5,
+          1,
+          11,
+          -7
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "arr": [
+          -6,
+          -3,
+          0,
+          -2,
+          -1
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          0,
+          -2,
+          -3,
+          -2
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          0,
+          -3,
+          -2,
+          11,
+          -3,
+          -7
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -6,
+          -2,
+          0,
+          -3,
+          -1
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          2,
+          0,
+          1,
+          2,
+          -2,
+          2
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          1,
+          4,
+          0,
+          1,
+          2,
+          -2
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          -7,
+          2,
+          -7
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          3,
+          0,
+          10,
+          -2
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          3
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          0,
+          0
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2,
+          -1,
+          -1
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          3,
+          9,
+          0,
+          10,
+          -2
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          0,
+          0
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          3,
+          0,
+          1,
+          2,
+          -2,
+          0
+        ]
+      },
+      "output": 5
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def max_Abs_Diff(arr): \n    return max(arr) - min(arr)\n"
+  }
+}

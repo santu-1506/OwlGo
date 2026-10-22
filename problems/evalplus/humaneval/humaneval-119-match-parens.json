@@ -1,0 +1,405 @@
+{
+  "id": "humaneval-119-match-parens",
+  "title": "Match Parens",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a list of two strings, both strings consist of open\nparentheses '(' or close parentheses ')' only.\nYour job is to check if it is possible to concatenate the two strings in\nsome order, that the resulting string will be good.\nA string S is considered to be good if and only if all parentheses in S\nare balanced. For example: the string '(())()' is good, while the string\n'())' is not.\nReturn 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\nExamples:\nmatch_parens(['()(', ')']) == 'Yes'\nmatch_parens([')', ')']) == 'No'",
+  "entry_point": "match_parens",
+  "params": [
+    "lst"
+  ],
+  "function_signature": {
+    "python": "def match_parens(lst):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst": [
+          "()(",
+          ")"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          ")",
+          ")"
+        ]
+      },
+      "output": "No"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst": [
+          "()(",
+          ")"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          ")",
+          ")"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "(()(())",
+          "())())"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")())",
+          "(()()("
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "(())))",
+          "(()())(("
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "()",
+          "())"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "(()(",
+          "()))()"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "((((",
+          "((())"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")(()",
+          "(()("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")(",
+          ")("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "(",
+          ")"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          ")",
+          "("
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "(",
+          "("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "))",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "(",
+          "()())("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()",
+          "()()()"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "(())",
+          ")()("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "((",
+          "))"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "(((",
+          ")))"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "()",
+          ")()("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "())(",
+          "()"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "(",
+          "(("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()()()",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()()(",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()()(()())",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "",
+          "("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()(()()()()()",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()()(",
+          ")()()()(()()))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")()()()(",
+          ")()()()(()()))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")()(",
+          ")()("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")()(",
+          ")())()()()("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          ")()()()(()()))",
+          "("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()(()()()(()()))()(()())",
+          "))"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "((",
+          "("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()(()()()(()()))()(()())",
+          "()(()(()()(()()))()(()())"
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "())(",
+          "(("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "()()",
+          "()()()()()()()"
+        ]
+      },
+      "output": "Yes"
+    },
+    {
+      "input": {
+        "lst": [
+          "())))(",
+          "(("
+        ]
+      },
+      "output": "No"
+    },
+    {
+      "input": {
+        "lst": [
+          "",
+          "(("
+        ]
+      },
+      "output": "No"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef match_parens(lst):\n    '''\n    You are given a list of two strings, both strings consist of open\n    parentheses '(' or close parentheses ')' only.\n    Your job is to check if it is possible to concatenate the two strings in\n    some order, that the resulting string will be good.\n    A string S is considered to be good if and only if all parentheses in S\n    are balanced. For example: the string '(())()' is good, while the string\n    '())' is not.\n    Return 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\n    Examples:\n    match_parens(['()(', ')']) == 'Yes'\n    match_parens([')', ')']) == 'No'\n    '''\n\n\n    def valid_parens(s: str) -> bool:\n        cnt = 0\n        for ch in s:\n            cnt = cnt + 1 if ch == \"(\" else cnt - 1\n            if cnt < 0: return False\n        return cnt == 0\n    return \"Yes\" if valid_parens(lst[0] + lst[1]) or valid_parens(lst[1] + lst[0]) else \"No\"\n\n"
+  }
+}

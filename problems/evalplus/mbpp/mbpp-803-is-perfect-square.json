@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-803-is-perfect-square",
+  "title": "Is Perfect Square",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether the given number is a perfect square or not. https://www.geeksforgeeks.org/check-if-given-number-is-perfect-square-in-cpp/",
+  "entry_point": "is_perfect_square",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_perfect_square(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 196
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 125
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 15625
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -9
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -5686748
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456789
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2147483647
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9223372036854775807
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654320
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -5686747
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456788
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 83
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9223372036854775806
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2147483646
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2147483645
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 85
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654319
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9223372036854775808
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 86
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654322
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9223372036854775805
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456787
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456786
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654318
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -82
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_perfect_square(n) :\n    if n < 0:\n        return False\n    return n**(1/2) == int(n**(1/2))\n"
+  }
+}

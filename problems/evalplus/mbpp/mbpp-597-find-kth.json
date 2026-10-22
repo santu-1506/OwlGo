@@ -1,0 +1,723 @@
+{
+  "id": "mbpp-597-find-kth",
+  "title": "Find Kth",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find kth element from the given two sorted arrays.",
+  "entry_point": "find_kth",
+  "params": [
+    "arr1",
+    "arr2",
+    "k"
+  ],
+  "function_signature": {
+    "python": "def find_kth(arr1, arr2, k):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr1": [
+          2,
+          3,
+          6,
+          7,
+          9
+        ],
+        "arr2": [
+          1,
+          4,
+          8,
+          10
+        ],
+        "k": 5
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr1": [
+          100,
+          112,
+          256,
+          349,
+          770
+        ],
+        "arr2": [
+          72,
+          86,
+          113,
+          119,
+          265,
+          445,
+          892
+        ],
+        "k": 7
+      },
+      "output": 256
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr1": [
+          2,
+          3,
+          6,
+          7,
+          9
+        ],
+        "arr2": [
+          1,
+          4,
+          8,
+          10
+        ],
+        "k": 5
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr1": [
+          100,
+          112,
+          256,
+          349,
+          770
+        ],
+        "arr2": [
+          72,
+          86,
+          113,
+          119,
+          265,
+          445,
+          892
+        ],
+        "k": 7
+      },
+      "output": 256
+    },
+    {
+      "input": {
+        "arr1": [
+          3,
+          4,
+          7,
+          8,
+          10
+        ],
+        "arr2": [
+          2,
+          5,
+          9,
+          11
+        ],
+        "k": 6
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3
+        ],
+        "arr2": [],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [],
+        "arr2": [
+          1,
+          2,
+          3
+        ],
+        "k": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [],
+        "arr2": [
+          1
+        ],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1
+        ],
+        "arr2": [],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3
+        ],
+        "arr2": [],
+        "k": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          1,
+          1
+        ],
+        "arr2": [],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3
+        ],
+        "arr2": [
+          true,
+          true,
+          false
+        ],
+        "k": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          1
+        ],
+        "arr2": [],
+        "k": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          -64,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          -64,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          1,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          96,
+          false,
+          3,
+          50
+        ],
+        "arr2": [
+          1,
+          2,
+          3,
+          3
+        ],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "arr2": [],
+        "k": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "arr2": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "k": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          -64,
+          27,
+          3,
+          -39
+        ],
+        "arr2": [
+          false,
+          -64,
+          27,
+          3,
+          -39
+        ],
+        "k": 2
+      },
+      "output": -64
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          1
+        ],
+        "arr2": [],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          50
+        ],
+        "arr2": [
+          1,
+          50
+        ],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          1
+        ],
+        "arr2": [],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "arr2": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "k": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          2,
+          3
+        ],
+        "arr2": [],
+        "k": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3
+        ],
+        "arr2": [
+          -39.319443006981004,
+          -57.39432084514247,
+          -76.34186082848302,
+          -70.39547602882918,
+          5.979370667934944,
+          -70.11319095554586,
+          -77.67992498473315,
+          -35.264606501444845,
+          53.4388130843717,
+          -2.8800159179744185
+        ],
+        "k": 3
+      },
+      "output": -70.39547602882918
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2
+        ],
+        "arr2": [
+          1,
+          2
+        ],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          1
+        ],
+        "arr2": [
+          6.592840281996914,
+          false
+        ],
+        "k": 3
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          97,
+          96,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          1,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          -64,
+          27,
+          -83,
+          3
+        ],
+        "arr2": [
+          false,
+          -64,
+          27,
+          -83,
+          3
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          28,
+          -64,
+          27,
+          29,
+          -83,
+          3
+        ],
+        "arr2": [
+          false,
+          28,
+          -64,
+          27,
+          29,
+          -83,
+          3
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "arr2": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          2
+        ],
+        "arr2": [
+          2
+        ],
+        "k": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          4,
+          -64,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          1,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          97,
+          96,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          0,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          -64,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          1,
+          1,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          28,
+          2
+        ],
+        "arr2": [],
+        "k": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "arr2": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "k": 4
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr1": [
+          1,
+          28,
+          2,
+          3,
+          2
+        ],
+        "arr2": [
+          1,
+          28,
+          2,
+          3,
+          2
+        ],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          96,
+          false,
+          3
+        ],
+        "arr2": [
+          1,
+          2,
+          3,
+          3
+        ],
+        "k": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          97,
+          96,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          0,
+          1,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          -64,
+          27,
+          -83,
+          3,
+          -39
+        ],
+        "arr2": [
+          3,
+          1
+        ],
+        "k": 1
+      },
+      "output": -83
+    },
+    {
+      "input": {
+        "arr1": [
+          false,
+          1,
+          1,
+          1
+        ],
+        "arr2": [],
+        "k": 2
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_kth(arr1, arr2, k):\n\treturn sorted(arr1 + arr2)[k - 1]\n"
+  }
+}

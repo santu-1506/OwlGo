@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-102-choose-num",
+  "title": "Choose Num",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "This function takes two positive numbers x and y and returns the\nbiggest even integer number that is in the range [x, y] inclusive. If \nthere's no such number, then the function should return -1.\n\nFor example:\nchoose_num(12, 15) = 14\nchoose_num(13, 12) = -1",
+  "entry_point": "choose_num",
+  "params": [
+    "x",
+    "y"
+  ],
+  "function_signature": {
+    "python": "def choose_num(x, y):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 12,
+        "y": 15
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "x": 13,
+        "y": 12
+      },
+      "output": -1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 12,
+        "y": 15
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "x": 13,
+        "y": 12
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 33,
+        "y": 12354
+      },
+      "output": 12354
+    },
+    {
+      "input": {
+        "x": 5234,
+        "y": 5233
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": 29
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "x": 27,
+        "y": 10
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 7,
+        "y": 7
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 546,
+        "y": 546
+      },
+      "output": 546
+    },
+    {
+      "input": {
+        "x": 20,
+        "y": 30
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "x": 30,
+        "y": 30
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "x": 50,
+        "y": 60
+      },
+      "output": 60
+    },
+    {
+      "input": {
+        "x": 12,
+        "y": 14
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "x": 10,
+        "y": 12
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "x": 3,
+        "y": 5
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": 20
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 200
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 30,
+        "y": 35
+      },
+      "output": 34
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 6
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": 30
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "x": 101,
+        "y": 6
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 21,
+        "y": 3
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 14,
+        "y": 14
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 100
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 35
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 35,
+        "y": 101
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "x": 60,
+        "y": 60
+      },
+      "output": 60
+    },
+    {
+      "input": {
+        "x": 35,
+        "y": 35
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 5,
+        "y": 6
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "x": 2,
+        "y": 35
+      },
+      "output": 34
+    },
+    {
+      "input": {
+        "x": 60,
+        "y": 50
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 28,
+        "y": 1
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 35,
+        "y": 200
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "x": 200,
+        "y": 5
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 60,
+        "y": 6
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 20,
+        "y": 20
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "x": 30,
+        "y": 6
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "x": 28,
+        "y": 35
+      },
+      "output": 34
+    },
+    {
+      "input": {
+        "x": 200,
+        "y": 200
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "x": 20,
+        "y": 36
+      },
+      "output": 36
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef choose_num(x, y):\n    \"\"\"This function takes two positive numbers x and y and returns the\n    biggest even integer number that is in the range [x, y] inclusive. If \n    there's no such number, then the function should return -1.\n\n    For example:\n    choose_num(12, 15) = 14\n    choose_num(13, 12) = -1\n    \"\"\"\n\n\n    if x > y: return -1\n    if x == y: return y if y % 2 == 0 else -1\n    return y if y % 2 == 0 else y - 1\n\n"
+  }
+}

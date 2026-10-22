@@ -1,0 +1,374 @@
+{
+  "id": "humaneval-117-select-words",
+  "title": "Select Words",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a string s and a natural number n, you have been tasked to implement \na function that returns a list of all words from string s that contain exactly \nn consonants, in order these words appear in the string s.\nIf the string s is empty then the function should return an empty list.\nNote: you may assume the input string contains only letters and spaces.\nExamples:\nselect_words(\"Mary had a little lamb\", 4) ==> [\"little\"]\nselect_words(\"Mary had a little lamb\", 3) ==> [\"Mary\", \"lamb\"]\nselect_words(\"simple white space\", 2) ==> []\nselect_words(\"Hello world\", 4) ==> [\"world\"]\nselect_words(\"Uncle sam\", 3) ==> [\"Uncle\"]",
+  "entry_point": "select_words",
+  "params": [
+    "s",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def select_words(s, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "Mary had a little lamb",
+        "n": 4
+      },
+      "output": [
+        "little"
+      ]
+    },
+    {
+      "input": {
+        "s": "Mary had a little lamb",
+        "n": 3
+      },
+      "output": [
+        "Mary",
+        "lamb"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "Mary had a little lamb",
+        "n": 4
+      },
+      "output": [
+        "little"
+      ]
+    },
+    {
+      "input": {
+        "s": "Mary had a little lamb",
+        "n": 3
+      },
+      "output": [
+        "Mary",
+        "lamb"
+      ]
+    },
+    {
+      "input": {
+        "s": "simple white space",
+        "n": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "Hello world",
+        "n": 4
+      },
+      "output": [
+        "world"
+      ]
+    },
+    {
+      "input": {
+        "s": "Uncle sam",
+        "n": 3
+      },
+      "output": [
+        "Uncle"
+      ]
+    },
+    {
+      "input": {
+        "s": "",
+        "n": 4
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "a b c d e f",
+        "n": 1
+      },
+      "output": [
+        "b",
+        "c",
+        "d",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "s": "apple banana cherry",
+        "n": 3
+      },
+      "output": [
+        "apple",
+        "banana"
+      ]
+    },
+    {
+      "input": {
+        "s": "random words are fun to write",
+        "n": 5
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "the quick brown fox jumps over the lazy dog",
+        "n": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "the cat in the hat",
+        "n": 2
+      },
+      "output": [
+        "the",
+        "cat",
+        "the",
+        "hat"
+      ]
+    },
+    {
+      "input": {
+        "s": "jingle bells jingle bells jingle all the way",
+        "n": 8
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "Python is a popular programming language",
+        "n": 3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "",
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "this is a test string with multiple words containing different numbers of consonants",
+        "n": 7
+      },
+      "output": [
+        "consonants"
+      ]
+    },
+    {
+      "input": {
+        "s": "quack quack goes the duck",
+        "n": 2
+      },
+      "output": [
+        "goes",
+        "the"
+      ]
+    },
+    {
+      "input": {
+        "s": "ThE qUiCk BrOwN fOx JuMpS oVeR tHe LaZy DoG",
+        "n": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banana cherry",
+        "n": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "random words are fun to write",
+        "n": 2
+      },
+      "output": [
+        "fun"
+      ]
+    },
+    {
+      "input": {
+        "s": "Python isp a popular programming language",
+        "n": 3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banana chernry",
+        "n": 3
+      },
+      "output": [
+        "apple",
+        "banana"
+      ]
+    },
+    {
+      "input": {
+        "s": "random words are fun to write",
+        "n": 8
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banana cherry",
+        "n": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "",
+        "n": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banana cherry",
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banana chethe cat in the hatrry",
+        "n": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "the quick brown fox jumps over the lazy dog",
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "quack quack goes the duck",
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "the quick browan fox jumps over the lazy dog",
+        "n": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "Python isp a popular programming languagePython is a popular progrmming language",
+        "n": 2
+      },
+      "output": [
+        "isp"
+      ]
+    },
+    {
+      "input": {
+        "s": "appna cherry",
+        "n": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "the quick brown fox jumps og",
+        "n": 1
+      },
+      "output": [
+        "og"
+      ]
+    },
+    {
+      "input": {
+        "s": "this is a test string with multiple words containing different numbers of consonants",
+        "n": 6
+      },
+      "output": [
+        "containing",
+        "different"
+      ]
+    },
+    {
+      "input": {
+        "s": "Python isp a popular programmia popular progrmming language",
+        "n": 2
+      },
+      "output": [
+        "isp"
+      ]
+    },
+    {
+      "input": {
+        "s": "jingle bells jingle bells jingle all the way",
+        "n": 2
+      },
+      "output": [
+        "all",
+        "the",
+        "way"
+      ]
+    },
+    {
+      "input": {
+        "s": "apple banappna cherryana cherry",
+        "n": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banappna cherryana cherry",
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple banaapple banana chethe cat in the hatrryppna cherryana cherry",
+        "n": 8
+      },
+      "output": [
+        "hatrryppna"
+      ]
+    },
+    {
+      "input": {
+        "s": "Python isp a popular programmia popular progrmming language",
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "ThE qUiCk BrOwN fOx JuMpS oVeR tHe LaZy DoG",
+        "n": 5
+      },
+      "output": []
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef select_words(s, n):\n    \"\"\"Given a string s and a natural number n, you have been tasked to implement \n    a function that returns a list of all words from string s that contain exactly \n    n consonants, in order these words appear in the string s.\n    If the string s is empty then the function should return an empty list.\n    Note: you may assume the input string contains only letters and spaces.\n    Examples:\n    select_words(\"Mary had a little lamb\", 4) ==> [\"little\"]\n    select_words(\"Mary had a little lamb\", 3) ==> [\"Mary\", \"lamb\"]\n    select_words(\"simple white space\", 2) ==> []\n    select_words(\"Hello world\", 4) ==> [\"world\"]\n    select_words(\"Uncle sam\", 3) ==> [\"Uncle\"]\n    \"\"\"\n\n\n    ans = []\n    for word in s.split(\" \"):\n        if word != \"\":\n            c_cnt = len(list(filter(lambda ch: ch not in \"aeiouAEIOU\", word)))\n            if c_cnt == n: ans.append(word)\n    return ans\n\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-741-all-characters-same",
+  "title": "All Characters Same",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether all the characters are same or not.",
+  "entry_point": "all_Characters_Same",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def all_Characters_Same(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "python"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "aaa"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "python"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "aaa"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "data"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "ms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "yQNKBeQ"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmyQNKBeQs"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "m"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "msmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmyQNyQNKBeQKBeQs"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmsss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmsmyQNKBeQsmsss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "smssms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmsmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "yKQNKBeQ"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmmmmsmsssmmsss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmyQNyQNKBeQKBeQsmmsmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmyQNyQNBKBeQKBeQsmmsmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmmsms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmsms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmmsms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "smssm"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmmmss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmmms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mssmsmyQNKBeQs"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmsmyQNKBeQsmmsss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "msmyQNKBeQNs"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "zWgdk"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmsmsmmssss"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mQsmyQNKBeQs"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "smssmsmyQNKBeQsmssms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "mmmmsms"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "RfuIu"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def all_Characters_Same(s) :\n    return all(ch == s[0] for ch in s[1:])\n"
+  }
+}

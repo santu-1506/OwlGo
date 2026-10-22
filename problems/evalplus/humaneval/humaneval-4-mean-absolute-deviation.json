@@ -1,0 +1,518 @@
+{
+  "id": "humaneval-4-mean-absolute-deviation",
+  "title": "Mean Absolute Deviation",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "For a given list of input numbers, calculate Mean Absolute Deviation\naround the mean of this dataset.\nMean Absolute Deviation is the average absolute difference between each\nelement and a centerpoint (mean in this case):\nMAD = average | x - x_mean |\n>>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n1.0",
+  "entry_point": "mean_absolute_deviation",
+  "params": [
+    "numbers"
+  ],
+  "function_signature": {
+    "python": "def mean_absolute_deviation(numbers: List[float]) -> float:"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0
+        ]
+      },
+      "output": 0.6666666666666666
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      "output": 1.0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0
+        ]
+      },
+      "output": 0.6666666666666666
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ]
+      },
+      "output": 1.2
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          4.5,
+          0.0,
+          2.5,
+          -3.0
+        ]
+      },
+      "output": 2.32
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.0,
+          2.0
+        ]
+      },
+      "output": 2.0
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.0,
+          -1.0,
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "output": 1.2
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          1.5,
+          2.5
+        ]
+      },
+      "output": 0.6666666666666666
+    },
+    {
+      "input": {
+        "numbers": [
+          -5.5,
+          7.5,
+          -5.5,
+          7.5
+        ]
+      },
+      "output": 6.5
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -2.0,
+          -3.0,
+          4.0,
+          5.0
+        ]
+      },
+      "output": 3.12
+    },
+    {
+      "input": {
+        "numbers": [
+          10.0,
+          10.0,
+          10.0
+        ]
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "numbers": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          9.232092283615625
+        ]
+      },
+      "output": 0.24573046924300002
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -2.0,
+          -3.0,
+          5.0
+        ]
+      },
+      "output": 2.625
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -2.0,
+          5.0
+        ]
+      },
+      "output": 2.888888888888889
+    },
+    {
+      "input": {
+        "numbers": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          9.232092283615625,
+          10.0,
+          10.0
+        ]
+      },
+      "output": 0.18805903258392803
+    },
+    {
+      "input": {
+        "numbers": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          9.232092283615625,
+          10.0,
+          10.0,
+          10.0
+        ]
+      },
+      "output": 0.1679798129590817
+    },
+    {
+      "input": {
+        "numbers": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          9.232092283615625,
+          10.0,
+          10.0,
+          9.985189420898806,
+          10.0
+        ]
+      },
+      "output": 0.15131978153021683
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "output": 0.75
+    },
+    {
+      "input": {
+        "numbers": [
+          -5.5,
+          7.5,
+          -5.5,
+          10.416066198571809
+        ]
+      },
+      "output": 7.229016549642952
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      },
+      "output": 0.8333333333333334
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0,
+          1.0,
+          10.0
+        ]
+      },
+      "output": 1.875
+    },
+    {
+      "input": {
+        "numbers": [
+          -5.5,
+          8.006967641333711,
+          -5.5,
+          10.416066198571809
+        ]
+      },
+      "output": 7.35575845997638
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          4.5,
+          0.0,
+          2.5,
+          -3.0,
+          -5.5
+        ]
+      },
+      "output": 2.75
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0
+        ]
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0
+        ]
+      },
+      "output": 0.8
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          5.0
+        ]
+      },
+      "output": 1.6
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          0.0,
+          5.049334549043888
+        ]
+      },
+      "output": 1.8935004558914579
+    },
+    {
+      "input": {
+        "numbers": [
+          10.0,
+          10.0,
+          10.0,
+          10.0,
+          9.232092283615625,
+          10.0,
+          10.0,
+          10.0,
+          0.0
+        ]
+      },
+      "output": 1.9563479576201392
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          0.0,
+          5.0
+        ]
+      },
+      "output": 1.875
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.0,
+          2.0,
+          2.0
+        ]
+      },
+      "output": 1.777777777777778
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.6403752298016823,
+          2.0,
+          -1.0
+        ]
+      },
+      "output": 1.6978611621781516
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "output": 0.96
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          0.0,
+          5.0,
+          0.0
+        ]
+      },
+      "output": 1.6
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -2.0,
+          5.0,
+          -1.0
+        ]
+      },
+      "output": 2.375
+    },
+    {
+      "input": {
+        "numbers": [
+          0.0,
+          0.0,
+          4.5,
+          0.0
+        ]
+      },
+      "output": 1.6875
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -2.0
+        ]
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0,
+          -0.14848795937485382
+        ]
+      },
+      "output": 0.8237580734999765
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 1e-06
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    Mean Absolute Deviation is the average absolute difference between each\n    element and a centerpoint (mean in this case):\n    MAD = average | x - x_mean |\n    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \"\"\"\n\n    mean = sum(numbers) / len(numbers)\n    return sum(abs(x - mean) for x in numbers) / len(numbers)\n\n"
+  }
+}

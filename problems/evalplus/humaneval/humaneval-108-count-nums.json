@@ -1,0 +1,508 @@
+{
+  "id": "humaneval-108-count-nums",
+  "title": "Count Nums",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n>>> count_nums([]) == 0\n>>> count_nums([-1, 11, -11]) == 1\n>>> count_nums([1, 1, 2]) == 3",
+  "entry_point": "count_nums",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def count_nums(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          0
+        ]
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          2,
+          -2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          6,
+          9,
+          -6,
+          0,
+          1,
+          5
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          100,
+          98,
+          -7,
+          1,
+          -1
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          12,
+          23,
+          34,
+          -45,
+          -56,
+          0
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          0,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          123,
+          -456,
+          789
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          -1,
+          -20,
+          30
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -11,
+          -12,
+          13,
+          14,
+          -20
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          123,
+          456,
+          789,
+          -987,
+          -654,
+          -321
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          100,
+          -250,
+          375,
+          500,
+          -750
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -20,
+          -30,
+          -40
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          99,
+          999,
+          666,
+          -5555
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          101,
+          -202,
+          303,
+          -404,
+          505,
+          -606
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          123,
+          456,
+          789,
+          790,
+          -987,
+          -654
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          101,
+          303,
+          -404,
+          -606
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr": [
+          -5555,
+          -12,
+          101,
+          -202,
+          303,
+          -404,
+          505,
+          -606
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          100,
+          -250,
+          375,
+          -750
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          101,
+          -202,
+          303,
+          -403,
+          505,
+          -606
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          -1,
+          -20,
+          30,
+          0,
+          -20
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -20,
+          30,
+          0,
+          -20,
+          0
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          1,
+          -1,
+          0
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          666
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          15,
+          -10,
+          -11,
+          -12,
+          13,
+          14,
+          -20
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -404,
+          30,
+          0,
+          -20,
+          0
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          99,
+          -250,
+          375,
+          -750
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          303,
+          -404,
+          -606
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          303,
+          -405,
+          -405,
+          -606
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          99,
+          99,
+          999,
+          666,
+          -5555
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          99,
+          -250,
+          375
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -20,
+          30,
+          0,
+          -20,
+          0
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          101,
+          -987,
+          303,
+          -404,
+          -606
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          99,
+          99,
+          666,
+          -5554,
+          -5555
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          100,
+          790,
+          101,
+          -202,
+          303,
+          -403,
+          506,
+          -606
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          99,
+          99,
+          666,
+          -5554,
+          -5555,
+          99
+        ]
+      },
+      "output": 6
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n\n    def judge(x: int) -> int:\n        l = list(str(x))\n        if l[0] == \"-\":\n            l = l[1:]\n            l = list(map(int, l))\n            l[0] = -l[0]\n        else:\n            l = list(map(int, l))\n        return 1 if sum(l) > 0 else 0\n    return sum(map(judge, arr))\n\n"
+  }
+}

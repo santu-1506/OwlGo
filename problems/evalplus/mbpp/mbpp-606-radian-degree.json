@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-606-radian-degree",
+  "title": "Radian Degree",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to convert degrees to radians.",
+  "entry_point": "radian_degree",
+  "params": [
+    "degree"
+  ],
+  "function_signature": {
+    "python": "def radian_degree(degree):"
+  },
+  "examples": [
+    {
+      "input": {
+        "degree": 90
+      },
+      "output": 1.5707963267948966
+    },
+    {
+      "input": {
+        "degree": 60
+      },
+      "output": 1.0471975511965976
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "degree": 90
+      },
+      "output": 1.5707963267948966
+    },
+    {
+      "input": {
+        "degree": 60
+      },
+      "output": 1.0471975511965976
+    },
+    {
+      "input": {
+        "degree": 120
+      },
+      "output": 2.0943951023931953
+    },
+    {
+      "input": {
+        "degree": 0
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "degree": -90
+      },
+      "output": -1.5707963267948966
+    },
+    {
+      "input": {
+        "degree": -180
+      },
+      "output": -3.141592653589793
+    },
+    {
+      "input": {
+        "degree": -270
+      },
+      "output": -4.71238898038469
+    },
+    {
+      "input": {
+        "degree": -91
+      },
+      "output": -1.5882496193148399
+    },
+    {
+      "input": {
+        "degree": -92
+      },
+      "output": -1.605702911834783
+    },
+    {
+      "input": {
+        "degree": -181
+      },
+      "output": -3.159045946109736
+    },
+    {
+      "input": {
+        "degree": false
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "degree": true
+      },
+      "output": 0.017453292519943295
+    },
+    {
+      "input": {
+        "degree": -89
+      },
+      "output": -1.5533430342749535
+    },
+    {
+      "input": {
+        "degree": -269
+      },
+      "output": -4.694935687864747
+    },
+    {
+      "input": {
+        "degree": -268
+      },
+      "output": -4.677482395344803
+    },
+    {
+      "input": {
+        "degree": -267
+      },
+      "output": -4.6600291028248595
+    },
+    {
+      "input": {
+        "degree": -93
+      },
+      "output": -1.6231562043547263
+    },
+    {
+      "input": {
+        "degree": -182
+      },
+      "output": -3.1764992386296798
+    },
+    {
+      "input": {
+        "degree": -88
+      },
+      "output": -1.53588974175501
+    },
+    {
+      "input": {
+        "degree": -179
+      },
+      "output": -3.12413936106985
+    },
+    {
+      "input": {
+        "degree": -178
+      },
+      "output": -3.106686068549907
+    },
+    {
+      "input": {
+        "degree": -177
+      },
+      "output": -3.0892327760299634
+    },
+    {
+      "input": {
+        "degree": -266
+      },
+      "output": -4.642575810304916
+    },
+    {
+      "input": {
+        "degree": -1
+      },
+      "output": -0.017453292519943295
+    },
+    {
+      "input": {
+        "degree": -176
+      },
+      "output": -3.07177948351002
+    },
+    {
+      "input": {
+        "degree": -80
+      },
+      "output": -1.3962634015954636
+    },
+    {
+      "input": {
+        "degree": -87
+      },
+      "output": -1.5184364492350666
+    },
+    {
+      "input": {
+        "degree": -81
+      },
+      "output": -1.413716694115407
+    },
+    {
+      "input": {
+        "degree": -86
+      },
+      "output": -1.5009831567151233
+    },
+    {
+      "input": {
+        "degree": -183
+      },
+      "output": -3.193952531149623
+    },
+    {
+      "input": {
+        "degree": -79
+      },
+      "output": -1.3788101090755203
+    },
+    {
+      "input": {
+        "degree": -184
+      },
+      "output": -3.211405823669566
+    },
+    {
+      "input": {
+        "degree": -271
+      },
+      "output": -4.729842272904633
+    },
+    {
+      "input": {
+        "degree": 1
+      },
+      "output": 0.017453292519943295
+    },
+    {
+      "input": {
+        "degree": 87
+      },
+      "output": 1.5184364492350666
+    },
+    {
+      "input": {
+        "degree": -78
+      },
+      "output": -1.361356816555577
+    },
+    {
+      "input": {
+        "degree": -185
+      },
+      "output": -3.2288591161895095
+    },
+    {
+      "input": {
+        "degree": -175
+      },
+      "output": -3.0543261909900763
+    },
+    {
+      "input": {
+        "degree": -264
+      },
+      "output": -4.60766922526503
+    },
+    {
+      "input": {
+        "degree": -28
+      },
+      "output": -0.4886921905584123
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math\ndef radian_degree(degree):\n    return degree * math.pi / 180\n"
+  }
+}

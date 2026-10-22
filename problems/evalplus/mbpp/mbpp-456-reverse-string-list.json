@@ -1,0 +1,681 @@
+{
+  "id": "mbpp-456-reverse-string-list",
+  "title": "Reverse String List",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to reverse each string in a given list of string values.",
+  "entry_point": "reverse_string_list",
+  "params": [
+    "stringlist"
+  ],
+  "function_signature": {
+    "python": "def reverse_string_list(stringlist):"
+  },
+  "examples": [
+    {
+      "input": {
+        "stringlist": [
+          "Red",
+          "Green",
+          "Blue",
+          "White",
+          "Black"
+        ]
+      },
+      "output": [
+        "deR",
+        "neerG",
+        "eulB",
+        "etihW",
+        "kcalB"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "john",
+          "amal",
+          "joel",
+          "george"
+        ]
+      },
+      "output": [
+        "nhoj",
+        "lama",
+        "leoj",
+        "egroeg"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "stringlist": [
+          "Red",
+          "Green",
+          "Blue",
+          "White",
+          "Black"
+        ]
+      },
+      "output": [
+        "deR",
+        "neerG",
+        "eulB",
+        "etihW",
+        "kcalB"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "john",
+          "amal",
+          "joel",
+          "george"
+        ]
+      },
+      "output": [
+        "nhoj",
+        "lama",
+        "leoj",
+        "egroeg"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "jack",
+          "john",
+          "mary"
+        ]
+      },
+      "output": [
+        "kcaj",
+        "nhoj",
+        "yram"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "aMaL",
+          "jOeL",
+          "George"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "LaMa",
+        "LeOj",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John"
+        ]
+      },
+      "output": [
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          ""
+        ]
+      },
+      "output": [
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          "George"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "George",
+          "",
+          "George"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "egroeG",
+        "",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "George"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "",
+          ""
+        ]
+      },
+      "output": [
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "George"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          "George",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        "egroeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          "Geoerge",
+          "",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        "egreoeG",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          "George",
+          "George",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        "egroeG",
+        "egroeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "aMaL",
+          "jOeL",
+          "George",
+          "John"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "LaMa",
+        "LeOj",
+        "egroeG",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "John"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          "jOeL",
+          "George"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        "LeOj",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "John",
+          "",
+          "George"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "nhoJ",
+        "",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "John",
+          "George"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "nhoJ",
+        "egroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          "jOeL",
+          "Geoerge",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        "LeOj",
+        "egreoeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "George",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "egroeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "John",
+          "",
+          "George",
+          "John"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "nhoJ",
+        "",
+        "egroeG",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "JohnJohn",
+          "John"
+        ]
+      },
+      "output": [
+        "nhoJnhoJ",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "Geoorge",
+          "John",
+          "",
+          "George",
+          "John"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "egrooeG",
+        "nhoJ",
+        "",
+        "egroeG",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "",
+          "GeorgGeoergee"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "",
+        "eegreoeGgroeG"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "JohGeorgGeoergee",
+          "JohnJohn",
+          "John"
+        ]
+      },
+      "output": [
+        "eegreoeGgroeGhoJ",
+        "nhoJnhoJ",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "",
+          "John"
+        ]
+      },
+      "output": [
+        "",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "JohnGeorge",
+          "John",
+          "",
+          "George",
+          "jOeL",
+          "Geoerge",
+          ""
+        ]
+      },
+      "output": [
+        "egroeGnhoJ",
+        "nhoJ",
+        "",
+        "egroeG",
+        "LeOj",
+        "egreoeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "JohnJohn",
+          "Geoerge",
+          "John"
+        ]
+      },
+      "output": [
+        "nhoJnhoJ",
+        "egreoeG",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "JohaMaLnJohn",
+          "JohnJohn"
+        ]
+      },
+      "output": [
+        "nhoJnLaMahoJ",
+        "nhoJnhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "oJohn",
+          "",
+          "George",
+          "George",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJo",
+        "",
+        "egroeG",
+        "egroeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "Geoorge",
+          "John"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "egrooeG",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "JaMaLn",
+          "",
+          "George",
+          "George",
+          ""
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "nLaMaJ",
+        "",
+        "egroeG",
+        "egroeG",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "aMaL",
+          "John",
+          "aMaL",
+          "George",
+          "John"
+        ]
+      },
+      "output": [
+        "LaMa",
+        "nhoJ",
+        "LaMa",
+        "egroeG",
+        "nhoJ"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "aMaL",
+          "jOeL",
+          "aM",
+          "George",
+          "jOeL"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "LaMa",
+        "LeOj",
+        "Ma",
+        "egroeG",
+        "LeOj"
+      ]
+    },
+    {
+      "input": {
+        "stringlist": [
+          "John",
+          "aMaL",
+          "Geoorge",
+          "jOeL",
+          "George",
+          "John",
+          "aMaL"
+        ]
+      },
+      "output": [
+        "nhoJ",
+        "LaMa",
+        "egrooeG",
+        "LeOj",
+        "egroeG",
+        "nhoJ",
+        "LaMa"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def reverse_string_list(stringlist):\n    return [x[::-1] for x in stringlist]\n"
+  }
+}

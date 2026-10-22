@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-453-sumoffactors",
+  "title": "Sumoffactors",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the sum of even factors of a number.",
+  "entry_point": "sumofFactors",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def sumofFactors(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 48
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 48
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 9973
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 99991
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 144
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": 1000
+    },
+    {
+      "input": {
+        "n": 9974
+      },
+      "output": 9976
+    },
+    {
+      "input": {
+        "n": 1000004
+      },
+      "output": 1546020
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000005
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000006
+      },
+      "output": 1142880
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 2184
+    },
+    {
+      "input": {
+        "n": 9972
+      },
+      "output": 21684
+    },
+    {
+      "input": {
+        "n": 9975
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 996
+      },
+      "output": 2016
+    },
+    {
+      "input": {
+        "n": 99992
+      },
+      "output": 181440
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000007
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 99993
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 995
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000008
+      },
+      "output": 2882880
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 99989
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 99988
+      },
+      "output": 171456
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000010
+      },
+      "output": 1309248
+    },
+    {
+      "input": {
+        "n": 99990
+      },
+      "output": 190944
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": 1344
+    },
+    {
+      "input": {
+        "n": 1003
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000009
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 994
+      },
+      "output": 1152
+    },
+    {
+      "input": {
+        "n": 104
+      },
+      "output": 196
+    },
+    {
+      "input": {
+        "n": 993
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": 192
+    },
+    {
+      "input": {
+        "n": 992
+      },
+      "output": 1984
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math \ndef sumofFactors(n) : \n    if (n % 2 != 0) : \n        return 0\n    return sum([i for i in range(2, n + 1) if n % i == 0 and i % 2 == 0])\n"
+  }
+}

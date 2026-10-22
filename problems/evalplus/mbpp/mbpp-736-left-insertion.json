@@ -1,0 +1,508 @@
+{
+  "id": "mbpp-736-left-insertion",
+  "title": "Left Insertion",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to locate the left insertion point for a specified value in sorted order. https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-data-structure-exercise-24.php",
+  "entry_point": "left_insertion",
+  "params": [
+    "a",
+    "x"
+  ],
+  "function_signature": {
+    "python": "def left_insertion(a, x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "x": 6
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "x": 3
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "x": 6
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "x": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "x": 7
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30
+        ],
+        "x": 15
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "a": [
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          24
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 16
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 24
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 26
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          24,
+          16,
+          15,
+          -86,
+          25,
+          18,
+          -63,
+          1,
+          5,
+          4
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          30,
+          24
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 30
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          14
+        ],
+        "x": 14
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          "rfvEP",
+          "kSSJBNc",
+          "Ck",
+          "MlFV",
+          "NCpr"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30
+        ],
+        "x": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 22
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": -86
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          3,
+          24,
+          16,
+          15,
+          -86,
+          25,
+          18,
+          -63,
+          1,
+          5,
+          4
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          false,
+          true,
+          true
+        ],
+        "x": 26
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          "MlFV",
+          "IwZvTRzpU"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          3,
+          24,
+          16,
+          15,
+          -86,
+          25,
+          18,
+          -63,
+          1,
+          5,
+          4,
+          16
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          14,
+          14
+        ],
+        "x": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          30,
+          25,
+          24
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          -53.40737393286277
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          19,
+          20,
+          22,
+          22,
+          26,
+          28,
+          30
+        ],
+        "x": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 31
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          24,
+          16,
+          15,
+          -86,
+          24,
+          18,
+          -63,
+          1,
+          5,
+          4
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          24,
+          24
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 19
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          5,
+          5
+        ],
+        "x": 10
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          24,
+          16,
+          15,
+          -86,
+          25,
+          18,
+          -63,
+          22,
+          1,
+          5,
+          4,
+          -86,
+          18
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": [
+          "MlFV",
+          "IwZvTRkSSJBNczpU"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 18
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import bisect\ndef left_insertion(a, x):\n    return bisect.bisect_left(a, x)\n"
+  }
+}

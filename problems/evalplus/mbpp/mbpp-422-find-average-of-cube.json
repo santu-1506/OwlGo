@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-422-find-average-of-cube",
+  "title": "Find Average Of Cube",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the average of cubes of first n natural numbers.",
+  "entry_point": "find_Average_Of_Cube",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def find_Average_Of_Cube(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4.5
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 12.0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4.5
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 12.0
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 302.5
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 255025.0
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 250500250.0
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 225.0
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 112.0
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 162.0
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": 249001249.5
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 270529.5
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 262701.0
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 73.5
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 247500.0
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 45.0
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": 248253997.0
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 251252001.0
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 396.0
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 249750000.0
+    },
+    {
+      "input": {
+        "n": 994
+      },
+      "output": 246021212.5
+    },
+    {
+      "input": {
+        "n": 993
+      },
+      "output": 245279937.0
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 507.0
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "n": 992
+      },
+      "output": 244540152.0
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 637.0
+    },
+    {
+      "input": {
+        "n": 991
+      },
+      "output": 243801856.0
+    },
+    {
+      "input": {
+        "n": 990
+      },
+      "output": 243065047.5
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 25.0
+    },
+    {
+      "input": {
+        "n": 995
+      },
+      "output": 246763980.0
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": 15600.0
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": 252005254.5
+    },
+    {
+      "input": {
+        "n": 996
+      },
+      "output": 247508241.0
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 232897.0
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 1156.0
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": 16810.0
+    },
+    {
+      "input": {
+        "n": 1004
+      },
+      "output": 253516275.0
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": 18081.0
+    },
+    {
+      "input": {
+        "n": 1005
+      },
+      "output": 254274045.0
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 960.0
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 278512.0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_Average_Of_Cube(n):  \n    return sum([(i ** 3) for i in range(1, n + 1)]) / n\n"
+  }
+}

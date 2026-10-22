@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-598-armstrong-number",
+  "title": "Armstrong Number",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether the given number is armstrong or not.",
+  "entry_point": "armstrong_number",
+  "params": [
+    "number"
+  ],
+  "function_signature": {
+    "python": "def armstrong_number(number):"
+  },
+  "examples": [
+    {
+      "input": {
+        "number": 153
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "number": 259
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "number": 153
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "number": 259
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 4458
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567890
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567889
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567891
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567892
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567888
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567893
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567887
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567886
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567894
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567885
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "number": 12345678901234567895
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 72
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 71
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "number": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "number": 12345678901234567896
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 73
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567884
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "number": 74
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 70
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 68
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567883
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 22
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567882
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 75
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 67
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567881
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567897
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 44
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 69
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567880
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 12345678901234567879
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "number": 64
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def armstrong_number(number):\n    order = len(str(number))\n    return sum([int(i) ** order for i in str(number)]) == number\n"
+  }
+}

@@ -1,0 +1,659 @@
+{
+  "id": "mbpp-782-odd-length-sum",
+  "title": "Odd Length Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the sum of all odd length subarrays. https://www.geeksforgeeks.org/sum-of-all-odd-length-subarrays/",
+  "entry_point": "odd_length_sum",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def odd_length_sum(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          4
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": 15
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          4
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          7
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          10,
+          7
+        ]
+      },
+      "output": 218
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          -1,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          -6,
+          4
+        ]
+      },
+      "output": 212
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -20,
+          -30,
+          -40,
+          -50,
+          -60
+        ]
+      },
+      "output": -980
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2,
+          -1,
+          -4,
+          -9,
+          -6,
+          -7,
+          -8
+        ]
+      },
+      "output": -405
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          71,
+          -68,
+          32,
+          -50,
+          -6,
+          70,
+          -24,
+          86,
+          -30
+        ]
+      },
+      "output": 599
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          -1,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          9,
+          -6,
+          4
+        ]
+      },
+      "output": 362
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -20,
+          -3,
+          -40,
+          -50,
+          -60
+        ]
+      },
+      "output": -818
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          10,
+          7,
+          3
+        ]
+      },
+      "output": 306
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2,
+          -1,
+          -4,
+          -6,
+          -7,
+          -8
+        ]
+      },
+      "output": -244
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -2,
+          -2,
+          -1,
+          -4,
+          -6,
+          -7,
+          -8,
+          -5
+        ]
+      },
+      "output": -365
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          10,
+          10,
+          7,
+          2
+        ]
+      },
+      "output": 491
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          9,
+          -6,
+          4
+        ]
+      },
+      "output": 307
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          -1,
+          5,
+          10,
+          -4,
+          2,
+          8,
+          -6,
+          4,
+          -6
+        ]
+      },
+      "output": 207
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          9,
+          -6,
+          4,
+          2
+        ]
+      },
+      "output": 373
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          0,
+          21,
+          70,
+          -5,
+          -9,
+          -7,
+          -60
+        ]
+      },
+      "output": 461
+    },
+    {
+      "input": {
+        "arr": [
+          71,
+          -2,
+          0,
+          21,
+          70,
+          -5,
+          -9,
+          -6,
+          -60,
+          70
+        ]
+      },
+      "output": 1218
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          9,
+          -6,
+          4,
+          2
+        ]
+      },
+      "output": 558
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          5,
+          10,
+          2,
+          8,
+          9,
+          -6,
+          4,
+          2,
+          2
+        ]
+      },
+      "output": 654
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          -1,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          -6
+        ]
+      },
+      "output": 158
+    },
+    {
+      "input": {
+        "arr": [
+          71,
+          21,
+          0,
+          21,
+          70,
+          -5,
+          -9,
+          -6,
+          -60,
+          70
+        ]
+      },
+      "output": 1425
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          10,
+          7,
+          4
+        ]
+      },
+      "output": 310
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          5,
+          10,
+          2,
+          8,
+          9,
+          -6,
+          4,
+          2,
+          2,
+          9,
+          -6
+        ]
+      },
+      "output": 944
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          9,
+          5,
+          10,
+          2,
+          8,
+          9,
+          4,
+          2,
+          2
+        ]
+      },
+      "output": 633
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          0,
+          21,
+          -9,
+          -7,
+          -60
+        ]
+      },
+      "output": -149
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2,
+          -1,
+          -3,
+          -7,
+          -6,
+          -7,
+          -8,
+          -1
+        ]
+      },
+      "output": -485
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          -4,
+          10,
+          7,
+          2,
+          2
+        ]
+      },
+      "output": 412
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          10,
+          -6,
+          4,
+          2,
+          2
+        ]
+      },
+      "output": 494
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          5,
+          -3,
+          2,
+          8,
+          10,
+          -6,
+          4,
+          2,
+          2
+        ]
+      },
+      "output": 299
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -7,
+          -1,
+          -3,
+          -7,
+          -6,
+          -7,
+          -8,
+          -1
+        ]
+      },
+      "output": -545
+    },
+    {
+      "input": {
+        "arr": [
+          -20,
+          -3,
+          -40,
+          -50,
+          -60
+        ]
+      },
+      "output": -652
+    },
+    {
+      "input": {
+        "arr": [
+          false,
+          true,
+          false
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          5,
+          10,
+          -3,
+          2,
+          8,
+          10,
+          -6,
+          4,
+          2,
+          2,
+          8
+        ]
+      },
+      "output": 621
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3,
+          -2,
+          -1,
+          -3,
+          -7,
+          -6,
+          -7,
+          -8,
+          -1,
+          -7
+        ]
+      },
+      "output": -668
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          9,
+          10,
+          7,
+          3
+        ]
+      },
+      "output": 256
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -2,
+          2,
+          -2,
+          -1,
+          -4,
+          -6,
+          70,
+          -7,
+          -8,
+          -5
+        ]
+      },
+      "output": 660
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          4,
+          3,
+          2,
+          1,
+          9,
+          10,
+          7,
+          4
+        ]
+      },
+      "output": 436
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def odd_length_sum(arr):\n    sum_ = 0\n    n = len(arr)\n    for i in range(n):\n        # arr[i] occurs (i + 1) * (n - i) times in all subarrays\n        times = ((i + 1) * (n - i) + 1) // 2\n        sum_ += arr[i] * times\n    return sum_\n"
+  }
+}

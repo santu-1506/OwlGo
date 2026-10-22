@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-557-toggle-string",
+  "title": "Toggle String",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to toggle the case of all characters in a string.",
+  "entry_point": "toggle_string",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def toggle_string(string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "Python"
+      },
+      "output": "pYTHON"
+    },
+    {
+      "input": {
+        "string": "Pangram"
+      },
+      "output": "pANGRAM"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "Python"
+      },
+      "output": "pYTHON"
+    },
+    {
+      "input": {
+        "string": "Pangram"
+      },
+      "output": "pANGRAM"
+    },
+    {
+      "input": {
+        "string": "LIttLE"
+      },
+      "output": "liTTle"
+    },
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOPQRSTUVHWXYZ"
+      },
+      "output": "abcdefghijklmnopqrstuvhwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOPQRSTUV"
+      },
+      "output": "abcdefghijklmnopqrstuv"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZV"
+      },
+      "output": "abcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzv"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLTMNOPQRABCDEFGHIJKLMNOPQRSTUVSTUVHWXYYZ"
+      },
+      "output": "abcdefghijkltmnopqrabcdefghijklmnopqrstuvstuvhwxyyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVHWXYZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvhwxyzstuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVHWXYZSABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvhwxyzsabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyztuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCODHIJKLMNOPQRSTUVSTUVHWXYYZ"
+      },
+      "output": "abcodhijklmnopqrstuvstuvhwxyyz"
+    },
+    {
+      "input": {
+        "string": "uSB"
+      },
+      "output": "Usb"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCBDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcbdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvzstuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVHWXYZSABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZTUVABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefabcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyzghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvhwxyzsabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyztuvabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "BuSB"
+      },
+      "output": "bUsb"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHWIJKLMNOPQRSTUVHWXYZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghwijklmnopqrstuvhwxyzstuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJRABCDEFGHIJKLMNOPQRSTUVSTUVHWYX"
+      },
+      "output": "abcdefghijrabcdefghijklmnopqrstuvstuvhwyx"
+    },
+    {
+      "input": {
+        "string": "uBSBB"
+      },
+      "output": "Ubsbb"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZPQRSTUV"
+      },
+      "output": "abcdefghijklmnoabcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyzpqrstuv"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZTUVWXYZ"
+      },
+      "output": "abcdeabcdefabcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijkabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyztuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvzstuvhwxyzwxyzfghijklmnopqrstuvwxyzqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "uBSBBB"
+      },
+      "output": "Ubsbbb"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRBSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrbstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHWVXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRBSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhwvxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrbstuvhabcdefghijklmabcdefghijklmnopqrstuvwxxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOPGQRSTUVVHWXYZ"
+      },
+      "output": "abcdefghijklmnopgqrstuvvhwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZPQRSTUV"
+      },
+      "output": "abcdefghijklmnoabcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvzstuvhwxyzwxyzfghijklmnopqrstuvwxyzmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyzpqrstuv"
+    },
+    {
+      "input": {
+        "string": "BuSSABCODHIJKLMNOPQRSTUVHSTUVHWXYYZB"
+      },
+      "output": "bUssabcodhijklmnopqrstuvhstuvhwxyyzb"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLABCDEABCDEFGHIJKLMNOPQRRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZPQRSTUV"
+      },
+      "output": "abcdefghijklmnoabcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklabcdeabcdefghijklmnopqrrstuvhabcdefghijklmnopefghijklmnopqrstuvzstuvhwxyzwxyzfghijklmnopqrstuvwxyzmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyzpqrstuv"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCBDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOWPQRSTUVWXYABCDEABCDEFGHIJKRLMNOPQRSTUVHABCDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcbdefghijklmnopqrstuvhwxyzwxyzfghijklmnowpqrstuvwxyabcdeabcdefghijkrlmnopqrstuvhabcdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQHRSTUVHABCDEFGHIJKLMNOPEFGHWIJKLMNOPQRSTUVHWXYZSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqhrstuvhabcdefghijklmnopefghwijklmnopqrstuvhwxyzstuvhwxyzwxyzfghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHWVXYZFGHIJKLABCDEFGTHIJKLMNUABCDEABCDEFGHIJKLMNOPQRBSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhwvxyzfghijklabcdefgthijklmnuabcdeabcdefghijklmnopqrbstuvhabcdefghijklmabcdefghijklmnopqrstuvwxxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQRSTUVHABCBDEFGHIJKLMNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQPRSTUVWXYZ"
+      },
+      "output": "abcdeabcdefghijklmnopqrstuvhabcbdefghijklmnopqrstuvhwxyzwxyzfghijklmnopqprstuvwxyz"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQuBSBBBRSTUVHWVXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRBSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXZ"
+      },
+      "output": "abcdeabcdefghijklmnopqUbsbbbrstuvhwvxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrbstuvhabcdefghijklmabcdefghijklmnopqrstuvwxxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxz"
+    },
+    {
+      "input": {
+        "string": "ABCDEFGHIJKLMNOABCDEABCDEFGHIJKLMNOPQRSTUVHWXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLABCDEABCDEFGHIJKLMNOPQRSTUVHABCDEFGHIJKLMNOPEFGHIJKLMNOPQRSTUVZSTUVHWBuSSABCODHIJKLMNOPQRSTUVHSTUVHWXYYZBXYZWXYZFGHIJKLMNOPQRSTUVWXYZMNOPQRSTUVHABCDEFGHIJKLMABCDEFGHIJKLMNOPQRSTUVWXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXYZPQRSTUV"
+      },
+      "output": "abcdefghijklmnoabcdeabcdefghijklmnopqrstuvhwxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklabcdeabcdefghijklmnopqrstuvhabcdefghijklmnopefghijklmnopqrstuvzstuvhwbUssabcodhijklmnopqrstuvhstuvhwxyyzbxyzwxyzfghijklmnopqrstuvwxyzmnopqrstuvhabcdefghijklmabcdefghijklmnopqrstuvwxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxyzpqrstuv"
+    },
+    {
+      "input": {
+        "string": "ABCDEABCDEFGHIJKLMNOPQuBSBBBRSTUVHWVXYZFGHIJKLABCDEFGTHIJKLMNOPQRSTUABCDEABCDEFGHIJKLMNOPQRBSTUVHABCDEFGHIJKLMABCDDEFGHIJKLMNOPQRSTUVWXXYZNOPQRSTUVHWXYZWXYZFGHIJKLMNOPQRSTUVWXYZVRSTUVWXZ"
+      },
+      "output": "abcdeabcdefghijklmnopqUbsbbbrstuvhwvxyzfghijklabcdefgthijklmnopqrstuabcdeabcdefghijklmnopqrbstuvhabcdefghijklmabcddefghijklmnopqrstuvwxxyznopqrstuvhwxyzwxyzfghijklmnopqrstuvwxyzvrstuvwxz"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def toggle_string(string):\n return string.swapcase()\n"
+  }
+}

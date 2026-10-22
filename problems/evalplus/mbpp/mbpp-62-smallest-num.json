@@ -1,0 +1,499 @@
+{
+  "id": "mbpp-62-smallest-num",
+  "title": "Smallest Num",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find smallest number in a list.",
+  "entry_point": "smallest_num",
+  "params": [
+    "xs"
+  ],
+  "function_signature": {
+    "python": "def smallest_num(xs):"
+  },
+  "examples": [
+    {
+      "input": {
+        "xs": [
+          10,
+          20,
+          1,
+          45,
+          99
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "xs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "xs": [
+          10,
+          20,
+          1,
+          45,
+          99
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "xs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "xs": [
+          45,
+          46,
+          50,
+          60
+        ]
+      },
+      "output": 45
+    },
+    {
+      "input": {
+        "xs": [
+          10
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          10
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          10,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          10,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          10,
+          9,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          9,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          11,
+          10,
+          9,
+          10,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          10,
+          9,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          11,
+          10,
+          10
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          9,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          11,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          9,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          11,
+          10,
+          9,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10,
+          10,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10,
+          10,
+          10,
+          9,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          9,
+          9,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          11,
+          10,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          9,
+          10,
+          9,
+          9,
+          10
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          11,
+          11,
+          10,
+          10,
+          9
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "xs": [
+          10,
+          10,
+          8,
+          10,
+          9,
+          10
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "xs": [
+          8,
+          9,
+          10,
+          10,
+          9
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "xs": [
+          8,
+          10,
+          10
+        ]
+      },
+      "output": 8
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def smallest_num(xs):\n  assert len(xs) > 0, \"invalid inputs\"\n  return min(xs)\n"
+  }
+}

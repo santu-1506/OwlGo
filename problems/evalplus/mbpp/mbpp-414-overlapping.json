@@ -1,0 +1,653 @@
+{
+  "id": "mbpp-414-overlapping",
+  "title": "Overlapping",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether any value in a sequence exists in a sequence or not.",
+  "entry_point": "overlapping",
+  "params": [
+    "list1",
+    "list2"
+  ],
+  "function_signature": {
+    "python": "def overlapping(list1, list2):"
+  },
+  "examples": [
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "list2": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3
+        ],
+        "list2": [
+          4,
+          5,
+          6
+        ]
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "list2": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3
+        ],
+        "list2": [
+          4,
+          5,
+          6
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          4,
+          5
+        ],
+        "list2": [
+          1,
+          4,
+          5
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3
+        ],
+        "list2": []
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": []
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1000000,
+          2000000,
+          3000000
+        ],
+        "list2": [
+          1000000,
+          2000000,
+          3000000
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          3000000
+        ],
+        "list2": []
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": [
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          63.43122042559975,
+          -31.187672074988427,
+          63.43122042559975
+        ],
+        "list2": [
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "list2": [
+          3,
+          2,
+          63,
+          2000000,
+          2,
+          -93,
+          51,
+          3000000,
+          -61,
+          3
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          63.43122042559975,
+          -31.187672074988427,
+          63.43122042559975
+        ],
+        "list2": [
+          1,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          63.43122042559975,
+          -31.187672074988427,
+          63.43122042559975,
+          -31.187672074988427
+        ],
+        "list2": [
+          63.43122042559975,
+          -31.187672074988427,
+          63.43122042559975,
+          -31.187672074988427
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          3
+        ],
+        "list2": [
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          63.07613966106393,
+          -31.187672074988427,
+          63.43122042559975
+        ],
+        "list2": [
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": [
+          2,
+          3
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          2,
+          2,
+          3
+        ],
+        "list2": [
+          2,
+          2,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          63.07613966106393,
+          63.07613966106393,
+          63.43122042559975
+        ],
+        "list2": [
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "list2": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          2,
+          3
+        ],
+        "list2": [
+          2,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          63,
+          3000000,
+          3000000
+        ],
+        "list2": [
+          63,
+          3000000,
+          3000000
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": [
+          1,
+          2,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          2,
+          3,
+          3
+        ],
+        "list2": [
+          2,
+          3,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          3,
+          3000000,
+          2,
+          4,
+          3
+        ],
+        "list2": [
+          3,
+          3000000,
+          2,
+          4,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2
+        ],
+        "list2": [
+          1,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          1
+        ],
+        "list2": [
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "list2": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3
+        ],
+        "list2": [
+          -64
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": [
+          false,
+          true,
+          false
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          -93
+        ],
+        "list2": []
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "list2": [
+          2,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          63.07613966106393,
+          63.07613966106393,
+          63.43122042559975,
+          63.43122042559975
+        ],
+        "list2": [
+          63.07613966106393,
+          63.07613966106393,
+          63.43122042559975,
+          63.43122042559975
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          33.96565948782273,
+          63.07613966106393,
+          63.43122042559975,
+          63.43122042559975
+        ],
+        "list2": [
+          33.96565948782273,
+          63.07613966106393,
+          63.43122042559975,
+          63.43122042559975
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          3,
+          3000000,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        "list2": [
+          3,
+          3000000,
+          1,
+          2,
+          4,
+          3,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          3,
+          3000000,
+          4,
+          3
+        ],
+        "list2": [
+          3,
+          3000000,
+          4,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          33.17607444762987,
+          63.07613966106393,
+          44.99937757260167,
+          63.43122042559975
+        ],
+        "list2": [
+          33.17607444762987,
+          63.07613966106393,
+          44.99937757260167,
+          63.43122042559975
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          2,
+          3,
+          3000000
+        ],
+        "list2": [
+          2,
+          3,
+          3000000
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "list2": [
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          3,
+          2999999,
+          1,
+          3,
+          4,
+          3,
+          3,
+          3
+        ],
+        "list2": [
+          3,
+          2999999,
+          1,
+          3,
+          4,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          -76.59859490046561,
+          33.96565948782273,
+          0.21095117898697424,
+          -99.50475342484972,
+          33.96565948782273,
+          63.43122042559975,
+          33.17607444762987
+        ],
+        "list2": [
+          2
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def overlapping(list1,list2):  \n    return any(v in list2 for v in list1)\n"
+  }
+}

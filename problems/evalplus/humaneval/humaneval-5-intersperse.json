@@ -1,0 +1,738 @@
+{
+  "id": "humaneval-5-intersperse",
+  "title": "Intersperse",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n>>> intersperse([], 4)\n[]\n>>> intersperse([1, 2, 3], 4)\n[1, 4, 2, 4, 3]",
+  "entry_point": "intersperse",
+  "params": [
+    "numbers",
+    "delimeter"
+  ],
+  "function_signature": {
+    "python": "def intersperse(numbers: List[int], delimeter: int) -> List[int]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": [],
+        "delimeter": 7
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          6,
+          3,
+          2
+        ],
+        "delimeter": 8
+      },
+      "output": [
+        5,
+        8,
+        6,
+        8,
+        3,
+        8,
+        2
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": [],
+        "delimeter": 7
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          6,
+          3,
+          2
+        ],
+        "delimeter": 8
+      },
+      "output": [
+        5,
+        8,
+        6,
+        8,
+        3,
+        8,
+        2
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          2,
+          2
+        ],
+        "delimeter": 2
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          3
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        1,
+        0,
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "delimeter": 1
+      },
+      "output": [
+        2,
+        1,
+        4,
+        1,
+        6,
+        1,
+        8
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ],
+        "delimeter": 7
+      },
+      "output": [
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          10
+        ],
+        "delimeter": 5
+      },
+      "output": [
+        10
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          7
+        ],
+        "delimeter": 2
+      },
+      "output": [
+        5,
+        2,
+        7
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "delimeter": 4
+      },
+      "output": [
+        1,
+        4,
+        3,
+        4,
+        5,
+        4,
+        7
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3
+        ],
+        "delimeter": 1
+      },
+      "output": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          10,
+          15
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        5,
+        0,
+        10,
+        0,
+        15
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0
+        ],
+        "delimeter": 7
+      },
+      "output": [
+        0,
+        7,
+        0,
+        7,
+        0
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          9,
+          5,
+          6
+        ],
+        "delimeter": 3
+      },
+      "output": [
+        1,
+        3,
+        9,
+        3,
+        5,
+        3,
+        6
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0
+        ],
+        "delimeter": 8
+      },
+      "output": [
+        0,
+        8,
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        1,
+        0,
+        2,
+        0,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          7
+        ],
+        "delimeter": 2
+      },
+      "output": [
+        7
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          3
+        ],
+        "delimeter": 1
+      },
+      "output": [
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          7
+        ],
+        "delimeter": 3
+      },
+      "output": [
+        5,
+        3,
+        7
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          7
+        ],
+        "delimeter": 5
+      },
+      "output": [
+        5,
+        5,
+        7
+      ]
+    },
+    {
+      "input": {
+        "numbers": [],
+        "delimeter": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "numbers": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ],
+        "delimeter": 7
+      },
+      "output": [
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9,
+        7,
+        9
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          5,
+          7
+        ],
+        "delimeter": 15
+      },
+      "output": [
+        5,
+        15,
+        7
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          3
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          9,
+          5,
+          6,
+          5
+        ],
+        "delimeter": 3
+      },
+      "output": [
+        1,
+        3,
+        9,
+        3,
+        5,
+        3,
+        6,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          2
+        ],
+        "delimeter": 1
+      },
+      "output": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0,
+          -1
+        ],
+        "delimeter": 7
+      },
+      "output": [
+        0,
+        7,
+        0,
+        7,
+        0,
+        7,
+        -1
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          7,
+          9
+        ],
+        "delimeter": 15
+      },
+      "output": [
+        7,
+        15,
+        9
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3,
+          2,
+          -46
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        2,
+        0,
+        3,
+        0,
+        2,
+        0,
+        -46
+      ]
+    },
+    {
+      "input": {
+        "numbers": [],
+        "delimeter": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "numbers": [
+          3
+        ],
+        "delimeter": 7
+      },
+      "output": [
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          -2,
+          5,
+          10,
+          -5,
+          2
+        ],
+        "delimeter": -8
+      },
+      "output": [
+        -2,
+        -8,
+        5,
+        -8,
+        10,
+        -8,
+        -5,
+        -8,
+        2
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          3,
+          6,
+          2,
+          5,
+          1,
+          9
+        ],
+        "delimeter": 0
+      },
+      "output": [
+        3,
+        0,
+        6,
+        0,
+        2,
+        0,
+        5,
+        0,
+        1,
+        0,
+        9
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          7,
+          3,
+          6,
+          8,
+          4,
+          2,
+          1
+        ],
+        "delimeter": -1
+      },
+      "output": [
+        7,
+        -1,
+        3,
+        -1,
+        6,
+        -1,
+        8,
+        -1,
+        4,
+        -1,
+        2,
+        -1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          4,
+          1,
+          2,
+          3
+        ],
+        "delimeter": 4
+      },
+      "output": [
+        4,
+        4,
+        1,
+        4,
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "delimeter": 4
+      },
+      "output": [
+        1,
+        4,
+        2,
+        4,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          4
+        ],
+        "delimeter": 4
+      },
+      "output": [
+        4
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          -1,
+          -2,
+          -3
+        ],
+        "delimeter": -4
+      },
+      "output": [
+        -1,
+        -4,
+        -2,
+        -4,
+        -3
+      ]
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "delimeter": 10000
+      },
+      "output": [
+        1,
+        10000,
+        2,
+        10000,
+        3,
+        10000,
+        4
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]:\n    \"\"\" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n    >>> intersperse([], 4)\n    []\n    >>> intersperse([1, 2, 3], 4)\n    [1, 4, 2, 4, 3]\n    \"\"\"\n\n\n    res = []\n    for i in range(len(numbers)):\n        res.append(numbers[i])\n        if i != len(numbers) - 1:\n            res.append(delimeter)\n    return res\n\n"
+  }
+}

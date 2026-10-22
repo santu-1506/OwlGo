@@ -1,0 +1,424 @@
+{
+  "id": "mbpp-773-occurance-substring",
+  "title": "Occurance Substring",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the occurrence and position of the substrings within a string. Return None if there is no match.",
+  "entry_point": "occurance_substring",
+  "params": [
+    "text",
+    "pattern"
+  ],
+  "function_signature": {
+    "python": "def occurance_substring(text, pattern):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "python programming, python language",
+        "pattern": "python"
+      },
+      "output": {
+        "$tuple": [
+          "python",
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "python programming,programming language",
+        "pattern": "programming"
+      },
+      "output": {
+        "$tuple": [
+          "programming",
+          7,
+          18
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "python programming, python language",
+        "pattern": "python"
+      },
+      "output": {
+        "$tuple": [
+          "python",
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "python programming,programming language",
+        "pattern": "programming"
+      },
+      "output": {
+        "$tuple": [
+          "programming",
+          7,
+          18
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "python programming,programming language",
+        "pattern": "language"
+      },
+      "output": {
+        "$tuple": [
+          "language",
+          31,
+          39
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "c++ programming, c++ language",
+        "pattern": "python"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVaKepPO",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVaKepPO",
+          0,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVaKepPO",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVepPO",
+        "pattern": "UPmVepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVepPO",
+          0,
+          8
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOepP",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKepPO",
+        "pattern": "UUPmVaKepPOUPmVaKepPOaKPepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKepPO",
+        "pattern": "UPmVepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UUPmVaKepPOUPmVaKepPOaKPepPO",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVaKepPO",
+          1,
+          11
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPPmVaKepPO",
+        "pattern": "UUPmVaKepPOUPmVaKepPOaKPepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKepPO",
+        "pattern": "UPmVaKUPmVepPOepP"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UUPmVaKepPOUPmVaKepPOaKPepPOPO",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVaKepPO",
+          1,
+          11
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVepPO",
+        "pattern": "UUPmVaKepPOUPmVaKepPOaKPepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPPmVaKepPO",
+        "pattern": "UUPmVaKepPOUPmVaKep"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOepPUPmVepPO",
+        "pattern": "UPmVepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVepPO",
+          6,
+          14
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVaKPepP",
+        "pattern": "UPmVaKepP"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "",
+        "pattern": "UPmVaKepPPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOepPUUPmVaKepPpPO",
+        "pattern": "UPPmVaKUPmVepPOepPUPmVepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPPmVaKUPmVepPOepPUPmVepPOO",
+        "pattern": "UPPmVaKUPmVepPOepPUPmVepPOO"
+      },
+      "output": {
+        "$tuple": [
+          "UPPmVaKUPmVepPOepPUPmVepPOO",
+          0,
+          27
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPPmVaKepPO",
+        "pattern": "UPmVaKPepP"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKPepPO",
+        "pattern": "UUPmVaKepPOUPmVaKepPOaKPepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "zsLntfBjA",
+        "pattern": "ubw"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKPepPO",
+        "pattern": "UUPOaKPepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKepPO",
+        "pattern": "UPmVaKUPmVepPOUPPmVaKUPmVepPOepPUPmVepPOOepP"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOepPUUPmVaKepPpPO",
+        "pattern": "UPmVaKPepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOepPUUPmVaKepPpPO",
+        "pattern": "UPPmVaKmVepPOepPUPmVepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKepP",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVaKPUPPmVaKUPmVepPOepPUPmVepPOepPO",
+        "pattern": "UPPmVaKepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "zsLntfBjA",
+        "pattern": "zsLntfBjA"
+      },
+      "output": {
+        "$tuple": [
+          "zsLntfBjA",
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVUUPmVaKepPOUPmVaKepaKUPmVepPOepP",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVaKepPO",
+          5,
+          15
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UPmVaeKepPO",
+        "pattern": "UPmVaKepPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOUPPmVaPmVepPOepPUPmVepPOOepP",
+        "pattern": "UPmVaKUPmVepPOUPPmVaKUPmVepPOepPUPmVepPOOepP"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPmVaKUPmVepPOUPPmVaKUPmVepPOepPUPmVepPOOepP",
+        "pattern": "UPmVepPO"
+      },
+      "output": {
+        "$tuple": [
+          "UPmVepPO",
+          6,
+          14
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "UUPmVaKepPOUPmVaKepPOaKPepPUPPmVaKepPOOPO",
+        "pattern": "UUPmVaKepPOUPmVaKepPOaKPepPOPO"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPPmVaKepPO",
+        "pattern": "UUPmVaKepPOUPmVa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "UPPmVaKUPmVepPOepPUPmVepPO",
+        "pattern": "UUPmVaKepPOUPmVaKepPOaKPepPO"
+      },
+      "output": null
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef occurance_substring(text,pattern):\n for match in re.finditer(pattern, text):\n    s = match.start()\n    e = match.end()\n    return (text[s:e], s, e)\n return None\n"
+  }
+}

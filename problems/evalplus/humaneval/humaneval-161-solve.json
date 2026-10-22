@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-161-solve",
+  "title": "Solve",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a string s.\nif s[i] is a letter, reverse its case from lower to upper or vise versa, \notherwise keep it as it is.\nIf the string contains no letters, reverse the string.\nThe function should return the resulted string.\nExamples\nsolve(\"1234\") = \"4321\"\nsolve(\"ab\") = \"AB\"\nsolve(\"#a@C\") = \"#A@c\"",
+  "entry_point": "solve",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def solve(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "AsDf"
+      },
+      "output": "aSdF"
+    },
+    {
+      "input": {
+        "s": "1234"
+      },
+      "output": "4321"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "AsDf"
+      },
+      "output": "aSdF"
+    },
+    {
+      "input": {
+        "s": "1234"
+      },
+      "output": "4321"
+    },
+    {
+      "input": {
+        "s": "ab"
+      },
+      "output": "AB"
+    },
+    {
+      "input": {
+        "s": "#a@C"
+      },
+      "output": "#A@c"
+    },
+    {
+      "input": {
+        "s": "#AsdfW^45"
+      },
+      "output": "#aSDFw^45"
+    },
+    {
+      "input": {
+        "s": "#6@2"
+      },
+      "output": "2@6#"
+    },
+    {
+      "input": {
+        "s": "#$a^D"
+      },
+      "output": "#$A^d"
+    },
+    {
+      "input": {
+        "s": "#ccc"
+      },
+      "output": "#CCC"
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "ABCDEFG"
+      },
+      "output": "abcdefg"
+    },
+    {
+      "input": {
+        "s": "racecar"
+      },
+      "output": "RACECAR"
+    },
+    {
+      "input": {
+        "s": "AbCdEfGhI"
+      },
+      "output": "aBcDeFgHi"
+    },
+    {
+      "input": {
+        "s": "tH1s Is A t3sT!"
+      },
+      "output": "Th1S iS a T3St!"
+    },
+    {
+      "input": {
+        "s": "can you solve this problem?"
+      },
+      "output": "CAN YOU SOLVE THIS PROBLEM?"
+    },
+    {
+      "input": {
+        "s": "!!!!1234!!!!"
+      },
+      "output": "!!!!4321!!!!"
+    },
+    {
+      "input": {
+        "s": "aaBBccDDee"
+      },
+      "output": "AAbbCCddEE"
+    },
+    {
+      "input": {
+        "s": "AbCdEfG"
+      },
+      "output": "aBcDeFg"
+    },
+    {
+      "input": {
+        "s": "YarraY"
+      },
+      "output": "yARRAy"
+    },
+    {
+      "input": {
+        "s": "!!34!!!!"
+      },
+      "output": "!!!!43!!"
+    },
+    {
+      "input": {
+        "s": "!!!!1234!!!3!"
+      },
+      "output": "!3!!!4321!!!!"
+    },
+    {
+      "input": {
+        "s": "aaABCDEFGBBccDDee"
+      },
+      "output": "AAabcdefgbbCCddEE"
+    },
+    {
+      "input": {
+        "s": "tuTe"
+      },
+      "output": "TUtE"
+    },
+    {
+      "input": {
+        "s": "tuuTe"
+      },
+      "output": "TUUtE"
+    },
+    {
+      "input": {
+        "s": "aaaaBBccDDeeABCDEFGBBccDDee"
+      },
+      "output": "AAAAbbCCddEEabcdefgbbCCddEE"
+    },
+    {
+      "input": {
+        "s": "!!!!1!234!!!!!!"
+      },
+      "output": "!!!!!!432!1!!!!"
+    },
+    {
+      "input": {
+        "s": "!!!!1aaABCDEFGBBccDDee234!!!!"
+      },
+      "output": "!!!!1AAabcdefgbbCCddEE234!!!!"
+    },
+    {
+      "input": {
+        "s": "Y!!!!1234!!!3!arraY"
+      },
+      "output": "y!!!!1234!!!3!ARRAy"
+    },
+    {
+      "input": {
+        "s": "tuuTeaaaaBBccDDeeABCDEFGBBccDDee"
+      },
+      "output": "TUUtEAAAAbbCCddEEabcdefgbbCCddEE"
+    },
+    {
+      "input": {
+        "s": "iqe"
+      },
+      "output": "IQE"
+    },
+    {
+      "input": {
+        "s": " AbttH1s Is A t3sT!G"
+      },
+      "output": " aBTTh1S iS a T3St!g"
+    },
+    {
+      "input": {
+        "s": "racecacr"
+      },
+      "output": "RACECACR"
+    },
+    {
+      "input": {
+        "s": "aaaaBBccDDeeABCDEF!!!!1234!!!!e"
+      },
+      "output": "AAAAbbCCddEEabcdef!!!!1234!!!!E"
+    },
+    {
+      "input": {
+        "s": "DRl"
+      },
+      "output": "drL"
+    },
+    {
+      "input": {
+        "s": " AbttHt1s Is A t3sT!G"
+      },
+      "output": " aBTThT1S iS a T3St!g"
+    },
+    {
+      "input": {
+        "s": "!!!!"
+      },
+      "output": "!!!!"
+    },
+    {
+      "input": {
+        "s": " AbttHt1s Is A ABCDEFGt3sT!G"
+      },
+      "output": " aBTThT1S iS a abcdefgT3St!g"
+    },
+    {
+      "input": {
+        "s": " AbttHt1s Is A t3s AbttHt1s Is A t3sT!GT!G"
+      },
+      "output": " aBTThT1S iS a T3S aBTThT1S iS a T3St!gt!g"
+    },
+    {
+      "input": {
+        "s": "AdEfGhI"
+      },
+      "output": "aDeFgHi"
+    },
+    {
+      "input": {
+        "s": "tuuTeaaaaBBccDDeeABeCDEFGBBccDDee"
+      },
+      "output": "TUUtEAAAAbbCCddEEabEcdefgbbCCddEE"
+    },
+    {
+      "input": {
+        "s": "rYarraaY"
+      },
+      "output": "RyARRAAy"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef solve(s):\n    \"\"\"You are given a string s.\n    if s[i] is a letter, reverse its case from lower to upper or vise versa, \n    otherwise keep it as it is.\n    If the string contains no letters, reverse the string.\n    The function should return the resulted string.\n    Examples\n    solve(\"1234\") = \"4321\"\n    solve(\"ab\") = \"AB\"\n    solve(\"#a@C\") = \"#A@c\"\n    \"\"\"\n\n    ans, has_letter = \"\", False\n    for ch in s:\n        if ch.isalpha():\n            has_letter = True\n            ans += ch.swapcase()\n        else:\n            ans += ch\n    return ans if has_letter else s[::-1]\n\n"
+  }
+}

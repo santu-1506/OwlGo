@@ -1,0 +1,766 @@
+{
+  "id": "humaneval-110-exchange",
+  "title": "Exchange",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "In this problem, you will implement a function that takes two lists of numbers,\nand determines whether it is possible to perform an exchange of elements\nbetween them to make lst1 a list of only even numbers.\nThere is no limit on the number of exchanged elements between lst1 and lst2.\nIf it is possible to exchange elements between the lst1 and lst2 to make\nall the elements of lst1 to be even, return \"YES\".\nOtherwise, return \"NO\".\nFor example:\nexchange([1, 2, 3, 4], [1, 2, 3, 4]) => \"YES\"\nexchange([1, 2, 3, 4], [1, 5, 3, 4]) => \"NO\"\nIt is assumed that the input lists will be non-empty.",
+  "entry_point": "exchange",
+  "params": [
+    "lst1",
+    "lst2"
+  ],
+  "function_signature": {
+    "python": "def exchange(lst1, lst2):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lst2": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lst2": [
+          1,
+          5,
+          3,
+          4
+        ]
+      },
+      "output": "NO"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lst2": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lst2": [
+          1,
+          5,
+          3,
+          4
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lst2": [
+          2,
+          1,
+          4,
+          3
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          5,
+          7,
+          3
+        ],
+        "lst2": [
+          2,
+          6,
+          4
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          5,
+          7,
+          3
+        ],
+        "lst2": [
+          2,
+          6,
+          3
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          3,
+          2,
+          6,
+          1,
+          8,
+          9
+        ],
+        "lst2": [
+          3,
+          5,
+          5,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          100,
+          200
+        ],
+        "lst2": [
+          200,
+          200
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          6
+        ],
+        "lst2": [
+          1,
+          3,
+          5
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5
+        ],
+        "lst2": [
+          2,
+          4,
+          6
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          2,
+          2
+        ],
+        "lst2": [
+          1,
+          3,
+          5
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5
+        ],
+        "lst2": [
+          2,
+          2,
+          2
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          2,
+          4,
+          6
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          6
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          5,
+          7,
+          9,
+          11
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          5,
+          7,
+          9,
+          11
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          5,
+          7
+        ],
+        "lst2": [
+          5,
+          7,
+          9,
+          11
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          6,
+          8,
+          8
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          5,
+          7,
+          11
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7,
+          7
+        ],
+        "lst2": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7,
+          7
+        ],
+        "lst2": [
+          2,
+          4,
+          6,
+          8,
+          6
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          5,
+          7,
+          4,
+          11
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          2,
+          7,
+          4,
+          7
+        ],
+        "lst2": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "lst2": [
+          1,
+          3,
+          11,
+          7
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7,
+          5
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7,
+          5
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5
+        ],
+        "lst2": [
+          1,
+          3,
+          5
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          6,
+          6,
+          8,
+          6,
+          8
+        ],
+        "lst2": [
+          1,
+          4,
+          3,
+          5,
+          7,
+          7
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          2,
+          5,
+          7,
+          3
+        ],
+        "lst2": [
+          1,
+          3,
+          2,
+          5,
+          7,
+          3
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          5,
+          4,
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          5,
+          4,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          5,
+          7,
+          3
+        ],
+        "lst2": [
+          1,
+          3,
+          5,
+          7,
+          3
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          2,
+          2,
+          7,
+          4,
+          7
+        ],
+        "lst2": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "output": "YES"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          2,
+          5,
+          7,
+          3,
+          3
+        ],
+        "lst2": [
+          1,
+          3,
+          2,
+          5,
+          7,
+          3,
+          3
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          2,
+          5,
+          7,
+          7
+        ],
+        "lst2": [
+          1,
+          3,
+          2,
+          5,
+          7,
+          7
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          3,
+          2,
+          5
+        ],
+        "lst2": [
+          1,
+          3,
+          2,
+          5
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          2,
+          4,
+          11,
+          6,
+          6
+        ],
+        "lst2": [
+          1,
+          3,
+          5
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          1,
+          2,
+          5,
+          7,
+          3,
+          3
+        ],
+        "lst2": [
+          1,
+          2,
+          5,
+          7,
+          3,
+          3
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          3,
+          5,
+          7
+        ],
+        "lst2": [
+          3,
+          5,
+          7
+        ]
+      },
+      "output": "NO"
+    },
+    {
+      "input": {
+        "lst1": [
+          4,
+          1,
+          3,
+          5,
+          7,
+          3,
+          3
+        ],
+        "lst2": [
+          4,
+          1,
+          3,
+          5,
+          7,
+          3,
+          3
+        ]
+      },
+      "output": "NO"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef exchange(lst1, lst2):\n    \"\"\"In this problem, you will implement a function that takes two lists of numbers,\n    and determines whether it is possible to perform an exchange of elements\n    between them to make lst1 a list of only even numbers.\n    There is no limit on the number of exchanged elements between lst1 and lst2.\n    If it is possible to exchange elements between the lst1 and lst2 to make\n    all the elements of lst1 to be even, return \"YES\".\n    Otherwise, return \"NO\".\n    For example:\n    exchange([1, 2, 3, 4], [1, 2, 3, 4]) => \"YES\"\n    exchange([1, 2, 3, 4], [1, 5, 3, 4]) => \"NO\"\n    It is assumed that the input lists will be non-empty.\n    \"\"\"\n\n\n    cnt_odd = len(list(filter(lambda x: x % 2 == 1, lst1)))\n    cnt_even = len(list(filter(lambda x: x % 2 == 0, lst2)))\n    return \"YES\" if cnt_odd <= cnt_even else \"NO\"\n\n"
+  }
+}

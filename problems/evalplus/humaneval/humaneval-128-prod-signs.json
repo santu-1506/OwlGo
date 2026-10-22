@@ -1,0 +1,532 @@
+{
+  "id": "humaneval-128-prod-signs",
+  "title": "Prod Signs",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given an array arr of integers and you need to return\nsum of magnitudes of integers multiplied by product of all signs\nof each number in the array, represented by 1, -1 or 0.\nNote: return None for empty arr.\n\nExample:\n>>> prod_signs([1, 2, 2, -4]) == -9\n>>> prod_signs([0, 1]) == 0\n>>> prod_signs([]) == None",
+  "entry_point": "prod_signs",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def prod_signs(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          2,
+          -4
+        ]
+      },
+      "output": -9
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          1
+        ]
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          2,
+          -4
+        ]
+      },
+      "output": -9
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1,
+          2,
+          3,
+          -1,
+          1
+        ]
+      },
+      "output": -10
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          1,
+          2,
+          -1,
+          -1,
+          9
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          1,
+          -1,
+          1
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": -4
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          1,
+          1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          -2,
+          -4
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          1,
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -2,
+          -2,
+          4
+        ]
+      },
+      "output": -10
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          5,
+          -7,
+          9
+        ]
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "arr": [
+          100,
+          10,
+          1,
+          0,
+          -1,
+          -10,
+          -100
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          -2
+        ]
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          -3,
+          0,
+          4
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          2,
+          2,
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          1,
+          -100,
+          0,
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          5,
+          -7
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          -2,
+          -4,
+          -4,
+          -4
+        ]
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          -2,
+          -4,
+          -4,
+          -4,
+          -4
+        ]
+      },
+      "output": -21
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          0,
+          -100,
+          0,
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -3,
+          -2,
+          -4,
+          -4,
+          -4
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          4,
+          0,
+          -100,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -2,
+          9,
+          4
+        ]
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          4,
+          2,
+          -2
+        ]
+      },
+      "output": -20
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          1,
+          -1,
+          -1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          1,
+          2,
+          -1
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          5,
+          2,
+          -2
+        ]
+      },
+      "output": -24
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          0,
+          0,
+          -1,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          1,
+          1,
+          -1,
+          -1,
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          100,
+          10,
+          1,
+          -1,
+          -10,
+          -100,
+          10
+        ]
+      },
+      "output": -232
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          -2,
+          2
+        ]
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          -1,
+          -7,
+          0,
+          1,
+          9
+        ]
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef prod_signs(arr):\n    \"\"\"\n    You are given an array arr of integers and you need to return\n    sum of magnitudes of integers multiplied by product of all signs\n    of each number in the array, represented by 1, -1 or 0.\n    Note: return None for empty arr.\n\n    Example:\n    >>> prod_signs([1, 2, 2, -4]) == -9\n    >>> prod_signs([0, 1]) == 0\n    >>> prod_signs([]) == None\n    \"\"\"\n\n    if arr == []: return None\n    if 0 in arr: return 0\n    s, sgn = 0, 1\n    for x in arr:\n        s += abs(x)\n        sgn *= (x // abs(x))\n    return s * sgn\n\n"
+  }
+}

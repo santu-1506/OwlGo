@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-283-validate",
+  "title": "Validate",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function takes in an integer and check whether the frequency of each digit in the integer is less than or equal to the digit itself.",
+  "entry_point": "validate",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def validate(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 1234
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 51241
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 1234
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 51241
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 321
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543210
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 112233445566
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111111
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 112233445565
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111110
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 112233445567
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9876543211
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111112
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111109
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 112233445568
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543209
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111113
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9876543208
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111108
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543206
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 111114
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9876543207
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 111107
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 112233445564
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9876543212
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543213
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543205
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543214
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def validate(n): \n    digits = [int(digit) for digit in str(n)]\n    return all(digit >= digits.count(digit) for digit in digits)\n"
+  }
+}

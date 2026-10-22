@@ -1,0 +1,393 @@
+{
+  "id": "mbpp-128-long-words",
+  "title": "Long Words",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find words that are longer than n characters from a given list of words.",
+  "entry_point": "long_words",
+  "params": [
+    "n",
+    "s"
+  ],
+  "function_signature": {
+    "python": "def long_words(n, s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 3,
+        "s": "python is a programming language"
+      },
+      "output": [
+        "python",
+        "programming",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "n": 2,
+        "s": "writing a program"
+      },
+      "output": [
+        "writing",
+        "program"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 3,
+        "s": "python is a programming language"
+      },
+      "output": [
+        "python",
+        "programming",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "n": 2,
+        "s": "writing a program"
+      },
+      "output": [
+        "writing",
+        "program"
+      ]
+    },
+    {
+      "input": {
+        "n": 5,
+        "s": "sorting list"
+      },
+      "output": [
+        "sorting"
+      ]
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "abc  def  ghi  jklm  nopqrs   tuvwxyz"
+      },
+      "output": [
+        "abc",
+        "def",
+        "ghi",
+        "jklm",
+        "nopqrs",
+        "tuvwxyz"
+      ]
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 10,
+        "s": "thisisaverylongword testing wordlengths"
+      },
+      "output": [
+        "thisisaverylongword",
+        "wordlengths"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "hello python is a programming language"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "is"
+      },
+      "output": [
+        "is"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "thisisaverylongwordw testing wordlengths"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "jklm"
+      },
+      "output": [
+        "jklm"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "thisisaverylongwordw teseting wordlengths"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "thisisaverylongword testing wordlengths"
+      },
+      "output": [
+        "thisisaverylongword",
+        "testing",
+        "wordlengths"
+      ]
+    },
+    {
+      "input": {
+        "n": 10,
+        "s": "is"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 10,
+        "s": "hello python is a programming language"
+      },
+      "output": [
+        "programming"
+      ]
+    },
+    {
+      "input": {
+        "n": 1,
+        "s": "thisisaverylongword testing wordlengths"
+      },
+      "output": [
+        "thisisaverylongword",
+        "testing",
+        "wordlengths"
+      ]
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "jklam"
+      },
+      "output": [
+        "jklam"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "tuvwxyz"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "hello"
+      },
+      "output": [
+        "hello"
+      ]
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "jkjlam"
+      },
+      "output": [
+        "jkjlam"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 1,
+        "s": "jklam"
+      },
+      "output": [
+        "jklam"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "thisisaverylongwordnopqrsw teseting wordlengths"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 10,
+        "s": "heogramming language"
+      },
+      "output": [
+        "heogramming"
+      ]
+    },
+    {
+      "input": {
+        "n": 10,
+        "s": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "i"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 11,
+        "s": "thisisaverylongword testing wordlengths"
+      },
+      "output": [
+        "thisisaverylongword"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "thisisaverylongword"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 2,
+        "s": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 2,
+        "s": "heogramming language"
+      },
+      "output": [
+        "heogramming",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "n": 2,
+        "s": "hello python is a programming language"
+      },
+      "output": [
+        "hello",
+        "python",
+        "programming",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "ii"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 1,
+        "s": "thisisaverylongwordw teseting wordlengths"
+      },
+      "output": [
+        "thisisaverylongwordw",
+        "teseting",
+        "wordlengths"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "thisisaveriylongwordw testing wordlengths"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 9,
+        "s": "jklm"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "is"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 10,
+        "s": "helloh python is a programming language"
+      },
+      "output": [
+        "programming"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "abc  def  ghi  jklm  nopqrs   tuvwxyz"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "n": 2,
+        "s": "heogramming laneguage"
+      },
+      "output": [
+        "heogramming",
+        "laneguage"
+      ]
+    },
+    {
+      "input": {
+        "n": 0,
+        "s": "ajklamteseting"
+      },
+      "output": [
+        "ajklamteseting"
+      ]
+    },
+    {
+      "input": {
+        "n": 100,
+        "s": "thisisaveriylongwordw"
+      },
+      "output": []
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def long_words(n, s):\n    return list(filter(lambda x: len(x) > n, s.split(' ')))\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-143-words-in-sentence",
+  "title": "Words In Sentence",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a string representing a sentence,\nthe sentence contains some words separated by a space,\nand you have to return a string that contains the words from the original sentence,\nwhose lengths are prime numbers,\nthe order of the words in the new string should be the same as the original one.\n\nExample 1:\n    Input: sentence = \"This is a test\"\n    Output: \"is\"\n\nExample 2:\n    Input: sentence = \"lets go for swimming\"\n    Output: \"go for\"\n\nConstraints:\n    * 1 <= len(sentence) <= 100\n    * sentence contains only letters",
+  "entry_point": "words_in_sentence",
+  "params": [
+    "sentence"
+  ],
+  "function_signature": {
+    "python": "def words_in_sentence(sentence):"
+  },
+  "examples": [
+    {
+      "input": {
+        "sentence": "This is a test"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "sentence": "lets go for swimming"
+      },
+      "output": "go for"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "sentence": "This is a test"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "sentence": "lets go for swimming"
+      },
+      "output": "go for"
+    },
+    {
+      "input": {
+        "sentence": "there is no place available here"
+      },
+      "output": "there is no place"
+    },
+    {
+      "input": {
+        "sentence": "Hi I am Hussein"
+      },
+      "output": "Hi am Hussein"
+    },
+    {
+      "input": {
+        "sentence": "go for it"
+      },
+      "output": "go for it"
+    },
+    {
+      "input": {
+        "sentence": "here"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "sentence": "here is"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "sentence": "cats and dogs"
+      },
+      "output": "and"
+    },
+    {
+      "input": {
+        "sentence": "I am a developer"
+      },
+      "output": "am"
+    },
+    {
+      "input": {
+        "sentence": "elephants are huge"
+      },
+      "output": "are"
+    },
+    {
+      "input": {
+        "sentence": "the quick brown fox jumps over the lazy dog"
+      },
+      "output": "the quick brown fox jumps the dog"
+    },
+    {
+      "input": {
+        "sentence": "this code challenge is tricky"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "sentence": "Python programming is fun"
+      },
+      "output": "programming is fun"
+    },
+    {
+      "input": {
+        "sentence": "mathematics can be easy"
+      },
+      "output": "mathematics can be"
+    },
+    {
+      "input": {
+        "sentence": "writing clean code is important"
+      },
+      "output": "writing clean is"
+    },
+    {
+      "input": {
+        "sentence": "I love eating pizza"
+      },
+      "output": "pizza"
+    },
+    {
+      "input": {
+        "sentence": "quick sort algorithm is efficient"
+      },
+      "output": "quick is"
+    },
+    {
+      "input": {
+        "sentence": "I am a dquick sort algorithm is efficienteveloper"
+      },
+      "output": "am is efficienteveloper"
+    },
+    {
+      "input": {
+        "sentence": "mathematics can be eacsy"
+      },
+      "output": "mathematics can be eacsy"
+    },
+    {
+      "input": {
+        "sentence": "eleephants are huge"
+      },
+      "output": "are"
+    },
+    {
+      "input": {
+        "sentence": "Python programmingg is fun"
+      },
+      "output": "is fun"
+    },
+    {
+      "input": {
+        "sentence": "this code schallenge is tricky"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "sentence": "this code mathematics can be eacsychalleI love eating pizzangge is tricky"
+      },
+      "output": "mathematics can be is"
+    },
+    {
+      "input": {
+        "sentence": "I athe quick brown fox jumps over the lazy dogm a developer"
+      },
+      "output": "quick brown fox jumps the"
+    },
+    {
+      "input": {
+        "sentence": "Io love eaI love eating pizzaquick sort algorithm is efficientting pizza"
+      },
+      "output": "Io eaI is efficientting pizza"
+    },
+    {
+      "input": {
+        "sentence": "this acode mathematics can be eacsychalleI love eating pizzangge is tricky"
+      },
+      "output": "acode mathematics can be is"
+    },
+    {
+      "input": {
+        "sentence": "Io love eaI love eating pizort algorithm is efficientting pizza"
+      },
+      "output": "Io eaI is efficientting pizza"
+    },
+    {
+      "input": {
+        "sentence": "I athe qurown fox jumps over the lazy dogm a developer"
+      },
+      "output": "fox jumps the"
+    },
+    {
+      "input": {
+        "sentence": "quick sort algoritI love eating pizzahm is efficient"
+      },
+      "output": "quick pizzahm is"
+    },
+    {
+      "input": {
+        "sentence": "this code challenge is triycky"
+      },
+      "output": "is triycky"
+    },
+    {
+      "input": {
+        "sentence": "I am a dquick sort algorithm isp efficientevelope r"
+      },
+      "output": "am isp"
+    },
+    {
+      "input": {
+        "sentence": "eleepnhantselephanpts are huge are huge"
+      },
+      "output": "are are"
+    },
+    {
+      "input": {
+        "sentence": "I am a deper"
+      },
+      "output": "am deper"
+    },
+    {
+      "input": {
+        "sentence": "Pyththe quick brown fox jumps over the lazy dogon programming is fun"
+      },
+      "output": "Pyththe quick brown fox jumps the dogon programming is fun"
+    },
+    {
+      "input": {
+        "sentence": "this code schayllenge is tricky"
+      },
+      "output": "schayllenge is"
+    },
+    {
+      "input": {
+        "sentence": "thse quick brown fox jumps over the lazy dog"
+      },
+      "output": "quick brown fox jumps the dog"
+    },
+    {
+      "input": {
+        "sentence": "I am a dquick sort algorithm is efficientthis code challenge is triyqckyeveloper"
+      },
+      "output": "am is efficientthis is"
+    },
+    {
+      "input": {
+        "sentence": "quick soithm is efficient"
+      },
+      "output": "quick is"
+    },
+    {
+      "input": {
+        "sentence": "eleepnhantselepmathematics can be easyhanpts are huge are huge"
+      },
+      "output": "can be are are"
+    },
+    {
+      "input": {
+        "sentence": "quick sort algoritI love eaating pizzahm is efficient"
+      },
+      "output": "quick eaating pizzahm is"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef words_in_sentence(sentence):\n    \"\"\"\n    You are given a string representing a sentence,\n    the sentence contains some words separated by a space,\n    and you have to return a string that contains the words from the original sentence,\n    whose lengths are prime numbers,\n    the order of the words in the new string should be the same as the original one.\n\n    Example 1:\n        Input: sentence = \"This is a test\"\n        Output: \"is\"\n\n    Example 2:\n        Input: sentence = \"lets go for swimming\"\n        Output: \"go for\"\n\n    Constraints:\n        * 1 <= len(sentence) <= 100\n        * sentence contains only letters\n    \"\"\"\n\n\n    def is_prime(a):\n        return not (a < 2 or any(a % x == 0 for x in range(2, int(a ** 0.5) + 1)))\n    return \" \".join(list(filter(lambda word: is_prime(len(word)), sentence.split(\" \"))))\n\n"
+  }
+}

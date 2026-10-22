@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-238-number-of-substrings",
+  "title": "Number Of Substrings",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to count the number of non-empty substrings of a given string.",
+  "entry_point": "number_of_substrings",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def number_of_substrings(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "abc"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "str1": "abcd"
+      },
+      "output": 10
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "abc"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "str1": "abcd"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "str1": "abcde"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "aaaaaa"
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "str1": "aaaaaaa"
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "str1": "aaaaa"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaa"
+      },
+      "output": 78
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaa"
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaa"
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaa"
+      },
+      "output": 120
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaa"
+      },
+      "output": 91
+    },
+    {
+      "input": {
+        "str1": "a"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaa"
+      },
+      "output": 136
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaa"
+      },
+      "output": 105
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 210
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 231
+    },
+    {
+      "input": {
+        "str1": "TLPpppcX"
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaa"
+      },
+      "output": 171
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 190
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 253
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 325
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 276
+    },
+    {
+      "input": {
+        "str1": "aa"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 465
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 1326
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 2926
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 2016
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 1770
+    },
+    {
+      "input": {
+        "str1": "emHJqf"
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 861
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 561
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 496
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 1275
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 4371
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 435
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 2145
+    },
+    {
+      "input": {
+        "str1": "TLPPp"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 1035
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": 1081
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def number_of_substrings(str1): \n\tstr_len = len(str1) \n\treturn str_len * (str_len + 1) // 2\n"
+  }
+}

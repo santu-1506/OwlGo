@@ -1,0 +1,584 @@
+{
+  "id": "mbpp-277-dict-filter",
+  "title": "Dict Filter",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes in a dictionary and integer n and filters the dictionary to only include entries with values greater than or equal to n.",
+  "entry_point": "dict_filter",
+  "params": [
+    "dict1",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def dict_filter(dict1, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 170
+      },
+      "output": {
+        "Cierra Vega": 175,
+        "Alden Cantrell": 180,
+        "Pierre Cox": 190
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 180
+      },
+      "output": {
+        "Alden Cantrell": 180,
+        "Pierre Cox": 190
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 170
+      },
+      "output": {
+        "Cierra Vega": 175,
+        "Alden Cantrell": 180,
+        "Pierre Cox": 190
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 180
+      },
+      "output": {
+        "Alden Cantrell": 180,
+        "Pierre Cox": 190
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 190
+      },
+      "output": {
+        "Pierre Cox": 190
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": 0
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": -5
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": -10
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": 10
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10
+        },
+        "n": 10
+      },
+      "output": {
+        "banana": 12,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 200
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": 8
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10,
+          "grorangeape": -10
+        },
+        "n": 10
+      },
+      "output": {
+        "banana": 12,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": -1
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10,
+          "grrape": 180
+        },
+        "n": 10
+      },
+      "output": {
+        "banana": 12,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10,
+        "grrape": 180
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Kierra Gentry": 165,
+          "Pierre Cox": 190
+        },
+        "n": 201
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10,
+          "grrape": 180,
+          "Pierre": 12
+        },
+        "n": 10
+      },
+      "output": {
+        "banana": 12,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10,
+        "grrape": 180,
+        "Pierre": 12
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "201": -11,
+          "-58": -5,
+          "10": -94
+        },
+        "n": 165
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cantrell": 10,
+          "Gentry": -31,
+          "apple": 44,
+          "Nw": -33,
+          "IhVdpFDGMV": 200,
+          "abM": 20,
+          "JDnQ": -11
+        },
+        "n": -5
+      },
+      "output": {
+        "Cantrell": 10,
+        "apple": 44,
+        "IhVdpFDGMV": 200,
+        "abM": 20
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10,
+          "grrape": 180
+        },
+        "n": -11
+      },
+      "output": {
+        "apple": 5,
+        "banana": 12,
+        "orange": 8,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10,
+        "grrape": 180
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "201": -11,
+          "-58": -5
+        },
+        "n": 165
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Pierre Cox": 190
+        },
+        "n": 200
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "201": -11,
+          "-58": -5
+        },
+        "n": 164
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10,
+          "grorangeape": -10
+        },
+        "n": -10
+      },
+      "output": {
+        "apple": 5,
+        "banana": 12,
+        "orange": 8,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10,
+        "grorangeape": -10
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "-58": -5,
+          "10": -94
+        },
+        "n": 165
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {},
+        "n": 180
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-72": -33
+        },
+        "n": 0
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "201": -11,
+          "-58": -5
+        },
+        "n": -33
+      },
+      "output": {
+        "-1": 12,
+        "201": -11,
+        "-58": -5
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "-58": -5,
+          "10": -94,
+          "0": -93
+        },
+        "n": 166
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Pierre Cox": 190
+        },
+        "n": 199
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "75.87572329200214": false,
+          "79.71274224615752": false
+        },
+        "n": 8
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "10": -94
+        },
+        "n": 165
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "175": false,
+          "-57": true,
+          "-32": true,
+          "5": false
+        },
+        "n": 8
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "-58": 199,
+          "10": -94
+        },
+        "n": 190
+      },
+      "output": {
+        "-58": 199
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Cierra Vega": 175,
+          "Alden Cantrell": 180,
+          "Pierre Cox": 190
+        },
+        "n": 165
+      },
+      "output": {
+        "Cierra Vega": 175,
+        "Alden Cantrell": 180,
+        "Pierre Cox": 190
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "-58": -5,
+          "10": -94,
+          "0": -93
+        },
+        "n": -1
+      },
+      "output": {
+        "-1": 12
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "Alden Cantrell": false,
+          "Vega": false,
+          "Cierra Vega": true,
+          "x": true,
+          "abM": true
+        },
+        "n": 11
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "201": -11,
+          "-58": -31
+        },
+        "n": 8
+      },
+      "output": {
+        "-1": 12
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-1": 12,
+          "201": -11,
+          "-58": -5,
+          "10": -94
+        },
+        "n": true
+      },
+      "output": {
+        "-1": 12
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "15": false
+        },
+        "n": 8
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "-72": -34
+        },
+        "n": 20
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {
+          "apple": 5,
+          "banana": 12,
+          "orange": 8,
+          "grape": 15,
+          "watermelon": 20,
+          "kiwi": 10,
+          "grrape": 180
+        },
+        "n": -12
+      },
+      "output": {
+        "apple": 5,
+        "banana": 12,
+        "orange": 8,
+        "grape": 15,
+        "watermelon": 20,
+        "kiwi": 10,
+        "grrape": 180
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def dict_filter(dict1, n):\n    return {key : value for (key, value) in dict1.items() if value >=n}\n"
+  }
+}

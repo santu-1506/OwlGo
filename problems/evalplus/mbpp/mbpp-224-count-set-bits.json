@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-224-count-set-bits",
+  "title": "Count Set Bits",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to count the number of set bits (binary digits with value 1) in a given number.",
+  "entry_point": "count_Set_Bits",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def count_Set_Bits(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 999999999
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "n": 1000000000
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000000001
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "n": 999999998
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 999999997
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n": 999999996
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "n": 1000000002
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "n": 1000000003
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 999999995
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 999999994
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 999999993
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "n": 1000000004
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1000000005
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 999999992
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "n": 1000000006
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 999999991
+      },
+      "output": 20
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def count_Set_Bits(n): \n    return bin(n)[2:].count('1')\n"
+  }
+}

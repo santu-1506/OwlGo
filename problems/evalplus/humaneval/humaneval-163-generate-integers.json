@@ -1,0 +1,369 @@
+{
+  "id": "humaneval-163-generate-integers",
+  "title": "Generate Integers",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given two positive integers a and b, return the even digits between a\nand b, in ascending order.\n\nFor example:\ngenerate_integers(2, 8) => [2, 4, 6, 8]\ngenerate_integers(8, 2) => [2, 4, 6, 8]\ngenerate_integers(10, 14) => []",
+  "entry_point": "generate_integers",
+  "params": [
+    "a",
+    "b"
+  ],
+  "function_signature": {
+    "python": "def generate_integers(a, b):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 2,
+        "b": 10
+      },
+      "output": [
+        2,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 2
+      },
+      "output": [
+        2,
+        4,
+        6,
+        8
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 2,
+        "b": 10
+      },
+      "output": [
+        2,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 2
+      },
+      "output": [
+        2,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 132,
+        "b": 2
+      },
+      "output": [
+        2,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 17,
+        "b": 89
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 6,
+        "b": 12
+      },
+      "output": [
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 13,
+        "b": 25
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 50,
+        "b": 60
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 200
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 201,
+        "b": 299
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 5
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 11,
+        "b": 11
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 5
+      },
+      "output": [
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 11
+      },
+      "output": [
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 50,
+        "b": 34
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 10
+      },
+      "output": [
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 201,
+        "b": 13
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 34,
+        "b": 201
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 5
+      },
+      "output": [
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 34,
+        "b": 200
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 201,
+        "b": 10
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 299,
+        "b": 299
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 200,
+        "b": 299
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 25,
+        "b": 10
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 201,
+        "b": 9
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 11,
+        "b": 299
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 25
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 6
+      },
+      "output": [
+        6
+      ]
+    },
+    {
+      "input": {
+        "a": 13,
+        "b": 12
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 14,
+        "b": 13
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 200,
+        "b": 300
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 60,
+        "b": 13
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 50,
+        "b": 11
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 13,
+        "b": 201
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 14,
+        "b": 10
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 4
+      },
+      "output": [
+        4
+      ]
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 34
+      },
+      "output": [
+        6,
+        8
+      ]
+    },
+    {
+      "input": {
+        "a": 201,
+        "b": 298
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 200,
+        "b": 9
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 300,
+        "b": 299
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 199,
+        "b": 13
+      },
+      "output": []
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n\n\n    if a > b: a, b = b, a\n    return [i for i in range(a, min(b + 1, 10)) if i % 2 == 0]\n\n"
+  }
+}

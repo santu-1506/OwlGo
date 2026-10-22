@@ -1,0 +1,1484 @@
+{
+  "id": "mbpp-413-extract-nth-element",
+  "title": "Extract Nth Element",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to extract the nth element from a given list of tuples.",
+  "entry_point": "extract_nth_element",
+  "params": [
+    "list1",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def extract_nth_element(list1, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Greyson Fulton",
+              98,
+              99
+            ]
+          },
+          {
+            "$tuple": [
+              "Brady Kent",
+              97,
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Wyatt Knott",
+              91,
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Beau Turnbull",
+              94,
+              98
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "Greyson Fulton",
+        "Brady Kent",
+        "Wyatt Knott",
+        "Beau Turnbull"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Greyson Fulton",
+              98,
+              99
+            ]
+          },
+          {
+            "$tuple": [
+              "Brady Kent",
+              97,
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Wyatt Knott",
+              91,
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Beau Turnbull",
+              94,
+              98
+            ]
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        99,
+        96,
+        94,
+        98
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Greyson Fulton",
+              98,
+              99
+            ]
+          },
+          {
+            "$tuple": [
+              "Brady Kent",
+              97,
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Wyatt Knott",
+              91,
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Beau Turnbull",
+              94,
+              98
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "Greyson Fulton",
+        "Brady Kent",
+        "Wyatt Knott",
+        "Beau Turnbull"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Greyson Fulton",
+              98,
+              99
+            ]
+          },
+          {
+            "$tuple": [
+              "Brady Kent",
+              97,
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Wyatt Knott",
+              91,
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Beau Turnbull",
+              94,
+              98
+            ]
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        99,
+        96,
+        94,
+        98
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Greyson Fulton",
+              98,
+              99
+            ]
+          },
+          {
+            "$tuple": [
+              "Brady Kent",
+              97,
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Wyatt Knott",
+              91,
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Beau Turnbull",
+              94,
+              98
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        98,
+        97,
+        91,
+        94
+      ]
+    },
+    {
+      "input": {
+        "list1": [],
+        "n": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "John Doe",
+              78,
+              90,
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane Smith",
+              92,
+              87,
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              79,
+              85,
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Emily Brown",
+              88,
+              91,
+              89
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        78,
+        92,
+        79,
+        88
+      ]
+    },
+    {
+      "input": {
+        "list1": [],
+        "n": 1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "John Doe",
+              78,
+              90,
+              82
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "John Doe"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [],
+        "n": 84
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list1": [],
+        "n": 85
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Emily BrownA",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        "C",
+        1,
+        1,
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Emily BrownA",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "Emily BrownA",
+        1,
+        "B",
+        "C",
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "A",
+        "B",
+        "C",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "A",
+        "B",
+        "C",
+        "C",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "John Doe",
+              78,
+              90,
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane Smith",
+              92,
+              87,
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              79,
+              85,
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Emily Brown",
+              88,
+              91,
+              89
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "John Doe",
+        "Jane Smith",
+        "Mark Johnson",
+        "Emily Brown"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": -1
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              2,
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "A",
+        "B",
+        2,
+        "C",
+        "C",
+        "A"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": -1
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Emily BrownA",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": -1
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "B",
+        "C",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "EEmily BrownownA",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              1,
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        "C",
+        1,
+        1,
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "B",
+        "C",
+        "Mark Johnson",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1,
+        "C",
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Jane Smith",
+              92,
+              87,
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              79,
+              85,
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Emily Brown",
+              88,
+              91,
+              89
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "Jane Smith",
+        "Mark Johnson",
+        "Emily Brown"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C"
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "B",
+        "C",
+        "Mark Johnson",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "AA",
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        "A",
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "Jane Smith",
+              92,
+              87,
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              79,
+              85,
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane Smith",
+              0,
+              87,
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Emily Brown",
+              88,
+              91,
+              89
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "Jane Smith",
+        "Mark Johnson",
+        "Jane Smith",
+        "Emily Brown"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C"
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "A",
+        "B",
+        "C",
+        "C",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "John Doe",
+              78,
+              90,
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane Smith",
+              92,
+              87,
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Mark Johnson",
+              79,
+              85,
+              85,
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Emily Brown",
+              88,
+              91,
+              89
+            ]
+          }
+        ],
+        "n": 0
+      },
+      "output": [
+        "John Doe",
+        "Jane Smith",
+        "Mark Johnson",
+        "Emily Brown"
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "John Doe",
+              78,
+              90,
+              82
+            ]
+          }
+        ],
+        "n": -1
+      },
+      "output": [
+        82
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": -2
+      },
+      "output": [
+        "A",
+        "B",
+        "C",
+        "C"
+      ]
+    },
+    {
+      "input": {
+        "list1": [],
+        "n": 83
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1,
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "C",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          }
+        ],
+        "n": -1
+      },
+      "output": [
+        92,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "list1": [
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "B",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "C",
+              1
+            ]
+          },
+          {
+            "$tuple": [
+              "A",
+              1
+            ]
+          }
+        ],
+        "n": -1
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def extract_nth_element(list1, n):\n    return [x[n] for x in list1]\n"
+  }
+}

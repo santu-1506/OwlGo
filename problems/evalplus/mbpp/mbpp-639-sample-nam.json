@@ -1,0 +1,568 @@
+{
+  "id": "mbpp-639-sample-nam",
+  "title": "Sample Nam",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to sum the length of the names of a given list of names after removing the names that start with a lowercase letter.",
+  "entry_point": "sample_nam",
+  "params": [
+    "sample_names"
+  ],
+  "function_signature": {
+    "python": "def sample_nam(sample_names):"
+  },
+  "examples": [
+    {
+      "input": {
+        "sample_names": [
+          "sally",
+          "Dylan",
+          "rebecca",
+          "Diana",
+          "Joanne",
+          "keith"
+        ]
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "sample_names": [
+          "php",
+          "res",
+          "Python",
+          "abcd",
+          "Java",
+          "aaa"
+        ]
+      },
+      "output": 10
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "sample_names": [
+          "sally",
+          "Dylan",
+          "rebecca",
+          "Diana",
+          "Joanne",
+          "keith"
+        ]
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "sample_names": [
+          "php",
+          "res",
+          "Python",
+          "abcd",
+          "Java",
+          "aaa"
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "sample_names": [
+          "abcd",
+          "Python",
+          "abba",
+          "aba"
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "sample_names": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "sample_names": [
+          "AbCdE",
+          "fGH",
+          "IJKLMnOp",
+          "qrs",
+          "TUVW",
+          "xyz"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "sample_names": [
+          "Python"
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "D@ve",
+          "MarY",
+          "Linda",
+          "Zach!",
+          "@lex"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "Elephant",
+          "l!ly",
+          "&bbie",
+          "T@ger",
+          "D@lion",
+          "Rh!no"
+        ]
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "sample_names": [
+          "%lice",
+          "^ob",
+          "&arl",
+          "*andy",
+          "$ugene",
+          "Oscar"
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "sample_names": [
+          "@my",
+          "B@ob",
+          "$ara",
+          "Mike",
+          "S!mon",
+          "L!sa"
+        ]
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "sample_names": [
+          "Oscar",
+          "$ugene",
+          "D@ve!",
+          "%lice",
+          "^ob"
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "sample_names": [
+          "T@ger",
+          "Elephant",
+          "l!ly",
+          "$ugene",
+          "Rh!no"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "!Rebecca",
+          "@lex",
+          "Zach!",
+          "&bbie"
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "L!sa",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "*andy",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "*andy",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "__",
+          "Joh*andyn",
+          "_"
+        ]
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "L!sa",
+          "!Rebecca",
+          "Diana!",
+          "_",
+          "John"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "&bbie",
+          "H",
+          "tTftc",
+          "IJKLMnOp",
+          "IJKLMnOp",
+          "HYAOjA"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "sample_names": [
+          "!Rebecca",
+          "dylan",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "D@ve",
+          "Linda",
+          "Zach!",
+          "@lex"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "D@v@e!",
+          "Oscar",
+          "$ug$ene",
+          "D@ve!",
+          "%lice",
+          "^ob",
+          "%lice"
+        ]
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "sample_names": [
+          "Oscar",
+          "$ugene",
+          "D@ve!",
+          "%lice",
+          "^ob",
+          "Oscar"
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "D@ve",
+          "MarY",
+          "D@veZach!",
+          "Linda",
+          "Zach!",
+          "@lex"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "xyz",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "sample_names": [
+          "!Rebecca",
+          "dylan",
+          "Diana!",
+          "-"
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "sample_names": [
+          "$ugene",
+          "D@ve!",
+          "^ob"
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "*andy",
+          "Joh*andJyn",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "__",
+          "Joh*andyn",
+          "_"
+        ]
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "sample_names": [
+          "dylan",
+          "!Rebecca",
+          "&arl",
+          "DianaDiana!!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "*anPythondy",
+          "Joh*andJyn",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "__",
+          "DianaDiana!!",
+          "Joh*andyn",
+          "_"
+        ]
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "sample_names": [
+          "T@ger",
+          "Elephant",
+          "$ugene",
+          "Rh!no",
+          "_"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "L!sa",
+          "!Rebecca",
+          "Diana!",
+          "__",
+          "John"
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "sample_names": [
+          "D@v@e!",
+          "Oscrar",
+          "$ug$ene",
+          "D@ve!",
+          "%lice",
+          "^ob",
+          "%lice"
+        ]
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "sample_names": [
+          "D@veZach!",
+          "Python",
+          "jdps",
+          "Zach!"
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "!RebeccJohna",
+          "L!sa",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "sample_names": [
+          "l!ly",
+          "&bbie",
+          "T@ger",
+          "D@lion",
+          "Rh!no"
+        ]
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "sample_names": [
+          "John",
+          "dylan",
+          "!RebeccJohna",
+          "L!sa",
+          "&arl",
+          "!Rebecca",
+          "Diana!",
+          "-",
+          "_"
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "sample_names": [
+          "Oscar",
+          "$ugene",
+          "D@ve!",
+          "%lice",
+          "D@veZach!",
+          "^ob",
+          "Oscar",
+          "D@veZach!"
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "sample_names": [
+          "!Rebecca",
+          "dylan",
+          "Diana!",
+          "-",
+          "dylan"
+        ]
+      },
+      "output": 6
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def sample_nam(sample_names):\n  sample_names=list(filter(lambda el:el[0].isupper() and el[1:].islower(),sample_names))\n  return len(''.join(sample_names))\n"
+  }
+}

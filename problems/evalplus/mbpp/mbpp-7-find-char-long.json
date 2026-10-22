@@ -1,0 +1,473 @@
+{
+  "id": "mbpp-7-find-char-long",
+  "title": "Find Char Long",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find all words which are at least 4 characters long in a string.",
+  "entry_point": "find_char_long",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def find_char_long(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "Please move back to stream"
+      },
+      "output": [
+        "Please",
+        "move",
+        "back",
+        "stream"
+      ]
+    },
+    {
+      "input": {
+        "text": "Jing Eco and Tech"
+      },
+      "output": [
+        "Jing",
+        "Tech"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "Please move back to stream"
+      },
+      "output": [
+        "Please",
+        "move",
+        "back",
+        "stream"
+      ]
+    },
+    {
+      "input": {
+        "text": "Jing Eco and Tech"
+      },
+      "output": [
+        "Jing",
+        "Tech"
+      ]
+    },
+    {
+      "input": {
+        "text": "Jhingai wulu road Zone 3"
+      },
+      "output": [
+        "Jhingai",
+        "wulu",
+        "road",
+        "Zone"
+      ]
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no words that are at least 4 characters long."
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "words",
+        "that",
+        "least",
+        "characters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "words"
+      },
+      "output": [
+        "words"
+      ]
+    },
+    {
+      "input": {
+        "text": "with"
+      },
+      "output": [
+        "with"
+      ]
+    },
+    {
+      "input": {
+        "text": "4"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "ve"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no arewords that are along.t least 4 charatacters long.is"
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "arewords",
+        "that",
+        "along",
+        "least",
+        "charatacters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "arewords"
+      },
+      "output": [
+        "arewords"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no words that are at llongeast 4 characters long."
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "words",
+        "that",
+        "llongeast",
+        "characters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "arrewords"
+      },
+      "output": [
+        "arrewords"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a very long strigng with no words that are at least 4 characters long."
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "strigng",
+        "with",
+        "words",
+        "that",
+        "least",
+        "characters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "least"
+      },
+      "output": [
+        "least"
+      ]
+    },
+    {
+      "input": {
+        "text": "arerwordsThis"
+      },
+      "output": [
+        "arerwordsThis"
+      ]
+    },
+    {
+      "input": {
+        "text": "stralong.t"
+      },
+      "output": [
+        "stralong"
+      ]
+    },
+    {
+      "input": {
+        "text": "stralonwith.t"
+      },
+      "output": [
+        "stralonwith"
+      ]
+    },
+    {
+      "input": {
+        "text": "vate"
+      },
+      "output": [
+        "vate"
+      ]
+    },
+    {
+      "input": {
+        "text": "Thicharatactercss"
+      },
+      "output": [
+        "Thicharatactercss"
+      ]
+    },
+    {
+      "input": {
+        "text": "wosrds"
+      },
+      "output": [
+        "wosrds"
+      ]
+    },
+    {
+      "input": {
+        "text": "vwosrds"
+      },
+      "output": [
+        "vwosrds"
+      ]
+    },
+    {
+      "input": {
+        "text": "llongeast"
+      },
+      "output": [
+        "llongeast"
+      ]
+    },
+    {
+      "input": {
+        "text": "along.t"
+      },
+      "output": [
+        "along"
+      ]
+    },
+    {
+      "input": {
+        "text": "vcharacterse"
+      },
+      "output": [
+        "vcharacterse"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no arords that are along.t least 4 charatacters long.is"
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "arords",
+        "that",
+        "along",
+        "least",
+        "charatacters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "Thicharatactercsvcharacterse"
+      },
+      "output": [
+        "Thicharatactercsvcharacterse"
+      ]
+    },
+    {
+      "input": {
+        "text": "ThicharatacterThis is a very long strigng with no words that are at least 4 characters long.csvcharacterse"
+      },
+      "output": [
+        "ThicharatacterThis",
+        "very",
+        "long",
+        "strigng",
+        "with",
+        "words",
+        "that",
+        "least",
+        "characters",
+        "long",
+        "csvcharacterse"
+      ]
+    },
+    {
+      "input": {
+        "text": "ThicharatacterT4his is a very long strigng with no words that are at least 4 characters long.csvcharacterse"
+      },
+      "output": [
+        "ThicharatacterT4his",
+        "very",
+        "long",
+        "strigng",
+        "with",
+        "words",
+        "that",
+        "least",
+        "characters",
+        "long",
+        "csvcharacterse"
+      ]
+    },
+    {
+      "input": {
+        "text": "arords"
+      },
+      "output": [
+        "arords"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no arewords that are along.t least 4 charatacters lonThis vwosrdsis a very long string with no words that are at least 4 characters long.g.is"
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "arewords",
+        "that",
+        "along",
+        "least",
+        "charatacters",
+        "lonThis",
+        "vwosrdsis",
+        "very",
+        "long",
+        "string",
+        "with",
+        "words",
+        "that",
+        "least",
+        "characters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "long.with"
+      },
+      "output": [
+        "long",
+        "with"
+      ]
+    },
+    {
+      "input": {
+        "text": "Thicharattactercss"
+      },
+      "output": [
+        "Thicharattactercss"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no alrords that are along.t least 4 charatacters long.is"
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "alrords",
+        "that",
+        "along",
+        "least",
+        "charatacters",
+        "long"
+      ]
+    },
+    {
+      "input": {
+        "text": "Thicharataercss"
+      },
+      "output": [
+        "Thicharataercss"
+      ]
+    },
+    {
+      "input": {
+        "text": "arewds"
+      },
+      "output": [
+        "arewds"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a very long string with no arords that are along.t least 4 charatacters long.isarords"
+      },
+      "output": [
+        "This",
+        "very",
+        "long",
+        "string",
+        "with",
+        "arords",
+        "that",
+        "along",
+        "least",
+        "charatacters",
+        "long",
+        "isarords"
+      ]
+    },
+    {
+      "input": {
+        "text": "thatvcharacterse"
+      },
+      "output": [
+        "thatvcharacterse"
+      ]
+    },
+    {
+      "input": {
+        "text": "is"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "tat"
+      },
+      "output": []
+    }
+  ],
+  "comparison": {
+    "mode": "set",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef find_char_long(text):\n  return (re.findall(r\"\\b\\w{4,}\\b\", text))\n"
+  }
+}

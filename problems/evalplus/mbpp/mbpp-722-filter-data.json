@@ -1,0 +1,1870 @@
+{
+  "id": "mbpp-722-filter-data",
+  "title": "Filter Data",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "The input is given as - a dictionary with a student name as a key and a tuple of float (student_height, student_weight) as a value, - minimal height, - minimal weight. Write a function to filter students that have height and weight above the minimum.",
+  "entry_point": "filter_data",
+  "params": [
+    "students",
+    "h",
+    "w"
+  ],
+  "function_signature": {
+    "python": "def filter_data(students, h, w):"
+  },
+  "examples": [
+    {
+      "input": {
+        "students": {
+          "Cierra Vega": {
+            "$tuple": [
+              6.2,
+              70
+            ]
+          },
+          "Alden Cantrell": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Kierra Gentry": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Pierre Cox": {
+            "$tuple": [
+              5.8,
+              66
+            ]
+          }
+        },
+        "h": 6.0,
+        "w": 70
+      },
+      "output": {
+        "Cierra Vega": {
+          "$tuple": [
+            6.2,
+            70
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Cierra Vega": {
+            "$tuple": [
+              6.2,
+              70
+            ]
+          },
+          "Alden Cantrell": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Kierra Gentry": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Pierre Cox": {
+            "$tuple": [
+              5.8,
+              66
+            ]
+          }
+        },
+        "h": 5.9,
+        "w": 67
+      },
+      "output": {
+        "Cierra Vega": {
+          "$tuple": [
+            6.2,
+            70
+          ]
+        },
+        "Kierra Gentry": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        }
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "students": {
+          "Cierra Vega": {
+            "$tuple": [
+              6.2,
+              70
+            ]
+          },
+          "Alden Cantrell": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Kierra Gentry": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Pierre Cox": {
+            "$tuple": [
+              5.8,
+              66
+            ]
+          }
+        },
+        "h": 6.0,
+        "w": 70
+      },
+      "output": {
+        "Cierra Vega": {
+          "$tuple": [
+            6.2,
+            70
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Cierra Vega": {
+            "$tuple": [
+              6.2,
+              70
+            ]
+          },
+          "Alden Cantrell": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Kierra Gentry": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Pierre Cox": {
+            "$tuple": [
+              5.8,
+              66
+            ]
+          }
+        },
+        "h": 5.9,
+        "w": 67
+      },
+      "output": {
+        "Cierra Vega": {
+          "$tuple": [
+            6.2,
+            70
+          ]
+        },
+        "Kierra Gentry": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Cierra Vega": {
+            "$tuple": [
+              6.2,
+              70
+            ]
+          },
+          "Alden Cantrell": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Kierra Gentry": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Pierre Cox": {
+            "$tuple": [
+              5.8,
+              66
+            ]
+          }
+        },
+        "h": 5.7,
+        "w": 64
+      },
+      "output": {
+        "Cierra Vega": {
+          "$tuple": [
+            6.2,
+            70
+          ]
+        },
+        "Alden Cantrell": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Kierra Gentry": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        },
+        "Pierre Cox": {
+          "$tuple": [
+            5.8,
+            66
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          }
+        },
+        "h": 5.8,
+        "w": 67
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 5.7,
+        "w": 64
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 5.8,
+        "w": 65
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Eve": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 9.9,
+        "w": 9999
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 0,
+        "w": 0
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 5.5,
+        "w": 60
+      },
+      "output": {
+        "Alice": {
+          "$tuple": [
+            5.6,
+            60
+          ]
+        },
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Eve": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        },
+        "Frank": {
+          "$tuple": [
+            5.7,
+            63
+          ]
+        },
+        "Harry": {
+          "$tuple": [
+            6.2,
+            75
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 6.2,
+        "w": 75
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 5.8,
+        "w": 65
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Eve": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        },
+        "Harry": {
+          "$tuple": [
+            6.2,
+            75
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 5.0,
+        "w": 60
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 6.3352700555113355,
+        "w": 5.5
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 0,
+        "w": 65
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Dave": {
+          "$tuple": [
+            5.11,
+            72
+          ]
+        },
+        "Eve": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 7.6771179872039275,
+        "w": 65
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 60,
+        "w": 60
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 3.775767325751101,
+        "w": 75
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          }
+        },
+        "h": 0,
+        "w": 67
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Dave": {
+          "$tuple": [
+            5.11,
+            72
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          }
+        },
+        "h": 5.8,
+        "w": 65
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Eve": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 6.729862314625353,
+        "w": 6.3352700555113355
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 59,
+        "w": 60
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 65,
+        "w": 7.6771179872039275
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 4.258632338706851,
+        "w": 75
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 5.5,
+        "w": 59
+      },
+      "output": {
+        "Alice": {
+          "$tuple": [
+            5.6,
+            60
+          ]
+        },
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        },
+        "Eve": {
+          "$tuple": [
+            6.0,
+            68
+          ]
+        },
+        "Frank": {
+          "$tuple": [
+            5.7,
+            63
+          ]
+        },
+        "Harry": {
+          "$tuple": [
+            6.2,
+            75
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 64,
+        "w": 5.7
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 5.0,
+        "w": 9999
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 6.729862314625353,
+        "w": 5.5
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 6.729862314625353,
+        "w": 8.190457327073037
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 68,
+        "w": 67
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 64,
+        "w": 64
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {},
+        "h": 72,
+        "w": 64
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 7.6771179872039275,
+        "w": 65
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          }
+        },
+        "h": 65,
+        "w": 65
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          }
+        },
+        "h": 5.8,
+        "w": 9999
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          }
+        },
+        "h": 5.8,
+        "w": 65
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Charlie": {
+          "$tuple": [
+            5.9,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 6.702463419036826,
+        "w": 5.5
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          }
+        },
+        "h": 6.347801785816663,
+        "w": 65
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          }
+        },
+        "h": 6.729862314625353,
+        "w": 8.190457327073037
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          }
+        },
+        "h": 1,
+        "w": 67
+      },
+      "output": {
+        "Bob": {
+          "$tuple": [
+            6.1,
+            70
+          ]
+        },
+        "Dave": {
+          "$tuple": [
+            5.11,
+            72
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "students": {
+          "Alice": {
+            "$tuple": [
+              5.6,
+              60
+            ]
+          },
+          "Bob": {
+            "$tuple": [
+              6.1,
+              70
+            ]
+          },
+          "Charlie": {
+            "$tuple": [
+              5.9,
+              65
+            ]
+          },
+          "Dave": {
+            "$tuple": [
+              5.11,
+              72
+            ]
+          },
+          "Eve": {
+            "$tuple": [
+              6.0,
+              68
+            ]
+          },
+          "Frank": {
+            "$tuple": [
+              5.7,
+              63
+            ]
+          },
+          "Grace": {
+            "$tuple": [
+              5.2,
+              55
+            ]
+          },
+          "Harry": {
+            "$tuple": [
+              6.2,
+              75
+            ]
+          },
+          "Irene": {
+            "$tuple": [
+              5.4,
+              58
+            ]
+          }
+        },
+        "h": 6.729862314625353,
+        "w": 3.660457791550787
+      },
+      "output": {}
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def filter_data(students,h,w):\n    return {k: s for k, s in students.items() if s[0] >= h and s[1] >= w}\n"
+  }
+}

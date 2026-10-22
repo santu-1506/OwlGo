@@ -1,0 +1,833 @@
+{
+  "id": "humaneval-123-get-odd-collatz",
+  "title": "Get Odd Collatz",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\nThe Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\nas follows: start with any positive integer n. Then each term is obtained from the \nprevious term as follows: if the previous term is even, the next term is one half of \nthe previous term. If the previous term is odd, the next term is 3 times the previous\nterm plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\nNote: \n    1. Collatz(1) is [1].\n    2. returned list sorted in increasing order.\n\nFor example:\nget_odd_collatz(5) returns [1, 5] # The collatz sequence for 5 is [5, 16, 8, 4, 2, 1], so the odd numbers are only 1, and 5.",
+  "entry_point": "get_odd_collatz",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def get_odd_collatz(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 14
+      },
+      "output": [
+        1,
+        5,
+        7,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": [
+        1,
+        5
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 14
+      },
+      "output": [
+        1,
+        5,
+        7,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": [
+        1,
+        5
+      ]
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": [
+        1,
+        5,
+        7,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": [
+        1,
+        5
+      ]
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": [
+        1,
+        5,
+        15,
+        23,
+        35,
+        53
+      ]
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": [
+        1,
+        5
+      ]
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        19,
+        25,
+        29
+      ]
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": [
+        1,
+        5,
+        15,
+        23,
+        35,
+        53
+      ]
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        19,
+        25,
+        29
+      ]
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": [
+        1,
+        5,
+        13
+      ]
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        19,
+        29,
+        101
+      ]
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": [
+        1,
+        5,
+        7,
+        11,
+        13,
+        17,
+        99,
+        149
+      ]
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        29
+      ]
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        19,
+        29
+      ]
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": [
+        1,
+        5,
+        23,
+        27,
+        31,
+        35,
+        41,
+        47,
+        53,
+        61,
+        71,
+        91,
+        103,
+        107,
+        121,
+        137,
+        155,
+        161,
+        167,
+        175,
+        233,
+        251,
+        263,
+        283,
+        319,
+        325,
+        377,
+        395,
+        425,
+        433,
+        445,
+        479,
+        577,
+        593,
+        719,
+        911,
+        1079,
+        1367,
+        1619,
+        2051,
+        2429,
+        3077
+      ]
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": [
+        1,
+        5,
+        13
+      ]
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": [
+        1,
+        5,
+        7,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        29,
+        51,
+        77
+      ]
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": [
+        1,
+        5,
+        7,
+        9,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": [
+        1,
+        5,
+        7,
+        11,
+        13,
+        17,
+        37,
+        49
+      ]
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": [
+        1,
+        5,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": [
+        1,
+        21
+      ]
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": [
+        1,
+        5,
+        7,
+        9,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": [
+        1,
+        5,
+        23,
+        31,
+        35,
+        47,
+        53,
+        61,
+        71,
+        91,
+        103,
+        107,
+        121,
+        137,
+        155,
+        161,
+        167,
+        175,
+        233,
+        251,
+        263,
+        283,
+        319,
+        325,
+        377,
+        395,
+        425,
+        433,
+        445,
+        479,
+        577,
+        593,
+        719,
+        911,
+        1079,
+        1367,
+        1619,
+        2051,
+        2429,
+        3077
+      ]
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17
+      ]
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": [
+        1,
+        5,
+        23,
+        35,
+        53,
+        61,
+        103,
+        155,
+        167,
+        175,
+        233,
+        251,
+        263,
+        283,
+        319,
+        325,
+        377,
+        395,
+        425,
+        433,
+        445,
+        479,
+        577,
+        593,
+        719,
+        911,
+        1079,
+        1367,
+        1619,
+        2051,
+        2429,
+        3077
+      ]
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": [
+        1,
+        5,
+        23,
+        35,
+        47,
+        53,
+        55,
+        61,
+        71,
+        73,
+        83,
+        91,
+        97,
+        103,
+        107,
+        121,
+        125,
+        137,
+        155,
+        161,
+        167,
+        175,
+        233,
+        251,
+        263,
+        283,
+        319,
+        325,
+        377,
+        395,
+        425,
+        433,
+        445,
+        479,
+        577,
+        593,
+        719,
+        911,
+        1079,
+        1367,
+        1619,
+        2051,
+        2429,
+        3077
+      ]
+    },
+    {
+      "input": {
+        "n": 10000
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        469,
+        625
+      ]
+    },
+    {
+      "input": {
+        "n": 27345
+      },
+      "output": [
+        1,
+        5,
+        23,
+        31,
+        35,
+        41,
+        47,
+        53,
+        61,
+        71,
+        91,
+        103,
+        107,
+        109,
+        121,
+        137,
+        145,
+        155,
+        161,
+        167,
+        175,
+        193,
+        233,
+        251,
+        257,
+        263,
+        283,
+        319,
+        325,
+        377,
+        395,
+        425,
+        433,
+        445,
+        479,
+        577,
+        593,
+        685,
+        719,
+        911,
+        913,
+        1079,
+        1217,
+        1367,
+        1619,
+        2051,
+        2429,
+        3077,
+        3245,
+        7691,
+        8653,
+        11537,
+        20509,
+        27345
+      ]
+    },
+    {
+      "input": {
+        "n": 48271
+      },
+      "output": [
+        1,
+        5,
+        11,
+        13,
+        17,
+        19,
+        29,
+        101,
+        119,
+        179,
+        211,
+        269,
+        281,
+        317,
+        443,
+        499,
+        665,
+        749,
+        1181,
+        1243,
+        1399,
+        1657,
+        1865,
+        1963,
+        2099,
+        2209,
+        2945,
+        3149,
+        3871,
+        4135,
+        5513,
+        5807,
+        6203,
+        6979,
+        8711,
+        9305,
+        10469,
+        13067,
+        13763,
+        14701,
+        17183,
+        19601,
+        20645,
+        24467,
+        25775,
+        30547,
+        36701,
+        38663,
+        45821,
+        48271,
+        57995,
+        65245,
+        72407,
+        86993,
+        108611,
+        162917
+      ]
+    },
+    {
+      "input": {
+        "n": 99999
+      },
+      "output": [
+        1,
+        227,
+        341,
+        605,
+        955,
+        1075,
+        1433,
+        1613,
+        1787,
+        2011,
+        2263,
+        2681,
+        3017,
+        3395,
+        4699,
+        5093,
+        5287,
+        6265,
+        6599,
+        7049,
+        7931,
+        8353,
+        8471,
+        8923,
+        9899,
+        10039,
+        10427,
+        11137,
+        11731,
+        11897,
+        12707,
+        13385,
+        14849,
+        15059,
+        15641,
+        17597,
+        19061,
+        22589,
+        27805,
+        99999,
+        149999,
+        152047,
+        224999,
+        228071,
+        329167,
+        337499,
+        342107,
+        360407,
+        379687,
+        384871,
+        416603,
+        438889,
+        468679,
+        493751,
+        506249,
+        513161,
+        540611,
+        569531,
+        577307,
+        585185,
+        593173,
+        624905,
+        640723,
+        649471,
+        703019,
+        740627,
+        790897,
+        810917,
+        854297,
+        865961,
+        961085,
+        974207,
+        1054529,
+        1110941,
+        1461311,
+        1560493,
+        2080657,
+        2191967,
+        3287951,
+        4931927,
+        7397891,
+        11096837
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef get_odd_collatz(n):\n    \"\"\"\n    Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\n    The Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\n    as follows: start with any positive integer n. Then each term is obtained from the \n    previous term as follows: if the previous term is even, the next term is one half of \n    the previous term. If the previous term is odd, the next term is 3 times the previous\n    term plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\n    Note: \n        1. Collatz(1) is [1].\n        2. returned list sorted in increasing order.\n\n    For example:\n    get_odd_collatz(5) returns [1, 5] # The collatz sequence for 5 is [5, 16, 8, 4, 2, 1], so the odd numbers are only 1, and 5.\n    \"\"\"\n\n\n    ans, x = [], n\n    while x != 1:\n        if x % 2 == 1: ans.append(x)\n        x = x // 2 if x % 2 == 0 else x * 3 + 1\n    ans.append(1)\n    return sorted(ans)\n\n"
+  }
+}

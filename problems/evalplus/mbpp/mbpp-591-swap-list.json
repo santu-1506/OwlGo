@@ -1,0 +1,2415 @@
+{
+  "id": "mbpp-591-swap-list",
+  "title": "Swap List",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to interchange the first and last elements in a list.",
+  "entry_point": "swap_List",
+  "params": [
+    "newList"
+  ],
+  "function_signature": {
+    "python": "def swap_List(newList):"
+  },
+  "examples": [
+    {
+      "input": {
+        "newList": [
+          12,
+          35,
+          9,
+          56,
+          24
+        ]
+      },
+      "output": [
+        24,
+        35,
+        9,
+        56,
+        12
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": [
+        3,
+        2,
+        1
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "newList": [
+          12,
+          35,
+          9,
+          56,
+          24
+        ]
+      },
+      "output": [
+        24,
+        35,
+        9,
+        56,
+        12
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          5,
+          6
+        ]
+      },
+      "output": [
+        6,
+        5,
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          "apple",
+          6.5,
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      "output": [
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        "apple",
+        6.5,
+        true,
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true,
+            false
+          ],
+          [
+            "apple",
+            "banana"
+          ]
+        ]
+      },
+      "output": [
+        [
+          "apple",
+          "banana"
+        ],
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true,
+          false
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          [
+            "a",
+            "b"
+          ],
+          {
+            "name": "John",
+            "age": 30
+          },
+          [
+            "c",
+            "a",
+            "b"
+          ],
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ]
+          ],
+          "hello world"
+        ]
+      },
+      "output": [
+        "hello world",
+        {
+          "name": "John",
+          "age": 30
+        },
+        [
+          "c",
+          "a",
+          "b"
+        ],
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        [
+          "a",
+          "b"
+        ]
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            "cherry",
+            "banana",
+            "apple"
+          ],
+          123.456,
+          [
+            false,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          "cherry",
+          "banana",
+          "apple"
+        ],
+        123.456,
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "a": [
+              1,
+              2,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "x": "apple",
+            "y": "banana"
+          },
+          [
+            true,
+            false,
+            false,
+            true
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        {
+          "x": "apple",
+          "y": "banana"
+        },
+        [
+          true,
+          false,
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        {
+          "a": [
+            1,
+            2,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false,
+            true
+          ],
+          [
+            false,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        123.456,
+        [
+          false,
+          true
+        ],
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          "apple",
+          6.5,
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          6.5
+        ]
+      },
+      "output": [
+        6.5,
+        "apple",
+        6.5,
+        true,
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "a": [
+              1,
+              2,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ]
+          },
+          [
+            true,
+            false,
+            false,
+            true
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        [
+          true,
+          false,
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        {
+          "a": [
+            1,
+            2,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          "apple",
+          6.5,
+          true
+        ]
+      },
+      "output": [
+        true,
+        "apple",
+        6.5,
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          false,
+          true,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        123.456,
+        [
+          false,
+          true,
+          true
+        ],
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true,
+            false
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true,
+            false
+          ]
+        ]
+      },
+      "output": [
+        [
+          true,
+          false
+        ],
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true,
+          false
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false,
+            true
+          ],
+          [
+            false,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          false,
+          true
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        123.456,
+        [
+          false,
+          true
+        ],
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          "apple",
+          6.5,
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          6.5,
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      "output": [
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        "apple",
+        6.5,
+        true,
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        6.5,
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true,
+            false
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true,
+            false
+          ],
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true,
+          false
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        [
+          true,
+          false
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ]
+          },
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ]
+          },
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "hello",
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ]
+        },
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ]
+        },
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "hello",
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          [
+            "a",
+            "aa",
+            "b"
+          ],
+          {
+            "name": "John",
+            "age": 30
+          },
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ]
+          ],
+          "hello world"
+        ]
+      },
+      "output": [
+        "hello world",
+        {
+          "name": "John",
+          "age": 30
+        },
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        [
+          "a",
+          "aa",
+          "b"
+        ]
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ]
+          },
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ]
+          },
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "hello",
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3,
+              3
+            ]
+          },
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ]
+        },
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "hello",
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ]
+        },
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "Alice": [
+              1,
+              true,
+              2,
+              3
+            ]
+          },
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "Alice": [
+              1,
+              true,
+              2,
+              3
+            ]
+          },
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "hello",
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          {
+            "a": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ],
+            "world": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "York": [
+              1,
+              true,
+              2,
+              3
+            ],
+            "Alice": [
+              1,
+              true,
+              2,
+              3
+            ]
+          },
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "Alice": [
+            1,
+            true,
+            2,
+            3
+          ]
+        },
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "hello",
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "Alice": [
+            1,
+            true,
+            2,
+            3
+          ]
+        },
+        {
+          "a": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ],
+          "world": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "York": [
+            1,
+            true,
+            2,
+            3
+          ],
+          "Alice": [
+            1,
+            true,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          "apple",
+          6.5,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          6.5
+        ]
+      },
+      "output": [
+        6.5,
+        "apple",
+        6.5,
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false,
+            true
+          ],
+          [
+            "banana",
+            "apple"
+          ],
+          [
+            false,
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          false,
+          true
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        123.456,
+        [
+          false,
+          true
+        ],
+        [
+          "banana",
+          "apple"
+        ],
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true
+          ],
+          [
+            true
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          true
+        ],
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true
+        ],
+        [
+          true
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false,
+            false
+          ]
+        ]
+      },
+      "output": [
+        [
+          false,
+          false
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        123.456,
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true,
+            false
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true,
+            false
+          ],
+          "hello",
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true,
+          false
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        [
+          true,
+          false
+        ],
+        "hello",
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true,
+            false
+          ],
+          [
+            "apple",
+            "banana",
+            "banana"
+          ],
+          [
+            true,
+            false
+          ],
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true,
+          false
+        ],
+        [
+          "apple",
+          "banana",
+          "banana"
+        ],
+        [
+          true,
+          false
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "bb"
+          },
+          3.14,
+          [
+            true
+          ],
+          {
+            "1": "a",
+            "2": "bb"
+          },
+          [
+            true
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          true
+        ],
+        "hello",
+        {
+          "1": "a",
+          "2": "bb"
+        },
+        3.14,
+        [
+          true
+        ],
+        {
+          "1": "a",
+          "2": "bb"
+        },
+        [
+          true
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          "aJohnple",
+          6.5,
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      "output": [
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        "aJohnple",
+        6.5,
+        true,
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "bb"
+          },
+          3.14,
+          [
+            true
+          ],
+          {
+            "1": "a",
+            "2": "bb"
+          },
+          [
+            true
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true
+          ],
+          [
+            true
+          ]
+        ]
+      },
+      "output": [
+        [
+          true
+        ],
+        "hello",
+        {
+          "1": "a",
+          "2": "bb"
+        },
+        3.14,
+        [
+          true
+        ],
+        {
+          "1": "a",
+          "2": "bb"
+        },
+        [
+          true
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        [
+          true
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            true,
+            false,
+            false
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true,
+            false,
+            false
+          ]
+        ]
+      },
+      "output": [
+        [
+          true,
+          false,
+          false
+        ],
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          "apple",
+          "banana"
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          false,
+          "aJohnple",
+          false,
+          6.5,
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ]
+      },
+      "output": [
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        false,
+        "aJohnple",
+        false,
+        6.5,
+        true,
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false,
+            true
+          ],
+          [
+            "cheraay",
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          [
+            false,
+            true
+          ],
+          123.456
+        ]
+      },
+      "output": [
+        123.456,
+        123.456,
+        [
+          false,
+          true
+        ],
+        [
+          "cheraay",
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        [
+          false,
+          true
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ]
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          false,
+          4,
+          123.456,
+          2,
+          "aJohnple",
+          6.5,
+          true,
+          [
+            "a",
+            "x",
+            "c"
+          ]
+        ]
+      },
+      "output": [
+        [
+          "a",
+          "x",
+          "c"
+        ],
+        4,
+        123.456,
+        2,
+        "aJohnple",
+        6.5,
+        true,
+        false
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hello",
+          {
+            "1": "a",
+            "2": "b"
+          },
+          3.14,
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true,
+            false
+          ],
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        "hello",
+        {
+          "1": "a",
+          "2": "b"
+        },
+        3.14,
+        [
+          "apple",
+          "banana"
+        ],
+        [
+          true,
+          false
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          false,
+          "aJohnple",
+          false,
+          6.5,
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          "aJohnple"
+        ]
+      },
+      "output": [
+        "aJohnple",
+        false,
+        "aJohnple",
+        false,
+        6.5,
+        true,
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          4,
+          3,
+          "apple",
+          6.5,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          6.5
+        ]
+      },
+      "output": [
+        6.5,
+        3,
+        "apple",
+        6.5,
+        [
+          "a",
+          "b",
+          "c"
+        ],
+        4
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          null,
+          "hellho",
+          {
+            "1": "a",
+            "2": "aa"
+          },
+          "hello",
+          {
+            "1": "a",
+            "2": "aa"
+          },
+          3.14,
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            true,
+            false
+          ],
+          "hello"
+        ]
+      },
+      "output": [
+        "hello",
+        "hellho",
+        {
+          "1": "a",
+          "2": "aa"
+        },
+        "hello",
+        {
+          "1": "a",
+          "2": "aa"
+        },
+        3.14,
+        [
+          "apple",
+          "banana"
+        ],
+        [
+          true,
+          false
+        ],
+        null
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "a": [
+              1,
+              2,
+              3
+            ],
+            "b": [
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "x": "apple",
+            "y": "banana"
+          },
+          [
+            true,
+            false,
+            false,
+            true
+          ],
+          "hello",
+          {
+            "x": "apple",
+            "y": "banana"
+          }
+        ]
+      },
+      "output": [
+        {
+          "x": "apple",
+          "y": "banana"
+        },
+        {
+          "x": "apple",
+          "y": "banana"
+        },
+        [
+          true,
+          false,
+          false,
+          true
+        ],
+        "hello",
+        {
+          "a": [
+            1,
+            2,
+            3
+          ],
+          "b": [
+            4,
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "newList": [
+          {
+            "name": "Alice",
+            "age": 25,
+            "city": "New York"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            "cherry",
+            "apple",
+            "banana"
+          ],
+          123.456,
+          [
+            false
+          ],
+          3.14
+        ]
+      },
+      "output": [
+        3.14,
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          "cherry",
+          "apple",
+          "banana"
+        ],
+        123.456,
+        [
+          false
+        ],
+        {
+          "name": "Alice",
+          "age": 25,
+          "city": "New York"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def swap_List(newList): \n    return newList[-1:] + newList[1:-1] + newList[:1]\n"
+  }
+}

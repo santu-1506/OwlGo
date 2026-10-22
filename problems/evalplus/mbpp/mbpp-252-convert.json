@@ -1,0 +1,699 @@
+{
+  "id": "mbpp-252-convert",
+  "title": "Convert",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to convert complex numbers to polar coordinates.",
+  "entry_point": "convert",
+  "params": [
+    "numbers"
+  ],
+  "function_signature": {
+    "python": "def convert(numbers):"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            1.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            4.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            1.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            4.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            5.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            1.0,
+            2.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2.23606797749979,
+          1.1071487177940904
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            -3.0,
+            4.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          2.214297435588181
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            2.0,
+            -5.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.385164807134504,
+          -1.1902899496825317
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            2.0,
+            3.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          3.605551275463989,
+          0.982793723247329
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            -4.0,
+            -2.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.47213595499958,
+          -2.677945044588987
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            5.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            1.0,
+            -1.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.4142135623730951,
+          -0.7853981633974483
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            6.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            3.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          3.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            -0.0,
+            -3.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          3.0,
+          -1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.7071067811865476,
+          0.7853981633974483
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            3.0,
+            -4.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          -0.9272952180016122
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            -2.0,
+            3.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          3.605551275463989,
+          2.158798930342464
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            4.0,
+            3.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          0.6435011087932844
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            4.0,
+            2.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.47213595499958,
+          0.4636476090008061
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            -1.0,
+            -4.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.123105625617661,
+          -1.8157749899217608
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            6.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6.0,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            2.0,
+            2.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2.8284271247461903,
+          0.7853981633974483
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            5.0,
+            -3.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.830951894845301,
+          -0.5404195002705842
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            -3.0,
+            5.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.830951894845301,
+          2.1112158270654806
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            69.02761442257642,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          69.02761442257642,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            4.480282583176166
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.480282583176166,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            -2.8866591213002657
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2.8866591213002657,
+          -1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            1.8339464931468865
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.8339464931468865,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            1.1632560023978717
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.1632560023978717,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            5.586903526274092
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.586903526274092,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            4.9325950056031465
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4.9325950056031465,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            5.982229804759806
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.982229804759806,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            69.9026432060336,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          69.9026432060336,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            68.89398657521126,
+            0.0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          68.89398657521126,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            -1.7734628811885071
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.7734628811885071,
+          -1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            -1.3923179090484485
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.3923179090484485,
+          -1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            -2.4244997922730285
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2.4244997922730285,
+          -1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            1.0653576332470696
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1.0653576332470696,
+          1.5707963267948966
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": {
+          "$complex": [
+            0.0,
+            5.654751542806139
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5.654751542806139,
+          1.5707963267948966
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import cmath  \ndef convert(numbers):    \n  return cmath.polar(numbers)\n"
+  }
+}

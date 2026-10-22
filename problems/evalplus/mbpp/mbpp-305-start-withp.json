@@ -1,0 +1,722 @@
+{
+  "id": "mbpp-305-start-withp",
+  "title": "Start Withp",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to return two words from a list of words starting with letter 'p'.",
+  "entry_point": "start_withp",
+  "params": [
+    "words"
+  ],
+  "function_signature": {
+    "python": "def start_withp(words):"
+  },
+  "examples": [
+    {
+      "input": {
+        "words": [
+          "Python PHP",
+          "Java JavaScript",
+          "c c++"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "PHP"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python Programming",
+          "Java Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "Programming"
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "words": [
+          "Python PHP",
+          "Java JavaScript",
+          "c c++"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "PHP"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python Programming",
+          "Java Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Pqrst Pqr",
+          "qrstuv"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Pqrst",
+          "Pqr"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python Programming",
+          "Java Programming",
+          "Perl Programming",
+          "Ruby Programming",
+          "PHP Programming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": []
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "apple",
+          "banana",
+          "carrot",
+          "dog",
+          "elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Java Programming",
+          "perl Programming",
+          "Ruby Programming",
+          "PHP Programming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python PHP",
+          "Java JavaScript",
+          "C C++",
+          "Perl Python",
+          "Ruby R"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "PHP"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python",
+          "Programming",
+          "Java",
+          "Programming",
+          "Perl",
+          "Programming",
+          "Ruby",
+          "Programming",
+          "PHP",
+          "Programming",
+          "C",
+          "Programming"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Carrot",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "Python",
+          "Programming",
+          "Java",
+          "Programming",
+          "PBananaerl",
+          "Programming",
+          "Ruby",
+          "Programming",
+          "PHP",
+          "Programming",
+          "C",
+          "Programming"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "Java Programming",
+          "perl Programming",
+          "Ruby Programming",
+          "PHP Programming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python PHP",
+          "Java JavaScript",
+          "C C++",
+          "Perl Python",
+          "Ruby R",
+          "Java JavaScript"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "PHP"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "Java Programming",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "python",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Carrort",
+          "Carrot",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Carrort",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Java Programming",
+          "perl Programming",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "carrot",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Python Programming",
+          "Carrot",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Crrort",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Java Programming",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "python Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "Java Programming",
+          "perl Progrgamming",
+          "Ruby Programming",
+          "PHP Programming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Java Programming",
+          "perl Programming",
+          "perl Programming",
+          "PHP Programming",
+          "carrot",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "python",
+          "Python",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Elephant",
+          "Java Programming",
+          "perl Progrgamming",
+          "Ruby Programming",
+          "PHP Programming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python Programming",
+          "Java Programming",
+          "Perl Programming",
+          "Ruby Programming",
+          "PHP Programming",
+          "PHP Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Python",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Java Programming",
+          "perl Programming",
+          "Ruby Programming",
+          "PHP Promgramming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Promgramming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python",
+          "Programming",
+          "Java",
+          "Programming",
+          "PBananaerl",
+          "C Programming",
+          "Programming",
+          "Ruby",
+          "Programming",
+          "PHP",
+          "Programming",
+          "",
+          "Programming",
+          "C"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Banan",
+          "Crrort",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "perl Programming",
+          "Java Programming",
+          "perl Progrgamming",
+          "Ruby Programming",
+          "PHP Programming",
+          "C Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Banana",
+          "Apple",
+          "Banan",
+          "Crrort",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "Java Programming",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "python Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Java Programming",
+          "perl Programming",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "Python",
+          "perl Programming",
+          "PHP Programming",
+          "C Programming",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "apple",
+          "banana",
+          "carrot",
+          "apBananple",
+          "dog",
+          "elephant",
+          "banana"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "python Programming",
+          "Elephant",
+          "Java Programming",
+          "pperlerl Progrgamming",
+          "Ruby Programming",
+          "PHP Programming"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "PHP",
+          "Programming"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Perl Python",
+          "Crrort",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Perl",
+          "Python"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Carrort",
+          "Dog",
+          "Elephant",
+          "Carrort"
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "words": [
+          "Apple",
+          "Banana",
+          "Perl Python",
+          "Dog",
+          "Elephant"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Perl",
+          "Python"
+        ]
+      }
+    },
+    {
+      "input": {
+        "words": [
+          "Python",
+          "Programming",
+          "Java",
+          "Programming",
+          "PBananaerl",
+          "C Programming",
+          "Programming",
+          "Ruby",
+          "Programming",
+          "PHP",
+          "Programming",
+          "",
+          "Programming",
+          "C",
+          "Programming"
+        ]
+      },
+      "output": null
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef start_withp(words):\n    for w in words:\n        m = re.match(\"(P\\w+)\\W(P\\w+)\", w)\n        if m:\n            return m.groups()\n"
+  }
+}

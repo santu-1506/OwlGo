@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-144-simplify",
+  "title": "Simplify",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Your task is to implement a function that will simplify the expression\nx * n. The function returns True if x * n evaluates to a whole number and False\notherwise. Both x and n, are string representation of a fraction, and have the following format,\n<numerator>/<denominator> where both numerator and denominator are positive whole numbers.\n\nYou can assume that x, and n are valid fractions, and do not have zero as denominator.\n\nsimplify(\"1/5\", \"5/1\") = True\nsimplify(\"1/6\", \"2/1\") = False\nsimplify(\"7/10\", \"10/2\") = False",
+  "entry_point": "simplify",
+  "params": [
+    "x",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def simplify(x, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": "1/5",
+        "n": "5/1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "1/6",
+        "n": "2/1"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": "1/5",
+        "n": "5/1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "1/6",
+        "n": "2/1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "5/1",
+        "n": "3/1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "7/10",
+        "n": "10/2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "2/10",
+        "n": "50/10"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "7/2",
+        "n": "4/2"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "11/6",
+        "n": "6/1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "2/3",
+        "n": "5/2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "5/2",
+        "n": "3/5"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "2/4",
+        "n": "8/4"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "2/4",
+        "n": "4/2"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "1/5",
+        "n": "1/5"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "3/4",
+        "n": "4/3"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "6/8",
+        "n": "3/4"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "1/6",
+        "n": "6/1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "2/3",
+        "n": "3/2"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "9/12",
+        "n": "12/9"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "15/17",
+        "n": "17/15"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "8/11",
+        "n": "11/8"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "13/19",
+        "n": "19/13"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "20/25",
+        "n": "25/20"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "3/8",
+        "n": "8/3"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "17/15",
+        "n": "15/117"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "12/9",
+        "n": "17/15"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "6/8",
+        "n": "33/4"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "12/9",
+        "n": "112/9"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "616/6",
+        "n": "6/1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "12/9",
+        "n": "12/9"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "205/25",
+        "n": "20/25"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "98/3",
+        "n": "19/13"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "12/9",
+        "n": "13/19"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "9/12",
+        "n": "9/12"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "3/2",
+        "n": "2/3"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": "13/19",
+        "n": "17/15"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "133/19",
+        "n": "13/19"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "3/2",
+        "n": "3/2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "119/13",
+        "n": "119/13"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "205/25",
+        "n": "112/9"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "2/3",
+        "n": "2/3"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": "1319/13",
+        "n": "119/13"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef simplify(x, n):\n    \"\"\"Your task is to implement a function that will simplify the expression\n    x * n. The function returns True if x * n evaluates to a whole number and False\n    otherwise. Both x and n, are string representation of a fraction, and have the following format,\n    <numerator>/<denominator> where both numerator and denominator are positive whole numbers.\n\n    You can assume that x, and n are valid fractions, and do not have zero as denominator.\n\n    simplify(\"1/5\", \"5/1\") = True\n    simplify(\"1/6\", \"2/1\") = False\n    simplify(\"7/10\", \"10/2\") = False\n    \"\"\"\n\n\n    x1, x2 = map(int, x.split(\"/\"))\n    n1, n2 = map(int, n.split(\"/\"))\n    return (x1 * n1) % (x2 * n2) == 0\n\n"
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "id": "mbpp-430-parabola-directrix",
+  "title": "Parabola Directrix",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the directrix of a parabola.",
+  "entry_point": "parabola_directrix",
+  "params": [
+    "a",
+    "b",
+    "c"
+  ],
+  "function_signature": {
+    "python": "def parabola_directrix(a, b, c):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 5,
+        "b": 3,
+        "c": 2
+      },
+      "output": -198
+    },
+    {
+      "input": {
+        "a": 9,
+        "b": 8,
+        "c": 4
+      },
+      "output": -2336
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 5,
+        "b": 3,
+        "c": 2
+      },
+      "output": -198
+    },
+    {
+      "input": {
+        "a": 9,
+        "b": 8,
+        "c": 4
+      },
+      "output": -2336
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 4,
+        "c": 6
+      },
+      "output": -130
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 0,
+        "c": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 8,
+        "c": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 3,
+        "c": 3
+      },
+      "output": -117
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 2,
+        "c": 3
+      },
+      "output": -157
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 0,
+        "c": 0
+      },
+      "output": -12
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 3,
+        "c": 3
+      },
+      "output": -157
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 2,
+        "c": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 4,
+        "c": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 2,
+        "c": 3
+      },
+      "output": -57
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 8,
+        "c": 3
+      },
+      "output": -2077
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 1,
+        "c": 2
+      },
+      "output": -62
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 7,
+        "c": 2
+      },
+      "output": -198
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3,
+        "c": 3
+      },
+      "output": -77
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 3,
+        "c": 2
+      },
+      "output": -38
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3,
+        "c": 0
+      },
+      "output": -80
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 1,
+        "c": 8
+      },
+      "output": -56
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 7,
+        "c": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 2,
+        "c": 2
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "a": 7,
+        "b": 9,
+        "c": 4
+      },
+      "output": -2292
+    },
+    {
+      "input": {
+        "a": 6,
+        "b": 3,
+        "c": 3
+      },
+      "output": -237
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 7,
+        "c": 1
+      },
+      "output": -199
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 2,
+        "c": 2
+      },
+      "output": -58
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 3,
+        "c": 2
+      },
+      "output": -318
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 1,
+        "c": 8
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 3,
+        "c": 0
+      },
+      "output": -320
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 9,
+        "c": 1
+      },
+      "output": -2623
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 0,
+        "c": 0
+      },
+      "output": -4
+    },
+    {
+      "input": {
+        "a": 6,
+        "b": 4,
+        "c": 3
+      },
+      "output": -405
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 6,
+        "c": 6
+      },
+      "output": -1178
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3,
+        "c": 2
+      },
+      "output": -78
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 1,
+        "c": 1
+      },
+      "output": -23
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 9,
+        "c": 3
+      },
+      "output": -2621
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 7,
+        "c": 9
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 1,
+        "c": 1
+      },
+      "output": -63
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 1,
+        "c": 3
+      },
+      "output": -13
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 1,
+        "c": 2
+      },
+      "output": -30
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 9,
+        "c": 9
+      },
+      "output": -975
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def parabola_directrix(a, b, c): \n  return ((int)(c - ((b * b) + 1) * 4 * a ))\n"
+  }
+}

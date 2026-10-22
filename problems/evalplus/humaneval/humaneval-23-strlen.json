@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-23-strlen",
+  "title": "Strlen",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return length of given string\n>>> strlen('')\n0\n>>> strlen('abc')\n3",
+  "entry_point": "strlen",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def strlen(string: str) -> int:"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "x"
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "x"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "asdasnakj"
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "string": "Hello, World!"
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "string": "12345"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "string": " "
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "This is a long string that has many characters in it"
+      },
+      "output": 52
+    },
+    {
+      "input": {
+        "string": "abcdefghijklmnopqrstuvwxyz"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "string": "Testing testing 123"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps over the lazy dog"
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "string": "one\ntwo\nthree\nfour\nfive"
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "string": "1234567890"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "string": "This string has a \n newline character"
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "string": "one\ntwo\nthree\nf\nfoive"
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps overq the lazy dog"
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "string": "abcdefgjklmnopqrstuvwxyz"
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "string": "three\nfour\nfive"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "string": " This striThis is a long string that has many characters in itng has a \n newline character"
+      },
+      "output": 90
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps over the lazy This striThis is a long string that has many characters in itng has a \n newline character dog"
+      },
+      "output": 133
+    },
+    {
+      "input": {
+        "string": "1234 This striThis is a long string that has many characters in itng has a \n newline character5"
+      },
+      "output": 95
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps over the lazy This striThis is aaracter dog"
+      },
+      "output": 69
+    },
+    {
+      "input": {
+        "string": "one\ntwot\nthree\nfour\nfive"
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "string": "11234567890"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "string": "one\ntwot\nthrThis is a long string that has many characters in itee\nfour\nfive"
+      },
+      "output": 76
+    },
+    {
+      "input": {
+        "string": "The quick brown f ox jumps over the lazy dog"
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "string": "122345"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "string": "Testing testingone\ntwot\nthrThis is a long string that has many characters in itee\nfour\nfive 123"
+      },
+      "output": 95
+    },
+    {
+      "input": {
+        "string": "one\ntwot\nthrThis is a long string thtat has many characters in itee\nfour\nfive"
+      },
+      "output": 77
+    },
+    {
+      "input": {
+        "string": "123345"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps over the lazy Thisthree\nfour\nfiveracter dog"
+      },
+      "output": 69
+    },
+    {
+      "input": {
+        "string": "GNDKQyadEb"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "string": "Hello, Woorld!"
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "string": "of\nfoive"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps overq theHello, World! lazy dog"
+      },
+      "output": 57
+    },
+    {
+      "input": {
+        "string": "M"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "NEvG"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "string": "Hello, Woorlod!"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "string": "thrieeThe quick brown fox jumps overq the lazy dog\nfour\nfive"
+      },
+      "output": 60
+    },
+    {
+      "input": {
+        "string": "one\ntwot\nthree\nfour\nfiv"
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "string": "abcdefghijklmnopq1234 This striThis is a long string that has many characters in itng has a \n newline character5rstuvwxyz"
+      },
+      "output": 121
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef strlen(string: str) -> int:\n    \"\"\" Return length of given string\n    >>> strlen('')\n    0\n    >>> strlen('abc')\n    3\n    \"\"\"\n\n    return len(string)\n\n"
+  }
+}

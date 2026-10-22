@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-437-remove-odd",
+  "title": "Remove Odd",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove odd characters in a string.",
+  "entry_point": "remove_odd",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def remove_odd(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "python"
+      },
+      "output": "yhn"
+    },
+    {
+      "input": {
+        "str1": "program"
+      },
+      "output": "rga"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "python"
+      },
+      "output": "yhn"
+    },
+    {
+      "input": {
+        "str1": "program"
+      },
+      "output": "rga"
+    },
+    {
+      "input": {
+        "str1": "language"
+      },
+      "output": "agae"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "Hello, world!"
+      },
+      "output": "el,wrd"
+    },
+    {
+      "input": {
+        "str1": "acegikmoqsuwy"
+      },
+      "output": "cgkosw"
+    },
+    {
+      "input": {
+        "str1": "world!"
+      },
+      "output": "ol!"
+    },
+    {
+      "input": {
+        "str1": "Hello,"
+      },
+      "output": "el,"
+    },
+    {
+      "input": {
+        "str1": "e,Hello,"
+      },
+      "output": ",el,"
+    },
+    {
+      "input": {
+        "str1": "e,He"
+      },
+      "output": ",e"
+    },
+    {
+      "input": {
+        "str1": "e,Hellol,"
+      },
+      "output": ",ell"
+    },
+    {
+      "input": {
+        "str1": "e,Held!"
+      },
+      "output": ",ed"
+    },
+    {
+      "input": {
+        "str1": "e,Hello,Hello, world!"
+      },
+      "output": ",el,el,wrd"
+    },
+    {
+      "input": {
+        "str1": "e,"
+      },
+      "output": ","
+    },
+    {
+      "input": {
+        "str1": "e,Hdeld!"
+      },
+      "output": ",dl!"
+    },
+    {
+      "input": {
+        "str1": "Hewllo, world!"
+      },
+      "output": "elo ol!"
+    },
+    {
+      "input": {
+        "str1": "e,,"
+      },
+      "output": ","
+    },
+    {
+      "input": {
+        "str1": "Hee,Held!llo,"
+      },
+      "output": "e,edlo"
+    },
+    {
+      "input": {
+        "str1": "Hello,e,Held!"
+      },
+      "output": "el,,ed"
+    },
+    {
+      "input": {
+        "str1": "e,Hel"
+      },
+      "output": ",e"
+    },
+    {
+      "input": {
+        "str1": "e,HelHello,"
+      },
+      "output": ",eHlo"
+    },
+    {
+      "input": {
+        "str1": "wor!ld!"
+      },
+      "output": "o!d"
+    },
+    {
+      "input": {
+        "str1": "acegiHello,e,Held!kmoqsuwy"
+      },
+      "output": "cgHloeHl!mquy"
+    },
+    {
+      "input": {
+        "str1": "e,Hell,"
+      },
+      "output": ",el"
+    },
+    {
+      "input": {
+        "str1": "Hello,orld!"
+      },
+      "output": "el,rd"
+    },
+    {
+      "input": {
+        "str1": "eHello, world!,,"
+      },
+      "output": "Hlo ol!,"
+    },
+    {
+      "input": {
+        "str1": "Hewllo, lworld!"
+      },
+      "output": "elo wrd"
+    },
+    {
+      "input": {
+        "str1": "lworld!"
+      },
+      "output": "wrd"
+    },
+    {
+      "input": {
+        "str1": "e,Hello,Hee,Held!world!"
+      },
+      "output": ",el,e,edwrd"
+    },
+    {
+      "input": {
+        "str1": "lworld!e,Hello,Hee,Held!world!"
+      },
+      "output": "wrdeHloHeHl!ol!"
+    },
+    {
+      "input": {
+        "str1": "world!,,"
+      },
+      "output": "ol!,"
+    },
+    {
+      "input": {
+        "str1": "eHello, worlld!,,"
+      },
+      "output": "Hlo old,"
+    },
+    {
+      "input": {
+        "str1": "wore,Hee,Helle,Hdeld!o,Hee,Held!world!l!,,"
+      },
+      "output": "oeHeHleHedoHeHl!ol!!,"
+    },
+    {
+      "input": {
+        "str1": "wore,Hee,Hellelworld!,Hdeld!o,Hee,Held!world!l!,,"
+      },
+      "output": "oeHeHlewrd,dl!,e,edwrdl,"
+    },
+    {
+      "input": {
+        "str1": "eHello, world!,e,,"
+      },
+      "output": "Hlo ol!e,"
+    },
+    {
+      "input": {
+        "str1": "eHello,"
+      },
+      "output": "Hlo"
+    },
+    {
+      "input": {
+        "str1": "Hello,ore,Hdeld!"
+      },
+      "output": "el,r,dl!"
+    },
+    {
+      "input": {
+        "str1": "e,HdeldHello,orld!!"
+      },
+      "output": ",dlHlool!"
+    },
+    {
+      "input": {
+        "str1": "Hello,ore,Hdel!"
+      },
+      "output": "el,r,dl"
+    },
+    {
+      "input": {
+        "str1": "Hewllo,"
+      },
+      "output": "elo"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_odd(str1):\n    return str1[1::2]\n"
+  }
+}

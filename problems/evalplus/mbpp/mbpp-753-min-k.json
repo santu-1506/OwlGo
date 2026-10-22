@@ -1,0 +1,1791 @@
+{
+  "id": "mbpp-753-min-k",
+  "title": "Min K",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find minimum k records from tuple list. https://www.geeksforgeeks.org/python-find-minimum-k-records-from-tuple-list/ - in this case a verbatim copy of test cases",
+  "entry_point": "min_k",
+  "params": [
+    "test_list",
+    "K"
+  ],
+  "function_signature": {
+    "python": "def min_k(test_list, K):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              4
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              2
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              8
+            ]
+          }
+        ],
+        "K": 2
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Akash",
+            2
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Sanjeev",
+              11
+            ]
+          },
+          {
+            "$tuple": [
+              "Angat",
+              5
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              3
+            ]
+          },
+          {
+            "$tuple": [
+              "Nepin",
+              9
+            ]
+          }
+        ],
+        "K": 3
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Akash",
+            3
+          ]
+        },
+        {
+          "$tuple": [
+            "Angat",
+            5
+          ]
+        },
+        {
+          "$tuple": [
+            "Nepin",
+            9
+          ]
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              4
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              2
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              8
+            ]
+          }
+        ],
+        "K": 2
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Akash",
+            2
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Sanjeev",
+              11
+            ]
+          },
+          {
+            "$tuple": [
+              "Angat",
+              5
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              3
+            ]
+          },
+          {
+            "$tuple": [
+              "Nepin",
+              9
+            ]
+          }
+        ],
+        "K": 3
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Akash",
+            3
+          ]
+        },
+        {
+          "$tuple": [
+            "Angat",
+            5
+          ]
+        },
+        {
+          "$tuple": [
+            "Nepin",
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "tanmay",
+              14
+            ]
+          },
+          {
+            "$tuple": [
+              "Amer",
+              11
+            ]
+          },
+          {
+            "$tuple": [
+              "Ayesha",
+              9
+            ]
+          },
+          {
+            "$tuple": [
+              "SKD",
+              16
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Ayesha",
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": 2
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [],
+        "K": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [],
+        "K": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        },
+        {
+          "$tuple": [
+            "Akash",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": -2
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        },
+        {
+          "$tuple": [
+            "Akash",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Nikhil",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        },
+        {
+          "$tuple": [
+            "Akash",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Nikhil",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": -4
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": -5
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -5
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -5
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -2
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          }
+        ],
+        "K": -4
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          }
+        ],
+        "K": -4
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Manjeet",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        },
+        {
+          "$tuple": [
+            "Akash",
+            10
+          ]
+        },
+        {
+          "$tuple": [
+            "Nikhil",
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -2
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Nikhil",
+              10,
+              "Nikhil"
+            ]
+          },
+          {
+            "$tuple": [
+              "Manjeet",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Nikhil",
+            10,
+            "Nikhil"
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Akshat",
+              10,
+              "Akshat"
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Nikhil",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Akash",
+              10
+            ]
+          }
+        ],
+        "K": 1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Akshat",
+            10,
+            "Akshat"
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              20
+            ]
+          }
+        ],
+        "K": -1
+      },
+      "output": [
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        },
+        {
+          "$tuple": [
+            "John",
+            20
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def min_k(test_list, K):\n  res = sorted(test_list, key = lambda x: x[1])[:K]\n  return (res)\n"
+  }
+}

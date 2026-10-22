@@ -1,0 +1,2820 @@
+{
+  "id": "mbpp-758-unique-sublists",
+  "title": "Unique Sublists",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to count lists within a list. The function should return a dictionary where every list is converted to a tuple and the value of such tuple is the number of its occurencies in the original list.",
+  "entry_point": "unique_sublists",
+  "params": [
+    "list1"
+  ],
+  "function_signature": {
+    "python": "def unique_sublists(list1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            13,
+            15,
+            17
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            9,
+            11
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                3
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                13,
+                15,
+                17
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                9,
+                11
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "green",
+            "orange"
+          ],
+          [
+            "black"
+          ],
+          [
+            "green",
+            "orange"
+          ],
+          [
+            "white"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "green",
+                "orange"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "black"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "white"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            13,
+            15,
+            17
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            9,
+            11
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                3
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                13,
+                15,
+                17
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                9,
+                11
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "green",
+            "orange"
+          ],
+          [
+            "black"
+          ],
+          [
+            "green",
+            "orange"
+          ],
+          [
+            "white"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "green",
+                "orange"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "black"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "white"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            10,
+            20,
+            30,
+            40
+          ],
+          [
+            60,
+            70,
+            50,
+            50
+          ],
+          [
+            90,
+            100,
+            200
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                10,
+                20,
+                30,
+                40
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                60,
+                70,
+                50,
+                50
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                90,
+                100,
+                200
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "john"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "john"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": []
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "list1": [
+          []
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": []
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                3
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "green",
+            "orange"
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            "green",
+            "orange"
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "green",
+                "orange"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "cat",
+            "dog"
+          ],
+          [
+            "cat"
+          ],
+          [
+            "cat",
+            "dog"
+          ],
+          [
+            "cat",
+            "dog"
+          ],
+          [
+            "cat",
+            "dog",
+            "rabbit"
+          ],
+          [
+            "rabbit"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "cat",
+                "dog"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "cat"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "cat",
+                "dog",
+                "rabbit"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "rabbit"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "h",
+            "i",
+            "j",
+            "k"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "g",
+                "f",
+                "e",
+                "d",
+                "c",
+                "b",
+                "a"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "h",
+                "i",
+                "j",
+                "k"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana",
+                "cherry"
+              ]
+            },
+            4
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "pear"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                1,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            9,
+            10
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                3,
+                4,
+                5
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                6,
+                7
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                8,
+                9,
+                10
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c"
+          ],
+          [
+            "d"
+          ],
+          [
+            "e"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "c"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "d"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "e"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            8,
+            9,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                5,
+                6,
+                7
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                8,
+                9,
+                10
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ],
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ],
+          [
+            "x",
+            "y"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "x",
+                "y"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "z",
+                "w"
+              ]
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [],
+          []
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": []
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana",
+                "cherry"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "pear"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "apae",
+                "bganana",
+                "cherry"
+              ]
+            },
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ],
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ],
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "x",
+                "y"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "z",
+                "w"
+              ]
+            },
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "h",
+            "i",
+            "j",
+            "k"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "h",
+            "i",
+            "j",
+            "k"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "g",
+                "f",
+                "e",
+                "d",
+                "c",
+                "b",
+                "a"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "h",
+                "i",
+                "j",
+                "k"
+              ]
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            8,
+            9,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                4
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                5,
+                6,
+                7
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                8,
+                9,
+                10
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                true,
+                true,
+                true,
+                false
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana",
+                "cherry"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "pear"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "apae",
+                "bganana",
+                "cherry"
+              ]
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "bapae",
+            "b"
+          ],
+          [
+            "c"
+          ],
+          [
+            "d"
+          ],
+          [
+            "e"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "bapae",
+                "b"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "c"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "d"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "e"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c"
+          ],
+          [
+            "d"
+          ],
+          [
+            "e"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "c"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "d"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "e"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana",
+                "cherry"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "pear"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "apae",
+                "bganana",
+                "cherry",
+                "apae"
+              ]
+            },
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae",
+            "apae"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae",
+            "apae"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae",
+            "apae"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae",
+            "apae"
+          ],
+          [
+            "apae",
+            "bganana",
+            "cherry",
+            "apae",
+            "apae"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana",
+                "cherry"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "pear"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "apae",
+                "bganana",
+                "cherry",
+                "apae",
+                "apae"
+              ]
+            },
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2
+          ],
+          [
+            "green",
+            "orange"
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "green",
+                "orange"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                3,
+                3
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            22.633521147116923,
+            41.08183937180155,
+            -95.716703243959
+          ],
+          [
+            22.633521147116923,
+            41.08183937180155,
+            -95.716703243959
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                22.633521147116923,
+                41.08183937180155,
+                -95.716703243959
+              ]
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "h",
+            "i",
+            "k"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "h",
+            "i",
+            "k"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "h",
+                "i",
+                "k"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "g",
+                "f",
+                "e",
+                "d",
+                "c",
+                "b",
+                "a"
+              ]
+            },
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c"
+          ],
+          [
+            "d"
+          ],
+          [
+            "e"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "d"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "c"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "d"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "e"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                1,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "wf"
+          ],
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ],
+          [
+            "x",
+            "y"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "x",
+                "y"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "z",
+                "wf"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "z",
+                "w"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [],
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ],
+          [
+            "x",
+            "y"
+          ],
+          [
+            "z",
+            "w"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": []
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "x",
+                "y"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "z",
+                "w"
+              ]
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            5,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            5,
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                5,
+                1,
+                2
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                1,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a",
+            "g"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "h",
+            "i",
+            "j",
+            "k"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a",
+            "g"
+          ],
+          [
+            "h",
+            "i",
+            "j",
+            "k"
+          ],
+          [
+            "g",
+            "f",
+            "e",
+            "d",
+            "c",
+            "b",
+            "a",
+            "g"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "a",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "a",
+                "b"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "g",
+                "f",
+                "e",
+                "d",
+                "c",
+                "b",
+                "a"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "g",
+                "f",
+                "e",
+                "d",
+                "c",
+                "b",
+                "a",
+                "g"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "h",
+                "i",
+                "j",
+                "k"
+              ]
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            10,
+            60,
+            50.03460044856237
+          ],
+          [],
+          []
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                10,
+                60,
+                50.03460044856237
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": []
+            },
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                5,
+                1
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                1,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                2,
+                3
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                1,
+                2,
+                3
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "list1": [
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banana"
+          ],
+          [
+            "apple",
+            "pear"
+          ],
+          [
+            "apple",
+            "banana",
+            "cherry"
+          ],
+          [
+            "apple",
+            "banadna",
+            "cherry"
+          ],
+          [
+            "apple",
+            "pear"
+          ]
+        ]
+      },
+      "output": {
+        "$dict": [
+          [
+            {
+              "$tuple": [
+                "apple",
+                "pear"
+              ]
+            },
+            3
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana",
+                "cherry"
+              ]
+            },
+            2
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banana"
+              ]
+            },
+            1
+          ],
+          [
+            {
+              "$tuple": [
+                "apple",
+                "banadna",
+                "cherry"
+              ]
+            },
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def unique_sublists(list1):\n    return {tuple(x): list1.count(x) for x in list1}\n"
+  }
+}

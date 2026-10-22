@@ -1,0 +1,135 @@
+{
+  "id": "mbpp-583-catalan-number",
+  "title": "Catalan Number",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function which returns nth catalan number.",
+  "entry_point": "catalan_number",
+  "params": [
+    "num"
+  ],
+  "function_signature": {
+    "python": "def catalan_number(num):"
+  },
+  "examples": [
+    {
+      "input": {
+        "num": 10
+      },
+      "output": 16796
+    },
+    {
+      "input": {
+        "num": 9
+      },
+      "output": 4862
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "num": 10
+      },
+      "output": 16796
+    },
+    {
+      "input": {
+        "num": 9
+      },
+      "output": 4862
+    },
+    {
+      "input": {
+        "num": 7
+      },
+      "output": 429
+    },
+    {
+      "input": {
+        "num": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "num": 3
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "num": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": 4
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "num": false
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": 5
+      },
+      "output": 42
+    },
+    {
+      "input": {
+        "num": 6
+      },
+      "output": 132
+    },
+    {
+      "input": {
+        "num": 8
+      },
+      "output": 1430
+    },
+    {
+      "input": {
+        "num": 11
+      },
+      "output": 58786
+    },
+    {
+      "input": {
+        "num": 12
+      },
+      "output": 208012
+    },
+    {
+      "input": {
+        "num": 13
+      },
+      "output": 742900
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def catalan_number(num):\n    if num <= 1:\n         return 1   \n    res_num = 0\n    for i in range(num):\n        res_num += catalan_number(i) * catalan_number(num - i - 1)\n    return res_num\n"
+  }
+}

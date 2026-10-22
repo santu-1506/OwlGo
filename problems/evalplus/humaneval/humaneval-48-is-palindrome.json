@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-48-is-palindrome",
+  "title": "Is Palindrome",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Checks if given string is a palindrome\n>>> is_palindrome('')\nTrue\n>>> is_palindrome('aba')\nTrue\n>>> is_palindrome('aaaaa')\nTrue\n>>> is_palindrome('zbcd')\nFalse",
+  "entry_point": "is_palindrome",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def is_palindrome(text: str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": ""
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aba"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": ""
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aba"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aaaaa"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zbcd"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "xywyx"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "xywyz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "xywzx"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "a"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "ab"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "racecar"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "never odd or even"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "step on no pets"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "Was it a car or a cat I saw?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "radar"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "refer"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "bab"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aabc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "Was it a car or a cat I saw?refer"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "Was it a car or a sacat I saw?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "aabca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "Was it a car ostep on no petsr a ca t I saw?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "Was ait a car or a sacat I saw?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "Was it a car orWas it a car or a cat I saw?refer a sacat I saw?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "reacecar"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "aWas ait a car or a sacat I saw?b"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "reWas it a car or a cat I saw?fer"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "frefer"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "aaWas it a car or a cat I saw?bWas it a car ostep on no petsr a ca t I saw?ca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "aaWas it a car or a cat I rbWas it a car ostep on no petsr a ca t I saw?ca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abbc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "aaWas it a car or a cat I rbWas it a car ostep on no petsr a cafrefer t I saw?ca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abcaabca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "areferaWas it a car or a cat I rbWas it a car ostep on no petsr a ca t I saw?ca"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "rar"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "Was it a car or I rbWas it a car ostep on no petsr a ca t I saw?cat I saw?refer"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "babb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "never odd or  even"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef is_palindrome(text: str):\n    \"\"\"\n    Checks if given string is a palindrome\n    >>> is_palindrome('')\n    True\n    >>> is_palindrome('aba')\n    True\n    >>> is_palindrome('aaaaa')\n    True\n    >>> is_palindrome('zbcd')\n    False\n    \"\"\"\n\n    return text == text[::-1]\n\n"
+  }
+}

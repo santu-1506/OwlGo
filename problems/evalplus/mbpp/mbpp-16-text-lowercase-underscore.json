@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-16-text-lowercase-underscore",
+  "title": "Text Lowercase Underscore",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to that returns true if the input string contains sequences of lowercase letters joined with an underscore and false otherwise.",
+  "entry_point": "text_lowercase_underscore",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def text_lowercase_underscore(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "aab_cbbbc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aab_Abbbc"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "aab_cbbbc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aab_Abbbc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "Aaab_abbbc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "a_b_c_d_e_f_g_h_i_j_k_l_m_n_o_p_q_r_s_t_u_v_w_x_y_z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "abc_def_ghi_jkl_mno_pqr_stu_vwx_yz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc_def_ghi_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "A__B_ccC_dDd_eE_fFF_g_hhH_iJj"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "a"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "abc_DEF_ghi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "abc_def_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abc_def"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abc_def_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "a_b_c_d_e_f_g_h_i_j_k_l_m_n_o_p_q_r_s_t_u_v_w_x_y_z_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abcabc_def_ghi_jkl_mno_pqr_stu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "ab_abc_def_c_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abc_deaf"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc_def_ghi_jkl_mno_pqr_stu_vwxyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "abdc_def_ghi_jkl_mno_pqr_stuu_vwx_yz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "A__B_cc_abcabc_def_ghi_jkl_mno_pqr_stu_vwx_yzC_dDd_eE_fFF_g_hhH_iJj"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_ghi_jkl_abcabc_def_ghi_jkl_mno_pqr_stu_vwx_yz_mno_pqr_stuu_vwx_yz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "_abcabc_d_ghi_jkl_mno_pqr_stu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_ghi_jkl_abcabc_def_ghi_jkl_mno__pqr_stu_vwx_yz_mno_pqr_stuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_gh_abc_defi_jkl_abcabc_def_ghi_jkl_mno_pabc_DEF_ghiqr_stu_vwx_yz_mno_pqr_stuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_gh_abc_defi_jkl_abcabc_def_ghi_jkl_mno_pabc_DEF_ghiqr_stu_vwx_yyz_mno_pqr_stuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_gh_abc_defi_jkl_abcabc_def_ghi_jkl_mno_pa_abcbc_DEF_ghiqr_stu_vwx_yz_mno_pqr_stuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_ghi_jkl_abcabc_def_ghi_jkl_mno__pqr_stu_vwx_yz_mno_pqrabdc_def_ghi_jkl_abcabc_def_ghi_jkl_mno_pqr_stu_vwx_yz_mno_pqr_stuu_vwx_yz_stuu_vwx_yzstuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abcabc_def_ghi_jkl_mno_pqr_stu_vwxq_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_gh_abc_defi_jkl_abcabmno_pqr_stuu_vwx_yz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "wJz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_gh_abc_defi_jkl_abcabmno_pqr_sabdc_def_gh_abc_defi_jkl_abcabc_def_ghi_jkl_mno_pa_abcbc_DEF_ghiqr_stu_vwx_yz_mno_pqr_stuu_vwx_yztuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc_def_ghiabdc_def_gh_abc_defi_jkl_abcabc_def_ghi_jkl_mno_pabc_DEF_ghiqr_stu_vwx_yyz_mno_pqr_stuu_vwx_yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc_def_ghie_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abc_def_ghi_jkl_mno_pqr_stu_vabc_def_ghie_wxyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "aba_b_c_d_e_f_g_h_i_j_k_l_m_n_o_p_q_r_s_t_u_v_w_x_y_z_abc_def_ghi_jkl_mno_pqr_stu_vwxyzc_def_"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "_abcabc_def_ghi_jkl_mno_pqr_stu_vwxq_yabdc_def_gh_abc_defi_jkl_abcabmno_pqr_sabdc_def_gh_abc_defi_jkl_abcabc_def_ghi_jkl_mno_pa_abcbc_DEF_ghiqr_stu_vwx_yz_mno_pqr_stuu_vwx_yztuu_vwx_yzz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "abdc_def_gh_abc_defi_jkl_abcabmno_pqr_sabdc_def_gh_afbc_defi_jkl_abcabc_def_ghi_jkl_mno_pa_abcbc_DEF_ghiqr_stu_vwx_yz_mno_pqr_stuu_vwx_yzabc_def_z"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef text_lowercase_underscore(text):\n        return bool(re.match('^[a-z]+(_[a-z]+)*$', text))\n"
+  }
+}

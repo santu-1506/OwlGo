@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-764-number-ctr",
+  "title": "Number Ctr",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to count number of digits in a given string.",
+  "entry_point": "number_ctr",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def number_ctr(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "program2bedone"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "3wonders"
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "program2bedone"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "3wonders"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "123"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "3wond-1ers2"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "hello world"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "1234567890"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "s": "1 2 3"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "      "
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "12 2 3"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "hello 12 2 3world"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "lhello world"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "12 2  3"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "lhello"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "1 22 3"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "22"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "1 2 3lhello"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "hello 12 2 olrld"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "lhell3lhelloo world"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "3"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "1 22 322"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "s": "helhello 12 2 olrldlo world"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "hello"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "1lhell3lhelloo 22 3"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "3world"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "12 22 322"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "2222"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "1 22 3212"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "hello 12 2 olrlld"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "world"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "1 22 13212"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "s": "112 2  3"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "1lhell3lhell oo 22 3"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "322"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "helhello 12 2 olrldlo worldolrlld"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "     olrldlo "
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "112"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "olrlld"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "12"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "olrld"
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def number_ctr(s):\n    return sum(c.isdigit() for c in s)\n"
+  }
+}

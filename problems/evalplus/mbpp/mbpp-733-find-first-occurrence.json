@@ -1,0 +1,573 @@
+{
+  "id": "mbpp-733-find-first-occurrence",
+  "title": "Find First Occurrence",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the index of the first occurrence of a given number in a sorted array.",
+  "entry_point": "find_first_occurrence",
+  "params": [
+    "A",
+    "x"
+  ],
+  "function_signature": {
+    "python": "def find_first_occurrence(A, x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "A": [
+          2,
+          5,
+          5,
+          5,
+          6,
+          6,
+          8,
+          9,
+          9,
+          9
+        ],
+        "x": 5
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "A": [
+          2,
+          3,
+          5,
+          5,
+          6,
+          6,
+          8,
+          9,
+          9,
+          9
+        ],
+        "x": 5
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "A": [
+          2,
+          5,
+          5,
+          5,
+          6,
+          6,
+          8,
+          9,
+          9,
+          9
+        ],
+        "x": 5
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "A": [
+          2,
+          3,
+          5,
+          5,
+          6,
+          6,
+          8,
+          9,
+          9,
+          9
+        ],
+        "x": 5
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "A": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          6,
+          8,
+          9,
+          9,
+          9
+        ],
+        "x": 6
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "A": [
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          6
+        ],
+        "x": 6
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          6
+        ],
+        "x": 6
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          6
+        ],
+        "x": 6
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5,
+          5,
+          5,
+          6
+        ],
+        "x": 6
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5
+        ],
+        "x": 5
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          6
+        ],
+        "x": 6
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          6,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          4,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          4,
+          5,
+          5
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          6,
+          6
+        ],
+        "x": 6
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          6,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          4,
+          5
+        ],
+        "x": 5
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5,
+          5,
+          5,
+          6
+        ],
+        "x": 5
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          4,
+          4,
+          5
+        ],
+        "x": 5
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          4,
+          5
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5,
+          5,
+          6,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "A": [
+          4
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          5,
+          6,
+          6,
+          6
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "A": [
+          4,
+          5,
+          5
+        ],
+        "x": 4
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_first_occurrence(A, x):\n    (left, right) = (0, len(A) - 1)\n    result = -1\n    while left <= right:\n        mid = (left + right) // 2\n        if x == A[mid]:\n            result = mid\n            right = mid - 1\n        elif x < A[mid]:\n            right = mid - 1\n        else:\n            left = mid + 1\n    return result\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-82-prime-length",
+  "title": "Prime Length",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that takes a string and returns True if the string\nlength is a prime number or False otherwise\nExamples\nprime_length('Hello') == True\nprime_length('abcdcba') == True\nprime_length('kittens') == True\nprime_length('orange') == False",
+  "entry_point": "prime_length",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def prime_length(string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "Hello"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abcdcba"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "Hello"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abcdcba"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "kittens"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "orange"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "wow"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "world"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "MadaM"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "Wow"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "HI"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "go"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "gogo"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "aaaaaaaaaaaaaaa"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "Madam"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "M"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "0"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "a"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "ab"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abcd"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcde"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abcdef"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdefg"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abcdefgh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdefghi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "zyxwvutsrqponmlkjihgfedcba"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcddefghi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdefabcddefghi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdeabcabcdefgfabcddefghi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdefghiab"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "abcdeabcabcdeabc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "zyxwvutsrqponmledcba"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "aabcbcde"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdefga"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcddefg"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdeabcddefgfg"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "abcdabcdefgadefg"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "aabcbcdeabcdeabcddefgaabcbcdefg"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "string": "zyxwvutsrqponwmlkjihgfedcba"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "string": "phZ"
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef prime_length(string):\n    \"\"\"Write a function that takes a string and returns True if the string\n    length is a prime number or False otherwise\n    Examples\n    prime_length('Hello') == True\n    prime_length('abcdcba') == True\n    prime_length('kittens') == True\n    prime_length('orange') == False\n    \"\"\"\n\n    def is_prime(a):\n        return not (a < 2 or any(a % x == 0 for x in range(2, int(a ** 0.5) + 1)))\n\n    return is_prime(len(string))\n\n"
+  }
+}

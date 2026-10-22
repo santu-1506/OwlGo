@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-89-encrypt",
+  "title": "Encrypt",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated. \nThe alphabet should be rotated in a manner such that the letters \nshift down by two multiplied to two places.\nFor example:\nencrypt('hi') returns 'lm'\nencrypt('asdfghjkl') returns 'ewhjklnop'\nencrypt('gf') returns 'kj'\nencrypt('et') returns 'ix'",
+  "entry_point": "encrypt",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def encrypt(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "hi"
+      },
+      "output": "lm"
+    },
+    {
+      "input": {
+        "s": "asdfghjkl"
+      },
+      "output": "ewhjklnop"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "hi"
+      },
+      "output": "lm"
+    },
+    {
+      "input": {
+        "s": "asdfghjkl"
+      },
+      "output": "ewhjklnop"
+    },
+    {
+      "input": {
+        "s": "gf"
+      },
+      "output": "kj"
+    },
+    {
+      "input": {
+        "s": "et"
+      },
+      "output": "ix"
+    },
+    {
+      "input": {
+        "s": "faewfawefaewg"
+      },
+      "output": "jeiajeaijeiak"
+    },
+    {
+      "input": {
+        "s": "hellomyfriend"
+      },
+      "output": "lippsqcjvmirh"
+    },
+    {
+      "input": {
+        "s": "dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh"
+      },
+      "output": "hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl"
+    },
+    {
+      "input": {
+        "s": "a"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "s": "abcde"
+      },
+      "output": "efghi"
+    },
+    {
+      "input": {
+        "s": "uvwxyz"
+      },
+      "output": "yzabcd"
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "test123"
+      },
+      "output": "xiwx123"
+    },
+    {
+      "input": {
+        "s": "1a2b3c"
+      },
+      "output": "1e2f3g"
+    },
+    {
+      "input": {
+        "s": "hello world"
+      },
+      "output": "lipps asvph"
+    },
+    {
+      "input": {
+        "s": "monitor"
+      },
+      "output": "qsrmxsv"
+    },
+    {
+      "input": {
+        "s": "abc"
+      },
+      "output": "efg"
+    },
+    {
+      "input": {
+        "s": "kmt"
+      },
+      "output": "oqx"
+    },
+    {
+      "input": {
+        "s": "park"
+      },
+      "output": "tevo"
+    },
+    {
+      "input": {
+        "s": "mtkmt"
+      },
+      "output": "qxoqx"
+    },
+    {
+      "input": {
+        "s": "testpark123"
+      },
+      "output": "xiwxtevo123"
+    },
+    {
+      "input": {
+        "s": "uvuvwxyzwxyz"
+      },
+      "output": "yzyzabcdabcd"
+    },
+    {
+      "input": {
+        "s": "abcdetest123"
+      },
+      "output": "efghixiwx123"
+    },
+    {
+      "input": {
+        "s": "testpark1233"
+      },
+      "output": "xiwxtevo1233"
+    },
+    {
+      "input": {
+        "s": "parrte1a2b3cstpark123"
+      },
+      "output": "tevvxi1e2f3gwxtevo123"
+    },
+    {
+      "input": {
+        "s": "pamonitork"
+      },
+      "output": "teqsrmxsvo"
+    },
+    {
+      "input": {
+        "s": "uvwabcxyuz"
+      },
+      "output": "yzaefgbcyd"
+    },
+    {
+      "input": {
+        "s": "uvuvwxyzwxz"
+      },
+      "output": "yzyzabcdabd"
+    },
+    {
+      "input": {
+        "s": "t"
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "s": "uvz"
+      },
+      "output": "yzd"
+    },
+    {
+      "input": {
+        "s": "kuvz"
+      },
+      "output": "oyzd"
+    },
+    {
+      "input": {
+        "s": "kkuvz"
+      },
+      "output": "ooyzd"
+    },
+    {
+      "input": {
+        "s": "abct"
+      },
+      "output": "efgx"
+    },
+    {
+      "input": {
+        "s": "tes2tpark1233"
+      },
+      "output": "xiw2xtevo1233"
+    },
+    {
+      "input": {
+        "s": "at"
+      },
+      "output": "ex"
+    },
+    {
+      "input": {
+        "s": "tkmtkmtuvwabcxyuzmt"
+      },
+      "output": "xoqxoqxyzaefgbcydqx"
+    },
+    {
+      "input": {
+        "s": "uvuvwxyzwxzyz"
+      },
+      "output": "yzyzabcdabdcd"
+    },
+    {
+      "input": {
+        "s": "tkmtkmtuvwabuvuvwxyzwxzcxyuzmt"
+      },
+      "output": "xoqxoqxyzaefyzyzabcdabdgbcydqx"
+    },
+    {
+      "input": {
+        "s": "tsest123"
+      },
+      "output": "xwiwx123"
+    },
+    {
+      "input": {
+        "s": "uvutvwxyzwxzyz"
+      },
+      "output": "yzyxzabcdabdcd"
+    },
+    {
+      "input": {
+        "s": "uvwparrkxyz"
+      },
+      "output": "yzatevvobcd"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef encrypt(s):\n    \"\"\"Create a function encrypt that takes a string as an argument and\n    returns a string encrypted with the alphabet being rotated. \n    The alphabet should be rotated in a manner such that the letters \n    shift down by two multiplied to two places.\n    For example:\n    encrypt('hi') returns 'lm'\n    encrypt('asdfghjkl') returns 'ewhjklnop'\n    encrypt('gf') returns 'kj'\n    encrypt('et') returns 'ix'\n    \"\"\"\n\n    d = 'abcdefghijklmnopqrstuvwxyz'\n    return \"\".join(map(lambda ch: chr((ord(ch) - ord(\"a\") + 4) % 26 + ord(\"a\")) if ch in d else ch, s))\n\n"
+  }
+}

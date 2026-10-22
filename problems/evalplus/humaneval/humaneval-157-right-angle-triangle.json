@@ -1,0 +1,365 @@
+{
+  "id": "humaneval-157-right-angle-triangle",
+  "title": "Right Angle Triangle",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given the lengths of the three sides of a triangle. Return True if the three\nsides form a right-angled triangle, False otherwise.\nA right-angled triangle is a triangle in which one angle is right angle or \n90 degree.\nExample:\nright_angle_triangle(3, 4, 5) == True\nright_angle_triangle(1, 2, 3) == False",
+  "entry_point": "right_angle_triangle",
+  "params": [
+    "a",
+    "b",
+    "c"
+  ],
+  "function_signature": {
+    "python": "def right_angle_triangle(a, b, c):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 3,
+        "b": 4,
+        "c": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 2,
+        "c": 3
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 3,
+        "b": 4,
+        "c": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 2,
+        "c": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 6,
+        "c": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 2,
+        "c": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 7,
+        "b": 24,
+        "c": 25
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 5,
+        "c": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 12,
+        "c": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 8,
+        "c": 17
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 48,
+        "b": 55,
+        "c": 73
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 1,
+        "c": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 2,
+        "c": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 9,
+        "b": 12,
+        "c": 15
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 20,
+        "b": 21,
+        "c": 29
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 7,
+        "b": 9,
+        "c": 12
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 8,
+        "b": 15,
+        "c": 17
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 6,
+        "b": 8,
+        "c": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 7,
+        "c": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 16,
+        "c": 20
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 5,
+        "c": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 4,
+        "c": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 13,
+        "c": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 17,
+        "c": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 21,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 4,
+        "c": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 21,
+        "c": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 16,
+        "b": 7,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 16,
+        "b": 8,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 5,
+        "c": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 16,
+        "b": 5,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 10,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 6,
+        "b": 8,
+        "c": 13
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 12,
+        "b": 11,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 16,
+        "b": 6,
+        "c": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 6,
+        "c": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 12,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 8,
+        "c": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 20,
+        "b": 7,
+        "c": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 20,
+        "b": 21,
+        "c": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 21,
+        "b": 21,
+        "c": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 19,
+        "c": 19
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef right_angle_triangle(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return True if the three\n    sides form a right-angled triangle, False otherwise.\n    A right-angled triangle is a triangle in which one angle is right angle or \n    90 degree.\n    Example:\n    right_angle_triangle(3, 4, 5) == True\n    right_angle_triangle(1, 2, 3) == False\n    '''\n\n    \n    return a ** 2 + b ** 2 == c ** 2 or a ** 2 + c ** 2 == b ** 2 or b ** 2 + c ** 2 == a ** 2\n\n"
+  }
+}

@@ -1,0 +1,599 @@
+{
+  "id": "mbpp-57-find-max-num",
+  "title": "Find Max Num",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the largest number that can be formed with the given list of digits.",
+  "entry_point": "find_Max_Num",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def find_Max_Num(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": 321
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          5,
+          6,
+          1
+        ]
+      },
+      "output": 6541
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": 321
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          5,
+          6,
+          1
+        ]
+      },
+      "output": 6541
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          9
+        ]
+      },
+      "output": 9321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 9321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 987654321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 993221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "output": 9932211
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 9876543321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          8,
+          7,
+          7,
+          6,
+          6,
+          5,
+          3,
+          3,
+          2
+        ]
+      },
+      "output": 98877665332
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 93321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 933321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 9333221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 9876543221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 93221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          9,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 9993221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 94321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 95321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 932221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          9,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "output": 99932211
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1
+        ]
+      },
+      "output": 9521
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 9322221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 99333221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 9876544321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          3,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 9432221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          9,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": 9993221111
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 98765444321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 99321
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          2,
+          2,
+          2
+        ]
+      },
+      "output": 993222
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          9,
+          3,
+          2,
+          2,
+          2
+        ]
+      },
+      "output": 9993222
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          5,
+          4,
+          2,
+          1
+        ]
+      },
+      "output": 987655421
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          5,
+          2,
+          1
+        ]
+      },
+      "output": 95521
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 993333221
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "output": 9432211
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          3,
+          3,
+          2
+        ]
+      },
+      "output": 94332
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": 99322111
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          3,
+          2,
+          2
+        ]
+      },
+      "output": 99322
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          3,
+          1
+        ]
+      },
+      "output": 987654331
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          9,
+          3,
+          2,
+          2
+        ]
+      },
+      "output": 999322
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          7,
+          2,
+          1
+        ]
+      },
+      "output": 99721
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 944321
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_Max_Num(arr) : \n    arr.sort(reverse = True)\n    return int(\"\".join(map(str,arr)))\n"
+  }
+}

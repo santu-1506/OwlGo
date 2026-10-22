@@ -1,0 +1,677 @@
+{
+  "id": "humaneval-22-filter-integers",
+  "title": "Filter Integers",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Filter given list of any python values only for integers\n>>> filter_integers(['a', 3.14, 5])\n[5]\n>>> filter_integers([1, 2, 3, 'abc', {}, []])\n[1, 2, 3]",
+  "entry_point": "filter_integers",
+  "params": [
+    "values"
+  ],
+  "function_signature": {
+    "python": "def filter_integers(values: List[Any]) -> List[int]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "values": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          4,
+          {},
+          [],
+          23.2,
+          9,
+          "adasd"
+        ]
+      },
+      "output": [
+        4,
+        9
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "values": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          4,
+          {},
+          [],
+          23.2,
+          9,
+          "adasd"
+        ]
+      },
+      "output": [
+        4,
+        9
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          3,
+          "c",
+          3,
+          3,
+          "a",
+          "b"
+        ]
+      },
+      "output": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          2.5,
+          4.6,
+          7.8,
+          "abc",
+          {},
+          []
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          true,
+          false,
+          null,
+          0,
+          -10,
+          "test",
+          [],
+          {},
+          3.14
+        ]
+      },
+      "output": [
+        0,
+        -10
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1,
+          "2",
+          "3",
+          4,
+          -5
+        ]
+      },
+      "output": [
+        1,
+        4,
+        -5
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1000000,
+          -1000000,
+          1.32,
+          "-1",
+          "-2",
+          [
+            1,
+            2,
+            "three"
+          ]
+        ]
+      },
+      "output": [
+        1000000,
+        -1000000
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          "apple",
+          2.71828,
+          null,
+          false,
+          "watermelon",
+          42
+        ]
+      },
+      "output": [
+        42
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1,
+          -1,
+          0,
+          999
+        ]
+      },
+      "output": [
+        1,
+        -1,
+        0,
+        999
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          -4.6
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          "hello",
+          "world",
+          "how",
+          "are",
+          "you"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          true,
+          false,
+          null,
+          0,
+          3.253739830287621,
+          -10,
+          "test",
+          [],
+          {},
+          3.14
+        ]
+      },
+      "output": [
+        0,
+        -10
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          "arare",
+          "world",
+          "how",
+          "are",
+          "you"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          "hello",
+          "worldd",
+          "how",
+          "are",
+          "you",
+          "hellhelloo",
+          "how"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          -4.6,
+          1.5,
+          1.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          1.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          4.6,
+          7.8,
+          "aapplebc",
+          {},
+          [],
+          2.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          "apple",
+          2.71828,
+          null,
+          false,
+          "watermelon",
+          42,
+          2.71828
+        ]
+      },
+      "output": [
+        42
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          -4.6,
+          -4.6
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          2.7,
+          3.0,
+          -4.6,
+          1.5,
+          1.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          "hello",
+          "how",
+          "world",
+          "how",
+          "test",
+          "you"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          true,
+          false,
+          null,
+          0,
+          -10,
+          "test",
+          [],
+          {
+            "1.5": "hellhelloo",
+            "2.5": "-2",
+            "2.7": "-2",
+            "3.0": "-2",
+            "82.08860694438306": "hello",
+            "-51.08332919278058": "Guxr",
+            "18.590257578242174": "are",
+            "61.76736727274371": "HECIzOixT",
+            "62.37768526891736": "hello"
+          },
+          3.14
+        ]
+      },
+      "output": [
+        0,
+        -10
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          {
+            "1.5": "hellhelloo",
+            "2.5": "-2",
+            "2.7": "-2",
+            "3.0": "-2",
+            "82.08860694438306": "hello",
+            "-51.08332919278058": "Guxr",
+            "18.590257578242174": "are",
+            "61.76736727274371": "HECIzOixT",
+            "62.37768526891736": "hello",
+            "4.6": "watermelon"
+          },
+          true,
+          false,
+          null,
+          0,
+          -10,
+          "test",
+          [],
+          {
+            "1.5": "hellhelloo",
+            "2.5": "-2",
+            "2.7": "-2",
+            "3.0": "-2",
+            "82.08860694438306": "hello",
+            "-51.08332919278058": "Guxr",
+            "18.590257578242174": "are",
+            "61.76736727274371": "HECIzOixT",
+            "62.37768526891736": "hello",
+            "4.6": "watermelon"
+          },
+          3.14
+        ]
+      },
+      "output": [
+        0,
+        -10
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          -51.08332919278058,
+          -4.6
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          78.61928819331277,
+          -6.77509560458482,
+          -16.107923403329096,
+          -80.34678514569492
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          1.5,
+          2.7
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          "hello",
+          "how",
+          "world",
+          "how",
+          "",
+          "ho-2w",
+          "worldhow",
+          "test",
+          "you"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          2.7,
+          3.0,
+          1.5,
+          1.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          true,
+          false,
+          null,
+          0,
+          -10,
+          "test",
+          [],
+          {},
+          3.14,
+          "test"
+        ]
+      },
+      "output": [
+        0,
+        -10
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          4.6,
+          7.8,
+          "aapplebc",
+          {},
+          [],
+          2.5,
+          []
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          2.5,
+          4.178596277327428,
+          7.8,
+          "abc",
+          {},
+          [],
+          {}
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          8,
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          1
+        ]
+      },
+      "output": [
+        8,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        1
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          "apple",
+          "appaapplebcle",
+          2.71828,
+          null,
+          false,
+          "watermelon",
+          42,
+          2.71828,
+          "apple"
+        ]
+      },
+      "output": [
+        42
+      ]
+    },
+    {
+      "input": {
+        "values": [
+          2.5,
+          4.6,
+          7.8,
+          "abc",
+          {},
+          [],
+          7.8
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          2.7,
+          3.0,
+          -16.107923403329096,
+          -4.6,
+          -4.6
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          2.7,
+          1.5,
+          1.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          1.5,
+          1.32,
+          3.0,
+          1.5
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "values": [
+          "hello",
+          "worldd",
+          "how",
+          "are",
+          "you",
+          "hellhelloo",
+          "howatermelonw"
+        ]
+      },
+      "output": []
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List, Any\n\n\ndef filter_integers(values: List[Any]) -> List[int]:\n    \"\"\" Filter given list of any python values only for integers\n    >>> filter_integers(['a', 3.14, 5])\n    [5]\n    >>> filter_integers([1, 2, 3, 'abc', {}, []])\n    [1, 2, 3]\n    \"\"\"\n\n    return list(filter(lambda x: type(x) == int, values))\n\n"
+  }
+}

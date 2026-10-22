@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-11-remove-occ",
+  "title": "Remove Occ",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to remove first and last occurrence of a given character from the string.",
+  "entry_point": "remove_Occ",
+  "params": [
+    "s",
+    "ch"
+  ],
+  "function_signature": {
+    "python": "def remove_Occ(s, ch):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "hello",
+        "ch": "l"
+      },
+      "output": "heo"
+    },
+    {
+      "input": {
+        "s": "abcda",
+        "ch": "a"
+      },
+      "output": "bcd"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "hello",
+        "ch": "l"
+      },
+      "output": "heo"
+    },
+    {
+      "input": {
+        "s": "abcda",
+        "ch": "a"
+      },
+      "output": "bcd"
+    },
+    {
+      "input": {
+        "s": "PHP",
+        "ch": "P"
+      },
+      "output": "H"
+    },
+    {
+      "input": {
+        "s": "a",
+        "ch": "a"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "aaa",
+        "ch": "a"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "s": "hello world",
+        "ch": "x"
+      },
+      "output": "hello world"
+    },
+    {
+      "input": {
+        "s": "worlda",
+        "ch": "a"
+      },
+      "output": "world"
+    },
+    {
+      "input": {
+        "s": "x",
+        "ch": "x"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "hello world",
+        "ch": "a"
+      },
+      "output": "hello world"
+    },
+    {
+      "input": {
+        "s": "world",
+        "ch": "x"
+      },
+      "output": "world"
+    },
+    {
+      "input": {
+        "s": "xx",
+        "ch": "x"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "xworlaaada",
+        "ch": "x"
+      },
+      "output": "worlaaada"
+    },
+    {
+      "input": {
+        "s": "axworlaaada",
+        "ch": "x"
+      },
+      "output": "aworlaaada"
+    },
+    {
+      "input": {
+        "s": "waaaorlda",
+        "ch": "a"
+      },
+      "output": "waaorld"
+    },
+    {
+      "input": {
+        "s": "xhello world",
+        "ch": "a"
+      },
+      "output": "xhello world"
+    },
+    {
+      "input": {
+        "s": "xxx",
+        "ch": "x"
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "s": "worlda",
+        "ch": "x"
+      },
+      "output": "worlda"
+    },
+    {
+      "input": {
+        "s": "world",
+        "ch": "a"
+      },
+      "output": "world"
+    },
+    {
+      "input": {
+        "s": "hwllo world",
+        "ch": "a"
+      },
+      "output": "hwllo world"
+    },
+    {
+      "input": {
+        "s": "axx",
+        "ch": "a"
+      },
+      "output": "xx"
+    },
+    {
+      "input": {
+        "s": "hwllo world",
+        "ch": "x"
+      },
+      "output": "hwllo world"
+    },
+    {
+      "input": {
+        "s": "hwllo",
+        "ch": "a"
+      },
+      "output": "hwllo"
+    },
+    {
+      "input": {
+        "s": "hwl",
+        "ch": "a"
+      },
+      "output": "hwl"
+    },
+    {
+      "input": {
+        "s": "ahwllo world",
+        "ch": "a"
+      },
+      "output": "hwllo world"
+    },
+    {
+      "input": {
+        "s": "xxx",
+        "ch": "a"
+      },
+      "output": "xxx"
+    },
+    {
+      "input": {
+        "s": "hwll",
+        "ch": "a"
+      },
+      "output": "hwll"
+    },
+    {
+      "input": {
+        "s": "hhwl",
+        "ch": "a"
+      },
+      "output": "hhwl"
+    },
+    {
+      "input": {
+        "s": "ahwllo",
+        "ch": "x"
+      },
+      "output": "ahwllo"
+    },
+    {
+      "input": {
+        "s": "whwlloorld",
+        "ch": "a"
+      },
+      "output": "whwlloorld"
+    },
+    {
+      "input": {
+        "s": "wda",
+        "ch": "x"
+      },
+      "output": "wda"
+    },
+    {
+      "input": {
+        "s": "hwl",
+        "ch": "x"
+      },
+      "output": "hwl"
+    },
+    {
+      "input": {
+        "s": "xrworlaaada",
+        "ch": "x"
+      },
+      "output": "rworlaaada"
+    },
+    {
+      "input": {
+        "s": "aahwllo",
+        "ch": "a"
+      },
+      "output": "hwllo"
+    },
+    {
+      "input": {
+        "s": "a",
+        "ch": "x"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "s": "xxwaaaorlda",
+        "ch": "x"
+      },
+      "output": "waaaorlda"
+    },
+    {
+      "input": {
+        "s": "wda",
+        "ch": "a"
+      },
+      "output": "wd"
+    },
+    {
+      "input": {
+        "s": "hxworlaaadawllo",
+        "ch": "a"
+      },
+      "output": "hxworlaadwllo"
+    },
+    {
+      "input": {
+        "s": "aaaa",
+        "ch": "a"
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "s": "xrworworldalaaadax",
+        "ch": "x"
+      },
+      "output": "rworworldalaaada"
+    },
+    {
+      "input": {
+        "s": "aaawda",
+        "ch": "x"
+      },
+      "output": "aaawda"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_Occ(s,ch): \n    s = s.replace(ch, '', 1)\n    s = s[::-1].replace(ch, '', 1)[::-1]\n    return s\n"
+  }
+}

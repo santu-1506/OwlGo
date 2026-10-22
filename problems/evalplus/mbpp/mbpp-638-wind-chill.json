@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-638-wind-chill",
+  "title": "Wind Chill",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate the wind chill index rounded to the next integer given the wind velocity in km/h and a temperature in celsius.",
+  "entry_point": "wind_chill",
+  "params": [
+    "v",
+    "t"
+  ],
+  "function_signature": {
+    "python": "def wind_chill(v, t):"
+  },
+  "examples": [
+    {
+      "input": {
+        "v": 120,
+        "t": 35
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "v": 40,
+        "t": 20
+      },
+      "output": 19
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "v": 120,
+        "t": 35
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "v": 40,
+        "t": 20
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "v": 10,
+        "t": 8
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "v": 0,
+        "t": 0
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "v": 500,
+        "t": -50
+      },
+      "output": -102
+    },
+    {
+      "input": {
+        "v": 500,
+        "t": 0
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "v": 0,
+        "t": 500
+      },
+      "output": 324
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": 0
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": 1
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "v": 500,
+        "t": 500
+      },
+      "output": 829
+    },
+    {
+      "input": {
+        "v": 0,
+        "t": 501
+      },
+      "output": 324
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": -1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "v": 501,
+        "t": -50
+      },
+      "output": -102
+    },
+    {
+      "input": {
+        "v": 500,
+        "t": 1
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "v": true,
+        "t": false
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "v": 501,
+        "t": 501
+      },
+      "output": 831
+    },
+    {
+      "input": {
+        "v": false,
+        "t": true
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "v": 501,
+        "t": 0
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "v": false,
+        "t": false
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "v": 501,
+        "t": 500
+      },
+      "output": 829
+    },
+    {
+      "input": {
+        "v": 0,
+        "t": 1
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "v": 500,
+        "t": 2
+      },
+      "output": -14
+    },
+    {
+      "input": {
+        "v": 502,
+        "t": 501
+      },
+      "output": 831
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": 501
+      },
+      "output": 512
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": 500
+      },
+      "output": 511
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": -50
+      },
+      "output": -49
+    },
+    {
+      "input": {
+        "v": 2,
+        "t": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "v": 1,
+        "t": -2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "v": 2,
+        "t": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "v": 502,
+        "t": -50
+      },
+      "output": -102
+    },
+    {
+      "input": {
+        "v": 2,
+        "t": -50
+      },
+      "output": -53
+    },
+    {
+      "input": {
+        "v": 503,
+        "t": 502
+      },
+      "output": 833
+    },
+    {
+      "input": {
+        "v": 73.15589926015126,
+        "t": 73.15589926015126
+      },
+      "output": 94
+    },
+    {
+      "input": {
+        "v": 503,
+        "t": 501
+      },
+      "output": 831
+    },
+    {
+      "input": {
+        "v": 73.15589926015126,
+        "t": 37.688172821388065
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "v": 2,
+        "t": -52
+      },
+      "output": -55
+    },
+    {
+      "input": {
+        "v": 504,
+        "t": 504
+      },
+      "output": 836
+    },
+    {
+      "input": {
+        "v": 501,
+        "t": 69
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "v": 503,
+        "t": 0
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "v": 69,
+        "t": 501
+      },
+      "output": 693
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math\ndef wind_chill(v,t):\n windchill = 13.12 + 0.6215*t -  11.37*math.pow(v, 0.16) + 0.3965*t*math.pow(v, 0.16)\n return int(round(windchill, 0))\n"
+  }
+}

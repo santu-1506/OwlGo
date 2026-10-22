@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-131-digits",
+  "title": "Digits",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a positive integer n, return the product of the odd digits.\nReturn 0 if all digits are even.\nFor example:\ndigits(1)  == 1\ndigits(4)  == 0\ndigits(235) == 15",
+  "entry_point": "digits",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def digits(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 54
+      },
+      "output": 5
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 54
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 120
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 5014
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 98765
+      },
+      "output": 315
+    },
+    {
+      "input": {
+        "n": 5576543
+      },
+      "output": 2625
+    },
+    {
+      "input": {
+        "n": 2468
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 951
+      },
+      "output": 45
+    },
+    {
+      "input": {
+        "n": 246
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 135797531
+      },
+      "output": 99225
+    },
+    {
+      "input": {
+        "n": 888
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 182135
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 703
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 729
+    },
+    {
+      "input": {
+        "n": 111
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 952
+      },
+      "output": 45
+    },
+    {
+      "input": {
+        "n": 889
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 182136
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 701
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": 567
+    },
+    {
+      "input": {
+        "n": 247
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 953
+      },
+      "output": 135
+    },
+    {
+      "input": {
+        "n": 135797532
+      },
+      "output": 99225
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 248
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 996
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "n": 135797533
+      },
+      "output": 297675
+    },
+    {
+      "input": {
+        "n": 995
+      },
+      "output": 405
+    },
+    {
+      "input": {
+        "n": 994
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "n": 891
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\n    Return 0 if all digits are even.\n    For example:\n    digits(1)  == 1\n    digits(4)  == 0\n    digits(235) == 15\n    \"\"\"\n\n\n    has_odd, prod = False, 1\n    for ch in str(n):\n        if int(ch) % 2 == 1:\n            has_odd = True\n            prod *= int(ch)\n    return 0 if not has_odd else prod\n\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-31-is-prime",
+  "title": "Is Prime",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return true if a given number is prime, and false otherwise.\n>>> is_prime(6)\nFalse\n>>> is_prime(101)\nTrue\n>>> is_prime(11)\nTrue\n>>> is_prime(13441)\nTrue\n>>> is_prime(61)\nTrue\n>>> is_prime(4)\nFalse\n>>> is_prime(1)\nFalse",
+  "entry_point": "is_prime",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_prime(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 13441
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 85
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 255379
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 31
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 199
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1009
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 8999
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1234567
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 32
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9001
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1234566
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9002
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 200
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 38
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 37
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1010
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1234568
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1008
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 33
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef is_prime(n):\n    \"\"\"Return true if a given number is prime, and false otherwise.\n    >>> is_prime(6)\n    False\n    >>> is_prime(101)\n    True\n    >>> is_prime(11)\n    True\n    >>> is_prime(13441)\n    True\n    >>> is_prime(61)\n    True\n    >>> is_prime(4)\n    False\n    >>> is_prime(1)\n    False\n    \"\"\"\n\n    if n <= 1: return False\n    n_sqrt = 1\n    while n_sqrt ** 2 < n: n_sqrt += 1\n    for i in range(2, min(n_sqrt + 1, n)):\n        if n % i == 0:\n            return False\n    return True\n\n"
+  }
+}

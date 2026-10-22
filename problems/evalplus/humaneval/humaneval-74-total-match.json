@@ -1,0 +1,782 @@
+{
+  "id": "humaneval-74-total-match",
+  "title": "Total Match",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that accepts two lists of strings and returns the list that has \ntotal number of chars in the all strings of the list less than the other list.\n\nif the two lists have the same number of chars, return the first list.\n\nExamples\ntotal_match([], []) ➞ []\ntotal_match(['hi', 'admin'], ['hI', 'Hi']) ➞ ['hI', 'Hi']\ntotal_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) ➞ ['hi', 'admin']\ntotal_match(['hi', 'admin'], ['hI', 'hi', 'hi']) ➞ ['hI', 'hi', 'hi']\ntotal_match(['4'], ['1', '2', '3', '4', '5']) ➞ ['4']",
+  "entry_point": "total_match",
+  "params": [
+    "lst1",
+    "lst2"
+  ],
+  "function_signature": {
+    "python": "def total_match(lst1, lst2):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst1": [],
+        "lst2": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst1": [
+          "hi",
+          "admin"
+        ],
+        "lst2": [
+          "hi",
+          "hi"
+        ]
+      },
+      "output": [
+        "hi",
+        "hi"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst1": [],
+        "lst2": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst1": [
+          "hi",
+          "admin"
+        ],
+        "lst2": [
+          "hi",
+          "hi"
+        ]
+      },
+      "output": [
+        "hi",
+        "hi"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "hi",
+          "admin"
+        ],
+        "lst2": [
+          "hi",
+          "hi",
+          "admin",
+          "project"
+        ]
+      },
+      "output": [
+        "hi",
+        "admin"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "4"
+        ],
+        "lst2": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "output": [
+        "4"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "hi",
+          "admin"
+        ],
+        "lst2": [
+          "hI",
+          "Hi"
+        ]
+      },
+      "output": [
+        "hI",
+        "Hi"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "hi",
+          "admin"
+        ],
+        "lst2": [
+          "hI",
+          "hi",
+          "hi"
+        ]
+      },
+      "output": [
+        "hI",
+        "hi",
+        "hi"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "hi",
+          "admin"
+        ],
+        "lst2": [
+          "hI",
+          "hi",
+          "hii"
+        ]
+      },
+      "output": [
+        "hi",
+        "admin"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [],
+        "lst2": [
+          "this"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst1": [
+          "this"
+        ],
+        "lst2": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst1": [
+          ""
+        ],
+        "lst2": [
+          "hello"
+        ]
+      },
+      "output": [
+        ""
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "hello",
+          "world"
+        ],
+        "lst2": [
+          "hi",
+          "there"
+        ]
+      },
+      "output": [
+        "hi",
+        "there"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "fun"
+        ],
+        "lst2": [
+          "coding",
+          "is",
+          "awesome"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "fun"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "abc"
+        ],
+        "lst2": [
+          "abcdefghijklmnopqrstuvwxyz"
+        ]
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "happy",
+          "new",
+          "year"
+        ],
+        "lst2": [
+          "merry",
+          "christmas"
+        ]
+      },
+      "output": [
+        "happy",
+        "new",
+        "year"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "happy",
+          "new",
+          "year"
+        ],
+        "lst2": [
+          "happy",
+          "new",
+          "year",
+          "2022"
+        ]
+      },
+      "output": [
+        "happy",
+        "new",
+        "year"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "happy",
+          "birthday",
+          "sarah"
+        ],
+        "lst2": [
+          "happy",
+          "birthday",
+          "sally"
+        ]
+      },
+      "output": [
+        "happy",
+        "birthday",
+        "sarah"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "cat",
+          "dog",
+          "bird"
+        ],
+        "lst2": [
+          "apple",
+          "banana",
+          "orange"
+        ]
+      },
+      "output": [
+        "cat",
+        "dog",
+        "bird"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "kevin",
+          "jessica",
+          "lucas"
+        ],
+        "lst2": [
+          "adam",
+          "michael",
+          "smith"
+        ]
+      },
+      "output": [
+        "adam",
+        "michael",
+        "smith"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "lst2": [
+          "one",
+          "two",
+          "three"
+        ]
+      },
+      "output": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "christmas",
+          "michael",
+          "smith",
+          "smith"
+        ],
+        "lst2": [
+          "christmas",
+          "michael",
+          "smith",
+          "smith"
+        ]
+      },
+      "output": [
+        "christmas",
+        "michael",
+        "smith",
+        "smith"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "fun",
+          "coding"
+        ],
+        "lst2": [
+          "coding",
+          "is",
+          "awesome"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "awesome"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "codig",
+          "fun",
+          "coding"
+        ],
+        "lst2": [
+          "codogding",
+          "coding",
+          "is",
+          "awesome"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "codig",
+        "fun",
+        "coding"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "cocding",
+          "awesome"
+        ],
+        "lst2": [
+          "coding",
+          "is",
+          "cocding",
+          "awesome"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "cocding",
+        "awesome"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "happy",
+          "birthday",
+          "one",
+          "sally"
+        ],
+        "lst2": [
+          "happy",
+          "birthday",
+          "one",
+          "sally"
+        ]
+      },
+      "output": [
+        "happy",
+        "birthday",
+        "one",
+        "sally"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "isorange",
+          "fun"
+        ],
+        "lst2": [
+          "coding",
+          "is",
+          "awesome"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "awesome"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "merdogry",
+          "merry"
+        ],
+        "lst2": [
+          "merdogry",
+          "merry"
+        ]
+      },
+      "output": [
+        "merdogry",
+        "merry"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "2",
+          "kevin",
+          "jessica",
+          "lucas"
+        ],
+        "lst2": [
+          "adam",
+          "michael",
+          "smith"
+        ]
+      },
+      "output": [
+        "adam",
+        "michael",
+        "smith"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "codig",
+          "fun",
+          "coding"
+        ],
+        "lst2": [
+          "codogding",
+          "coding",
+          "is",
+          "awesome",
+          "awesome"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "codig",
+        "fun",
+        "coding"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "hello",
+          "world"
+        ],
+        "lst2": [
+          "cathi",
+          "there"
+        ]
+      },
+      "output": [
+        "hello",
+        "world"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          ""
+        ],
+        "lst2": [
+          "hello",
+          "hello"
+        ]
+      },
+      "output": [
+        ""
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "coding",
+          "is",
+          "awesome",
+          "is"
+        ],
+        "lst2": [
+          "coding",
+          "is",
+          "awesome",
+          "is"
+        ]
+      },
+      "output": [
+        "coding",
+        "is",
+        "awesome",
+        "is"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "three",
+          "2022",
+          "dog",
+          "birbananad"
+        ],
+        "lst2": [
+          "three",
+          "2022",
+          "dog",
+          "birbananad"
+        ]
+      },
+      "output": [
+        "three",
+        "2022",
+        "dog",
+        "birbananad"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "is",
+          "awesome"
+        ],
+        "lst2": [
+          "is",
+          "awesome"
+        ]
+      },
+      "output": [
+        "is",
+        "awesome"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "bananaone"
+        ],
+        "lst2": [
+          "bananaone"
+        ]
+      },
+      "output": [
+        "bananaone"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "cat",
+          "dog",
+          "bird"
+        ],
+        "lst2": [
+          "apple",
+          "aple",
+          "banana",
+          "orange"
+        ]
+      },
+      "output": [
+        "cat",
+        "dog",
+        "bird"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "happy",
+          "birthday",
+          "sally"
+        ],
+        "lst2": [
+          "happy",
+          "birthday",
+          "sally"
+        ]
+      },
+      "output": [
+        "happy",
+        "birthday",
+        "sally"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "cathi",
+          "there",
+          "chathi",
+          "there"
+        ],
+        "lst2": [
+          "cathi",
+          "there",
+          "chathi",
+          "there"
+        ]
+      },
+      "output": [
+        "cathi",
+        "there",
+        "chathi",
+        "there"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "happy",
+          "birthday",
+          "merry",
+          "one",
+          "sally"
+        ],
+        "lst2": [
+          "happy",
+          "birthday",
+          "merry",
+          "one",
+          "sally"
+        ]
+      },
+      "output": [
+        "happy",
+        "birthday",
+        "merry",
+        "one",
+        "sally"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "lly",
+          "birhday",
+          "happy",
+          "birthday",
+          "sally",
+          "sally"
+        ],
+        "lst2": [
+          "lly",
+          "birhday",
+          "happy",
+          "birthday",
+          "sally",
+          "sally"
+        ]
+      },
+      "output": [
+        "lly",
+        "birhday",
+        "happy",
+        "birthday",
+        "sally",
+        "sally"
+      ]
+    },
+    {
+      "input": {
+        "lst1": [
+          "kevin",
+          "jessica",
+          "lucas"
+        ],
+        "lst2": [
+          "kevin",
+          "jessica",
+          "lucas"
+        ]
+      },
+      "output": [
+        "kevin",
+        "jessica",
+        "lucas"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef total_match(lst1, lst2):\n    '''\n    Write a function that accepts two lists of strings and returns the list that has \n    total number of chars in the all strings of the list less than the other list.\n\n    if the two lists have the same number of chars, return the first list.\n\n    Examples\n    total_match([], []) ➞ []\n    total_match(['hi', 'admin'], ['hI', 'Hi']) ➞ ['hI', 'Hi']\n    total_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) ➞ ['hi', 'admin']\n    total_match(['hi', 'admin'], ['hI', 'hi', 'hi']) ➞ ['hI', 'hi', 'hi']\n    total_match(['4'], ['1', '2', '3', '4', '5']) ➞ ['4']\n    '''\n\n    c1, c2 = sum(map(lambda s: len(s), lst1)), sum(map(lambda s: len(s), lst2))\n    return lst1 if c1 <= c2 else lst2\n\n"
+  }
+}

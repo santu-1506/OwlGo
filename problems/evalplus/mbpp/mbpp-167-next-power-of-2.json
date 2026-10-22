@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-167-next-power-of-2",
+  "title": "Next Power Of 2",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the smallest power of 2 greater than or equal to n.",
+  "entry_point": "next_power_of_2",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def next_power_of_2(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 8
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 128
+      },
+      "output": 128
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 1048576
+    },
+    {
+      "input": {
+        "n": 342788
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 567990
+      },
+      "output": 1048576
+    },
+    {
+      "input": {
+        "n": 999999999999
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 987654321098
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 1000000000000
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 1234567890123
+      },
+      "output": 2199023255552
+    },
+    {
+      "input": {
+        "n": 987654321
+      },
+      "output": 1073741824
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n": 342789
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n": 1000000000001
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 1048576
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 987654320
+      },
+      "output": 1073741824
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "n": 129
+      },
+      "output": 256
+    },
+    {
+      "input": {
+        "n": 95
+      },
+      "output": 128
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "n": 38
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n": 342790
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 128
+    },
+    {
+      "input": {
+        "n": 987654322
+      },
+      "output": 1073741824
+    },
+    {
+      "input": {
+        "n": 987654321097
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 999999999998
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 1000000000002
+      },
+      "output": 1099511627776
+    },
+    {
+      "input": {
+        "n": 1000002
+      },
+      "output": 1048576
+    },
+    {
+      "input": {
+        "n": 127
+      },
+      "output": 128
+    },
+    {
+      "input": {
+        "n": 1234567890122
+      },
+      "output": 2199023255552
+    },
+    {
+      "input": {
+        "n": 987654323
+      },
+      "output": 1073741824
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 1048576
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def next_power_of_2(n): \n  if n and not n & (n - 1):\n    return n\n  res = 1\n  while n != 0: \n    n >>= 1\n    res <<= 1\n  return res;\n"
+  }
+}

@@ -75,6 +75,13 @@ def test_caught_mistake_records_its_tests():
     assert report.ok and report.mistakes_caught_by == {0: [0, 1]}
 
 
+def test_reference_too_close_to_the_time_limit_is_reported():
+    # 0.4 s out of a 1 s limit is over the 25% margin, so the test would be flaky elsewhere.
+    sleepy = "import time\ndef solve(a, b):\n    time.sleep(0.4)\n    return a + b\n"
+    report = verify_problem(make_problem(reference_solutions={"python": sleepy}))
+    assert not report.ok and "safety margin" in report.issues[0]
+
+
 def test_slow_solution_without_stress_test_is_reported():
     report = verify_problem(make_problem(slow_solutions={"python": ADD}))
     assert any("no stress test" in issue for issue in report.issues)

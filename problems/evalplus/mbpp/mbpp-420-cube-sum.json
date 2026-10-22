@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-420-cube-sum",
+  "title": "Cube Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the cube sum of first n even natural numbers.",
+  "entry_point": "cube_Sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def cube_Sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 72
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 288
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 72
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 288
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 800
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 204020000
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 2004002000000
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 2012026024008
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": 2020074120072
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 1996002000000
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 196020000
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 188257608
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 212262408
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": 3175200
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 46657800
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": 1988025976008
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 180728072
+    },
+    {
+      "input": {
+        "n": 96
+      },
+      "output": 173426688
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": 3548448
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 36808200
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 49401800
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": 39108168
+    },
+    {
+      "input": {
+        "n": 1003
+      },
+      "output": 2028146336288
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": 1980073880072
+    },
+    {
+      "input": {
+        "n": 996
+      },
+      "output": 1972145664288
+    },
+    {
+      "input": {
+        "n": 995
+      },
+      "output": 1964241280800
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 52265088
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 44029728
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 55251072
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 220752072
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 34611200
+    },
+    {
+      "input": {
+        "n": 994
+      },
+      "output": 1956360681800
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 229493888
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 58363208
+    },
+    {
+      "input": {
+        "n": 993
+      },
+      "output": 1948503819528
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 41514272
+    },
+    {
+      "input": {
+        "n": 37
+      },
+      "output": 3953672
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": 140180768
+    },
+    {
+      "input": {
+        "n": 104
+      },
+      "output": 238492800
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 32514048
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def cube_Sum(n): \n    return 2 * (n ** 2) * ((n + 1) ** 2)\n"
+  }
+}

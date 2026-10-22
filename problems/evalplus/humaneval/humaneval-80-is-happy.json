@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-80-is-happy",
+  "title": "Is Happy",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a string s.\nYour task is to check if the string is happy or not.\nA string is happy if its length is at least 3 and every 3 consecutive letters are distinct\nFor example:\nis_happy(a) => False\nis_happy(aa) => False\nis_happy(abcd) => True\nis_happy(aabb) => False\nis_happy(adb) => True\nis_happy(xyy) => False",
+  "entry_point": "is_happy",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def is_happy(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "a"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "aa"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "a"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "aa"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "abcd"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "aabb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "adb"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "xyy"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "iopaxpoi"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "iopaxioi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "xyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "tim"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "abcabc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "bjmpzkfak"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "cadbfe"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "agbebf"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": " this is a comment"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "yyyyy"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "xycxyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "bacbacb"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "xy"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "xxy"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "baacbacb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "bjmzpzkfak"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "xxyzycxyz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "bacacbacb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "tibacacbacbm"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "bagbebf"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "tibaagbebfcacbacbmm"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "baaacbacb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": " this is bacbacba comment"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "abbaacbacbcabc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "abbaacbaccbcabc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": " this is bacbacba commenst"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "baacbacbkfak"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "xx"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": " this is aao comment"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": " this is bat"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": " this is baacbacbbat"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "x"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "agbbebf"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": " thiis is hbat"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef is_happy(s):\n    \"\"\"You are given a string s.\n    Your task is to check if the string is happy or not.\n    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n    For example:\n    is_happy(a) => False\n    is_happy(aa) => False\n    is_happy(abcd) => True\n    is_happy(aabb) => False\n    is_happy(adb) => True\n    is_happy(xyy) => False\n    \"\"\"\n\n    if len(s) < 3: return False\n    for i in range(len(s) - 2):\n        if s[i] == s[i + 1] or s[i] == s[i + 2] or s[i + 1] == s[i + 2]:\n            return False\n    return True\n\n"
+  }
+}

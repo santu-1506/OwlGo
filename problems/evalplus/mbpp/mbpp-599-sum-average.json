@@ -1,0 +1,346 @@
+{
+  "id": "mbpp-599-sum-average",
+  "title": "Sum Average",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find sum and average of first n natural numbers.",
+  "entry_point": "sum_average",
+  "params": [
+    "number"
+  ],
+  "function_signature": {
+    "python": "def sum_average(number):"
+  },
+  "examples": [
+    {
+      "input": {
+        "number": 10
+      },
+      "output": {
+        "$tuple": [
+          55,
+          5.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 15
+      },
+      "output": {
+        "$tuple": [
+          120,
+          8.0
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "number": 10
+      },
+      "output": {
+        "$tuple": [
+          55,
+          5.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 15
+      },
+      "output": {
+        "$tuple": [
+          120,
+          8.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 20
+      },
+      "output": {
+        "$tuple": [
+          210,
+          10.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 1000000
+      },
+      "output": {
+        "$tuple": [
+          500000500000,
+          500000.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 1000001
+      },
+      "output": {
+        "$tuple": [
+          500001500001,
+          500001.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 53
+      },
+      "output": {
+        "$tuple": [
+          1431,
+          27.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 54
+      },
+      "output": {
+        "$tuple": [
+          1485,
+          27.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": true
+      },
+      "output": {
+        "$tuple": [
+          1,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 999999
+      },
+      "output": {
+        "$tuple": [
+          499999500000,
+          500000.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 52
+      },
+      "output": {
+        "$tuple": [
+          1378,
+          26.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 55
+      },
+      "output": {
+        "$tuple": [
+          1540,
+          28.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 999998
+      },
+      "output": {
+        "$tuple": [
+          499998500001,
+          499999.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 1000002
+      },
+      "output": {
+        "$tuple": [
+          500002500003,
+          500001.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 1000003
+      },
+      "output": {
+        "$tuple": [
+          500003500006,
+          500002.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 56
+      },
+      "output": {
+        "$tuple": [
+          1596,
+          28.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 57
+      },
+      "output": {
+        "$tuple": [
+          1653,
+          29.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 29
+      },
+      "output": {
+        "$tuple": [
+          435,
+          15.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 28
+      },
+      "output": {
+        "$tuple": [
+          406,
+          14.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 58
+      },
+      "output": {
+        "$tuple": [
+          1711,
+          29.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 999996
+      },
+      "output": {
+        "$tuple": [
+          499996500006,
+          499998.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 999997
+      },
+      "output": {
+        "$tuple": [
+          499997500003,
+          499999.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 59
+      },
+      "output": {
+        "$tuple": [
+          1770,
+          30.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 27
+      },
+      "output": {
+        "$tuple": [
+          378,
+          14.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 51
+      },
+      "output": {
+        "$tuple": [
+          1326,
+          26.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 60
+      },
+      "output": {
+        "$tuple": [
+          1830,
+          30.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 999995
+      },
+      "output": {
+        "$tuple": [
+          499995500010,
+          499998.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "number": 50
+      },
+      "output": {
+        "$tuple": [
+          1275,
+          25.5
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def sum_average(number):\n   sum_ = sum(range(1, number+1))\n   average = sum_/number\n   return sum_, average\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-100-next-smallest-palindrome",
+  "title": "Next Smallest Palindrome",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the next smallest palindrome of a specified integer, returned as an integer.",
+  "entry_point": "next_smallest_palindrome",
+  "params": [
+    "num"
+  ],
+  "function_signature": {
+    "python": "def next_smallest_palindrome(num):"
+  },
+  "examples": [
+    {
+      "input": {
+        "num": 99
+      },
+      "output": 101
+    },
+    {
+      "input": {
+        "num": 1221
+      },
+      "output": 1331
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "num": 99
+      },
+      "output": 101
+    },
+    {
+      "input": {
+        "num": 1221
+      },
+      "output": 1331
+    },
+    {
+      "input": {
+        "num": 120
+      },
+      "output": 121
+    },
+    {
+      "input": {
+        "num": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": 45678
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 1
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "num": 45679
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 2
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "num": 3
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "num": 45681
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 4
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "num": 5
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": 45683
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 45682
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 45677
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 6
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "num": 45676
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 45675
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 45680
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 34
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "num": 45674
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 33
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "num": 45673
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 7
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "num": 32
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "num": 8
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "num": 58
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "num": 45672
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 57
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "num": 55
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "num": 9
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "num": 31
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "num": 36
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "num": 56
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "num": 45684
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 30
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "num": 29
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "num": 87
+      },
+      "output": 88
+    },
+    {
+      "input": {
+        "num": 45671
+      },
+      "output": 45754
+    },
+    {
+      "input": {
+        "num": 40
+      },
+      "output": 44
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def next_smallest_palindrome(num):\n    if all(digit == '9' for digit in str(num)):\n        return num + 2\n    else:\n        num = [int(digit) for digit in str(num)]\n        n = len(num)\n        mid = n // 2\n        left_smaller = False\n        # if n is odd, ignore the middle digit at first\n        i = mid - 1\n        j = mid + 1 if n % 2 else mid\n        while i >= 0 and num[i] == num[j]:\n            i -= 1\n            j += 1\n        # stop if traverse end or difference found\n        if i < 0 or num[i] < num[j]:\n            left_smaller = True\n        # copy left to right\n        while i >= 0:\n            num[j] = num[i]\n            j += 1\n            i -= 1\n        # the middle digit must be incremented\n        if left_smaller:\n            carry = 1\n            i = mid - 1\n            if n % 2:\n                num[mid] += carry\n                carry = num[mid] // 10\n                num[mid] %= 10\n                j = mid + 1\n            else:\n                j = mid\n            while i >= 0:\n                num[i] += carry\n                carry = num[i] // 10\n                num[i] %= 10\n                num[j] = num[i]\n                j += 1\n                i -= 1\n    return int(\"\".join(map(str, num)))\n"
+  }
+}

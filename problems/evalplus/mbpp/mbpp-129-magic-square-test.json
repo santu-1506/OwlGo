@@ -1,0 +1,1038 @@
+{
+  "id": "mbpp-129-magic-square-test",
+  "title": "Magic Square Test",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate whether the matrix is a magic square.",
+  "entry_point": "magic_square_test",
+  "params": [
+    "my_matrix"
+  ],
+  "function_signature": {
+    "python": "def magic_square_test(my_matrix):"
+  },
+  "examples": [
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ],
+          [
+            16,
+            3,
+            10,
+            5
+          ],
+          [
+            9,
+            6,
+            15,
+            4
+          ]
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            9,
+            5,
+            1
+          ],
+          [
+            4,
+            3,
+            8
+          ]
+        ]
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ],
+          [
+            16,
+            3,
+            10,
+            5
+          ],
+          [
+            9,
+            6,
+            15,
+            4
+          ]
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            9,
+            5,
+            1
+          ],
+          [
+            4,
+            3,
+            8
+          ]
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            2,
+            7,
+            6
+          ],
+          [
+            9,
+            5,
+            1
+          ],
+          [
+            4,
+            3,
+            7
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ],
+          [
+            16,
+            3,
+            10,
+            5
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            -2,
+            7,
+            6
+          ],
+          [
+            9,
+            -5,
+            1
+          ],
+          [
+            4,
+            3,
+            -7
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            1
+          ],
+          [
+            0,
+            9,
+            -16
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            0,
+            9,
+            -16
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            1,
+            14
+          ],
+          [
+            7,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ],
+          [
+            16,
+            3,
+            10,
+            5
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            1
+          ],
+          [
+            -16,
+            9,
+            -16
+          ],
+          [
+            12,
+            7,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            -2,
+            7,
+            6
+          ],
+          [
+            9,
+            -5,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            1
+          ],
+          [
+            0,
+            9,
+            -16
+          ],
+          [
+            12,
+            7,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            11,
+            12,
+            1,
+            14
+          ],
+          [
+            11,
+            12,
+            1,
+            14
+          ],
+          [
+            11,
+            12,
+            1,
+            14
+          ],
+          [
+            11,
+            12,
+            1,
+            14
+          ],
+          [
+            11,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            1
+          ],
+          [
+            12,
+            7,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            -2,
+            7,
+            6
+          ],
+          [
+            9,
+            -5,
+            1
+          ],
+          [
+            4,
+            3,
+            -7
+          ],
+          [
+            9,
+            -5,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            0,
+            9,
+            -16
+          ],
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            1
+          ],
+          [
+            0,
+            9,
+            -16
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            0,
+            9,
+            -16
+          ],
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            1
+          ],
+          [
+            0,
+            9,
+            -16
+          ],
+          [
+            0,
+            9,
+            -16
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            9,
+            -5,
+            1
+          ],
+          [
+            4,
+            3,
+            -7
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            2,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            2,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            1,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            1,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            1,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            1,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            1,
+            14,
+            12
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            1,
+            14,
+            1
+          ],
+          [
+            7,
+            1,
+            14,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            2
+          ],
+          [
+            7,
+            12,
+            1,
+            2
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            12,
+            7,
+            -3
+          ],
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            -3
+          ],
+          [
+            0,
+            9,
+            -16
+          ],
+          [
+            12,
+            7,
+            -3
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            12,
+            7,
+            -3
+          ],
+          [
+            4,
+            19,
+            -3
+          ],
+          [
+            12,
+            7,
+            -3
+          ],
+          [
+            12,
+            7,
+            -3
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            9,
+            -5,
+            1,
+            9
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            2,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            2,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            2,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            2,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            2,
+            14,
+            12
+          ],
+          [
+            7,
+            12,
+            2,
+            14,
+            12
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            1,
+            14,
+            1
+          ]
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "my_matrix": [
+          [
+            7,
+            12,
+            1,
+            14
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ],
+          [
+            16,
+            3,
+            10,
+            5
+          ],
+          [
+            2,
+            13,
+            8,
+            11
+          ],
+          [
+            7,
+            12,
+            1,
+            14
+          ]
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def magic_square_test(my_matrix):\n    s = sum(my_matrix[0])\n    # row\n    if any(sum(row) != s for row in my_matrix):\n        return False\n    # column\n    if any(sum(row[i] for row in my_matrix) != s for i in range(len(my_matrix[0]))):\n        return False\n    # diagonal\n    if sum(my_matrix[i][i] for i in range(len(my_matrix))) != s:\n        return False\n    # anti-diagonal\n    if sum(my_matrix[i][len(my_matrix) - i - 1] for i in range(len(my_matrix))) != s:\n        return False\n    return True\n"
+  }
+}

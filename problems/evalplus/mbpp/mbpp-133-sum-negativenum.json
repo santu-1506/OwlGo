@@ -1,0 +1,630 @@
+{
+  "id": "mbpp-133-sum-negativenum",
+  "title": "Sum Negativenum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate the sum of the negative numbers of a given list of numbers.",
+  "entry_point": "sum_negativenum",
+  "params": [
+    "nums"
+  ],
+  "function_signature": {
+    "python": "def sum_negativenum(nums):"
+  },
+  "examples": [
+    {
+      "input": {
+        "nums": [
+          2,
+          4,
+          -6,
+          -9,
+          11,
+          -12,
+          14,
+          -5,
+          17
+        ]
+      },
+      "output": -32
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          -14,
+          13,
+          -18,
+          12,
+          -20
+        ]
+      },
+      "output": -52
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "nums": [
+          2,
+          4,
+          -6,
+          -9,
+          11,
+          -12,
+          14,
+          -5,
+          17
+        ]
+      },
+      "output": -32
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          -14,
+          13,
+          -18,
+          12,
+          -20
+        ]
+      },
+      "output": -52
+    },
+    {
+      "input": {
+        "nums": [
+          19,
+          -65,
+          57,
+          39,
+          152,
+          -639,
+          121,
+          44,
+          90,
+          -190
+        ]
+      },
+      "output": -894
+    },
+    {
+      "input": {
+        "nums": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          -1,
+          -2,
+          -3,
+          -4,
+          -5
+        ]
+      },
+      "output": -15
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          14,
+          13,
+          18,
+          12,
+          20
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          -5,
+          1,
+          -7,
+          2,
+          -8,
+          4,
+          -6
+        ]
+      },
+      "output": -26
+    },
+    {
+      "input": {
+        "nums": [
+          -10
+        ]
+      },
+      "output": -10
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          -5,
+          1,
+          -7,
+          2.5,
+          -8.9,
+          4,
+          -6
+        ]
+      },
+      "output": -26.9
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          -14.2,
+          13,
+          -18,
+          12,
+          -20.7
+        ]
+      },
+      "output": -62.900000000000006
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          -5,
+          1,
+          -7,
+          2.5,
+          -8.9,
+          4,
+          -6,
+          1
+        ]
+      },
+      "output": -26.9
+    },
+    {
+      "input": {
+        "nums": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          2,
+          3,
+          -7,
+          6
+        ]
+      },
+      "output": -7
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          2,
+          -5,
+          1,
+          -7,
+          2.5,
+          4,
+          -6,
+          1
+        ]
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "nums": [
+          5,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          14,
+          13,
+          18,
+          12,
+          20,
+          20
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          -1,
+          -2,
+          -3,
+          -4,
+          -5
+        ]
+      },
+      "output": -15
+    },
+    {
+      "input": {
+        "nums": [
+          20,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          -5,
+          1,
+          -7,
+          2.5,
+          -8.9,
+          4,
+          -6,
+          1,
+          1
+        ]
+      },
+      "output": -26.9
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          14,
+          13,
+          13,
+          18,
+          12,
+          20,
+          20,
+          15,
+          18
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          14,
+          13,
+          18,
+          12,
+          20,
+          14,
+          20
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          -1,
+          -2,
+          -4,
+          -5
+        ]
+      },
+      "output": -12
+    },
+    {
+      "input": {
+        "nums": [
+          -6,
+          3,
+          -5,
+          1,
+          -7,
+          2,
+          -8,
+          4,
+          2,
+          -6
+        ]
+      },
+      "output": -32
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          2,
+          -5,
+          1,
+          -7,
+          4,
+          -6,
+          1
+        ]
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          2,
+          3,
+          1,
+          5,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          2,
+          4,
+          5,
+          2,
+          2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          2,
+          -5,
+          1,
+          -7,
+          4,
+          -6,
+          1
+        ]
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          2,
+          3,
+          0,
+          1,
+          5,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          14,
+          15,
+          14,
+          13,
+          18,
+          12,
+          20,
+          20
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          15,
+          14,
+          1,
+          13,
+          18,
+          12,
+          20,
+          14,
+          20
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          5,
+          2,
+          20,
+          4,
+          4,
+          6
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          2,
+          -5,
+          1,
+          -7,
+          2.5,
+          4,
+          10,
+          1
+        ]
+      },
+      "output": -12
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          -8,
+          2,
+          -10,
+          4,
+          5,
+          2,
+          2
+        ]
+      },
+      "output": -18
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          -5,
+          1,
+          -7,
+          -2,
+          2.5,
+          -8.9,
+          4,
+          -6,
+          1,
+          1
+        ]
+      },
+      "output": -28.9
+    },
+    {
+      "input": {
+        "nums": [
+          2,
+          10,
+          14,
+          15,
+          14,
+          13,
+          18,
+          12,
+          20,
+          20
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          -6,
+          3,
+          -5,
+          1,
+          -7,
+          2,
+          -8,
+          2,
+          2,
+          -6
+        ]
+      },
+      "output": -32
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          2,
+          -5,
+          1,
+          -7,
+          4,
+          1
+        ]
+      },
+      "output": -12
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          2,
+          -5,
+          1,
+          -7,
+          1,
+          4,
+          1,
+          -7
+        ]
+      },
+      "output": -19
+    },
+    {
+      "input": {
+        "nums": [
+          3,
+          -5,
+          0,
+          -7,
+          2.5,
+          -8.9,
+          4,
+          -6
+        ]
+      },
+      "output": -26.9
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def sum_negativenum(nums):\n  return sum(x for x in nums if x < 0)\n"
+  }
+}

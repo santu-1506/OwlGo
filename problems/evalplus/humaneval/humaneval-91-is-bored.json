@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-91-is-bored",
+  "title": "Is Bored",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You'll be given a string of words, and your task is to count the number\nof boredoms. A boredom is a sentence that starts with the word \"I\".\nSentences are delimited by '.', '?' or '!'.\n\nFor example:\n>>> is_bored(\"Hello world\")\n0\n>>> is_bored(\"The sky is blue. The sun is shining. I love this weather\")\n1",
+  "entry_point": "is_bored",
+  "params": [
+    "S"
+  ],
+  "function_signature": {
+    "python": "def is_bored(S):"
+  },
+  "examples": [
+    {
+      "input": {
+        "S": "Hello world"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "Is the sky blue?"
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "S": "Hello world"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "Is the sky blue?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I love It !"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "bIt"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I feel good today. I will be productive. will kill It"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "You and I are going for a walk"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I am very happy today. I love spending time with my friends."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I want to eat pizza for dinner. What do you think, should we order pizza?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I enjoy reading books. They help me learn new things."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I forgot my phone in the car. Oh no, now I have to go back and get it."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "In the morning, I like to have a cup of coffee to start my day off right. How about you?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "Have you ever gone skydiving before? I did it once and it was amazing."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I think I want to try cooking something new for dinner tonight. Do you have any favorite recipes?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "The movie we saw last night was really good, but I think I would have enjoyed it more if I had some popcorn. Do you like popcorn?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I love to read books. What about you?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I have a lot of work to do today. I wish I could take a nap instead."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "The movie we saw last night was really good, but I think I would have enjoyed it more if I had some popicorn. Do you like popcorn?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I am very happy today. I love s"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "The movie we saw last night was really good, but I think I would have enjoyed it more if I had some popicorn. oDo you like popcorn?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I forgot my phone in the car. Oh no, now I have to The movie we saw last night was really good, but I think I would have enjoyed it more if Ip had some popcorn. Do you like popcorn?and get it."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I forgot my phone in the car. Oh no, now I have to The movie we saw last night was really good, but I think I would have enjoyed it more if Ip had some popcorn. Do you like popcorn?and get rit."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I am very happy today. I love spending time with my friiends."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "The movie we saw last night was really good, but I think I would have enjoI am very happy today. I love spending time with my friiends.yed it more if I had some popicorn. Do you like popcorn?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "In the morning, I lI forgot my phone in the car. Oh no, now I have to go back and get it.ike to have a cup of coffee to start my day off right. How about you?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "The movie we saw last night was really good, but?"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "S": "I want to eat pizza for dinn. What do you think, s"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I have a lot of work to do today. I wish I could take a nap iI enjoy reading bo oks. They help me learn new things.nstead."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I am very happy today. I love spending time with my friienI forgot my phone in the car. Oh no, now I have to The movie we saw last night was really good, but I think I would have enjoyed it more if Ip had some popcorn. Do you like popcorn?and get it.ds."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I think I want to try cooking something new for dinner tonight. Do you have anoy favorite recipes?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I forgot my phone in the car. Oh no, now I haI have a lot of work to do today. I wish I could take a nap iI enjoy reading bo oks. They help me learn new things.nstead.ve to go back and get it."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I have today. I wish I could take a nap instead."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I am very happy toroday. I love s"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I enjoy reading books. They help me learn newthings."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I enjoy reading boorks. They help me learn newthings."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "The movie we saw last night was really goodThe movie we staw last night was really good, but I think I would have enjoI am very happy today. I love spending time with my friiends.yed it more if I had some popicorn. Do you like popcorn?, but?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I enjoy reading books. TheyI think I want to try cooking something new for dinner tonight. Do you have any favorite recipes? help me learn new things."
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I have a lot of work to do today. I wish I could take a naI forgot my phone in the car. Oh no, now I have to go back and get it.p iI enjoy reading bo oks. They help me learn new things.nstead."
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "S": "I think I want to try cooking something new for dinner tonight. Do you have anoy favorite rI forgot my phone in the car. Oh no, now I have to The movie we saw last night was really good, but I think I would have enjoyed it more if Ip had some popcorn. Do you like popcorn?and get it.ecipes?"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "S": "I am very happy today. I ltoveThe movie we saw last night was really gooThe movie we saw last night was really goodThe movie we staw last night was really good, but I think I would have enjoI am very happy today. I love spending time with my friiends.yed it more if I had some popicorn. Do you like popcorn?, but?d, but I think I would have enjoyed it more if I had some popicorn. oDo you like popcorn? s"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "S": "I have a lot of work to do today. I wish I could take a nap iI enjoy reading bo oks. They help me learn new things"
+      },
+      "output": 2
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef is_bored(S):\n    \"\"\"\n    You'll be given a string of words, and your task is to count the number\n    of boredoms. A boredom is a sentence that starts with the word \"I\".\n    Sentences are delimited by '.', '?' or '!'.\n   \n    For example:\n    >>> is_bored(\"Hello world\")\n    0\n    >>> is_bored(\"The sky is blue. The sun is shining. I love this weather\")\n    1\n    \"\"\"\n\n    sentences = map(lambda x: x.strip(), ((S.replace(\"?\", \".\")).replace(\"!\", \".\")).split(\".\"))\n    return len([s for s in sentences if s.startswith(\"I \")])\n\n"
+  }
+}

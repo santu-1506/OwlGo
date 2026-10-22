@@ -1,0 +1,363 @@
+{
+  "id": "mbpp-725-extract-quotation",
+  "title": "Extract Quotation",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to extract values between quotation marks \" \" of the given string.",
+  "entry_point": "extract_quotation",
+  "params": [
+    "text1"
+  ],
+  "function_signature": {
+    "python": "def extract_quotation(text1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text1": "Cortex \"A53\" Based \"multi\" tasking \"Processor\""
+      },
+      "output": [
+        "A53",
+        "multi",
+        "Processor"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Cast your \"favorite\" entertainment \"apps\""
+      },
+      "output": [
+        "favorite",
+        "apps"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text1": "Cortex \"A53\" Based \"multi\" tasking \"Processor\""
+      },
+      "output": [
+        "A53",
+        "multi",
+        "Processor"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Cast your \"favorite\" entertainment \"apps\""
+      },
+      "output": [
+        "favorite",
+        "apps"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Watch content \"4k Ultra HD\" resolution with \"HDR 10\" Support"
+      },
+      "output": [
+        "4k Ultra HD",
+        "HDR 10"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Watch content '4k Ultra HD' resolution with 'HDR 10' Support"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "This is a \"nested 'quote'\" example"
+      },
+      "output": [
+        "nested 'quote'"
+      ]
+    },
+    {
+      "input": {
+        "text1": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "No quotation marks in this input"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "Nested quotation marks: \"This is the \"nested\" quote\""
+      },
+      "output": [
+        "This is the ",
+        " quote"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Two sets of quotation marks: \"First\" and \"second\""
+      },
+      "output": [
+        "First",
+        "second"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Quotation marks within single quotes: 'This is a \"quoted\" phrase'"
+      },
+      "output": [
+        "quoted"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Multiple nested quotation marks: \"This is the \"nested \"and \"more nested\" quote\"\""
+      },
+      "output": [
+        "This is the ",
+        "and ",
+        " quote"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Quotation marks within single quotes within double quotes: \"This is a 'quoted' phrase within double quotes\""
+      },
+      "output": [
+        "This is a 'quoted' phrase within double quotes"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Multiple nested quotation marks within single quotes: 'This is a \"nested \"and \"more nested\" quote\" within single quotes'"
+      },
+      "output": [
+        "nested ",
+        "more nested"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Quotation marks with \"escaped\" inside"
+      },
+      "output": [
+        "escaped"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Nested quotation marks with multiple levels: \"This is the \"first\" quote\" and \"This is the \"second\" quote\""
+      },
+      "output": [
+        "This is the ",
+        " quote",
+        "This is the ",
+        " quote"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Overlapping quotation marks: \"This is the \"first quote\"\" and \"This is the \"second quote\"\""
+      },
+      "output": [
+        "This is the ",
+        "",
+        "This is the ",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text1": "the"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "Quotation marks within single quoe'"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "Thilse is a \"nested 'quote'\" example"
+      },
+      "output": [
+        "nested 'quote'"
+      ]
+    },
+    {
+      "input": {
+        "text1": "MuQuotation marks within single quotes: 'This is a \"quoted\" phrase'ltiple"
+      },
+      "output": [
+        "quoted"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Quotation marks within single quotes within double quotes: \"This isNested quotation marks: \"This is the \"nested\" quote\" a 'quoted' phrase within double quotes\""
+      },
+      "output": [
+        "This isNested quotation marks: ",
+        "nested",
+        " a 'quoted' phrase within double quotes"
+      ]
+    },
+    {
+      "input": {
+        "text1": "\"second\""
+      },
+      "output": [
+        "second"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Nested quotation marks with multiple levels: \"This is the \"first\" quote\" and \"iThis is the \"second\" quote\""
+      },
+      "output": [
+        "This is the ",
+        " quote",
+        "iThis is the ",
+        " quote"
+      ]
+    },
+    {
+      "input": {
+        "text1": "'quoted'of"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "in"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "\"First\""
+      },
+      "output": [
+        "First"
+      ]
+    },
+    {
+      "input": {
+        "text1": "and"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "ls:"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "Overlapping Quotation the \"first quote\"\" and \"This \""
+      },
+      "output": [
+        "first quote",
+        " and "
+      ]
+    },
+    {
+      "input": {
+        "text1": "\"iThis"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "Quotation marksa with \"escaped\" inside"
+      },
+      "output": [
+        "escaped"
+      ]
+    },
+    {
+      "input": {
+        "text1": "quotes:"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "ITjhLBoMY"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "qQuotation marksa with \"escaped\" insideuotes:"
+      },
+      "output": [
+        "escaped"
+      ]
+    },
+    {
+      "input": {
+        "text1": "Overlapping quotation marks: \"This igs the \"first quote\"\" and \"This is the \"second quote\"\""
+      },
+      "output": [
+        "This igs the ",
+        "",
+        "This is the ",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text1": "iMultiple nested quotation marks within single quotes: 'This is a \"nested \"and \"more nested\" quote\" within single quotes'"
+      },
+      "output": [
+        "nested ",
+        "more nested"
+      ]
+    },
+    {
+      "input": {
+        "text1": "This is a \"nested 'isquote'\" exame"
+      },
+      "output": [
+        "nested 'isquote'"
+      ]
+    },
+    {
+      "input": {
+        "text1": "of"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "insideuotes:"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text1": "\"\"secondiThsis"
+      },
+      "output": [
+        ""
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef extract_quotation(text1):\n  return re.findall(r'\"(.*?)\"', text1)\n"
+  }
+}

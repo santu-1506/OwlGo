@@ -1,0 +1,1206 @@
+{
+  "id": "mbpp-744-check-none",
+  "title": "Check None",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if the given tuple has any none value or not.",
+  "entry_point": "check_none",
+  "params": [
+    "test_tup"
+  ],
+  "function_signature": {
+    "python": "def check_none(test_tup):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            4,
+            5,
+            6,
+            null
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            7,
+            8,
+            9,
+            11,
+            14
+          ]
+        }
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            4,
+            5,
+            6,
+            null
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            7,
+            8,
+            9,
+            11,
+            14
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            4,
+            null
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null
+              ],
+              [
+                null
+              ]
+            ],
+            [
+              [
+                null
+              ],
+              [
+                null
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [],
+            []
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              4,
+              [
+                null,
+                5
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                1,
+                [
+                  2,
+                  [
+                    3,
+                    [
+                      4,
+                      [
+                        5,
+                        [
+                          6,
+                          [
+                            7,
+                            [
+                              8,
+                              [
+                                9,
+                                null
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              null,
+              [
+                null,
+                [
+                  null,
+                  [
+                    null,
+                    [
+                      null,
+                      [
+                        null,
+                        [
+                          null,
+                          [
+                            null,
+                            [
+                              null,
+                              null
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            null,
+            [
+              null,
+              [
+                null,
+                [
+                  null,
+                  [
+                    null,
+                    [
+                      null
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                null
+              ]
+            ],
+            [
+              null,
+              [
+                4,
+                5
+              ]
+            ],
+            [
+              [
+                6,
+                null
+              ],
+              [
+                null,
+                7
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null,
+                1,
+                2,
+                3
+              ],
+              [
+                4,
+                null,
+                5,
+                6
+              ]
+            ],
+            [
+              [
+                null,
+                7,
+                8,
+                null
+              ],
+              [
+                null,
+                9,
+                null,
+                10
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                null,
+                null,
+                null
+              ]
+            ],
+            [
+              [
+                4,
+                null,
+                5
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                6,
+                null
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                null
+              ]
+            ],
+            [
+              [
+                4,
+                5
+              ],
+              [
+                null,
+                null
+              ]
+            ],
+            [
+              [
+                6,
+                null
+              ],
+              [
+                null,
+                7
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            4,
+            5,
+            6,
+            null,
+            []
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            4,
+            null,
+            [
+              null
+            ]
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              null
+            ],
+            []
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                null
+              ]
+            ],
+            [
+              [
+                4,
+                5
+              ],
+              [
+                null,
+                null
+              ]
+            ],
+            [
+              [
+                6,
+                null
+              ],
+              [
+                null,
+                7
+              ]
+            ],
+            []
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              4,
+              [
+                null,
+                5
+              ]
+            ],
+            [
+              null,
+              [
+                null,
+                6
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": []
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              null
+            ],
+            [
+              4,
+              null,
+              5
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              6,
+              7,
+              null,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              null,
+              null,
+              1
+            ],
+            [
+              2,
+              null,
+              null
+            ],
+            [
+              null,
+              3,
+              null
+            ],
+            [
+              4,
+              null,
+              5,
+              6
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              null,
+              null,
+              null
+            ],
+            [
+              4,
+              5,
+              6
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                null,
+                null,
+                null
+              ]
+            ],
+            [
+              [
+                4,
+                null,
+                5
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                6,
+                null
+              ]
+            ],
+            [
+              [
+                7,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              null
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              null,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                null
+              ]
+            ],
+            [
+              null,
+              [
+                4,
+                5
+              ]
+            ],
+            [
+              [
+                6,
+                null
+              ],
+              [
+                null,
+                7
+              ]
+            ],
+            [
+              [
+                null
+              ],
+              [
+                8,
+                9
+              ],
+              [
+                null,
+                null
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null,
+                null
+              ],
+              [
+                [
+                  null,
+                  null
+                ],
+                [
+                  null,
+                  null
+                ]
+              ]
+            ],
+            [
+              [
+                null,
+                null
+              ],
+              [
+                [
+                  null,
+                  null
+                ],
+                [
+                  null,
+                  null
+                ]
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                null,
+                null,
+                [
+                  null,
+                  [
+                    null,
+                    null
+                  ]
+                ]
+              ],
+              null
+            ],
+            [
+              [
+                null,
+                null,
+                [
+                  null,
+                  null
+                ]
+              ],
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              null
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              null,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              null,
+              null,
+              6
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9,
+              null
+            ],
+            [
+              7,
+              8,
+              9,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9,
+              null,
+              8
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              4,
+              [
+                null,
+                5
+              ]
+            ],
+            [
+              1,
+              [
+                2,
+                3
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              4,
+              4,
+              6
+            ],
+            [
+              7,
+              8,
+              9,
+              null
+            ],
+            [
+              7,
+              8,
+              9,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [],
+            [
+              9,
+              [
+                "EmZMRTPX",
+                "ntSnaH",
+                "mtiRiOL",
+                "quzN",
+                "YeCzezCHd"
+              ]
+            ],
+            []
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              null
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            [
+              [
+                4,
+                null,
+                5
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                6,
+                null
+              ],
+              [
+                4,
+                null,
+                5
+              ]
+            ],
+            [
+              [
+                4,
+                null,
+                5
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                6,
+                null
+              ]
+            ]
+          ]
+        }
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_none(test_tup):\n  return any(ele is None for ele in test_tup)\n"
+  }
+}

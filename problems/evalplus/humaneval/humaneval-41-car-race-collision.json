@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-41-car-race-collision",
+  "title": "Car Race Collision",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Imagine a road that's a perfectly straight infinitely long line.\nn cars are driving left to right;  simultaneously, a different set of n cars\nare driving right to left.   The two sets of cars start out being very far from\neach other.  All cars move in the same speed.  Two cars are said to collide\nwhen a car that's moving left to right hits a car that's moving right to left.\nHowever, the cars are infinitely sturdy and strong; as a result, they continue moving\nin their trajectory as if they did not collide.\n\nThis function outputs the number of such collisions.",
+  "entry_point": "car_race_collision",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def car_race_collision(n: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 9
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 144
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 225
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 400
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": 625
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 49
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 10000
+    },
+    {
+      "input": {
+        "n": 500
+      },
+      "output": 250000
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 576
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 10201
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 196
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 9801
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 529
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 361
+    },
+    {
+      "input": {
+        "n": 47
+      },
+      "output": 2209
+    },
+    {
+      "input": {
+        "n": 48
+      },
+      "output": 2304
+    },
+    {
+      "input": {
+        "n": 46
+      },
+      "output": 2116
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": 676
+    },
+    {
+      "input": {
+        "n": 499
+      },
+      "output": 249001
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": 729
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 9604
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": 784
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 324
+    },
+    {
+      "input": {
+        "n": 45
+      },
+      "output": 2025
+    },
+    {
+      "input": {
+        "n": 498
+      },
+      "output": 248004
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 169
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 10404
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 121
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 289
+    },
+    {
+      "input": {
+        "n": 501
+      },
+      "output": 251001
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 4624
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 441
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 900
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef car_race_collision(n: int):\n    \"\"\"\n    Imagine a road that's a perfectly straight infinitely long line.\n    n cars are driving left to right;  simultaneously, a different set of n cars\n    are driving right to left.   The two sets of cars start out being very far from\n    each other.  All cars move in the same speed.  Two cars are said to collide\n    when a car that's moving left to right hits a car that's moving right to left.\n    However, the cars are infinitely sturdy and strong; as a result, they continue moving\n    in their trajectory as if they did not collide.\n\n    This function outputs the number of such collisions.\n    \"\"\"\n\n\n    return n ** 2\n\n"
+  }
+}

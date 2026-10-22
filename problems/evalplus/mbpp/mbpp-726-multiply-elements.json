@@ -1,0 +1,886 @@
+{
+  "id": "mbpp-726-multiply-elements",
+  "title": "Multiply Elements",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes as input a tuple of numbers (t_1,...,t_{N+1}) and returns a tuple of length N where the i-th element of the tuple is equal to t_i * t_{i+1}.",
+  "entry_point": "multiply_elements",
+  "params": [
+    "test_tup"
+  ],
+  "function_signature": {
+    "python": "def multiply_elements(test_tup):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            8,
+            10
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5,
+          35,
+          56,
+          80
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          8,
+          20,
+          30,
+          42
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            8,
+            10
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5,
+          35,
+          56,
+          80
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          8,
+          20,
+          30,
+          42
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            12,
+            13,
+            14,
+            9,
+            15
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          156,
+          182,
+          126,
+          135
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            12
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          12,
+          20,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0.5,
+            0.25,
+            0.125,
+            0.0625
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.125,
+          0.03125,
+          0.0078125
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            100,
+            1000,
+            10000
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1000,
+          100000,
+          10000000
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -1,
+            -2,
+            -3,
+            -4,
+            -5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          12,
+          20
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            -2,
+            3,
+            -4,
+            5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -2,
+          -6,
+          -12,
+          -20
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": []
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0.5,
+            0.25,
+            0.125,
+            0.5,
+            0.0625
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.125,
+          0.03125,
+          0.0625,
+          0.03125
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            1,
+            1000,
+            10000
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          10,
+          1000,
+          10000000
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6,
+          12,
+          20,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            3,
+            100,
+            5,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6,
+          300,
+          500,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -1,
+            -2,
+            -3,
+            6,
+            -5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          -18,
+          -30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            -2,
+            1000,
+            5,
+            -4,
+            5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -2,
+          -2000,
+          5000,
+          -20,
+          -20
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            3,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          9,
+          12,
+          20,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0.25,
+            0.09658093675455971,
+            0.5,
+            0.0625
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.024145234188639928,
+          0.048290468377279856,
+          0.03125
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            1,
+            1000
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          10,
+          1000
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            3,
+            -4,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -12,
+          -12,
+          12,
+          20,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            3,
+            3,
+            5,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6,
+          9,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0.25,
+            0.125,
+            0.5,
+            0.0625,
+            0.5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.03125,
+          0.0625,
+          0.03125,
+          0.03125
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            3
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0,
+          6,
+          12,
+          20,
+          30,
+          18
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -1,
+            -2,
+            -3,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          -18
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -2,
+            3,
+            5,
+            5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -6,
+          15,
+          25
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            -1,
+            -2,
+            -3,
+            -4,
+            -5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -1,
+          2,
+          6,
+          12,
+          20
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -1,
+            -2,
+            -3,
+            6,
+            -5,
+            -2
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          -18,
+          -30,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            9,
+            10,
+            1,
+            1000
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          90,
+          10,
+          1000
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0.25,
+            0.09658093675455971,
+            0.5,
+            0.5,
+            0.0625
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.024145234188639928,
+          0.048290468377279856,
+          0.25,
+          0.03125
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            -2,
+            -3
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            -2,
+            3,
+            -4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -2,
+          -6,
+          -12
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0.25,
+            0.125,
+            0.5,
+            0.0625,
+            0.5,
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0.03125,
+          0.0625,
+          0.03125,
+          0.03125,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -2,
+            3,
+            5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -6,
+          15
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            10,
+            1,
+            -5,
+            1000,
+            -5
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          10,
+          10,
+          -5,
+          -5000,
+          -5000
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            1,
+            10000,
+            1000
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          10,
+          10000,
+          10000000
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -2,
+            3,
+            5,
+            3,
+            -2
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          -6,
+          15,
+          15,
+          -6
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            -1,
+            -2,
+            -3,
+            6,
+            -1,
+            -5,
+            -2
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          -18,
+          -6,
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            22
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            3,
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0,
+          6,
+          12,
+          20,
+          30,
+          18,
+          12
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            7,
+            6,
+            3
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0,
+          6,
+          12,
+          20,
+          35,
+          42,
+          18
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def multiply_elements(test_tup):\n  return tuple(i * j for i, j in zip(test_tup, test_tup[1:]))\n"
+  }
+}

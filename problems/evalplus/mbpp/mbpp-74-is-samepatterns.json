@@ -1,0 +1,742 @@
+{
+  "id": "mbpp-74-is-samepatterns",
+  "title": "Is Samepatterns",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether it follows the sequence given in the patterns array.",
+  "entry_point": "is_samepatterns",
+  "params": [
+    "colors",
+    "patterns"
+  ],
+  "function_signature": {
+    "python": "def is_samepatterns(colors, patterns):"
+  },
+  "examples": [
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "green"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "greenn"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b"
+        ]
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "green"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "greenn"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "greenn"
+        ],
+        "patterns": [
+          "a",
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "a",
+          "a"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "blue",
+          "green"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "blue",
+          "blue"
+        ],
+        "patterns": [
+          "a",
+          "a",
+          "b",
+          "b"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "green",
+          "blue"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "a",
+          "a",
+          "a"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "green",
+          "blue"
+        ],
+        "patterns": [
+          "a",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "green",
+          "green"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b",
+          "b"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [],
+        "patterns": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [],
+        "patterns": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "yellow"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "yellow"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "red",
+          "green",
+          "blue"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "red",
+          "blue",
+          "green"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "a",
+          "b",
+          "cc",
+          "c",
+          "a"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "cc",
+          "c",
+          "a"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "yellow"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "b",
+          "c",
+          "a",
+          "b",
+          "c"
+        ],
+        "patterns": [
+          "red",
+          "red",
+          "red",
+          "red",
+          "bluered",
+          "red"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "blue",
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "a",
+          "a",
+          "a"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "a",
+          "a",
+          "b",
+          "b",
+          "b"
+        ],
+        "patterns": [
+          "a",
+          "a",
+          "b",
+          "b",
+          "b"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "blue",
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "ared",
+          "a"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "ared",
+          "c",
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "ccc",
+          "a",
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "bluue",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "red",
+          "green",
+          "bluue",
+          "red",
+          "red",
+          "red"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "red",
+          "red",
+          "red"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          false,
+          true,
+          false
+        ],
+        "patterns": [
+          false,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "blue",
+          "yellow"
+        ],
+        "patterns": [
+          "red",
+          "green",
+          "blue",
+          "yellow"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "a",
+          "b",
+          "",
+          "c"
+        ],
+        "patterns": [
+          "a",
+          "b",
+          "",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "ared",
+          "a"
+        ],
+        "patterns": [
+          "blue",
+          "red",
+          "red",
+          "red",
+          "red"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "colors": [
+          "blue",
+          "red",
+          "red",
+          "red",
+          "red"
+        ],
+        "patterns": [
+          "blue",
+          "red",
+          "red",
+          "red",
+          "red"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "bluered",
+          "red",
+          "yellow",
+          "red",
+          "reyellow",
+          "cc",
+          "red"
+        ],
+        "patterns": [
+          "bluered",
+          "red",
+          "yellow",
+          "red",
+          "reyellow",
+          "cc",
+          "red"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "ared",
+          "rred",
+          "green"
+        ],
+        "patterns": [
+          "ared",
+          "rred",
+          "green"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          false
+        ],
+        "patterns": [
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "red",
+          "green",
+          "green",
+          "green"
+        ],
+        "patterns": [
+          "ccc",
+          "b",
+          "b",
+          "b"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "colors": [
+          "blueccc",
+          "blue",
+          "red",
+          "red",
+          "red",
+          "cc"
+        ],
+        "patterns": [
+          "bluue",
+          "a",
+          "a",
+          "a",
+          "a"
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_samepatterns(colors, patterns):    \n    if len(colors) != len(patterns):\n        return False    \n    pattern_color_dict = {pattern: set() for pattern in patterns}\n    for color, pattern in zip(colors, patterns):\n        pattern_color_dict[pattern].add(color)\n    return all(len(pattern_color_dict[pattern]) == 1 for pattern in patterns)\n"
+  }
+}

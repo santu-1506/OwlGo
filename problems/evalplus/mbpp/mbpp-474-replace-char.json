@@ -1,0 +1,365 @@
+{
+  "id": "mbpp-474-replace-char",
+  "title": "Replace Char",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to replace characters in a string.",
+  "entry_point": "replace_char",
+  "params": [
+    "str1",
+    "ch",
+    "newch"
+  ],
+  "function_signature": {
+    "python": "def replace_char(str1, ch, newch):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "polygon",
+        "ch": "y",
+        "newch": "l"
+      },
+      "output": "pollgon"
+    },
+    {
+      "input": {
+        "str1": "character",
+        "ch": "c",
+        "newch": "a"
+      },
+      "output": "aharaater"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "polygon",
+        "ch": "y",
+        "newch": "l"
+      },
+      "output": "pollgon"
+    },
+    {
+      "input": {
+        "str1": "character",
+        "ch": "c",
+        "newch": "a"
+      },
+      "output": "aharaater"
+    },
+    {
+      "input": {
+        "str1": "python",
+        "ch": "l",
+        "newch": "a"
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "str1": "",
+        "ch": "a",
+        "newch": "b"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "python",
+        "ch": "z",
+        "newch": "a"
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "str1": "python",
+        "ch": "o",
+        "newch": "o"
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWxYz",
+        "ch": "m",
+        "newch": "n"
+      },
+      "output": "AbCdEfGhIjKlMnOpQrStUvWxYz"
+    },
+    {
+      "input": {
+        "str1": "pythoon",
+        "ch": "a",
+        "newch": "b"
+      },
+      "output": "pythoon"
+    },
+    {
+      "input": {
+        "str1": "python",
+        "ch": "z",
+        "newch": "o"
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "str1": "z",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "z"
+    },
+    {
+      "input": {
+        "str1": "z",
+        "ch": "z",
+        "newch": "z"
+      },
+      "output": "z"
+    },
+    {
+      "input": {
+        "str1": "",
+        "ch": "m",
+        "newch": "m"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWxYz",
+        "ch": "a",
+        "newch": "b"
+      },
+      "output": "AbCdEfGhIjKlMnOpQrStUvWxYz"
+    },
+    {
+      "input": {
+        "str1": "python",
+        "ch": "z",
+        "newch": "z"
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "str1": "zzz",
+        "ch": "z",
+        "newch": "z"
+      },
+      "output": "zzz"
+    },
+    {
+      "input": {
+        "str1": "zzz",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "zzz"
+    },
+    {
+      "input": {
+        "str1": "a",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "a",
+        "ch": "b",
+        "newch": "o"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "b",
+        "ch": "z",
+        "newch": "o"
+      },
+      "output": "b"
+    },
+    {
+      "input": {
+        "str1": "",
+        "ch": "o",
+        "newch": "m"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWYzz",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "AbCdEfGhIjKlMnOpQrStUvWYzz"
+    },
+    {
+      "input": {
+        "str1": "n",
+        "ch": "z",
+        "newch": "a"
+      },
+      "output": "n"
+    },
+    {
+      "input": {
+        "str1": "",
+        "ch": "b",
+        "newch": "o"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "pythona",
+        "ch": "z",
+        "newch": "a"
+      },
+      "output": "pythona"
+    },
+    {
+      "input": {
+        "str1": "pythoonpythona",
+        "ch": "z",
+        "newch": "a"
+      },
+      "output": "pythoonpythona"
+    },
+    {
+      "input": {
+        "str1": "zz",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "zz"
+    },
+    {
+      "input": {
+        "str1": "mz",
+        "ch": "z",
+        "newch": "z"
+      },
+      "output": "mz"
+    },
+    {
+      "input": {
+        "str1": "",
+        "ch": "o",
+        "newch": "o"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "a",
+        "ch": "m",
+        "newch": "o"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "b",
+        "ch": "a",
+        "newch": "b"
+      },
+      "output": "b"
+    },
+    {
+      "input": {
+        "str1": "b",
+        "ch": "o",
+        "newch": "o"
+      },
+      "output": "b"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWxAbCdEfGhIjKlMnOpQrStUvWxYzz",
+        "ch": "m",
+        "newch": "n"
+      },
+      "output": "AbCdEfGhIjKlMnOpQrStUvWxAbCdEfGhIjKlMnOpQrStUvWxYzz"
+    },
+    {
+      "input": {
+        "str1": "b",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "b"
+    },
+    {
+      "input": {
+        "str1": "mz",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "mz"
+    },
+    {
+      "input": {
+        "str1": "zzz",
+        "ch": "z",
+        "newch": "a"
+      },
+      "output": "aaa"
+    },
+    {
+      "input": {
+        "str1": "m",
+        "ch": "a",
+        "newch": "a"
+      },
+      "output": "m"
+    },
+    {
+      "input": {
+        "str1": "zz",
+        "ch": "z",
+        "newch": "a"
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "str1": "mz",
+        "ch": "a",
+        "newch": "b"
+      },
+      "output": "mz"
+    },
+    {
+      "input": {
+        "str1": "aa",
+        "ch": "b",
+        "newch": "o"
+      },
+      "output": "aa"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def replace_char(str1, ch, newch):\n    return str1.replace(ch, newch)\n"
+  }
+}

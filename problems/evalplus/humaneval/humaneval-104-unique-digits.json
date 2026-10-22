@@ -1,0 +1,600 @@
+{
+  "id": "humaneval-104-unique-digits",
+  "title": "Unique Digits",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a list of positive integers x. return a sorted list of all \nelements that hasn't any even digit.\n\nNote: Returned list should be sorted in increasing order.\n\nFor example:\n>>> unique_digits([15, 33, 1422, 1])\n[1, 15, 33]\n>>> unique_digits([152, 323, 1422, 10])\n[]",
+  "entry_point": "unique_digits",
+  "params": [
+    "x"
+  ],
+  "function_signature": {
+    "python": "def unique_digits(x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": [
+          15,
+          33,
+          1422,
+          1
+        ]
+      },
+      "output": [
+        1,
+        15,
+        33
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          152,
+          323,
+          1422,
+          10
+        ]
+      },
+      "output": []
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": [
+          15,
+          33,
+          1422,
+          1
+        ]
+      },
+      "output": [
+        1,
+        15,
+        33
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          152,
+          323,
+          1422,
+          10
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          12345,
+          2033,
+          111,
+          151
+        ]
+      },
+      "output": [
+        111,
+        151
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          135,
+          103,
+          31
+        ]
+      },
+      "output": [
+        31,
+        135
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          257,
+          369,
+          781,
+          409
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          1357,
+          79,
+          8642,
+          246
+        ]
+      },
+      "output": [
+        79,
+        1357
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          321,
+          741,
+          951,
+          753
+        ]
+      },
+      "output": [
+        753,
+        951
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          159,
+          647,
+          380
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          111,
+          333,
+          555,
+          777
+        ]
+      },
+      "output": [
+        111,
+        333,
+        555,
+        777
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          2468,
+          13579,
+          86420,
+          97531
+        ]
+      },
+      "output": [
+        13579,
+        97531
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          123,
+          246,
+          369,
+          888
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          951,
+          753,
+          246,
+          135
+        ]
+      },
+      "output": [
+        135,
+        753,
+        951
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          680,
+          925,
+          753,
+          413
+        ]
+      },
+      "output": [
+        753
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          246,
+          468,
+          802,
+          666,
+          999
+        ]
+      },
+      "output": [
+        999
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          321,
+          741,
+          951,
+          753,
+          321
+        ]
+      },
+      "output": [
+        753,
+        951
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          159,
+          647,
+          381
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          1357,
+          79,
+          8642,
+          246,
+          1357,
+          246
+        ]
+      },
+      "output": [
+        79,
+        1357,
+        1357
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          159,
+          647
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          369,
+          123,
+          246,
+          369
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          13579,
+          468,
+          802,
+          666,
+          999
+        ]
+      },
+      "output": [
+        999,
+        13579
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          257,
+          369,
+          781,
+          409,
+          369
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          159,
+          321,
+          381
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          951,
+          753,
+          246,
+          135,
+          753
+        ]
+      },
+      "output": [
+        135,
+        753,
+        753,
+        951
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          369,
+          781,
+          409
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          320,
+          381
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          159,
+          321,
+          381,
+          321,
+          321
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          1357,
+          79,
+          8642,
+          888,
+          246,
+          888
+        ]
+      },
+      "output": [
+        79,
+        1357
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          159,
+          381,
+          2358
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          257,
+          246,
+          781,
+          409
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          2468,
+          13579,
+          86420,
+          97531,
+          97531
+        ]
+      },
+      "output": [
+        13579,
+        97531,
+        97531
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          2358,
+          2358,
+          159,
+          647,
+          380
+        ]
+      },
+      "output": [
+        159
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          320,
+          741,
+          951,
+          753
+        ]
+      },
+      "output": [
+        753,
+        951
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          369,
+          246,
+          369
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          79,
+          245,
+          8642,
+          246,
+          1357,
+          246
+        ]
+      },
+      "output": [
+        79,
+        1357
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          257,
+          246,
+          781,
+          409,
+          246
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "x": [
+          951,
+          753,
+          246,
+          680,
+          135,
+          753
+        ]
+      },
+      "output": [
+        135,
+        753,
+        753,
+        951
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          1357,
+          79,
+          8642,
+          246,
+          888
+        ]
+      },
+      "output": [
+        79,
+        1357
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          1357,
+          79,
+          8642,
+          888
+        ]
+      },
+      "output": [
+        79,
+        1357
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          246,
+          468,
+          802,
+          666,
+          999,
+          468,
+          802
+        ]
+      },
+      "output": [
+        999
+      ]
+    },
+    {
+      "input": {
+        "x": [
+          680,
+          925,
+          753,
+          468,
+          413
+        ]
+      },
+      "output": [
+        753
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n\n\n    def judge(x):\n        for ch in str(x):\n            if int(ch) % 2 == 0:\n                return False\n        return True\n    return sorted(list(filter(judge, x)))\n\n"
+  }
+}

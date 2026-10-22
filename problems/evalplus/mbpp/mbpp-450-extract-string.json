@@ -1,0 +1,600 @@
+{
+  "id": "mbpp-450-extract-string",
+  "title": "Extract String",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to extract specified size of strings from a given list of string values.",
+  "entry_point": "extract_string",
+  "params": [
+    "str1",
+    "l"
+  ],
+  "function_signature": {
+    "python": "def extract_string(str1, l):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": [
+          "Python",
+          "list",
+          "exercises",
+          "practice",
+          "solution"
+        ],
+        "l": 8
+      },
+      "output": [
+        "practice",
+        "solution"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "Python",
+          "list",
+          "exercises",
+          "practice",
+          "solution"
+        ],
+        "l": 6
+      },
+      "output": [
+        "Python"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": [
+          "Python",
+          "list",
+          "exercises",
+          "practice",
+          "solution"
+        ],
+        "l": 8
+      },
+      "output": [
+        "practice",
+        "solution"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "Python",
+          "list",
+          "exercises",
+          "practice",
+          "solution"
+        ],
+        "l": 6
+      },
+      "output": [
+        "Python"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "Python",
+          "list",
+          "exercises",
+          "practice",
+          "solution"
+        ],
+        "l": 9
+      },
+      "output": [
+        "exercises"
+      ]
+    },
+    {
+      "input": {
+        "str1": [],
+        "l": 5
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [],
+        "l": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abcdef",
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcde"
+        ],
+        "l": 5
+      },
+      "output": [
+        "lmnop",
+        "abcde"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl",
+          "mnopqr"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [],
+        "l": 3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "mnopqr"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl"
+        ],
+        "l": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [],
+        "l": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abcdef",
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcde"
+        ],
+        "l": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "hijkl",
+          "KpROouj",
+          "xyz",
+          "vRyohLy"
+        ],
+        "l": 5
+      },
+      "output": [
+        "hijkl"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl",
+          "defg"
+        ],
+        "l": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abcddef",
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcde",
+          "abcde"
+        ],
+        "l": 5
+      },
+      "output": [
+        "lmnop",
+        "abcde",
+        "abcde"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl",
+          "defg"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "mnopqr",
+          "hijkl"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abcdef",
+          "xyz",
+          "pqr",
+          "lmnabc",
+          "abcde"
+        ],
+        "l": 5
+      },
+      "output": [
+        "abcde"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl",
+          "abc"
+        ],
+        "l": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abcdef",
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcddef"
+        ],
+        "l": 5
+      },
+      "output": [
+        "lmnop"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "hijkl",
+          "defg",
+          "abc"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc",
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "hijkl",
+          "KpROouj",
+          "xyz",
+          "vRyohLy",
+          "hijkl"
+        ],
+        "l": 5
+      },
+      "output": [
+        "hijkl",
+        "hijkl"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "deffg",
+          "mnopqr",
+          "hijkl"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "mnopqr",
+          "hijkl",
+          "defg",
+          "abc",
+          "abc",
+          "abc"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc",
+        "abc",
+        "abc",
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abcdef",
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcde"
+        ],
+        "l": 3
+      },
+      "output": [
+        "xyz",
+        "pqr"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "mnopqr"
+        ],
+        "l": 4
+      },
+      "output": [
+        "defg"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abcddef",
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcde",
+          "abcde"
+        ],
+        "l": 4
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "mnopqr",
+          "hijkl",
+          "defg",
+          "abc",
+          "abc",
+          "abc",
+          "abc"
+        ],
+        "l": 4
+      },
+      "output": [
+        "defg"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "mnopqr",
+          "hijkl",
+          "abbc",
+          "defg",
+          "abc",
+          "babc",
+          "abc",
+          "abc"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc",
+        "abc",
+        "abc",
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg"
+        ],
+        "l": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "hijkl",
+          "hijkl"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "deffg",
+          "defg"
+        ],
+        "l": 3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "deffg",
+          "defg",
+          "deffg"
+        ],
+        "l": 3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "dedfg",
+          "hijkl",
+          "defg"
+        ],
+        "l": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "defg",
+          "mnopqr"
+        ],
+        "l": 4
+      },
+      "output": [
+        "defg"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "mnopqr",
+          "hijkl"
+        ],
+        "l": 4
+      },
+      "output": [
+        "defg"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "hijkl",
+          "mnopqr"
+        ],
+        "l": 3
+      },
+      "output": [
+        "abc"
+      ]
+    },
+    {
+      "input": {
+        "str1": [
+          "abc",
+          "defg",
+          "dedfg",
+          "hijkl",
+          "defg",
+          "abc"
+        ],
+        "l": 6
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "str1": [
+          "xyz",
+          "pqr",
+          "lmnop",
+          "abcde",
+          "abcde"
+        ],
+        "l": 4
+      },
+      "output": []
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def extract_string(str1, l):\n    return [e for e in str1 if len(e) == l]\n"
+  }
+}

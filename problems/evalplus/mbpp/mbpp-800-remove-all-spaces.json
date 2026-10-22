@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-800-remove-all-spaces",
+  "title": "Remove All Spaces",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove all whitespaces from a string.",
+  "entry_point": "remove_all_spaces",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def remove_all_spaces(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "python  program"
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "python   programming    language"
+      },
+      "output": "pythonprogramminglanguage"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "python  program"
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "python   programming    language"
+      },
+      "output": "pythonprogramminglanguage"
+    },
+    {
+      "input": {
+        "text": "python                     program"
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "   python                     program"
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "    "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "        "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "          "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "                        "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "                           python   programming    language                             "
+      },
+      "output": "pythonprogramminglanguage"
+    },
+    {
+      "input": {
+        "text": "          python                     program                                       "
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "   python                     program                              "
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "python  program                                                          "
+      },
+      "output": "pythonprogram"
+    },
+    {
+      "input": {
+        "text": "                   python   programming    language                                        python   programming    language                             "
+      },
+      "output": "pythonprogramminglanguagepythonprogramminglanguage"
+    },
+    {
+      "input": {
+        "text": "          python                     program                                       python                     program                           "
+      },
+      "output": "pythonprogrampythonprogram"
+    },
+    {
+      "input": {
+        "text": "   python                     program                              python                     program                          "
+      },
+      "output": "pythonprogrampythonprogram"
+    },
+    {
+      "input": {
+        "text": "python  program                                                         python  program                                                             "
+      },
+      "output": "pythonprogrampythonprogram"
+    },
+    {
+      "input": {
+        "text": "python\nprogram"
+      },
+      "output": "python\nprogram"
+    },
+    {
+      "input": {
+        "text": "pythonprogramminglanguage"
+      },
+      "output": "pythonprogramminglanguage"
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": " \t \n  python  \t \n  program  \t \n  python  \t \n  program  \t \n "
+      },
+      "output": "\t\npython\t\nprogram\t\npython\t\nprogram\t\n"
+    },
+    {
+      "input": {
+        "text": "python\tprogram"
+      },
+      "output": "python\tprogram"
+    },
+    {
+      "input": {
+        "text": "python\rprogram"
+      },
+      "output": "python\rprogram"
+    },
+    {
+      "input": {
+        "text": "python\fprogram"
+      },
+      "output": "python\fprogram"
+    },
+    {
+      "input": {
+        "text": "python\u000bprogram"
+      },
+      "output": "python\u000bprogram"
+    },
+    {
+      "input": {
+        "text": "   python                     program                              python                     program                           "
+      },
+      "output": "pythonprogrampythonprogram"
+    },
+    {
+      "input": {
+        "text": " \t \n  python  \t \n  program  \t \n    \t \n "
+      },
+      "output": "\t\npython\t\nprogram\t\n\t\n"
+    },
+    {
+      "input": {
+        "text": "         "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "python  prograpython\nprogramm                                                          "
+      },
+      "output": "pythonprograpython\nprogramm"
+    },
+    {
+      "input": {
+        "text": "python  program                                                         python  program                                                              "
+      },
+      "output": "pythonprogrampythonprogram"
+    },
+    {
+      "input": {
+        "text": "                         "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "python\rprogrpythonprogramminglanguageam"
+      },
+      "output": "python\rprogrpythonprogramminglanguageam"
+    },
+    {
+      "input": {
+        "text": " \t \n  pytprogrpythonprogramminglanguageamhon  \t \n  program  \t \n  python  \t \n  program  \t \n "
+      },
+      "output": "\t\npytprogrpythonprogramminglanguageamhon\t\nprogram\t\npython\t\nprogram\t\n"
+    },
+    {
+      "input": {
+        "text": "                           python   programming g   language                             "
+      },
+      "output": "pythonprogrammingglanguage"
+    },
+    {
+      "input": {
+        "text": "                   prython   programming    language                                        python   programming    language                             "
+      },
+      "output": "prythonprogramminglanguagepythonprogramminglanguage"
+    },
+    {
+      "input": {
+        "text": "                                  "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "python"
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "text": "python\rprrogrpythonprogramminglanguageam"
+      },
+      "output": "python\rprrogrpythonprogramminglanguageam"
+    },
+    {
+      "input": {
+        "text": "language"
+      },
+      "output": "language"
+    },
+    {
+      "input": {
+        "text": " \t \n  python  \t \n m program  \t \n  python  \t \n  program  \t \n "
+      },
+      "output": "\t\npython\t\nmprogram\t\npython\t\nprogram\t\n"
+    },
+    {
+      "input": {
+        "text": "                              "
+      },
+      "output": ""
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_all_spaces(text):\n return text.replace(' ', '')\n"
+  }
+}

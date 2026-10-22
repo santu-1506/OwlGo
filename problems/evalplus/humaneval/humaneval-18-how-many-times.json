@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-18-how-many-times",
+  "title": "How Many Times",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Find how many times a given substring can be found in the original string. Count overlaping cases.\n>>> how_many_times('', 'a')\n0\n>>> how_many_times('aaa', 'a')\n3\n>>> how_many_times('aaaa', 'aa')\n3",
+  "entry_point": "how_many_times",
+  "params": [
+    "string",
+    "substring"
+  ],
+  "function_signature": {
+    "python": "def how_many_times(string: str, substring: str) -> int:"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "",
+        "substring": "x"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "xyxyxyx",
+        "substring": "x"
+      },
+      "output": 4
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "",
+        "substring": "x"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "xyxyxyx",
+        "substring": "x"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "string": "cacacacac",
+        "substring": "cac"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "string": "john doe",
+        "substring": "john"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "ababa",
+        "substring": "aba"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "string": "abcdefg",
+        "substring": "efg"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "abababab",
+        "substring": "aba"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "string": "hello world",
+        "substring": "o"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "string": "aaaabbbbcccc",
+        "substring": "bb"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "string": "12211221122",
+        "substring": "122"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "string": "racecar",
+        "substring": "car"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "mississippi",
+        "substring": "ss"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "string": "thequickbrownfox",
+        "substring": "fox"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "fizzbuzz",
+        "substring": "zz"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "string": "aaaabbbbccccc",
+        "substring": "bb"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "string": "bbb",
+        "substring": "bb"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "string": "zz",
+        "substring": "bbb"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "122",
+        "substring": "zz"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "bb",
+        "substring": "bb"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "misracecarsissippi",
+        "substring": "ss"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "abababab",
+        "substring": "fox"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "e",
+        "substring": "e"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "thequickbrownfox",
+        "substring": "thequickbrownfox"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "bb",
+        "substring": "thequickbrownfox"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "fizzbuzz",
+        "substring": "fizzbuzz"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "122",
+        "substring": "12mississippi2"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "aaacarabbbbcccc",
+        "substring": "efg"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "hello world",
+        "substring": "fox"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "ababa",
+        "substring": "ababa"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "fizzbuzz",
+        "substring": "fizzzbuzz"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "12mississippi2",
+        "substring": "efg"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "hello worrld",
+        "substring": "ababao"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "thebquickbrownfox",
+        "substring": "thequickbrownfox"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "aaacarabbbbcccc",
+        "substring": "aaacabrabbbbcccc"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "zz",
+        "substring": "ababao"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "thequickbrrownfox",
+        "substring": "thequickbrrownfox"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "string": "hello woorrld",
+        "substring": "abaabaaoo"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "aaaabbbbcccc",
+        "substring": "thequickbrownfox"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "abababab",
+        "substring": "hello woorrld"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "string": "zz",
+        "substring": "efhello worrldssg"
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef how_many_times(string: str, substring: str) -> int:\n    \"\"\" Find how many times a given substring can be found in the original string. Count overlaping cases.\n    >>> how_many_times('', 'a')\n    0\n    >>> how_many_times('aaa', 'a')\n    3\n    >>> how_many_times('aaaa', 'aa')\n    3\n    \"\"\"\n\n\n    occurences = 0\n    for i in range(len(string)):\n        if string[i:].startswith(substring):\n            occurences += 1\n    return occurences\n\n"
+  }
+}

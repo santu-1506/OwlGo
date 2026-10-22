@@ -1,0 +1,365 @@
+{
+  "id": "mbpp-397-median-numbers",
+  "title": "Median Numbers",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the median of three numbers.",
+  "entry_point": "median_numbers",
+  "params": [
+    "a",
+    "b",
+    "c"
+  ],
+  "function_signature": {
+    "python": "def median_numbers(a, b, c):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 25,
+        "b": 55,
+        "c": 65
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "a": 20,
+        "b": 10,
+        "c": 30
+      },
+      "output": 20
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 25,
+        "b": 55,
+        "c": 65
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "a": 20,
+        "b": 10,
+        "c": 30
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 45,
+        "c": 75
+      },
+      "output": 45
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 5,
+        "c": 5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": -20,
+        "c": -30
+      },
+      "output": -20
+    },
+    {
+      "input": {
+        "a": -5,
+        "b": -10,
+        "c": -15
+      },
+      "output": -10
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": 20,
+        "c": 30
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "a": -15,
+        "b": 0,
+        "c": 15
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": -20,
+        "c": 100
+      },
+      "output": -20
+    },
+    {
+      "input": {
+        "a": -20,
+        "b": -19,
+        "c": 100
+      },
+      "output": -19
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 4,
+        "c": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 0,
+        "c": 5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "a": -18,
+        "b": 99,
+        "c": 100
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "a": -15,
+        "b": -15,
+        "c": 15
+      },
+      "output": -15
+    },
+    {
+      "input": {
+        "a": -5,
+        "b": 99,
+        "c": 100
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "a": -15,
+        "b": -14,
+        "c": 15
+      },
+      "output": -14
+    },
+    {
+      "input": {
+        "a": -16,
+        "b": -18,
+        "c": 100
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": -30,
+        "c": -30
+      },
+      "output": -30
+    },
+    {
+      "input": {
+        "a": 18,
+        "b": -10,
+        "c": 57
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "a": 30,
+        "b": -30,
+        "c": -29
+      },
+      "output": -29
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 99,
+        "c": 100
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "a": -11,
+        "b": 18,
+        "c": -10
+      },
+      "output": -10
+    },
+    {
+      "input": {
+        "a": -20,
+        "b": 57,
+        "c": -16
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": -9,
+        "c": 57
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": 100,
+        "c": -20
+      },
+      "output": -20
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": -19,
+        "c": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": -16,
+        "b": -19,
+        "c": 100
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "a": -31,
+        "b": 57,
+        "c": -20
+      },
+      "output": -20
+    },
+    {
+      "input": {
+        "a": 57,
+        "b": -18,
+        "c": 57
+      },
+      "output": 57
+    },
+    {
+      "input": {
+        "a": -18,
+        "b": 99,
+        "c": 99
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": 15,
+        "c": -20
+      },
+      "output": -20
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 98,
+        "c": -5
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": -20,
+        "b": -21,
+        "c": -30
+      },
+      "output": -21
+    },
+    {
+      "input": {
+        "a": 30,
+        "b": 31,
+        "c": -20
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "a": -29,
+        "b": -50,
+        "c": 100
+      },
+      "output": -29
+    },
+    {
+      "input": {
+        "a": -19,
+        "b": 4,
+        "c": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": -29,
+        "b": -30,
+        "c": -50
+      },
+      "output": -30
+    },
+    {
+      "input": {
+        "a": 20,
+        "b": 0,
+        "c": 15
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "a": -19,
+        "b": -21,
+        "c": -30
+      },
+      "output": -21
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": -15,
+        "c": 5
+      },
+      "output": 5
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def median_numbers(a,b,c):\n    return sorted([a,b,c])[1]\n"
+  }
+}

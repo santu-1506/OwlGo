@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-558-digit-distance-nums",
+  "title": "Digit Distance Nums",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the sum of the per-digit difference between two integers.",
+  "entry_point": "digit_distance_nums",
+  "params": [
+    "n1",
+    "n2"
+  ],
+  "function_signature": {
+    "python": "def digit_distance_nums(n1, n2):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n1": 1,
+        "n2": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n1": 23,
+        "n2": 56
+      },
+      "output": 6
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n1": 1,
+        "n2": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n1": 23,
+        "n2": 56
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n1": 123,
+        "n2": 256
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n1": 123456789,
+        "n2": 987654321
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "n1": 12345,
+        "n2": 9
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n1": 9876543210,
+        "n2": 123
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "n1": 11111111,
+        "n2": 99999999
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n1": 98765,
+        "n2": 54321
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n1": 999999,
+        "n2": 111111
+      },
+      "output": 48
+    },
+    {
+      "input": {
+        "n1": 0,
+        "n2": 987654321
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n1": 987654321,
+        "n2": 23456789
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n1": 123456789123456789,
+        "n2": 987654321987654321
+      },
+      "output": 80
+    },
+    {
+      "input": {
+        "n1": 1000000,
+        "n2": 999999
+      },
+      "output": 53
+    },
+    {
+      "input": {
+        "n1": 9999,
+        "n2": 8888
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n1": 123456789,
+        "n2": 123
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n1": 1,
+        "n2": 1234567890
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n1": 12345,
+        "n2": 567891
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n1": 0,
+        "n2": 256
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n1": 123,
+        "n2": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n1": 0,
+        "n2": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n1": 123,
+        "n2": 456789
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n1": 12345,
+        "n2": 5678
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "n1": 1111,
+        "n2": 2222
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n1": 1020304,
+        "n2": 2030405
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n1": 1,
+        "n2": 9
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n1": 10000000,
+        "n2": 9999999
+      },
+      "output": 62
+    },
+    {
+      "input": {
+        "n1": 200,
+        "n2": 500
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n1": 3000,
+        "n2": 30
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n1": 10,
+        "n2": 256
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n1": 123,
+        "n2": 5
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n1": 10,
+        "n2": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n1": 9999999999,
+        "n2": 1111111111
+      },
+      "output": 80
+    },
+    {
+      "input": {
+        "n1": 123,
+        "n2": 256789
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n1": 23,
+        "n2": 568
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n1": 0,
+        "n2": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n1": 1,
+        "n2": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n1": 1,
+        "n2": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n1": 3,
+        "n2": 0
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n1": 24,
+        "n2": 30
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n1": 9876543,
+        "n2": 12
+      },
+      "output": 14
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def digit_distance_nums(n1, n2):\n    return sum([abs(int(c1) - int(c2)) for c1, c2 in zip(str(n1), str(n2))])\n"
+  }
+}

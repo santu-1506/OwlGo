@@ -1,0 +1,426 @@
+{
+  "id": "mbpp-118-string-to-list",
+  "title": "String To List",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to convert a string to a list of strings split on the space character.",
+  "entry_point": "string_to_list",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def string_to_list(string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "python programming"
+      },
+      "output": [
+        "python",
+        "programming"
+      ]
+    },
+    {
+      "input": {
+        "string": "lists tuples strings"
+      },
+      "output": [
+        "lists",
+        "tuples",
+        "strings"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "python programming"
+      },
+      "output": [
+        "python",
+        "programming"
+      ]
+    },
+    {
+      "input": {
+        "string": "lists tuples strings"
+      },
+      "output": [
+        "lists",
+        "tuples",
+        "strings"
+      ]
+    },
+    {
+      "input": {
+        "string": "write a program"
+      },
+      "output": [
+        "write",
+        "a",
+        "program"
+      ]
+    },
+    {
+      "input": {
+        "string": ""
+      },
+      "output": [
+        ""
+      ]
+    },
+    {
+      "input": {
+        "string": "   python      programming    "
+      },
+      "output": [
+        "",
+        "",
+        "",
+        "python",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "programming",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "string": "1234 5678 9101"
+      },
+      "output": [
+        "1234",
+        "5678",
+        "9101"
+      ]
+    },
+    {
+      "input": {
+        "string": "string1,string2,string3"
+      },
+      "output": [
+        "string1,string2,string3"
+      ]
+    },
+    {
+      "input": {
+        "string": "My favorite programming language is Python"
+      },
+      "output": [
+        "My",
+        "favorite",
+        "programming",
+        "language",
+        "is",
+        "Python"
+      ]
+    },
+    {
+      "input": {
+        "string": "string1,     string2,       string3"
+      },
+      "output": [
+        "string1,",
+        "",
+        "",
+        "",
+        "",
+        "string2,",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "string3"
+      ]
+    },
+    {
+      "input": {
+        "string": "string1,string2,strin3"
+      },
+      "output": [
+        "string1,string2,strin3"
+      ]
+    },
+    {
+      "input": {
+        "string": "language"
+      },
+      "output": [
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "string": "1234 5678 91string1,string2,string301"
+      },
+      "output": [
+        "1234",
+        "5678",
+        "91string1,string2,string301"
+      ]
+    },
+    {
+      "input": {
+        "string": "string1,string2,3"
+      },
+      "output": [
+        "string1,string2,3"
+      ]
+    },
+    {
+      "input": {
+        "string": "My"
+      },
+      "output": [
+        "My"
+      ]
+    },
+    {
+      "input": {
+        "string": "1234"
+      },
+      "output": [
+        "1234"
+      ]
+    },
+    {
+      "input": {
+        "string": "l"
+      },
+      "output": [
+        "l"
+      ]
+    },
+    {
+      "input": {
+        "string": "5678"
+      },
+      "output": [
+        "5678"
+      ]
+    },
+    {
+      "input": {
+        "string": "192314 5678 9101"
+      },
+      "output": [
+        "192314",
+        "5678",
+        "9101"
+      ]
+    },
+    {
+      "input": {
+        "string": "python"
+      },
+      "output": [
+        "python"
+      ]
+    },
+    {
+      "input": {
+        "string": "12314"
+      },
+      "output": [
+        "12314"
+      ]
+    },
+    {
+      "input": {
+        "string": "   ng    "
+      },
+      "output": [
+        "",
+        "",
+        "",
+        "ng",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "string": "56678"
+      },
+      "output": [
+        "56678"
+      ]
+    },
+    {
+      "input": {
+        "string": "favorite"
+      },
+      "output": [
+        "favorite"
+      ]
+    },
+    {
+      "input": {
+        "string": "string2,"
+      },
+      "output": [
+        "string2,"
+      ]
+    },
+    {
+      "input": {
+        "string": "AeFmnNDd"
+      },
+      "output": [
+        "AeFmnNDd"
+      ]
+    },
+    {
+      "input": {
+        "string": "56"
+      },
+      "output": [
+        "56"
+      ]
+    },
+    {
+      "input": {
+        "string": "programming"
+      },
+      "output": [
+        "programming"
+      ]
+    },
+    {
+      "input": {
+        "string": "pronggrammin12314g"
+      },
+      "output": [
+        "pronggrammin12314g"
+      ]
+    },
+    {
+      "input": {
+        "string": "prog"
+      },
+      "output": [
+        "prog"
+      ]
+    },
+    {
+      "input": {
+        "string": "5striing1,stringg2,strin3"
+      },
+      "output": [
+        "5striing1,stringg2,strin3"
+      ]
+    },
+    {
+      "input": {
+        "string": "language  ng    "
+      },
+      "output": [
+        "language",
+        "",
+        "ng",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "string": "favorit"
+      },
+      "output": [
+        "favorit"
+      ]
+    },
+    {
+      "input": {
+        "string": "gvZn"
+      },
+      "output": [
+        "gvZn"
+      ]
+    },
+    {
+      "input": {
+        "string": "languPythonage  ng    "
+      },
+      "output": [
+        "languPythonage",
+        "",
+        "ng",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "string": "Python"
+      },
+      "output": [
+        "Python"
+      ]
+    },
+    {
+      "input": {
+        "string": "SfDBdGHKU"
+      },
+      "output": [
+        "SfDBdGHKU"
+      ]
+    },
+    {
+      "input": {
+        "string": "is"
+      },
+      "output": [
+        "is"
+      ]
+    },
+    {
+      "input": {
+        "string": "5stprogriing1,stringg2,strin3"
+      },
+      "output": [
+        "5stprogriing1,stringg2,strin3"
+      ]
+    },
+    {
+      "input": {
+        "string": "fvorrite"
+      },
+      "output": [
+        "fvorrite"
+      ]
+    },
+    {
+      "input": {
+        "string": "porog"
+      },
+      "output": [
+        "porog"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def string_to_list(string): \n    return string.split(\" \")\n"
+  }
+}

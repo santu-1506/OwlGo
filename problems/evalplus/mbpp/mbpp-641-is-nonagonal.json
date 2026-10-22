@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-641-is-nonagonal",
+  "title": "Is Nonagonal",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the nth nonagonal number.",
+  "entry_point": "is_nonagonal",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_nonagonal(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 325
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 750
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 325
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 750
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 1089
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 3499997500000
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": 3499990500006
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 3500004500001
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 999998
+      },
+      "output": 3499983500019
+    },
+    {
+      "input": {
+        "n": 999997
+      },
+      "output": 3499976500039
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 1000002
+      },
+      "output": 3500011500009
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 80
+      },
+      "output": 22200
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "n": 81
+      },
+      "output": 22761
+    },
+    {
+      "input": {
+        "n": 999996
+      },
+      "output": 3499969500066
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 3500018500024
+    },
+    {
+      "input": {
+        "n": 1000004
+      },
+      "output": 3500025500046
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": 21646
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": 23329
+    },
+    {
+      "input": {
+        "n": 1000005
+      },
+      "output": 3500032500075
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 21099
+    },
+    {
+      "input": {
+        "n": 999995
+      },
+      "output": 3499962500100
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 16014
+    },
+    {
+      "input": {
+        "n": 1000006
+      },
+      "output": 3500039500111
+    },
+    {
+      "input": {
+        "n": 83
+      },
+      "output": 23904
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": 24486
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 15544
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 20559
+    },
+    {
+      "input": {
+        "n": 999994
+      },
+      "output": 3499955500141
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 46
+    },
+    {
+      "input": {
+        "n": 999993
+      },
+      "output": 3499948500189
+    },
+    {
+      "input": {
+        "n": 1000007
+      },
+      "output": 3500046500154
+    },
+    {
+      "input": {
+        "n": 999992
+      },
+      "output": 3499941500244
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": 12871
+    },
+    {
+      "input": {
+        "n": 1000008
+      },
+      "output": 3500053500204
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 34056
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 16491
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_nonagonal(n): \n\treturn int(n * (7 * n - 5) / 2)\n"
+  }
+}

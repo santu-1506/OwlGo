@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-600-is-even",
+  "title": "Is Even",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether the given number is even or not.",
+  "entry_point": "is_Even",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_Even(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -283
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -1000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 999999999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -284
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -9
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -282
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 999999998
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 999999997
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -281
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -73
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -279
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -74
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -280
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -72
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -278
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 93
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -276
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 999999995
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -285
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -277
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 95
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -75
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -76
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1000000001
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -286
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -71
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 92
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -8
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_Even(n) : \n    return n % 2 == 0\n"
+  }
+}

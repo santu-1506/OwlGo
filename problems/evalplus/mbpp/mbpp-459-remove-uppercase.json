@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-459-remove-uppercase",
+  "title": "Remove Uppercase",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove uppercase substrings from a given string.",
+  "entry_point": "remove_uppercase",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def remove_uppercase(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "cAstyoUrFavoRitETVshoWs"
+      },
+      "output": "cstyoravoitshos"
+    },
+    {
+      "input": {
+        "str1": "wAtchTheinTernEtrAdIo"
+      },
+      "output": "wtchheinerntrdo"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "cAstyoUrFavoRitETVshoWs"
+      },
+      "output": "cstyoravoitshos"
+    },
+    {
+      "input": {
+        "str1": "wAtchTheinTernEtrAdIo"
+      },
+      "output": "wtchheinerntrdo"
+    },
+    {
+      "input": {
+        "str1": "VoicESeaRchAndreComMendaTionS"
+      },
+      "output": "oiceachndreomendaion"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ABCDEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%!s&a(mY)TesTStR%i*ng"
+      },
+      "output": "hisamesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%!%s*ng"
+      },
+      "output": "hisng"
+    },
+    {
+      "input": {
+        "str1": "ABCDABCDEFGEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCDEFGEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "CABCDEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "CACDEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCDEFG!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCDCEEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCGEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "AABCDEFGABCGEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCABFCDABCDCEEFGDEFG!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCDEFG!s&a(mY)TsesTStR%i*ngABCDABCDEFGEFG"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCGEF"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ABCDEFGThiS%^%)!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiSS%^%ABCDEFG!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiThiS%^%ABCDEFG!s&a(mY)TsesTStR%i*ngS%^%!s&a(mY)TesTStR%i*ng"
+      },
+      "output": "hihisamsestingsamesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCDEFABCDEFGG!s&a(mY)TsesTStR%i*ngABCDABCDEFGEFG"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "AABCDEFGABCDEFGThiS%^%)!s&a(mY)TsesTStR%i*ngABCGEFG"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCDEFG!ABCDEFGsTStR%i*ngABCDABCDEFGEFG"
+      },
+      "output": "histing"
+    },
+    {
+      "input": {
+        "str1": "ABFCDAABCCDCEEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCDEFABCDEFGG!s&a(mY)TsesTABCDEFGThiS%^%)!s&a(mY)TsesTStR%i*ngStR%i*ngABCDABCDEFGEFG"
+      },
+      "output": "hisamseshisamsestingting"
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCT%hiThiS%^%ABCDEFG!s&a(mY)TsesTStR%i*ngS%^%!s&a(mY)TesTStR%i*ngDCEEFG"
+      },
+      "output": "hihisamsestingsamesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCDEFABCDEFGG!s&a(mY)TsesTABCDEFGThiS%^%)!s&a(mY)TsesTStABCDEFGEFG"
+      },
+      "output": "hisamseshisamsest"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%ABCABFCDABCDCEEFGDThiThiS%^%ABCDEFG!s&a(mY)TsesTStR%i*ngS%^%!s&a(mY)TesTStR%i*ngEFG!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hihihisamsestingsamestingsamsesting"
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCDCFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "CABCDEEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "AEBCDEFG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%!s&a(mY)TsesTStR%i*nAABCDEFGABCGEFG"
+      },
+      "output": "hisamsestin"
+    },
+    {
+      "input": {
+        "str1": "ABCDEFGThiS%^%)!s&a(mY)TsesTAEBCDEFGStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiSS%^%ABCDEFGT!s&a(mY)TsesTStR%i*ng"
+      },
+      "output": "hisamsesting"
+    },
+    {
+      "input": {
+        "str1": "ThiS%^%!s&a(mY)TsesTStR%i*CnAABCDEFGABCGEFG"
+      },
+      "output": "hisamsestin"
+    },
+    {
+      "input": {
+        "str1": "CACDEFCG"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "ABFCDABCT%hiThiS%^%ABCDEFG!s&a(mY)TsesTStR%i*n%!s&a(mY)TesTStR%i*ngDCEEFG"
+      },
+      "output": "hihisamsestinsamesting"
+    },
+    {
+      "input": {
+        "str1": "A)TsesTStR%i*ng"
+      },
+      "output": "sesting"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_uppercase(str1):\n  return ''.join(c for c in str1 if c.islower())\n"
+  }
+}

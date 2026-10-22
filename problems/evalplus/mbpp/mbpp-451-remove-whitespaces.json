@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-451-remove-whitespaces",
+  "title": "Remove Whitespaces",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove all whitespaces from the given string.",
+  "entry_point": "remove_whitespaces",
+  "params": [
+    "text1"
+  ],
+  "function_signature": {
+    "python": "def remove_whitespaces(text1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text1": " Google    Flutter "
+      },
+      "output": "GoogleFlutter"
+    },
+    {
+      "input": {
+        "text1": " Google    Dart "
+      },
+      "output": "GoogleDart"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text1": " Google    Flutter "
+      },
+      "output": "GoogleFlutter"
+    },
+    {
+      "input": {
+        "text1": " Google    Dart "
+      },
+      "output": "GoogleDart"
+    },
+    {
+      "input": {
+        "text1": " iOS    Swift "
+      },
+      "output": "iOSSwift"
+    },
+    {
+      "input": {
+        "text1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text1": "1234567890"
+      },
+      "output": "1234567890"
+    },
+    {
+      "input": {
+        "text1": "\n\t"
+      },
+      "output": "\n\t"
+    },
+    {
+      "input": {
+        "text1": " \t\n\n\t"
+      },
+      "output": "\t\n\n\t"
+    },
+    {
+      "input": {
+        "text1": "iOS᠎​‌‍⁠Swift"
+      },
+      "output": "iOS᠎​‌‍⁠Swift"
+    },
+    {
+      "input": {
+        "text1": "This    is    a    long    string    with    multiple    spaces"
+      },
+      "output": "Thisisalongstringwithmultiplespaces"
+    },
+    {
+      "input": {
+        "text1": "Google​Dart"
+      },
+      "output": "Google​Dart"
+    },
+    {
+      "input": {
+        "text1": " ᠎​‌‍⁠ "
+      },
+      "output": "᠎​‌‍⁠"
+    },
+    {
+      "input": {
+        "text1": "  1234567890  "
+      },
+      "output": "1234567890"
+    },
+    {
+      "input": {
+        "text1": " ᠎​‌‍⁠  "
+      },
+      "output": "᠎​‌‍⁠"
+    },
+    {
+      "input": {
+        "text1": "  12384567890  "
+      },
+      "output": "12384567890"
+    },
+    {
+      "input": {
+        "text1": "This    is    a    long    string    with    mltiple    spaces"
+      },
+      "output": "Thisisalongstringwithmltiplespaces"
+    },
+    {
+      "input": {
+        "text1": "1234567\n\t890"
+      },
+      "output": "1234567\n\t890"
+    },
+    {
+      "input": {
+        "text1": "1234567"
+      },
+      "output": "1234567"
+    },
+    {
+      "input": {
+        "text1": " ᠎​ "
+      },
+      "output": "᠎​"
+    },
+    {
+      "input": {
+        "text1": "is"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "text1": "   12384567890  ᠎​ "
+      },
+      "output": "12384567890᠎​"
+    },
+    {
+      "input": {
+        "text1": " ᠎​iOS᠎​‌‍⁠Swift‌‍⁠ "
+      },
+      "output": "᠎​iOS᠎​‌‍⁠Swift‌‍⁠"
+    },
+    {
+      "input": {
+        "text1": "string"
+      },
+      "output": "string"
+    },
+    {
+      "input": {
+        "text1": "   12384567890  ᠎​ multiple"
+      },
+      "output": "12384567890᠎​multiple"
+    },
+    {
+      "input": {
+        "text1": "multipl"
+      },
+      "output": "multipl"
+    },
+    {
+      "input": {
+        "text1": " ᠎​‌‍ "
+      },
+      "output": "᠎​‌‍"
+    },
+    {
+      "input": {
+        "text1": "spacses"
+      },
+      "output": "spacses"
+    },
+    {
+      "input": {
+        "text1": "iss"
+      },
+      "output": "iss"
+    },
+    {
+      "input": {
+        "text1": " ᠎​1234567\n\t890‌‍ "
+      },
+      "output": "᠎​1234567\n\t890‌‍"
+    },
+    {
+      "input": {
+        "text1": "aspacses"
+      },
+      "output": "aspacses"
+    },
+    {
+      "input": {
+        "text1": "31234567890"
+      },
+      "output": "31234567890"
+    },
+    {
+      "input": {
+        "text1": " ᠎​iOS᠎​O‌‍⁠1234567890Swift‌‍⁠ "
+      },
+      "output": "᠎​iOS᠎​O‌‍⁠1234567890Swift‌‍⁠"
+    },
+    {
+      "input": {
+        "text1": " ᠎​iOS᠎​O‌‍⁠12string34567890Swif9t‌‍⁠ "
+      },
+      "output": "᠎​iOS᠎​O‌‍⁠12string34567890Swif9t‌‍⁠"
+    },
+    {
+      "input": {
+        "text1": "iOS᠎​‌‍⁠Stwift"
+      },
+      "output": "iOS᠎​‌‍⁠Stwift"
+    },
+    {
+      "input": {
+        "text1": "Googgle​D᠎​iOS᠎​O‌‍⁠1234567890Swift‌‍⁠art"
+      },
+      "output": "Googgle​D᠎​iOS᠎​O‌‍⁠1234567890Swift‌‍⁠art"
+    },
+    {
+      "input": {
+        "text1": "hGMmu"
+      },
+      "output": "hGMmu"
+    },
+    {
+      "input": {
+        "text1": " ᠎​iOS᠎​‌‍⁠Swift‌‍⁠⁠ "
+      },
+      "output": "᠎​iOS᠎​‌‍⁠Swift‌‍⁠⁠"
+    },
+    {
+      "input": {
+        "text1": "stri"
+      },
+      "output": "stri"
+    },
+    {
+      "input": {
+        "text1": "aspacsesis"
+      },
+      "output": "aspacsesis"
+    },
+    {
+      "input": {
+        "text1": " ᠎​iOS᠎​O‌‍⁠1234567890Swift0‌‍⁠ "
+      },
+      "output": "᠎​iOS᠎​O‌‍⁠1234567890Swift0‌‍⁠"
+    },
+    {
+      "input": {
+        "text1": "multiple"
+      },
+      "output": "multiple"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef remove_whitespaces(text1):\n  return text1.replace(' ', '')\n"
+  }
+}

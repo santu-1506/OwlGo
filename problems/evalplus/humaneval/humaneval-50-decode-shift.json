@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-50-decode-shift",
+  "title": "Decode Shift",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "takes as input string encoded with encode_shift function. Returns decoded string.",
+  "entry_point": "decode_shift",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def decode_shift(s: str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "tantywccpjkimslotpzs"
+      },
+      "output": "oviotrxxkefdhngjokun"
+    },
+    {
+      "input": {
+        "s": "clknfxdnox"
+      },
+      "output": "xgfiasyijs"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "tantywccpjkimslotpzs"
+      },
+      "output": "oviotrxxkefdhngjokun"
+    },
+    {
+      "input": {
+        "s": "clknfxdnox"
+      },
+      "output": "xgfiasyijs"
+    },
+    {
+      "input": {
+        "s": "dtzqyosaovdbafbg"
+      },
+      "output": "youltjnvjqywvawb"
+    },
+    {
+      "input": {
+        "s": "dffjvztknohzf"
+      },
+      "output": "yaaequofijcua"
+    },
+    {
+      "input": {
+        "s": "brhkdngfwd"
+      },
+      "output": "wmcfyibary"
+    },
+    {
+      "input": {
+        "s": "amlcrporykmgbhzctpnh"
+      },
+      "output": "vhgxmkjmtfhbwcuxokic"
+    },
+    {
+      "input": {
+        "s": "ondbgojmipwoofzeyrh"
+      },
+      "output": "jiywbjehdkrjjauztmc"
+    },
+    {
+      "input": {
+        "s": "atobiwyiitrvhuctz"
+      },
+      "output": "vojwdrtddomqcpxou"
+    },
+    {
+      "input": {
+        "s": "kyrzjawonglfbsedmhmk"
+      },
+      "output": "ftmuevrjibgawnzyhchf"
+    },
+    {
+      "input": {
+        "s": "esusgpgnaelf"
+      },
+      "output": "znpnbkbivzga"
+    },
+    {
+      "input": {
+        "s": "jbocbcqiuggvenbq"
+      },
+      "output": "ewjxwxldpbbqziwl"
+    },
+    {
+      "input": {
+        "s": "zmmcumljlx"
+      },
+      "output": "uhhxphgegs"
+    },
+    {
+      "input": {
+        "s": "ibrcruwukgetv"
+      },
+      "output": "dwmxmprpfbzoq"
+    },
+    {
+      "input": {
+        "s": "ncbelcfjqcgxshtdiz"
+      },
+      "output": "ixwzgxaelxbsncoydu"
+    },
+    {
+      "input": {
+        "s": "xgcckzjdfp"
+      },
+      "output": "sbxxfueyak"
+    },
+    {
+      "input": {
+        "s": "gzlnmjjytxhydvy"
+      },
+      "output": "bugiheetosctyqt"
+    },
+    {
+      "input": {
+        "s": "zxlxfflljav"
+      },
+      "output": "usgsaaggevq"
+    },
+    {
+      "input": {
+        "s": "kfeabaemohxvodorv"
+      },
+      "output": "fazvwvzhjcsqjyjmq"
+    },
+    {
+      "input": {
+        "s": "kdfcevzlswkkmkwdrcrg"
+      },
+      "output": "fyaxzqugnrffhfrymxmb"
+    },
+    {
+      "input": {
+        "s": "oxtrmhyjjbm"
+      },
+      "output": "jsomhcteewh"
+    },
+    {
+      "input": {
+        "s": "bvhfetbvrspmepdqu"
+      },
+      "output": "wqcazowqmnkhzkylp"
+    },
+    {
+      "input": {
+        "s": "lycqknawupoydpve"
+      },
+      "output": "gtxlfivrpkjtykqz"
+    },
+    {
+      "input": {
+        "s": "vmbjsfxvtgjkxgvazub"
+      },
+      "output": "qhwenasqobefsbqvupw"
+    },
+    {
+      "input": {
+        "s": "ffkskhcrjnixkkdivamc"
+      },
+      "output": "aafnfcxmeidsffydqvhx"
+    },
+    {
+      "input": {
+        "s": "zszowxcyfksyaiov"
+      },
+      "output": "unujrsxtafntvdjq"
+    },
+    {
+      "input": {
+        "s": "mcqqnjopwar"
+      },
+      "output": "hxlliejkrvm"
+    },
+    {
+      "input": {
+        "s": "dkglzmaccvjlrjuhgmp"
+      },
+      "output": "yfbguhvxxqegmepcbhk"
+    },
+    {
+      "input": {
+        "s": "hudnjifakmaknaiwjjoz"
+      },
+      "output": "cpyiedavfhvfivdreeju"
+    },
+    {
+      "input": {
+        "s": "ppineedncm"
+      },
+      "output": "kkdizzyixh"
+    },
+    {
+      "input": {
+        "s": "nhnnpeyazv"
+      },
+      "output": "iciikztvuq"
+    },
+    {
+      "input": {
+        "s": "hfgrlomgpnzomltm"
+      },
+      "output": "cabmgjhbkiujhgoh"
+    },
+    {
+      "input": {
+        "s": "opejcxrnkfi"
+      },
+      "output": "jkzexsmifad"
+    },
+    {
+      "input": {
+        "s": "caocjafernbzwkerkjul"
+      },
+      "output": "xvjxevazmiwurfzmfepg"
+    },
+    {
+      "input": {
+        "s": "uenrgscamkc"
+      },
+      "output": "pzimbnxvhfx"
+    },
+    {
+      "input": {
+        "s": "ntphbmfuyhgxxekrh"
+      },
+      "output": "iokcwhaptcbsszfmc"
+    },
+    {
+      "input": {
+        "s": "lullbgnzzlpsf"
+      },
+      "output": "gpggwbiuugkna"
+    },
+    {
+      "input": {
+        "s": "nfzgyzvqkkkhqwoc"
+      },
+      "output": "iaubtuqlfffclrjx"
+    },
+    {
+      "input": {
+        "s": "rseeagndpy"
+      },
+      "output": "mnzzvbiykt"
+    },
+    {
+      "input": {
+        "s": "jzfmflvqsujn"
+      },
+      "output": "euahagqlnpei"
+    },
+    {
+      "input": {
+        "s": "zhemzjdbgmzhlojon"
+      },
+      "output": "uczhueywbhucgjeji"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef encode_shift(s: str):\n    \"\"\"\n    returns encoded string by shifting every character by 5 in the alphabet.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) + 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])\n\n\ndef decode_shift(s: str):\n    \"\"\"\n    takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n\n\n    return \"\".join([chr((ord(ch) - ord(\"a\") - 5 + 26) % 26 + ord(\"a\")) for ch in s])\n\n"
+  }
+}

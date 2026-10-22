@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-264-dog-age",
+  "title": "Dog Age",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate a dog's age in dog's years.",
+  "entry_point": "dog_age",
+  "params": [
+    "h_age"
+  ],
+  "function_signature": {
+    "python": "def dog_age(h_age):"
+  },
+  "examples": [
+    {
+      "input": {
+        "h_age": 12
+      },
+      "output": 61
+    },
+    {
+      "input": {
+        "h_age": 15
+      },
+      "output": 73
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "h_age": 12
+      },
+      "output": 61
+    },
+    {
+      "input": {
+        "h_age": 15
+      },
+      "output": 73
+    },
+    {
+      "input": {
+        "h_age": 24
+      },
+      "output": 109
+    },
+    {
+      "input": {
+        "h_age": 100
+      },
+      "output": 413
+    },
+    {
+      "input": {
+        "h_age": 0
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "h_age": 30
+      },
+      "output": 133
+    },
+    {
+      "input": {
+        "h_age": 29
+      },
+      "output": 129
+    },
+    {
+      "input": {
+        "h_age": 99
+      },
+      "output": 409
+    },
+    {
+      "input": {
+        "h_age": 101
+      },
+      "output": 417
+    },
+    {
+      "input": {
+        "h_age": 28
+      },
+      "output": 125
+    },
+    {
+      "input": {
+        "h_age": 98
+      },
+      "output": 405
+    },
+    {
+      "input": {
+        "h_age": 27
+      },
+      "output": 121
+    },
+    {
+      "input": {
+        "h_age": 26
+      },
+      "output": 117
+    },
+    {
+      "input": {
+        "h_age": true
+      },
+      "output": 10.5
+    },
+    {
+      "input": {
+        "h_age": false
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "h_age": 97
+      },
+      "output": 401
+    },
+    {
+      "input": {
+        "h_age": 25
+      },
+      "output": 113
+    },
+    {
+      "input": {
+        "h_age": 31
+      },
+      "output": 137
+    },
+    {
+      "input": {
+        "h_age": 32
+      },
+      "output": 141
+    },
+    {
+      "input": {
+        "h_age": 33
+      },
+      "output": 145
+    },
+    {
+      "input": {
+        "h_age": 23
+      },
+      "output": 105
+    },
+    {
+      "input": {
+        "h_age": 21
+      },
+      "output": 97
+    },
+    {
+      "input": {
+        "h_age": 34
+      },
+      "output": 149
+    },
+    {
+      "input": {
+        "h_age": 1
+      },
+      "output": 10.5
+    },
+    {
+      "input": {
+        "h_age": 35
+      },
+      "output": 153
+    },
+    {
+      "input": {
+        "h_age": 2
+      },
+      "output": 21.0
+    },
+    {
+      "input": {
+        "h_age": 22
+      },
+      "output": 101
+    },
+    {
+      "input": {
+        "h_age": 36
+      },
+      "output": 157
+    },
+    {
+      "input": {
+        "h_age": 3
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "h_age": 96
+      },
+      "output": 397
+    },
+    {
+      "input": {
+        "h_age": 95
+      },
+      "output": 393
+    },
+    {
+      "input": {
+        "h_age": 4
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "h_age": 102
+      },
+      "output": 421
+    },
+    {
+      "input": {
+        "h_age": 56
+      },
+      "output": 237
+    },
+    {
+      "input": {
+        "h_age": 5
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "h_age": 55
+      },
+      "output": 233
+    },
+    {
+      "input": {
+        "h_age": 54
+      },
+      "output": 229
+    },
+    {
+      "input": {
+        "h_age": 6
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "h_age": 20
+      },
+      "output": 93
+    },
+    {
+      "input": {
+        "h_age": 37
+      },
+      "output": 161
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def dog_age(h_age):\n\tif h_age <= 2:\n\t\td_age = h_age * 10.5\n\telse:\n\t\td_age = 21 + (h_age - 2) * 4\n\treturn d_age\n"
+  }
+}

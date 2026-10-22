@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-2-truncate-number",
+  "title": "Truncate Number",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a positive floating point number, it can be decomposed into\nand integer part (largest integer smaller than given number) and decimals\n(leftover part always smaller than 1).\n\nReturn the decimal part of the number.\n>>> truncate_number(3.5)\n0.5",
+  "entry_point": "truncate_number",
+  "params": [
+    "number"
+  ],
+  "function_signature": {
+    "python": "def truncate_number(number: float) -> float:"
+  },
+  "examples": [
+    {
+      "input": {
+        "number": 3.5
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "number": 1.33
+      },
+      "output": 0.33000000000000007
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "number": 3.5
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "number": 1.33
+      },
+      "output": 0.33000000000000007
+    },
+    {
+      "input": {
+        "number": 123.456
+      },
+      "output": 0.45600000000000307
+    },
+    {
+      "input": {
+        "number": 999.99999
+      },
+      "output": 0.9999900000000252
+    },
+    {
+      "input": {
+        "number": 0.3333333
+      },
+      "output": 0.3333333
+    },
+    {
+      "input": {
+        "number": 1.0
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "number": 1.5
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "number": 0.5
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "number": 0.999999
+      },
+      "output": 0.999999
+    },
+    {
+      "input": {
+        "number": 500.00678
+      },
+      "output": 0.006779999999992015
+    },
+    {
+      "input": {
+        "number": 11.11
+      },
+      "output": 0.10999999999999943
+    },
+    {
+      "input": {
+        "number": 0.25
+      },
+      "output": 0.25
+    },
+    {
+      "input": {
+        "number": 5.99
+      },
+      "output": 0.9900000000000002
+    },
+    {
+      "input": {
+        "number": 1.284163165748358
+      },
+      "output": 0.2841631657483581
+    },
+    {
+      "input": {
+        "number": 1.8517611088029418
+      },
+      "output": 0.8517611088029418
+    },
+    {
+      "input": {
+        "number": 0.7713842427275083
+      },
+      "output": 0.7713842427275083
+    },
+    {
+      "input": {
+        "number": 3.1842364304976463
+      },
+      "output": 0.18423643049764626
+    },
+    {
+      "input": {
+        "number": 1.0738831860229472
+      },
+      "output": 0.07388318602294719
+    },
+    {
+      "input": {
+        "number": 0.04320870526393539
+      },
+      "output": 0.04320870526393539
+    },
+    {
+      "input": {
+        "number": 1.1369261836552624
+      },
+      "output": 0.13692618365526243
+    },
+    {
+      "input": {
+        "number": 1.0630407193724771
+      },
+      "output": 0.06304071937247713
+    },
+    {
+      "input": {
+        "number": 10.291122396192739
+      },
+      "output": 0.2911223961927387
+    },
+    {
+      "input": {
+        "number": 1.7558893686701653
+      },
+      "output": 0.7558893686701653
+    },
+    {
+      "input": {
+        "number": 0.9650030856354603
+      },
+      "output": 0.9650030856354603
+    },
+    {
+      "input": {
+        "number": 0.984438743601213
+      },
+      "output": 0.984438743601213
+    },
+    {
+      "input": {
+        "number": 10.488539525905054
+      },
+      "output": 0.488539525905054
+    },
+    {
+      "input": {
+        "number": 1.4874349659668864
+      },
+      "output": 0.4874349659668864
+    },
+    {
+      "input": {
+        "number": 0.7636841418734611
+      },
+      "output": 0.7636841418734611
+    },
+    {
+      "input": {
+        "number": 1.0550866750250807
+      },
+      "output": 0.05508667502508069
+    },
+    {
+      "input": {
+        "number": 2.333802704974898
+      },
+      "output": 0.33380270497489795
+    },
+    {
+      "input": {
+        "number": 0.05907618779899971
+      },
+      "output": 0.05907618779899971
+    },
+    {
+      "input": {
+        "number": 10.340562837282636
+      },
+      "output": 0.34056283728263637
+    },
+    {
+      "input": {
+        "number": 14.594425286718018
+      },
+      "output": 0.5944252867180175
+    },
+    {
+      "input": {
+        "number": 2.0662932553410105
+      },
+      "output": 0.06629325534101049
+    },
+    {
+      "input": {
+        "number": 0.31915096006147237
+      },
+      "output": 0.31915096006147237
+    },
+    {
+      "input": {
+        "number": 0.18237813427406302
+      },
+      "output": 0.18237813427406302
+    },
+    {
+      "input": {
+        "number": 1.3346032282437121
+      },
+      "output": 0.33460322824371214
+    },
+    {
+      "input": {
+        "number": 1.8553603762907702
+      },
+      "output": 0.8553603762907702
+    },
+    {
+      "input": {
+        "number": 2.332961000883547
+      },
+      "output": 0.3329610008835471
+    },
+    {
+      "input": {
+        "number": 0.021680163914408097
+      },
+      "output": 0.021680163914408097
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 1e-06
+  },
+  "reference_solutions": {
+    "python": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\n    return number - int(number)\n\n"
+  }
+}

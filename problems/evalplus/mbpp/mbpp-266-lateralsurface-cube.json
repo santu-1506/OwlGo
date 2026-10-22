@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-266-lateralsurface-cube",
+  "title": "Lateralsurface Cube",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the lateral surface area of a cube given its side length.",
+  "entry_point": "lateralsurface_cube",
+  "params": [
+    "l"
+  ],
+  "function_signature": {
+    "python": "def lateralsurface_cube(l):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": 5
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "l": 9
+      },
+      "output": 324
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": 5
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "l": 9
+      },
+      "output": 324
+    },
+    {
+      "input": {
+        "l": 10
+      },
+      "output": 400
+    },
+    {
+      "input": {
+        "l": 100
+      },
+      "output": 40000
+    },
+    {
+      "input": {
+        "l": 256
+      },
+      "output": 262144
+    },
+    {
+      "input": {
+        "l": 500
+      },
+      "output": 1000000
+    },
+    {
+      "input": {
+        "l": 1000
+      },
+      "output": 4000000
+    },
+    {
+      "input": {
+        "l": 498
+      },
+      "output": 992016
+    },
+    {
+      "input": {
+        "l": 501
+      },
+      "output": 1004004
+    },
+    {
+      "input": {
+        "l": 99
+      },
+      "output": 39204
+    },
+    {
+      "input": {
+        "l": 66.89191997931741
+      },
+      "output": 17898.115834077613
+    },
+    {
+      "input": {
+        "l": 499
+      },
+      "output": 996004
+    },
+    {
+      "input": {
+        "l": 101
+      },
+      "output": 40804
+    },
+    {
+      "input": {
+        "l": 58.21525080612692
+      },
+      "output": 13556.061705681042
+    },
+    {
+      "input": {
+        "l": 255
+      },
+      "output": 260100
+    },
+    {
+      "input": {
+        "l": 56.54995057201372
+      },
+      "output": 12791.58763878878
+    },
+    {
+      "input": {
+        "l": 66.89685310561087
+      },
+      "output": 17900.755821734718
+    },
+    {
+      "input": {
+        "l": 83.57157718204266
+      },
+      "output": 27936.83405077645
+    },
+    {
+      "input": {
+        "l": 257
+      },
+      "output": 264196
+    },
+    {
+      "input": {
+        "l": 56.515998521878785
+      },
+      "output": 12776.23235570002
+    },
+    {
+      "input": {
+        "l": 502
+      },
+      "output": 1008016
+    },
+    {
+      "input": {
+        "l": 94
+      },
+      "output": 35344
+    },
+    {
+      "input": {
+        "l": 44.81065373727037
+      },
+      "output": 8031.978753446172
+    },
+    {
+      "input": {
+        "l": 57.988194173394064
+      },
+      "output": 13450.522653965012
+    },
+    {
+      "input": {
+        "l": 258
+      },
+      "output": 266256
+    },
+    {
+      "input": {
+        "l": 254
+      },
+      "output": 258064
+    },
+    {
+      "input": {
+        "l": 44.14277592544646
+      },
+      "output": 7794.338665616701
+    },
+    {
+      "input": {
+        "l": 56.21634924802973
+      },
+      "output": 12641.11169110581
+    },
+    {
+      "input": {
+        "l": 89.96609117849408
+      },
+      "output": 32375.59024774844
+    },
+    {
+      "input": {
+        "l": 66.1048816215708
+      },
+      "output": 17479.421496807554
+    },
+    {
+      "input": {
+        "l": 88.13624919640782
+      },
+      "output": 31071.99368964519
+    },
+    {
+      "input": {
+        "l": 79.6724987089057
+      },
+      "output": 25390.828202082324
+    },
+    {
+      "input": {
+        "l": 39.52432765735469
+      },
+      "output": 6248.689907063731
+    },
+    {
+      "input": {
+        "l": true
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "l": 90.07330615375426
+      },
+      "output": 32452.80192587178
+    },
+    {
+      "input": {
+        "l": 88.87446543484394
+      },
+      "output": 31594.68242531708
+    },
+    {
+      "input": {
+        "l": 80.34469028251331
+      },
+      "output": 25821.077026371957
+    },
+    {
+      "input": {
+        "l": 49.60482371300252
+      },
+      "output": 9842.554142392228
+    },
+    {
+      "input": {
+        "l": 72.10961391578658
+      },
+      "output": 20799.185676335208
+    },
+    {
+      "input": {
+        "l": 45.66474918863301
+      },
+      "output": 8341.077273843037
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def lateralsurface_cube(l):\n  return 4 * l * l\n"
+  }
+}

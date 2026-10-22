@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-113-check-integer",
+  "title": "Check Integer",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if a string represents an integer or not.",
+  "entry_point": "check_integer",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def check_integer(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "python"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "1"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "python"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "1"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "12345"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "-5"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "10"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "-100"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "100000"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "   15"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "25    "
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "  -200   "
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "123a"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "-b456"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "!7890@"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "12ab34"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "5@678"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "123.45"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "1,000"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "1,0"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "+123"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "-987"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "   1   2   3   "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "  1  2  "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "  "
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "-b45b6"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "   "
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "-9+1237"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "6-b456"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "5  1  2  @678"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "    1  2   "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "123.4  -200   "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "12ab324"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "5  1  2   @678"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "125,000"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "123.4.5"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "12ab341"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "5"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "--5"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "1235"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "6-b    1  2   456"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_integer(text):\n text = text.strip()\n if len(text) < 1:\n    return None\n else:\n    if text[0] in '+-':\n        text = text[1:]\n    return text.isdigit()\n"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "id": "mbpp-455-check-monthnumb-number",
+  "title": "Check Monthnumb Number",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether the given month number contains 31 days or not.",
+  "entry_point": "check_monthnumb_number",
+  "params": [
+    "monthnum2"
+  ],
+  "function_signature": {
+    "python": "def check_monthnumb_number(monthnum2):"
+  },
+  "examples": [
+    {
+      "input": {
+        "monthnum2": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 2
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "monthnum2": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum2": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum2": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum2": 9
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum2": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum2": 4
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_monthnumb_number(monthnum2):\n  return monthnum2 in [1, 3, 5, 7, 8, 10, 12]\n"
+  }
+}

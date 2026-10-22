@@ -1,0 +1,406 @@
+{
+  "id": "humaneval-111-histogram",
+  "title": "Histogram",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a string representing a space separated lowercase letters, return a dictionary\nof the letter with the most repetition and containing the corresponding count.\nIf several letters have the same occurrence, return all of them.\n\nExample:\nhistogram('a b c') == {'a': 1, 'b': 1, 'c': 1}\nhistogram('a b b a') == {'a': 2, 'b': 2}\nhistogram('a b c a b') == {'a': 2, 'b': 2}\nhistogram('b b b b a') == {'b': 4}\nhistogram('') == {}",
+  "entry_point": "histogram",
+  "params": [
+    "test"
+  ],
+  "function_signature": {
+    "python": "def histogram(test):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test": "a b b a"
+      },
+      "output": {
+        "a": 2,
+        "b": 2
+      }
+    },
+    {
+      "input": {
+        "test": "a b c a b"
+      },
+      "output": {
+        "a": 2,
+        "b": 2
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test": "a b b a"
+      },
+      "output": {
+        "a": 2,
+        "b": 2
+      }
+    },
+    {
+      "input": {
+        "test": "a b c a b"
+      },
+      "output": {
+        "a": 2,
+        "b": 2
+      }
+    },
+    {
+      "input": {
+        "test": "a b c d g"
+      },
+      "output": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 1,
+        "g": 1
+      }
+    },
+    {
+      "input": {
+        "test": "r t g"
+      },
+      "output": {
+        "r": 1,
+        "t": 1,
+        "g": 1
+      }
+    },
+    {
+      "input": {
+        "test": "b b b b a"
+      },
+      "output": {
+        "b": 4
+      }
+    },
+    {
+      "input": {
+        "test": ""
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "test": "a"
+      },
+      "output": {
+        "a": 1
+      }
+    },
+    {
+      "input": {
+        "test": "x y z x y z x"
+      },
+      "output": {
+        "x": 3
+      }
+    },
+    {
+      "input": {
+        "test": "c a r s"
+      },
+      "output": {
+        "c": 1,
+        "a": 1,
+        "r": 1,
+        "s": 1
+      }
+    },
+    {
+      "input": {
+        "test": "h e l l o"
+      },
+      "output": {
+        "l": 2
+      }
+    },
+    {
+      "input": {
+        "test": "a b b b b b"
+      },
+      "output": {
+        "b": 5
+      }
+    },
+    {
+      "input": {
+        "test": "p u z z l e"
+      },
+      "output": {
+        "z": 2
+      }
+    },
+    {
+      "input": {
+        "test": "a a a a a a a b b b b b b b"
+      },
+      "output": {
+        "a": 7,
+        "b": 7
+      }
+    },
+    {
+      "input": {
+        "test": "c c c c b b b a a a"
+      },
+      "output": {
+        "c": 4
+      }
+    },
+    {
+      "input": {
+        "test": "p p p r r r"
+      },
+      "output": {
+        "p": 3,
+        "r": 3
+      }
+    },
+    {
+      "input": {
+        "test": "a b c d e f g"
+      },
+      "output": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 1,
+        "e": 1,
+        "f": 1,
+        "g": 1
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j k l m m m n o o o o p"
+      },
+      "output": {
+        "o": 4
+      }
+    },
+    {
+      "input": {
+        "test": "a b b  b b b"
+      },
+      "output": {
+        "b": 5
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j k l m m m p"
+      },
+      "output": {
+        "m": 3
+      }
+    },
+    {
+      "input": {
+        "test": "a a a a a a a b b b b b b"
+      },
+      "output": {
+        "a": 7
+      }
+    },
+    {
+      "input": {
+        "test": "a b h i j j k l m m m n o o o o p"
+      },
+      "output": {
+        "o": 4
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j k l m m m n o o o o  p"
+      },
+      "output": {
+        "o": 4
+      }
+    },
+    {
+      "input": {
+        "test": "a b b  b b  b"
+      },
+      "output": {
+        "b": 5
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j  k l m m m n o o o o  p"
+      },
+      "output": {
+        "o": 4
+      }
+    },
+    {
+      "input": {
+        "test": "a b c  d e f g"
+      },
+      "output": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 1,
+        "e": 1,
+        "f": 1,
+        "g": 1
+      }
+    },
+    {
+      "input": {
+        "test": "p  l  e"
+      },
+      "output": {
+        "p": 1,
+        "l": 1,
+        "e": 1
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j   k l  m m m n o o o o  p"
+      },
+      "output": {
+        "o": 4
+      }
+    },
+    {
+      "input": {
+        "test": "p u z l e"
+      },
+      "output": {
+        "p": 1,
+        "u": 1,
+        "z": 1,
+        "l": 1,
+        "e": 1
+      }
+    },
+    {
+      "input": {
+        "test": " p p p r r r"
+      },
+      "output": {
+        "p": 3,
+        "r": 3
+      }
+    },
+    {
+      "input": {
+        "test": " p p p  r r r"
+      },
+      "output": {
+        "p": 3,
+        "r": 3
+      }
+    },
+    {
+      "input": {
+        "test": "a a a a a a a b b  b b b b"
+      },
+      "output": {
+        "a": 7
+      }
+    },
+    {
+      "input": {
+        "test": "p l  e"
+      },
+      "output": {
+        "p": 1,
+        "l": 1,
+        "e": 1
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j   k l  m  o o  p"
+      },
+      "output": {
+        "j": 2,
+        "o": 2
+      }
+    },
+    {
+      "input": {
+        "test": " p r"
+      },
+      "output": {
+        "p": 1,
+        "r": 1
+      }
+    },
+    {
+      "input": {
+        "test": "a b b b b b  b"
+      },
+      "output": {
+        "b": 6
+      }
+    },
+    {
+      "input": {
+        "test": " p "
+      },
+      "output": {
+        "p": 1
+      }
+    },
+    {
+      "input": {
+        "test": "a b c  d  e f g"
+      },
+      "output": {
+        "a": 1,
+        "b": 1,
+        "c": 1,
+        "d": 1,
+        "e": 1,
+        "f": 1,
+        "g": 1
+      }
+    },
+    {
+      "input": {
+        "test": "a b b b b"
+      },
+      "output": {
+        "b": 4
+      }
+    },
+    {
+      "input": {
+        "test": "h i j m m m p"
+      },
+      "output": {
+        "m": 3
+      }
+    },
+    {
+      "input": {
+        "test": "h i j j   k l  m  p"
+      },
+      "output": {
+        "j": 2
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef histogram(test):\n    \"\"\"Given a string representing a space separated lowercase letters, return a dictionary\n    of the letter with the most repetition and containing the corresponding count.\n    If several letters have the same occurrence, return all of them.\n    \n    Example:\n    histogram('a b c') == {'a': 1, 'b': 1, 'c': 1}\n    histogram('a b b a') == {'a': 2, 'b': 2}\n    histogram('a b c a b') == {'a': 2, 'b': 2}\n    histogram('b b b b a') == {'b': 4}\n    histogram('') == {}\n\n    \"\"\"\n\n\n    if test == \"\": return {}    \n    count, ans = dict(), dict()\n    for word in test.split(\" \"):\n        if word != \"\":\n            if word not in count: count[word] = 0\n            count[word] += 1\n    mx = max(list(count.values()))\n    for ch, c in count.items():\n        if c == mx:\n            ans[ch] = c\n    return ans\n\n"
+  }
+}

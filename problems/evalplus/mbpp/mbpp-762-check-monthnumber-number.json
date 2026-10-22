@@ -1,0 +1,117 @@
+{
+  "id": "mbpp-762-check-monthnumber-number",
+  "title": "Check Monthnumber Number",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether the given month number contains 30 days or not. Months are given as number from 1 to 12.",
+  "entry_point": "check_monthnumber_number",
+  "params": [
+    "monthnum3"
+  ],
+  "function_signature": {
+    "python": "def check_monthnumber_number(monthnum3):"
+  },
+  "examples": [
+    {
+      "input": {
+        "monthnum3": 6
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum3": 2
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "monthnum3": 6
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum3": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 12
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": true
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum3": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "monthnum3": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "monthnum3": 11
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_monthnumber_number(monthnum3):\n  return monthnum3==4 or monthnum3==6 or monthnum3==9 or monthnum3==11\n"
+  }
+}

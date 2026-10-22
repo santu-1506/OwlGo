@@ -1,0 +1,3646 @@
+{
+  "id": "mbpp-580-extract-even",
+  "title": "Extract Even",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove uneven elements in the nested mixed tuple.",
+  "entry_point": "extract_even",
+  "params": [
+    "test_tuple"
+  ],
+  "function_signature": {
+    "python": "def extract_even(test_tuple):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            4,
+            5,
+            {
+              "$tuple": [
+                7,
+                6,
+                {
+                  "$tuple": [
+                    2,
+                    4
+                  ]
+                }
+              ]
+            },
+            6,
+            8
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4,
+          {
+            "$tuple": [
+              6,
+              {
+                "$tuple": [
+                  2,
+                  4
+                ]
+              }
+            ]
+          },
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            5,
+            6,
+            {
+              "$tuple": [
+                8,
+                7,
+                {
+                  "$tuple": [
+                    4,
+                    8
+                  ]
+                }
+              ]
+            },
+            7,
+            9
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6,
+          {
+            "$tuple": [
+              8,
+              {
+                "$tuple": [
+                  4,
+                  8
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            4,
+            5,
+            {
+              "$tuple": [
+                7,
+                6,
+                {
+                  "$tuple": [
+                    2,
+                    4
+                  ]
+                }
+              ]
+            },
+            6,
+            8
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          4,
+          {
+            "$tuple": [
+              6,
+              {
+                "$tuple": [
+                  2,
+                  4
+                ]
+              }
+            ]
+          },
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            5,
+            6,
+            {
+              "$tuple": [
+                8,
+                7,
+                {
+                  "$tuple": [
+                    4,
+                    8
+                  ]
+                }
+              ]
+            },
+            7,
+            9
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6,
+          {
+            "$tuple": [
+              8,
+              {
+                "$tuple": [
+                  4,
+                  8
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            5,
+            6,
+            {
+              "$tuple": [
+                9,
+                8,
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                }
+              ]
+            },
+            8,
+            10
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          6,
+          {
+            "$tuple": [
+              8,
+              {
+                "$tuple": [
+                  4,
+                  6
+                ]
+              }
+            ]
+          },
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            {
+              "$tuple": [
+                4,
+                5,
+                {
+                  "$tuple": [
+                    6,
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        9,
+                        {
+                          "$tuple": [
+                            10,
+                            11,
+                            {
+                              "$tuple": [
+                                12,
+                                13,
+                                {
+                                  "$tuple": [
+                                    14,
+                                    15,
+                                    {
+                                      "$tuple": [
+                                        16,
+                                        17,
+                                        {
+                                          "$tuple": [
+                                            18,
+                                            19,
+                                            {
+                                              "$tuple": [
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": []
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            {
+              "$tuple": [
+                2,
+                {
+                  "$tuple": [
+                    3,
+                    {
+                      "$tuple": [
+                        4,
+                        {
+                          "$tuple": [
+                            5,
+                            {
+                              "$tuple": [
+                                6
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            {
+                              "$tuple": [
+                                10,
+                                {
+                                  "$tuple": [
+                                    11,
+                                    {
+                                      "$tuple": [
+                                        12,
+                                        {
+                                          "$tuple": [
+                                            13,
+                                            {
+                                              "$tuple": [
+                                                14
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          {
+            "$tuple": [
+              2,
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      4,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              6
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              10,
+                              {
+                                "$tuple": [
+                                  {
+                                    "$tuple": [
+                                      12,
+                                      {
+                                        "$tuple": [
+                                          {
+                                            "$tuple": [
+                                              14
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    3,
+                    {
+                      "$tuple": [
+                        4,
+                        {
+                          "$tuple": [
+                            5,
+                            {
+                              "$tuple": [
+                                6
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            {
+                              "$tuple": [
+                                10,
+                                {
+                                  "$tuple": [
+                                    11,
+                                    {
+                                      "$tuple": [
+                                        12,
+                                        {
+                                          "$tuple": [
+                                            13,
+                                            {
+                                              "$tuple": [
+                                                14
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                2,
+                {
+                  "$tuple": [
+                    3,
+                    {
+                      "$tuple": [
+                        4,
+                        {
+                          "$tuple": [
+                            5,
+                            {
+                              "$tuple": [
+                                6
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            {
+                              "$tuple": [
+                                10,
+                                {
+                                  "$tuple": [
+                                    11,
+                                    {
+                                      "$tuple": [
+                                        12,
+                                        {
+                                          "$tuple": [
+                                            13,
+                                            {
+                                              "$tuple": [
+                                                14
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          {
+            "$tuple": [
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      4,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              6
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              10,
+                              {
+                                "$tuple": [
+                                  {
+                                    "$tuple": [
+                                      12,
+                                      {
+                                        "$tuple": [
+                                          {
+                                            "$tuple": [
+                                              14
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "$tuple": [
+              2,
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      4,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              6
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              10,
+                              {
+                                "$tuple": [
+                                  {
+                                    "$tuple": [
+                                      12,
+                                      {
+                                        "$tuple": [
+                                          {
+                                            "$tuple": [
+                                              14
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            15,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            15,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            5,
+            {
+              "$tuple": [
+                2,
+                {
+                  "$tuple": [
+                    3,
+                    {
+                      "$tuple": [
+                        4,
+                        {
+                          "$tuple": [
+                            5,
+                            {
+                              "$tuple": [
+                                6
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            {
+                              "$tuple": [
+                                10,
+                                {
+                                  "$tuple": [
+                                    11,
+                                    {
+                                      "$tuple": [
+                                        12,
+                                        {
+                                          "$tuple": [
+                                            13,
+                                            {
+                                              "$tuple": [
+                                                14
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          {
+            "$tuple": [
+              2,
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      4,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              6
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              10,
+                              {
+                                "$tuple": [
+                                  {
+                                    "$tuple": [
+                                      12,
+                                      {
+                                        "$tuple": [
+                                          {
+                                            "$tuple": [
+                                              14
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            0,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            17,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            15,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            66.96634945742454,
+            84.16107219904362
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            0
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            4,
+            {
+              "$tuple": [
+                4,
+                5,
+                {
+                  "$tuple": [
+                    6,
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        9,
+                        {
+                          "$tuple": [
+                            10,
+                            11,
+                            {
+                              "$tuple": [
+                                12,
+                                13,
+                                {
+                                  "$tuple": [
+                                    14,
+                                    15,
+                                    {
+                                      "$tuple": [
+                                        16,
+                                        17,
+                                        {
+                                          "$tuple": [
+                                            18,
+                                            19,
+                                            {
+                                              "$tuple": [
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          4,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            0,
+            1,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          0,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            -73.88041948495652,
+            57.63424841759968
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            15,
+            14,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          14
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            15,
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            17
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            17,
+            1,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            19,
+            1,
+            {
+              "$tuple": [
+                2,
+                {
+                  "$tuple": [
+                    3,
+                    {
+                      "$tuple": [
+                        4,
+                        {
+                          "$tuple": [
+                            5,
+                            {
+                              "$tuple": [
+                                6
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            {
+                              "$tuple": [
+                                10,
+                                {
+                                  "$tuple": [
+                                    11,
+                                    {
+                                      "$tuple": [
+                                        12,
+                                        {
+                                          "$tuple": [
+                                            13,
+                                            {
+                                              "$tuple": [
+                                                14
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          {
+            "$tuple": [
+              2,
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      4,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              6
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              10,
+                              {
+                                "$tuple": [
+                                  {
+                                    "$tuple": [
+                                      12,
+                                      {
+                                        "$tuple": [
+                                          {
+                                            "$tuple": [
+                                              14
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            66.96634945742454,
+            57.63424841759968
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            18,
+            17,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          18
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            0,
+            17,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            12,
+            2,
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          12,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            {
+              "$tuple": [
+                3,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            1,
+            2,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            0,
+            2
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          {
+            "$tuple": [
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          2,
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2,
+            {
+              "$tuple": [
+                8,
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              8,
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            19,
+            0,
+            1,
+            {
+              "$tuple": [
+                2,
+                {
+                  "$tuple": [
+                    3,
+                    {
+                      "$tuple": [
+                        4,
+                        {
+                          "$tuple": [
+                            5,
+                            {
+                              "$tuple": [
+                                6
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    7,
+                    {
+                      "$tuple": [
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            {
+                              "$tuple": [
+                                10,
+                                {
+                                  "$tuple": [
+                                    11,
+                                    {
+                                      "$tuple": [
+                                        12,
+                                        {
+                                          "$tuple": [
+                                            13,
+                                            {
+                                              "$tuple": [
+                                                14
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          0,
+          {
+            "$tuple": [
+              2,
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      4,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              6
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "$tuple": [
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          {
+                            "$tuple": [
+                              10,
+                              {
+                                "$tuple": [
+                                  {
+                                    "$tuple": [
+                                      12,
+                                      {
+                                        "$tuple": [
+                                          {
+                                            "$tuple": [
+                                              14
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            2,
+            {
+              "$tuple": [
+                8,
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          {
+            "$tuple": [
+              8,
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            2,
+            1,
+            2,
+            {
+              "$tuple": [
+                8,
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            },
+            {
+              "$tuple": [
+                3,
+                4,
+                {
+                  "$tuple": [
+                    5,
+                    6,
+                    {
+                      "$tuple": [
+                        7,
+                        8,
+                        {
+                          "$tuple": [
+                            9,
+                            10,
+                            {
+                              "$tuple": [
+                                11,
+                                12,
+                                {
+                                  "$tuple": [
+                                    13,
+                                    14,
+                                    {
+                                      "$tuple": [
+                                        15,
+                                        16,
+                                        {
+                                          "$tuple": [
+                                            17,
+                                            18,
+                                            {
+                                              "$tuple": [
+                                                19,
+                                                20
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                21
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          2,
+          {
+            "$tuple": [
+              8,
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "$tuple": [
+              4,
+              {
+                "$tuple": [
+                  6,
+                  {
+                    "$tuple": [
+                      8,
+                      {
+                        "$tuple": [
+                          10,
+                          {
+                            "$tuple": [
+                              12,
+                              {
+                                "$tuple": [
+                                  14,
+                                  {
+                                    "$tuple": [
+                                      16,
+                                      {
+                                        "$tuple": [
+                                          18,
+                                          {
+                                            "$tuple": [
+                                              20
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            31.494961367217638
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            1,
+            2
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def even_ele(test_tuple, ): \n\tres = tuple() \n\tfor ele in test_tuple: \n\t\tif isinstance(ele, tuple): \n\t\t\tres += (even_ele(ele), ) \n\t\telif ele % 2 == 0: \n\t\t\tres += (ele, ) \n\treturn res \ndef extract_even(test_tuple):\n\treturn even_ele(test_tuple)\n"
+  }
+}

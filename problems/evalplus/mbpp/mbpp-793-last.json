@@ -1,0 +1,93 @@
+{
+  "id": "mbpp-793-last",
+  "title": "Last",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the last position of an element in a sorted array.",
+  "entry_point": "last",
+  "params": [
+    "arr",
+    "x"
+  ],
+  "function_signature": {
+    "python": "def last(arr, x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        "x": 1
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        "x": 1
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          3,
+          3,
+          6,
+          8,
+          9
+        ],
+        "x": 3
+      },
+      "output": 3
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def last(arr,x):\n    return len(arr)-arr[::-1].index(x) - 1\n"
+  }
+}

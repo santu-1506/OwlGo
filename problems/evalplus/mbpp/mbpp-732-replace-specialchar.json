@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-732-replace-specialchar",
+  "title": "Replace Specialchar",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to replace all occurrences of spaces, commas, or dots with a colon.",
+  "entry_point": "replace_specialchar",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def replace_specialchar(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "Python language, Programming language."
+      },
+      "output": "Python:language::Programming:language:"
+    },
+    {
+      "input": {
+        "text": "a b c,d e f"
+      },
+      "output": "a:b:c:d:e:f"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "Python language, Programming language."
+      },
+      "output": "Python:language::Programming:language:"
+    },
+    {
+      "input": {
+        "text": "a b c,d e f"
+      },
+      "output": "a:b:c:d:e:f"
+    },
+    {
+      "input": {
+        "text": "ram reshma,ram rahim"
+      },
+      "output": "ram:reshma:ram:rahim"
+    },
+    {
+      "input": {
+        "text": "1,2 3,4 5.6"
+      },
+      "output": "1:2:3:4:5:6"
+    },
+    {
+      "input": {
+        "text": "This is a sentence with multiple spaces. It also has multiple commas, and some dots."
+      },
+      "output": "This:is:a:sentence:with:multiple:spaces::It:also:has:multiple:commas::and:some:dots:"
+    },
+    {
+      "input": {
+        "text": "1.2.3.4,5,6,7 8,9.10 11.12"
+      },
+      "output": "1:2:3:4:5:6:7:8:9:10:11:12"
+    },
+    {
+      "input": {
+        "text": "First line. Second line, with a comma and a dot. Third line with only spaces."
+      },
+      "output": "First:line::Second:line::with:a:comma:and:a:dot::Third:line:with:only:spaces:"
+    },
+    {
+      "input": {
+        "text": "   This     is   a  sentence     with      random    spaces.    "
+      },
+      "output": ":::This:::::is:::a::sentence:::::with::::::random::::spaces:::::"
+    },
+    {
+      "input": {
+        "text": "Hello...world.....testing,,123"
+      },
+      "output": "Hello:::world:::::testing::123"
+    },
+    {
+      "input": {
+        "text": ".....,.. .,. ..."
+      },
+      "output": "::::::::::::::::"
+    },
+    {
+      "input": {
+        "text": "1,,,,,,23...456,,,,78......9,,,,0"
+      },
+      "output": "1::::::23:::456::::78::::::9::::0"
+    },
+    {
+      "input": {
+        "text": "Python language.....Programming language..."
+      },
+      "output": "Python:language:::::Programming:language:::"
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "First line... Second line,,, with a comma and a dot...."
+      },
+      "output": "First:line::::Second:line::::with:a:comma:and:a:dot::::"
+    },
+    {
+      "input": {
+        "text": "No special characters here"
+      },
+      "output": "No:special:characters:here"
+    },
+    {
+      "input": {
+        "text": "dot."
+      },
+      "output": "dot:"
+    },
+    {
+      "input": {
+        "text": "multiple"
+      },
+      "output": "multiple"
+    },
+    {
+      "input": {
+        "text": "1,,,,,,23...456,,,,78.......9,,,,0"
+      },
+      "output": "1::::::23:::456::::78:::::::9::::0"
+    },
+    {
+      "input": {
+        "text": "Second"
+      },
+      "output": "Second"
+    },
+    {
+      "input": {
+        "text": ".....,..."
+      },
+      "output": ":::::::::"
+    },
+    {
+      "input": {
+        "text": "First line. Second line, with a comma and a dot. 1,2 3,4 5.6 only spaces."
+      },
+      "output": "First:line::Second:line::with:a:comma:and:a:dot::1:2:3:4:5:6:only:spaces:"
+    },
+    {
+      "input": {
+        "text": "It"
+      },
+      "output": "It"
+    },
+    {
+      "input": {
+        "text": "aprKPinjxV"
+      },
+      "output": "aprKPinjxV"
+    },
+    {
+      "input": {
+        "text": "line,,,"
+      },
+      "output": "line:::"
+    },
+    {
+      "input": {
+        "text": "charactrers"
+      },
+      "output": "charactrers"
+    },
+    {
+      "input": {
+        "text": "No spPythonecial characters here"
+      },
+      "output": "No:spPythonecial:characters:here"
+    },
+    {
+      "input": {
+        "text": "This"
+      },
+      "output": "This"
+    },
+    {
+      "input": {
+        "text": "SeThiscond"
+      },
+      "output": "SeThiscond"
+    },
+    {
+      "input": {
+        "text": "chareactrers"
+      },
+      "output": "chareactrers"
+    },
+    {
+      "input": {
+        "text": "cond"
+      },
+      "output": "cond"
+    },
+    {
+      "input": {
+        "text": "Selanguage.....ProgrammingThis.s....,..d"
+      },
+      "output": "Selanguage:::::ProgrammingThis:s:::::::d"
+    },
+    {
+      "input": {
+        "text": "is"
+      },
+      "output": "is"
+    },
+    {
+      "input": {
+        "text": "coond"
+      },
+      "output": "coond"
+    },
+    {
+      "input": {
+        "text": "No spPytho1,,,,,,23...456,,,,P78.......9,,,,0necial characters here"
+      },
+      "output": "No:spPytho1::::::23:::456::::P78:::::::9::::0necial:characters:here"
+    },
+    {
+      "input": {
+        "text": "1.2.3.4,5,6,7 18,9.10 11.12"
+      },
+      "output": "1:2:3:4:5:6:7:18:9:10:11:12"
+    },
+    {
+      "input": {
+        "text": "special"
+      },
+      "output": "special"
+    },
+    {
+      "input": {
+        "text": "dcoond"
+      },
+      "output": "dcoond"
+    },
+    {
+      "input": {
+        "text": "   Thsis     is   a    "
+      },
+      "output": ":::Thsis:::::is:::a::::"
+    },
+    {
+      "input": {
+        "text": "First line... Second line,,, with a comma and a dont...."
+      },
+      "output": "First:line::::Second:line::::with:a:comma:and:a:dont::::"
+    },
+    {
+      "input": {
+        "text": "c"
+      },
+      "output": "c"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef replace_specialchar(text):\n return re.sub(\"[ ,.]\", \":\", text)\n"
+  }
+}

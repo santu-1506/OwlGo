@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-274-even-binomial-coeff-sum",
+  "title": "Even Binomial Coeff Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function that takes in a positive integer n and finds the sum of even index binomial coefficients.",
+  "entry_point": "even_binomial_Coeff_Sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def even_binomial_Coeff_Sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 32
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 512
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 633825300114114700748351602688
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 128
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 256
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 1024
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 262144
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 1267650600228229401496703205376
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 2048
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 147573952589676412928
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 73786976294838206464
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 131072
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 4096
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 2535301200456458802993406410752
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 65536
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": 2417851639229258349412352
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 16384
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": 36893488147419103232
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 5070602400912917605986812821504
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 9223372036854775808
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 590295810358705651712
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 8192
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 81
+      },
+      "output": 1208925819614629174706176
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 18446744073709551616
+    },
+    {
+      "input": {
+        "n": 45
+      },
+      "output": 17592186044416
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 1180591620717411303424
+    },
+    {
+      "input": {
+        "n": 83
+      },
+      "output": 4835703278458516698824704
+    },
+    {
+      "input": {
+        "n": 104
+      },
+      "output": 10141204801825835211973625643008
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": 9671406556917033397649408
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 4611686018427387904
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 8388608
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 2361183241434822606848
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 295147905179352825856
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math  \ndef even_binomial_Coeff_Sum( n): \n    return 1 << (n - 1)\n"
+  }
+}

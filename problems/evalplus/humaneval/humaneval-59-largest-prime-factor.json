@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-59-largest-prime-factor",
+  "title": "Largest Prime Factor",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return the largest prime factor of n. Assume n > 1 and is not a prime.\n>>> largest_prime_factor(13195)\n29\n>>> largest_prime_factor(2048)\n2",
+  "entry_point": "largest_prime_factor",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def largest_prime_factor(n: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": 3
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 330
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 13195
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 256
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 500
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 873
+      },
+      "output": 97
+    },
+    {
+      "input": {
+        "n": 9999
+      },
+      "output": 101
+    },
+    {
+      "input": {
+        "n": 121
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 1764
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 4096
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 243
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 1024
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 4097
+      },
+      "output": 241
+    },
+    {
+      "input": {
+        "n": 1765
+      },
+      "output": 353
+    },
+    {
+      "input": {
+        "n": 120
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 501
+      },
+      "output": 167
+    },
+    {
+      "input": {
+        "n": 4095
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "n": 10000
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 255
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "n": 1025
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "n": 4094
+      },
+      "output": 89
+    },
+    {
+      "input": {
+        "n": 242
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 1763
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "n": 254
+      },
+      "output": 127
+    },
+    {
+      "input": {
+        "n": 9998
+      },
+      "output": 4999
+    },
+    {
+      "input": {
+        "n": 872
+      },
+      "output": 109
+    },
+    {
+      "input": {
+        "n": 9997
+      },
+      "output": 769
+    },
+    {
+      "input": {
+        "n": 502
+      },
+      "output": 251
+    },
+    {
+      "input": {
+        "n": 119
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "n": 9996
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "n": 874
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "n": 253
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "n": 252
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 1762
+      },
+      "output": 881
+    },
+    {
+      "input": {
+        "n": 122
+      },
+      "output": 61
+    },
+    {
+      "input": {
+        "n": 4098
+      },
+      "output": 683
+    },
+    {
+      "input": {
+        "n": 871
+      },
+      "output": 67
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n\n\n    isprime = [True] * (n + 1)\n    for i in range(2, n + 1):\n        if isprime[i]:\n            for j in range(i + i, n, i):\n                isprime[j] = False\n    for i in range(n - 1, 0, -1):\n        if isprime[i] and n % i == 0:\n            return i\n\n"
+  }
+}

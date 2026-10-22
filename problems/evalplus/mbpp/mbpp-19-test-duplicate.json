@@ -1,0 +1,611 @@
+{
+  "id": "mbpp-19-test-duplicate",
+  "title": "Test Duplicate",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find whether a given array of integers contains any duplicate element.",
+  "entry_point": "test_duplicate",
+  "params": [
+    "arraynums"
+  ],
+  "function_signature": {
+    "python": "def test_duplicate(arraynums):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arraynums": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": [
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arraynums": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": [
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          2,
+          5,
+          1,
+          4,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": []
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": [
+          -81,
+          true,
+          false
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": [
+          -81,
+          false,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          2,
+          5,
+          1,
+          4,
+          3,
+          3,
+          6,
+          false,
+          7,
+          8,
+          9,
+          10,
+          7
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          -82,
+          true,
+          false
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          5,
+          1,
+          4,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          -81,
+          false,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          2,
+          5,
+          1,
+          6,
+          4,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          true,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          false,
+          -81,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          2,
+          5,
+          1,
+          4,
+          3,
+          3,
+          6,
+          false,
+          3,
+          8,
+          9,
+          10,
+          7
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          -81,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          false,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          false,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          true,
+          true,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          2,
+          5,
+          1,
+          4,
+          3,
+          6,
+          7,
+          9,
+          10,
+          10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          -81,
+          false,
+          false,
+          false,
+          -81
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          true,
+          true,
+          true,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          -81,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          9,
+          false,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          2,
+          1,
+          4,
+          3,
+          3,
+          6,
+          false,
+          7,
+          8,
+          9,
+          10,
+          7
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          -81,
+          true,
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          false,
+          false,
+          -81,
+          true,
+          false,
+          true
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arraynums": [
+          -56,
+          3,
+          7,
+          10,
+          3,
+          7
+        ]
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def test_duplicate(arraynums):\n    return len(arraynums) != len(set(arraynums))\n"
+  }
+}

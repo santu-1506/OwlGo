@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-86-centered-hexagonal-number",
+  "title": "Centered Hexagonal Number",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find nth centered hexagonal number.",
+  "entry_point": "centered_hexagonal_number",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def centered_hexagonal_number(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 271
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 7
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 271
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 217
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 2999997000001
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 3000003000001
+    },
+    {
+      "input": {
+        "n": 1000002
+      },
+      "output": 3000009000007
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": 2999991000007
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": 18487
+    },
+    {
+      "input": {
+        "n": 999998
+      },
+      "output": 2999985000019
+    },
+    {
+      "input": {
+        "n": 999997
+      },
+      "output": 2999979000037
+    },
+    {
+      "input": {
+        "n": 80
+      },
+      "output": 18961
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 3000015000019
+    },
+    {
+      "input": {
+        "n": 81
+      },
+      "output": 19441
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 18019
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": 19927
+    },
+    {
+      "input": {
+        "n": 999996
+      },
+      "output": 2999973000061
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 17557
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": 20917
+    },
+    {
+      "input": {
+        "n": 83
+      },
+      "output": 20419
+    },
+    {
+      "input": {
+        "n": 999995
+      },
+      "output": 2999967000091
+    },
+    {
+      "input": {
+        "n": 85
+      },
+      "output": 21421
+    },
+    {
+      "input": {
+        "n": 999994
+      },
+      "output": 2999961000127
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 17101
+    },
+    {
+      "input": {
+        "n": 999993
+      },
+      "output": 2999955000169
+    },
+    {
+      "input": {
+        "n": 86
+      },
+      "output": 21931
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 16651
+    },
+    {
+      "input": {
+        "n": 1000004
+      },
+      "output": 3000021000037
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 16207
+    },
+    {
+      "input": {
+        "n": 88
+      },
+      "output": 22969
+    },
+    {
+      "input": {
+        "n": 93
+      },
+      "output": 25669
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 26227
+    },
+    {
+      "input": {
+        "n": 92
+      },
+      "output": 25117
+    },
+    {
+      "input": {
+        "n": 999992
+      },
+      "output": 2999949000217
+    },
+    {
+      "input": {
+        "n": 87
+      },
+      "output": 22447
+    },
+    {
+      "input": {
+        "n": 999991
+      },
+      "output": 2999943000271
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": 24571
+    },
+    {
+      "input": {
+        "n": 999989
+      },
+      "output": 2999931000397
+    },
+    {
+      "input": {
+        "n": 89
+      },
+      "output": 23497
+    },
+    {
+      "input": {
+        "n": 999987
+      },
+      "output": 2999919000547
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def centered_hexagonal_number(n):\n  return 3 * n * (n - 1) + 1\n"
+  }
+}

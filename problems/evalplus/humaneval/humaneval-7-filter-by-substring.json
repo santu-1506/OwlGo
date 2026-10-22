@@ -1,0 +1,661 @@
+{
+  "id": "humaneval-7-filter-by-substring",
+  "title": "Filter By Substring",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Filter an input list of strings only for ones that contain given substring\n>>> filter_by_substring([], 'a')\n[]\n>>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n['abc', 'bacd', 'array']",
+  "entry_point": "filter_by_substring",
+  "params": [
+    "strings",
+    "substring"
+  ],
+  "function_signature": {
+    "python": "def filter_by_substring(strings: List[str], substring: str) -> List[str]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "strings": [],
+        "substring": "john"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "xxx",
+          "asd",
+          "xxy",
+          "john doe",
+          "xxxAAA",
+          "xxx"
+        ],
+        "substring": "xxx"
+      },
+      "output": [
+        "xxx",
+        "xxxAAA",
+        "xxx"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "strings": [],
+        "substring": "john"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "xxx",
+          "asd",
+          "xxy",
+          "john doe",
+          "xxxAAA",
+          "xxx"
+        ],
+        "substring": "xxx"
+      },
+      "output": [
+        "xxx",
+        "xxxAAA",
+        "xxx"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "xxx",
+          "asd",
+          "aaaxxy",
+          "john doe",
+          "xxxAAA",
+          "xxx"
+        ],
+        "substring": "xx"
+      },
+      "output": [
+        "xxx",
+        "aaaxxy",
+        "xxxAAA",
+        "xxx"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "grunt",
+          "trumpet",
+          "prune",
+          "gruesome"
+        ],
+        "substring": "run"
+      },
+      "output": [
+        "grunt",
+        "prune"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "banana",
+          "apple",
+          "kiwi",
+          "peach"
+        ],
+        "substring": "a"
+      },
+      "output": [
+        "banana",
+        "apple",
+        "peach"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy",
+          "pandas"
+        ],
+        "substring": "py"
+      },
+      "output": [
+        "python",
+        "numpy"
+      ]
+    },
+    {
+      "input": {
+        "strings": [],
+        "substring": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "abc",
+          "bcd",
+          "cbd",
+          "dbc",
+          "cda"
+        ],
+        "substring": "bc"
+      },
+      "output": [
+        "abc",
+        "bcd",
+        "dbc"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "a",
+          "ab",
+          "abc",
+          "abcd",
+          "abcde",
+          "bcde",
+          "cde"
+        ],
+        "substring": "cd"
+      },
+      "output": [
+        "abcd",
+        "abcde",
+        "bcde",
+        "cde"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "123",
+          "456",
+          "789",
+          "101112"
+        ],
+        "substring": "12"
+      },
+      "output": [
+        "123",
+        "101112"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "cat",
+          "dog",
+          "elephant",
+          "rhinoceros",
+          "seagull"
+        ],
+        "substring": "e"
+      },
+      "output": [
+        "elephant",
+        "rhinoceros",
+        "seagull"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisestablishmentarianism",
+          "floccinaucinihilipilification"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilification"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "moon",
+          "stars",
+          "sun",
+          "planets"
+        ],
+        "substring": "s"
+      },
+      "output": [
+        "stars",
+        "sun",
+        "planets"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "earth",
+          "mars",
+          "jupiter",
+          "saturn",
+          "uranus"
+        ],
+        "substring": "s"
+      },
+      "output": [
+        "mars",
+        "saturn",
+        "uranus"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy",
+          "pandas",
+          "numpy"
+        ],
+        "substring": "py"
+      },
+      "output": [
+        "python",
+        "numpy",
+        "numpy"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisestablishmentarianism",
+          "floccinaucinihilipilification",
+          "floccinaucinihilipilificatnion"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilification",
+        "floccinaucinihilipilificatnion"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy",
+          "pandas"
+        ],
+        "substring": "antidisestablishmentarianismpy"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisestablishmentarianism",
+          "floccinaucinihilipilification",
+          "floccinaucinihilipilificatnion"
+        ],
+        "substring": "ili12"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisesshmentarianism",
+          "floccinaucinihilipilification",
+          "floccinaucinihilipilificatnion",
+          "floccinaucinihilipilificatilinion"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilification",
+        "floccinaucinihilipilificatnion",
+        "floccinaucinihilipilificatilinion"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "sun",
+          "floccinaucinihilipilificatioearthn"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilificatioearthn"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "123",
+          "456",
+          "789",
+          "101112"
+        ],
+        "substring": "122"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisestablishementarianism",
+          "floccinaucinihilipilification"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilification"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "abc",
+          "bcd",
+          "cbd",
+          "dbc",
+          "cda",
+          "cfloccinaucinihilipilificatilinionda"
+        ],
+        "substring": "bc"
+      },
+      "output": [
+        "abc",
+        "bcd",
+        "dbc"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "earth",
+          "mars",
+          "jupiter",
+          "saturn",
+          "uranus"
+        ],
+        "substring": "numpuranusys"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisestablishementarianism",
+          "floccinaucinihilipilification",
+          "supercalifragilisticexpialidocious"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilification",
+        "supercalifragilisticexpialidocious"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy",
+          "pandas"
+        ],
+        "substring": "antidisestablishmentariasaturnnismpy"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisesshmentarianism",
+          "floccinaucinihilipilification",
+          "floccinaucinihilipilificatnion",
+          "floccinaucinihilipilificatilinion",
+          "floccinaucinihilipilifi101112cation"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "supercalifragilisticexpialidocious",
+        "floccinaucinihilipilification",
+        "floccinaucinihilipilificatnion",
+        "floccinaucinihilipilificatilinion",
+        "floccinaucinihilipilifi101112cation"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "supercalifragilisticexpialidocious",
+          "antidisestablishmentarianism",
+          "floccinaucinihilipilification",
+          "floccinaucinihilipilificatnion"
+        ],
+        "substring": "floccinaucinihilipilificatioearthn"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy",
+          "s"
+        ],
+        "substring": "antidisestablishmentariasaturnnismpy"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy"
+        ],
+        "substring": "antidisestablishmentarianismpy"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "antidisesshmentarianism",
+          "floccinaucinihilipilification",
+          "floccinaucinihilipilificatnion",
+          "floccinaucinihilipilificatilinion"
+        ],
+        "substring": "ili"
+      },
+      "output": [
+        "floccinaucinihilipilification",
+        "floccinaucinihilipilificatnion",
+        "floccinaucinihilipilificatilinion"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "hello",
+          "world",
+          "python",
+          "numpy",
+          "pandas",
+          "numpy"
+        ],
+        "substring": "antidisestablishmentarianismpy"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "abc",
+          "bcd",
+          "cbd",
+          "dbc",
+          "cda",
+          "cfloccinaucinihilipilificatilinionda",
+          "dcbd"
+        ],
+        "substring": "bbc"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "abc",
+          "bcd",
+          "cbd",
+          "dbc",
+          "cda",
+          "cfloccinaucinihilipilificatilinionda",
+          "dcbd",
+          "cfloaccinaucinihilipilificatilinionda"
+        ],
+        "substring": "bbc"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "strings": [
+          "123",
+          "456",
+          "789",
+          "101112",
+          "456"
+        ],
+        "substring": "12"
+      },
+      "output": [
+        "123",
+        "101112"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "Washington",
+          "DC",
+          "New York City",
+          "Boston",
+          "Los Angeles",
+          "San Francisco",
+          "Miami"
+        ],
+        "substring": "an"
+      },
+      "output": [
+        "San Francisco"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "The quick brown fox jumps over the lazy dog",
+          "Pack my box with five dozen liquor jugs",
+          "How vexingly quick daft zebras jump",
+          "Jackdaws love my big sphinx of quartz"
+        ],
+        "substring": "ox"
+      },
+      "output": [
+        "The quick brown fox jumps over the lazy dog",
+        "Pack my box with five dozen liquor jugs"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "The cat in the hat",
+          "Green eggs and ham",
+          "One fish two fish",
+          "Red fish blue fish"
+        ],
+        "substring": "fish"
+      },
+      "output": [
+        "One fish two fish",
+        "Red fish blue fish"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "The Shawshank Redemption",
+          "The Godfather",
+          "The Dark Knight",
+          "The Lord of the Rings",
+          "Star Wars",
+          "Inception",
+          "Forrest Gump"
+        ],
+        "substring": "he"
+      },
+      "output": [
+        "The Shawshank Redemption",
+        "The Godfather",
+        "The Dark Knight",
+        "The Lord of the Rings"
+      ]
+    },
+    {
+      "input": {
+        "strings": [
+          "We the people of the United States of America, in order to form a more perfect union, establish justice, insure domestic tranquility, provide for the common defense, promote the general welfare, and secure the blessings of liberty to ourselves and our posterity, do ordain and establish this Constitution for the United States of America.",
+          "To be or not to be, that is the question.",
+          "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+          "I have a dream that one day this nation will rise up and live out the true meaning of its creed: \"We hold these truths to be self-evident, that all men are created equal.\"",
+          "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal."
+        ],
+        "substring": "equal."
+      },
+      "output": [
+        "I have a dream that one day this nation will rise up and live out the true meaning of its creed: \"We hold these truths to be self-evident, that all men are created equal.\"",
+        "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal."
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring\n    >>> filter_by_substring([], 'a')\n    []\n    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['abc', 'bacd', 'array']\n    \"\"\"\n\n    return list(filter(lambda s: substring in s, strings))\n\n"
+  }
+}

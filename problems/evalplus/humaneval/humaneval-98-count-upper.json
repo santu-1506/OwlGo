@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-98-count-upper",
+  "title": "Count Upper",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a string s, count the number of uppercase vowels in even indices.\n\nFor example:\ncount_upper('aBCdEf') returns 1\ncount_upper('abcdefg') returns 0\ncount_upper('dBBE') returns 0",
+  "entry_point": "count_upper",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def count_upper(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "aBCdEf"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "abcdefg"
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "aBCdEf"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "abcdefg"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "dBBE"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "B"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "U"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "EEEE"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "DbdOH"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "abcDEf"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "AEOIU"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "XYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "uEi"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "ABCD"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "hhEErrRR"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "AbCdEfGhIjKlMnOpQrStUvWxYz"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "UOIEA"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "bbcefg"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "AbCdEOfGhIjKlMnOpQrStUvWxYz"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "AAEOIUBCD"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "AbCdEfGhIjKlMnOpQrStUv"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "AbCdEfGhIjKlMABCDnOpQrStUv"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "ABCAbCdEfGhIjKlMABCDnOpQrStUabcDEfvD"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "CABCD"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "AEOIUIEA"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "AbCdEfGhIjKlabcDEfMnOpQrStUvWxYz"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "s": "uEiAEOIU"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "DbdOHUOIEA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "AEABCAbCdEfGhIjKlMABCDnAbCdEfGhIjKlabcDEfMnOpQrStUvWxYzOpQrStUabcDEfvDOIUIEA"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "AbCdEOStUvWxYz"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "AAEOOIUBCD"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "CDbdOHUOIEAABCD"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "AbCdEOfGhIjKlMnOStUvWxYz"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "hABCDhEErrRR"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "AUEOIUIE"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "AbCdEOhhEErrRRStUvWxCDbdOHUOIEAABCDYz"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "s": "AAEIOOIUBCD"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "DbdOHUOIIEA"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "AbCdEIfGhIjKlabcDEfMnOpQrStUvWxYz"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "AAEOIUBCAAEIOOIUBCDD"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "UOIAEA"
+      },
+      "output": 3
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef count_upper(s):\n    \"\"\"\n    Given a string s, count the number of uppercase vowels in even indices.\n    \n    For example:\n    count_upper('aBCdEf') returns 1\n    count_upper('abcdefg') returns 0\n    count_upper('dBBE') returns 0\n    \"\"\"\n\n    cnt = 0\n    for i in range(0, len(s), 2):\n        if s[i] in \"AEIOU\":\n            cnt += 1\n    return cnt\n\n"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "evalplus/mbppplus": {
+    "rows": 378,
+    "imported": 372,
+    "slow_tests_removed": 27,
+    "dropped": [
+      {
+        "task_id": "255",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "630",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "737",
+        "reason": "custom comparison (checks only that a match exists)"
+      },
+      {
+        "task_id": "787",
+        "reason": "custom comparison (checks only that a match exists)"
+      },
+      {
+        "task_id": "794",
+        "reason": "custom comparison (checks only that a match exists)"
+      },
+      {
+        "task_id": "88",
+        "reason": "expected outputs are computed at test time, not stored"
+      }
+    ]
+  },
+  "evalplus/humanevalplus": {
+    "rows": 164,
+    "imported": 157,
+    "slow_tests_removed": 0,
+    "dropped": [
+      {
+        "task_id": "HumanEval/100",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "HumanEval/130",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "HumanEval/139",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "HumanEval/14",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "HumanEval/15",
+        "reason": "expected outputs are computed at test time, not stored"
+      },
+      {
+        "task_id": "HumanEval/32",
+        "reason": "no assertion() helper"
+      },
+      {
+        "task_id": "HumanEval/83",
+        "reason": "expected outputs are computed at test time, not stored"
+      }
+    ]
+  }
+}

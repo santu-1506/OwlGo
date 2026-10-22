@@ -1,0 +1,522 @@
+{
+  "id": "mbpp-284-check-element",
+  "title": "Check Element",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes in a list and element and checks whether all items in the list are equal to the given element.",
+  "entry_point": "check_element",
+  "params": [
+    "list1",
+    "element"
+  ],
+  "function_signature": {
+    "python": "def check_element(list1, element):"
+  },
+  "examples": [
+    {
+      "input": {
+        "list1": [
+          "green",
+          "orange",
+          "black",
+          "white"
+        ],
+        "element": "blue"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "element": 7
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "list1": [
+          "green",
+          "orange",
+          "black",
+          "white"
+        ],
+        "element": "blue"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "element": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "green",
+          "green",
+          "green",
+          "green"
+        ],
+        "element": "green"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "red"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "a"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "green"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "a"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "reda"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "reda"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "a"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "gren"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "ared"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "green",
+          "a",
+          "a"
+        ],
+        "element": "ared"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "ared"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "redaa",
+          "green",
+          "a",
+          "a"
+        ],
+        "element": "red"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "ared"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "aredd"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "gren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": [
+          "IMSzNXr"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": [
+          false,
+          true,
+          true,
+          false,
+          true,
+          false,
+          true,
+          true,
+          false
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": [
+          "red",
+          "HwtScMmS",
+          "jjtLKAcXm"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "redaa",
+          "green",
+          "a",
+          "a"
+        ],
+        "element": "aa"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "areda",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "a"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "gren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "gren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "",
+          "a"
+        ],
+        "element": "red"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "HwtScMmS"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": "gaan"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          ""
+        ],
+        "element": "gren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "reda"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          ""
+        ],
+        "element": "gregren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "aa",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "reda"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [],
+        "element": [
+          "red",
+          "HwtScMmS",
+          "jjtLKaredaAcXm"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "a"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "areda",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "gregren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "red",
+          "",
+          "CeR"
+        ],
+        "element": "reda"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "",
+          "a",
+          "green",
+          "a",
+          "a"
+        ],
+        "element": "areed"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "a",
+          "a",
+          "jjtLKAcXm",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "gren"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "list1": [
+          "",
+          "a",
+          "a",
+          "a",
+          "a"
+        ],
+        "element": "gaan"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_element(list1, element):\n  return all(v == element for v in list1)\n"
+  }
+}

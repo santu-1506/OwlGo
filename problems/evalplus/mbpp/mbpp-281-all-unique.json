@@ -1,0 +1,575 @@
+{
+  "id": "mbpp-281-all-unique",
+  "title": "All Unique",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check if the elements of a given list are unique or not.",
+  "entry_point": "all_unique",
+  "params": [
+    "test_list"
+  ],
+  "function_signature": {
+    "python": "def all_unique(test_list):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3,
+          4,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          1,
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          "b",
+          2.5,
+          "c",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          "",
+          1,
+          "a",
+          2.5,
+          "b",
+          1,
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          2.5,
+          "c",
+          2.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          1,
+          2.5,
+          "c",
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          2.4132043402592354,
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "",
+          "b",
+          1,
+          2.5,
+          "c",
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          "b",
+          1,
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          2.5,
+          "c",
+          2.5,
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          4
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          1,
+          2.5,
+          "c",
+          "b",
+          2.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          2,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "c",
+          "b",
+          1,
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          2.5,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          2.5,
+          "c",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          "b",
+          2.5,
+          "c",
+          "cc"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          "b",
+          2.5,
+          "ac",
+          "c",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          "b",
+          "ac",
+          "c",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "",
+          "b",
+          1,
+          2.5,
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          2,
+          "a",
+          2.5,
+          "",
+          "b",
+          1,
+          2.5,
+          "b"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          "",
+          1,
+          "a",
+          2.5,
+          "b",
+          1,
+          2.5,
+          "c",
+          ""
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          5,
+          3,
+          4,
+          1,
+          4,
+          5,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "c",
+          "cb",
+          1,
+          2.4132043402592354,
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "b",
+          1,
+          2.5,
+          "c",
+          "b",
+          "a"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          2,
+          3,
+          2,
+          1,
+          4,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          "",
+          1,
+          "a",
+          2.5,
+          "cb",
+          1,
+          2.5,
+          "c",
+          ""
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.5,
+          "",
+          "b",
+          1,
+          2.5,
+          2.5,
+          "b",
+          2.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_list": [
+          1,
+          "a",
+          2.4132043402592354,
+          2.5,
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_list": [
+          3,
+          5,
+          3,
+          4,
+          1,
+          4,
+          5,
+          2
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def all_unique(test_list):\n    return len(test_list) == len(set(test_list))\n"
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "id": "mbpp-607-find-literals",
+  "title": "Find Literals",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to search a string for a regex pattern. The function should return the matching subtring, a start index and an end index.",
+  "entry_point": "find_literals",
+  "params": [
+    "text",
+    "pattern"
+  ],
+  "function_signature": {
+    "python": "def find_literals(text, pattern):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "pattern": "fox"
+      },
+      "output": {
+        "$tuple": [
+          "fox",
+          16,
+          19
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "Its been a very crazy procedure right",
+        "pattern": "crazy"
+      },
+      "output": {
+        "$tuple": [
+          "crazy",
+          16,
+          21
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "pattern": "fox"
+      },
+      "output": {
+        "$tuple": [
+          "fox",
+          16,
+          19
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "Its been a very crazy procedure right",
+        "pattern": "crazy"
+      },
+      "output": {
+        "$tuple": [
+          "crazy",
+          16,
+          21
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "Hardest choices required strongest will",
+        "pattern": "will"
+      },
+      "output": {
+        "$tuple": [
+          "will",
+          35,
+          39
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPtELLC",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "",
+        "pattern": "rfvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "LC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLCtELLC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPtELLC",
+        "pattern": "rfvPLCtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "LC",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPLtELLC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPtELLC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": {
+        "$tuple": [
+          "rfvPtELLC",
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPLCtELLC",
+        "pattern": "rfvPLtE"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvrfvPLtELLCPtELLC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "",
+        "pattern": "rfvPLtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLCtELLC",
+        "pattern": "rfvPLCtEC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLtE",
+        "pattern": "rfvPLttELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLCtELC",
+        "pattern": "rfvPLCtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLttELLC",
+        "pattern": "rfvvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPrfvPtELLCLtE",
+        "pattern": "rfvPLttELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvrfvPLtELLCPtELLC",
+        "pattern": "rfvvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfLCELLC",
+        "pattern": "rfvPLCtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPrfvPtELLCLtE",
+        "pattern": "rfvPLtELLCLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLCtELC",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvvPtELLC",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPLttELLC",
+        "pattern": "rfvPLttELLC"
+      },
+      "output": {
+        "$tuple": [
+          "rfvPLttELLC",
+          0,
+          11
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPtELLC",
+        "pattern": "rfvvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPtELLCLC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": {
+        "$tuple": [
+          "rfvPtELLC",
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPLtE",
+        "pattern": "rfvPLtE"
+      },
+      "output": {
+        "$tuple": [
+          "rfvPLtE",
+          0,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvrfvPLtELLCPtELLC",
+        "pattern": "rfrfvPLttELLCPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLttELLC",
+        "pattern": "rfvPLtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvvPEtELLC",
+        "pattern": "rfvvPtELLrfvPrfvPtELLCLtEC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPtELLC",
+        "pattern": "rfvvPtELLrfvPrfvPtELLCLtEC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvvPtELLC",
+        "pattern": "rfvvPtELLC"
+      },
+      "output": {
+        "$tuple": [
+          "rfvvPtELLC",
+          0,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvPLtELLCLC",
+        "pattern": "rfvPtELLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvvPtELLrfvPrfvPtELLCLtEC",
+        "pattern": "LC"
+      },
+      "output": {
+        "$tuple": [
+          "LC",
+          20,
+          22
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfvrfvPLtELLCPtELLC",
+        "pattern": ""
+      },
+      "output": {
+        "$tuple": [
+          "",
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "rfv",
+        "pattern": "rfvPLtELLCLC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvPLttELLC",
+        "pattern": "rfvvrfvvPtELLrfvPrfvPtELLCLrfvvPtELLCtECPtELLrvPrfvPtELLCLtEC"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "rfvvPtCELLC",
+        "pattern": "rfvvPtELLC"
+      },
+      "output": null
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef find_literals(text, pattern):\n  match = re.search(pattern, text)\n  if match is None:\n    return None\n  s = match.start()\n  e = match.end()\n  return (match.re.pattern, s, e)\n"
+  }
+}

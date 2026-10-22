@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-51-remove-vowels",
+  "title": "Remove Vowels",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "    remove_vowels is a function that takes string and returns string without vowels.\n    >>> remove_vowels('')\n    ''\n    >>> remove_vowels(\"abcdef\nghijklm\")\n    'bcdf\nghjklm'\n    >>> remove_vowels('abcdef')\n    'bcdf'\n    >>> remove_vowels('aaaaa')\n    ''\n    >>> remove_vowels('aaBAA')\n    'B'\n    >>> remove_vowels('zbcd')\n    'zbcd'\n    ",
+  "entry_point": "remove_vowels",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def remove_vowels(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "abcdef\nghijklm"
+      },
+      "output": "bcdf\nghjklm"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "abcdef\nghijklm"
+      },
+      "output": "bcdf\nghjklm"
+    },
+    {
+      "input": {
+        "text": "fedcba"
+      },
+      "output": "fdcb"
+    },
+    {
+      "input": {
+        "text": "eeeee"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "acBAA"
+      },
+      "output": "cB"
+    },
+    {
+      "input": {
+        "text": "EcBOO"
+      },
+      "output": "cB"
+    },
+    {
+      "input": {
+        "text": "ybcd"
+      },
+      "output": "ybcd"
+    },
+    {
+      "input": {
+        "text": "hello"
+      },
+      "output": "hll"
+    },
+    {
+      "input": {
+        "text": "This is a Test!"
+      },
+      "output": "Ths s  Tst!"
+    },
+    {
+      "input": {
+        "text": "i am using python"
+      },
+      "output": " m sng pythn"
+    },
+    {
+      "input": {
+        "text": "The quick brown fox jumps over the lazy dog."
+      },
+      "output": "Th qck brwn fx jmps vr th lzy dg."
+    },
+    {
+      "input": {
+        "text": "This sentence has vowels: aeiou"
+      },
+      "output": "Ths sntnc hs vwls: "
+    },
+    {
+      "input": {
+        "text": "strawberries and cream"
+      },
+      "output": "strwbrrs nd crm"
+    },
+    {
+      "input": {
+        "text": "Programming is fun"
+      },
+      "output": "Prgrmmng s fn"
+    },
+    {
+      "input": {
+        "text": "1234567890"
+      },
+      "output": "1234567890"
+    },
+    {
+      "input": {
+        "text": "Python is awesome!"
+      },
+      "output": "Pythn s wsm!"
+    },
+    {
+      "input": {
+        "text": "How are you today?"
+      },
+      "output": "Hw r y tdy?"
+    },
+    {
+      "input": {
+        "text": "This is ai am using python Test!"
+      },
+      "output": "Ths s  m sng pythn Tst!"
+    },
+    {
+      "input": {
+        "text": "1234561207890"
+      },
+      "output": "1234561207890"
+    },
+    {
+      "input": {
+        "text": "1234561207890This is ai am using python Test!"
+      },
+      "output": "1234561207890Ths s  m sng pythn Tst!"
+    },
+    {
+      "input": {
+        "text": "Thise sentence haaei:ou"
+      },
+      "output": "Ths sntnc h:"
+    },
+    {
+      "input": {
+        "text": "The quick over the This sentence has vowels: aeioulazy dog."
+      },
+      "output": "Th qck vr th Ths sntnc hs vwls: lzy dg."
+    },
+    {
+      "input": {
+        "text": "1234567890This sentence has vowels: aeiou"
+      },
+      "output": "1234567890Ths sntnc hs vwls: "
+    },
+    {
+      "input": {
+        "text": "st1234567890m"
+      },
+      "output": "st1234567890m"
+    },
+    {
+      "input": {
+        "text": "123456789The quick over the This sentence has vowels: aeioulazy dog.0"
+      },
+      "output": "123456789Th qck vr th Ths sntnc hs vwls: lzy dg.0"
+    },
+    {
+      "input": {
+        "text": "Pyt hon is awesome!"
+      },
+      "output": "Pyt hn s wsm!"
+    },
+    {
+      "input": {
+        "text": "1234567890This sesntence has vowels: aeiou"
+      },
+      "output": "1234567890Ths ssntnc hs vwls: "
+    },
+    {
+      "input": {
+        "text": "hel"
+      },
+      "output": "hl"
+    },
+    {
+      "input": {
+        "text": "hellhelloo"
+      },
+      "output": "hllhll"
+    },
+    {
+      "input": {
+        "text": "hel12344567890This sesntence has vowels: aeiou"
+      },
+      "output": "hl12344567890Ths ssntnc hs vwls: "
+    },
+    {
+      "input": {
+        "text": "strawberries and creaPyt hon is awesome!m"
+      },
+      "output": "strwbrrs nd crPyt hn s wsm!m"
+    },
+    {
+      "input": {
+        "text": "This is ahellhellooi am using python Test!"
+      },
+      "output": "Ths s hllhll m sng pythn Tst!"
+    },
+    {
+      "input": {
+        "text": "This is a T1234561207890This is ai am using python Test!est!"
+      },
+      "output": "Ths s  T1234561207890Ths s  m sng pythn Tst!st!"
+    },
+    {
+      "input": {
+        "text": "This sentence has vowels: a"
+      },
+      "output": "Ths sntnc hs vwls: "
+    },
+    {
+      "input": {
+        "text": "How are youy today?"
+      },
+      "output": "Hw r yy tdy?"
+    },
+    {
+      "input": {
+        "text": "12345687890"
+      },
+      "output": "12345687890"
+    },
+    {
+      "input": {
+        "text": "123456789The quick over the This sentence has vowels: aeioulazy dogThis is ai am using python Test!.0"
+      },
+      "output": "123456789Th qck vr th Ths sntnc hs vwls: lzy dgThs s  m sng pythn Tst!.0"
+    },
+    {
+      "input": {
+        "text": "hel1234567890l"
+      },
+      "output": "hl1234567890l"
+    },
+    {
+      "input": {
+        "text": "12345629890"
+      },
+      "output": "12345629890"
+    },
+    {
+      "input": {
+        "text": "This sentt!: a"
+      },
+      "output": "Ths sntt!: "
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string without vowels.\n    >>> remove_vowels('')\n    ''\n    >>> remove_vowels(\"abcdef\\nghijklm\")\n    'bcdf\\nghjklm'\n    >>> remove_vowels('abcdef')\n    'bcdf'\n    >>> remove_vowels('aaaaa')\n    ''\n    >>> remove_vowels('aaBAA')\n    'B'\n    >>> remove_vowels('zbcd')\n    'zbcd'\n    \"\"\"\n\n    return \"\".join(list(filter(lambda ch: ch not in \"aeiouAEIOU\", text)))\n\n"
+  }
+}

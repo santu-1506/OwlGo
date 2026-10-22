@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-388-highest-power-of-2",
+  "title": "Highest Power Of 2",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the highest power of 2 that is less than or equal to n.",
+  "entry_point": "highest_Power_of_2",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def highest_Power_of_2(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 16
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "n": 32
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 987654321
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 987654320
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 987654319
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 987654322
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 999998
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 987654323
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 1000002
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 987654324
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 987654318
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 1000005
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 1000004
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 987654325
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 999997
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 1000006
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 1000007
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 999996
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 999995
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 42
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 1000008
+      },
+      "output": 524288
+    },
+    {
+      "input": {
+        "n": 987654326
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 987654317
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 987654327
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 987654316
+      },
+      "output": 536870912
+    },
+    {
+      "input": {
+        "n": 38
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 8
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def highest_Power_of_2(n): \n    i = 0\n    while ((1 << i) <= n): \n        i += 1\n    return (1 << (i - 1))\n"
+  }
+}

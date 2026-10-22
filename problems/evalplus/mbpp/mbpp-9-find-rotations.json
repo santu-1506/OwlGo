@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-9-find-rotations",
+  "title": "Find Rotations",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the minimum number of rotations (greater than 0) required to get the same string.",
+  "entry_point": "find_Rotations",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def find_Rotations(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "aaaa"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "ab"
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "aaaa"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "ab"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "abc"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaab"
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaab"
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaab"
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaababab"
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaab"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabab"
+      },
+      "output": 56
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaab"
+      },
+      "output": 84
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaab"
+      },
+      "output": 103
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaaaaaaaaab"
+      },
+      "output": 51
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaabaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabab"
+      },
+      "output": 142
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaab"
+      },
+      "output": 103
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaab"
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabab"
+      },
+      "output": 35
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaabaaaaaaabaab"
+      },
+      "output": 89
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaabaaaaabaaaaaaabaab"
+      },
+      "output": 142
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaab"
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaa"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaabaaaaaaaabaab"
+      },
+      "output": 90
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaa"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaabaaaaaaaabaab"
+      },
+      "output": 109
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaabaaaaaaabb"
+      },
+      "output": 87
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaab"
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabb"
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaabaab"
+      },
+      "output": 82
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaaaaaaaaa"
+      },
+      "output": 50
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaab"
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaababab"
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaabaabaaaaaaaaaaaab"
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaabaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaabaab"
+      },
+      "output": 185
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabab"
+      },
+      "output": 160
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaababaaaaaaaaaaaaababab"
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabab"
+      },
+      "output": 57
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaabaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaabaaaaaaaabaabb"
+      },
+      "output": 275
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaababaaaabaabaaaaaaaaaaaaaaaaab"
+      },
+      "output": 181
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaab"
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaabaabaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaab"
+      },
+      "output": 182
+    },
+    {
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaabaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaabaabab"
+      },
+      "output": 119
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_Rotations(s): \n    n = len(s)\n    s += s\n    for i in range(1, n + 1):\n        if s[i: i + n] == s[0: n]:\n            return i\n    return n\n"
+  }
+}

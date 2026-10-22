@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-38-decode-cyclic",
+  "title": "Decode Cyclic",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "takes as input string encoded with encode_cyclic function. Returns decoded string.",
+  "entry_point": "decode_cyclic",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def decode_cyclic(s: str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "uzfplzjfzcltmdly"
+      },
+      "output": "fuzzplzjftcllmdy"
+    },
+    {
+      "input": {
+        "s": "nzyegaghrzqwrdzxckn"
+      },
+      "output": "ynzaegrghwzqzrdkxcn"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "uzfplzjfzcltmdly"
+      },
+      "output": "fuzzplzjftcllmdy"
+    },
+    {
+      "input": {
+        "s": "nzyegaghrzqwrdzxckn"
+      },
+      "output": "ynzaegrghwzqzrdkxcn"
+    },
+    {
+      "input": {
+        "s": "zxolecqvzyausohgzdod"
+      },
+      "output": "ozxclezqvuyahsodgzod"
+    },
+    {
+      "input": {
+        "s": "cjhzuelsabstpbq"
+      },
+      "output": "hcjezualstbsqpb"
+    },
+    {
+      "input": {
+        "s": "lfgmjpqnvzwvbusr"
+      },
+      "output": "glfpmjvqnvzwsbur"
+    },
+    {
+      "input": {
+        "s": "cvxcvhmtgbeweum"
+      },
+      "output": "xcvhcvgmtwbemeu"
+    },
+    {
+      "input": {
+        "s": "jgjvebqagrtwheytsyff"
+      },
+      "output": "jjgbvegqawrtyheytsff"
+    },
+    {
+      "input": {
+        "s": "swbkfgqnvuahcnqgpcu"
+      },
+      "output": "bswgkfvqnhuaqcncgpu"
+    },
+    {
+      "input": {
+        "s": "ssjgajmprs"
+      },
+      "output": "jssjgarmps"
+    },
+    {
+      "input": {
+        "s": "enrrdusnffcnkotf"
+      },
+      "output": "renurdfsnnfctkof"
+    },
+    {
+      "input": {
+        "s": "cpfgdusjrzf"
+      },
+      "output": "fcpugdrsjzf"
+    },
+    {
+      "input": {
+        "s": "gconqokfgb"
+      },
+      "output": "ogconqgkfb"
+    },
+    {
+      "input": {
+        "s": "effmnsvrgsdbhffn"
+      },
+      "output": "fefsmngvrbsdfhfn"
+    },
+    {
+      "input": {
+        "s": "zwsrgynxlmh"
+      },
+      "output": "szwyrglnxmh"
+    },
+    {
+      "input": {
+        "s": "nqdjadvhlu"
+      },
+      "output": "dnqdjalvhu"
+    },
+    {
+      "input": {
+        "s": "fpkocdqllglypkj"
+      },
+      "output": "kfpdoclqlygljpk"
+    },
+    {
+      "input": {
+        "s": "aosjbowaac"
+      },
+      "output": "saoojbawac"
+    },
+    {
+      "input": {
+        "s": "fvdumeezuebnlkqnvwfc"
+      },
+      "output": "dfveumueznebqlkwnvfc"
+    },
+    {
+      "input": {
+        "s": "tzfoanbvufs"
+      },
+      "output": "ftznoaubvfs"
+    },
+    {
+      "input": {
+        "s": "mnzbtfatwfxpqstecjm"
+      },
+      "output": "zmnfbtwatpfxtqsjecm"
+    },
+    {
+      "input": {
+        "s": "nkxxaitehrj"
+      },
+      "output": "xnkixahterj"
+    },
+    {
+      "input": {
+        "s": "nwxwbyaavoevbjbig"
+      },
+      "output": "xnwywbvaavoebbjig"
+    },
+    {
+      "input": {
+        "s": "gmamklorekv"
+      },
+      "output": "agmlmkeorkv"
+    },
+    {
+      "input": {
+        "s": "rihdqvrbxaycb"
+      },
+      "output": "hrivdqxrbcayb"
+    },
+    {
+      "input": {
+        "s": "gwvexchafqe"
+      },
+      "output": "vgwcexfhaqe"
+    },
+    {
+      "input": {
+        "s": "pymjpgzjnva"
+      },
+      "output": "mpygjpnzjva"
+    },
+    {
+      "input": {
+        "s": "aobgbpwjritkq"
+      },
+      "output": "baopgbrwjkitq"
+    },
+    {
+      "input": {
+        "s": "nuccsadagbriq"
+      },
+      "output": "cnuacsgdaibrq"
+    },
+    {
+      "input": {
+        "s": "gdktamtzhdmj"
+      },
+      "output": "kgdmtahtzjdm"
+    },
+    {
+      "input": {
+        "s": "dcprihgimgnjx"
+      },
+      "output": "pdchrimgijgnx"
+    },
+    {
+      "input": {
+        "s": "kljtwssfqty"
+      },
+      "output": "jklstwqsfty"
+    },
+    {
+      "input": {
+        "s": "frbqiejenuvxwoy"
+      },
+      "output": "bfreqinjexuvywo"
+    },
+    {
+      "input": {
+        "s": "tjfuyuhxly"
+      },
+      "output": "ftjuuylhxy"
+    },
+    {
+      "input": {
+        "s": "fimmmlfohx"
+      },
+      "output": "mfilmmhfox"
+    },
+    {
+      "input": {
+        "s": "xwtgrxfyytcyyjdjoni"
+      },
+      "output": "txwxgryfyytcdyjnjoi"
+    },
+    {
+      "input": {
+        "s": "bzekhcvbldsd"
+      },
+      "output": "ebzckhlvbdds"
+    },
+    {
+      "input": {
+        "s": "ghzgwvsorsye"
+      },
+      "output": "zghvgwrsoesy"
+    },
+    {
+      "input": {
+        "s": "xkaxuitdibnplwpucw"
+      },
+      "output": "axkixuitdpbnplwwuc"
+    },
+    {
+      "input": {
+        "s": "qcszxfbaocdzseekb"
+      },
+      "output": "sqcfzxobazcdesekb"
+    },
+    {
+      "input": {
+        "s": "ueaztzzgmex"
+      },
+      "output": "auezztmzgex"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef encode_cyclic(s: str):\n    \"\"\"\n    returns encoded string by cycling groups of three characters.\n    \"\"\"\n    # split string to groups. Each of length 3.\n    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n    # cycle elements in each group. Unless group has fewer elements than 3.\n    groups = [(group[1:] + group[0]) if len(group) == 3 else group for group in groups]\n    return \"\".join(groups)\n\n\ndef decode_cyclic(s: str):\n    \"\"\"\n    takes as input string encoded with encode_cyclic function. Returns decoded string.\n    \"\"\"\n\n    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n    groups = [(group[2] + group[:2]) if len(group) == 3 else group for group in groups]\n    return \"\".join(groups)\n\n"
+  }
+}

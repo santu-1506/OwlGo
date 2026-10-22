@@ -1,0 +1,3777 @@
+{
+  "id": "mbpp-64-subject-marks",
+  "title": "Subject Marks",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to sort a list of tuples using the second value of each tuple.",
+  "entry_point": "subject_marks",
+  "params": [
+    "subjectmarks"
+  ],
+  "function_signature": {
+    "python": "def subject_marks(subjectmarks):"
+  },
+  "examples": [
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              97
+            ]
+          },
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Telugu",
+              49
+            ]
+          },
+          {
+            "$tuple": [
+              "Hindhi",
+              54
+            ]
+          },
+          {
+            "$tuple": [
+              "Social",
+              33
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social",
+            33
+          ]
+        },
+        {
+          "$tuple": [
+            "Telugu",
+            49
+          ]
+        },
+        {
+          "$tuple": [
+            "Hindhi",
+            54
+          ]
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              97
+            ]
+          },
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Telugu",
+              49
+            ]
+          },
+          {
+            "$tuple": [
+              "Hindhi",
+              54
+            ]
+          },
+          {
+            "$tuple": [
+              "Social",
+              33
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social",
+            33
+          ]
+        },
+        {
+          "$tuple": [
+            "Telugu",
+            49
+          ]
+        },
+        {
+          "$tuple": [
+            "Hindhi",
+            54
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Physics",
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              97
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              45
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Biology",
+            45
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            96
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              97
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              72
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              76
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              91
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "English",
+            72
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            76
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            91
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              90
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Maths",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Maths",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Biology",
+              45
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              97
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Biology",
+            45
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            96
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            96
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Physics",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              90
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Physics",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Physics",
+              -76
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              -45
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              92
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Physics",
+            -76
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            -45
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              77
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              95
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              98
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            77
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            95
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Chemistry",
+              68
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              72
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              75
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              79
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Social sciences",
+              86
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              88
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Chemistry",
+            68
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            72
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            75
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            79
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            84
+          ]
+        },
+        {
+          "$tuple": [
+            "Social sciences",
+            86
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Art",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Music",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              95
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Art",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Music",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            94
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            96
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Chemistry",
+              -9
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              -3
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              65
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              73
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              77
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              94
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Chemistry",
+            -9
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            -3
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            65
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            73
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            77
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            94
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Computer Science",
+              75
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              77
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Economics",
+              79
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              84
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              92
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Computer Science",
+            75
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            77
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Economics",
+            79
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            84
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "Economics",
+              89
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              95
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              98
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "English",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "Economics",
+            89
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            91
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            94
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            95
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            96
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Biology",
+              -45
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "MaMusicths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              92
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Biology",
+            -45
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "MaMusicths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Biology",
+              72
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              75
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              79
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Social sciences",
+              86
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              88
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Biology",
+            72
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            75
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            79
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Social sciences",
+            86
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              97
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              77
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              95
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              98
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            77
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            95
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Art",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Music",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              94,
+              "Computer Science"
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              95
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Art",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Music",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            94,
+            "Computer Science"
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Biology",
+              -45
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "MaMusicths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              92
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Biology",
+            -45
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "MaMusicths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              72
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              76
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              91,
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              95
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "English",
+            72
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            76
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            91,
+            91
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            91
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              95
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              98
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            95
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "Economics",
+              89
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              91
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              95
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "English",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "Economics",
+            89
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            91
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            94
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            95
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "English",
+              72
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              76
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              85,
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              91
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "English",
+            72
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            76
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            80
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            85,
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            91
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              96
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            96
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              77
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              94
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              95
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              98
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            77
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            94
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            95
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              97
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              97
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            97
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              78
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              78,
+              "Geography"
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              81
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              87
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              93
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              96
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            78
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            78,
+            "Geography"
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            81
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            87
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            93
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            96
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Mathas",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              90
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Mathas",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Geography",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "History",
+              77
+            ]
+          },
+          {
+            "$tuple": [
+              "Biology",
+              85
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Chemistry",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Computer Science",
+              92
+            ]
+          },
+          {
+            "$tuple": [
+              "Physics",
+              98
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "Geography",
+            70
+          ]
+        },
+        {
+          "$tuple": [
+            "History",
+            77
+          ]
+        },
+        {
+          "$tuple": [
+            "Biology",
+            85
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Chemistry",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Computer Science",
+            92
+          ]
+        },
+        {
+          "$tuple": [
+            "Physics",
+            98
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "subjectmarks": [
+          {
+            "$tuple": [
+              "Social sciences",
+              82
+            ]
+          },
+          {
+            "$tuple": [
+              "English",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Mathas",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Maths",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Science",
+              92
+            ]
+          }
+        ]
+      },
+      "output": [
+        {
+          "$tuple": [
+            "Social sciences",
+            82
+          ]
+        },
+        {
+          "$tuple": [
+            "English",
+            88
+          ]
+        },
+        {
+          "$tuple": [
+            "Mathas",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Maths",
+            90
+          ]
+        },
+        {
+          "$tuple": [
+            "Science",
+            92
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def subject_marks(subjectmarks):\n#subject_marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])\n subjectmarks.sort(key = lambda x: x[1])\n return subjectmarks\n"
+  }
+}

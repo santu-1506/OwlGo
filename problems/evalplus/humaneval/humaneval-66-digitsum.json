@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-66-digitsum",
+  "title": "Digitsum",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Task\nWrite a function that takes a string as input and returns the sum of the upper characters only'\nASCII codes.\n\nExamples:\n    digitSum(\"\") => 0\n    digitSum(\"abAB\") => 131\n    digitSum(\"abcCd\") => 67\n    digitSum(\"helloE\") => 69\n    digitSum(\"woArBld\") => 131\n    digitSum(\"aAaaaXa\") => 153",
+  "entry_point": "digitSum",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def digitSum(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "abAB"
+      },
+      "output": 131
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "abAB"
+      },
+      "output": 131
+    },
+    {
+      "input": {
+        "s": "abcCd"
+      },
+      "output": 67
+    },
+    {
+      "input": {
+        "s": "helloE"
+      },
+      "output": 69
+    },
+    {
+      "input": {
+        "s": "woArBld"
+      },
+      "output": 131
+    },
+    {
+      "input": {
+        "s": "aAaaaXa"
+      },
+      "output": 153
+    },
+    {
+      "input": {
+        "s": " How are yOu?"
+      },
+      "output": 151
+    },
+    {
+      "input": {
+        "s": "You arE Very Smart"
+      },
+      "output": 327
+    },
+    {
+      "input": {
+        "s": "123"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "ABCD"
+      },
+      "output": 266
+    },
+    {
+      "input": {
+        "s": "abcd"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "HELLOworld"
+      },
+      "output": 372
+    },
+    {
+      "input": {
+        "s": ":;<=>?@[\\]^_`{|}~"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "ABC123def456GHI"
+      },
+      "output": 414
+    },
+    {
+      "input": {
+        "s": "  A  B C  D  "
+      },
+      "output": 266
+    },
+    {
+      "input": {
+        "s": "UPPER"
+      },
+      "output": 396
+    },
+    {
+      "input": {
+        "s": "lowercase"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "Ab56"
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "s": "lowrcase"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "ABC123def45l6GHlowrcaseI"
+      },
+      "output": 414
+    },
+    {
+      "input": {
+        "s": "1123"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": ":;<=>?@[\\]^_`{ABC123def456GHI"
+      },
+      "output": 414
+    },
+    {
+      "input": {
+        "s": "HELLOworrld"
+      },
+      "output": 372
+    },
+    {
+      "input": {
+        "s": "lowercalowercasese"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "  A  B C  D "
+      },
+      "output": 266
+    },
+    {
+      "input": {
+        "s": "  A   B  C  D "
+      },
+      "output": 266
+    },
+    {
+      "input": {
+        "s": "1Ab56cacbcd23"
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "s": "HELrLOworrld"
+      },
+      "output": 372
+    },
+    {
+      "input": {
+        "s": "1123ABCD"
+      },
+      "output": 266
+    },
+    {
+      "input": {
+        "s": "12:;<=>?@[\\]^_`{|}~ABC123def456GHI3"
+      },
+      "output": 414
+    },
+    {
+      "input": {
+        "s": "Ab556"
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "s": "112lowercalowercasese3"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": ":;<=>?@[\\]^_`{_|}~"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "lowercase123"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "  A   B  C  D 23"
+      },
+      "output": 266
+    },
+    {
+      "input": {
+        "s": "  A  C  D "
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "s": "1Ab56caacbcd23"
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "s": "   A  C  D "
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "s": "HELLOworld  A  B C  D  "
+      },
+      "output": 638
+    },
+    {
+      "input": {
+        "s": "HELLrOworrld"
+      },
+      "output": 372
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef digitSum(s):\n    \"\"\"Task\n    Write a function that takes a string as input and returns the sum of the upper characters only'\n    ASCII codes.\n\n    Examples:\n        digitSum(\"\") => 0\n        digitSum(\"abAB\") => 131\n        digitSum(\"abcCd\") => 67\n        digitSum(\"helloE\") => 69\n        digitSum(\"woArBld\") => 131\n        digitSum(\"aAaaaXa\") => 153\n    \"\"\"\n\n    return sum([ord(ch) for ch in s if ch.isupper()])\n\n"
+  }
+}

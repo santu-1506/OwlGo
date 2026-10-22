@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-67-fruit-distribution",
+  "title": "Fruit Distribution",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "In this task, you will be given a string that represents a number of apples and oranges \nthat are distributed in a basket of fruit this basket contains \napples, oranges, and mango fruits. Given the string that represents the total number of \nthe oranges and apples and an integer that represent the total number of the fruits \nin the basket return the number of the mango fruits in the basket.\nfor examble:\nfruit_distribution(\"5 apples and 6 oranges\", 19) ->19 - 5 - 6 = 8\nfruit_distribution(\"0 apples and 1 oranges\",3) -> 3 - 0 - 1 = 2\nfruit_distribution(\"2 apples and 3 oranges\", 100) -> 100 - 2 - 3 = 95\nfruit_distribution(\"100 apples and 1 oranges\",120) -> 120 - 100 - 1 = 19",
+  "entry_point": "fruit_distribution",
+  "params": [
+    "s",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def fruit_distribution(s, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "5 apples and 6 oranges",
+        "n": 19
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "s": "5 apples and 6 oranges",
+        "n": 21
+      },
+      "output": 10
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "5 apples and 6 oranges",
+        "n": 19
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "s": "5 apples and 6 oranges",
+        "n": 21
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "1 apples and 0 oranges",
+        "n": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "2 apples and 3 oranges",
+        "n": 100
+      },
+      "output": 95
+    },
+    {
+      "input": {
+        "s": "2 apples and 3 oranges",
+        "n": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "1 apples and 100 oranges",
+        "n": 120
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "s": "10 apples and 20 oranges",
+        "n": 50
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "s": "3 apples and 4 oranges",
+        "n": 9
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "7 apples and 8 oranges",
+        "n": 30
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "s": "2 apples and 0 oranges",
+        "n": 5
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "0 apples and 0 oranges",
+        "n": 10
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "10 apples and 0 oranges",
+        "n": 15
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "3 apples and 5 oranges",
+        "n": 12
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "5 apples and 5 oranges",
+        "n": 12
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "8 apples and 2 oranges",
+        "n": 15
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "2 apples and 0 oranges",
+        "n": 12
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "s": "2 apples and 0 oranges",
+        "n": 30
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "s": "0 apples and 0 oranges",
+        "n": 9
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 50
+      },
+      "output": 49
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 15
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 14
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "s": "0 apples and 0 oranges",
+        "n": 30
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 10
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 12
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "s": "10 apples and 20 oranges",
+        "n": 30
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "2 apples and 0 oranges",
+        "n": 13
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "s": "3 apples and 4 oranges",
+        "n": 30
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "s": "8 apples and 2 oranges",
+        "n": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "10 apples and 20 oranges",
+        "n": 51
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "s": "3 apples and 5 oranges",
+        "n": 10
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "5 apples and 5 oranges",
+        "n": 15
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 9
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 8
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "0 apples and 1 oranges",
+        "n": 13
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "s": "0 apples and 0 oranges",
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "7 apples and 8 oranges",
+        "n": 15
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "3 apples and 5 oranges",
+        "n": 51
+      },
+      "output": 43
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef fruit_distribution(s,n):\n    \"\"\"\n    In this task, you will be given a string that represents a number of apples and oranges \n    that are distributed in a basket of fruit this basket contains \n    apples, oranges, and mango fruits. Given the string that represents the total number of \n    the oranges and apples and an integer that represent the total number of the fruits \n    in the basket return the number of the mango fruits in the basket.\n    for examble:\n    fruit_distribution(\"5 apples and 6 oranges\", 19) ->19 - 5 - 6 = 8\n    fruit_distribution(\"0 apples and 1 oranges\",3) -> 3 - 0 - 1 = 2\n    fruit_distribution(\"2 apples and 3 oranges\", 100) -> 100 - 2 - 3 = 95\n    fruit_distribution(\"100 apples and 1 oranges\",120) -> 120 - 100 - 1 = 19\n    \"\"\"\n\n\n    words = s.split(\" \")\n    c1, c2 = int(words[0]), int(words[3])\n    assert n - c1 - c2 >= 0, \"invalid inputs\" # $_CONTRACT_$\n    \n    return n - c1 - c2\n\n"
+  }
+}

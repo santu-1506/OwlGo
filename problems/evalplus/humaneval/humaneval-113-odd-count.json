@@ -1,0 +1,619 @@
+{
+  "id": "humaneval-113-odd-count",
+  "title": "Odd Count",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a list of strings, where each string consists of only digits, return a list.\nEach element i of the output should be \"the number of odd elements in the\nstring i of the input.\" where all the i's should be replaced by the number\nof odd digits in the i'th string of the input.\n\n>>> odd_count(['1234567'])\n[\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n>>> odd_count(['3',\"11111111\"])\n[\"the number of odd elements 1n the str1ng 1 of the 1nput.\",\n \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]",
+  "entry_point": "odd_count",
+  "params": [
+    "lst"
+  ],
+  "function_signature": {
+    "python": "def odd_count(lst):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst": [
+          "1234567"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "3",
+          "11111111"
+        ]
+      },
+      "output": [
+        "the number of odd elements 1n the str1ng 1 of the 1nput.",
+        "the number of odd elements 8n the str8ng 8 of the 8nput."
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst": [
+          "1234567"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "3",
+          "11111111"
+        ]
+      },
+      "output": [
+        "the number of odd elements 1n the str1ng 1 of the 1nput.",
+        "the number of odd elements 8n the str8ng 8 of the 8nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "271",
+          "137",
+          "314"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "2468"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst": [
+          "0",
+          "00",
+          "000"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "13579",
+          "2468",
+          "357"
+        ]
+      },
+      "output": [
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "11224466558888",
+          "55555",
+          "1234567"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "1111",
+          "3333",
+          "5555",
+          "7777",
+          "9999"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "444",
+          "8888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "555",
+          "777"
+        ]
+      },
+      "output": [
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "1111",
+          "333",
+          "5555"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "123",
+          "321",
+          "12321"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "7778888",
+          "444",
+          "8888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "778888",
+          "333"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "778888",
+          "12321",
+          "333333"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 6n the str6ng 6 of the 6nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "778888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "778888",
+          "333",
+          "333"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "11224466558888",
+          "8888",
+          "55555",
+          "1234567"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "7778888",
+          "444"
+        ]
+      },
+      "output": [
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "2468",
+          "2468"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "444",
+          "4444",
+          "8888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "7778888",
+          "2468",
+          "777",
+          "2468"
+        ]
+      },
+      "output": [
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "0",
+          "00",
+          "00",
+          "000"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "77444888",
+          "12321",
+          "333333",
+          "77444888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 6n the str6ng 6 of the 6nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "13579",
+          "2468",
+          "24648",
+          "357"
+        ]
+      },
+      "output": [
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "77444888",
+          "12321",
+          "333333",
+          "77444888",
+          "77444888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 6n the str6ng 6 of the 6nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "747444888",
+          "74447444888",
+          "12321",
+          "333333",
+          "774444888",
+          "77444888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 6n the str6ng 6 of the 6nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "77444888",
+          "12321",
+          "77444888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "778888",
+          "333",
+          "333",
+          "333"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "13579",
+          "3757",
+          "11224466558888",
+          "2468",
+          "3537"
+        ]
+      },
+      "output": [
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "7778888",
+          "444",
+          "3757",
+          "8888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "24628",
+          "13579",
+          "2468",
+          "357"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "7778888",
+          "435744"
+        ]
+      },
+      "output": [
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "1111",
+          "333",
+          "555",
+          "5555"
+        ]
+      },
+      "output": [
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "44413579",
+          "8888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "2468",
+          "3333",
+          "2468"
+        ]
+      },
+      "output": [
+        "the number of odd elements 0n the str0ng 0 of the 0nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 0n the str0ng 0 of the 0nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "77444888",
+          "132321",
+          "77444888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "77444888",
+          "12321",
+          "33335555533",
+          "333333",
+          "77444888"
+        ]
+      },
+      "output": [
+        "the number of odd elements 2n the str2ng 2 of the 2nput.",
+        "the number of odd elements 3n the str3ng 3 of the 3nput.",
+        "the number of odd elements 11n the str11ng 11 of the 11nput.",
+        "the number of odd elements 6n the str6ng 6 of the 6nput.",
+        "the number of odd elements 2n the str2ng 2 of the 2nput."
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "55555",
+          "1111",
+          "3333",
+          "5555",
+          "7777",
+          "9999"
+        ]
+      },
+      "output": [
+        "the number of odd elements 5n the str5ng 5 of the 5nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput.",
+        "the number of odd elements 4n the str4ng 4 of the 4nput."
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef odd_count(lst):\n    \"\"\"Given a list of strings, where each string consists of only digits, return a list.\n    Each element i of the output should be \"the number of odd elements in the\n    string i of the input.\" where all the i's should be replaced by the number\n    of odd digits in the i'th string of the input.\n\n    >>> odd_count(['1234567'])\n    [\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n    >>> odd_count(['3',\"11111111\"])\n    [\"the number of odd elements 1n the str1ng 1 of the 1nput.\",\n     \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]\n    \"\"\"\n\n\n    ans, template = [], \"the number of odd elements in the string i of the input.\"\n    for s in lst:\n        odd_cnt = len(list(filter(lambda ch: int(ch) % 2 == 1, s)))\n        ans.append(template.replace(\"i\", str(odd_cnt)))\n    return ans\n\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-10-make-palindrome",
+  "title": "Make Palindrome",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Find the shortest palindrome that begins with a supplied string.\nAlgorithm idea is simple:\n- Find the longest postfix of supplied string that is a palindrome.\n- Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n>>> make_palindrome('')\n''\n>>> make_palindrome('cat')\n'catac'\n>>> make_palindrome('cata')\n'catac'",
+  "entry_point": "make_palindrome",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def make_palindrome(string: str) -> str:"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "x"
+      },
+      "output": "x"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "x"
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "string": "xyz"
+      },
+      "output": "xyzyx"
+    },
+    {
+      "input": {
+        "string": "xyx"
+      },
+      "output": "xyx"
+    },
+    {
+      "input": {
+        "string": "jerry"
+      },
+      "output": "jerryrrej"
+    },
+    {
+      "input": {
+        "string": "race"
+      },
+      "output": "racecar"
+    },
+    {
+      "input": {
+        "string": "level"
+      },
+      "output": "level"
+    },
+    {
+      "input": {
+        "string": "tenet"
+      },
+      "output": "tenet"
+    },
+    {
+      "input": {
+        "string": "noon"
+      },
+      "output": "noon"
+    },
+    {
+      "input": {
+        "string": "redder"
+      },
+      "output": "redder"
+    },
+    {
+      "input": {
+        "string": "refer"
+      },
+      "output": "refer"
+    },
+    {
+      "input": {
+        "string": "dewed"
+      },
+      "output": "dewed"
+    },
+    {
+      "input": {
+        "string": "madam"
+      },
+      "output": "madam"
+    },
+    {
+      "input": {
+        "string": "malayalam"
+      },
+      "output": "malayalam"
+    },
+    {
+      "input": {
+        "string": "radar"
+      },
+      "output": "radar"
+    },
+    {
+      "input": {
+        "string": "r"
+      },
+      "output": "r"
+    },
+    {
+      "input": {
+        "string": "rrefrerace"
+      },
+      "output": "rrefreracecarerferr"
+    },
+    {
+      "input": {
+        "string": "erace"
+      },
+      "output": "eracecare"
+    },
+    {
+      "input": {
+        "string": "raracece"
+      },
+      "output": "raracececarar"
+    },
+    {
+      "input": {
+        "string": "rrrefrear"
+      },
+      "output": "rrrefrearaerferrr"
+    },
+    {
+      "input": {
+        "string": "raceredder"
+      },
+      "output": "raceredderecar"
+    },
+    {
+      "input": {
+        "string": "araracecae"
+      },
+      "output": "araracecaeacecarara"
+    },
+    {
+      "input": {
+        "string": "rradar"
+      },
+      "output": "rradarr"
+    },
+    {
+      "input": {
+        "string": "racrrefreraceereddrce"
+      },
+      "output": "racrrefreraceereddrcecrddereecarerferrcar"
+    },
+    {
+      "input": {
+        "string": "levevl"
+      },
+      "output": "levevlvevel"
+    },
+    {
+      "input": {
+        "string": "lracrrefreraceereddrceevel"
+      },
+      "output": "lracrrefreraceereddrceeveleveecrddereecarerferrcarl"
+    },
+    {
+      "input": {
+        "string": "rrefreracrefere"
+      },
+      "output": "rrefreracreferefercarerferr"
+    },
+    {
+      "input": {
+        "string": "rardar"
+      },
+      "output": "rardaradrar"
+    },
+    {
+      "input": {
+        "string": "levevltenet"
+      },
+      "output": "levevltenetlvevel"
+    },
+    {
+      "input": {
+        "string": "racrrefreraceeredrdrce"
+      },
+      "output": "racrrefreraceeredrdrcecrdrdereecarerferrcar"
+    },
+    {
+      "input": {
+        "string": "racrrefracrrefreraceereddrceaceereddrce"
+      },
+      "output": "racrrefracrrefreraceereddrceaceereddrcecrddereecaecrddereecarerferrcarferrcar"
+    },
+    {
+      "input": {
+        "string": "ararracrrefreraceeredrdrceacecae"
+      },
+      "output": "ararracrrefreraceeredrdrceacecaecrdrdereecarerferrcarrara"
+    },
+    {
+      "input": {
+        "string": "noradarolevevln"
+      },
+      "output": "noradarolevevlnlveveloradaron"
+    },
+    {
+      "input": {
+        "string": "rrefreralevevlce"
+      },
+      "output": "rrefreralevevlceclvevelarerferr"
+    },
+    {
+      "input": {
+        "string": "racrrefreraceereddrcerrefrerace"
+      },
+      "output": "racrrefreraceereddrcerrefreracecarerferrecrddereecarerferrcar"
+    },
+    {
+      "input": {
+        "string": "onoon"
+      },
+      "output": "onoono"
+    },
+    {
+      "input": {
+        "string": "rrefreraracecee"
+      },
+      "output": "rrefreraraceceececararerferr"
+    },
+    {
+      "input": {
+        "string": "tene"
+      },
+      "output": "tenet"
+    },
+    {
+      "input": {
+        "string": "racrrefddrce"
+      },
+      "output": "racrrefddrcecrddferrcar"
+    },
+    {
+      "input": {
+        "string": "dedwed"
+      },
+      "output": "dedwedewded"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\n\n    if is_palindrome(string):\n        return string\n    for i in range(len(string)):\n        if is_palindrome(string[i:]):\n            return string + string[i-1::-1]\n\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-759-is-decimal",
+  "title": "Is Decimal",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether a given string is a decimal number with a precision of 2.",
+  "entry_point": "is_decimal",
+  "params": [
+    "num"
+  ],
+  "function_signature": {
+    "python": "def is_decimal(num):"
+  },
+  "examples": [
+    {
+      "input": {
+        "num": "123.11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": "e666.86"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "num": "123.11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": "e666.86"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "3.124587"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1.11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": "1.1.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1..2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1.1$"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "123.1111"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "-123.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "       123.11       "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "123"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": "."
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "$123.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1.1.1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1231.1111"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1..21..2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "13.1123$"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "-1123.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "TDH"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "-1123.11123.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1..21.1.1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "123.       123.11       1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": "13.11$23$"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "TD"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "$12.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": ".."
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "$123.1..21.1.111"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "$1123.       123.11       123.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "123."
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "1323.1.1.1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "KehoROOXec"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "-123.113.11$23$1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "13.123$"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "$.12.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "-3.11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "$123.111..21.1.111"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "123.1.1$11"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": "TTDH"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_decimal(num):\n    import re\n    dnumre = re.compile(r\"\"\"^[0-9]+(\\.[0-9]{1,2})?$\"\"\")\n    return dnumre.search(num) is not None\n"
+  }
+}

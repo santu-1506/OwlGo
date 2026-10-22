@@ -1,0 +1,726 @@
+{
+  "id": "humaneval-8-sum-product",
+  "title": "Sum Product",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n>>> sum_product([])\n(0, 1)\n>>> sum_product([1, 2, 3, 4])\n(10, 24)",
+  "entry_point": "sum_product",
+  "params": [
+    "numbers"
+  ],
+  "function_signature": {
+    "python": "def sum_product(numbers: List[int]) -> Tuple[int, int]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": []
+      },
+      "output": {
+        "$tuple": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          3,
+          1
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": []
+      },
+      "output": {
+        "$tuple": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          100,
+          0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          100,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          3,
+          5,
+          7
+        ]
+      },
+      "output": {
+        "$tuple": [
+          15,
+          105
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          10
+        ]
+      },
+      "output": {
+        "$tuple": [
+          10,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "output": {
+        "$tuple": [
+          30,
+          3840
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          15,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          -1,
+          1,
+          -2,
+          2,
+          -3,
+          3
+        ]
+      },
+      "output": {
+        "$tuple": [
+          0,
+          -36
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3,
+          5,
+          7,
+          11,
+          13
+        ]
+      },
+      "output": {
+        "$tuple": [
+          41,
+          30030
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "output": {
+        "$tuple": [
+          63,
+          32768
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          15,
+          120
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          4,
+          8,
+          16
+        ]
+      },
+      "output": {
+        "$tuple": [
+          30,
+          1024
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          -1,
+          -2,
+          -3
+        ]
+      },
+      "output": {
+        "$tuple": [
+          -6,
+          -6
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "output": {
+        "$tuple": [
+          150,
+          12000000
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          -1,
+          -3
+        ]
+      },
+      "output": {
+        "$tuple": [
+          -4,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          -1,
+          1,
+          0,
+          2,
+          -3,
+          3
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          4,
+          8,
+          16,
+          16,
+          4
+        ]
+      },
+      "output": {
+        "$tuple": [
+          50,
+          65536
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          15,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0,
+          0,
+          -1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3,
+          13,
+          7,
+          11,
+          13
+        ]
+      },
+      "output": {
+        "$tuple": [
+          49,
+          78078
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          3,
+          3,
+          5,
+          13,
+          0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          24,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      "output": {
+        "$tuple": [
+          19,
+          480
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          3,
+          3,
+          5,
+          0,
+          5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          16,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3,
+          13,
+          7,
+          11,
+          13,
+          2
+        ]
+      },
+      "output": {
+        "$tuple": [
+          51,
+          156156
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          10,
+          20,
+          30,
+          40
+        ]
+      },
+      "output": {
+        "$tuple": [
+          100,
+          240000
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          10,
+          20,
+          30,
+          40,
+          49
+        ]
+      },
+      "output": {
+        "$tuple": [
+          149,
+          11760000
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          3,
+          3,
+          5,
+          13,
+          0,
+          14
+        ]
+      },
+      "output": {
+        "$tuple": [
+          38,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1,
+          2,
+          4,
+          5,
+          11,
+          2
+        ]
+      },
+      "output": {
+        "$tuple": [
+          25,
+          880
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          3,
+          5,
+          7,
+          10,
+          13,
+          5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          45,
+          136500
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          10,
+          20,
+          30,
+          40,
+          0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          100,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          30,
+          30,
+          40,
+          50
+        ]
+      },
+      "output": {
+        "$tuple": [
+          150,
+          1800000
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          4,
+          8,
+          16,
+          16,
+          4,
+          16,
+          16,
+          5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          87,
+          83886080
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          16
+        ]
+      },
+      "output": {
+        "$tuple": [
+          16,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          3,
+          3,
+          5,
+          13,
+          1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          25,
+          585
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          4,
+          8,
+          16,
+          16,
+          4,
+          40
+        ]
+      },
+      "output": {
+        "$tuple": [
+          90,
+          2621440
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          -2,
+          -3
+        ]
+      },
+      "output": {
+        "$tuple": [
+          -5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "output": {
+        "$tuple": [
+          7,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2,
+          49,
+          8,
+          16,
+          49
+        ]
+      },
+      "output": {
+        "$tuple": [
+          124,
+          614656
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List, Tuple\n\n\ndef sum_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    >>> sum_product([])\n    (0, 1)\n    >>> sum_product([1, 2, 3, 4])\n    (10, 24)\n    \"\"\"\n\n    s, p = 0, 1\n    for number in numbers:\n        s += number\n        p *= number\n    return s, p\n\n"
+  }
+}

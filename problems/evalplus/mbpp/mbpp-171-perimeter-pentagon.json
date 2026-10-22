@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-171-perimeter-pentagon",
+  "title": "Perimeter Pentagon",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the perimeter of a regular pentagon from the length of its sides.",
+  "entry_point": "perimeter_pentagon",
+  "params": [
+    "a"
+  ],
+  "function_signature": {
+    "python": "def perimeter_pentagon(a):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 5
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "a": 10
+      },
+      "output": 50
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 5
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "a": 10
+      },
+      "output": 50
+    },
+    {
+      "input": {
+        "a": 15
+      },
+      "output": 75
+    },
+    {
+      "input": {
+        "a": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": -10
+      },
+      "output": -50
+    },
+    {
+      "input": {
+        "a": 1000000
+      },
+      "output": 5000000
+    },
+    {
+      "input": {
+        "a": 3.5
+      },
+      "output": 17.5
+    },
+    {
+      "input": {
+        "a": 1.5
+      },
+      "output": 7.5
+    },
+    {
+      "input": {
+        "a": 1.0505829058331777
+      },
+      "output": 5.2529145291658885
+    },
+    {
+      "input": {
+        "a": 0.8232153234250026
+      },
+      "output": 4.116076617125013
+    },
+    {
+      "input": {
+        "a": -11
+      },
+      "output": -55
+    },
+    {
+      "input": {
+        "a": 1.1423795213926284
+      },
+      "output": 5.711897606963142
+    },
+    {
+      "input": {
+        "a": 0.09982566847914054
+      },
+      "output": 0.4991283423957027
+    },
+    {
+      "input": {
+        "a": -1
+      },
+      "output": -5
+    },
+    {
+      "input": {
+        "a": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 1000001
+      },
+      "output": 5000005
+    },
+    {
+      "input": {
+        "a": -2
+      },
+      "output": -10
+    },
+    {
+      "input": {
+        "a": 0.8077261706133441
+      },
+      "output": 4.038630853066721
+    },
+    {
+      "input": {
+        "a": true
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "a": 1.1028493478364014
+      },
+      "output": 5.514246739182007
+    },
+    {
+      "input": {
+        "a": -0.6792391618130493
+      },
+      "output": -3.3961958090652464
+    },
+    {
+      "input": {
+        "a": 0.909551532381226
+      },
+      "output": 4.54775766190613
+    },
+    {
+      "input": {
+        "a": 1000002
+      },
+      "output": 5000010
+    },
+    {
+      "input": {
+        "a": -0.005504686729706451
+      },
+      "output": -0.027523433648532252
+    },
+    {
+      "input": {
+        "a": 0.9868175569774722
+      },
+      "output": 4.934087784887361
+    },
+    {
+      "input": {
+        "a": -9
+      },
+      "output": -45
+    },
+    {
+      "input": {
+        "a": 0.9232556249681736
+      },
+      "output": 4.616278124840868
+    },
+    {
+      "input": {
+        "a": 1000003
+      },
+      "output": 5000015
+    },
+    {
+      "input": {
+        "a": 0.6965793033660621
+      },
+      "output": 3.4828965168303103
+    },
+    {
+      "input": {
+        "a": 0.6294263989650178
+      },
+      "output": 3.1471319948250893
+    },
+    {
+      "input": {
+        "a": 0.6535078983353
+      },
+      "output": 3.2675394916764997
+    },
+    {
+      "input": {
+        "a": 1.6349329383768112
+      },
+      "output": 8.174664691884056
+    },
+    {
+      "input": {
+        "a": 0.7902235974897384
+      },
+      "output": 3.9511179874486917
+    },
+    {
+      "input": {
+        "a": 1.5172735829864554
+      },
+      "output": 7.586367914932277
+    },
+    {
+      "input": {
+        "a": -0.934803278457003
+      },
+      "output": -4.674016392285015
+    },
+    {
+      "input": {
+        "a": -1.1192650882858737
+      },
+      "output": -5.596325441429368
+    },
+    {
+      "input": {
+        "a": 1.2342082553789273
+      },
+      "output": 6.171041276894637
+    },
+    {
+      "input": {
+        "a": -1.698603118139952
+      },
+      "output": -8.493015590699759
+    },
+    {
+      "input": {
+        "a": 0.5935859571226136
+      },
+      "output": 2.967929785613068
+    },
+    {
+      "input": {
+        "a": 1.6830234032997775
+      },
+      "output": 8.415117016498888
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def perimeter_pentagon(a):\n  return 5 * a\n"
+  }
+}

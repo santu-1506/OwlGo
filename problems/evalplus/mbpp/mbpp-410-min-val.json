@@ -1,0 +1,839 @@
+{
+  "id": "mbpp-410-min-val",
+  "title": "Min Val",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the minimum value in a given heterogeneous list.",
+  "entry_point": "min_val",
+  "params": [
+    "listval"
+  ],
+  "function_signature": {
+    "python": "def min_val(listval):"
+  },
+  "examples": [
+    {
+      "input": {
+        "listval": [
+          "Python",
+          3,
+          2,
+          4,
+          5,
+          "version"
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          15,
+          20,
+          25
+        ]
+      },
+      "output": 15
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "listval": [
+          "Python",
+          3,
+          2,
+          4,
+          5,
+          "version"
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          15,
+          20,
+          25
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          30,
+          20,
+          40,
+          50,
+          "version"
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          10,
+          5,
+          2.5,
+          2.5,
+          "version"
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          "version",
+          "is",
+          "3.8.5",
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "version",
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          10,
+          3,
+          2.5,
+          2.5,
+          "version"
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          5,
+          "version",
+          "is",
+          "3.8.5",
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          4,
+          10,
+          3,
+          2.5,
+          2.5,
+          "version"
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          10,
+          5,
+          2.5,
+          2.5,
+          "version",
+          "Python"
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "n",
+          "version",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "version",
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "version",
+          15,
+          [
+            20,
+            25
+          ],
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          "PythonPython",
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          5,
+          "version",
+          "is",
+          "3.8.5",
+          1,
+          2,
+          3,
+          4,
+          5,
+          3
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          "PythonPython",
+          25
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          3,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          "PythonPython",
+          25
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          "PythonPython",
+          25,
+          "PythhonPython",
+          25
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          "PythonPython",
+          25,
+          "PythhonPython",
+          25,
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "version",
+          15,
+          [
+            20,
+            25
+          ],
+          "Python"
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "PythonPython",
+          25,
+          "PythhonPython",
+          25,
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          10,
+          5,
+          2.5,
+          2.5,
+          "version",
+          10
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "listval": [
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ],
+          15,
+          [
+            20,
+            25
+          ],
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          "version",
+          "is",
+          "3.8.5",
+          1,
+          2,
+          "PythhonPython",
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "listval": [
+          "n",
+          "version",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          "Py",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          "PythonPython",
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            5
+          ],
+          [
+            10,
+            5,
+            2.5,
+            2.5,
+            5
+          ],
+          25,
+          "version"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythonPython"
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          "Py",
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          "PythonPytthon",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "Py",
+          3,
+          [
+            20,
+            25
+          ],
+          "Pythh3.8.5onPython",
+          "PythonPython",
+          25,
+          "PythhonPython",
+          25
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          "versioen",
+          "is",
+          "3.8.5",
+          1,
+          2,
+          "Python",
+          "PythhonPython",
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "version",
+          "veirsion",
+          15,
+          [
+            20,
+            25
+          ],
+          "Python"
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          "version",
+          15,
+          [
+            5,
+            20,
+            25
+          ],
+          15,
+          15
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          25,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          "PythonPython",
+          25,
+          25
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "n",
+          [
+            10,
+            5,
+            2.5
+          ],
+          "version",
+          [
+            10,
+            5,
+            2.5
+          ],
+          "version",
+          15,
+          [
+            20,
+            25
+          ]
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "listval": [
+          "PythonPython",
+          [
+            10,
+            5,
+            2.5,
+            2.5
+          ],
+          25,
+          [
+            20,
+            25
+          ],
+          "PythhonPython",
+          "tPythonPython",
+          25
+        ]
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "listval": [
+          "Python",
+          "version",
+          "is",
+          "3.8.5",
+          1,
+          2,
+          "PythhonPython",
+          3,
+          4,
+          5,
+          "3.8.5"
+        ]
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def min_val(listval):\n     min_val = min(i for i in listval if isinstance(i, int))\n     return min_val\n"
+  }
+}

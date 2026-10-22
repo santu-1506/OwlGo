@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-19-sort-numbers",
+  "title": "Sort Numbers",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Input is a space-delimited string of numberals from 'zero' to 'nine'.\nValid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\nReturn the string with numbers sorted from smallest to largest\n>>> sort_numbers('three one five')\n'one three five'",
+  "entry_point": "sort_numbers",
+  "params": [
+    "numbers"
+  ],
+  "function_signature": {
+    "python": "def sort_numbers(numbers: str) -> str:"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "numbers": "three"
+      },
+      "output": "three"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "numbers": "three"
+      },
+      "output": "three"
+    },
+    {
+      "input": {
+        "numbers": "three five nine"
+      },
+      "output": "three five nine"
+    },
+    {
+      "input": {
+        "numbers": "five zero four seven nine eight"
+      },
+      "output": "zero four five seven eight nine"
+    },
+    {
+      "input": {
+        "numbers": "six five four three two one zero"
+      },
+      "output": "zero one two three four five six"
+    },
+    {
+      "input": {
+        "numbers": "four eight two"
+      },
+      "output": "two four eight"
+    },
+    {
+      "input": {
+        "numbers": "nine"
+      },
+      "output": "nine"
+    },
+    {
+      "input": {
+        "numbers": "one six two four nine"
+      },
+      "output": "one two four six nine"
+    },
+    {
+      "input": {
+        "numbers": "two seven eight zero five"
+      },
+      "output": "zero two five seven eight"
+    },
+    {
+      "input": {
+        "numbers": "nine zero"
+      },
+      "output": "zero nine"
+    },
+    {
+      "input": {
+        "numbers": "seven three one"
+      },
+      "output": "one three seven"
+    },
+    {
+      "input": {
+        "numbers": "two two three three four five six"
+      },
+      "output": "two two three three four five six"
+    },
+    {
+      "input": {
+        "numbers": "zero five four one seven eight two six"
+      },
+      "output": "zero one two four five six seven eight"
+    },
+    {
+      "input": {
+        "numbers": "nine eight seven six five four three two one zero"
+      },
+      "output": "zero one two three four five six seven eight nine"
+    },
+    {
+      "input": {
+        "numbers": "two zero nine four five six"
+      },
+      "output": "zero two four five six nine"
+    },
+    {
+      "input": {
+        "numbers": "nine eight seven six five four one zero"
+      },
+      "output": "zero one four five six seven eight nine"
+    },
+    {
+      "input": {
+        "numbers": "two zero nine"
+      },
+      "output": "zero two nine"
+    },
+    {
+      "input": {
+        "numbers": "four eight"
+      },
+      "output": "four eight"
+    },
+    {
+      "input": {
+        "numbers": "zero five four one seven"
+      },
+      "output": "zero one four five seven"
+    },
+    {
+      "input": {
+        "numbers": "six"
+      },
+      "output": "six"
+    },
+    {
+      "input": {
+        "numbers": "two two four five six"
+      },
+      "output": "two two four five six"
+    },
+    {
+      "input": {
+        "numbers": "zero five four one"
+      },
+      "output": "zero one four five"
+    },
+    {
+      "input": {
+        "numbers": "zero five seven"
+      },
+      "output": "zero five seven"
+    },
+    {
+      "input": {
+        "numbers": "four two"
+      },
+      "output": "two four"
+    },
+    {
+      "input": {
+        "numbers": "four"
+      },
+      "output": "four"
+    },
+    {
+      "input": {
+        "numbers": "two six"
+      },
+      "output": "two six"
+    },
+    {
+      "input": {
+        "numbers": "two two five six"
+      },
+      "output": "two two five six"
+    },
+    {
+      "input": {
+        "numbers": "seven"
+      },
+      "output": "seven"
+    },
+    {
+      "input": {
+        "numbers": "zero five four zero five four one seven eight two six"
+      },
+      "output": "zero zero one two four four five five six seven eight"
+    },
+    {
+      "input": {
+        "numbers": "zero five one seven eight two six"
+      },
+      "output": "zero one two five six seven eight"
+    },
+    {
+      "input": {
+        "numbers": "four four eight two"
+      },
+      "output": "two four four eight"
+    },
+    {
+      "input": {
+        "numbers": "seven three"
+      },
+      "output": "three seven"
+    },
+    {
+      "input": {
+        "numbers": "nine eight seven five four three two one zero"
+      },
+      "output": "zero one two three four five seven eight nine"
+    },
+    {
+      "input": {
+        "numbers": "two four five six"
+      },
+      "output": "two four five six"
+    },
+    {
+      "input": {
+        "numbers": "zero four one"
+      },
+      "output": "zero one four"
+    },
+    {
+      "input": {
+        "numbers": "zero seven eight two six"
+      },
+      "output": "zero two six seven eight"
+    },
+    {
+      "input": {
+        "numbers": "zero five eight two six"
+      },
+      "output": "zero two five six eight"
+    },
+    {
+      "input": {
+        "numbers": "zero"
+      },
+      "output": "zero"
+    },
+    {
+      "input": {
+        "numbers": "one six"
+      },
+      "output": "one six"
+    },
+    {
+      "input": {
+        "numbers": "nine six"
+      },
+      "output": "six nine"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n\n    \n    to_int = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}\n\n    if numbers == \"\": return \"\"\n    return \" \".join(sorted(numbers.split(\" \"), key=lambda n: to_int[n]))\n\n"
+  }
+}

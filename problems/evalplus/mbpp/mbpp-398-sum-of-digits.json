@@ -1,0 +1,565 @@
+{
+  "id": "mbpp-398-sum-of-digits",
+  "title": "Sum Of Digits",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to compute the sum of digits of each number of a given list.",
+  "entry_point": "sum_of_digits",
+  "params": [
+    "nums"
+  ],
+  "function_signature": {
+    "python": "def sum_of_digits(nums):"
+  },
+  "examples": [
+    {
+      "input": {
+        "nums": [
+          10,
+          2,
+          56
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "nums": [
+          [
+            10,
+            20,
+            4,
+            5,
+            "b",
+            70,
+            "a"
+          ]
+        ]
+      },
+      "output": 19
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "nums": [
+          10,
+          2,
+          56
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "nums": [
+          [
+            10,
+            20,
+            4,
+            5,
+            "b",
+            70,
+            "a"
+          ]
+        ]
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          20,
+          -4,
+          5,
+          -70
+        ]
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "nums": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          7
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          -5,
+          2
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "nums": [
+          0
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          -5,
+          "abc",
+          0,
+          3.14
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "nums": [
+          7,
+          10,
+          7
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "nums": [
+          15
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          15,
+          -5,
+          2,
+          15,
+          2
+        ]
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          -10,
+          0,
+          15,
+          -5,
+          2,
+          15,
+          2
+        ]
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          0,
+          -5,
+          2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "nums": [
+          15,
+          -10,
+          0,
+          1,
+          15,
+          -5,
+          2,
+          15,
+          2
+        ]
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "nums": [
+          "TTzXjVXDQt",
+          "ITwVYEcw",
+          "ucH",
+          "abc",
+          "abc",
+          "abc",
+          "gTxGtFZLn",
+          "abc"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          15,
+          0,
+          -5
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          15,
+          -5,
+          2
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "nums": [
+          -5,
+          7,
+          10,
+          7
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          10,
+          2
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          10,
+          2,
+          0
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          15,
+          15,
+          -5,
+          2
+        ]
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "nums": [
+          "TTzXjVXDQt",
+          "ITwVYEcw",
+          "ucH",
+          "abc",
+          "abc",
+          "abc",
+          "gTxGtLn",
+          "abc"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          0,
+          15,
+          0,
+          -5
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          0,
+          15,
+          -5,
+          2
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "nums": [
+          15,
+          0,
+          2,
+          0
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "nums": [
+          "TTzXjVXDQt",
+          "ITwVYEcw",
+          "ucH",
+          "abc",
+          "abc",
+          "ITwVYEcw",
+          "abc",
+          "gTxGtFZLn",
+          "abc"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          0,
+          10,
+          15,
+          -5,
+          2
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          10,
+          7
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "nums": [
+          "TTzXjVXDQt",
+          "ITwVYEcw",
+          "ucH",
+          "abc",
+          "ITwVYEcw",
+          "abc",
+          "gTxGtFZLn",
+          "abc"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          -11,
+          15,
+          -10,
+          0,
+          15,
+          -5,
+          2,
+          15,
+          2
+        ]
+      },
+      "output": 31
+    },
+    {
+      "input": {
+        "nums": [
+          2,
+          -11,
+          15,
+          -10,
+          0,
+          15,
+          -5,
+          2,
+          15,
+          2
+        ]
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          15,
+          15,
+          0,
+          -5,
+          2
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "nums": [
+          "TTzXjVXDQt",
+          "ITwgTxGtLnVYEcw",
+          "ucH",
+          "abc",
+          "abc",
+          "ITwVYEcw",
+          "abc",
+          "gTxGtFZLn",
+          "abc"
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          -11,
+          15,
+          -10,
+          0,
+          15,
+          -5,
+          2,
+          15,
+          2,
+          2
+        ]
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          0,
+          10,
+          15,
+          -5,
+          2,
+          15
+        ]
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          -5,
+          "abc",
+          0,
+          15,
+          3.14
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "nums": [
+          15,
+          0,
+          10,
+          2,
+          0
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "nums": [
+          -11,
+          15,
+          0,
+          -5,
+          2
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "nums": [
+          -10,
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      },
+      "output": 4
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def sum_of_digits(nums):\n    return sum(int(el) for n in nums for el in str(n) if el.isdigit())\n"
+  }
+}

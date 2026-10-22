@@ -1,0 +1,365 @@
+{
+  "id": "humaneval-92-any-int",
+  "title": "Any Int",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Create a function that takes 3 numbers.\nReturns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\nReturns false in any other cases.\n\nExamples\nany_int(5, 2, 7) ➞ True\n\nany_int(3, 2, 2) ➞ False\n\nany_int(3, -2, 1) ➞ True\n\nany_int(3.6, -2.2, 2) ➞ False",
+  "entry_point": "any_int",
+  "params": [
+    "x",
+    "y",
+    "z"
+  ],
+  "function_signature": {
+    "python": "def any_int(x, y, z):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 2,
+        "y": 3,
+        "z": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 2.5,
+        "y": 2,
+        "z": 3
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 2,
+        "y": 3,
+        "z": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 2.5,
+        "y": 2,
+        "z": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1.5,
+        "y": 5,
+        "z": 3.5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 2,
+        "y": 6,
+        "z": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 4,
+        "y": 2,
+        "z": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 2.2,
+        "y": 2.2,
+        "z": 2.2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -4,
+        "y": 6,
+        "z": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 2,
+        "y": 1,
+        "z": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 3,
+        "y": 4,
+        "z": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 3.0,
+        "y": 4,
+        "z": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -1,
+        "y": 8,
+        "z": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -2,
+        "y": -2,
+        "z": -4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -3,
+        "y": -4,
+        "z": -7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 50,
+        "y": -20,
+        "z": -30
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": 10,
+        "z": -5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 7,
+        "y": 1,
+        "z": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -2,
+        "y": 5,
+        "z": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 4,
+        "y": 5,
+        "z": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -2,
+        "y": -1,
+        "z": -4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": 8,
+        "z": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -2,
+        "y": 1,
+        "z": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": 8,
+        "z": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 7,
+        "y": 11,
+        "z": 11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 50,
+        "y": -19,
+        "z": -30
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -3,
+        "y": 8,
+        "z": -3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": 50,
+        "z": -4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 8,
+        "y": 7,
+        "z": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": -30,
+        "z": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": 10,
+        "z": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": 6,
+        "z": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -3,
+        "y": -4,
+        "z": -6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 6,
+        "y": 7,
+        "z": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -3,
+        "y": -4,
+        "z": 9
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": 10,
+        "z": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 5,
+        "y": -4,
+        "z": -7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 8,
+        "y": 10,
+        "z": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 10,
+        "y": 6,
+        "z": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -20,
+        "y": -5,
+        "z": 10
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef any_int(x, y, z):\n    '''\n    Create a function that takes 3 numbers.\n    Returns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\n    Returns false in any other cases.\n    \n    Examples\n    any_int(5, 2, 7) ➞ True\n    \n    any_int(3, 2, 2) ➞ False\n\n    any_int(3, -2, 1) ➞ True\n    \n    any_int(3.6, -2.2, 2) ➞ False\n  \n\n    \n    '''\n\n    if type(x) != int or type(y) != int or type(z) != int: return False\n    return x == y + z or y == x + z or z == y + x\n\n"
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "id": "humaneval-28-concatenate",
+  "title": "Concatenate",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Concatenate list of strings into a single string\n>>> concatenate([])\n''\n>>> concatenate(['a', 'b', 'c'])\n'abc'",
+  "entry_point": "concatenate",
+  "params": [
+    "strings"
+  ],
+  "function_signature": {
+    "python": "def concatenate(strings: List[str]) -> str:"
+  },
+  "examples": [
+    {
+      "input": {
+        "strings": []
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "strings": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "output": "xyz"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "strings": []
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "strings": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "output": "xyz"
+    },
+    {
+      "input": {
+        "strings": [
+          "x",
+          "y",
+          "z",
+          "w",
+          "k"
+        ]
+      },
+      "output": "xyzwk"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "banana",
+          "orange"
+        ]
+      },
+      "output": "applebananaorange"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "a",
+          "great",
+          "language"
+        ]
+      },
+      "output": "pythonisagreatlanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "Rock",
+          "Paper",
+          "Scissors"
+        ]
+      },
+      "output": "RockPaperScissors"
+    },
+    {
+      "input": {
+        "strings": [
+          "123",
+          "456",
+          "789"
+        ]
+      },
+      "output": "123456789"
+    },
+    {
+      "input": {
+        "strings": [
+          "Hello"
+        ]
+      },
+      "output": "Hello"
+    },
+    {
+      "input": {
+        "strings": [
+          "hello"
+        ]
+      },
+      "output": "hello"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "world"
+        ]
+      },
+      "output": "world"
+    },
+    {
+      "input": {
+        "strings": [
+          "Python",
+          "is",
+          "a",
+          "programming",
+          "language"
+        ]
+      },
+      "output": "Pythonisaprogramminglanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "a"
+        ]
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "pythonhello",
+          "a",
+          "great",
+          "language",
+          "is"
+        ]
+      },
+      "output": "pythonispythonhelloagreatlanguageis"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "Hello",
+          "world"
+        ]
+      },
+      "output": "Helloworld"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "pythonhello",
+          "a",
+          "pyothonhello",
+          "great",
+          "language",
+          "is"
+        ]
+      },
+      "output": "pythonispythonhelloapyothonhellogreatlanguageis"
+    },
+    {
+      "input": {
+        "strings": [
+          "1323",
+          "pythonhello",
+          "789"
+        ]
+      },
+      "output": "1323pythonhello789"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "pythonhello",
+          "great",
+          "language",
+          "is"
+        ]
+      },
+      "output": "pythonispythonhellogreatlanguageis"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "laPapernguage",
+          "language"
+        ]
+      },
+      "output": "pythonislaPapernguagelanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "Paper",
+          "woorld"
+        ]
+      },
+      "output": "Paperwoorld"
+    },
+    {
+      "input": {
+        "strings": [
+          "Hello",
+          "world"
+        ]
+      },
+      "output": "Helloworld"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "i456",
+          "is",
+          "pyothonhello",
+          "language"
+        ]
+      },
+      "output": "pythoni456ispyothonhellolanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "i456banana",
+          "orange",
+          "apple"
+        ]
+      },
+      "output": "applei456bananaorangeapple"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "a",
+          "great",
+          "language",
+          "language"
+        ]
+      },
+      "output": "pythonagreatlanguagelanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "Scissors",
+          "python",
+          "a",
+          "great",
+          "language",
+          "language"
+        ]
+      },
+      "output": "Scissorspythonagreatlanguagelanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "hellbananao",
+          "hello"
+        ]
+      },
+      "output": "hellbananaohello"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "a",
+          "great",
+          "language",
+          "language",
+          "python"
+        ]
+      },
+      "output": "pythonagreatlanguagelanguagepython"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "great",
+          "language",
+          "language",
+          "pythoon",
+          "python"
+        ]
+      },
+      "output": "pythongreatlanguagelanguagepythoonpython"
+    },
+    {
+      "input": {
+        "strings": [
+          "Paper",
+          "Scissorslanguage"
+        ]
+      },
+      "output": "PaperScissorslanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "oran456ge",
+          "apple",
+          "banana",
+          "orange"
+        ]
+      },
+      "output": "oran456geapplebananaorange"
+    },
+    {
+      "input": {
+        "strings": [
+          "Hello",
+          "world",
+          "world"
+        ]
+      },
+      "output": "Helloworldworld"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "pythonhello",
+          "a",
+          "great",
+          "language",
+          "is",
+          "is"
+        ]
+      },
+      "output": "pythonispythonhelloagreatlanguageisis"
+    },
+    {
+      "input": {
+        "strings": [
+          "Rock",
+          "Paper",
+          "Scisi456bananasoors",
+          "Scissoors"
+        ]
+      },
+      "output": "RockPaperScisi456bananasoorsScissoors"
+    },
+    {
+      "input": {
+        "strings": [
+          "Helloo",
+          "Hello",
+          "wordld",
+          "world"
+        ]
+      },
+      "output": "HellooHellowordldworld"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "is",
+          "laPapernguage",
+          "language",
+          "language"
+        ]
+      },
+      "output": "pythonislaPapernguagelanguagelanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "Hello",
+          "world",
+          ""
+        ]
+      },
+      "output": "Helloworld"
+    },
+    {
+      "input": {
+        "strings": [
+          "python",
+          "a",
+          "great",
+          "language",
+          "pythlaPapernguageon",
+          "language"
+        ]
+      },
+      "output": "pythonagreatlanguagepythlaPapernguageonlanguage"
+    },
+    {
+      "input": {
+        "strings": [
+          "Helloo",
+          "Hello",
+          "wordld",
+          "world",
+          "wordld"
+        ]
+      },
+      "output": "HellooHellowordldworldwordld"
+    },
+    {
+      "input": {
+        "strings": [
+          "Paper",
+          "Hello",
+          "woorld"
+        ]
+      },
+      "output": "PaperHellowoorld"
+    },
+    {
+      "input": {
+        "strings": [
+          "1323",
+          "789"
+        ]
+      },
+      "output": "1323789"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef concatenate(strings: List[str]) -> str:\n    \"\"\" Concatenate list of strings into a single string\n    >>> concatenate([])\n    ''\n    >>> concatenate(['a', 'b', 'c'])\n    'abc'\n    \"\"\"\n\n    return \"\".join(strings)\n\n"
+  }
+}

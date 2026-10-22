@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-93-encode",
+  "title": "Encode",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that takes a message, and encodes in such a \nway that it swaps case of all letters, replaces all vowels in \nthe message with the letter that appears 2 places ahead of that \nvowel in the english alphabet. \nAssume only letters. \n\nExamples:\n>>> encode('test')\n'TGST'\n>>> encode('This is a message')\n'tHKS KS C MGSSCGG'",
+  "entry_point": "encode",
+  "params": [
+    "message"
+  ],
+  "function_signature": {
+    "python": "def encode(message):"
+  },
+  "examples": [
+    {
+      "input": {
+        "message": "TEST"
+      },
+      "output": "tgst"
+    },
+    {
+      "input": {
+        "message": "Mudasir"
+      },
+      "output": "mWDCSKR"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "message": "TEST"
+      },
+      "output": "tgst"
+    },
+    {
+      "input": {
+        "message": "Mudasir"
+      },
+      "output": "mWDCSKR"
+    },
+    {
+      "input": {
+        "message": "YES"
+      },
+      "output": "ygs"
+    },
+    {
+      "input": {
+        "message": "This is a message"
+      },
+      "output": "tHKS KS C MGSSCGG"
+    },
+    {
+      "input": {
+        "message": "I DoNt KnOw WhAt tO WrItE"
+      },
+      "output": "k dQnT kNqW wHcT Tq wRkTg"
+    },
+    {
+      "input": {
+        "message": "abcdefghijklmnopqrstuvwxyz"
+      },
+      "output": "CBCDGFGHKJKLMNQPQRSTWVWXYZ"
+    },
+    {
+      "input": {
+        "message": "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+      },
+      "output": "zyxwvwtsrqpqnmlkjkhgfgdcbc"
+    },
+    {
+      "input": {
+        "message": "Python is awesome"
+      },
+      "output": "pYTHQN KS CWGSQMG"
+    },
+    {
+      "input": {
+        "message": "Quick brown fox jumps over the lazy dog"
+      },
+      "output": "qWKCK BRQWN FQX JWMPS QVGR THG LCZY DQG"
+    },
+    {
+      "input": {
+        "message": "The quick brown fox jumps over the lazy dog"
+      },
+      "output": "tHG QWKCK BRQWN FQX JWMPS QVGR THG LCZY DQG"
+    },
+    {
+      "input": {
+        "message": "Every good boy does fine"
+      },
+      "output": "gVGRY GQQD BQY DQGS FKNG"
+    },
+    {
+      "input": {
+        "message": "ABCDEF"
+      },
+      "output": "cbcdgf"
+    },
+    {
+      "input": {
+        "message": "The cat in the hat"
+      },
+      "output": "tHG CCT KN THG HCT"
+    },
+    {
+      "input": {
+        "message": "to be or not to be"
+      },
+      "output": "TQ BG QR NQT TQ BG"
+    },
+    {
+      "input": {
+        "message": "Testing encode function"
+      },
+      "output": "tGSTKNG GNCQDG FWNCTKQN"
+    },
+    {
+      "input": {
+        "message": "ZYXWVUTSRQPONMLKJIABCDEFHGFEDCBA"
+      },
+      "output": "zyxwvwtsrqpqnmlkjkcbcdgfhgfgdcbc"
+    },
+    {
+      "input": {
+        "message": "The cat in tabcdefghijklmnopqrstuvwxyzhe hat"
+      },
+      "output": "tHG CCT KN TCBCDGFGHKJKLMNQPQRSTWVWXYZHG HCT"
+    },
+    {
+      "input": {
+        "message": "Python is awesmome"
+      },
+      "output": "pYTHQN KS CWGSMQMG"
+    },
+    {
+      "input": {
+        "message": "PythEvery good boy does fineme"
+      },
+      "output": "pYTHgVGRY GQQD BQY DQGS FKNGMG"
+    },
+    {
+      "input": {
+        "message": "The cat in th ehh"
+      },
+      "output": "tHG CCT KN TH GHH"
+    },
+    {
+      "input": {
+        "message": "The cat in tabcdefghijdklmnopqrstuvwxyzhe hat"
+      },
+      "output": "tHG CCT KN TCBCDGFGHKJDKLMNQPQRSTWVWXYZHG HCT"
+    },
+    {
+      "input": {
+        "message": "Quick brown fox jumps oyver the lazy dog"
+      },
+      "output": "qWKCK BRQWN FQX JWMPS QYVGR THG LCZY DQG"
+    },
+    {
+      "input": {
+        "message": "afghijklmnopqrstuvwxyzABCDE"
+      },
+      "output": "CFGHKJKLMNQPQRSTWVWXYZcbcdg"
+    },
+    {
+      "input": {
+        "message": "The cat ZYXWVUTSRQPONMLKJIHGFEDCBAin th ehh"
+      },
+      "output": "tHG CCT zyxwvwtsrqpqnmlkjkhgfgdcbcKN TH GHH"
+    },
+    {
+      "input": {
+        "message": "to be or notZYXWVUTSRQPONMLKJIABCDEFHGFEDCBA to be"
+      },
+      "output": "TQ BG QR NQTzyxwvwtsrqpqnmlkjkcbcdgfhgfgdcbc TQ BG"
+    },
+    {
+      "input": {
+        "message": "ABCDThe cat in tabcdefghijklmnopqrstuvwxyzhe hatF"
+      },
+      "output": "cbcdtHG CCT KN TCBCDGFGHKJKLMNQPQRSTWVWXYZHG HCTf"
+    },
+    {
+      "input": {
+        "message": "ABCDTPythEvery good boy does finemehe cat in tabcdefghijklmnopqrstuvwxyzhe hatvF"
+      },
+      "output": "cbcdtpYTHgVGRY GQQD BQY DQGS FKNGMGHG CCT KN TCBCDGFGHKJKLMNQPQRSTWVWXYZHG HCTVf"
+    },
+    {
+      "input": {
+        "message": "Thezo quick brown fox jumps over the lazy dog"
+      },
+      "output": "tHGZQ QWKCK BRQWN FQX JWMPS QVGR THG LCZY DQG"
+    },
+    {
+      "input": {
+        "message": "to be or notZYXWVUTSRQPabcdefghijklmnopqrstuvwxyzONMLKJIABCDEFHGFEDCBA to be"
+      },
+      "output": "TQ BG QR NQTzyxwvwtsrqpCBCDGFGHKJKLMNQPQRSTWVWXYZqnmlkjkcbcdgfhgfgdcbc TQ BG"
+    },
+    {
+      "input": {
+        "message": "The cat in th eh"
+      },
+      "output": "tHG CCT KN TH GH"
+    },
+    {
+      "input": {
+        "message": "ElqlNnfv"
+      },
+      "output": "gLQLnNFV"
+    },
+    {
+      "input": {
+        "message": "The cat hin th eh"
+      },
+      "output": "tHG CCT HKN TH GH"
+    },
+    {
+      "input": {
+        "message": "The cat in tabcdefghijdklmnopqrstuvwxyzhe haThe cat in th ehht"
+      },
+      "output": "tHG CCT KN TCBCDGFGHKJDKLMNQPQRSTWVWXYZHG HCtHG CCT KN TH GHHT"
+    },
+    {
+      "input": {
+        "message": "ZYXWVUTSRQABCDEFPONMLKJIZYXWVUTSRQPONDCBA"
+      },
+      "output": "zyxwvwtsrqcbcdgfpqnmlkjkzyxwvwtsrqpqndcbc"
+    },
+    {
+      "input": {
+        "message": "PythEvery good boy doee"
+      },
+      "output": "pYTHgVGRY GQQD BQY DQGG"
+    },
+    {
+      "input": {
+        "message": "Tthe cat in tabcdefghijdklmnopqrstuvwxyzhe hat"
+      },
+      "output": "tTHG CCT KN TCBCDGFGHKJDKLMNQPQRSTWVWXYZHG HCT"
+    },
+    {
+      "input": {
+        "message": "The cat in tabcgdefghijdklmnvwxyzhe haThe cat in th ehht"
+      },
+      "output": "tHG CCT KN TCBCGDGFGHKJDKLMNVWXYZHG HCtHG CCT KN TH GHHT"
+    },
+    {
+      "input": {
+        "message": "The cat ZYXWVUTSRQPONMLKJIHGFEDLCBAin th ehh"
+      },
+      "output": "tHG CCT zyxwvwtsrqpqnmlkjkhgfgdlcbcKN TH GHH"
+    },
+    {
+      "input": {
+        "message": "The quick brown fox jumps ovto be or notZYXWVUTSRQPabcdefghijklmnopqrstuvwxyzONMLKJIABCDEFHGFEDCBA to beer the lazy dog"
+      },
+      "output": "tHG QWKCK BRQWN FQX JWMPS QVTQ BG QR NQTzyxwvwtsrqpCBCDGFGHKJKLMNQPQRSTWVWXYZqnmlkjkcbcdgfhgfgdcbc TQ BGGR THG LCZY DQG"
+    },
+    {
+      "input": {
+        "message": "The quicQuick brown fox jumps over the  lazy dog the lazy dog"
+      },
+      "output": "tHG QWKCqWKCK BRQWN FQX JWMPS QVGR THG  LCZY DQG THG LCZY DQG"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef encode(message):\n    \"\"\"\n    Write a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> encode('test')\n    'TGST'\n    >>> encode('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n\n\n    def switch_case(ch):\n        if ord(\"A\") <= ord(ch) <= ord(\"Z\"):\n            return chr(ord(ch) + 32)\n        elif ord(\"a\") <= ord(ch) <= ord(\"z\"):\n            return chr(ord(ch) - 32)\n        else:\n            return ch\n    \n    def vowel_change(ch):\n        return ch if ch not in \"aeiouAEIOU\" else chr(ord(ch) + 2)\n    \n    m = \"\".join(map(switch_case, message))\n    return \"\".join(map(vowel_change, m))\n\n"
+  }
+}

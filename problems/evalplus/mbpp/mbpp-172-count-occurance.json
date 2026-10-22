@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-172-count-occurance",
+  "title": "Count Occurance",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to count the number of occurence of the string 'std' in a given string.",
+  "entry_point": "count_occurance",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def count_occurance(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "letstdlenstdporstd"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "truststdsolensporsd"
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "letstdlenstdporstd"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "truststdsolensporsd"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "makestdsostdworthit"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "stds"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "stdstdstdstd"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "stdstdststdstdstdstddstd"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "stdstdsttstdstdstdstddstdtdstdstdstddstdstdstdstdstd"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "s": "stdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstd"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstsstdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstdtdstdstddstddstd"
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstsstdstdstdsttstdstdstdstddstdtdstdtstdstddstdsdtdstdstdstdstdststdstdstdstddstdtdstdstddstddstd"
+      },
+      "output": 42
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstsstdstdsstdsttstdstdstdsstdtstdstddstdsdtdstdstdstdstdststdstdstdstddstdtdstdstddstddstd"
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttsstdstdstdsttstdstdstdstddstdtdstdtstddstddstdstdstdstdstdstdstsstdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstdtdstdstddstddstdtdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdsttdststdstdstdstddstd"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "s": "stdsdtdstdstd"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstdstdstsstdstdsstdsttstdstdstdsstdtstdstddstdsdtdstdstdstdstdststdstdstdstddstdtdstdstddstddstd"
+      },
+      "output": 62
+    },
+    {
+      "input": {
+        "s": "st"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "stdstdstdstststdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "s": "stdstdstdstststdstdsttdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "s": "stdsdttdstd"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "sst"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "stdsdttdstdstd"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "stdstdstdststdstdstdstddstdstdsttstdstdstdstddstdtdstdstdstddstdstdstdstdstd"
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddst"
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "s": "sttdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstd"
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttsstdstdstdsttstdstdstdstddstdtdstdstdstdstdstdtdstdstddstddstdtdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "s": "stdstdststdssstdsdtdstdstdtdstdstdsttstdstdstdsttdststdstdstdstddssttdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdtdtdstdstddstd"
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "s": "stdstdststdstdstdstdddstd"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdststdstdsttstdstdstdstddstdtdstdstdstddstdstdstdstdsstdstdstdstststdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstdtddstdstdstdststdstdstdstddst"
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstdstdsttstdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstdstdstsstdstdsstdsttstdstdstdsstdtstdstdddstdsdtdstdstdstdstdststdstdstdstddstdtdstdstddstddstd"
+      },
+      "output": 62
+    },
+    {
+      "input": {
+        "s": "stdstdstdstststdstdsttdstddstdtdstdtstdstddstdstdstdstdststdstdstdstststdstdsttdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstddstdststdstdstdstddd"
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "s": "stdstdstdststdstdstdstddstdstdssttstdstdstdstddstdtdstdstdstddstdstdstdstdstd"
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstddstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstsstdstdsstdsttstdstdstdsstdtstdstddstdsdtdstdstdstdstdststdstdstdstddstdtdstdsttd"
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "s": "stdstdstdststdstdstdstddstdstdssttstdstdstdstddstdtdstdstdstddstdstdd"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "s": "sststdstdstdsttstddstdstdstddstdtdstdtstdstddstdstdstdstdstdstdstsstdstdsstdsttstdstdstdsstdtstdstddstdsdtdstdstdstdstdststdstdstdstddstdtdstdsttd"
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttsstdstdstdstttstdstdstdstddstdtdstdstdstdstdstdtdstdstddstddstdtdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "s": "stdstdstdstststdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddststdstdstdsttsstdstdstdstttstdstdstdstddstdtdstdstdstdstdstdtdstdstddstddstdtdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstd"
+      },
+      "output": 59
+    },
+    {
+      "input": {
+        "s": "stdsdstdstdstdststdstdstdstddstdstdsttstdstdstdstddstdtdstdstdstddstdstdstdstdstdttdstd"
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "s": "stdstdstdsttstdstdstdstddstdtdstdtstdstddstdststdstdsttstdstdstdstddstdtdstdstdstddstdstdstdstdsstdstdstdsstststdstdstdstddstdtdstdtstdstddstdstdstdstdstdstdststdstdstdstddstdtddstdstdstdststdstdstdstddst"
+      },
+      "output": 55
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def count_occurance(s):\n  return s.count('std')\n"
+  }
+}

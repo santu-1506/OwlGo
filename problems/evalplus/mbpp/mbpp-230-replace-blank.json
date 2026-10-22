@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-230-replace-blank",
+  "title": "Replace Blank",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes in a string and character, replaces blank spaces in the string with the character, and returns the string.",
+  "entry_point": "replace_blank",
+  "params": [
+    "str1",
+    "char"
+  ],
+  "function_signature": {
+    "python": "def replace_blank(str1, char):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "hello people",
+        "char": "@"
+      },
+      "output": "hello@people"
+    },
+    {
+      "input": {
+        "str1": "python program language",
+        "char": "$"
+      },
+      "output": "python$program$language"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "hello people",
+        "char": "@"
+      },
+      "output": "hello@people"
+    },
+    {
+      "input": {
+        "str1": "python program language",
+        "char": "$"
+      },
+      "output": "python$program$language"
+    },
+    {
+      "input": {
+        "str1": "blank space",
+        "char": "-"
+      },
+      "output": "blank-space"
+    },
+    {
+      "input": {
+        "str1": "pythonprogramlanguage",
+        "char": "$"
+      },
+      "output": "pythonprogramlanguage"
+    },
+    {
+      "input": {
+        "str1": "    ",
+        "char": "*"
+      },
+      "output": "****"
+    },
+    {
+      "input": {
+        "str1": "a_A_b",
+        "char": "!"
+      },
+      "output": "a_A_b"
+    },
+    {
+      "input": {
+        "str1": "Testing one, two, three!",
+        "char": " "
+      },
+      "output": "Testing one, two, three!"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTesting one, two, three!ramlanguage",
+        "char": "$"
+      },
+      "output": "pythonprogTesting$one,$two,$three!ramlanguage"
+    },
+    {
+      "input": {
+        "str1": "pythonprogramlanguage",
+        "char": " "
+      },
+      "output": "pythonprogramlanguage"
+    },
+    {
+      "input": {
+        "str1": "pytho!nprogramlanguage",
+        "char": "$"
+      },
+      "output": "pytho!nprogramlanguage"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTesting one, two, three!ramlanguage ",
+        "char": " "
+      },
+      "output": "pythonprogTesting one, two, three!ramlanguage "
+    },
+    {
+      "input": {
+        "str1": "pythonprogTesting one, two, three!ramlanguage",
+        "char": " "
+      },
+      "output": "pythonprogTesting one, two, three!ramlanguage"
+    },
+    {
+      "input": {
+        "str1": "$",
+        "char": "$"
+      },
+      "output": "$"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTest *   a_A_b",
+        "char": " "
+      },
+      "output": "pythonprogTest *   a_A_b"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTpythonprogTesting one, two, three!ramlanguageramlanguage",
+        "char": "!"
+      },
+      "output": "pythonprogTpythonprogTesting!one,!two,!three!ramlanguageramlanguage"
+    },
+    {
+      "input": {
+        "str1": "pythonprogramlanguage ",
+        "char": " "
+      },
+      "output": "pythonprogramlanguage "
+    },
+    {
+      "input": {
+        "str1": "pythonprogTest *   a_A_b ",
+        "char": " "
+      },
+      "output": "pythonprogTest *   a_A_b "
+    },
+    {
+      "input": {
+        "str1": "pytoho!nprogramlanguage",
+        "char": "$"
+      },
+      "output": "pytoho!nprogramlanguage"
+    },
+    {
+      "input": {
+        "str1": "pythonprtwo,oggramlanguage",
+        "char": " "
+      },
+      "output": "pythonprtwo,oggramlanguage"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTst *   a_A_b ",
+        "char": "$"
+      },
+      "output": "pythonprogTst$*$$$a_A_b$"
+    },
+    {
+      "input": {
+        "str1": " ",
+        "char": " "
+      },
+      "output": " "
+    },
+    {
+      "input": {
+        "str1": "!!",
+        "char": "!"
+      },
+      "output": "!!"
+    },
+    {
+      "input": {
+        "str1": "a_A_b",
+        "char": "$"
+      },
+      "output": "a_A_b"
+    },
+    {
+      "input": {
+        "str1": "pythonprtwo,oggramnguage",
+        "char": " "
+      },
+      "output": "pythonprtwo,oggramnguage"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTst *    a_A_b ",
+        "char": "$"
+      },
+      "output": "pythonprogTst$*$$$$a_A_b$"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTst *    a_A_b  ",
+        "char": " "
+      },
+      "output": "pythonprogTst *    a_A_b  "
+    },
+    {
+      "input": {
+        "str1": "     ",
+        "char": "*"
+      },
+      "output": "*****"
+    },
+    {
+      "input": {
+        "str1": "  ",
+        "char": " "
+      },
+      "output": "  "
+    },
+    {
+      "input": {
+        "str1": " pythonprogTest ",
+        "char": " "
+      },
+      "output": " pythonprogTest "
+    },
+    {
+      "input": {
+        "str1": "!",
+        "char": "!"
+      },
+      "output": "!"
+    },
+    {
+      "input": {
+        "str1": "pythonprtwo,oggramngupytho!nprogramlanguageage",
+        "char": " "
+      },
+      "output": "pythonprtwo,oggramngupytho!nprogramlanguageage"
+    },
+    {
+      "input": {
+        "str1": "pypythonprtwo,oggramngupytho!nprogramlanguageagethonprogTest *   a_A_b",
+        "char": " "
+      },
+      "output": "pypythonprtwo,oggramngupytho!nprogramlanguageagethonprogTest *   a_A_b"
+    },
+    {
+      "input": {
+        "str1": "pytho!nprogramlanguagpe",
+        "char": "$"
+      },
+      "output": "pytho!nprogramlanguagpe"
+    },
+    {
+      "input": {
+        "str1": "three!",
+        "char": "$"
+      },
+      "output": "three!"
+    },
+    {
+      "input": {
+        "str1": "ppythonprtwo,oggramlanguagee",
+        "char": " "
+      },
+      "output": "ppythonprtwo,oggramlanguagee"
+    },
+    {
+      "input": {
+        "str1": "p ytho!nprogramlanguage",
+        "char": "*"
+      },
+      "output": "p*ytho!nprogramlanguage"
+    },
+    {
+      "input": {
+        "str1": "Testing one, two, three!",
+        "char": "p"
+      },
+      "output": "Testingpone,ptwo,pthree!"
+    },
+    {
+      "input": {
+        "str1": "pytho!nprogramlanguag  ",
+        "char": "!"
+      },
+      "output": "pytho!nprogramlanguag!!"
+    },
+    {
+      "input": {
+        "str1": "!  !",
+        "char": "!"
+      },
+      "output": "!!!!"
+    },
+    {
+      "input": {
+        "str1": "pythonprogTpythonprogTesting one, two, three!ramlanguageramlanguage",
+        "char": " "
+      },
+      "output": "pythonprogTpythonprogTesting one, two, three!ramlanguageramlanguage"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def replace_blank(str1, char):\n    return str1.replace(' ', char)\n"
+  }
+}

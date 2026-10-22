@@ -1,0 +1,846 @@
+{
+  "id": "mbpp-644-reverse-array-upto-k",
+  "title": "Reverse Array Upto K",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to reverse an array upto a given position.",
+  "entry_point": "reverse_Array_Upto_K",
+  "params": [
+    "input",
+    "k"
+  ],
+  "function_signature": {
+    "python": "def reverse_Array_Upto_K(input, k):"
+  },
+  "examples": [
+    {
+      "input": {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "k": 4
+      },
+      "output": [
+        4,
+        3,
+        2,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "k": 2
+      },
+      "output": [
+        5,
+        4,
+        6,
+        7
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "k": 4
+      },
+      "output": [
+        4,
+        3,
+        2,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "k": 2
+      },
+      "output": [
+        5,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          8,
+          7,
+          6,
+          5
+        ],
+        "k": 3
+      },
+      "output": [
+        7,
+        8,
+        9,
+        6,
+        5
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 4
+      },
+      "output": [
+        1,
+        2,
+        9,
+        6,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "banana",
+          "cherry",
+          "date"
+        ],
+        "k": 3
+      },
+      "output": [
+        "cherry",
+        "banana",
+        "apple",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 5
+      },
+      "output": [
+        5,
+        1,
+        2,
+        9,
+        6,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "date"
+        ],
+        "k": 3
+      },
+      "output": [
+        "date",
+        "cherry",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "banana",
+          "cherry",
+          "date"
+        ],
+        "k": 4
+      },
+      "output": [
+        "date",
+        "cherry",
+        "banana",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "banana",
+          "cherry",
+          "cherry",
+          "date"
+        ],
+        "k": 4
+      },
+      "output": [
+        "cherry",
+        "cherry",
+        "banana",
+        "apple",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          1,
+          5,
+          3,
+          2
+        ],
+        "k": 4
+      },
+      "output": [
+        1,
+        2,
+        9,
+        6,
+        5,
+        3,
+        2
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 4
+      },
+      "output": [
+        5,
+        1,
+        2,
+        9,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          5,
+          3
+        ],
+        "k": 5
+      },
+      "output": [
+        3,
+        5,
+        2,
+        9,
+        6
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          9,
+          1,
+          5,
+          3
+        ],
+        "k": 4
+      },
+      "output": [
+        1,
+        9,
+        2,
+        9,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "banana",
+          "cherry",
+          "date"
+        ],
+        "k": 1
+      },
+      "output": [
+        "apple",
+        "banana",
+        "cherry",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          9,
+          1,
+          5,
+          3
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        9,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "deate"
+        ],
+        "k": 3
+      },
+      "output": [
+        "deate",
+        "cherry",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 3
+      },
+      "output": [
+        2,
+        9,
+        6,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherrry",
+          "banana",
+          "cherry",
+          "date"
+        ],
+        "k": 4
+      },
+      "output": [
+        "cherry",
+        "banana",
+        "cherrry",
+        "apple",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 2
+      },
+      "output": [
+        9,
+        6,
+        2,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          5,
+          1,
+          5,
+          3,
+          2
+        ],
+        "k": 4
+      },
+      "output": [
+        5,
+        2,
+        9,
+        6,
+        1,
+        5,
+        3,
+        2
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          9,
+          1,
+          5,
+          3,
+          9
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        9,
+        1,
+        5,
+        3,
+        9
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 1
+      },
+      "output": [
+        6,
+        9,
+        2,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "deate"
+        ],
+        "k": 2
+      },
+      "output": [
+        "cherry",
+        "apple",
+        "deate"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "date"
+        ],
+        "k": 1
+      },
+      "output": [
+        "apple",
+        "cherry",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "applpe",
+          "apple",
+          "cherrry",
+          "banana",
+          "cherry",
+          "date",
+          "applpe"
+        ],
+        "k": 4
+      },
+      "output": [
+        "banana",
+        "cherrry",
+        "apple",
+        "applpe",
+        "cherry",
+        "date",
+        "applpe"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "cherry"
+        ],
+        "k": 3
+      },
+      "output": [
+        "cherry",
+        "cherry",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "cherry",
+          "cherry"
+        ],
+        "k": 3
+      },
+      "output": [
+        "cherry",
+        "cherry",
+        "apple",
+        "cherry"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherrry",
+          "banana",
+          "date"
+        ],
+        "k": 4
+      },
+      "output": [
+        "date",
+        "banana",
+        "cherrry",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          9,
+          1,
+          5,
+          3,
+          9,
+          5
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        9,
+        1,
+        5,
+        3,
+        9,
+        5
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          9,
+          1,
+          1,
+          3,
+          9,
+          5
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        9,
+        1,
+        1,
+        3,
+        9,
+        5
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "cherry",
+          "date"
+        ],
+        "k": 1
+      },
+      "output": [
+        "apple",
+        "cherry",
+        "cherry",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "cherry",
+          "cherry",
+          "cherry"
+        ],
+        "k": 4
+      },
+      "output": [
+        "cherry",
+        "cherry",
+        "cherry",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          10,
+          3,
+          9,
+          1,
+          5,
+          3,
+          9
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        10,
+        3,
+        9,
+        1,
+        5,
+        3,
+        9
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "cherry",
+          "cherry",
+          "cherry"
+        ],
+        "k": 3
+      },
+      "output": [
+        "cherry",
+        "cherry",
+        "cherry"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          2,
+          1,
+          5,
+          3
+        ],
+        "k": 4
+      },
+      "output": [
+        5,
+        1,
+        2,
+        6,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          "apple",
+          "banana",
+          "cherrry",
+          "cherry",
+          "date"
+        ],
+        "k": 4
+      },
+      "output": [
+        "cherry",
+        "cherrry",
+        "banana",
+        "apple",
+        "date"
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          6,
+          9,
+          2,
+          5,
+          3
+        ],
+        "k": 2
+      },
+      "output": [
+        9,
+        6,
+        2,
+        5,
+        3
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          9,
+          1,
+          1,
+          3,
+          9
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        9,
+        1,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "input": {
+        "input": [
+          9,
+          2,
+          1,
+          5,
+          3,
+          2
+        ],
+        "k": 1
+      },
+      "output": [
+        9,
+        2,
+        1,
+        5,
+        3,
+        2
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def reverse_Array_Upto_K(input, k): \n  return input[k-1::-1] + input[k:]\n"
+  }
+}

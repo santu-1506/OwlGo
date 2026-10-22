@@ -1,0 +1,489 @@
+{
+  "id": "humaneval-155-even-odd-count",
+  "title": "Even Odd Count",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given an integer. return a tuple that has the number of even and odd digits respectively.\n\nExample:\n   even_odd_count(-12) ==> (1, 1)\n   even_odd_count(123) ==> (1, 2)",
+  "entry_point": "even_odd_count",
+  "params": [
+    "num"
+  ],
+  "function_signature": {
+    "python": "def even_odd_count(num):"
+  },
+  "examples": [
+    {
+      "input": {
+        "num": 7
+      },
+      "output": {
+        "$tuple": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -78
+      },
+      "output": {
+        "$tuple": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "num": 7
+      },
+      "output": {
+        "$tuple": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -78
+      },
+      "output": {
+        "$tuple": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 3452
+      },
+      "output": {
+        "$tuple": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 346211
+      },
+      "output": {
+        "$tuple": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -345821
+      },
+      "output": {
+        "$tuple": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -2
+      },
+      "output": {
+        "$tuple": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -45347
+      },
+      "output": {
+        "$tuple": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 0
+      },
+      "output": {
+        "$tuple": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 2368
+      },
+      "output": {
+        "$tuple": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -111
+      },
+      "output": {
+        "$tuple": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -2468031
+      },
+      "output": {
+        "$tuple": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 1010101
+      },
+      "output": {
+        "$tuple": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -123456789
+      },
+      "output": {
+        "$tuple": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -590
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 125890
+      },
+      "output": {
+        "$tuple": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 444444444
+      },
+      "output": {
+        "$tuple": [
+          9,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -1111111
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -222222222
+      },
+      "output": {
+        "$tuple": [
+          9,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -591
+      },
+      "output": {
+        "$tuple": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 444444443
+      },
+      "output": {
+        "$tuple": [
+          8,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 444444445
+      },
+      "output": {
+        "$tuple": [
+          8,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -222222221
+      },
+      "output": {
+        "$tuple": [
+          8,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -1111110
+      },
+      "output": {
+        "$tuple": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -592
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -222222224
+      },
+      "output": {
+        "$tuple": [
+          9,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -222222223
+      },
+      "output": {
+        "$tuple": [
+          8,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -7
+      },
+      "output": {
+        "$tuple": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 2369
+      },
+      "output": {
+        "$tuple": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -2468032
+      },
+      "output": {
+        "$tuple": [
+          6,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -112
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 125889
+      },
+      "output": {
+        "$tuple": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -589
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -588
+      },
+      "output": {
+        "$tuple": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -123456790
+      },
+      "output": {
+        "$tuple": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -593
+      },
+      "output": {
+        "$tuple": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -2468033
+      },
+      "output": {
+        "$tuple": [
+          5,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -222222225
+      },
+      "output": {
+        "$tuple": [
+          8,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -222222226
+      },
+      "output": {
+        "$tuple": [
+          9,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": 2367
+      },
+      "output": {
+        "$tuple": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "num": -110
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef even_odd_count(num):\n    \"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\n     Example:\n        even_odd_count(-12) ==> (1, 1)\n        even_odd_count(123) ==> (1, 2)\n    \"\"\"\n\n    even, odd = 0, 0\n    for ch in str(num):\n        if ch in \"02468\": even += 1\n        if ch in \"13579\": odd += 1\n    return even, odd\n\n"
+  }
+}

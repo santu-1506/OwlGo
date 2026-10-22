@@ -1,0 +1,365 @@
+{
+  "id": "humaneval-150-x-or-y",
+  "title": "X Or Y",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "A simple program which should return the value of x if n is \na prime number and should return the value of y otherwise.\n\nExamples:\nfor x_or_y(7, 34, 12) == 34\nfor x_or_y(15, 8, 5) == 5",
+  "entry_point": "x_or_y",
+  "params": [
+    "n",
+    "x",
+    "y"
+  ],
+  "function_signature": {
+    "python": "def x_or_y(n, x, y):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 7,
+        "x": 34,
+        "y": 12
+      },
+      "output": 34
+    },
+    {
+      "input": {
+        "n": 15,
+        "x": 8,
+        "y": 5
+      },
+      "output": 5
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 7,
+        "x": 34,
+        "y": 12
+      },
+      "output": 34
+    },
+    {
+      "input": {
+        "n": 15,
+        "x": 8,
+        "y": 5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 3,
+        "x": 33,
+        "y": 5212
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "n": 1259,
+        "x": 3,
+        "y": 52
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 7919,
+        "x": -1,
+        "y": 12
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "n": 3609,
+        "x": 1245,
+        "y": 583
+      },
+      "output": 583
+    },
+    {
+      "input": {
+        "n": 91,
+        "x": 56,
+        "y": 129
+      },
+      "output": 129
+    },
+    {
+      "input": {
+        "n": 6,
+        "x": 34,
+        "y": 1234
+      },
+      "output": 1234
+    },
+    {
+      "input": {
+        "n": 1,
+        "x": 2,
+        "y": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2,
+        "x": 2,
+        "y": 0
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": -2,
+        "x": 0,
+        "y": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 0,
+        "x": 500,
+        "y": 1000
+      },
+      "output": 1000
+    },
+    {
+      "input": {
+        "n": 11,
+        "x": 1,
+        "y": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 25,
+        "x": -25,
+        "y": 25
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "n": 37,
+        "x": 123,
+        "y": 456
+      },
+      "output": 123
+    },
+    {
+      "input": {
+        "n": 113,
+        "x": 100,
+        "y": 200
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "n": 17,
+        "x": 5,
+        "y": 9
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 31,
+        "x": -5,
+        "y": 22
+      },
+      "output": -5
+    },
+    {
+      "input": {
+        "n": 49,
+        "x": 0,
+        "y": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 61,
+        "x": 20,
+        "y": 40
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n": 100,
+        "x": 99,
+        "y": 200
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "n": 62,
+        "x": 40,
+        "y": 20
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n": 199,
+        "x": 99,
+        "y": 200
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "n": 5,
+        "x": 100,
+        "y": 5
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "n": 500,
+        "x": 500,
+        "y": 500
+      },
+      "output": 500
+    },
+    {
+      "input": {
+        "n": 62,
+        "x": 40,
+        "y": 62
+      },
+      "output": 62
+    },
+    {
+      "input": {
+        "n": 25,
+        "x": -26,
+        "y": 25
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "n": 123,
+        "x": 499,
+        "y": 500
+      },
+      "output": 500
+    },
+    {
+      "input": {
+        "n": 17,
+        "x": 9,
+        "y": 17
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 6,
+        "x": 123,
+        "y": 100
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "n": 37,
+        "x": 122,
+        "y": 455
+      },
+      "output": 122
+    },
+    {
+      "input": {
+        "n": 37,
+        "x": 123,
+        "y": 25
+      },
+      "output": 123
+    },
+    {
+      "input": {
+        "n": 49,
+        "x": 3,
+        "y": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 11,
+        "x": 100,
+        "y": 201
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "n": 6,
+        "x": 100,
+        "y": 100
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "n": 99,
+        "x": 99,
+        "y": 200
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "n": 41,
+        "x": 20,
+        "y": 20
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "n": 36,
+        "x": 456,
+        "y": 37
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "n": 500,
+        "x": 501,
+        "y": 500
+      },
+      "output": 500
+    },
+    {
+      "input": {
+        "n": 100,
+        "x": 456,
+        "y": 99
+      },
+      "output": 99
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n\n    def is_prime(a):\n        return not (a < 2 or any(a % x == 0 for x in range(2, int(a ** 0.5) + 1)))\n    return x if is_prime(n) else y\n\n"
+  }
+}

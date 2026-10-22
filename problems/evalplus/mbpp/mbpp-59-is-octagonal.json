@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-59-is-octagonal",
+  "title": "Is Octagonal",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the nth octagonal number.",
+  "entry_point": "is_octagonal",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_octagonal(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 280
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 280
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 645
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 29800
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 29205
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 28616
+    },
+    {
+      "input": {
+        "n": 96
+      },
+      "output": 27456
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 30401
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 28033
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 31008
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 1408
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 1541
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 31621
+    },
+    {
+      "input": {
+        "n": 104
+      },
+      "output": 32240
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 1281
+    },
+    {
+      "input": {
+        "n": 95
+      },
+      "output": 26885
+    },
+    {
+      "input": {
+        "n": 105
+      },
+      "output": 32865
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 1160
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 133
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 225
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 176
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 96
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "n": 106
+      },
+      "output": 33496
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 1680
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 1045
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 341
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 26320
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": 1825
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": 1976
+    },
+    {
+      "input": {
+        "n": 93
+      },
+      "output": 25761
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 408
+    },
+    {
+      "input": {
+        "n": 108
+      },
+      "output": 34776
+    },
+    {
+      "input": {
+        "n": 92
+      },
+      "output": 25208
+    },
+    {
+      "input": {
+        "n": 42
+      },
+      "output": 5208
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": 4961
+    },
+    {
+      "input": {
+        "n": 43
+      },
+      "output": 5461
+    },
+    {
+      "input": {
+        "n": 107
+      },
+      "output": 34133
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_octagonal(n): \n\treturn 3 * n * n - 2 * n\n"
+  }
+}

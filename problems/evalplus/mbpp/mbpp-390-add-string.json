@@ -1,0 +1,886 @@
+{
+  "id": "mbpp-390-add-string",
+  "title": "Add String",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to apply a given format string to all of the elements in a list.",
+  "entry_point": "add_string",
+  "params": [
+    "list_",
+    "string"
+  ],
+  "function_signature": {
+    "python": "def add_string(list_, string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "list_": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "string": "temp{0}"
+      },
+      "output": [
+        "temp1",
+        "temp2",
+        "temp3",
+        "temp4"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "string": "python{0}"
+      },
+      "output": [
+        "pythona",
+        "pythonb",
+        "pythonc",
+        "pythond"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "list_": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "string": "temp{0}"
+      },
+      "output": [
+        "temp1",
+        "temp2",
+        "temp3",
+        "temp4"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "string": "python{0}"
+      },
+      "output": [
+        "pythona",
+        "pythonb",
+        "pythonc",
+        "pythond"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "string": "string{0}"
+      },
+      "output": [
+        "string5",
+        "string6",
+        "string7",
+        "string8"
+      ]
+    },
+    {
+      "input": {
+        "list_": [],
+        "string": "format{0}"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list_": [
+          1,
+          "two",
+          3,
+          "four"
+        ],
+        "string": "item_{0}"
+      },
+      "output": [
+        "item_1",
+        "item_two",
+        "item_3",
+        "item_four"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          9
+        ],
+        "string": "element{0}"
+      },
+      "output": [
+        "element9"
+      ]
+    },
+    {
+      "input": {
+        "list_": [],
+        "string": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list_": [
+          "apple",
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_apple",
+        "fruit_2",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_2",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruitorange_{0}"
+      },
+      "output": [
+        "fruitorange_[3, 'orange', [4, 'banana'], 5]",
+        "fruitorange_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          3
+        ],
+        "string": "format{0}"
+      },
+      "output": [
+        "format3",
+        "format1",
+        "format3"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          [
+            3,
+            [
+              4,
+              "element{0}"
+            ],
+            "orange",
+            [
+              4,
+              "element{0}"
+            ],
+            5
+          ],
+          [
+            3,
+            [
+              4,
+              "element{0}"
+            ],
+            "orange",
+            [
+              4,
+              "element{0}"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruitorange_{0}"
+      },
+      "output": [
+        "fruitorange_[3, [4, 'element{0}'], 'orange', [4, 'element{0}'], 5]",
+        "fruitorange_[3, [4, 'element{0}'], 'orange', [4, 'element{0}'], 5]",
+        "fruitorange_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruitorange_{0}"
+      },
+      "output": [
+        "fruitorange_2",
+        "fruitorange_[3, 'orange', [4, 'banana'], 5]",
+        "fruitorange_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          3,
+          1
+        ],
+        "string": "format{0}"
+      },
+      "output": [
+        "format3",
+        "format1",
+        "format3",
+        "format1"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          "mafourngo",
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_mafourngo",
+        "fruit_2",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruittorange_{0}"
+      },
+      "output": [
+        "fruittorange_[3, 'orange', [4, 'banana'], 5]",
+        "fruittorange_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          2,
+          3,
+          1
+        ],
+        "string": "format{0}"
+      },
+      "output": [
+        "format3",
+        "format1",
+        "format2",
+        "format3",
+        "format1"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          "mafourngo",
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruittorange_{0}"
+      },
+      "output": [
+        "fruittorange_mafourngo",
+        "fruittorange_2",
+        "fruittorange_[3, 'orange', [4, 'banana'], 5]",
+        "fruittorange_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          2,
+          1,
+          3,
+          1
+        ],
+        "string": "format{0}"
+      },
+      "output": [
+        "format3",
+        "format1",
+        "format2",
+        "format1",
+        "format3",
+        "format1"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          [
+            3,
+            [
+              4,
+              "element{0}"
+            ],
+            "orange",
+            [
+              4,
+              "element{0}"
+            ],
+            5
+          ],
+          [
+            3,
+            [
+              4,
+              "element{0}"
+            ],
+            "orange",
+            [
+              4,
+              "element{0}"
+            ],
+            5
+          ],
+          "mango",
+          [
+            3,
+            [
+              4,
+              "element{0}"
+            ],
+            "orange",
+            [
+              4,
+              "element{0}"
+            ],
+            5
+          ]
+        ],
+        "string": "format{0}"
+      },
+      "output": [
+        "format[3, [4, 'element{0}'], 'orange', [4, 'element{0}'], 5]",
+        "format[3, [4, 'element{0}'], 'orange', [4, 'element{0}'], 5]",
+        "formatmango",
+        "format[3, [4, 'element{0}'], 'orange', [4, 'element{0}'], 5]"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          "mo",
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": ""
+      },
+      "output": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          "manfruitorange_{0}o",
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_2",
+        "fruit_manfruitorange_{0}o",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          "mo",
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "two"
+      },
+      "output": [
+        "two",
+        "two",
+        "two",
+        "two"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          3
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_3",
+        "fruit_1",
+        "fruit_3"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          "fruitorange_{0}",
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "orange"
+      },
+      "output": [
+        "orange",
+        "orange",
+        "orange",
+        "orange"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          3
+        ],
+        "string": "fruit_element{0}{0}"
+      },
+      "output": [
+        "fruit_element33",
+        "fruit_element11",
+        "fruit_element33"
+      ]
+    },
+    {
+      "input": {
+        "list_": [],
+        "string": "element{0}"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "list_": [
+          9
+        ],
+        "string": "elformat{0}ement{0}"
+      },
+      "output": [
+        "elformat9ement9"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          2,
+          3,
+          1
+        ],
+        "string": "item_{0}"
+      },
+      "output": [
+        "item_3",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_1"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          2,
+          3,
+          1
+        ],
+        "string": "fformat{0}"
+      },
+      "output": [
+        "fformat3",
+        "fformat1",
+        "fformat2",
+        "fformat3",
+        "fformat1"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1
+        ],
+        "string": "fruit_element{0}{0}"
+      },
+      "output": [
+        "fruit_element33",
+        "fruit_element11"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          "mafourngo",
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "manelement{0}go"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_mafourngo",
+        "fruit_2",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_manelement{0}go"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          "fruitorange_{0}",
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "orangge"
+      },
+      "output": [
+        "orangge",
+        "orangge",
+        "orangge",
+        "orangge"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          "mafourngo",
+          "magngo",
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_mafourngo",
+        "fruit_magngo",
+        "fruit_2",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mafourngo"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_2",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mafourngo"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          3
+        ],
+        "string": "formappleat{0}"
+      },
+      "output": [
+        "formappleat3",
+        "formappleat1",
+        "formappleat3"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          3,
+          1,
+          2,
+          3,
+          1
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_3",
+        "fruit_1",
+        "fruit_2",
+        "fruit_3",
+        "fruit_1"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango",
+          "mango"
+        ],
+        "string": "fruitorange_{0}"
+      },
+      "output": [
+        "fruitorange_[3, 'orange', [4, 'banana'], 5]",
+        "fruitorange_mango",
+        "fruitorange_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          1,
+          "manfruitorange_{0}o",
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruit_{0}"
+      },
+      "output": [
+        "fruit_1",
+        "fruit_manfruitorange_{0}o",
+        "fruit_[3, 'orange', [4, 'banana'], 5]",
+        "fruit_mango"
+      ]
+    },
+    {
+      "input": {
+        "list_": [
+          2,
+          [
+            3,
+            "orange",
+            [
+              4,
+              "banana"
+            ],
+            5
+          ],
+          "mango"
+        ],
+        "string": "fruitornge_{0}"
+      },
+      "output": [
+        "fruitornge_2",
+        "fruitornge_[3, 'orange', [4, 'banana'], 5]",
+        "fruitornge_mango"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def add_string(list_, string):\n    return [string.format(i) for i in  list_]\n"
+  }
+}

@@ -1,0 +1,1300 @@
+{
+  "id": "mbpp-87-merge-dictionaries-three",
+  "title": "Merge Dictionaries Three",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to merge three dictionaries into a single dictionary.",
+  "entry_point": "merge_dictionaries_three",
+  "params": [
+    "dict1",
+    "dict2",
+    "dict3"
+  ],
+  "function_signature": {
+    "python": "def merge_dictionaries_three(dict1, dict2, dict3):"
+  },
+  "examples": [
+    {
+      "input": {
+        "dict1": {
+          "R": "Red",
+          "P": "Pink"
+        },
+        "dict2": {
+          "G": "Green"
+        },
+        "dict3": {
+          "O": "Orange",
+          "W": "White",
+          "B": "Black"
+        }
+      },
+      "output": {
+        "O": "Orange",
+        "W": "White",
+        "B": "Black",
+        "G": "Green",
+        "R": "Red",
+        "P": "Pink"
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": "Red",
+          "P": "Pink"
+        },
+        "dict2": {
+          "G": "Green",
+          "W": "White"
+        },
+        "dict3": {
+          "L": "lavender",
+          "B": "Blue"
+        }
+      },
+      "output": {
+        "L": "lavender",
+        "B": "Blue",
+        "G": "Green",
+        "W": "White",
+        "R": "Red",
+        "P": "Pink"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "dict1": {
+          "R": "Red",
+          "P": "Pink"
+        },
+        "dict2": {
+          "G": "Green"
+        },
+        "dict3": {
+          "O": "Orange",
+          "W": "White",
+          "B": "Black"
+        }
+      },
+      "output": {
+        "O": "Orange",
+        "W": "White",
+        "B": "Black",
+        "G": "Green",
+        "R": "Red",
+        "P": "Pink"
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": "Red",
+          "P": "Pink"
+        },
+        "dict2": {
+          "G": "Green",
+          "W": "White"
+        },
+        "dict3": {
+          "L": "lavender",
+          "B": "Blue"
+        }
+      },
+      "output": {
+        "L": "lavender",
+        "B": "Blue",
+        "G": "Green",
+        "W": "White",
+        "R": "Red",
+        "P": "Pink"
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": "Red",
+          "P": "Pink"
+        },
+        "dict2": {
+          "L": "lavender",
+          "B": "Blue"
+        },
+        "dict3": {
+          "G": "Green",
+          "W": "White"
+        }
+      },
+      "output": {
+        "G": "Green",
+        "W": "White",
+        "L": "lavender",
+        "B": "Blue",
+        "R": "Red",
+        "P": "Pink"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {},
+        "dict3": {}
+      },
+      "output": {}
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "A": "Apple"
+        },
+        "dict3": {}
+      },
+      "output": {
+        "A": "Apple"
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "A": "Apple"
+        },
+        "dict2": {},
+        "dict3": {}
+      },
+      "output": {
+        "A": "Apple"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {},
+        "dict3": {
+          "A": "Apple"
+        }
+      },
+      "output": {
+        "A": "Apple"
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "A": {
+            "B": {
+              "C": {
+                "D": "Apple"
+              }
+            }
+          }
+        },
+        "dict2": {},
+        "dict3": {}
+      },
+      "output": {
+        "A": {
+          "B": {
+            "C": {
+              "D": "Apple"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": {
+            "B": {
+              "P": {
+                "M": "Red"
+              }
+            }
+          }
+        },
+        "dict2": {
+          "L": {
+            "B": "Blue"
+          }
+        },
+        "dict3": {
+          "G": {
+            "W": "Green"
+          }
+        }
+      },
+      "output": {
+        "G": {
+          "W": "Green"
+        },
+        "L": {
+          "B": "Blue"
+        },
+        "R": {
+          "B": {
+            "P": {
+              "M": "Red"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "A": {
+            "X": {
+              "Y": {
+                "Z": "Apple"
+              }
+            }
+          }
+        },
+        "dict3": {}
+      },
+      "output": {
+        "A": {
+          "X": {
+            "Y": {
+              "Z": "Apple"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": {
+            "B": {
+              "P": {
+                "M": "Red"
+              }
+            }
+          }
+        },
+        "dict2": {
+          "G": {
+            "W": "White"
+          }
+        },
+        "dict3": {
+          "L": {
+            "B": "Blue"
+          }
+        }
+      },
+      "output": {
+        "L": {
+          "B": "Blue"
+        },
+        "G": {
+          "W": "White"
+        },
+        "R": {
+          "B": {
+            "P": {
+              "M": "Red"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-20.518312632449252": -16,
+          "-0.31776260008138024": 65
+        },
+        "dict2": {},
+        "dict3": {}
+      },
+      "output": {
+        "-20.518312632449252": -16,
+        "-0.31776260008138024": 65
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "A": {
+            "B": {
+              "C": {
+                "D": "Apple"
+              }
+            }
+          }
+        },
+        "dict2": {
+          "B": "yS",
+          "bXTSGefP": "zqKImWxAN"
+        },
+        "dict3": {}
+      },
+      "output": {
+        "B": "yS",
+        "bXTSGefP": "zqKImWxAN",
+        "A": {
+          "B": {
+            "C": {
+              "D": "Apple"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "-59": -20.518312632449252,
+          "65": -16
+        },
+        "dict3": {}
+      },
+      "output": {
+        "-59": -20.518312632449252,
+        "65": -16
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "A": "C",
+          "W": "Appple"
+        },
+        "dict3": {}
+      },
+      "output": {
+        "A": "C",
+        "W": "Appple"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "-59": -20.518312632449252,
+          "65": -16
+        },
+        "dict3": {
+          "-73.06068215185819": 37,
+          "-20.518312632449252": -49,
+          "-50.80098800326578": -49
+        }
+      },
+      "output": {
+        "-73.06068215185819": 37,
+        "-20.518312632449252": -49,
+        "-50.80098800326578": -49,
+        "-59": -20.518312632449252,
+        "65": -16
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-24.325512454128287": "ngwPYYUsW",
+          "-0.31776260008138024": "R",
+          "64.10081127712078": ""
+        },
+        "dict2": {},
+        "dict3": {}
+      },
+      "output": {
+        "-24.325512454128287": "ngwPYYUsW",
+        "-0.31776260008138024": "R",
+        "64.10081127712078": ""
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-24.325512454128287": "ngwPYYUsW",
+          "-0.31776260008138024": "R",
+          "64.10081127712078": ""
+        },
+        "dict2": {},
+        "dict3": {
+          "-34": true,
+          "-86": -73.06068215185819,
+          "74": {
+            "37": false,
+            "-95": false,
+            "58": true,
+            "65": true,
+            "-85": true,
+            "98": false,
+            "51": true
+          },
+          "-61": null,
+          "-49": "CjqqZMMy",
+          "-47": -16,
+          "65": "D",
+          "-59": true
+        }
+      },
+      "output": {
+        "-34": true,
+        "-86": -73.06068215185819,
+        "74": {
+          "37": false,
+          "-95": false,
+          "58": true,
+          "65": true,
+          "-85": true,
+          "98": false,
+          "51": true
+        },
+        "-61": null,
+        "-49": "CjqqZMMy",
+        "-47": -16,
+        "65": "D",
+        "-59": true,
+        "-24.325512454128287": "ngwPYYUsW",
+        "-0.31776260008138024": "R",
+        "64.10081127712078": ""
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "W": "bXTSGefP"
+        },
+        "dict3": {}
+      },
+      "output": {
+        "W": "bXTSGefP"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "A": {},
+          "MA": {},
+          "AMA": {
+            "HzgYlcGpOG": "White",
+            "ZfhiHxlH": "Y",
+            "lCjSZS": "C",
+            "x": "ngwPYYUsW",
+            "Green": "",
+            "A": "ngwPYYPUsW"
+          },
+          "MAA": {
+            "HzgYlcGpOG": "White",
+            "ZfhiHxlH": "Y",
+            "lCjSZS": "C",
+            "x": "ngwPYYUsW",
+            "Green": "",
+            "A": "ngwPYYPUsW"
+          }
+        },
+        "dict3": {}
+      },
+      "output": {
+        "A": {},
+        "MA": {},
+        "AMA": {
+          "HzgYlcGpOG": "White",
+          "ZfhiHxlH": "Y",
+          "lCjSZS": "C",
+          "x": "ngwPYYUsW",
+          "Green": "",
+          "A": "ngwPYYPUsW"
+        },
+        "MAA": {
+          "HzgYlcGpOG": "White",
+          "ZfhiHxlH": "Y",
+          "lCjSZS": "C",
+          "x": "ngwPYYUsW",
+          "Green": "",
+          "A": "ngwPYYPUsW"
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "-59": -20.518312632449252
+        },
+        "dict3": {}
+      },
+      "output": {
+        "-59": -20.518312632449252
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": {
+            "B": {
+              "P": {
+                "M": "Red",
+                "DM": "R"
+              }
+            },
+            "": {
+              "P": {
+                "M": "Red",
+                "DM": "R"
+              }
+            }
+          }
+        },
+        "dict2": {},
+        "dict3": {
+          "G": {
+            "W": "White",
+            "WW": "WHzgYlcGpOGhite"
+          },
+          "GG": {
+            "W": "White",
+            "WW": "WHzgYlcGpOGhite"
+          }
+        }
+      },
+      "output": {
+        "G": {
+          "W": "White",
+          "WW": "WHzgYlcGpOGhite"
+        },
+        "GG": {
+          "W": "White",
+          "WW": "WHzgYlcGpOGhite"
+        },
+        "R": {
+          "B": {
+            "P": {
+              "M": "Red",
+              "DM": "R"
+            }
+          },
+          "": {
+            "P": {
+              "M": "Red",
+              "DM": "R"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {},
+        "dict3": {
+          "-17": false,
+          "98": true,
+          "-49": false,
+          "35": true
+        }
+      },
+      "output": {
+        "-17": false,
+        "98": true,
+        "-49": false,
+        "35": true
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "A": {
+            "B": {
+              "C": {
+                "D": "Appe"
+              }
+            },
+            "Red": {
+              "C": {
+                "D": "Appe"
+              }
+            }
+          }
+        },
+        "dict2": {
+          "B": "yS",
+          "bXTSGefP": "zqKImWxAN"
+        },
+        "dict3": {}
+      },
+      "output": {
+        "B": "yS",
+        "bXTSGefP": "zqKImWxAN",
+        "A": {
+          "B": {
+            "C": {
+              "D": "Appe"
+            }
+          },
+          "Red": {
+            "C": {
+              "D": "Appe"
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "false": "IANrUc",
+          "-55": "",
+          "-16": "BdGTYTf",
+          "-47": "b",
+          "87": "HTv",
+          "81": "Green",
+          "-59": "yS",
+          "65": "AYC"
+        },
+        "dict3": {
+          "A": {
+            "B": {
+              "C": {
+                "D": "Appe",
+                "Appe": "lCjSZS"
+              }
+            },
+            "Red": {
+              "C": {
+                "D": "Appe",
+                "Appe": "lCjSZS"
+              }
+            },
+            "BlueB": {
+              "C": {
+                "D": "Appe",
+                "Appe": "lCjSZS"
+              }
+            }
+          },
+          "P": {
+            "B": {
+              "C": {
+                "D": "Appe",
+                "Appe": "lCjSZS"
+              }
+            },
+            "Red": {
+              "C": {
+                "D": "Appe",
+                "Appe": "lCjSZS"
+              }
+            },
+            "BlueB": {
+              "C": {
+                "D": "Appe",
+                "Appe": "lCjSZS"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "A": {
+          "B": {
+            "C": {
+              "D": "Appe",
+              "Appe": "lCjSZS"
+            }
+          },
+          "Red": {
+            "C": {
+              "D": "Appe",
+              "Appe": "lCjSZS"
+            }
+          },
+          "BlueB": {
+            "C": {
+              "D": "Appe",
+              "Appe": "lCjSZS"
+            }
+          }
+        },
+        "P": {
+          "B": {
+            "C": {
+              "D": "Appe",
+              "Appe": "lCjSZS"
+            }
+          },
+          "Red": {
+            "C": {
+              "D": "Appe",
+              "Appe": "lCjSZS"
+            }
+          },
+          "BlueB": {
+            "C": {
+              "D": "Appe",
+              "Appe": "lCjSZS"
+            }
+          }
+        },
+        "false": "IANrUc",
+        "-55": "",
+        "-16": "BdGTYTf",
+        "-47": "b",
+        "87": "HTv",
+        "81": "Green",
+        "-59": "yS",
+        "65": "AYC"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {},
+        "dict3": {
+          "-73.06068215185819": 37,
+          "-20.518312632449252": -49,
+          "-50.80098800326578": -49
+        }
+      },
+      "output": {
+        "-73.06068215185819": 37,
+        "-20.518312632449252": -49,
+        "-50.80098800326578": -49
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "-24.325512454128287": "ngwPYYUsW",
+          "-0.31776260008138024": "R",
+          "64.10081127712078": "",
+          "-20.518312632449252": "ngwPYYPUsW"
+        },
+        "dict2": {},
+        "dict3": {
+          "-34": true,
+          "-86": -73.06068215185819,
+          "74": {
+            "37": false,
+            "-95": false,
+            "58": true,
+            "65": true,
+            "-85": true,
+            "98": false,
+            "51": true
+          },
+          "-61": null,
+          "-49": "CjqqZMMy",
+          "-47": -16,
+          "65": "D",
+          "-59": true,
+          "58": -16
+        }
+      },
+      "output": {
+        "-34": true,
+        "-86": -73.06068215185819,
+        "74": {
+          "37": false,
+          "-95": false,
+          "58": true,
+          "65": true,
+          "-85": true,
+          "98": false,
+          "51": true
+        },
+        "-61": null,
+        "-49": "CjqqZMMy",
+        "-47": -16,
+        "65": "D",
+        "-59": true,
+        "58": -16,
+        "-24.325512454128287": "ngwPYYUsW",
+        "-0.31776260008138024": "R",
+        "64.10081127712078": "",
+        "-20.518312632449252": "ngwPYYPUsW"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {},
+        "dict3": {
+          "-20.518312632449252": -16,
+          "-0.31776260008138024": 65
+        }
+      },
+      "output": {
+        "-20.518312632449252": -16,
+        "-0.31776260008138024": 65
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "-59": -50.80098800326578
+        },
+        "dict3": {
+          "-56": -95,
+          "27": true
+        }
+      },
+      "output": {
+        "-56": -95,
+        "27": true,
+        "-59": -50.80098800326578
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "R": {},
+          "RR": {}
+        },
+        "dict3": {
+          "G": {
+            "W": "White"
+          }
+        }
+      },
+      "output": {
+        "G": {
+          "W": "White"
+        },
+        "R": {},
+        "RR": {}
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "ayuEVhTX": "C",
+          "apglGpJ": "klLihKVK",
+          "P": "Awnq",
+          "OvdlVN": "P",
+          "ngwPYYUsW": "Y",
+          "W": "Luto"
+        },
+        "dict2": {},
+        "dict3": {
+          "-17": false,
+          "98": false,
+          "-49": false,
+          "35": false
+        }
+      },
+      "output": {
+        "-17": false,
+        "98": false,
+        "-49": false,
+        "35": false,
+        "ayuEVhTX": "C",
+        "apglGpJ": "klLihKVK",
+        "P": "Awnq",
+        "OvdlVN": "P",
+        "ngwPYYUsW": "Y",
+        "W": "Luto"
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {},
+        "dict3": {
+          "-17": false,
+          "-49": true,
+          "35": false
+        }
+      },
+      "output": {
+        "-17": false,
+        "-49": true,
+        "35": false
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "-50.80098800326578": -37.99257891277086,
+          "-24.325512454128287": 70.78935461953051,
+          "-0.31776260008138024": -50.80098800326578,
+          "-50.392470117934096": -20.518312632449252
+        },
+        "dict3": {}
+      },
+      "output": {
+        "-50.80098800326578": -37.99257891277086,
+        "-24.325512454128287": 70.78935461953051,
+        "-0.31776260008138024": -50.80098800326578,
+        "-50.392470117934096": -20.518312632449252
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "35": -59
+        },
+        "dict2": {
+          "R": {
+            "B": {
+              "P": {
+                "M": "Red",
+                "lCjSZS": "RRed"
+              }
+            }
+          },
+          "Red": {
+            "B": {
+              "P": {
+                "M": "Red",
+                "lCjSZS": "RRed"
+              }
+            }
+          }
+        },
+        "dict3": {}
+      },
+      "output": {
+        "R": {
+          "B": {
+            "P": {
+              "M": "Red",
+              "lCjSZS": "RRed"
+            }
+          }
+        },
+        "Red": {
+          "B": {
+            "P": {
+              "M": "Red",
+              "lCjSZS": "RRed"
+            }
+          }
+        },
+        "35": -59
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "D": 97,
+          "MAA": 56,
+          "HTv": 65
+        },
+        "dict2": {
+          "42.54365262109431": 12,
+          "-73.06068215185819": 99,
+          "64.10081127712078": false,
+          "-71.19218925050797": -27.722667031889188,
+          "-70.6746308928394": 83.83304478046807
+        },
+        "dict3": {
+          "IWhN": "V"
+        }
+      },
+      "output": {
+        "IWhN": "V",
+        "42.54365262109431": 12,
+        "-73.06068215185819": 99,
+        "64.10081127712078": false,
+        "-71.19218925050797": -27.722667031889188,
+        "-70.6746308928394": 83.83304478046807,
+        "D": 97,
+        "MAA": 56,
+        "HTv": 65
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "37": false
+        },
+        "dict2": {},
+        "dict3": {
+          "NH": true,
+          "CjqqZMMy": true,
+          "ngwPYYUsW": false,
+          "ORPBKquP": false,
+          "XryExq": true,
+          "DVeAQTRIZV": false,
+          "Z": true,
+          "Red": false,
+          "Y": false,
+          "White": false
+        }
+      },
+      "output": {
+        "NH": true,
+        "CjqqZMMy": true,
+        "ngwPYYUsW": false,
+        "ORPBKquP": false,
+        "XryExq": true,
+        "DVeAQTRIZV": false,
+        "Z": true,
+        "Red": false,
+        "Y": false,
+        "White": false,
+        "37": false
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "A": "Apple"
+        },
+        "dict2": {
+          "btabmgZJMp": "bkk"
+        },
+        "dict3": {}
+      },
+      "output": {
+        "btabmgZJMp": "bkk",
+        "A": "Apple"
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "D": 97,
+          "MAA": 56,
+          "HTv": 65
+        },
+        "dict2": {
+          "42.54365262109431": 37,
+          "-73.06068215185819": 99,
+          "64.10081127712078": false,
+          "-71.19218925050797": -27.722667031889188,
+          "-70.6746308928394": 83.83304478046807
+        },
+        "dict3": {
+          "IWhN": "V"
+        }
+      },
+      "output": {
+        "IWhN": "V",
+        "42.54365262109431": 37,
+        "-73.06068215185819": 99,
+        "64.10081127712078": false,
+        "-71.19218925050797": -27.722667031889188,
+        "-70.6746308928394": 83.83304478046807,
+        "D": 97,
+        "MAA": 56,
+        "HTv": 65
+      }
+    },
+    {
+      "input": {
+        "dict1": {},
+        "dict2": {
+          "-59": -20.518312632449252
+        },
+        "dict3": {
+          "BlueB": "B",
+          "GyqTxRqw": "IWhN",
+          "apglGpJ": "TkzQdZezp"
+        }
+      },
+      "output": {
+        "BlueB": "B",
+        "GyqTxRqw": "IWhN",
+        "apglGpJ": "TkzQdZezp",
+        "-59": -20.518312632449252
+      }
+    },
+    {
+      "input": {
+        "dict1": {
+          "R": {
+            "B": {
+              "P": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              },
+              "White": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              }
+            },
+            "": {
+              "P": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              },
+              "White": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              }
+            },
+            "WW": {
+              "P": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              },
+              "White": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              }
+            }
+          },
+          "": {
+            "B": {
+              "P": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              },
+              "White": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              }
+            },
+            "": {
+              "P": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              },
+              "White": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              }
+            },
+            "WW": {
+              "P": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              },
+              "White": {
+                "M": "Red",
+                "DM": "R",
+                "MDM": "RR"
+              }
+            }
+          }
+        },
+        "dict2": {},
+        "dict3": {
+          "G": {
+            "W": "White",
+            "WW": "WHzgYlcGpOGhite"
+          },
+          "GG": {
+            "W": "White",
+            "WW": "WHzgYlcGpOGhite"
+          }
+        }
+      },
+      "output": {
+        "G": {
+          "W": "White",
+          "WW": "WHzgYlcGpOGhite"
+        },
+        "GG": {
+          "W": "White",
+          "WW": "WHzgYlcGpOGhite"
+        },
+        "R": {
+          "B": {
+            "P": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            },
+            "White": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            }
+          },
+          "": {
+            "P": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            },
+            "White": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            }
+          },
+          "WW": {
+            "P": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            },
+            "White": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            }
+          }
+        },
+        "": {
+          "B": {
+            "P": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            },
+            "White": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            }
+          },
+          "": {
+            "P": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            },
+            "White": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            }
+          },
+          "WW": {
+            "P": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            },
+            "White": {
+              "M": "Red",
+              "DM": "R",
+              "MDM": "RR"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import collections as ct\ndef merge_dictionaries_three(dict1,dict2, dict3):\n    merged_dict = dict(ct.ChainMap({},dict1,dict2,dict3))\n    return merged_dict\n"
+  }
+}

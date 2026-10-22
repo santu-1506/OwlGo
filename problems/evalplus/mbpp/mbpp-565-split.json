@@ -1,0 +1,859 @@
+{
+  "id": "mbpp-565-split",
+  "title": "Split",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to split a string into characters.",
+  "entry_point": "split",
+  "params": [
+    "word"
+  ],
+  "function_signature": {
+    "python": "def split(word):"
+  },
+  "examples": [
+    {
+      "input": {
+        "word": "python"
+      },
+      "output": [
+        "p",
+        "y",
+        "t",
+        "h",
+        "o",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "word": "Name"
+      },
+      "output": [
+        "N",
+        "a",
+        "m",
+        "e"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "word": "python"
+      },
+      "output": [
+        "p",
+        "y",
+        "t",
+        "h",
+        "o",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "word": "Name"
+      },
+      "output": [
+        "N",
+        "a",
+        "m",
+        "e"
+      ]
+    },
+    {
+      "input": {
+        "word": "program"
+      },
+      "output": [
+        "p",
+        "r",
+        "o",
+        "g",
+        "r",
+        "a",
+        "m"
+      ]
+    },
+    {
+      "input": {
+        "word": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "word": "String with spaces"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "   String with spaces   "
+      },
+      "output": [
+        " ",
+        " ",
+        " ",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        " ",
+        " ",
+        " "
+      ]
+    },
+    {
+      "input": {
+        "word": "@!$p1y2t3h4o5n6"
+      },
+      "output": [
+        "@",
+        "!",
+        "$",
+        "p",
+        "1",
+        "y",
+        "2",
+        "t",
+        "3",
+        "h",
+        "4",
+        "o",
+        "5",
+        "n",
+        "6"
+      ]
+    },
+    {
+      "input": {
+        "word": " "
+      },
+      "output": [
+        " "
+      ]
+    },
+    {
+      "input": {
+        "word": "\t"
+      },
+      "output": [
+        "\t"
+      ]
+    },
+    {
+      "input": {
+        "word": "\n"
+      },
+      "output": [
+        "\n"
+      ]
+    },
+    {
+      "input": {
+        "word": "\r"
+      },
+      "output": [
+        "\r"
+      ]
+    },
+    {
+      "input": {
+        "word": "\t\n\r   "
+      },
+      "output": [
+        "\t",
+        "\n",
+        "\r",
+        " ",
+        " ",
+        " "
+      ]
+    },
+    {
+      "input": {
+        "word": "String with sp aces"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        " ",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "String wit h spa\t\n\r   ces"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        " ",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "\t",
+        "\n",
+        "\r",
+        " ",
+        " ",
+        " ",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "String wString with spacesith spaces"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "aces"
+      },
+      "output": [
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "String withh sp aces"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        "h",
+        " ",
+        "s",
+        "p",
+        " ",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "\races"
+      },
+      "output": [
+        "\r",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "\n\n"
+      },
+      "output": [
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "input": {
+        "word": "es"
+      },
+      "output": [
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "wStritng"
+      },
+      "output": [
+        "w",
+        "S",
+        "t",
+        "r",
+        "i",
+        "t",
+        "n",
+        "g"
+      ]
+    },
+    {
+      "input": {
+        "word": "acs"
+      },
+      "output": [
+        "a",
+        "c",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "withh"
+      },
+      "output": [
+        "w",
+        "i",
+        "t",
+        "h",
+        "h"
+      ]
+    },
+    {
+      "input": {
+        "word": "ceswit"
+      },
+      "output": [
+        "c",
+        "e",
+        "s",
+        "w",
+        "i",
+        "t"
+      ]
+    },
+    {
+      "input": {
+        "word": "\tsp"
+      },
+      "output": [
+        "\t",
+        "s",
+        "p"
+      ]
+    },
+    {
+      "input": {
+        "word": "String with spaces\t"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "\t"
+      ]
+    },
+    {
+      "input": {
+        "word": "p"
+      },
+      "output": [
+        "p"
+      ]
+    },
+    {
+      "input": {
+        "word": "Strin\racesg wString with spacesith spaces"
+      },
+      "output": [
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "\r",
+        "a",
+        "c",
+        "e",
+        "s",
+        "g",
+        " ",
+        "w",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "\t\n\np"
+      },
+      "output": [
+        "\t",
+        "\n",
+        "\n",
+        "p"
+      ]
+    },
+    {
+      "input": {
+        "word": "ces"
+      },
+      "output": [
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "\n\n@!$p1y2t3h4o5n6"
+      },
+      "output": [
+        "\n",
+        "\n",
+        "@",
+        "!",
+        "$",
+        "p",
+        "1",
+        "y",
+        "2",
+        "t",
+        "3",
+        "h",
+        "4",
+        "o",
+        "5",
+        "n",
+        "6"
+      ]
+    },
+    {
+      "input": {
+        "word": "hh"
+      },
+      "output": [
+        "h",
+        "h"
+      ]
+    },
+    {
+      "input": {
+        "word": "\t\n\r    "
+      },
+      "output": [
+        "\t",
+        "\n",
+        "\r",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
+    },
+    {
+      "input": {
+        "word": "\n\n@!Strin\racesg wString with spacesith spaces$p1y2t3h4o5n6"
+      },
+      "output": [
+        "\n",
+        "\n",
+        "@",
+        "!",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "\r",
+        "a",
+        "c",
+        "e",
+        "s",
+        "g",
+        " ",
+        "w",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "$",
+        "p",
+        "1",
+        "y",
+        "2",
+        "t",
+        "3",
+        "h",
+        "4",
+        "o",
+        "5",
+        "n",
+        "6"
+      ]
+    },
+    {
+      "input": {
+        "word": "wStriString wit h spa\t\n\r   cesng"
+      },
+      "output": [
+        "w",
+        "S",
+        "t",
+        "r",
+        "i",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        " ",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "\t",
+        "\n",
+        "\r",
+        " ",
+        " ",
+        " ",
+        "c",
+        "e",
+        "s",
+        "n",
+        "g"
+      ]
+    },
+    {
+      "input": {
+        "word": "spacesithString withh ssp aces"
+      },
+      "output": [
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "i",
+        "t",
+        "h",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        "h",
+        " ",
+        "s",
+        "s",
+        "p",
+        " ",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "SString with spacestring with sp aces"
+      },
+      "output": [
+        "S",
+        "S",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        " ",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "SS\racestring \rng with sp aces"
+      },
+      "output": [
+        "S",
+        "S",
+        "\r",
+        "a",
+        "c",
+        "e",
+        "s",
+        "t",
+        "r",
+        "i",
+        "n",
+        "g",
+        " ",
+        "\r",
+        "n",
+        "g",
+        " ",
+        "w",
+        "i",
+        "t",
+        "h",
+        " ",
+        "s",
+        "p",
+        " ",
+        "a",
+        "c",
+        "e",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "word": "ssp"
+      },
+      "output": [
+        "s",
+        "s",
+        "p"
+      ]
+    },
+    {
+      "input": {
+        "word": "acspaces$p1y2ts3h4o5n6es"
+      },
+      "output": [
+        "a",
+        "c",
+        "s",
+        "p",
+        "a",
+        "c",
+        "e",
+        "s",
+        "$",
+        "p",
+        "1",
+        "y",
+        "2",
+        "t",
+        "s",
+        "3",
+        "h",
+        "4",
+        "o",
+        "5",
+        "n",
+        "6",
+        "e",
+        "s"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def split(word): \n    return list(word)\n"
+  }
+}

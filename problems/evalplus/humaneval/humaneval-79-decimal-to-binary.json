@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-79-decimal-to-binary",
+  "title": "Decimal To Binary",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\nExamples:\ndecimal_to_binary(15)   # returns \"db1111db\"\ndecimal_to_binary(32)   # returns \"db100000db\"",
+  "entry_point": "decimal_to_binary",
+  "params": [
+    "decimal"
+  ],
+  "function_signature": {
+    "python": "def decimal_to_binary(decimal):"
+  },
+  "examples": [
+    {
+      "input": {
+        "decimal": 0
+      },
+      "output": "db0db"
+    },
+    {
+      "input": {
+        "decimal": 32
+      },
+      "output": "db100000db"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "decimal": 0
+      },
+      "output": "db0db"
+    },
+    {
+      "input": {
+        "decimal": 32
+      },
+      "output": "db100000db"
+    },
+    {
+      "input": {
+        "decimal": 103
+      },
+      "output": "db1100111db"
+    },
+    {
+      "input": {
+        "decimal": 15
+      },
+      "output": "db1111db"
+    },
+    {
+      "input": {
+        "decimal": 100001
+      },
+      "output": "db11000011010100001db"
+    },
+    {
+      "input": {
+        "decimal": 255
+      },
+      "output": "db11111111db"
+    },
+    {
+      "input": {
+        "decimal": 999999999
+      },
+      "output": "db111011100110101100100111111111db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000000
+      },
+      "output": "db1110100011010100101001010001000000000000db"
+    },
+    {
+      "input": {
+        "decimal": 7
+      },
+      "output": "db111db"
+    },
+    {
+      "input": {
+        "decimal": 1023
+      },
+      "output": "db1111111111db"
+    },
+    {
+      "input": {
+        "decimal": 1
+      },
+      "output": "db1db"
+    },
+    {
+      "input": {
+        "decimal": 2
+      },
+      "output": "db10db"
+    },
+    {
+      "input": {
+        "decimal": 3
+      },
+      "output": "db11db"
+    },
+    {
+      "input": {
+        "decimal": 4
+      },
+      "output": "db100db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000
+      },
+      "output": "db111011100110101100101000000000db"
+    },
+    {
+      "input": {
+        "decimal": 6
+      },
+      "output": "db110db"
+    },
+    {
+      "input": {
+        "decimal": 1000000001
+      },
+      "output": "db111011100110101100101000000001db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000002
+      },
+      "output": "db1110100011010100101001010001000000000010db"
+    },
+    {
+      "input": {
+        "decimal": 5
+      },
+      "output": "db101db"
+    },
+    {
+      "input": {
+        "decimal": 100002
+      },
+      "output": "db11000011010100010db"
+    },
+    {
+      "input": {
+        "decimal": 100000
+      },
+      "output": "db11000011010100000db"
+    },
+    {
+      "input": {
+        "decimal": 1022
+      },
+      "output": "db1111111110db"
+    },
+    {
+      "input": {
+        "decimal": 8
+      },
+      "output": "db1000db"
+    },
+    {
+      "input": {
+        "decimal": 1000000002
+      },
+      "output": "db111011100110101100101000000010db"
+    },
+    {
+      "input": {
+        "decimal": 1024
+      },
+      "output": "db10000000000db"
+    },
+    {
+      "input": {
+        "decimal": 100003
+      },
+      "output": "db11000011010100011db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000001
+      },
+      "output": "db1110100011010100101001010001000000000001db"
+    },
+    {
+      "input": {
+        "decimal": 999999998
+      },
+      "output": "db111011100110101100100111111110db"
+    },
+    {
+      "input": {
+        "decimal": 999999999999
+      },
+      "output": "db1110100011010100101001010000111111111111db"
+    },
+    {
+      "input": {
+        "decimal": 256
+      },
+      "output": "db100000000db"
+    },
+    {
+      "input": {
+        "decimal": 257
+      },
+      "output": "db100000001db"
+    },
+    {
+      "input": {
+        "decimal": 1021
+      },
+      "output": "db1111111101db"
+    },
+    {
+      "input": {
+        "decimal": 259
+      },
+      "output": "db100000011db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000003
+      },
+      "output": "db1110100011010100101001010001000000000011db"
+    },
+    {
+      "input": {
+        "decimal": 1000000004
+      },
+      "output": "db111011100110101100101000000100db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000004
+      },
+      "output": "db1110100011010100101001010001000000000100db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000005
+      },
+      "output": "db1110100011010100101001010001000000000101db"
+    },
+    {
+      "input": {
+        "decimal": 1000000005
+      },
+      "output": "db111011100110101100101000000101db"
+    },
+    {
+      "input": {
+        "decimal": 9
+      },
+      "output": "db1001db"
+    },
+    {
+      "input": {
+        "decimal": 1000000000006
+      },
+      "output": "db1110100011010100101001010001000000000110db"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef decimal_to_binary(decimal):\n    \"\"\"You will be given a number in decimal form and your task is to convert it to\n    binary format. The function should return a string, with each character representing a binary\n    number. Each character in the string will be '0' or '1'.\n\n    There will be an extra couple of characters 'db' at the beginning and at the end of the string.\n    The extra characters are there to help with the format.\n\n    Examples:\n    decimal_to_binary(15)   # returns \"db1111db\"\n    decimal_to_binary(32)   # returns \"db100000db\"\n    \"\"\"\n\n\n    return \"db\" + bin(decimal)[2:] + \"db\"\n\n"
+  }
+}

@@ -1,0 +1,1071 @@
+{
+  "id": "humaneval-115-max-fill",
+  "title": "Max Fill",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a rectangular grid of wells. Each row represents a single well,\nand each 1 in a row represents a single unit of water.\nEach well has a corresponding bucket that can be used to extract water from it, \nand all buckets have the same capacity.\nYour task is to use the buckets to empty the wells.\nOutput the number of times you need to lower the buckets.\n\nExample 1:\n    Input: \n        grid : [[0,0,1,0], [0,1,0,0], [1,1,1,1]]\n        bucket_capacity : 1\n    Output: 6\n\nExample 2:\n    Input: \n        grid : [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]\n        bucket_capacity : 2\n    Output: 5\n\nExample 3:\n    Input: \n        grid : [[0,0,0], [0,0,0]]\n        bucket_capacity : 5\n    Output: 0\n\nConstraints:\n    * all wells have the same length\n    * 1 <= grid.length <= 10^2\n    * 1 <= grid[:,1].length <= 10^2\n    * grid[i][j] -> 0 | 1\n    * 1 <= capacity <= 10",
+  "entry_point": "max_fill",
+  "params": [
+    "grid",
+    "capacity"
+  ],
+  "function_signature": {
+    "python": "def max_fill(grid, capacity):"
+  },
+  "examples": [
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 5
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 9
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "grid": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "capacity": 4
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math\n\ndef max_fill(grid, capacity):\n    \"\"\"\n    You are given a rectangular grid of wells. Each row represents a single well,\n    and each 1 in a row represents a single unit of water.\n    Each well has a corresponding bucket that can be used to extract water from it, \n    and all buckets have the same capacity.\n    Your task is to use the buckets to empty the wells.\n    Output the number of times you need to lower the buckets.\n\n    Example 1:\n        Input: \n            grid : [[0,0,1,0], [0,1,0,0], [1,1,1,1]]\n            bucket_capacity : 1\n        Output: 6\n\n    Example 2:\n        Input: \n            grid : [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]\n            bucket_capacity : 2\n        Output: 5\n    \n    Example 3:\n        Input: \n            grid : [[0,0,0], [0,0,0]]\n            bucket_capacity : 5\n        Output: 0\n\n    Constraints:\n        * all wells have the same length\n        * 1 <= grid.length <= 10^2\n        * 1 <= grid[:,1].length <= 10^2\n        * grid[i][j] -> 0 | 1\n        * 1 <= capacity <= 10\n    \"\"\"\n\n\n    ans = 0    \n    for l in grid:\n        ans += math.ceil(sum(l) / capacity)\n    return ans\n\n"
+  }
+}

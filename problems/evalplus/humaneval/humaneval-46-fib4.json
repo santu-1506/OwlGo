@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-46-fib4",
+  "title": "Fib4",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfib4(0) -> 0\nfib4(1) -> 0\nfib4(2) -> 2\nfib4(3) -> 0\nfib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\nPlease write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n>>> fib4(5)\n4\n>>> fib4(6)\n8\n>>> fib4(7)\n14",
+  "entry_point": "fib4",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def fib4(n: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 28
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 104
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 386
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 54
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 2764
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 73552
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 38158
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 141776
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 5328
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 10270
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 1434
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 19796
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 273282
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 744
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 526768
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 1015378
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": 71083647136
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": 1957204
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 1250966502919879120640717716
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": 3772632
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": 7271982
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": 34443880418283540493826
+    },
+    {
+      "input": {
+        "n": 81
+      },
+      "output": 17869142915445859640640
+    },
+    {
+      "input": {
+        "n": 80
+      },
+      "output": 9270333790937632951616
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": 36877489824
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 2411315463631208843587520078
+    },
+    {
+      "input": {
+        "n": 83
+      },
+      "output": 66392714182364268855232
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": 127976071307031301941314
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": 19131675294
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 4647959998589498844128566416
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": 14017196
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef fib4(n: int):\n    \"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n    fib4(0) -> 0\n    fib4(1) -> 0\n    fib4(2) -> 2\n    fib4(3) -> 0\n    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\n    Please write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n    >>> fib4(5)\n    4\n    >>> fib4(6)\n    8\n    >>> fib4(7)\n    14\n    \"\"\"\n\n    \n    if n == 0:\n        return 0\n    elif n == 1:\n        return 0\n    elif n == 2:\n        return 2\n    elif n == 3:\n        return 0\n    else:\n        a, b, c, d = 0, 0, 2, 0\n        for i in range(4, n + 1):\n            a, b, c, d = b, c, d, a + b + c + d\n        return d\n\n"
+  }
+}

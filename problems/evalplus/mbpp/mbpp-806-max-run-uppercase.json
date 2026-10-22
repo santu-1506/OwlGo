@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-806-max-run-uppercase",
+  "title": "Max Run Uppercase",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find maximum run of uppercase characters in the given string.",
+  "entry_point": "max_run_uppercase",
+  "params": [
+    "test_str"
+  ],
+  "function_signature": {
+    "python": "def max_run_uppercase(test_str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_str": "GeMKSForGERksISBESt"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "test_str": "PrECIOusMOVemENTSYT"
+      },
+      "output": 6
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_str": "GeMKSForGERksISBESt"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "test_str": "PrECIOusMOVemENTSYT"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "test_str": "GooGLEFluTTER"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "test_str": "A"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "a"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "test_str": "aa"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "test_str": "aA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "Aaa"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "test_str": "aaaAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "aaaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aAaa"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "test_str": "aaaaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "AaaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaAaaaAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "aAaaa"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "test_str": "aaaAAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "AaaaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "aaaaAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "AaaaAAA"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "test_str": "aaaaAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "AaaaaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "Aa"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaAaaaaaAAA"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "test_str": "aaaAAaaaaaAAaaaAAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "aaaaAAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aAaaaaAAaaaaAAA"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "test_str": "aaaaaAAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaaaAaAAaaAAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaaAAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "xTzcVWVVy"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "test_str": "aaaaAAaAAAaaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaAaaaAAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaaaAaAAaaAaAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "aaaaAaaaAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "AaaaAAaA"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "test_str": "AAa"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "aaaaaAaAAaaAAaAA"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "test_str": "AaAa"
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def max_run_uppercase(test_str):\n  cnt = 0\n  res = 0\n  for idx in range(0, len(test_str)):\n    if test_str[idx].isupper():\n      cnt += 1\n    else:\n      res = cnt\n      cnt = 0\n  if test_str[len(test_str) - 1].isupper():\n    res = cnt\n  return res\n"
+  }
+}

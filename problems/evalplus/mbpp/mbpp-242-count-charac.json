@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-242-count-charac",
+  "title": "Count Charac",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to count the total number of characters in a string.",
+  "entry_point": "count_charac",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def count_charac(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "python programming"
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "str1": "language"
+      },
+      "output": 8
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "python programming"
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "str1": "language"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "str1": "words"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "a"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "str1": "ɢᴜᴍɪᴇꜱ"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "str1": "cMPNwvV"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "str1": "ccMPNwvV"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "str1": "ccMPcMPNwvVNwvV"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "accMPNwvV"
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "str1": "aaccMPNwvV"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "str1": "ccMPNwV"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "str1": "ccMPNwvVcMPNwvV"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "aaccMPNwv"
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "str1": "ccMPcMPNwvVNvV"
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "str1": "ɢᴜaaccMPNwvᴍɪᴇꜱ"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "aacccMPNwvVMPNwv"
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "str1": "aaaccccMPcMPNwvVNwvVNwv"
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "str1": "cccMPcMPNwvVNvV"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "aaccMPNw"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "str1": "cNMPNwvV"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "str1": "cNMPNwvcNMPNwvVV"
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "str1": "ccMPV"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": "accaaccMPNwvMPNwvV"
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "str1": "aaccccMPNwvVcMPNwvVMPNwvV"
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "str1": "aaaccccMPcMPNwvcMPNwvVVNwvVNwv"
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "str1": "ccMPccccMPcMPNwvVNvVMPNwvVNwvV"
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "str1": "aaccMPaccaaccMPNwvMPNwvVNw"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "aaaaccMPNcMPNwvVwv"
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "str1": "ccMPccccMPcMPNwvVNvVMPNwvVNcwvV"
+      },
+      "output": 31
+    },
+    {
+      "input": {
+        "str1": "ccMPcMPNwvVNwvvV"
+      },
+      "output": 16
+    },
+    {
+      "input": {
+        "str1": "accV"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "str1": "cNMPNwvcNMwPNwvVV"
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "str1": "accaaccMPNwccMPcMPNwvVNwvvVvMPccMPVNwvV"
+      },
+      "output": 39
+    },
+    {
+      "input": {
+        "str1": "aaacccccMPcMPNwvVNwvVcNwv"
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "str1": "ɢᴜᴍccMPcMPNwvVNvVɪᴇꜱaccMPNwvV"
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "str1": "ccMPcMPNwvVNvaaacccccMPcMPNwvVNwvVcNwvV"
+      },
+      "output": 39
+    },
+    {
+      "input": {
+        "str1": "ɢᴜaaccMPNwvᴍaccaaccMPNwccMPcMPNwvVNwvvVvMPccMPVNwvVɪᴇꜱ"
+      },
+      "output": 54
+    },
+    {
+      "input": {
+        "str1": "ccMPNwaccMPNwvVVvV"
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "str1": "aaccMPaNwvMPNwvVNw"
+      },
+      "output": 18
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def count_charac(str1):\n    return len(str1)\n"
+  }
+}

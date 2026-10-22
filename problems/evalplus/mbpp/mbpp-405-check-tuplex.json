@@ -1,0 +1,1221 @@
+{
+  "id": "mbpp-405-check-tuplex",
+  "title": "Check Tuplex",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether an element exists within a tuple.",
+  "entry_point": "check_tuplex",
+  "params": [
+    "tuplex",
+    "element"
+  ],
+  "function_signature": {
+    "python": "def check_tuplex(tuplex, element):"
+  },
+  "examples": [
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            "w",
+            3,
+            "r",
+            "e",
+            "s",
+            "o",
+            "u",
+            "r",
+            "c",
+            "e"
+          ]
+        },
+        "element": "r"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            "w",
+            3,
+            "r",
+            "e",
+            "s",
+            "o",
+            "u",
+            "r",
+            "c",
+            "e"
+          ]
+        },
+        "element": "5"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            "w",
+            3,
+            "r",
+            "e",
+            "s",
+            "o",
+            "u",
+            "r",
+            "c",
+            "e"
+          ]
+        },
+        "element": "r"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            "w",
+            3,
+            "r",
+            "e",
+            "s",
+            "o",
+            "u",
+            "r",
+            "c",
+            "e"
+          ]
+        },
+        "element": "5"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            "w",
+            3,
+            "r",
+            "e",
+            "s",
+            "o",
+            "u",
+            "r",
+            "c",
+            "e"
+          ]
+        },
+        "element": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": []
+        },
+        "element": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            [
+              "name",
+              "age",
+              25
+            ],
+            true,
+            42.5
+          ]
+        },
+        "element": "d"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": []
+        },
+        "element": "element"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              [
+                "b",
+                "c"
+              ],
+              "d"
+            ],
+            [
+              "e",
+              [
+                "f",
+                "g"
+              ],
+              "h"
+            ]
+          ]
+        },
+        "element": [
+          "f",
+          "g"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true,
+            true,
+            42.5,
+            {
+              "age": 25
+            }
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25,
+          "b": "Jnameohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25,
+          "nanme": "Jnohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            true,
+            [
+              "abc",
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            42.5
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          true,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          "a",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "name": "John",
+              "age": 25,
+              "nname": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "name": "John",
+              "age": 25,
+              "nname": 25
+            },
+            true,
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true,
+            42.5,
+            42.5
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          {
+            "age": 25
+          },
+          true,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true,
+            42.5,
+            {
+              "age": 25
+            },
+            {
+              "age": 25
+            }
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25,
+          "b": "Jnameohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": []
+        },
+        "element": [
+          -63,
+          81,
+          true
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            true,
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          {
+            "name": "John",
+            "age": 25
+          },
+          true,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "name": "John",
+              "age": 25,
+              "nname": 25
+            },
+            true,
+            false,
+            42.5
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          {
+            "name": "John",
+            "age": 25,
+            "nname": 25
+          },
+          true,
+          false,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            false,
+            38,
+            96,
+            -63
+          ]
+        },
+        "element": [
+          -63,
+          81,
+          true,
+          true
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            42.5,
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "name": "John",
+              "age": 25,
+              "nname": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": {
+          "name": "John",
+          "age": 25,
+          "a": "hJohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            true,
+            [
+              "abc",
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            42.964943519254135
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          true,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          {
+            "name": "John",
+            "age": 25
+          },
+          true,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          "a",
+          "aabc",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            true,
+            [
+              "abc",
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            42.964943519254135
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          true,
+          [
+            "abc",
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            true,
+            [
+              "abc",
+              [
+                1,
+                2,
+                3
+              ]
+            ]
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          true,
+          [
+            "abc",
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            false,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        "element": "element"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          true,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          {
+            "name": "John",
+            "age": 25
+          },
+          true,
+          42.964943519254135
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true
+          ]
+        },
+        "element": {}
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5
+          ]
+        },
+        "element": [
+          "aabc",
+          "b",
+          "c"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            42.964943519254135,
+            42.5,
+            53.132901816322374,
+            42.5
+          ]
+        },
+        "element": [
+          42.964943519254135,
+          42.5,
+          53.132901816322374,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            true,
+            [
+              "abc",
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            42.964943519254135
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          false,
+          [
+            "acbc",
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          42.964943519254135
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "a",
+              "b",
+              "c"
+            ],
+            {
+              "name": "John",
+              "age": 25
+            },
+            true,
+            42.5,
+            [
+              "a",
+              "b",
+              "c"
+            ]
+          ]
+        },
+        "element": [
+          false,
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          {
+            "name": "John",
+            "age": 25
+          },
+          true,
+          42.5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "tuplex": {
+          "$tuple": [
+            [
+              "abc",
+              123,
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            {
+              "age": 25
+            },
+            true,
+            42.5,
+            true
+          ]
+        },
+        "element": [
+          [
+            "abc",
+            123,
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          {
+            "age": 25
+          },
+          true,
+          42.5,
+          42.5
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_tuplex(tuplex, element): \n  return element in tuplex\n"
+  }
+}

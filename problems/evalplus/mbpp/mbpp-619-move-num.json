@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-619-move-num",
+  "title": "Move Num",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to move all the numbers to the end of the given string.",
+  "entry_point": "move_num",
+  "params": [
+    "test_str"
+  ],
+  "function_signature": {
+    "python": "def move_num(test_str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_str": "I1love143you55three3000thousand"
+      },
+      "output": "Iloveyouthreethousand1143553000"
+    },
+    {
+      "input": {
+        "test_str": "Avengers124Assemble"
+      },
+      "output": "AvengersAssemble124"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_str": "I1love143you55three3000thousand"
+      },
+      "output": "Iloveyouthreethousand1143553000"
+    },
+    {
+      "input": {
+        "test_str": "Avengers124Assemble"
+      },
+      "output": "AvengersAssemble124"
+    },
+    {
+      "input": {
+        "test_str": "Its11our12path13to14see15things16do17things"
+      },
+      "output": "Itsourpathtoseethingsdothings11121314151617"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28. I was born on the 1st of January, 1992."
+      },
+      "output": "Hello! My age is . I was born on the st of January, .2811992"
+    },
+    {
+      "input": {
+        "test_str": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "1234567890"
+      },
+      "output": "1234567890"
+    },
+    {
+      "input": {
+        "test_str": "Hello! This string contains no numbers"
+      },
+      "output": "Hello! This string contains no numbers"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28. I was borln on the 1st of January, 1992."
+      },
+      "output": "Hello! My age is . I was borln on the st of January, .2811992"
+    },
+    {
+      "input": {
+        "test_str": "was"
+      },
+      "output": "was"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28.. I was borln on the 1st of January 1992."
+      },
+      "output": "Hello! My age is .. I was borln on the st of January .2811992"
+    },
+    {
+      "input": {
+        "test_str": "Hello!  on the 1st of January 1992."
+      },
+      "output": "Hello!  on the st of January .11992"
+    },
+    {
+      "input": {
+        "test_str": "Helloa! My age is 22."
+      },
+      "output": "Helloa! My age is .22"
+    },
+    {
+      "input": {
+        "test_str": "Helloa!."
+      },
+      "output": "Helloa!."
+    },
+    {
+      "input": {
+        "test_str": "waws"
+      },
+      "output": "waws"
+    },
+    {
+      "input": {
+        "test_str": "Hellorn on the 1st of January, 1992."
+      },
+      "output": "Hellorn on the st of January, .11992"
+    },
+    {
+      "input": {
+        "test_str": "wawMys"
+      },
+      "output": "wawMys"
+    },
+    {
+      "input": {
+        "test_str": "1992."
+      },
+      "output": ".1992"
+    },
+    {
+      "input": {
+        "test_str": "brorln"
+      },
+      "output": "brorln"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28. I was born on the 1st of 28.January, 1992."
+      },
+      "output": "Hello! My age is . I was born on the st of .January, .281281992"
+    },
+    {
+      "input": {
+        "test_str": "string"
+      },
+      "output": "string"
+    },
+    {
+      "input": {
+        "test_str": "Hellorn on onry, 1992."
+      },
+      "output": "Hellorn on onry, .1992"
+    },
+    {
+      "input": {
+        "test_str": "199Hello! My age is 28.. I was borln on the 1st of January 1992.2."
+      },
+      "output": "Hello! My age is .. I was borln on the st of January ..19928119922"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28. I was born on the 1st of JanuaHello!ry, 1992."
+      },
+      "output": "Hello! My age is . I was born on the st of JanuaHello!ry, .2811992"
+    },
+    {
+      "input": {
+        "test_str": "TThis"
+      },
+      "output": "TThis"
+    },
+    {
+      "input": {
+        "test_str": "numbers"
+      },
+      "output": "numbers"
+    },
+    {
+      "input": {
+        "test_str": "199Hello! My age iln on the 1st of January 1992.2."
+      },
+      "output": "Hello! My age iln on the st of January ..199119922"
+    },
+    {
+      "input": {
+        "test_str": "199Hello! My age is 28.. I was borln on the 1st of JanuarHellorn on the 1st of January, 1992.y 1992.2."
+      },
+      "output": "Hello! My age is .. I was borln on the st of JanuarHellorn on the st of January, .y ..1992811199219922"
+    },
+    {
+      "input": {
+        "test_str": "swawsing"
+      },
+      "output": "swawsing"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28. I was born on the 1st of anuary, 1992."
+      },
+      "output": "Hello! My age is . I was born on the st of anuary, .2811992"
+    },
+    {
+      "input": {
+        "test_str": "stnumbersring"
+      },
+      "output": "stnumbersring"
+    },
+    {
+      "input": {
+        "test_str": "I"
+      },
+      "output": "I"
+    },
+    {
+      "input": {
+        "test_str": "Hello! 28.My agei is 28.. I was borln wawson the 1st of January 1992."
+      },
+      "output": "Hello! .My agei is .. I was borln wawson the st of January .282811992"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28. , 1992."
+      },
+      "output": "Hello! My age is . , .281992"
+    },
+    {
+      "input": {
+        "test_str": "Hello! My age is 28a. , 1992.brorln"
+      },
+      "output": "Hello! My age is a. , .brorln281992"
+    },
+    {
+      "input": {
+        "test_str": "Hellorn on the 1sHellorn on onry, 1992.t of January, 1992."
+      },
+      "output": "Hellorn on the sHellorn on onry, .t of January, .119921992"
+    },
+    {
+      "input": {
+        "test_str": "Hellorn on the 1lst of January, 1992."
+      },
+      "output": "Hellorn on the lst of January, .11992"
+    },
+    {
+      "input": {
+        "test_str": "January,"
+      },
+      "output": "January,"
+    },
+    {
+      "input": {
+        "test_str": "He."
+      },
+      "output": "He."
+    },
+    {
+      "input": {
+        "test_str": "Hello! 2f January 1992."
+      },
+      "output": "Hello! f January .21992"
+    },
+    {
+      "input": {
+        "test_str": "19912."
+      },
+      "output": ".19912"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def move_num(test_str):\n  num_str = ''.join(i for i in test_str if i.isdigit())\n  else_str = ''.join(i for i in test_str if not i.isdigit())\n  return else_str + num_str\n"
+  }
+}

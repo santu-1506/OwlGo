@@ -1,0 +1,698 @@
+{
+  "id": "mbpp-90-len-log",
+  "title": "Len Log",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the length of the longest word.",
+  "entry_point": "len_log",
+  "params": [
+    "list1"
+  ],
+  "function_signature": {
+    "python": "def len_log(list1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "list1": [
+          "python",
+          "PHP",
+          "bigdata"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "ab",
+          "abc"
+        ]
+      },
+      "output": 3
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "list1": [
+          "python",
+          "PHP",
+          "bigdata"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "a",
+          "ab",
+          "abc"
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "list1": [
+          "small",
+          "big",
+          "tall"
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "list1": [
+          "Longest",
+          "word",
+          "length"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "the",
+          "function"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "monkey",
+          "zebra",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "Longest",
+          "zebra",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "monkey",
+          "zebra",
+          "lion",
+          "This",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "monkey"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "zebran",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "tiger",
+          "giraffe",
+          "p",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "i",
+          "This",
+          "is",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "the",
+          "ttoo",
+          "function"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "lion",
+          "tiger",
+          "gireaffe",
+          "kangaroo",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "zebran",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger",
+          "tiger"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebra",
+          "zebran",
+          "tiger",
+          "giraffe",
+          "kangamonkeyroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger"
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "monkey",
+          "zebra",
+          "tiger",
+          "giraffe",
+          "p",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "the",
+          "function",
+          "a"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "Longest",
+          "length"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "Longest",
+          "zebra",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "monkey",
+          "zebra",
+          "tiger",
+          "giraffe",
+          "",
+          "p",
+          "kangaroo",
+          "foelephantx",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "Longest",
+          "zebra",
+          "pandaa",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "Longest",
+          "zebra",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "Longest",
+          "length",
+          "Longest"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "monkey",
+          "zebra",
+          "tiger",
+          "giraffe",
+          "",
+          "p",
+          "kangaroo",
+          "foelephantx",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "giraffe"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "function",
+          "zebra",
+          "lion",
+          "tiger",
+          "gireaffe",
+          "kangaroo",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "length",
+          "LongestThis",
+          "Longest"
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "lion",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "the",
+          "function",
+          "the"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "the",
+          "aa",
+          "function",
+          "a"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "the",
+          "function",
+          "a",
+          "a"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "teiger",
+          "monkey",
+          "zebra",
+          "zebran",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "monkey",
+          "zebran",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fx",
+          "monkey",
+          "zebra",
+          "lion",
+          "tiger",
+          "giraffe",
+          "giraff",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "elephant",
+          "fox",
+          "zebra",
+          "monkey",
+          "zebra",
+          "zebran",
+          "tiger",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "panda",
+          "hippopotamus",
+          "tiger"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "a",
+          "complex",
+          "example",
+          "is",
+          "test",
+          "the",
+          "function",
+          "a",
+          "a"
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "is",
+          "",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "the"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "fox",
+          "monkey",
+          "zebra",
+          "lion",
+          "tigttooer",
+          "giraffe",
+          "kangaroo",
+          "bear",
+          "hippopotamus"
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "list1": [
+          "Longest",
+          "word",
+          "length",
+          "Longest"
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "list1": [
+          "This",
+          "a",
+          "complex",
+          "example",
+          "to",
+          "test",
+          "thte",
+          "function",
+          "a",
+          "a"
+        ]
+      },
+      "output": 8
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def len_log(list1):\n    return max(len(x) for x in list1)\n"
+  }
+}

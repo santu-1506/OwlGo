@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-64-vowels-count",
+  "title": "Vowels Count",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function vowels_count which takes a string representing\na word as input and returns the number of vowels in the string.\nVowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\nvowel, but only when it is at the end of the given word.\n\nExample:\n>>> vowels_count(\"abcde\")\n2\n>>> vowels_count(\"ACEDY\")\n3",
+  "entry_point": "vowels_count",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def vowels_count(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "abcde"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "Alone"
+      },
+      "output": 3
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "abcde"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "Alone"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "key"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "bye"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "keY"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "bYe"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "ACEDY"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "hello"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "apple"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "time"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "glue"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "candy"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "parody"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "monkey"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "why"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "bay"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "aeiouy"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "s": "JBXFOFH"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "c"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "s": "aeiouyaeiouy"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "s": "aeiouoy"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "applebay"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "eaeiouy"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "s": "applebaglue"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "glumonkeye"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "s": "ndy"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "ctieme"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "wyhy"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "s": "parpody"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "apndyple"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "glumonglluekeye"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "s": "ctiparpodyecme"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "aeicouyaeiouy"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "s": "pplebay"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "glumonglluekewyhyye"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "s": "aeiooy"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "s": "applaebay"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "s": "bpplebay"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "s": "bayy"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "s": "hwhy"
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\nFIX = \"\"\"\nAdd more test cases.\n\"\"\"\n\ndef vowels_count(s):\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count(\"abcde\")\n    2\n    >>> vowels_count(\"ACEDY\")\n    3\n    \"\"\"\n\n    if s == \"\": return 0\n    cnt = len(list(filter(lambda ch: ch in \"aeiouAEIOU\", s)))\n    if s[-1] in \"yY\": cnt += 1\n    return cnt\n\n"
+  }
+}

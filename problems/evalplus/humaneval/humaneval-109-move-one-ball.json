@@ -1,0 +1,519 @@
+{
+  "id": "humaneval-109-move-one-ball",
+  "title": "Move One Ball",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\nnumbers in the array will be randomly ordered. Your task is to determine if\nit is possible to get an array sorted in non-decreasing order by performing \nthe following operation on the given array:\n    You are allowed to perform right shift operation any number of times.\n\nOne right shift operation means shifting all elements of the array by one\nposition in the right direction. The last element of the array will be moved to\nthe starting position in the array i.e. 0th index. \n\nIf it is possible to obtain the sorted array by performing the above operation\nthen return True else return False.\nIf the given array is empty then return True.\n\nNote: The given list is guaranteed to have unique elements.\n\nFor Example:\n\nmove_one_ball([3, 4, 5, 1, 2])==>True\nExplanation: By performin 2 right shift operations, non-decreasing order can\n             be achieved for the given array.\nmove_one_ball([3, 5, 4, 1, 2])==>False\nExplanation:It is not possible to get non-decreasing order for the given\n            array by performing any number of right shift operations.\n            ",
+  "entry_point": "move_one_ball",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def move_one_ball(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          3,
+          4,
+          5,
+          1,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          5,
+          10,
+          1,
+          2
+        ]
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          3,
+          4,
+          5,
+          1,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          5,
+          10,
+          1,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          5,
+          4,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          7,
+          8,
+          6,
+          4,
+          5,
+          3,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          7,
+          6,
+          5,
+          4,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          6,
+          8,
+          1,
+          2,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          7,
+          8,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          2,
+          6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          6,
+          8,
+          2,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          86,
+          5,
+          9,
+          2,
+          4
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          6
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          7,
+          6,
+          5,
+          3,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          86,
+          5,
+          2,
+          4
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          7,
+          6,
+          5,
+          3,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          7,
+          8,
+          6,
+          4,
+          5,
+          3,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          4,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          7,
+          8,
+          5,
+          4,
+          3,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          7,
+          6,
+          5,
+          4,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          1
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef move_one_ball(arr):\n    \"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\n    numbers in the array will be randomly ordered. Your task is to determine if\n    it is possible to get an array sorted in non-decreasing order by performing \n    the following operation on the given array:\n        You are allowed to perform right shift operation any number of times.\n    \n    One right shift operation means shifting all elements of the array by one\n    position in the right direction. The last element of the array will be moved to\n    the starting position in the array i.e. 0th index. \n\n    If it is possible to obtain the sorted array by performing the above operation\n    then return True else return False.\n    If the given array is empty then return True.\n\n    Note: The given list is guaranteed to have unique elements.\n\n    For Example:\n    \n    move_one_ball([3, 4, 5, 1, 2])==>True\n    Explanation: By performin 2 right shift operations, non-decreasing order can\n                 be achieved for the given array.\n    move_one_ball([3, 5, 4, 1, 2])==>False\n    Explanation:It is not possible to get non-decreasing order for the given\n                array by performing any number of right shift operations.\n                \n    \"\"\"\n\n    \n    sorted_arr = sorted(arr)\n    if arr == sorted_arr: return True\n    for i in range(1, len(arr)):\n        if arr[i:] + arr[:i] == sorted_arr:\n            return True\n    return False\n\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-118-get-closest-vowel",
+  "title": "Get Closest Vowel",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a word. Your task is to find the closest vowel that stands between \ntwo consonants from the right side of the word (case sensitive).\n\nVowels in the beginning and ending doesn't count. Return empty string if you didn't\nfind any vowel met the above condition. \n\nYou may assume that the given string contains English letter only.\n\nExample:\nget_closest_vowel(\"yogurt\") ==> \"u\"\nget_closest_vowel(\"FULL\") ==> \"U\"\nget_closest_vowel(\"quick\") ==> \"\"\nget_closest_vowel(\"ab\") ==> \"\"",
+  "entry_point": "get_closest_vowel",
+  "params": [
+    "word"
+  ],
+  "function_signature": {
+    "python": "def get_closest_vowel(word):"
+  },
+  "examples": [
+    {
+      "input": {
+        "word": "yogurt"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "full"
+      },
+      "output": "u"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "word": "yogurt"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "full"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "easy"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "eAsy"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "ali"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "bad"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "word": "most"
+      },
+      "output": "o"
+    },
+    {
+      "input": {
+        "word": "ab"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "ba"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "quick"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "anime"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "Asia"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "Above"
+      },
+      "output": "o"
+    },
+    {
+      "input": {
+        "word": "hello"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": "cup"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "kill"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "bike"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "album"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "mute"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "nylon"
+      },
+      "output": "o"
+    },
+    {
+      "input": {
+        "word": "jelly"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": "hi"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "try"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "himute"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "jejellylly"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": "hill"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "hilljejellylly"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "alb"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "hilljhejellylly"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": "ttrty"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "helo"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": "lalb"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "word": "aabuum"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "word": "ehehilo"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "tttrjejellyllyt"
+      },
+      "output": "e"
+    },
+    {
+      "input": {
+        "word": "kilbike"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "bkike"
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "word": "ccup"
+      },
+      "output": "u"
+    },
+    {
+      "input": {
+        "word": "ehehi"
+      },
+      "output": "e"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef get_closest_vowel(word):\n    \"\"\"You are given a word. Your task is to find the closest vowel that stands between \n    two consonants from the right side of the word (case sensitive).\n    \n    Vowels in the beginning and ending doesn't count. Return empty string if you didn't\n    find any vowel met the above condition. \n\n    You may assume that the given string contains English letter only.\n\n    Example:\n    get_closest_vowel(\"yogurt\") ==> \"u\"\n    get_closest_vowel(\"FULL\") ==> \"U\"\n    get_closest_vowel(\"quick\") ==> \"\"\n    get_closest_vowel(\"ab\") ==> \"\"\n    \"\"\"\n\n\n    def is_vowel(ch: str) -> bool:\n        return ch in \"aeiouAEIOU\"\n    for i in range(len(word) - 2, 0, -1):\n        if is_vowel(word[i]) and not is_vowel(word[i-1]) and not is_vowel(word[i+1]):\n            return word[i]\n    return \"\"\n\n"
+  }
+}

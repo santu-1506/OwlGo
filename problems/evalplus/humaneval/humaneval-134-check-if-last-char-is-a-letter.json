@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-134-check-if-last-char-is-a-letter",
+  "title": "Check If Last Char Is A Letter",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Create a function that returns True if the last character\nof a given string is an alphabetical character and is not\na part of a word, and False otherwise.\nNote: \"word\" is a group of characters separated by space.\n\nExamples:\ncheck_if_last_char_is_a_letter(\"apple pie\") ➞ False\ncheck_if_last_char_is_a_letter(\"apple pi e\") ➞ True\ncheck_if_last_char_is_a_letter(\"apple pi e \") ➞ False\ncheck_if_last_char_is_a_letter(\"\") ➞ False ",
+  "entry_point": "check_if_last_char_is_a_letter",
+  "params": [
+    "txt"
+  ],
+  "function_signature": {
+    "python": "def check_if_last_char_is_a_letter(txt):"
+  },
+  "examples": [
+    {
+      "input": {
+        "txt": "apple"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "apple pi e"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "txt": "apple"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "apple pi e"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "txt": "eeeee"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "A"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "txt": "Pumpkin pie "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "Pumpkin pie 1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "eeeee e "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "apple pie"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "apple pi e "
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "Pumpkin pi e"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "txt": "Pumpkin pie!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "pUMPKIN PIE"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "aaaaa A"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "txt": "aaaaa 1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "12"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "apple pie!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "blueberry muffin!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "cake?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "pUMPKPIE"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "aaaaaa 1"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "cake?blueberry muffin!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "pUMPKPIEPumpkin pi e"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "txt": "?blueberry muffin!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "Pumpkin pie!cake?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "Pumpkin e!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "applel pUMPKPIEPumpkin pi epie!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "caake?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "c?blueberry muffin!ke?"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "aaaaa aaaaa 1A"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "aaaaaa A"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "txt": "aaaaaa aaaaa 1A"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "cake?blueberrymuffin!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "cake?blueberrymuffinc!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "ceberrymuffinc!"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "pUMPK"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "aaaaa aaaaaa 1A"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "1Pumpkin pie!cake?2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "txt": "ceberrymu12ffinc!"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef check_if_last_char_is_a_letter(txt):\n    '''\n    Create a function that returns True if the last character\n    of a given string is an alphabetical character and is not\n    a part of a word, and False otherwise.\n    Note: \"word\" is a group of characters separated by space.\n\n    Examples:\n    check_if_last_char_is_a_letter(\"apple pie\") ➞ False\n    check_if_last_char_is_a_letter(\"apple pi e\") ➞ True\n    check_if_last_char_is_a_letter(\"apple pi e \") ➞ False\n    check_if_last_char_is_a_letter(\"\") ➞ False \n    '''\n\n    if len(txt) == 0: return False\n    if len(txt) == 1: return txt.isalpha()\n    return txt[-1].isalpha() and txt[-2] == \" \"\n\n"
+  }
+}

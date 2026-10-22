@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-269-ascii-value",
+  "title": "Ascii Value",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the ascii value of a character.",
+  "entry_point": "ascii_value",
+  "params": [
+    "k"
+  ],
+  "function_signature": {
+    "python": "def ascii_value(k):"
+  },
+  "examples": [
+    {
+      "input": {
+        "k": "A"
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "k": "R"
+      },
+      "output": 82
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "k": "A"
+      },
+      "output": 65
+    },
+    {
+      "input": {
+        "k": "R"
+      },
+      "output": 82
+    },
+    {
+      "input": {
+        "k": "S"
+      },
+      "output": 83
+    },
+    {
+      "input": {
+        "k": "@"
+      },
+      "output": 64
+    },
+    {
+      "input": {
+        "k": "®"
+      },
+      "output": 174
+    },
+    {
+      "input": {
+        "k": "!"
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "k": " "
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "k": "ص"
+      },
+      "output": 1589
+    },
+    {
+      "input": {
+        "k": "&"
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "k": "\n"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "k": "€"
+      },
+      "output": 8364
+    },
+    {
+      "input": {
+        "k": "^"
+      },
+      "output": 94
+    },
+    {
+      "input": {
+        "k": "ä"
+      },
+      "output": 228
+    },
+    {
+      "input": {
+        "k": "π"
+      },
+      "output": 960
+    },
+    {
+      "input": {
+        "k": "~"
+      },
+      "output": 126
+    },
+    {
+      "input": {
+        "k": "\t"
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "k": "©"
+      },
+      "output": 169
+    },
+    {
+      "input": {
+        "k": "๑"
+      },
+      "output": 3665
+    },
+    {
+      "input": {
+        "k": "$"
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "k": "7"
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "k": "%"
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "k": "["
+      },
+      "output": 91
+    },
+    {
+      "input": {
+        "k": "{"
+      },
+      "output": 123
+    },
+    {
+      "input": {
+        "k": "é"
+      },
+      "output": 233
+    },
+    {
+      "input": {
+        "k": "\u0000"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "k": "\u001d"
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "k": "♥"
+      },
+      "output": 9829
+    },
+    {
+      "input": {
+        "k": "￿"
+      },
+      "output": 65535
+    },
+    {
+      "input": {
+        "k": ""
+      },
+      "output": 127
+    },
+    {
+      "input": {
+        "k": ""
+      },
+      "output": 128
+    },
+    {
+      "input": {
+        "k": "™"
+      },
+      "output": 8482
+    },
+    {
+      "input": {
+        "k": "文"
+      },
+      "output": 25991
+    },
+    {
+      "input": {
+        "k": "→"
+      },
+      "output": 8594
+    },
+    {
+      "input": {
+        "k": "F"
+      },
+      "output": 70
+    },
+    {
+      "input": {
+        "k": "q"
+      },
+      "output": 113
+    },
+    {
+      "input": {
+        "k": "E"
+      },
+      "output": 69
+    },
+    {
+      "input": {
+        "k": "o"
+      },
+      "output": 111
+    },
+    {
+      "input": {
+        "k": "W"
+      },
+      "output": 87
+    },
+    {
+      "input": {
+        "k": "U"
+      },
+      "output": 85
+    },
+    {
+      "input": {
+        "k": "O"
+      },
+      "output": 79
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def ascii_value(k):\n  return ord(k)\n"
+  }
+}

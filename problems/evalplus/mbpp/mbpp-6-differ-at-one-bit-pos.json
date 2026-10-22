@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-6-differ-at-one-bit-pos",
+  "title": "Differ At One Bit Pos",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether the two numbers differ at one bit position only or not.",
+  "entry_point": "differ_At_One_Bit_Pos",
+  "params": [
+    "a",
+    "b"
+  ],
+  "function_signature": {
+    "python": "def differ_At_One_Bit_Pos(a: int, b: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 13,
+        "b": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 8
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 13,
+        "b": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 15,
+        "b": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 123456789,
+        "b": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -123456789,
+        "b": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 1000000000,
+        "b": 1000000001
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": -100,
+        "b": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -123456789,
+        "b": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 1000000000,
+        "b": 100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -101,
+        "b": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 1000000000,
+        "b": 1000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -101,
+        "b": 100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -123456789,
+        "b": -10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": -50
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": -101
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -101,
+        "b": 1000000001
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": -987654320
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -101,
+        "b": -101
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -11,
+        "b": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": -102
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -3,
+        "b": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -987654321,
+        "b": -987654320
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -987654321,
+        "b": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 1000000001
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -50,
+        "b": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -102,
+        "b": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -102,
+        "b": 1
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_Power_Of_Two(x: int): \n    return x > 0 and (x & (x - 1)) == 0\ndef differ_At_One_Bit_Pos(a: int,b: int):\n    return is_Power_Of_Two(a ^ b)\n"
+  }
+}

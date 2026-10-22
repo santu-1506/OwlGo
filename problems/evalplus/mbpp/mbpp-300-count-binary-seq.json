@@ -1,0 +1,295 @@
+{
+  "id": "mbpp-300-count-binary-seq",
+  "title": "Count Binary Seq",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the count of all binary sequences of length 2n such that sum of first n bits is same as sum of last n bits.",
+  "entry_point": "count_binary_seq",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def count_binary_seq(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 2.0
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 6.0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 2.0
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 6.0
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 20.0
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 70.0
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 252.0
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 924.0
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 184756.0
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 155117520.0
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 137846528820.0
+    },
+    {
+      "input": {
+        "n": 50
+      },
+      "output": 1.0089134454556417e+29
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 9.054851465610324e+58
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 9.282606973670874e+43
+    },
+    {
+      "input": {
+        "n": 200
+      },
+      "output": 1.0295250013541446e+119
+    },
+    {
+      "input": {
+        "n": 150
+      },
+      "output": 9.37597027728274e+88
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 151
+      },
+      "output": 3.737969607234577e+89
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 3.604010187302328e+59
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 1.4345373882791625e+60
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 2.0
+    },
+    {
+      "input": {
+        "n": 51
+      },
+      "output": 3.996088548667444e+29
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 40116600.0
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 48620.0
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 49
+      },
+      "output": 2.547761225898085e+28
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 10400600.0
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 538257874440.0
+    },
+    {
+      "input": {
+        "n": 199
+      },
+      "output": 2.580263161288582e+118
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 2104098963720.0
+    },
+    {
+      "input": {
+        "n": 201
+      },
+      "output": 4.107855975552358e+119
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 32247603683100.0
+    },
+    {
+      "input": {
+        "n": 53
+      },
+      "output": 6.272525058612252e+30
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 999998
+      },
+      "output": {
+        "$float": "inf"
+      }
+    },
+    {
+      "input": {
+        "n": 52
+      },
+      "output": 1.5830658481259492e+30
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 2.3362265873332747e+43
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 601080390.0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0001
+  },
+  "reference_solutions": {
+    "python": "def count_binary_seq(n): \n\tnCr = 1\n\tres = 1\n\tfor r in range(1, n + 1): \n\t\tnCr = (nCr * (n + 1 - r)) / r \n\t\tres += nCr * nCr \n\treturn res\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-27-flip-case",
+  "title": "Flip Case",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n>>> flip_case('Hello')\n'hELLO'",
+  "entry_point": "flip_case",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def flip_case(string: str) -> str:"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "Hello!"
+      },
+      "output": "hELLO!"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "Hello!"
+      },
+      "output": "hELLO!"
+    },
+    {
+      "input": {
+        "string": "These violent delights have violent ends"
+      },
+      "output": "tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS"
+    },
+    {
+      "input": {
+        "string": "123abc"
+      },
+      "output": "123ABC"
+    },
+    {
+      "input": {
+        "string": "Toggle Me"
+      },
+      "output": "tOGGLE mE"
+    },
+    {
+      "input": {
+        "string": "Flipping cases is so easy!"
+      },
+      "output": "fLIPPING CASES IS SO EASY!"
+    },
+    {
+      "input": {
+        "string": "Flipping Cases Is So Easy!"
+      },
+      "output": "fLIPPING cASES iS sO eASY!"
+    },
+    {
+      "input": {
+        "string": "Python Is Fun"
+      },
+      "output": "pYTHON iS fUN"
+    },
+    {
+      "input": {
+        "string": "toGGlE Me"
+      },
+      "output": "TOggLe mE"
+    },
+    {
+      "input": {
+        "string": "fLiP YOuR cAsE"
+      },
+      "output": "FlIp yoUr CaSe"
+    },
+    {
+      "input": {
+        "string": "1234"
+      },
+      "output": "1234"
+    },
+    {
+      "input": {
+        "string": "TOGGLE ME"
+      },
+      "output": "toggle me"
+    },
+    {
+      "input": {
+        "string": "toggle me"
+      },
+      "output": "TOGGLE ME"
+    },
+    {
+      "input": {
+        "string": "123toggle me4"
+      },
+      "output": "123TOGGLE ME4"
+    },
+    {
+      "input": {
+        "string": "Togg"
+      },
+      "output": "tOGG"
+    },
+    {
+      "input": {
+        "string": "totggle me"
+      },
+      "output": "TOTGGLE ME"
+    },
+    {
+      "input": {
+        "string": "tgoggle me"
+      },
+      "output": "TGOGGLE ME"
+    },
+    {
+      "input": {
+        "string": "PtoGGlE Meython Is Fun"
+      },
+      "output": "pTOggLe mEYTHON iS fUN"
+    },
+    {
+      "input": {
+        "string": "PtuoGGlE Meython Is Fun"
+      },
+      "output": "pTUOggLe mEYTHON iS fUN"
+    },
+    {
+      "input": {
+        "string": "togglTOGGLE MEe me"
+      },
+      "output": "TOGGLtoggle meE ME"
+    },
+    {
+      "input": {
+        "string": "Flipping Cases Is So Eassy!"
+      },
+      "output": "fLIPPING cASES iS sO eASSY!"
+    },
+    {
+      "input": {
+        "string": "1PtoGGlE Meython Is Fun234"
+      },
+      "output": "1pTOggLe mEYTHON iS fUN234"
+    },
+    {
+      "input": {
+        "string": "Fun"
+      },
+      "output": "fUN"
+    },
+    {
+      "input": {
+        "string": "12134"
+      },
+      "output": "12134"
+    },
+    {
+      "input": {
+        "string": "FunFlippi ng Cases Is So Easy!"
+      },
+      "output": "fUNfLIPPI NG cASES iS sO eASY!"
+    },
+    {
+      "input": {
+        "string": "12134TOGGLE ME"
+      },
+      "output": "12134toggle me"
+    },
+    {
+      "input": {
+        "string": "Toggle toggle meMe"
+      },
+      "output": "tOGGLE TOGGLE MEmE"
+    },
+    {
+      "input": {
+        "string": "1toggFlipping cases is so easy!le me2134TOGG"
+      },
+      "output": "1TOGGfLIPPING CASES IS SO EASY!LE ME2134togg"
+    },
+    {
+      "input": {
+        "string": "tltoGGlE Megoggle me"
+      },
+      "output": "TLTOggLe mEGOGGLE ME"
+    },
+    {
+      "input": {
+        "string": "toGGlE e"
+      },
+      "output": "TOggLe E"
+    },
+    {
+      "input": {
+        "string": "tltoGGlE Megoe me"
+      },
+      "output": "TLTOggLe mEGOE ME"
+    },
+    {
+      "input": {
+        "string": "nbfLDUjAi"
+      },
+      "output": "NBFlduJaI"
+    },
+    {
+      "input": {
+        "string": "toTOGGLE MEtggle me"
+      },
+      "output": "TOtoggle meTGGLE ME"
+    },
+    {
+      "input": {
+        "string": "PtoFlipping cases is so easy!GGlE Meython Is Fun"
+      },
+      "output": "pTOfLIPPING CASES IS SO EASY!ggLe mEYTHON iS fUN"
+    },
+    {
+      "input": {
+        "string": "1toggFlipping cases is sotoTOGGLE MEtggle me easy!le me2134TOGG"
+      },
+      "output": "1TOGGfLIPPING CASES IS SOTOtoggle meTGGLE ME EASY!LE ME2134togg"
+    },
+    {
+      "input": {
+        "string": "tgoggleFunFlippi ng Cases Is So Easy!me"
+      },
+      "output": "TGOGGLEfUNfLIPPI NG cASES iS sO eASY!ME"
+    },
+    {
+      "input": {
+        "string": "112134"
+      },
+      "output": "112134"
+    },
+    {
+      "input": {
+        "string": "FunFlippFlipping cases is so easy!i ng Cases Is So Easy!"
+      },
+      "output": "fUNfLIPPfLIPPING CASES IS SO EASY!I NG cASES iS sO eASY!"
+    },
+    {
+      "input": {
+        "string": "112111213434"
+      },
+      "output": "112111213434"
+    },
+    {
+      "input": {
+        "string": "1213112134abc"
+      },
+      "output": "1213112134ABC"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n\n    return \"\".join(map(lambda x: x.swapcase(), string))\n\n"
+  }
+}

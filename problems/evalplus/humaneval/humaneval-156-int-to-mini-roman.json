@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-156-int-to-mini-roman",
+  "title": "Int To Mini Roman",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a positive integer, obtain its roman numeral equivalent as a string,\nand return it in lowercase.\nRestrictions: 1 <= num <= 1000\n\nExamples:\n>>> int_to_mini_roman(19) == 'xix'\n>>> int_to_mini_roman(152) == 'clii'\n>>> int_to_mini_roman(426) == 'cdxxvi'",
+  "entry_point": "int_to_mini_roman",
+  "params": [
+    "number"
+  ],
+  "function_signature": {
+    "python": "def int_to_mini_roman(number):"
+  },
+  "examples": [
+    {
+      "input": {
+        "number": 19
+      },
+      "output": "xix"
+    },
+    {
+      "input": {
+        "number": 152
+      },
+      "output": "clii"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "number": 19
+      },
+      "output": "xix"
+    },
+    {
+      "input": {
+        "number": 152
+      },
+      "output": "clii"
+    },
+    {
+      "input": {
+        "number": 251
+      },
+      "output": "ccli"
+    },
+    {
+      "input": {
+        "number": 426
+      },
+      "output": "cdxxvi"
+    },
+    {
+      "input": {
+        "number": 500
+      },
+      "output": "d"
+    },
+    {
+      "input": {
+        "number": 1
+      },
+      "output": "i"
+    },
+    {
+      "input": {
+        "number": 4
+      },
+      "output": "iv"
+    },
+    {
+      "input": {
+        "number": 43
+      },
+      "output": "xliii"
+    },
+    {
+      "input": {
+        "number": 90
+      },
+      "output": "xc"
+    },
+    {
+      "input": {
+        "number": 94
+      },
+      "output": "xciv"
+    },
+    {
+      "input": {
+        "number": 532
+      },
+      "output": "dxxxii"
+    },
+    {
+      "input": {
+        "number": 900
+      },
+      "output": "cm"
+    },
+    {
+      "input": {
+        "number": 994
+      },
+      "output": "cmxciv"
+    },
+    {
+      "input": {
+        "number": 1000
+      },
+      "output": "m"
+    },
+    {
+      "input": {
+        "number": 111
+      },
+      "output": "cxi"
+    },
+    {
+      "input": {
+        "number": 888
+      },
+      "output": "dccclxxxviii"
+    },
+    {
+      "input": {
+        "number": 2
+      },
+      "output": "ii"
+    },
+    {
+      "input": {
+        "number": 10
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "number": 39
+      },
+      "output": "xxxix"
+    },
+    {
+      "input": {
+        "number": 100
+      },
+      "output": "c"
+    },
+    {
+      "input": {
+        "number": 399
+      },
+      "output": "cccxcix"
+    },
+    {
+      "input": {
+        "number": 871
+      },
+      "output": "dccclxxi"
+    },
+    {
+      "input": {
+        "number": 3
+      },
+      "output": "iii"
+    },
+    {
+      "input": {
+        "number": 5
+      },
+      "output": "v"
+    },
+    {
+      "input": {
+        "number": 37
+      },
+      "output": "xxxvii"
+    },
+    {
+      "input": {
+        "number": 870
+      },
+      "output": "dccclxx"
+    },
+    {
+      "input": {
+        "number": 38
+      },
+      "output": "xxxviii"
+    },
+    {
+      "input": {
+        "number": 889
+      },
+      "output": "dccclxxxix"
+    },
+    {
+      "input": {
+        "number": 400
+      },
+      "output": "cd"
+    },
+    {
+      "input": {
+        "number": 872
+      },
+      "output": "dccclxxii"
+    },
+    {
+      "input": {
+        "number": 110
+      },
+      "output": "cx"
+    },
+    {
+      "input": {
+        "number": 6
+      },
+      "output": "vi"
+    },
+    {
+      "input": {
+        "number": 8
+      },
+      "output": "viii"
+    },
+    {
+      "input": {
+        "number": 7
+      },
+      "output": "vii"
+    },
+    {
+      "input": {
+        "number": 101
+      },
+      "output": "ci"
+    },
+    {
+      "input": {
+        "number": 109
+      },
+      "output": "cix"
+    },
+    {
+      "input": {
+        "number": 40
+      },
+      "output": "xl"
+    },
+    {
+      "input": {
+        "number": 36
+      },
+      "output": "xxxvi"
+    },
+    {
+      "input": {
+        "number": 41
+      },
+      "output": "xli"
+    },
+    {
+      "input": {
+        "number": 35
+      },
+      "output": "xxxv"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef int_to_mini_roman(number):\n    \"\"\"\n    Given a positive integer, obtain its roman numeral equivalent as a string,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n\n    Examples:\n    >>> int_to_mini_roman(19) == 'xix'\n    >>> int_to_mini_roman(152) == 'clii'\n    >>> int_to_mini_roman(426) == 'cdxxvi'\n    \"\"\"\n\n\n    m = [\"\", \"m\"]\n    c = [\"\", \"c\", \"cc\", \"ccc\", \"cd\", \"d\", \"dc\", \"dcc\", \"dccc\", \"cm\"]\n    x = [\"\", \"x\", \"xx\", \"xxx\", \"xl\", \"l\", \"lx\", \"lxx\", \"lxxx\", \"xc\"]\n    i = [\"\", \"i\", \"ii\", \"iii\", \"iv\", \"v\", \"vi\", \"vii\", \"viii\", \"ix\"]\n    thousands = m[number // 1000]\n    hundreds = c[(number % 1000) // 100]\n    tens = x[(number % 100) // 10]\n    ones = i[number % 10]\n    return thousands + hundreds + tens + ones\n\n"
+  }
+}

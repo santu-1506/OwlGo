@@ -1,0 +1,1437 @@
+{
+  "id": "mbpp-585-expensive-items",
+  "title": "Expensive Items",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the n most expensive items in a given dataset.",
+  "entry_point": "expensive_items",
+  "params": [
+    "items",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def expensive_items(items, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 45.09
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 101.1
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 45.09
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 101.1
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 45.09
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [],
+        "n": 5
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "items": [],
+        "n": 3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-3",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [],
+        "n": 2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 101.1
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 5
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 101.1
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 5
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-2",
+            "price": 555.22
+          }
+        ],
+        "n": 5
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 5
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "It-em-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 101.1
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 22.75
+          },
+          {
+            "name": "Item-2",
+            "price": 22.75
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-3",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 101.1
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-1",
+          "price": 101.1
+        },
+        {
+          "name": "Item-2",
+          "price": 101.1
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 4
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          }
+        ],
+        "n": 6
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 101.1
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-3",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [],
+        "n": 4
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "IItem-2",
+            "price": 555.22
+          },
+          {
+            "name": "IItem-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 101.1
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "IItem-2",
+          "price": 555.22
+        },
+        {
+          "name": "IItem-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 3
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 101.1
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 3
+      },
+      "output": [
+        {
+          "name": "Item-1",
+          "price": 101.1
+        },
+        {
+          "name": "Item-2",
+          "price": 101.1
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709,
+            "nname": "name"
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709,
+            "nname": "name"
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709,
+            "nname": "name"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 4
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709,
+          "nname": "name"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709,
+          "nname": "name"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709,
+          "nname": "name"
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75,
+            "Item-2name": "IItem-2"
+          },
+          {
+            "name": "Item-2",
+            "price": 22.75
+          },
+          {
+            "name": "Item-2",
+            "price": 22.75
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22,
+            "Item-4": "ItemIteem-4-3"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75,
+            "Item-2name": "IItem-2"
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-3",
+          "price": 555.22,
+          "Item-4": "ItemIteem-4-3"
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 3
+      },
+      "output": [
+        {
+          "name": "Item-1",
+          "price": 101.1
+        },
+        {
+          "name": "Item-2",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 3
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 6
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75,
+            "pnnamerice": 555.22
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75,
+            "pnnamerice": 555.22
+          }
+        ],
+        "n": 1
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 555.22
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22,
+            "pricename": "Ittem-3"
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22,
+            "pricename": "Ittem-3"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        },
+        {
+          "name": "Item-3",
+          "price": 555.22,
+          "pricename": "Ittem-3"
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 555.22,
+            "pricpricee": "Iteem-4"
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75,
+            "pnnamerice": 555.22
+          },
+          {
+            "name": "Item-1",
+            "price": 100.13437547119709
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75,
+            "pnnamerice": 555.22
+          }
+        ],
+        "n": 6
+      },
+      "output": [
+        {
+          "name": "Item-4",
+          "price": 555.22,
+          "pricpricee": "Iteem-4"
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-1",
+          "price": 100.13437547119709
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75,
+          "pnnamerice": 555.22
+        },
+        {
+          "name": "Item-4",
+          "price": 22.75,
+          "pnnamerice": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-2",
+            "price": 555.22
+          }
+        ],
+        "n": 4
+      },
+      "output": [
+        {
+          "name": "Item-2",
+          "price": 555.22
+        }
+      ]
+    },
+    {
+      "input": {
+        "items": [
+          {
+            "name": "Item-1",
+            "price": 101.1
+          },
+          {
+            "name": "Item-2",
+            "price": 22.75
+          },
+          {
+            "name": "Item-2",
+            "price": 22.75
+          },
+          {
+            "name": "Item-3",
+            "price": 555.22
+          },
+          {
+            "name": "Item-4",
+            "price": 22.75
+          }
+        ],
+        "n": 2
+      },
+      "output": [
+        {
+          "name": "Item-3",
+          "price": 555.22
+        },
+        {
+          "name": "Item-1",
+          "price": 101.1
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import heapq\ndef expensive_items(items,n):\n  expensive_items = heapq.nlargest(n, items, key=lambda s: s['price'])\n  return expensive_items\n"
+  }
+}

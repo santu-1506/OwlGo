@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-165-count-char-position",
+  "title": "Count Char Position",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to count the number of characters in a string that occur at the same position in the string as in the English alphabet (case insensitive).",
+  "entry_point": "count_char_position",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def count_char_position(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "xbcefg"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": "ABcED"
+      },
+      "output": 3
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "xbcefg"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": "ABcED"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "str1": "AbgdeF"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": "xyzXYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "TheQuickBrownFoxJumpsOverTheLazyDog"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "str1": "tthheellqqiiuucckkbbrrggooowwnnffoottjjuummppssvveerrtttthheelllaazzyydogg"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "str1": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "abcDEF"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "xyyzXYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "xyzXxyyzXYZYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "tthheellqqiiuucckkbbrrggooowwnnffoottjjuummppssvveerrtttthheelllaazzyydoxyzXxyyzXYZYZg"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "str1": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorld"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": "xyzXxyyzYXYZYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "J"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "JJ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "xyzabcdefghisjklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZXxyyzYXYZYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelloWorldHelloWorldHelloWoxyzXYZrldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorxyzXxyyzXYZYZldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelloWorldHelloWorldHelloWoxyzXYZrldHelloWorlldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDoHelloWorldHelloWorldHelloWorldHelloWorldHelloWoxyzXYZrldHelloWorldHelloWorldHelloWorldHelloWorldHelloWlorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorxyzXxyyzXYZYZldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWoorldHeFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "xyzXxyyzXYZYZJJ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "xyyzX"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "abcDE"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWoxyzabcdefghisjklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZXxyyzYXYZYZzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "TheQuickBrownFoxJumpsOverTheLazyDogJ"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "str1": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHeelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": "xyzXxyyzabcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZXYZYZJJ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldJ"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelTheQuickBrownFoxJumpsOverTheLazyDogloWorldHelloWorldHelloWoxyzXYZrldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorxyzXxyyzXYZYZldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHellloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "str1": "abcdefghijabcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWoorldHeFGHIJPQRSTUVWxyzXxyyzXYZYZXYZklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelloWorldHelloWorldHelloWoxyzXYZrldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorxyzXxyyzXYZYZldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "str1": "TheQuickBrumazyDog"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "xyzXxyZyzYXYZYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelTheQuickBrownFoxJumpsOverTheLazyDogloWorldHelloWorldHelloWoxyzXYZrldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorxyzXxyyzXYZYZldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "str1": "JJabcdefghijklmnopqrstuvwxyzABCDHelloWorldHelloWorldHelTheQuickBrownFoxJumpsOverTheLazyDogloWorldHelloWorldHelloWoxyzXYZrldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWWorldHelloWorldHelloWorldHelloWorldHexyzXxyyzXYZYZoWorldHelloWorxyzXxyyzXYZYZldEFGHIJPQRSTUVWxyzXxyyzXYZYZXYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "xyzabcdefghisjklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZXxyyzYXYZSYZ"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "str1": "HelloWorlldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldJ"
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def count_char_position(str1): \n    return sum(ord(ch.lower()) - ord('a') == i for i, ch in enumerate(str1))\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-140-fix-spaces",
+  "title": "Fix Spaces",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a string text, replace all spaces in it with underscores, \nand if a string has more than 2 consecutive spaces, \nthen replace all consecutive spaces with - \n\nfix_spaces(\"Example\") == \"Example\"\nfix_spaces(\"Example 1\") == \"Example_1\"\nfix_spaces(\" Example 2\") == \"_Example_2\"\nfix_spaces(\" Example   3\") == \"_Example-3\"",
+  "entry_point": "fix_spaces",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def fix_spaces(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "Example"
+      },
+      "output": "Example"
+    },
+    {
+      "input": {
+        "text": "Mudasir Hanif "
+      },
+      "output": "Mudasir_Hanif_"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "Example"
+      },
+      "output": "Example"
+    },
+    {
+      "input": {
+        "text": "Mudasir Hanif "
+      },
+      "output": "Mudasir_Hanif_"
+    },
+    {
+      "input": {
+        "text": "Yellow Yellow  Dirty  Fellow"
+      },
+      "output": "Yellow_Yellow__Dirty__Fellow"
+    },
+    {
+      "input": {
+        "text": "Exa   mple"
+      },
+      "output": "Exa-mple"
+    },
+    {
+      "input": {
+        "text": "   Exa 1 2 2 mple"
+      },
+      "output": "-Exa_1_2_2_mple"
+    },
+    {
+      "input": {
+        "text": "Hello,   world!"
+      },
+      "output": "Hello,-world!"
+    },
+    {
+      "input": {
+        "text": "happy 123"
+      },
+      "output": "happy_123"
+    },
+    {
+      "input": {
+        "text": "Hey    there!"
+      },
+      "output": "Hey-there!"
+    },
+    {
+      "input": {
+        "text": "  spaces  every  where  "
+      },
+      "output": "__spaces__every__where__"
+    },
+    {
+      "input": {
+        "text": "NoSpacesHere"
+      },
+      "output": "NoSpacesHere"
+    },
+    {
+      "input": {
+        "text": "This is  a  test"
+      },
+      "output": "This_is__a__test"
+    },
+    {
+      "input": {
+        "text": "Testing     1  2   3"
+      },
+      "output": "Testing-1__2-3"
+    },
+    {
+      "input": {
+        "text": "Hello World"
+      },
+      "output": "Hello_World"
+    },
+    {
+      "input": {
+        "text": "Hello   World"
+      },
+      "output": "Hello-World"
+    },
+    {
+      "input": {
+        "text": "   Hello World"
+      },
+      "output": "-Hello_World"
+    },
+    {
+      "input": {
+        "text": "This is  a  tesst"
+      },
+      "output": "This_is__a__tesst"
+    },
+    {
+      "input": {
+        "text": "This is  a  tes"
+      },
+      "output": "This_is__a__tes"
+    },
+    {
+      "input": {
+        "text": "This is  a This is  a  tes test"
+      },
+      "output": "This_is__a_This_is__a__tes_test"
+    },
+    {
+      "input": {
+        "text": "Hello r  World"
+      },
+      "output": "Hello_r__World"
+    },
+    {
+      "input": {
+        "text": "This is  a Hello r  World tsesst"
+      },
+      "output": "This_is__a_Hello_r__World_tsesst"
+    },
+    {
+      "input": {
+        "text": "This is  a This is  a  tes test  spaceNoSpacesHere "
+      },
+      "output": "This_is__a_This_is__a__tes_test__spaceNoSpacesHere_"
+    },
+    {
+      "input": {
+        "text": "Thish is  a  tesst"
+      },
+      "output": "Thish_is__a__tesst"
+    },
+    {
+      "input": {
+        "text": "HelloNoSpacesHere,   world!"
+      },
+      "output": "HelloNoSpacesHere,-world!"
+    },
+    {
+      "input": {
+        "text": "Hey   e there!"
+      },
+      "output": "Hey-e_there!"
+    },
+    {
+      "input": {
+        "text": "  spaces  eveThis is  a This This is  a This is  a  tes test  spaceNoSpacesHere is  a  tes testry  where  "
+      },
+      "output": "__spaces__eveThis_is__a_This_This_is__a_This_is__a__tes_test__spaceNoSpacesHere_is__a__tes_testry__where__"
+    },
+    {
+      "input": {
+        "text": "happy 123  spaces  every  where  "
+      },
+      "output": "happy_123__spaces__every__where__"
+    },
+    {
+      "input": {
+        "text": "  spaces  eveThis is  a This  This is  a This ishappy 123  a  tes test  spaceNoSpacesHere is  a  tes testry  where  "
+      },
+      "output": "__spaces__eveThis_is__a_This__This_is__a_This_ishappy_123__a__tes_test__spaceNoSpacesHere_is__a__tes_testry__where__"
+    },
+    {
+      "input": {
+        "text": "Hello r  Word"
+      },
+      "output": "Hello_r__Word"
+    },
+    {
+      "input": {
+        "text": "This is  a sst"
+      },
+      "output": "This_is__a_sst"
+    },
+    {
+      "input": {
+        "text": "  spaces  eveThis is  a This This is  a This is  a  tes test  spaceNoSpacesHello r  WorldHere is  a  tes testry  where  "
+      },
+      "output": "__spaces__eveThis_is__a_This_This_is__a_This_is__a__tes_test__spaceNoSpacesHello_r__WorldHere_is__a__tes_testry__where__"
+    },
+    {
+      "input": {
+        "text": "  spaces  eveery  where  "
+      },
+      "output": "__spaces__eveery__where__"
+    },
+    {
+      "input": {
+        "text": "happy1233"
+      },
+      "output": "happy1233"
+    },
+    {
+      "input": {
+        "text": "  spaces  eveThis is  a This This is  a This is  a  tes test  spaceNoSpacesHeNoSpacesHerello r  WorldHere is  a  tes testry  where  "
+      },
+      "output": "__spaces__eveThis_is__a_This_This_is__a_This_is__a__tes_test__spaceNoSpacesHeNoSpacesHerello_r__WorldHere_is__a__tes_testry__where__"
+    },
+    {
+      "input": {
+        "text": "happy 123 p spaces  every  where  "
+      },
+      "output": "happy_123_p_spaces__every__where__"
+    },
+    {
+      "input": {
+        "text": "  spaces  eveThis is  a This This is  a This is  tes testry  where  "
+      },
+      "output": "__spaces__eveThis_is__a_This_This_is__a_This_is__tes_testry__where__"
+    },
+    {
+      "input": {
+        "text": "Thish isThis is  a Hello r  World tsTesting     1  2   3 a  This is  a ssttesst"
+      },
+      "output": "Thish_isThis_is__a_Hello_r__World_tsTesting-1__2-3_a__This_is__a_ssttesst"
+    },
+    {
+      "input": {
+        "text": "Helleo World"
+      },
+      "output": "Helleo_World"
+    },
+    {
+      "input": {
+        "text": "happyw 123 p spacees  every  where  "
+      },
+      "output": "happyw_123_p_spacees__every__where__"
+    },
+    {
+      "input": {
+        "text": "Thish is  a  tesHey    there!st"
+      },
+      "output": "Thish_is__a__tesHey-there!st"
+    },
+    {
+      "input": {
+        "text": "happyw 123 p spacees  This is  a sstevery  wher  "
+      },
+      "output": "happyw_123_p_spacees__This_is__a_sstevery__wher__"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef fix_spaces(text):\n    \"\"\"\n    Given a string text, replace all spaces in it with underscores, \n    and if a string has more than 2 consecutive spaces, \n    then replace all consecutive spaces with - \n    \n    fix_spaces(\"Example\") == \"Example\"\n    fix_spaces(\"Example 1\") == \"Example_1\"\n    fix_spaces(\" Example 2\") == \"_Example_2\"\n    fix_spaces(\" Example   3\") == \"_Example-3\"\n    \"\"\"\n\n    ans = text\n    for i in range(len(text), 2, -1):\n        ans = ans.replace(\" \" * i, \"-\")\n    return ans.replace(\" \", \"_\")\n\n"
+  }
+}

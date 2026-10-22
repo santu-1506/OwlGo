@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-3-is-not-prime",
+  "title": "Is Not Prime",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to identify non-prime numbers.",
+  "entry_point": "is_not_prime",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_not_prime(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 37
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 7919
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 10007
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 524287
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 7920
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10006
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524288
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7921
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10008
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10005
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7918
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524289
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10004
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524286
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524290
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7922
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7923
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10009
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 7917
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524285
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7916
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10003
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524284
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7924
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10010
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7915
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524283
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7925
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10011
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10002
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7914
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7926
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 524291
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10012
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10001
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math\ndef is_not_prime(n):\n    if n == 1:\n        return True\n    for i in range(2, int(math.sqrt(n))+1):\n        if n % i == 0:\n            return True\n    return False\n"
+  }
+}

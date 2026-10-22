@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-45-triangle-area",
+  "title": "Triangle Area",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given length of a side and high return area for a triangle.\n>>> triangle_area(5, 3)\n7.5",
+  "entry_point": "triangle_area",
+  "params": [
+    "a",
+    "h"
+  ],
+  "function_signature": {
+    "python": "def triangle_area(a, h):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 5,
+        "h": 3
+      },
+      "output": 7.5
+    },
+    {
+      "input": {
+        "a": 2,
+        "h": 2
+      },
+      "output": 2.0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 5,
+        "h": 3
+      },
+      "output": 7.5
+    },
+    {
+      "input": {
+        "a": 2,
+        "h": 2
+      },
+      "output": 2.0
+    },
+    {
+      "input": {
+        "a": 10,
+        "h": 8
+      },
+      "output": 40.0
+    },
+    {
+      "input": {
+        "a": 4,
+        "h": 6
+      },
+      "output": 12.0
+    },
+    {
+      "input": {
+        "a": 7,
+        "h": 2
+      },
+      "output": 7.0
+    },
+    {
+      "input": {
+        "a": 12,
+        "h": 5
+      },
+      "output": 30.0
+    },
+    {
+      "input": {
+        "a": 3,
+        "h": 4
+      },
+      "output": 6.0
+    },
+    {
+      "input": {
+        "a": 6,
+        "h": 10
+      },
+      "output": 30.0
+    },
+    {
+      "input": {
+        "a": 9,
+        "h": 12
+      },
+      "output": 54.0
+    },
+    {
+      "input": {
+        "a": 15,
+        "h": 20
+      },
+      "output": 150.0
+    },
+    {
+      "input": {
+        "a": 25,
+        "h": 30
+      },
+      "output": 375.0
+    },
+    {
+      "input": {
+        "a": 1,
+        "h": 1
+      },
+      "output": 0.5
+    },
+    {
+      "input": {
+        "a": 10,
+        "h": 7
+      },
+      "output": 35.0
+    },
+    {
+      "input": {
+        "a": 30,
+        "h": 30
+      },
+      "output": 450.0
+    },
+    {
+      "input": {
+        "a": 12,
+        "h": 4
+      },
+      "output": 24.0
+    },
+    {
+      "input": {
+        "a": 26,
+        "h": 25
+      },
+      "output": 325.0
+    },
+    {
+      "input": {
+        "a": 1,
+        "h": 4
+      },
+      "output": 2.0
+    },
+    {
+      "input": {
+        "a": 4,
+        "h": 7
+      },
+      "output": 14.0
+    },
+    {
+      "input": {
+        "a": 19,
+        "h": 20
+      },
+      "output": 190.0
+    },
+    {
+      "input": {
+        "a": 6,
+        "h": 6
+      },
+      "output": 18.0
+    },
+    {
+      "input": {
+        "a": 10,
+        "h": 1
+      },
+      "output": 5.0
+    },
+    {
+      "input": {
+        "a": 20,
+        "h": 20
+      },
+      "output": 200.0
+    },
+    {
+      "input": {
+        "a": 12,
+        "h": 12
+      },
+      "output": 72.0
+    },
+    {
+      "input": {
+        "a": 6,
+        "h": 5
+      },
+      "output": 15.0
+    },
+    {
+      "input": {
+        "a": 7,
+        "h": 7
+      },
+      "output": 24.5
+    },
+    {
+      "input": {
+        "a": 4,
+        "h": 12
+      },
+      "output": 24.0
+    },
+    {
+      "input": {
+        "a": 10,
+        "h": 10
+      },
+      "output": 50.0
+    },
+    {
+      "input": {
+        "a": 19,
+        "h": 12
+      },
+      "output": 114.0
+    },
+    {
+      "input": {
+        "a": 26,
+        "h": 11
+      },
+      "output": 143.0
+    },
+    {
+      "input": {
+        "a": 2,
+        "h": 11
+      },
+      "output": 11.0
+    },
+    {
+      "input": {
+        "a": 11,
+        "h": 7
+      },
+      "output": 38.5
+    },
+    {
+      "input": {
+        "a": 5,
+        "h": 19
+      },
+      "output": 47.5
+    },
+    {
+      "input": {
+        "a": 6,
+        "h": 2
+      },
+      "output": 6.0
+    },
+    {
+      "input": {
+        "a": 26,
+        "h": 12
+      },
+      "output": 156.0
+    },
+    {
+      "input": {
+        "a": 1,
+        "h": 25
+      },
+      "output": 12.5
+    },
+    {
+      "input": {
+        "a": 16,
+        "h": 15
+      },
+      "output": 120.0
+    },
+    {
+      "input": {
+        "a": 4,
+        "h": 3
+      },
+      "output": 6.0
+    },
+    {
+      "input": {
+        "a": 9,
+        "h": 9
+      },
+      "output": 40.5
+    },
+    {
+      "input": {
+        "a": 12,
+        "h": 13
+      },
+      "output": 78.0
+    },
+    {
+      "input": {
+        "a": 6,
+        "h": 11
+      },
+      "output": 33.0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\n    >>> triangle_area(5, 3)\n    7.5\n    \"\"\"\n\n\n    return a * h / 2\n\n"
+  }
+}

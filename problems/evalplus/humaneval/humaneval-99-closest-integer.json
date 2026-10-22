@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-99-closest-integer",
+  "title": "Closest Integer",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Create a function that takes a value (string) representing a number\nand returns the closest integer to it. If the number is equidistant\nfrom two integers, round it away from zero.\n\nExamples\n>>> closest_integer(\"10\")\n10\n>>> closest_integer(\"15.3\")\n15\n\nNote:\nRounding away from zero means that if the given number is equidistant\nfrom two integers, the one you should return is the one that is the\nfarthest from zero. For example closest_integer(\"14.5\") should\nreturn 15 and closest_integer(\"-14.5\") should return -15.",
+  "entry_point": "closest_integer",
+  "params": [
+    "value"
+  ],
+  "function_signature": {
+    "python": "def closest_integer(value):"
+  },
+  "examples": [
+    {
+      "input": {
+        "value": "10"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "value": "14.5"
+      },
+      "output": 15
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "value": "10"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "value": "14.5"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "value": "-15.5"
+      },
+      "output": -16
+    },
+    {
+      "input": {
+        "value": "15.3"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "value": "0"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "value": "-2.8"
+      },
+      "output": -3
+    },
+    {
+      "input": {
+        "value": "3.6"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "value": "5.5"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "value": "-6.5"
+      },
+      "output": -7
+    },
+    {
+      "input": {
+        "value": "0.5"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "value": "1.6"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "value": "-1.6"
+      },
+      "output": -2
+    },
+    {
+      "input": {
+        "value": "0.0003"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "value": "99.99"
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "value": "-99.99"
+      },
+      "output": -100
+    },
+    {
+      "input": {
+        "value": "-99.9"
+      },
+      "output": -100
+    },
+    {
+      "input": {
+        "value": "00"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "value": "999.99"
+      },
+      "output": 1000
+    },
+    {
+      "input": {
+        "value": "99.9999"
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "value": "99.999"
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "value": "9.999"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "value": "999.999"
+      },
+      "output": 1000
+    },
+    {
+      "input": {
+        "value": "000"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "value": "09.99900"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "value": "-999.99"
+      },
+      "output": -1000
+    },
+    {
+      "input": {
+        "value": "99.9"
+      },
+      "output": 100
+    },
+    {
+      "input": {
+        "value": "-99"
+      },
+      "output": -99
+    },
+    {
+      "input": {
+        "value": "-6."
+      },
+      "output": -6
+    },
+    {
+      "input": {
+        "value": "0900"
+      },
+      "output": 900
+    },
+    {
+      "input": {
+        "value": "0000"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "value": "-6.00000"
+      },
+      "output": -6
+    },
+    {
+      "input": {
+        "value": "6"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "value": "-999"
+      },
+      "output": -999
+    },
+    {
+      "input": {
+        "value": "999"
+      },
+      "output": 999
+    },
+    {
+      "input": {
+        "value": "11.6"
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "value": "-6.00099900"
+      },
+      "output": -6
+    },
+    {
+      "input": {
+        "value": "111.6"
+      },
+      "output": 112
+    },
+    {
+      "input": {
+        "value": "00900"
+      },
+      "output": 900
+    },
+    {
+      "input": {
+        "value": "-66."
+      },
+      "output": -66
+    },
+    {
+      "input": {
+        "value": "11."
+      },
+      "output": 11
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef closest_integer(value):\n    '''\n    Create a function that takes a value (string) representing a number\n    and returns the closest integer to it. If the number is equidistant\n    from two integers, round it away from zero.\n\n    Examples\n    >>> closest_integer(\"10\")\n    10\n    >>> closest_integer(\"15.3\")\n    15\n\n    Note:\n    Rounding away from zero means that if the given number is equidistant\n    from two integers, the one you should return is the one that is the\n    farthest from zero. For example closest_integer(\"14.5\") should\n    return 15 and closest_integer(\"-14.5\") should return -15.\n    '''\n\n\n    def rounding(val):\n        if abs(val - int(val)) != 0.5:\n            return round(val)\n        if val > 0:\n            return int(val) + 1\n        else:\n            return int(val) - 1\n    return rounding(float(value))\n\n"
+  }
+}

@@ -1,0 +1,735 @@
+{
+  "id": "mbpp-751-check-min-heap",
+  "title": "Check Min Heap",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if the given array represents min heap or not. https://www.geeksforgeeks.org/how-to-check-if-a-given-array-represents-a-binary-heap/",
+  "entry_point": "check_min_heap",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def check_min_heap(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          4,
+          5,
+          10,
+          15
+        ]
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          4,
+          5,
+          10,
+          15
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          10,
+          4,
+          5,
+          3,
+          15
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          3,
+          9,
+          6,
+          7,
+          5,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          2,
+          3,
+          16,
+          5,
+          6,
+          7,
+          8,
+          10
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          15,
+          9,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          19,
+          31,
+          4,
+          18,
+          5,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          2,
+          11,
+          3,
+          16,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          19,
+          4,
+          18,
+          5,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          -80,
+          19,
+          31,
+          4,
+          18,
+          5,
+          7,
+          5,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9,
+          6
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          5,
+          4,
+          12,
+          3,
+          2,
+          6,
+          1,
+          9,
+          6,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          19,
+          31,
+          4,
+          18,
+          30,
+          5,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          3,
+          4,
+          3
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          6,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9,
+          4
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9,
+          10,
+          4
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          20,
+          5,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          10,
+          9,
+          7,
+          0,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          30,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          19,
+          31,
+          4,
+          18,
+          5,
+          7,
+          19
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          2,
+          11,
+          3,
+          16,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          2,
+          11
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          7,
+          6,
+          20,
+          4,
+          3,
+          2,
+          6,
+          1,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          5,
+          19,
+          31,
+          4,
+          18,
+          5,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          8,
+          3,
+          9,
+          6,
+          7,
+          5,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          5,
+          4,
+          12,
+          3,
+          2,
+          6,
+          1,
+          9,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          19,
+          31,
+          4,
+          18,
+          30,
+          12,
+          7,
+          18
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          2,
+          11,
+          3,
+          16,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          10,
+          9,
+          8,
+          0,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          -80,
+          19,
+          31,
+          4,
+          18,
+          5,
+          5,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          5,
+          31,
+          4,
+          18,
+          19,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          31,
+          10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          -80,
+          31,
+          -80,
+          19,
+          31,
+          4,
+          18,
+          5,
+          7,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_min_heap_helper(arr, i):\n    if 2 * i + 2 > len(arr):\n      return True\n    left_child = (arr[i] <= arr[2 * i + 1]) and check_min_heap_helper(arr, 2 * i + 1)\n    right_child = (2 * i + 2 == len(arr)) or  \\\n                (arr[i] <= arr[2 * i + 2] and \\\n                 check_min_heap_helper(arr, 2 * i + 2))\n    return left_child and right_child\ndef check_min_heap(arr):\n  return check_min_heap_helper(arr, 0)\n"
+  }
+}

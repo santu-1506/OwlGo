@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-735-toggle-middle-bits",
+  "title": "Toggle Middle Bits",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to toggle bits of the number except the first and the last bit. https://www.geeksforgeeks.org/toggle-bits-number-expect-first-last-bits/",
+  "entry_point": "toggle_middle_bits",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def toggle_middle_bits(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 12
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 127
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 115
+    },
+    {
+      "input": {
+        "n": 2147483647
+      },
+      "output": 1073741825
+    },
+    {
+      "input": {
+        "n": 123456
+      },
+      "output": 73150
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 9223372036854775807
+      },
+      "output": 4611686018427387905
+    },
+    {
+      "input": {
+        "n": 34211
+      },
+      "output": 64093
+    },
+    {
+      "input": {
+        "n": 2047
+      },
+      "output": 1025
+    },
+    {
+      "input": {
+        "n": 31580
+      },
+      "output": 17570
+    },
+    {
+      "input": {
+        "n": 123455
+      },
+      "output": 73153
+    },
+    {
+      "input": {
+        "n": 31579
+      },
+      "output": 17573
+    },
+    {
+      "input": {
+        "n": 34212
+      },
+      "output": 64090
+    },
+    {
+      "input": {
+        "n": 2147483646
+      },
+      "output": 1073741824
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 123453
+      },
+      "output": 73155
+    },
+    {
+      "input": {
+        "n": 31578
+      },
+      "output": 17572
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 2147483645
+      },
+      "output": 1073741827
+    },
+    {
+      "input": {
+        "n": 31581
+      },
+      "output": 17571
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 34213
+      },
+      "output": 64091
+    },
+    {
+      "input": {
+        "n": 123454
+      },
+      "output": 73152
+    },
+    {
+      "input": {
+        "n": 34210
+      },
+      "output": 64092
+    },
+    {
+      "input": {
+        "n": 2046
+      },
+      "output": 1024
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 2147483648
+      },
+      "output": 4294967294
+    },
+    {
+      "input": {
+        "n": 53
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "n": 31577
+      },
+      "output": 17575
+    },
+    {
+      "input": {
+        "n": 9223372036854775806
+      },
+      "output": 4611686018427387904
+    },
+    {
+      "input": {
+        "n": 34215
+      },
+      "output": 64089
+    },
+    {
+      "input": {
+        "n": 9223372036854775805
+      },
+      "output": 4611686018427387907
+    },
+    {
+      "input": {
+        "n": 34208
+      },
+      "output": 64094
+    },
+    {
+      "input": {
+        "n": 34214
+      },
+      "output": 64088
+    },
+    {
+      "input": {
+        "n": 123457
+      },
+      "output": 73151
+    },
+    {
+      "input": {
+        "n": 34209
+      },
+      "output": 64095
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 112
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 3
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def toggle_middle_bits(n): \n    binary = bin(n)[2:]\n    toggled = ''.join(['0' if i == '1' else '1' for i in binary[1:-1]])\n    return int(binary[0] + toggled + binary[-1], 2)\n"
+  }
+}

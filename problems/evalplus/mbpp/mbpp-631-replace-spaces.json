@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-631-replace-spaces",
+  "title": "Replace Spaces",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to replace whitespaces with an underscore and vice versa in a given string.",
+  "entry_point": "replace_spaces",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def replace_spaces(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "Jumanji The Jungle"
+      },
+      "output": "Jumanji_The_Jungle"
+    },
+    {
+      "input": {
+        "text": "The_Avengers"
+      },
+      "output": "The Avengers"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "Jumanji The Jungle"
+      },
+      "output": "Jumanji_The_Jungle"
+    },
+    {
+      "input": {
+        "text": "The_Avengers"
+      },
+      "output": "The Avengers"
+    },
+    {
+      "input": {
+        "text": "Fast and Furious"
+      },
+      "output": "Fast_and_Furious"
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "text": "abcdefg"
+      },
+      "output": "abcdefg"
+    },
+    {
+      "input": {
+        "text": "  Jumanji The Jungle  "
+      },
+      "output": "__Jumanji_The_Jungle__"
+    },
+    {
+      "input": {
+        "text": "        "
+      },
+      "output": "________"
+    },
+    {
+      "input": {
+        "text": "Hello, world!"
+      },
+      "output": "Hello,_world!"
+    },
+    {
+      "input": {
+        "text": "12345"
+      },
+      "output": "12345"
+    },
+    {
+      "input": {
+        "text": "world!"
+      },
+      "output": "world!"
+    },
+    {
+      "input": {
+        "text": "HelloThe, wolrld!"
+      },
+      "output": "HelloThe,_wolrld!"
+    },
+    {
+      "input": {
+        "text": "BeWEijdkI"
+      },
+      "output": "BeWEijdkI"
+    },
+    {
+      "input": {
+        "text": "BeWEidkI"
+      },
+      "output": "BeWEidkI"
+    },
+    {
+      "input": {
+        "text": "  Jumanji The JungJunglele  "
+      },
+      "output": "__Jumanji_The_JungJunglele__"
+    },
+    {
+      "input": {
+        "text": "BeWEijkdkI"
+      },
+      "output": "BeWEijkdkI"
+    },
+    {
+      "input": {
+        "text": "abcdecfg"
+      },
+      "output": "abcdecfg"
+    },
+    {
+      "input": {
+        "text": "abcdecfgJungle"
+      },
+      "output": "abcdecfgJungle"
+    },
+    {
+      "input": {
+        "text": "  Jumanji The JungJgunglele  "
+      },
+      "output": "__Jumanji_The_JungJgunglele__"
+    },
+    {
+      "input": {
+        "text": "BeWEijkdkIHeoThe,"
+      },
+      "output": "BeWEijkdkIHeoThe,"
+    },
+    {
+      "input": {
+        "text": "HelloThe, ,wolrld!"
+      },
+      "output": "HelloThe,_,wolrld!"
+    },
+    {
+      "input": {
+        "text": "HlelloThe, ,wolrld!"
+      },
+      "output": "HlelloThe,_,wolrld!"
+    },
+    {
+      "input": {
+        "text": "HelloThe, Hwolrld!"
+      },
+      "output": "HelloThe,_Hwolrld!"
+    },
+    {
+      "input": {
+        "text": "bRZaAd"
+      },
+      "output": "bRZaAd"
+    },
+    {
+      "input": {
+        "text": "Hello,"
+      },
+      "output": "Hello,"
+    },
+    {
+      "input": {
+        "text": "41234"
+      },
+      "output": "41234"
+    },
+    {
+      "input": {
+        "text": "BeTheWEijkdkIHeoThe,"
+      },
+      "output": "BeTheWEijkdkIHeoThe,"
+    },
+    {
+      "input": {
+        "text": "JungJgunglele"
+      },
+      "output": "JungJgunglele"
+    },
+    {
+      "input": {
+        "text": "BeWEijkdhe,"
+      },
+      "output": "BeWEijkdhe,"
+    },
+    {
+      "input": {
+        "text": "JungJgwolrld!unglele"
+      },
+      "output": "JungJgwolrld!unglele"
+    },
+    {
+      "input": {
+        "text": "kHi"
+      },
+      "output": "kHi"
+    },
+    {
+      "input": {
+        "text": "BkeTheWEijkdkIHeoThe,"
+      },
+      "output": "BkeTheWEijkdkIHeoThe,"
+    },
+    {
+      "input": {
+        "text": "BeWEijkdhBeTheWEijkdkIHeoThe,e,"
+      },
+      "output": "BeWEijkdhBeTheWEijkdkIHeoThe,e,"
+    },
+    {
+      "input": {
+        "text": "HlTelloThe,"
+      },
+      "output": "HlTelloThe,"
+    },
+    {
+      "input": {
+        "text": "B,wolrld!jkdhBeTheWEEijkdkIHeoThe,e,"
+      },
+      "output": "B,wolrld!jkdhBeTheWEEijkdkIHeoThe,e,"
+    },
+    {
+      "input": {
+        "text": "jBeWEijkdhe,"
+      },
+      "output": "jBeWEijkdhe,"
+    },
+    {
+      "input": {
+        "text": "BJungJgunglele  Jumanji The JungJgunglele  eWEijkdhe,"
+      },
+      "output": "BJungJgunglele__Jumanji_The_JungJgunglele__eWEijkdhe,"
+    },
+    {
+      "input": {
+        "text": "  Jumanji The JungJgunglele  abcdefg"
+      },
+      "output": "__Jumanji_The_JungJgunglele__abcdefg"
+    },
+    {
+      "input": {
+        "text": "worl!"
+      },
+      "output": "worl!"
+    },
+    {
+      "input": {
+        "text": "BeWEijkdhBeTheWEijkdabcdefgkIHeoThe,e,"
+      },
+      "output": "BeWEijkdhBeTheWEijkdabcdefgkIHeoThe,e,"
+    },
+    {
+      "input": {
+        "text": "world!bRZaAd"
+      },
+      "output": "world!bRZaAd"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def replace_spaces(text):\n  return \"\".join(\" \" if c == \"_\" else (\"_\" if c == \" \" else c) for c in text)\n"
+  }
+}

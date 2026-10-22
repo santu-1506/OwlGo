@@ -1,0 +1,758 @@
+{
+  "id": "humaneval-20-find-closest-elements",
+  "title": "Find Closest Elements",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "From a supplied list of numbers (of length at least two) select and return two that are the closest to each\nother and return them in order (smaller number, larger number).\n>>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n(2.0, 2.2)\n>>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n(2.0, 2.0)",
+  "entry_point": "find_closest_elements",
+  "params": [
+    "numbers"
+  ],
+  "function_signature": {
+    "python": "def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.9,
+          4.0,
+          5.0,
+          2.2
+        ]
+      },
+      "output": {
+        "$tuple": [
+          3.9,
+          4.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          5.9,
+          4.0,
+          5.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          5.9
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.9,
+          4.0,
+          5.0,
+          2.2
+        ]
+      },
+      "output": {
+        "$tuple": [
+          3.9,
+          4.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          5.9,
+          4.0,
+          5.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          5.9
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          2.2
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.0,
+          2.2
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          2.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.0,
+          2.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.1,
+          4.1,
+          5.1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.2,
+          3.1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.5,
+          2.5,
+          3.5,
+          4.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.5,
+          2.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          0.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.2,
+          1.4,
+          1.6,
+          1.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          1.2
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          3.4,
+          5.6,
+          8.1,
+          14.5,
+          21.7
+        ]
+      },
+      "output": {
+        "$tuple": [
+          3.4,
+          5.6
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          0.9,
+          1.2,
+          1.8,
+          2.5,
+          2.9,
+          3.1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.9,
+          3.1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.2,
+          2.3
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.1,
+          1.2
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.3,
+          5.1,
+          7.8,
+          9.9
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.2,
+          3.3
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          3.0,
+          5.0,
+          7.0,
+          9.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.5,
+          2.5,
+          3.5,
+          4.5,
+          5.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.5,
+          2.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.3,
+          5.1,
+          7.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.2,
+          3.3
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          -0.36581021654089096,
+          0.9,
+          1.0,
+          1.8,
+          2.5,
+          2.9
+        ]
+      },
+      "output": {
+        "$tuple": [
+          0.9,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2.0,
+          2.1,
+          2.3,
+          2.4
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.0,
+          2.1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          1.3,
+          1.395275547571625,
+          1.4,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.395275547571625,
+          1.4
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          1.2,
+          1.3,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.1,
+          1.2
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.2,
+          1.4,
+          1.4,
+          1.6,
+          1.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.4,
+          1.4
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.3,
+          5.1,
+          5.605725348678288,
+          7.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          5.1,
+          5.605725348678288
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2.0,
+          2.1,
+          2.3,
+          2.4,
+          5.0,
+          7.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.0,
+          2.1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          0.9,
+          1.2,
+          1.8,
+          2.5,
+          2.5,
+          2.9,
+          3.1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.5,
+          2.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.2,
+          1.4
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          1.2
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          1.3,
+          1.395275547571625,
+          1.4
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.395275547571625,
+          1.4
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          1.0,
+          2.0,
+          2.276052871016944,
+          3.0,
+          4.0,
+          5.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.0,
+          2.276052871016944
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.2,
+          1.3,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.2,
+          1.3
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2.0,
+          2.1,
+          2.3,
+          2.4,
+          5.0,
+          5.0,
+          7.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          5.0,
+          5.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.5,
+          1.5,
+          2.5,
+          3.5,
+          4.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.5,
+          1.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.2,
+          1.3556851172598539,
+          1.4,
+          1.6,
+          1.8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.3556851172598539,
+          1.4
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.5,
+          2.5,
+          3.5,
+          4.5,
+          4.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          4.5,
+          4.5
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.3,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.3,
+          10.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          1.3,
+          1.395275547571625,
+          1.9065922001939695,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.3,
+          1.395275547571625
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.0,
+          1.0,
+          3.0,
+          5.0,
+          7.0,
+          9.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          1.0,
+          2.0,
+          2.276052871016944,
+          2.276052871016944,
+          3.0,
+          4.0,
+          5.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.276052871016944,
+          2.276052871016944
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          2.0,
+          2.1,
+          2.1
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.1,
+          2.1
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1963194756636508,
+          1.6325127784783873,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.424000205756431,
+          2.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          2.4,
+          2.424000205756431
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          1.3,
+          1.395275547571625,
+          1.4,
+          1.4603348592696748,
+          1.7891067661112277,
+          10.0
+        ]
+      },
+      "output": {
+        "$tuple": [
+          1.395275547571625,
+          1.4
+        ]
+      }
+    },
+    {
+      "input": {
+        "numbers": [
+          1.5,
+          2.5,
+          3.4,
+          3.5
+        ]
+      },
+      "output": {
+        "$tuple": [
+          3.4,
+          3.5
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List, Tuple\n\n\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of numbers (of length at least two) select and return two that are the closest to each\n    other and return them in order (smaller number, larger number).\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n\n\n    numbers.sort()\n    min_diff = float(\"inf\")\n    min_pair = None\n    for l, r in zip(numbers[:-1], numbers[1:]):\n        diff = r - l\n        if diff < min_diff:\n            min_diff = diff\n            min_pair = (l, r)\n    return min_pair\n\n"
+  }
+}

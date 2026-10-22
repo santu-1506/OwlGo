@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-479-first-digit",
+  "title": "First Digit",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the first digit of a given number.",
+  "entry_point": "first_Digit",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def first_Digit(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 123
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 456
+      },
+      "output": 4
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 123
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 456
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 9999999999999999
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 12345678901234567890
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 9999999999999998
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 12345678901234567889
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 12345678901234567888
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 10000000000000000
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 12345678901234567887
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 10000000000000001
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 12345678901234567885
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 12345678901234567886
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 9999999999999997
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 12345678901234567891
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 12345678901234567892
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 12345678901234567893
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 95
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 96
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 10000000000000003
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 12345678901234567894
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 12345678901234567884
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 10000000000000002
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 12345678901234567883
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 80
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 12345678901234567895
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def first_Digit(n) :  \n    return int(str(n)[0])\n"
+  }
+}

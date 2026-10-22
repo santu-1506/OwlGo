@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-65-circular-shift",
+  "title": "Circular Shift",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n>>> circular_shift(12, 1)\n\"21\"\n>>> circular_shift(12, 2)\n\"12\"",
+  "entry_point": "circular_shift",
+  "params": [
+    "x",
+    "shift"
+  ],
+  "function_signature": {
+    "python": "def circular_shift(x, shift):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 100,
+        "shift": 2
+      },
+      "output": "001"
+    },
+    {
+      "input": {
+        "x": 12,
+        "shift": 2
+      },
+      "output": "12"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 100,
+        "shift": 2
+      },
+      "output": "001"
+    },
+    {
+      "input": {
+        "x": 12,
+        "shift": 2
+      },
+      "output": "12"
+    },
+    {
+      "input": {
+        "x": 97,
+        "shift": 8
+      },
+      "output": "79"
+    },
+    {
+      "input": {
+        "x": 12,
+        "shift": 1
+      },
+      "output": "21"
+    },
+    {
+      "input": {
+        "x": 11,
+        "shift": 101
+      },
+      "output": "11"
+    },
+    {
+      "input": {
+        "x": 16,
+        "shift": 3
+      },
+      "output": "61"
+    },
+    {
+      "input": {
+        "x": 1234,
+        "shift": 6
+      },
+      "output": "4321"
+    },
+    {
+      "input": {
+        "x": 341209,
+        "shift": 4
+      },
+      "output": "120934"
+    },
+    {
+      "input": {
+        "x": 789456123,
+        "shift": 10
+      },
+      "output": "321654987"
+    },
+    {
+      "input": {
+        "x": 500,
+        "shift": 4
+      },
+      "output": "005"
+    },
+    {
+      "input": {
+        "x": 345,
+        "shift": 1
+      },
+      "output": "534"
+    },
+    {
+      "input": {
+        "x": 86314,
+        "shift": 3
+      },
+      "output": "31486"
+    },
+    {
+      "input": {
+        "x": 22,
+        "shift": 4
+      },
+      "output": "22"
+    },
+    {
+      "input": {
+        "x": 987654321,
+        "shift": 9
+      },
+      "output": "987654321"
+    },
+    {
+      "input": {
+        "x": 777,
+        "shift": 10
+      },
+      "output": "777"
+    },
+    {
+      "input": {
+        "x": 23,
+        "shift": 789456124
+      },
+      "output": "32"
+    },
+    {
+      "input": {
+        "x": 341209,
+        "shift": 3
+      },
+      "output": "209341"
+    },
+    {
+      "input": {
+        "x": 341209,
+        "shift": 341209
+      },
+      "output": "902143"
+    },
+    {
+      "input": {
+        "x": 789456123,
+        "shift": 23
+      },
+      "output": "321654987"
+    },
+    {
+      "input": {
+        "x": 789456122,
+        "shift": 789456123
+      },
+      "output": "221654987"
+    },
+    {
+      "input": {
+        "x": 500,
+        "shift": 3
+      },
+      "output": "500"
+    },
+    {
+      "input": {
+        "x": 23,
+        "shift": 16
+      },
+      "output": "32"
+    },
+    {
+      "input": {
+        "x": 789456123,
+        "shift": 777
+      },
+      "output": "321654987"
+    },
+    {
+      "input": {
+        "x": 15,
+        "shift": 2
+      },
+      "output": "15"
+    },
+    {
+      "input": {
+        "x": 789456122,
+        "shift": 789456122
+      },
+      "output": "221654987"
+    },
+    {
+      "input": {
+        "x": 23,
+        "shift": 22
+      },
+      "output": "32"
+    },
+    {
+      "input": {
+        "x": 789456124,
+        "shift": 789456124
+      },
+      "output": "421654987"
+    },
+    {
+      "input": {
+        "x": 2,
+        "shift": 3
+      },
+      "output": "2"
+    },
+    {
+      "input": {
+        "x": 10,
+        "shift": 6
+      },
+      "output": "01"
+    },
+    {
+      "input": {
+        "x": 2,
+        "shift": 345
+      },
+      "output": "2"
+    },
+    {
+      "input": {
+        "x": 789456123,
+        "shift": 789456123
+      },
+      "output": "321654987"
+    },
+    {
+      "input": {
+        "x": 15,
+        "shift": 6
+      },
+      "output": "51"
+    },
+    {
+      "input": {
+        "x": 23,
+        "shift": 10
+      },
+      "output": "32"
+    },
+    {
+      "input": {
+        "x": 22,
+        "shift": 777
+      },
+      "output": "22"
+    },
+    {
+      "input": {
+        "x": 789456124,
+        "shift": 3
+      },
+      "output": "124789456"
+    },
+    {
+      "input": {
+        "x": 3,
+        "shift": 3
+      },
+      "output": "3"
+    },
+    {
+      "input": {
+        "x": 789456123,
+        "shift": 11
+      },
+      "output": "321654987"
+    },
+    {
+      "input": {
+        "x": 501,
+        "shift": 3
+      },
+      "output": "501"
+    },
+    {
+      "input": {
+        "x": 15,
+        "shift": 23
+      },
+      "output": "51"
+    },
+    {
+      "input": {
+        "x": 9,
+        "shift": 777
+      },
+      "output": "9"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef circular_shift(x, shift):\n    \"\"\"Circular shift the digits of the integer x, shift the digits right by shift\n    and return the result as a string.\n    If shift > number of digits, return digits reversed.\n    >>> circular_shift(12, 1)\n    \"21\"\n    >>> circular_shift(12, 2)\n    \"12\"\n    \"\"\"\n\n\n    s = str(x)\n    if shift > len(s): return s[::-1]\n    shift %= len(s)\n    if shift == 0:\n        return s\n    else:\n        return s[len(s) - shift:] + s[:len(s) - shift]\n\n"
+  }
+}

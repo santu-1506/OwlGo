@@ -1,0 +1,458 @@
+{
+  "id": "humaneval-148-bf",
+  "title": "Bf",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "There are eight planets in our solar system: the closerst to the Sun \nis Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn, \nUranus, Neptune.\nWrite a function that takes two planet names as strings planet1 and planet2. \nThe function should return a tuple containing all planets whose orbits are \nlocated between the orbit of planet1 and the orbit of planet2, sorted by \nthe proximity to the sun. \nThe function should return an empty tuple if planet1 or planet2\nare not correct planet names. \nExamples\nbf(\"Jupiter\", \"Neptune\") ==> (\"Saturn\", \"Uranus\")\nbf(\"Earth\", \"Mercury\") ==> (\"Venus\")\nbf(\"Mercury\", \"Uranus\") ==> (\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\")",
+  "entry_point": "bf",
+  "params": [
+    "planet1",
+    "planet2"
+  ],
+  "function_signature": {
+    "python": "def bf(planet1, planet2):"
+  },
+  "examples": [
+    {
+      "input": {
+        "planet1": "Jupiter",
+        "planet2": "Neptune"
+      },
+      "output": {
+        "$tuple": [
+          "Saturn",
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Earth",
+        "planet2": "Mercury"
+      },
+      "output": {
+        "$tuple": [
+          "Venus"
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "planet1": "Jupiter",
+        "planet2": "Neptune"
+      },
+      "output": {
+        "$tuple": [
+          "Saturn",
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Earth",
+        "planet2": "Mercury"
+      },
+      "output": {
+        "$tuple": [
+          "Venus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mercury",
+        "planet2": "Uranus"
+      },
+      "output": {
+        "$tuple": [
+          "Venus",
+          "Earth",
+          "Mars",
+          "Jupiter",
+          "Saturn"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Neptune",
+        "planet2": "Venus"
+      },
+      "output": {
+        "$tuple": [
+          "Earth",
+          "Mars",
+          "Jupiter",
+          "Saturn",
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Earth",
+        "planet2": "Earth"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mars",
+        "planet2": "Earth"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Jupiter",
+        "planet2": "Makemake"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Neptune",
+        "planet2": "Mercury"
+      },
+      "output": {
+        "$tuple": [
+          "Venus",
+          "Earth",
+          "Mars",
+          "Jupiter",
+          "Saturn",
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Jupiter",
+        "planet2": "Mars"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mercury",
+        "planet2": "Saturn"
+      },
+      "output": {
+        "$tuple": [
+          "Venus",
+          "Earth",
+          "Mars",
+          "Jupiter"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Pluto",
+        "planet2": "Mars"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mercury",
+        "planet2": "Venus"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Neptune",
+        "planet2": "Saturn"
+      },
+      "output": {
+        "$tuple": [
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Earth",
+        "planet2": "Neptune"
+      },
+      "output": {
+        "$tuple": [
+          "Mars",
+          "Jupiter",
+          "Saturn",
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Uranus",
+        "planet2": "Jupiter"
+      },
+      "output": {
+        "$tuple": [
+          "Saturn"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mercury",
+        "planet2": "Neptune"
+      },
+      "output": {
+        "$tuple": [
+          "Venus",
+          "Earth",
+          "Mars",
+          "Jupiter",
+          "Saturn",
+          "Uranus"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "Venus",
+        "planet2": "Mars"
+      },
+      "output": {
+        "$tuple": [
+          "Earth"
+        ]
+      }
+    },
+    {
+      "input": {
+        "planet1": "NeptunMarse",
+        "planet2": "MeurJupitery"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "MercuNeptunMarsery",
+        "planet2": "Neptune"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mercury",
+        "planet2": "Mercury"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "MercuNeptunMarsery",
+        "planet2": "Mars"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "",
+        "planet2": "NeptuMarsn"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Pluto",
+        "planet2": "Earth"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "rn",
+        "planet2": "Sturn"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "ury",
+        "planet2": "Mercrury"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mar",
+        "planet2": "Mar"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Earth",
+        "planet2": "MerVenuscury"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "rnth",
+        "planet2": "Earath"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Pluto",
+        "planet2": "Earath"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "",
+        "planet2": "NepntuMarsn"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Pluto",
+        "planet2": "UranusEarth"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Pluto",
+        "planet2": "Pluto"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Sturn",
+        "planet2": "Sturn"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "UranusEarth",
+        "planet2": "Pluto"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "UranusEarth",
+        "planet2": "Mars"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "xrON",
+        "planet2": "Mars"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Puluto",
+        "planet2": "Pluto"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "NeptunePluto",
+        "planet2": "UrntVenushranusEarth"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "rnth",
+        "planet2": "MeurJupitery"
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "planet1": "Mars",
+        "planet2": "s"
+      },
+      "output": {
+        "$tuple": []
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef bf(planet1, planet2):\n    '''\n    There are eight planets in our solar system: the closerst to the Sun \n    is Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn, \n    Uranus, Neptune.\n    Write a function that takes two planet names as strings planet1 and planet2. \n    The function should return a tuple containing all planets whose orbits are \n    located between the orbit of planet1 and the orbit of planet2, sorted by \n    the proximity to the sun. \n    The function should return an empty tuple if planet1 or planet2\n    are not correct planet names. \n    Examples\n    bf(\"Jupiter\", \"Neptune\") ==> (\"Saturn\", \"Uranus\")\n    bf(\"Earth\", \"Mercury\") ==> (\"Venus\")\n    bf(\"Mercury\", \"Uranus\") ==> (\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\")\n    '''\n\n    planets = [\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\"]\n    if planet1 not in planets or planet2 not in planets: return tuple()\n    i1, i2 = planets.index(planet1), planets.index(planet2)\n    if i1 > i2: i1, i2 = i2, i1\n    return tuple(planets[i1 + 1 : i2])\n\n"
+  }
+}

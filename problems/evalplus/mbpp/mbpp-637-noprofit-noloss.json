@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-637-noprofit-noloss",
+  "title": "Noprofit Noloss",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether the given amount has no profit and no loss",
+  "entry_point": "noprofit_noloss",
+  "params": [
+    "actual_cost",
+    "sale_amount"
+  ],
+  "function_signature": {
+    "python": "def noprofit_noloss(actual_cost, sale_amount):"
+  },
+  "examples": [
+    {
+      "input": {
+        "actual_cost": 1500,
+        "sale_amount": 1200
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": 100,
+        "sale_amount": 100
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "actual_cost": 1500,
+        "sale_amount": 1200
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": 100,
+        "sale_amount": 100
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": 2000,
+        "sale_amount": 5000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2000,
+        "sale_amount": -5000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1500,
+        "sale_amount": -1200
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -100,
+        "sale_amount": -100
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -1501
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1501,
+        "sale_amount": -5000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -5000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -1501,
+        "sale_amount": -1501
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -2001,
+        "sale_amount": -2001
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -1501,
+        "sale_amount": -4999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2001,
+        "sale_amount": -4999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2000,
+        "sale_amount": -2001
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2000,
+        "sale_amount": -4999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -101,
+        "sale_amount": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1499,
+        "sale_amount": -1501
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -1500
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2000,
+        "sale_amount": -2000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -2001,
+        "sale_amount": -1501
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1499,
+        "sale_amount": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -100,
+        "sale_amount": -2000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -4999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1501,
+        "sale_amount": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -1499
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1499,
+        "sale_amount": -1499
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -2001
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -100,
+        "sale_amount": -5000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1502,
+        "sale_amount": -1501
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1500,
+        "sale_amount": -2002
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2002,
+        "sale_amount": -1499
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -5000,
+        "sale_amount": -100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1200,
+        "sale_amount": -1200
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "actual_cost": -2002,
+        "sale_amount": -2003
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1500,
+        "sale_amount": -2000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -5001,
+        "sale_amount": -5000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2002,
+        "sale_amount": -1500
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2001,
+        "sale_amount": -2000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -2000,
+        "sale_amount": -102
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "actual_cost": -1502,
+        "sale_amount": -5001
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def noprofit_noloss(actual_cost, sale_amount): \n  return actual_cost == sale_amount\n"
+  }
+}

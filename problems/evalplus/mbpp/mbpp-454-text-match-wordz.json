@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-454-text-match-wordz",
+  "title": "Text Match Wordz",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that matches a word containing 'z'.",
+  "entry_point": "text_match_wordz",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def text_match_wordz(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "pythonz."
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "xyz."
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "pythonz."
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "xyz."
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "  lang  ."
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "1234z5678"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z x z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "x"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "*z@*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "**z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "**zz@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*z x z*zz@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*x*z@*z@z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "***z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "x****z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*z xz x z z*zz@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z*zz@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*@*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "***@"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "***zz@@x****z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*x*z@*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*z xzz x z z*zz@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "**z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*@"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "*@*z@@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z*zz@z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*@**z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "****@"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "****z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*zz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "***zz@@x*****z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z*zz@z*zz@z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z*zz@z*zzz@z"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "****z*z@z@@x****z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "**zx*z@*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "*x@*z@"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "z*****z@zz@z*zz@z"
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef text_match_wordz(text):\n        return 'z' in text\n"
+  }
+}

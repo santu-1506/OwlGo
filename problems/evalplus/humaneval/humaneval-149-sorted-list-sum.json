@@ -1,0 +1,675 @@
+{
+  "id": "humaneval-149-sorted-list-sum",
+  "title": "Sorted List Sum",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that accepts a list of strings as a parameter,\ndeletes the strings that have odd lengths from it,\nand returns the resulted list with a sorted order,\nThe list is always a list of strings and never an array of numbers,\nand it may contain duplicates.\nThe order of the list should be ascending by length of each word, and you\nshould return the list sorted by that rule.\nIf two words have the same length, sort the list alphabetically.\nThe function should return a list of strings in sorted order.\nYou may assume that all words will have the same length.\nFor example:\nassert list_sort([\"aa\", \"a\", \"aaa\"]) => [\"aa\"]\nassert list_sort([\"ab\", \"a\", \"aaa\", \"cd\"]) => [\"ab\", \"cd\"]",
+  "entry_point": "sorted_list_sum",
+  "params": [
+    "lst"
+  ],
+  "function_signature": {
+    "python": "def sorted_list_sum(lst):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst": [
+          "aa",
+          "a",
+          "aaa"
+        ]
+      },
+      "output": [
+        "aa"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "school",
+          "AI",
+          "asdf",
+          "b"
+        ]
+      },
+      "output": [
+        "AI",
+        "asdf",
+        "school"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst": [
+          "aa",
+          "a",
+          "aaa"
+        ]
+      },
+      "output": [
+        "aa"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "school",
+          "AI",
+          "asdf",
+          "b"
+        ]
+      },
+      "output": [
+        "AI",
+        "asdf",
+        "school"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "d",
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst": [
+          "d",
+          "dcba",
+          "abcd",
+          "a"
+        ]
+      },
+      "output": [
+        "abcd",
+        "dcba"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "AI",
+          "ai",
+          "au"
+        ]
+      },
+      "output": [
+        "AI",
+        "ai",
+        "au"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "a",
+          "b",
+          "b",
+          "c",
+          "c",
+          "a"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst": [
+          "aaaa",
+          "bbbb",
+          "dd",
+          "cc"
+        ]
+      },
+      "output": [
+        "cc",
+        "dd",
+        "aaaa",
+        "bbbb"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "programming",
+          "python",
+          "java",
+          "ruby"
+        ]
+      },
+      "output": [
+        "java",
+        "ruby",
+        "python"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "apple",
+          "orange",
+          "banana",
+          "grapefruit"
+        ]
+      },
+      "output": [
+        "banana",
+        "orange",
+        "grapefruit"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "abcd",
+          "efgh",
+          "ijkl",
+          "mnop"
+        ]
+      },
+      "output": [
+        "abcd",
+        "efgh",
+        "ijkl",
+        "mnop"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "hello",
+          "world",
+          "this",
+          "is",
+          "a",
+          "test"
+        ]
+      },
+      "output": [
+        "is",
+        "test",
+        "this"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "dog",
+          "cat",
+          "bird",
+          "fish",
+          "lizard"
+        ]
+      },
+      "output": [
+        "bird",
+        "fish",
+        "lizard"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "aaaa",
+          "bb",
+          "cccc",
+          "ddd"
+        ]
+      },
+      "output": [
+        "bb",
+        "aaaa",
+        "cccc"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "the",
+          "quick",
+          "fox",
+          "jumps",
+          "over",
+          "the",
+          "lazy",
+          "dog"
+        ]
+      },
+      "output": [
+        "lazy",
+        "over"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "python",
+          "is",
+          "a",
+          "popular",
+          "language"
+        ]
+      },
+      "output": [
+        "is",
+        "python",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "this",
+          "list",
+          "has",
+          "words",
+          "of",
+          "different",
+          "lengths"
+        ]
+      },
+      "output": [
+        "of",
+        "list",
+        "this"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "racecar",
+          "deified",
+          "civic",
+          "level",
+          "rotor"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst": [
+          "bb",
+          "cccc",
+          "ddd"
+        ]
+      },
+      "output": [
+        "bb",
+        "cccc"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "efgh",
+          "ijkl",
+          "mnop"
+        ]
+      },
+      "output": [
+        "efgh",
+        "ijkl",
+        "mnop"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "popuolar",
+          "python",
+          "is",
+          "",
+          "popular",
+          "language"
+        ]
+      },
+      "output": [
+        "",
+        "is",
+        "python",
+        "language",
+        "popuolar"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "hello",
+          "world",
+          "this",
+          "jumpshello",
+          "telizardst",
+          "istest",
+          "a",
+          "test"
+        ]
+      },
+      "output": [
+        "test",
+        "this",
+        "istest",
+        "jumpshello",
+        "telizardst"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "abcdifferentd",
+          "efgh",
+          "ijkl",
+          "mnop"
+        ]
+      },
+      "output": [
+        "efgh",
+        "ijkl",
+        "mnop"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "aajavaa",
+          "fox",
+          "cccc",
+          "ddd"
+        ]
+      },
+      "output": [
+        "cccc"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "programming",
+          "python",
+          "",
+          "java",
+          "ruby"
+        ]
+      },
+      "output": [
+        "",
+        "java",
+        "ruby",
+        "python"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "aaaa",
+          "bb",
+          "cccc",
+          "ccccc",
+          "ddd"
+        ]
+      },
+      "output": [
+        "bb",
+        "aaaa",
+        "cccc"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "popuolar",
+          "lizardpython",
+          "is",
+          "",
+          "popular",
+          "jumps"
+        ]
+      },
+      "output": [
+        "",
+        "is",
+        "popuolar",
+        "lizardpython"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "popuolar",
+          "is",
+          "",
+          "popular",
+          "language"
+        ]
+      },
+      "output": [
+        "",
+        "is",
+        "language",
+        "popuolar"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "poupular",
+          "popuolar",
+          "lizardpython",
+          "is",
+          "",
+          "popular",
+          "jumps"
+        ]
+      },
+      "output": [
+        "",
+        "is",
+        "popuolar",
+        "poupular",
+        "lizardpython"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "python",
+          "is",
+          "popular",
+          "language",
+          "language"
+        ]
+      },
+      "output": [
+        "is",
+        "python",
+        "language",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "aajavaa",
+          "fox",
+          "ddd",
+          "fox"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst": [
+          "programming",
+          "python",
+          "ruby"
+        ]
+      },
+      "output": [
+        "ruby",
+        "python"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "bb",
+          "cccc",
+          "ddd",
+          "ddd"
+        ]
+      },
+      "output": [
+        "bb",
+        "cccc"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "poupular",
+          "lizardpython",
+          "is",
+          "",
+          "popular"
+        ]
+      },
+      "output": [
+        "",
+        "is",
+        "poupular",
+        "lizardpython"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "poupular",
+          "lizardpython",
+          "is",
+          "popular"
+        ]
+      },
+      "output": [
+        "is",
+        "poupular",
+        "lizardpython"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "this",
+          "list",
+          "halevels",
+          "words",
+          "of",
+          "different",
+          "lengths"
+        ]
+      },
+      "output": [
+        "of",
+        "list",
+        "this",
+        "halevels"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "the",
+          "quick",
+          "hello",
+          "fox",
+          "jumps",
+          "over",
+          "the",
+          "lazy",
+          "dog"
+        ]
+      },
+      "output": [
+        "lazy",
+        "over"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "aajavaa",
+          "appleffoxox",
+          "ddd",
+          "fox",
+          "aajavaa"
+        ]
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "lst": [
+          "apple",
+          "ojumpsnge",
+          "banana",
+          "bananna",
+          "grapefruit"
+        ]
+      },
+      "output": [
+        "banana",
+        "grapefruit"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "dog",
+          "cat",
+          "bird",
+          "fish",
+          "lizard",
+          "fish"
+        ]
+      },
+      "output": [
+        "bird",
+        "fish",
+        "fish",
+        "lizard"
+      ]
+    },
+    {
+      "input": {
+        "lst": [
+          "popuolar",
+          "python",
+          "is",
+          "hello"
+        ]
+      },
+      "output": [
+        "is",
+        "python",
+        "popuolar"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef sorted_list_sum(lst):\n    \"\"\"Write a function that accepts a list of strings as a parameter,\n    deletes the strings that have odd lengths from it,\n    and returns the resulted list with a sorted order,\n    The list is always a list of strings and never an array of numbers,\n    and it may contain duplicates.\n    The order of the list should be ascending by length of each word, and you\n    should return the list sorted by that rule.\n    If two words have the same length, sort the list alphabetically.\n    The function should return a list of strings in sorted order.\n    You may assume that all words will have the same length.\n    For example:\n    assert list_sort([\"aa\", \"a\", \"aaa\"]) => [\"aa\"]\n    assert list_sort([\"ab\", \"a\", \"aaa\", \"cd\"]) => [\"ab\", \"cd\"]\n    \"\"\"\n\n    from functools import cmp_to_key\n    def cmp(s: str, t: str):\n        if len(s) != len(t):\n            return len(s) - len(t)\n        return -1 if s < t else 1\n    return sorted(list(filter(lambda s: len(s) % 2 == 0, lst)), key=cmp_to_key(cmp))\n\n"
+  }
+}

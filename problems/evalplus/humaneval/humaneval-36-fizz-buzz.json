@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-36-fizz-buzz",
+  "title": "Fizz Buzz",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n>>> fizz_buzz(50)\n0\n>>> fizz_buzz(78)\n2\n>>> fizz_buzz(79)\n3",
+  "entry_point": "fizz_buzz",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def fizz_buzz(n: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 50
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 50
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 200
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n": 4000
+      },
+      "output": 192
+    },
+    {
+      "input": {
+        "n": 10000
+      },
+      "output": 639
+    },
+    {
+      "input": {
+        "n": 100000
+      },
+      "output": 8026
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 31
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 32
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 33
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 86
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef fizz_buzz(n: int):\n    \"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n    >>> fizz_buzz(50)\n    0\n    >>> fizz_buzz(78)\n    2\n    >>> fizz_buzz(79)\n    3\n    \"\"\"\n\n    cnt = 0\n    for i in range(n):\n        if i % 11 == 0 or i % 13 == 0:\n            cnt += len(list(filter(lambda c: c == \"7\", str(i))))\n    return cnt\n\n"
+  }
+}

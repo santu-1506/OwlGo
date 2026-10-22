@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-92-is-undulating",
+  "title": "Is Undulating",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether the given number is undulating or not.",
+  "entry_point": "is_undulating",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_undulating(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 1212121
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1991
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 1212121
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1991
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 121
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2121212121212121
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2121212121212122
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212119
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212123
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212124
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212125
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212120
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212118
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212126
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212117
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212127
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 83
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 81
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2121212121212116
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212128
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2121212121212115
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 80
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 42
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2121212121212129
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 43
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 85
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2121212121212130
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 2121212121212131
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 86
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_undulating(n): \n\tdigits = [int(digit) for digit in str(n)]\n\tif len(set(digits)) != 2:\n\t\treturn False\n\treturn all(a != b for a, b in zip(digits, digits[1:]))\n"
+  }
+}

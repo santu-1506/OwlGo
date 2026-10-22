@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-626-triangle-area",
+  "title": "Triangle Area",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the area of the largest triangle that can be inscribed in a semicircle with a given radius.",
+  "entry_point": "triangle_area",
+  "params": [
+    "r"
+  ],
+  "function_signature": {
+    "python": "def triangle_area(r):"
+  },
+  "examples": [
+    {
+      "input": {
+        "r": -1
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "r": -1
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "r": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "r": -0.5
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0.5
+      },
+      "output": 0.25
+    },
+    {
+      "input": {
+        "r": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "r": 1000000000
+      },
+      "output": 1000000000000000000
+    },
+    {
+      "input": {
+        "r": -1000000000
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0.2072611874375927
+      },
+      "output": 0.042957199818040935
+    },
+    {
+      "input": {
+        "r": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "r": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "r": 0.16809162682757048
+      },
+      "output": 0.028254795009539212
+    },
+    {
+      "input": {
+        "r": 0.6844411299243851
+      },
+      "output": 0.468459660332169
+    },
+    {
+      "input": {
+        "r": 0.35683551430663585
+      },
+      "output": 0.12733158427048133
+    },
+    {
+      "input": {
+        "r": 0.33946897052245506
+      },
+      "output": 0.11523918194757546
+    },
+    {
+      "input": {
+        "r": 0.6521612813427807
+      },
+      "output": 0.4253143368826576
+    },
+    {
+      "input": {
+        "r": 999999999
+      },
+      "output": 999999998000000001
+    },
+    {
+      "input": {
+        "r": 0.17112184563336552
+      },
+      "output": 0.029282686052969378
+    },
+    {
+      "input": {
+        "r": 19
+      },
+      "output": 361
+    },
+    {
+      "input": {
+        "r": -65.63179010691987
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": -0.01895300889853002
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": -0.2255496597911223
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0.25992055122366875
+      },
+      "output": 0.06755869294841581
+    },
+    {
+      "input": {
+        "r": -1000000001
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": -0.2386542836217336
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0.0886668365313565
+      },
+      "output": 0.007861807900478296
+    },
+    {
+      "input": {
+        "r": -0.6124370845097739
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 1.554047854781877
+      },
+      "output": 2.415064734952154
+    },
+    {
+      "input": {
+        "r": -65.03547673997947
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 2.3994387471541216
+      },
+      "output": 5.757306301344541
+    },
+    {
+      "input": {
+        "r": -35.74281783110325
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 0.09528268647223326
+      },
+      "output": 0.009078790341365902
+    },
+    {
+      "input": {
+        "r": 0.3232568533333865
+      },
+      "output": 0.10449499322700255
+    },
+    {
+      "input": {
+        "r": 0.2242711558968573
+      },
+      "output": 0.050297551367312475
+    },
+    {
+      "input": {
+        "r": -0.9709905734457034
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": -0.6546455374650706
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": -0.06234286415868906
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "r": 1.3977482675936928
+      },
+      "output": 1.9537002195611692
+    },
+    {
+      "input": {
+        "r": 0.29784236090387306
+      },
+      "output": 0.08871007194879298
+    },
+    {
+      "input": {
+        "r": 0.33836539173549723
+      },
+      "output": 0.1144911383243165
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def triangle_area(r) :  \n    if r < 0 : \n        return None\n    return r * r\n"
+  }
+}

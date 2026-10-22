@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-268-find-star-num",
+  "title": "Find Star Num",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the n'th star number.",
+  "entry_point": "find_star_num",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def find_star_num(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 73
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 73
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 121
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 5999994000001
+    },
+    {
+      "input": {
+        "n": 543210
+      },
+      "output": 1770459365341
+    },
+    {
+      "input": {
+        "n": 98765432
+      },
+      "output": 58527662756287153
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": 5999982000013
+    },
+    {
+      "input": {
+        "n": 999998
+      },
+      "output": 5999970000037
+    },
+    {
+      "input": {
+        "n": 543211
+      },
+      "output": 1770465883861
+    },
+    {
+      "input": {
+        "n": 543212
+      },
+      "output": 1770472402393
+    },
+    {
+      "input": {
+        "n": 999997
+      },
+      "output": 5999958000073
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 543213
+      },
+      "output": 1770478920937
+    },
+    {
+      "input": {
+        "n": 543214
+      },
+      "output": 1770485439493
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 6000006000001
+    },
+    {
+      "input": {
+        "n": 999996
+      },
+      "output": 5999946000121
+    },
+    {
+      "input": {
+        "n": 1000002
+      },
+      "output": 6000018000013
+    },
+    {
+      "input": {
+        "n": 1000004
+      },
+      "output": 6000042000073
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 6000030000037
+    },
+    {
+      "input": {
+        "n": 98765433
+      },
+      "output": 58527663941472337
+    },
+    {
+      "input": {
+        "n": 543215
+      },
+      "output": 1770491958061
+    },
+    {
+      "input": {
+        "n": 543209
+      },
+      "output": 1770452846833
+    },
+    {
+      "input": {
+        "n": 1000005
+      },
+      "output": 6000054000121
+    },
+    {
+      "input": {
+        "n": 98765434
+      },
+      "output": 58527665126657533
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 26533
+    },
+    {
+      "input": {
+        "n": 98765435
+      },
+      "output": 58527666311842741
+    },
+    {
+      "input": {
+        "n": 98765430
+      },
+      "output": 58527660385916821
+    },
+    {
+      "input": {
+        "n": 98765431
+      },
+      "output": 58527661571101981
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 35113
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 34201
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 33301
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 36037
+    },
+    {
+      "input": {
+        "n": 999995
+      },
+      "output": 5999934000181
+    },
+    {
+      "input": {
+        "n": 53
+      },
+      "output": 16537
+    },
+    {
+      "input": {
+        "n": 1000006
+      },
+      "output": 6000066000181
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 32413
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 31537
+    },
+    {
+      "input": {
+        "n": 52
+      },
+      "output": 15913
+    },
+    {
+      "input": {
+        "n": 98765429
+      },
+      "output": 58527659200731673
+    },
+    {
+      "input": {
+        "n": 1000007
+      },
+      "output": 6000078000253
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_star_num(n): \n\treturn 6 * n * (n - 1) + 1\n"
+  }
+}

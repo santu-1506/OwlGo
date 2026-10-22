@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-605-prime-num",
+  "title": "Prime Num",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if the given integer is a prime number.",
+  "entry_point": "prime_num",
+  "params": [
+    "num"
+  ],
+  "function_signature": {
+    "python": "def prime_num(num):"
+  },
+  "examples": [
+    {
+      "input": {
+        "num": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 7
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "num": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": -1010
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 999999999989
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 1572869
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 982451653
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 9999999967
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": false
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 9999999966
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": true
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 999999999988
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 999999999990
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 9999999968
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 982451652
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 999999999991
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 999999999987
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 982451651
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 9999999969
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 1572868
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 982451650
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 64
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 1572870
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 31
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 1572871
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "num": 982451654
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 9999999970
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 32
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 33
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 74
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 982451649
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 30
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 65
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 999999999986
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "num": 34
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math\ndef prime_num(num):\n  if num <= 1:\n    return False\n  for i in range(2, int(math.sqrt(num)) + 1):\n    if num % i == 0:\n      return False\n  return True\n"
+  }
+}

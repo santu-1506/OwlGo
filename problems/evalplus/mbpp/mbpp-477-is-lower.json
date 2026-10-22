@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-477-is-lower",
+  "title": "Is Lower",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to convert the given string to lower case.",
+  "entry_point": "is_lower",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def is_lower(string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "InValid"
+      },
+      "output": "invalid"
+    },
+    {
+      "input": {
+        "string": "TruE"
+      },
+      "output": "true"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "InValid"
+      },
+      "output": "invalid"
+    },
+    {
+      "input": {
+        "string": "TruE"
+      },
+      "output": "true"
+    },
+    {
+      "input": {
+        "string": "SenTenCE"
+      },
+      "output": "sentence"
+    },
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "True"
+      },
+      "output": "true"
+    },
+    {
+      "input": {
+        "string": "FALSE"
+      },
+      "output": "false"
+    },
+    {
+      "input": {
+        "string": "123"
+      },
+      "output": "123"
+    },
+    {
+      "input": {
+        "string": "StRiNg"
+      },
+      "output": "string"
+    },
+    {
+      "input": {
+        "string": "LOWER CASE"
+      },
+      "output": "lower case"
+    },
+    {
+      "input": {
+        "string": "nUmBeRs 123"
+      },
+      "output": "numbers 123"
+    },
+    {
+      "input": {
+        "string": "    extra spaces    "
+      },
+      "output": "    extra spaces    "
+    },
+    {
+      "input": {
+        "string": "camelCase"
+      },
+      "output": "camelcase"
+    },
+    {
+      "input": {
+        "string": "UPPERCASE"
+      },
+      "output": "uppercase"
+    },
+    {
+      "input": {
+        "string": "LOWER CASOE"
+      },
+      "output": "lower casoe"
+    },
+    {
+      "input": {
+        "string": "LOWER SE"
+      },
+      "output": "lower se"
+    },
+    {
+      "input": {
+        "string": "camelCacamelCasese"
+      },
+      "output": "camelcacamelcasese"
+    },
+    {
+      "input": {
+        "string": "1123"
+      },
+      "output": "1123"
+    },
+    {
+      "input": {
+        "string": "LOWTrueER CASOE"
+      },
+      "output": "lowtrueer casoe"
+    },
+    {
+      "input": {
+        "string": "11123"
+      },
+      "output": "11123"
+    },
+    {
+      "input": {
+        "string": "spaces"
+      },
+      "output": "spaces"
+    },
+    {
+      "input": {
+        "string": "LOWER CASCE"
+      },
+      "output": "lower casce"
+    },
+    {
+      "input": {
+        "string": "LOWTrucamespaceslCacamelCaseseeER CASOE"
+      },
+      "output": "lowtrucamespaceslcacamelcaseseeer casoe"
+    },
+    {
+      "input": {
+        "string": "SE"
+      },
+      "output": "se"
+    },
+    {
+      "input": {
+        "string": "extra"
+      },
+      "output": "extra"
+    },
+    {
+      "input": {
+        "string": "X"
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "string": "LOWTrucamespaceslCacam11123 CASOE"
+      },
+      "output": "lowtrucamespaceslcacam11123 casoe"
+    },
+    {
+      "input": {
+        "string": "exxtra"
+      },
+      "output": "exxtra"
+    },
+    {
+      "input": {
+        "string": "LOWTrucamespaceslCacam11123"
+      },
+      "output": "lowtrucamespaceslcacam11123"
+    },
+    {
+      "input": {
+        "string": "Trrue"
+      },
+      "output": "trrue"
+    },
+    {
+      "input": {
+        "string": "LOWRER CASOE"
+      },
+      "output": "lowrer casoe"
+    },
+    {
+      "input": {
+        "string": "LOWEWR CEASE"
+      },
+      "output": "lowewr cease"
+    },
+    {
+      "input": {
+        "string": "LOWER CASROE"
+      },
+      "output": "lower casroe"
+    },
+    {
+      "input": {
+        "string": "TUPPERCASErue"
+      },
+      "output": "tuppercaserue"
+    },
+    {
+      "input": {
+        "string": "Trrrue"
+      },
+      "output": "trrrue"
+    },
+    {
+      "input": {
+        "string": "LOWER CAROE"
+      },
+      "output": "lower caroe"
+    },
+    {
+      "input": {
+        "string": "LOWER"
+      },
+      "output": "lower"
+    },
+    {
+      "input": {
+        "string": "LOWER CAS ROLOWRERE"
+      },
+      "output": "lower cas rolowrere"
+    },
+    {
+      "input": {
+        "string": "LOWER ROLOWRERECAS ROLOWRERE"
+      },
+      "output": "lower rolowrerecas rolowrere"
+    },
+    {
+      "input": {
+        "string": "LOWER LCASCE"
+      },
+      "output": "lower lcasce"
+    },
+    {
+      "input": {
+        "string": "CASCE"
+      },
+      "output": "casce"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_lower(string):\n    return string.lower()\n"
+  }
+}

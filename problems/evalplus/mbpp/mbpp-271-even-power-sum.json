@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-271-even-power-sum",
+  "title": "Even Power Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function that takes in an integer n and finds the sum of the first n even natural numbers that are raised to the fifth power.",
+  "entry_point": "even_Power_Sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def even_Power_Sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 1056
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 8832
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 1056
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 8832
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 7066400
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 5494666640000
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 5349346666664000000
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 5333349333346666666666664000000000000
+    },
+    {
+      "input": {
+        "n": 500000
+      },
+      "output": 83333833334166666666666000000000000
+    },
+    {
+      "input": {
+        "n": 250000
+      },
+      "output": 1302098958385416666666500000000000
+    },
+    {
+      "input": {
+        "n": 100000
+      },
+      "output": 5333493334666666666640000000000
+    },
+    {
+      "input": {
+        "n": 249999
+      },
+      "output": 1302067708385416666666500000000000
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 5317346666664000000
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 5830989856032
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": 317789722656
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 12220032
+    },
+    {
+      "input": {
+        "n": 249998
+      },
+      "output": 1302036459010411666686499960000032
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 5174666640000
+    },
+    {
+      "input": {
+        "n": 499999
+      },
+      "output": 83332833334166666666666000000000000
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": 288473472032
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 6184295713056
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 349547692032
+    },
+    {
+      "input": {
+        "n": 249997
+      },
+      "output": 1302005210260391666846499320001056
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 383907430400
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": 5333317333346666666666664000000000000
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": 10664438400
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": 5253825069541281056
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": 12599356032
+    },
+    {
+      "input": {
+        "n": 100001
+      },
+      "output": 5333813350666986669840016000032
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 5333381333506666986666984000160000032
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 3866400
+    },
+    {
+      "input": {
+        "n": 499997
+      },
+      "output": 83330833364166466667385998640001056
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "n": 996
+      },
+      "output": 5222302198168328832
+    },
+    {
+      "input": {
+        "n": 499996
+      },
+      "output": 83329833394166106669545992160008832
+    },
+    {
+      "input": {
+        "n": 499995
+      },
+      "output": 83328833434165466674665971680041600
+    },
+    {
+      "input": {
+        "n": 250001
+      },
+      "output": 1302130209010421666686500040000032
+    },
+    {
+      "input": {
+        "n": 37
+      },
+      "output": 14818362656
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 4870349824032
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 421036730400
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 4581095169056
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def even_Power_Sum(n): \n    return sum(x ** 5 for x in range(2, 2 * n + 1, 2))\n"
+  }
+}

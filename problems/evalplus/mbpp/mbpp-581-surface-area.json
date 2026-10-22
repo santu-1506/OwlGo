@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-581-surface-area",
+  "title": "Surface Area",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the surface area of a square pyramid with a given base edge and height.",
+  "entry_point": "surface_Area",
+  "params": [
+    "b",
+    "s"
+  ],
+  "function_signature": {
+    "python": "def surface_Area(b, s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "b": 3,
+        "s": 4
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "b": 4,
+        "s": 5
+      },
+      "output": 56
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "b": 3,
+        "s": 4
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "b": 4,
+        "s": 5
+      },
+      "output": 56
+    },
+    {
+      "input": {
+        "b": 1,
+        "s": 2
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "b": 10,
+        "s": 20
+      },
+      "output": 500
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 50
+      },
+      "output": 20000
+    },
+    {
+      "input": {
+        "b": 1000,
+        "s": 200
+      },
+      "output": 1400000
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 49
+      },
+      "output": 19800
+    },
+    {
+      "input": {
+        "b": 200,
+        "s": 49
+      },
+      "output": 59600
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 100
+      },
+      "output": 30000
+    },
+    {
+      "input": {
+        "b": 1000,
+        "s": 199
+      },
+      "output": 1398000
+    },
+    {
+      "input": {
+        "b": 200,
+        "s": 200
+      },
+      "output": 120000
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 200
+      },
+      "output": 50000
+    },
+    {
+      "input": {
+        "b": 200,
+        "s": 50
+      },
+      "output": 60000
+    },
+    {
+      "input": {
+        "b": 99,
+        "s": 100
+      },
+      "output": 29601
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 101
+      },
+      "output": 30200
+    },
+    {
+      "input": {
+        "b": 99,
+        "s": 99
+      },
+      "output": 29403
+    },
+    {
+      "input": {
+        "b": 200,
+        "s": 201
+      },
+      "output": 120400
+    },
+    {
+      "input": {
+        "b": 20,
+        "s": 100
+      },
+      "output": 4400
+    },
+    {
+      "input": {
+        "b": 999,
+        "s": 1000
+      },
+      "output": 2996001
+    },
+    {
+      "input": {
+        "b": 20,
+        "s": 50
+      },
+      "output": 2400
+    },
+    {
+      "input": {
+        "b": 21,
+        "s": 200
+      },
+      "output": 8841
+    },
+    {
+      "input": {
+        "b": 99,
+        "s": 21
+      },
+      "output": 13959
+    },
+    {
+      "input": {
+        "b": 998,
+        "s": 1000
+      },
+      "output": 2992004
+    },
+    {
+      "input": {
+        "b": 50,
+        "s": 51
+      },
+      "output": 7600
+    },
+    {
+      "input": {
+        "b": 999,
+        "s": 100
+      },
+      "output": 1197801
+    },
+    {
+      "input": {
+        "b": 21,
+        "s": 100
+      },
+      "output": 4641
+    },
+    {
+      "input": {
+        "b": 201,
+        "s": 199
+      },
+      "output": 120399
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 998
+      },
+      "output": 209600
+    },
+    {
+      "input": {
+        "b": 21,
+        "s": 21
+      },
+      "output": 1323
+    },
+    {
+      "input": {
+        "b": 50,
+        "s": 50
+      },
+      "output": 7500
+    },
+    {
+      "input": {
+        "b": 49,
+        "s": 200
+      },
+      "output": 22001
+    },
+    {
+      "input": {
+        "b": 199,
+        "s": 199
+      },
+      "output": 118803
+    },
+    {
+      "input": {
+        "b": 1000,
+        "s": 1000
+      },
+      "output": 3000000
+    },
+    {
+      "input": {
+        "b": 51,
+        "s": 100
+      },
+      "output": 12801
+    },
+    {
+      "input": {
+        "b": 20,
+        "s": 1000
+      },
+      "output": 40400
+    },
+    {
+      "input": {
+        "b": 201,
+        "s": 200
+      },
+      "output": 120801
+    },
+    {
+      "input": {
+        "b": 20,
+        "s": 51
+      },
+      "output": 2440
+    },
+    {
+      "input": {
+        "b": 10,
+        "s": 1000
+      },
+      "output": 20100
+    },
+    {
+      "input": {
+        "b": 100,
+        "s": 1000
+      },
+      "output": 210000
+    },
+    {
+      "input": {
+        "b": 201,
+        "s": 201
+      },
+      "output": 121203
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def surface_Area(b,s): \n    return 2 * b * s + pow(b,2)\n"
+  }
+}

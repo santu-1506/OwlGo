@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-448-cal-sum",
+  "title": "Cal Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate the sum of perrin numbers.",
+  "entry_point": "cal_sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def cal_sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 49
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 66
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 49
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 88
+    },
+    {
+      "input": {
+        "n": -5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -4
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -6
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -7
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": -8
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -3
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -9
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -10
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -11
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -12
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 5886726723
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 4443758530
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 3354494068
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 2532232653
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 7798252600
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 1911525875
+    },
+    {
+      "input": {
+        "n": -13
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 57
+      },
+      "output": 37295139
+    },
+    {
+      "input": {
+        "n": -14
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 10330485255
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": 28153267
+    },
+    {
+      "input": {
+        "n": -2
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -46
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -16
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -15
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 1442968191
+    },
+    {
+      "input": {
+        "n": -17
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -1
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": -47
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": -60
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 55
+      },
+      "output": 21252272
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 13684979325
+    },
+    {
+      "input": {
+        "n": -48
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 54
+      },
+      "output": 16042865
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def cal_sum(n): \n\ta = 3\n\tb = 0\n\tc = 2\n\tif (n == 0): \n\t\treturn 3\n\tif (n == 1): \n\t\treturn 3\n\tif (n == 2): \n\t\treturn 5\n\tsum = 5\n\twhile (n > 2): \n\t\td = a + b \n\t\tsum = sum + d \n\t\ta = b \n\t\tb = c \n\t\tc = d \n\t\tn = n - 1\n\treturn sum\n"
+  }
+}

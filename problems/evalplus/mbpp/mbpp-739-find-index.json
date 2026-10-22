@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-739-find-index",
+  "title": "Find Index",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the index of smallest triangular number with n digits. https://www.geeksforgeeks.org/index-of-smallest-triangular-number-with-n-digits/",
+  "entry_point": "find_Index",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def find_Index(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 14
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 45
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 141
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 44721359549995794750898931231328928455603737591808
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 447
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 14142135623730949710864047394571269433889644347392
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 141421356237309502300937332480540322869392772694016
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 4472135954999579864512157513244964985347598450688
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 1414
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 4472
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 14142
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 44721
+    },
+    {
+      "input": {
+        "n": 57
+      },
+      "output": 14142135623730951272462811136
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 447214
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 141421
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 1414214
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": 1414213562373095079850826239039209591806099456
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 447213595499957926739801878173978770434052059037696
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 4472136
+    },
+    {
+      "input": {
+        "n": 90
+      },
+      "output": 447213595499957962619384467033783750396739584
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": 4472135954999579306604101632
+    },
+    {
+      "input": {
+        "n": 54
+      },
+      "output": 447213595499957916916514816
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 1414213562373095068441970836985144978335770607616
+    },
+    {
+      "input": {
+        "n": 55
+      },
+      "output": 1414213562373095017295118336
+    },
+    {
+      "input": {
+        "n": 53
+      },
+      "output": 141421356237309512037433344
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 1414213562373095023009373324805403228693927726940160
+    },
+    {
+      "input": {
+        "n": 52
+      },
+      "output": 44721359549995793409638400
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 44721359549995794994287846475148973542970753024
+    },
+    {
+      "input": {
+        "n": 92
+      },
+      "output": 4472135954999579626193844670337837503967395840
+    },
+    {
+      "input": {
+        "n": 104
+      },
+      "output": 4472135954999579433551518254854271817316403125420032
+    },
+    {
+      "input": {
+        "n": 58
+      },
+      "output": 44721359549995793066041016320
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 14142136
+    },
+    {
+      "input": {
+        "n": 95
+      },
+      "output": 141421356237309514957160925159182667412477575168
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 44721360
+    },
+    {
+      "input": {
+        "n": 51
+      },
+      "output": 14142135623730951633240064
+    },
+    {
+      "input": {
+        "n": 93
+      },
+      "output": 14142135623730950481595612333334745543885193216
+    },
+    {
+      "input": {
+        "n": 59
+      },
+      "output": 141421356237309499530488578048
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math \ndef find_Index(n): \n    x = math.sqrt(2 * math.pow(10,(n - 1)))\n    return round(x)\n"
+  }
+}

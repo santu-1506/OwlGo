@@ -1,0 +1,489 @@
+{
+  "id": "humaneval-107-even-odd-palindrome",
+  "title": "Even Odd Palindrome",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a positive integer n, return a tuple that has the number of even and odd\ninteger palindromes that fall within the range(1, n), inclusive.\n\nExample 1:\n\n    Input: 3\n    Output: (1, 2)\n    Explanation:\n    Integer palindrome are 1, 2, 3. one of them is even, and two of them are odd.\n\nExample 2:\n\n    Input: 12\n    Output: (4, 6)\n    Explanation:\n    Integer palindrome are 1, 2, 3, 4, 5, 6, 7, 8, 9, 11. four of them are even, and 6 of them are odd.\n\nNote:\n    1. 1 <= n <= 10^3\n    2. returned tuple has the number of even and odd integer palindromes respectively.",
+  "entry_point": "even_odd_palindrome",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def even_odd_palindrome(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 123
+      },
+      "output": {
+        "$tuple": [
+          8,
+          13
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": {
+        "$tuple": [
+          4,
+          6
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 123
+      },
+      "output": {
+        "$tuple": [
+          8,
+          13
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": {
+        "$tuple": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": {
+        "$tuple": [
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": {
+        "$tuple": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": {
+        "$tuple": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": {
+        "$tuple": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": {
+        "$tuple": [
+          48,
+          60
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 500
+      },
+      "output": {
+        "$tuple": [
+          28,
+          30
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 777
+      },
+      "output": {
+        "$tuple": [
+          38,
+          48
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": {
+        "$tuple": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": {
+        "$tuple": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": {
+        "$tuple": [
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 50
+      },
+      "output": {
+        "$tuple": [
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 89
+      },
+      "output": {
+        "$tuple": [
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 201
+      },
+      "output": {
+        "$tuple": [
+          8,
+          20
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 51
+      },
+      "output": {
+        "$tuple": [
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": {
+        "$tuple": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 778
+      },
+      "output": {
+        "$tuple": [
+          38,
+          48
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 88
+      },
+      "output": {
+        "$tuple": [
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 202
+      },
+      "output": {
+        "$tuple": [
+          9,
+          20
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 200
+      },
+      "output": {
+        "$tuple": [
+          8,
+          20
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 31
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": {
+        "$tuple": [
+          48,
+          60
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 32
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": {
+        "$tuple": [
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 87
+      },
+      "output": {
+        "$tuple": [
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 779
+      },
+      "output": {
+        "$tuple": [
+          38,
+          48
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": {
+        "$tuple": [
+          48,
+          59
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 203
+      },
+      "output": {
+        "$tuple": [
+          9,
+          20
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 86
+      },
+      "output": {
+        "$tuple": [
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 33
+      },
+      "output": {
+        "$tuple": [
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": {
+        "$tuple": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": {
+        "$tuple": [
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "n": 34
+      },
+      "output": {
+        "$tuple": [
+          5,
+          7
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef even_odd_palindrome(n):\n    \"\"\"\n    Given a positive integer n, return a tuple that has the number of even and odd\n    integer palindromes that fall within the range(1, n), inclusive.\n\n    Example 1:\n\n        Input: 3\n        Output: (1, 2)\n        Explanation:\n        Integer palindrome are 1, 2, 3. one of them is even, and two of them are odd.\n\n    Example 2:\n\n        Input: 12\n        Output: (4, 6)\n        Explanation:\n        Integer palindrome are 1, 2, 3, 4, 5, 6, 7, 8, 9, 11. four of them are even, and 6 of them are odd.\n\n    Note:\n        1. 1 <= n <= 10^3\n        2. returned tuple has the number of even and odd integer palindromes respectively.\n    \"\"\"\n\n\n    odd_cnt, even_cnt = 0, 0\n    for i in range(1, n + 1):\n        if str(i) == str(i)[::-1]:\n            if i % 2 == 1:\n                odd_cnt += 1\n            else:\n                even_cnt += 1\n    return even_cnt, odd_cnt\n\n"
+  }
+}

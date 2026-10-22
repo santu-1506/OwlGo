@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-75-is-multiply-prime",
+  "title": "Is Multiply Prime",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that returns true if the given number is the multiplication of 3 prime numbers\nand false otherwise.\nKnowing that (a) is less then 100. \nExample:\nis_multiply_prime(30) == True\n30 = 2 * 3 * 5",
+  "entry_point": "is_multiply_prime",
+  "params": [
+    "a"
+  ],
+  "function_signature": {
+    "python": "def is_multiply_prime(a):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 30
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 30
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 33
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 49
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 77
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 91
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 99
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 90
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 98
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 25
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 48
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 20
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 22
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 32
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 26
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 78
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 19
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 47
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 31
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 29
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -98
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -37
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -38
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 28
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 18
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 23
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -92
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 57
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -99
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 58
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 56
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": 92
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": -80
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef is_multiply_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less then 100. \n    Example:\n    is_multiply_prime(30) == True\n    30 = 2 * 3 * 5\n    \"\"\"\n\n    if a <= 1: return False\n    isprime = [True] * (a + 1)\n    for i in range(2, a + 1):\n        if isprime[i]:\n            for j in range(i + i, a + 1, i):\n                isprime[j] = False\n    cnt, tmp = 0, a\n    for i in range(2, a + 1):\n        while isprime[i] and tmp % i == 0:\n            tmp //= i\n            cnt += 1\n    return cnt == 3\n\n"
+  }
+}

@@ -1,0 +1,1834 @@
+{
+  "id": "mbpp-791-remove-nested",
+  "title": "Remove Nested",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove tuples from the given tuple.",
+  "entry_point": "remove_nested",
+  "params": [
+    "test_tup"
+  ],
+  "function_signature": {
+    "python": "def remove_nested(test_tup):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            {
+              "$tuple": [
+                4,
+                6
+              ]
+            },
+            10
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          5,
+          7,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          8,
+          11
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            {
+              "$tuple": [
+                4,
+                6
+              ]
+            },
+            10
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          5,
+          7,
+          10
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          8,
+          11
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            3,
+            7,
+            9,
+            {
+              "$tuple": [
+                6,
+                8
+              ]
+            },
+            12
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          3,
+          7,
+          9,
+          12
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            3,
+            7,
+            9,
+            {
+              "$tuple": [
+                6,
+                8
+              ]
+            },
+            {
+              "$tuple": [
+                5,
+                12
+              ]
+            },
+            12
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          3,
+          7,
+          9,
+          12
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          8,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": []
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                },
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                2
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                12
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                1,
+                2,
+                {
+                  "$tuple": [
+                    {
+                      "$tuple": [
+                        3,
+                        4
+                      ]
+                    },
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    7,
+                    {
+                      "$tuple": []
+                    }
+                  ]
+                },
+                8
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                1,
+                2
+              ]
+            },
+            {
+              "$tuple": [
+                3,
+                4
+              ]
+            },
+            {
+              "$tuple": [
+                5,
+                6
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    7,
+                    8
+                  ]
+                },
+                {
+                  "$tuple": [
+                    9,
+                    10
+                  ]
+                },
+                {
+                  "$tuple": [
+                    11,
+                    12
+                  ]
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    {
+                      "$tuple": [
+                        13,
+                        14
+                      ]
+                    },
+                    15
+                  ]
+                },
+                16
+              ]
+            },
+            {
+              "$tuple": [
+                17,
+                18,
+                {
+                  "$tuple": [
+                    19,
+                    20
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    1,
+                    {
+                      "$tuple": [
+                        2,
+                        3
+                      ]
+                    },
+                    4
+                  ]
+                },
+                5
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    {
+                      "$tuple": [
+                        6,
+                        7
+                      ]
+                    },
+                    8
+                  ]
+                },
+                9
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    10,
+                    11
+                  ]
+                },
+                12,
+                {
+                  "$tuple": [
+                    13,
+                    {
+                      "$tuple": [
+                        14,
+                        15
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                16,
+                17
+              ]
+            },
+            {
+              "$tuple": [
+                18,
+                {
+                  "$tuple": []
+                },
+                19,
+                20
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            "BBeujUUS",
+            "",
+            "cHImXR",
+            "BeujUUS"
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          "BBeujUUS",
+          "",
+          "cHImXR",
+          "BeujUUS"
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                },
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                2
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                12
+              ]
+            },
+            1
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          5,
+          7,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                1,
+                2,
+                {
+                  "$tuple": [
+                    {
+                      "$tuple": [
+                        3,
+                        4
+                      ]
+                    },
+                    5
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            "iaZtoqM",
+            -15,
+            55
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          "iaZtoqM",
+          -15,
+          55
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          8,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                },
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                2
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                12
+              ]
+            },
+            1,
+            {
+              "$tuple": [
+                10,
+                3
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          5,
+          7,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    4
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          8,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            "BBeujUUS",
+            "",
+            "cHImXR",
+            "BeujUUS",
+            ""
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          "BBeujUUS",
+          "",
+          "cHImXR",
+          "BeujUUS",
+          ""
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            20,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          20,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            20,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          20,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            "iaZtoqM",
+            55,
+            -15,
+            55
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          "iaZtoqM",
+          55,
+          -15,
+          55
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4,
+            6
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          8,
+          11,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            20,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          20,
+          8,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            7,
+            20,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          7,
+          20,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": []
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            14,
+            6,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            8,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          14,
+          6,
+          8,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                "iaZtoqM",
+                "pm",
+                "iaZtoqM",
+                "wOkCgN",
+                "oQjO",
+                "BBeujUUS",
+                "HjLKztlzPf",
+                "BeujUUS",
+                "",
+                ""
+              ]
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            5,
+            7,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    15,
+                    6
+                  ]
+                },
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                },
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                2
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                12
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    },
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                12
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                },
+                3
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          1,
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            20,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          20,
+          11,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                {
+                  "9": true,
+                  "1": true,
+                  "21": true,
+                  "32": false,
+                  "2": true,
+                  "-44": true
+                },
+                "BBeujUUS",
+                -39.29936222397124,
+                true,
+                {
+                  "$tuple": [
+                    81
+                  ]
+                },
+                "hTiPAxILj",
+                -38.17279241711651,
+                15.51245915461675
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                "KyvQyRlC",
+                "ggsHGhlSj",
+                "HjLKztlzPf",
+                "tdmtNqM",
+                "",
+                "jGdwijsq",
+                "xbjajBrxs",
+                "oQjO",
+                "upscQa",
+                "iaZtoqM"
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            {
+              "$tuple": [
+                {
+                  "9": true,
+                  "1": true,
+                  "21": true,
+                  "32": false,
+                  "2": true,
+                  "-44": true
+                },
+                "BBeujUUS",
+                -39.29936222397124,
+                true,
+                {
+                  "$tuple": [
+                    81
+                  ]
+                },
+                "hTiPAxILj",
+                -38.17279241711651,
+                15.51245915461675
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            },
+            {
+              "$tuple": []
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": []
+                },
+                {
+                  "$tuple": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": []
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            5,
+            7,
+            6,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    4,
+                    6
+                  ]
+                },
+                3
+              ]
+            },
+            {
+              "$tuple": [
+                10,
+                2
+              ]
+            },
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    8,
+                    {
+                      "$tuple": [
+                        14,
+                        10
+                      ]
+                    }
+                  ]
+                },
+                12
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          5,
+          7,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            6,
+            20,
+            16,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            },
+            11,
+            {
+              "$tuple": [
+                {
+                  "$tuple": [
+                    2,
+                    9
+                  ]
+                },
+                {
+                  "$tuple": [
+                    6,
+                    3
+                  ]
+                }
+              ]
+            },
+            4,
+            {
+              "$tuple": [
+                5,
+                7
+              ]
+            }
+          ]
+        }
+      },
+      "output": {
+        "$tuple": [
+          2,
+          6,
+          20,
+          16,
+          11,
+          4
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_nested(test_tup):\n  return tuple(e for e in test_tup if not isinstance(e, tuple))\n"
+  }
+}

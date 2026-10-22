@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-770-odd-num-sum",
+  "title": "Odd Num Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the sum of fourth power of first n odd natural numbers.",
+  "entry_point": "odd_num_sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def odd_num_sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 82
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 707
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 82
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 707
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 3108
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 9669
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 5004024325
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 5377325366
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 24310
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 5772579527
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 4651748964
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 52871
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 6190741128
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 4319598339
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": 4006697618
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 103496
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 3712197697
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 3435274816
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 6632791753
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 187017
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 317338
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 3175130175
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": 2930989550
+    },
+    {
+      "input": {
+        "n": 60
+      },
+      "output": 2487744028
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 511819
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": 2702102909
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 7099740634
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 7592625035
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 8112510636
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 6031074
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 8660491917
+    },
+    {
+      "input": {
+        "n": 59
+      },
+      "output": 2287210107
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 77688014
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 4530449
+    },
+    {
+      "input": {
+        "n": 58
+      },
+      "output": 2099821386
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 9237692542
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 3344528
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": 288559271
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": 65570653
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 2421007
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def odd_num_sum(n) : \n    j = 0\n    sm = 0\n    for i in range(1,n + 1) : \n        j = (2*i-1) \n        sm = sm + (j*j*j*j)   \n    return sm\n"
+  }
+}

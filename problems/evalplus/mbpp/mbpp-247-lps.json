@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-247-lps",
+  "title": "Lps",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the length of the longest palindromic subsequence in the given string.",
+  "entry_point": "lps",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def lps(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "TENS FOR TENS"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": "CARDIO FOR CARDS"
+      },
+      "output": 7
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "TENS FOR TENS"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": "CARDIO FOR CARDS"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "str1": "PART OF THE JOURNEY IS PART"
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "str1": "NDZWBHEJKTPQGAOSLYCRMYEX"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "str1": "AAAAAAA"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "str1": "BBBBBBBBB"
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCC"
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAAAAAAACCCCC"
+      },
+      "output": 17
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAAAAAABBBBBBBBBCCCCC"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "str1": "BBBBBBBBBB"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCC"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAACCCCCCCCCCCCCAAAAACCCCC"
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "str1": "NDZWBCCCCCCCAACCCCCCCCCCCCCAAAAACCCCCHCRMYEX"
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCAAAAAAACCCCC"
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "str1": "BNDZWBHEJKTPQGAOSLYCRMYEXBBBBBBBBB"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCAAAACCCCC"
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCCAAAAAAACCCCC"
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCAAAACCCCC"
+      },
+      "output": 51
+    },
+    {
+      "input": {
+        "str1": "AAAAAACCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCAAAACCCCCA"
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCC"
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCCAAAAAA"
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQCCCCCCCCCCCCCCCCCCCAAAAAAACCCCCGAOSLYCRMYEXCCCCCAAAACCCCC"
+      },
+      "output": 75
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCAAAAACCCCC"
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCCCCCCAAAAAACCCCCCCCCCCCCCCCAAAAAA"
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "str1": "BBBBBBBAAAAAAABBB"
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "str1": "AAAACCCCCCCAAAAAABBBBBBBBBCCCCCAAA"
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAACCCCCCCCCCCCCAAAACCC"
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "str1": "AAAAAACCCCCCCCCCCCCCCCCCCCAAAAAA"
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAACCCCCCCCCCCCCAAAAAAAACCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCAAAACCCCC"
+      },
+      "output": 48
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAAAAAABBBBBBBBBCCCCCCCCCCCCCCCCCC"
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCAACCCCCCCCCCCCCCAAAACYCCCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCCCCCCCCCCCCCCCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCAAAACCCCC"
+      },
+      "output": 89
+    },
+    {
+      "input": {
+        "str1": "BBBBBBBBBBB"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "str1": "CCCCAAAAAACCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQGAOSLYCRMYEXCCCCCAAAACCCCCACCCCCAAAAACCCCC"
+      },
+      "output": 63
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCCCCCAACCCCCCCCCCCCCACCCCCCCNDZWBHEJKTPQGAOSLYCCCCCCCCCCCCCCCCCCCCAAAAAAACCCCCRMYEXCCCCCAAAACCCCC"
+      },
+      "output": 75
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCBBBBBBBBBAAAAAAACCCCC"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "str1": "BBBBBBBBBBBB"
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCAAAAAAACCCCCAAAAAA"
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCCCCCCCCCAAAAAAACCCCAAAAAA"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "str1": "BCCCCCCCBBBBBBBBBAAAAAAACCCCC"
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "str1": "CCCCCCCACACCCCCCCCCCCCCAAAAACCCCC"
+      },
+      "output": 27
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def lps(str1): \n\tn = len(str1)\n\tdp = [[0] * n for _ in range(n)]\n\tfor i in range(n - 1, -1, -1):\n\t\tdp[i][i] = 1\n\t\tfor j in range(i + 1, n):\n\t\t\tif str1[i] == str1[j]:\n\t\t\t\tdp[i][j] = dp[i + 1][j - 1] + 2\n\t\t\telse:\n\t\t\t\tdp[i][j] = max(dp[i + 1][j], dp[i][j - 1])\n\treturn dp[0][n - 1]\n"
+  }
+}

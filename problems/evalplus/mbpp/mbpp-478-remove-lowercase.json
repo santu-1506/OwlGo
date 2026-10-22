@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-478-remove-lowercase",
+  "title": "Remove Lowercase",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove lowercase substrings from a given string.",
+  "entry_point": "remove_lowercase",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def remove_lowercase(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "PYTHon"
+      },
+      "output": "PYTH"
+    },
+    {
+      "input": {
+        "str1": "FInD"
+      },
+      "output": "FID"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "PYTHon"
+      },
+      "output": "PYTH"
+    },
+    {
+      "input": {
+        "str1": "FInD"
+      },
+      "output": "FID"
+    },
+    {
+      "input": {
+        "str1": "STRinG"
+      },
+      "output": "STRG"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWxYz"
+      },
+      "output": "ACEGIKMOQSUWY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefghIJKLMNOpQRSTUVWXYz"
+      },
+      "output": "BCDIJKLMNOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aBcDeFgHiJkLmNoPqRsTuVwXyZ"
+      },
+      "output": "BDFHJLNPRTVXZ"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmNoPqRsTuVwXyZhIJKLMNOpQRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLNPRTVXZIJKLMNOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "AbQCdEfKGhIjKlMnOpQrStUvWxYz"
+      },
+      "output": "AQCEKGIKMOQSUWY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmNoPqRsTuVwXyZhIJKLMNOpaQRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLNPRTVXZIJKLMNOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmNoPqRsTuVwXRyZhIJKLMNOpaQRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLNPRTVXRZIJKLMNOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aBcDeFgHiJkLmNoPqRsTuVwZ"
+      },
+      "output": "BDFHJLNPRTVZ"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIhjKlMnOpQrStUvWxYz"
+      },
+      "output": "ACEGIKMOQSUWY"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUUvWxYz"
+      },
+      "output": "ACEGIKMOQSUUWY"
+    },
+    {
+      "input": {
+        "str1": "aAbCdEfGhIjKlMnOpQrStUUvWxYzBcDeFgHiJkLmNoPqRsTuVwXyZ"
+      },
+      "output": "ACEGIKMOQSUUWYBDFHJLNPRTVXZ"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIhjKlMnOpQrStUaBcDeFgHiJkLmNoPqRsTuVwXyZvWxYz"
+      },
+      "output": "ACEGIKMOQSUBDFHJLNPRTVXZWY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmNoPqRsTuaBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYzRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLNPRTBCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aBcDeaBCDefgaBcDeFgHiJkLmNoPqRsTuVwXRyZhIJKLMNOpaQRSTUVWXYzFgHiJkLmNoPqRsTuVwXyZ"
+      },
+      "output": "BDBCDBDFHJLNPRTVXRZIJKLMNOQRSTUVWXYFHJLNPRTVXZ"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmNoPqRsTuaBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTeUVWXYzRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLNPRTBCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "AbCdEaBcDeFgHiJkLmNoPqRsTuVwXyZfGhIhjKlMnOpQrStUvWxYz"
+      },
+      "output": "ACEBDFHJLNPRTVXZGIKMOQSUWY"
+    },
+    {
+      "input": {
+        "str1": "aBcDeaBCDefgaBcDeFgHiJkLmNoPqRsTuVwXRyZhIJKLMNOpaQRSTUVWXYzFgHiJkLmNoPqRsTuVwXaBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYzyZ"
+      },
+      "output": "BDBCDBDFHJLNPRTVXRZIJKLMNOQRSTUVWXYFHJLNPRTVXBCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYZ"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaaAbCdEfGhIjKlMnOpQrStUUvWxYzBcDeFgHiJkLmNoPqRsTuVwXyZBcDeFgHiJkLmNoPqRsTuVwXyZhIJKLMNOpaQRSTUVWXYz"
+      },
+      "output": "BCDACEGIKMOQSUUWYBDFHJLNPRTVXZBDFHJLNPRTVXZIJKLMNOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfEGhIhjKlMnOpQrStUvWxYz"
+      },
+      "output": "ACEEGIKMOQSUWY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefghIJKLMNOpQRSTAbCdEfGhIhjKlMnOpQrStUaBCDefghIJKLMNOpQRSTUVWXYzvWxYzUVWXYz"
+      },
+      "output": "BCDIJKLMNOQRSTACEGIKMOQSUBCDIJKLMNOQRSTUVWXYWYUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aBcDAbQCdEfKGhIjKlMnOpQrStUvWxYzeFgHiJkLmNoPqRsTuVwZ"
+      },
+      "output": "BDAQCEKGIKMOQSUWYFHJLNPRTVZ"
+    },
+    {
+      "input": {
+        "str1": "aBcDAbQCdEfKGhIjKlMnOpQrStUvWxYzeFgHiJkLmNoPqRsTuVZ"
+      },
+      "output": "BDAQCEKGIKMOQSUWYFHJLNPRTVZ"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfEGhIhjKlMnOpQAbCdEfGhIjKlMnOpQrStUvWxYzvWxYz"
+      },
+      "output": "ACEEGIKMOQACEGIKMOQSUWYWY"
+    },
+    {
+      "input": {
+        "str1": "aBcDeaBCNDefgaBcDeFgHiJkLmNoPqRsTuVwXRyZhIJKLMNOpaQRSTUVWXYzFgHiJkLmNoPqRsTuVwXaBCDefgaBcDeFgHiJkLmVAbQCdEfKGhIjKlMnOpQrStUvWxYzwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYzyZ"
+      },
+      "output": "BDBCNDBDFHJLNPRTVXRZIJKLMNOQRSTUVWXYFHJLNPRTVXBCDBDFHJLVAQCEKGIKMOQSUWYXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYZ"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWxYKz"
+      },
+      "output": "ACEGIKMOQSUWYK"
+    },
+    {
+      "input": {
+        "str1": "q"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIhjKlMnOpQrStUvWxYAbQCdEfKGhIjKlMnOpQrStUvWxYzz"
+      },
+      "output": "ACEGIKMOQSUWYAQCEKGIKMOQSUWY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaBcDeFgHiJkLmNoPqRsTuaBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYezRSTUVWXYz"
+      },
+      "output": "BCDBDFHJLNPRTBCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIhhjKlMnOpQrStUaBcDeFgHiiJkLmNoPqRsTuVwXyZvWxYz"
+      },
+      "output": "ACEGIKMOQSUBDFHJLNPRTVXZWY"
+    },
+    {
+      "input": {
+        "str1": "aBCDefghIJKLMNAbCdEfGhIhjKlMnOpQrStUvWxYAbQCdEfKGhIjKlMnOpQrStUvWxYzzOpQRSTUVWXYz"
+      },
+      "output": "BCDIJKLMNACEGIKMOQSUWYAQCEKGIKMOQSUWYOQRSTUVWXY"
+    },
+    {
+      "input": {
+        "str1": "aAbCdEfGhIjKlMnOpQrStUUvWxbYzBcDeFgHiJkLmNoPqRsTuVwXyZ"
+      },
+      "output": "ACEGIKMOQSUUWYBDFHJLNPRTVXZ"
+    },
+    {
+      "input": {
+        "str1": "aBCDefghIJKLMNOpQRSTAbCdEfGhIhjKlMnOpQrStUaBCDefghIJKLMNOpQRSTUVWXYzvWxYzUVWXYzAbQCdEfKGhIjKlMnOpQaBcDeaBCDefgaBcDeFgHiJkLmNoPqRsTuVwXRyZhIJKLMNOpaQRSTUVWXYzFCgHiJkLmNoPqRsTuVwXaBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYzyZStUvWxYz"
+      },
+      "output": "BCDIJKLMNOQRSTACEGIKMOQSUBCDIJKLMNOQRSTUVWXYWYUVWXYAQCEKGIKMOQBDBCDBDFHJLNPRTVXRZIJKLMNOQRSTUVWXYFCHJLNPRTVXBCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYZSUWY"
+    },
+    {
+      "input": {
+        "str1": "AbCdEfGhIjKlMnOpQrStUvWxYzH"
+      },
+      "output": "ACEGIKMOQSUWYH"
+    },
+    {
+      "input": {
+        "str1": "aAbCdEfGhIjKlMnOpQrSaBCDefgaBcDeFgHiJkLmNoPqRsTuaBCDefgaBcDeFgHiJkLmVwXRyAbCdEfGhIhjKlMnOpQrStUvWxYzZhIJKLMNOpaQRSTUVWXYezRSTUVWXYztUUvWxbYzBcDeFgHiJkLwmNoPqRsTuVwXyZ"
+      },
+      "output": "ACEGIKMOQSBCDBDFHJLNPRTBCDBDFHJLVXRACEGIKMOQSUWYZIJKLMNOQRSTUVWXYRSTUVWXYUUWYBDFHJLNPRTVXZ"
+    },
+    {
+      "input": {
+        "str1": "aBCDefgaaAbCdEfGhIjKlMnOpQAbQCdEfKGhIjKlMnOpQrStUvWxYzrStUUvWxYzBcDeFWgHiJkLmNoPqRsTuVwXyZaBCDefgaBcDeFgHiJkLmNoPqRsTuVwXRyZhIJKLMNOpaQRSTUVWXYzBcDeFgHiJkLmNoPqRsTuVwXyZhIJKLMNOpaQRSTUVWXYz"
+      },
+      "output": "BCDACEGIKMOQAQCEKGIKMOQSUWYSUUWYBDFWHJLNPRTVXZBCDBDFHJLNPRTVXRZIJKLMNOQRSTUVWXYBDFHJLNPRTVXZIJKLMNOQRSTUVWXY"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef remove_lowercase(str1):\n    return re.sub('[a-z]', '', str1)\n"
+  }
+}

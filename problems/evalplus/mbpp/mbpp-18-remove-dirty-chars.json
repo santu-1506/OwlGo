@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-18-remove-dirty-chars",
+  "title": "Remove Dirty Chars",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove characters from the first string which are present in the second string.",
+  "entry_point": "remove_dirty_chars",
+  "params": [
+    "string",
+    "second_string"
+  ],
+  "function_signature": {
+    "python": "def remove_dirty_chars(string, second_string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "probasscurve",
+        "second_string": "pros"
+      },
+      "output": "bacuve"
+    },
+    {
+      "input": {
+        "string": "digitalindia",
+        "second_string": "talent"
+      },
+      "output": "digiidi"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "probasscurve",
+        "second_string": "pros"
+      },
+      "output": "bacuve"
+    },
+    {
+      "input": {
+        "string": "digitalindia",
+        "second_string": "talent"
+      },
+      "output": "digiidi"
+    },
+    {
+      "input": {
+        "string": "exoticmiles",
+        "second_string": "toxic"
+      },
+      "output": "emles"
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps over the lazy dog",
+        "second_string": "fox"
+      },
+      "output": "The quick brwn  jumps ver the lazy dg"
+    },
+    {
+      "input": {
+        "string": "This is a sample string",
+        "second_string": "i a"
+      },
+      "output": "Thsssmplestrng"
+    },
+    {
+      "input": {
+        "string": "1234567890",
+        "second_string": "01234"
+      },
+      "output": "56789"
+    },
+    {
+      "input": {
+        "string": "abcd efgh",
+        "second_string": "ab cd"
+      },
+      "output": "efgh"
+    },
+    {
+      "input": {
+        "string": "This is a sampile string",
+        "second_string": "i a"
+      },
+      "output": "Thsssmplestrng"
+    },
+    {
+      "input": {
+        "string": "abcd efgh",
+        "second_string": "This is a sampile string"
+      },
+      "output": "bcdf"
+    },
+    {
+      "input": {
+        "string": "a",
+        "second_string": "01234"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "string": "This is a sample string",
+        "second_string": "a"
+      },
+      "output": "This is  smple string"
+    },
+    {
+      "input": {
+        "string": "abcabgh",
+        "second_string": "ab"
+      },
+      "output": "cgh"
+    },
+    {
+      "input": {
+        "string": "i a",
+        "second_string": "This is a sampile string"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "dog",
+        "second_string": "This is a sampile string"
+      },
+      "output": "do"
+    },
+    {
+      "input": {
+        "string": "01234",
+        "second_string": "01234"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "abcabgh",
+        "second_string": "a"
+      },
+      "output": "bcbgh"
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps otver the lazy dog",
+        "second_string": "fox"
+      },
+      "output": "The quick brwn  jumps tver the lazy dg"
+    },
+    {
+      "input": {
+        "string": "do",
+        "second_string": "This is a sampile string"
+      },
+      "output": "do"
+    },
+    {
+      "input": {
+        "string": "abcabggh",
+        "second_string": "a"
+      },
+      "output": "bcbggh"
+    },
+    {
+      "input": {
+        "string": "This is a sample string",
+        "second_string": "This"
+      },
+      "output": "  a ample trng"
+    },
+    {
+      "input": {
+        "string": "ia",
+        "second_string": "This is a sampile string"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "ia",
+        "second_string": "This is a sample stringsample"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "This is a sasmple string",
+        "second_string": "This is a sample strin1234567890g"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "sis",
+        "second_string": "dog"
+      },
+      "output": "sis"
+    },
+    {
+      "input": {
+        "string": "abcd efgh",
+        "second_string": "bab cd"
+      },
+      "output": "efgh"
+    },
+    {
+      "input": {
+        "string": "bab cd",
+        "second_string": "bab cd"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "bab cd",
+        "second_string": "This is a sample stringsample"
+      },
+      "output": "bbcd"
+    },
+    {
+      "input": {
+        "string": "This is a sampile string",
+        "second_string": "This is a sampile string"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "do",
+        "second_string": "do"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "This is a sample stringsample",
+        "second_string": "Thish is a sampile string"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "a",
+        "second_string": "1234567890"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "string": "dog",
+        "second_string": "dog"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "Thiss is a sampring",
+        "second_string": "This is a sampring"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "The quick brown fox jumps over the lazy dog",
+        "second_string": "This is a sampile string"
+      },
+      "output": "quckbowfoxjuovzydo"
+    },
+    {
+      "input": {
+        "string": "brownabcd",
+        "second_string": "iaquick"
+      },
+      "output": "brownbd"
+    },
+    {
+      "input": {
+        "string": "This is a sasmple string",
+        "second_string": "This is a sample strin1234567g"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "This is a sample stringsamplae",
+        "second_string": "This is a sample stringsample"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "Thish is a sampile string",
+        "second_string": "Thish is a sampile string"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "1234567890",
+        "second_string": "1234567890"
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "a",
+        "second_string": "0123"
+      },
+      "output": "a"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_dirty_chars(string, second_string): \n\tfor char in second_string:\n\t\tstring = string.replace(char, '')\n\treturn string\n"
+  }
+}

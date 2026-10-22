@@ -1,0 +1,929 @@
+{
+  "id": "mbpp-394-check-distinct",
+  "title": "Check Distinct",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if given tuple contains no duplicates.",
+  "entry_point": "check_distinct",
+  "params": [
+    "test_tup"
+  ],
+  "function_signature": {
+    "python": "def check_distinct(test_tup):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            4,
+            5,
+            6,
+            1,
+            4
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            4,
+            5,
+            6,
+            1,
+            4
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": []
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3.14,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            1,
+            2,
+            3.14,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            "a",
+            true,
+            3.14
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            7,
+            8,
+            37,
+            3,
+            -71,
+            -36
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            7,
+            9,
+            37,
+            3,
+            -71,
+            -36
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            1,
+            1,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            1
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            61,
+            1,
+            34,
+            -53,
+            -71,
+            false
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6,
+            2
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            2,
+            1,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3.14,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            1,
+            2,
+            3.14,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            6,
+            3,
+            2,
+            1,
+            6,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            3,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6,
+            3
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            10,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            0,
+            1,
+            6,
+            3
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            3,
+            1,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            10,
+            1,
+            6,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            0
+          ]
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            10,
+            9,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            6
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            6,
+            8,
+            8,
+            37,
+            3,
+            -71,
+            -36
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            2,
+            3.14,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            1,
+            2,
+            3.14,
+            4,
+            5,
+            6,
+            9,
+            10
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            6,
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "test_tup": {
+          "$tuple": [
+            7,
+            8,
+            3,
+            -71,
+            -36
+          ]
+        }
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check_distinct(test_tup):\n  return len(test_tup) == len(set(test_tup))\n"
+  }
+}

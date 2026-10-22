@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-84-solve",
+  "title": "Solve",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a positive integer N, return the total sum of its digits in binary.\n\nExample\n    For N = 1000, the sum of digits will be 1 the output should be \"1\".\n    For N = 150, the sum of digits will be 6 the output should be \"110\".\n    For N = 147, the sum of digits will be 12 the output should be \"1100\".\n\nVariables:\n    @N integer\n         Constraints: 0 ≤ N ≤ 10000.\nOutput:\n     a string of binary number",
+  "entry_point": "solve",
+  "params": [
+    "N"
+  ],
+  "function_signature": {
+    "python": "def solve(N):"
+  },
+  "examples": [
+    {
+      "input": {
+        "N": 1000
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "N": 150
+      },
+      "output": "110"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "N": 1000
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "N": 150
+      },
+      "output": "110"
+    },
+    {
+      "input": {
+        "N": 147
+      },
+      "output": "1100"
+    },
+    {
+      "input": {
+        "N": 333
+      },
+      "output": "1001"
+    },
+    {
+      "input": {
+        "N": 963
+      },
+      "output": "10010"
+    },
+    {
+      "input": {
+        "N": 1
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "N": 10
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "N": 101
+      },
+      "output": "10"
+    },
+    {
+      "input": {
+        "N": 1111
+      },
+      "output": "100"
+    },
+    {
+      "input": {
+        "N": 5000
+      },
+      "output": "101"
+    },
+    {
+      "input": {
+        "N": 9999
+      },
+      "output": "100100"
+    },
+    {
+      "input": {
+        "N": 819
+      },
+      "output": "10010"
+    },
+    {
+      "input": {
+        "N": 15
+      },
+      "output": "110"
+    },
+    {
+      "input": {
+        "N": 75
+      },
+      "output": "1100"
+    },
+    {
+      "input": {
+        "N": 820
+      },
+      "output": "1010"
+    },
+    {
+      "input": {
+        "N": 818
+      },
+      "output": "10001"
+    },
+    {
+      "input": {
+        "N": 16
+      },
+      "output": "111"
+    },
+    {
+      "input": {
+        "N": 1112
+      },
+      "output": "101"
+    },
+    {
+      "input": {
+        "N": 17
+      },
+      "output": "1000"
+    },
+    {
+      "input": {
+        "N": 9998
+      },
+      "output": "100011"
+    },
+    {
+      "input": {
+        "N": 9997
+      },
+      "output": "100010"
+    },
+    {
+      "input": {
+        "N": 821
+      },
+      "output": "1011"
+    },
+    {
+      "input": {
+        "N": 2
+      },
+      "output": "10"
+    },
+    {
+      "input": {
+        "N": 1110
+      },
+      "output": "11"
+    },
+    {
+      "input": {
+        "N": 1113
+      },
+      "output": "110"
+    },
+    {
+      "input": {
+        "N": 74
+      },
+      "output": "1011"
+    },
+    {
+      "input": {
+        "N": 11
+      },
+      "output": "10"
+    },
+    {
+      "input": {
+        "N": 14
+      },
+      "output": "101"
+    },
+    {
+      "input": {
+        "N": 10000
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "N": 100
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "N": 73
+      },
+      "output": "1010"
+    },
+    {
+      "input": {
+        "N": 27
+      },
+      "output": "1001"
+    },
+    {
+      "input": {
+        "N": 35
+      },
+      "output": "1000"
+    },
+    {
+      "input": {
+        "N": 817
+      },
+      "output": "10000"
+    },
+    {
+      "input": {
+        "N": 1114
+      },
+      "output": "111"
+    },
+    {
+      "input": {
+        "N": 9996
+      },
+      "output": "100001"
+    },
+    {
+      "input": {
+        "N": 1115
+      },
+      "output": "1000"
+    },
+    {
+      "input": {
+        "N": 12
+      },
+      "output": "11"
+    },
+    {
+      "input": {
+        "N": 18
+      },
+      "output": "1001"
+    },
+    {
+      "input": {
+        "N": 816
+      },
+      "output": "1111"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef solve(N):\n    \"\"\"Given a positive integer N, return the total sum of its digits in binary.\n    \n    Example\n        For N = 1000, the sum of digits will be 1 the output should be \"1\".\n        For N = 150, the sum of digits will be 6 the output should be \"110\".\n        For N = 147, the sum of digits will be 12 the output should be \"1100\".\n    \n    Variables:\n        @N integer\n             Constraints: 0 ≤ N ≤ 10000.\n    Output:\n         a string of binary number\n    \"\"\"\n\n\n    s = sum(map(lambda x: int(x), str(N)))\n    return bin(s)[2:]\n\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-131-reverse-vowels",
+  "title": "Reverse Vowels",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to reverse only the vowels of a given string (where y is not a vowel).",
+  "entry_point": "reverse_vowels",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def reverse_vowels(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "Python"
+      },
+      "output": "Python"
+    },
+    {
+      "input": {
+        "str1": "USA"
+      },
+      "output": "ASU"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "Python"
+      },
+      "output": "Python"
+    },
+    {
+      "input": {
+        "str1": "USA"
+      },
+      "output": "ASU"
+    },
+    {
+      "input": {
+        "str1": "ab"
+      },
+      "output": "ab"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "BCDFG"
+      },
+      "output": "BCDFG"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCG"
+      },
+      "output": "BCDFCCG"
+    },
+    {
+      "input": {
+        "str1": "BCDFC"
+      },
+      "output": "BCDFC"
+    },
+    {
+      "input": {
+        "str1": "BDCBDFC"
+      },
+      "output": "BDCBDFC"
+    },
+    {
+      "input": {
+        "str1": "BDFG"
+      },
+      "output": "BDFG"
+    },
+    {
+      "input": {
+        "str1": "BCDCBDFC"
+      },
+      "output": "BCDCBDFC"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCGBCDCBDFC"
+      },
+      "output": "BCDFCCGBCDCBDFC"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCGBCDCBDFCBCDFCCG"
+      },
+      "output": "BCDFCCGBCDCBDFCBCDFCCG"
+    },
+    {
+      "input": {
+        "str1": "BDFGG"
+      },
+      "output": "BDFGG"
+    },
+    {
+      "input": {
+        "str1": "BCDBFC"
+      },
+      "output": "BCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BCBDCBDFCDBFC"
+      },
+      "output": "BCBDCBDFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BCBDCBDFCDBBCDCBDFCC"
+      },
+      "output": "BCBDCBDFCDBBCDCBDFCC"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCGBCDBDFC"
+      },
+      "output": "BCDFCCGBCDBDFC"
+    },
+    {
+      "input": {
+        "str1": "BCBDCBCDFCDBFC"
+      },
+      "output": "BCBDCBCDFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BFGG"
+      },
+      "output": "BFGG"
+    },
+    {
+      "input": {
+        "str1": "BCBDCBDFCBCDFCCGBCDCBDFGCBCDFCCGDBFC"
+      },
+      "output": "BCBDCBDFCBCDFCCGBCDCBDFGCBCDFCCGDBFC"
+    },
+    {
+      "input": {
+        "str1": "CDFCCGBCDBDFC"
+      },
+      "output": "CDFCCGBCDBDFC"
+    },
+    {
+      "input": {
+        "str1": "BBBCBDCBDFCDBBCDCBDFCCDCBDDFC"
+      },
+      "output": "BBBCBDCBDFCDBBCDCBDFCCDCBDDFC"
+    },
+    {
+      "input": {
+        "str1": "BCBCDFCDFC"
+      },
+      "output": "BCBCDFCDFC"
+    },
+    {
+      "input": {
+        "str1": "BCCCGBCDBCDFC"
+      },
+      "output": "BCCCGBCDBCDFC"
+    },
+    {
+      "input": {
+        "str1": "DBCBDCBDFCDBBCDCBDFCC"
+      },
+      "output": "DBCBDCBDFCDBBCDCBDFCC"
+    },
+    {
+      "input": {
+        "str1": "BBCBDCBCBCDFCDFCBDFCDBFC"
+      },
+      "output": "BBCBDCBCBCDFCDFCBDFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BCBBCBDCBDFCDBFCDCBDFCDBBCDCBDFCC"
+      },
+      "output": "BCBBCBDCBDFCDBFCDCBDFCDBBCDCBDFCC"
+    },
+    {
+      "input": {
+        "str1": "DBCDBDCBDFCDBCBDCBDFCDBBCDCBDFCCBBCDCBDFCC"
+      },
+      "output": "DBCDBDCBDFCDBCBDCBDFCDBBCDCBDFCCBBCDCBDFCC"
+    },
+    {
+      "input": {
+        "str1": "BDCBDCBCDFCDB"
+      },
+      "output": "BDCBDCBCDFCDB"
+    },
+    {
+      "input": {
+        "str1": "BCBDCBCDBFCDBFC"
+      },
+      "output": "BCBDCBCDBFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCGBCDBD"
+      },
+      "output": "BCDFCCGBCDBD"
+    },
+    {
+      "input": {
+        "str1": "BBBCBDCBDCBDCBCDFCDBBDFCDBBCDCBDFCCDCBDDFC"
+      },
+      "output": "BBBCBDCBDCBDCBCDFCDBBDFCDBBCDCBDFCCDCBDDFC"
+    },
+    {
+      "input": {
+        "str1": "BDFGGBCBDCBCDBBBCDFCCGFCDBFC"
+      },
+      "output": "BDFGGBCBDCBCDBBBCDFCCGFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCBGBCDCBDFC"
+      },
+      "output": "BCDFCCBGBCDCBDFC"
+    },
+    {
+      "input": {
+        "str1": "BBBBCBDCBDFCDBBCDCBDFCCDCBDDFC"
+      },
+      "output": "BBBBCBDCBDFCDBBCDCBDFCCDCBDDFC"
+    },
+    {
+      "input": {
+        "str1": "BBCBDCBCBCDFCBCDBFCDFCBDFCDBFC"
+      },
+      "output": "BBCBDCBCBCDFCBCDBFCDFCBDFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "CBDFCDBBCDCBDFCC"
+      },
+      "output": "CBDFCDBBCDCBDFCC"
+    },
+    {
+      "input": {
+        "str1": "BBCBDCBCBCDFCBCDBFCDCFCBDFCDBFC"
+      },
+      "output": "BBCBDCBCBCDFCBCDBFCDCFCBDFCDBFC"
+    },
+    {
+      "input": {
+        "str1": "BG"
+      },
+      "output": "BG"
+    },
+    {
+      "input": {
+        "str1": "BCDFCCGBDCDBDFC"
+      },
+      "output": "BCDFCCGBDCDBDFC"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def reverse_vowels(str1):\n\tis_vowel = lambda x: x in 'aeiouAEIOU'\n\tpos = [i for i, c in enumerate(str1) if is_vowel(c)]\n\treturn ''.join(c if not is_vowel(c) else str1[pos.pop()] for c in str1)\n"
+  }
+}

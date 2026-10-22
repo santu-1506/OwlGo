@@ -1,0 +1,558 @@
+{
+  "id": "mbpp-798-sum",
+  "title": "Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the sum of an array.",
+  "entry_point": "_sum",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def _sum(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          15,
+          12,
+          13,
+          10
+        ]
+      },
+      "output": 50
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          15,
+          12,
+          13,
+          10
+        ]
+      },
+      "output": 50
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          1,
+          2
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          3,
+          7,
+          -2
+        ]
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          3,
+          7,
+          -2,
+          -2
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          -5,
+          3,
+          7,
+          -2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          -5,
+          3,
+          -2
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          10,
+          -5,
+          3,
+          7,
+          -2
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          10,
+          -5,
+          3,
+          7,
+          -3,
+          -2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          3,
+          -2
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          3,
+          7,
+          -2,
+          -2
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          10,
+          -5,
+          3,
+          7,
+          -2,
+          -2,
+          7
+        ]
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          10,
+          -5,
+          3,
+          7,
+          7,
+          -3,
+          -2
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          3,
+          7,
+          7,
+          -2
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -4,
+          3,
+          7,
+          7,
+          -2
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          3,
+          7,
+          7,
+          -2,
+          -2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          -6,
+          3,
+          7,
+          8,
+          -2
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -1,
+          10,
+          -5,
+          3,
+          7,
+          -1,
+          -2
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          3,
+          -5,
+          3,
+          -2
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          3,
+          -6,
+          -2
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          9,
+          3,
+          7,
+          -2,
+          7
+        ]
+      },
+      "output": 29
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          10,
+          -5,
+          3,
+          7,
+          -2,
+          -2
+        ]
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          3,
+          7,
+          -2,
+          -2,
+          7,
+          -5
+        ]
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -5,
+          -4,
+          3,
+          7,
+          7,
+          -5,
+          -2
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -4,
+          3,
+          7,
+          3,
+          -2
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          3,
+          7,
+          7,
+          -2,
+          -2,
+          7
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          3,
+          7,
+          7,
+          -2,
+          -4,
+          -2
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          9,
+          3,
+          7,
+          -2,
+          7,
+          3
+        ]
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          -5,
+          3,
+          -2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          3,
+          -2
+        ]
+      },
+      "output": -4
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -4,
+          -5,
+          3,
+          7,
+          7,
+          -2
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -2
+        ]
+      },
+      "output": -7
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          3,
+          7,
+          7,
+          -2,
+          -4,
+          -2
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -5,
+          -6,
+          3,
+          -2,
+          -2
+        ]
+      },
+      "output": -17
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -1,
+          10,
+          -5,
+          3,
+          7,
+          -2,
+          -1,
+          -2
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          3,
+          7,
+          -2,
+          10
+        ]
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -5,
+          -5,
+          -2,
+          3,
+          -2
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -5,
+          3
+        ]
+      },
+      "output": -4
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -3
+        ]
+      },
+      "output": -8
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          3,
+          -5,
+          3,
+          3,
+          -2
+        ]
+      },
+      "output": 12
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def _sum(arr):  \n    return sum(arr)\n"
+  }
+}

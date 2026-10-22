@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-24-largest-divisor",
+  "title": "Largest Divisor",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "For a given number n, find the largest number that divides n evenly, smaller than n\n>>> largest_divisor(15)\n5",
+  "entry_point": "largest_divisor",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def largest_divisor(n: int) -> int:"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 50
+    },
+    {
+      "input": {
+        "n": 49
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 235
+      },
+      "output": 47
+    },
+    {
+      "input": {
+        "n": 500
+      },
+      "output": 250
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 333
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 500
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "n": 81
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "n": 499
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 234
+      },
+      "output": 117
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": 499
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 143
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "n": 236
+      },
+      "output": 118
+    },
+    {
+      "input": {
+        "n": 82
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 33
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "n": 80
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "n": 238
+      },
+      "output": 119
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 237
+      },
+      "output": 79
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "n": 57
+      },
+      "output": 19
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 15
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n\n\n    for i in range(2, n):\n        if n % i == 0: return n // i\n    return 1\n\n"
+  }
+}

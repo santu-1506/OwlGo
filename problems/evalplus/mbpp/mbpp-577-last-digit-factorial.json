@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-577-last-digit-factorial",
+  "title": "Last Digit Factorial",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the last digit in factorial of a given number.",
+  "entry_point": "last_Digit_Factorial",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def last_Digit_Factorial(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2.5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.8
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 23.074387180674933
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.6549340293875163
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1004
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1005
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2.7450543076525977
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2.984088088976573
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1.5869584267664152
+      },
+      "output": 1.5869584267664152
+    },
+    {
+      "input": {
+        "n": 4.4891610250151395
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.089056366033627
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 5.3027554376354065
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 4.028700461024416
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.3725660528964188
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2.659818066786769
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.9892249182433384
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 43.22021574103846
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1003
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.4810848948595883
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.1692815338650804
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 1.0650899101182285
+      },
+      "output": 1.0650899101182285
+    },
+    {
+      "input": {
+        "n": 4.8986268408429705
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.69259942495845
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 4.010566044386772
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 2.46052609812118
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 4.3768561489787015
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 3.6713224100924298
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 6.935501596893169
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def last_Digit_Factorial(n): \n    if (n == 0): \n      return 1\n    elif (n <= 2): \n      return n  \n    elif (n == 3): \n      return 6\n    elif (n == 4): \n      return 4 \n    else: \n      return 0\n"
+  }
+}

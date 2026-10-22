@@ -1,0 +1,527 @@
+{
+  "id": "humaneval-12-longest",
+  "title": "Longest",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Out of list of strings, return the longest one. Return the first one in case of multiple\nstrings of the same length. Return None in case the input list is empty.\n>>> longest([])\n\n>>> longest(['a', 'b', 'c'])\n'a'\n>>> longest(['a', 'bb', 'ccc'])\n'ccc'",
+  "entry_point": "longest",
+  "params": [
+    "strings"
+  ],
+  "function_signature": {
+    "python": "def longest(strings: List[str]) -> Optional[str]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "strings": []
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "strings": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "output": "x"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "strings": []
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "strings": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "strings": [
+          "x",
+          "yyy",
+          "zzzz",
+          "www",
+          "kkkk",
+          "abc"
+        ]
+      },
+      "output": "zzzz"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "a",
+          "aa",
+          "aaa"
+        ]
+      },
+      "output": "aaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "123456789",
+          "1234",
+          "12345",
+          "123"
+        ]
+      },
+      "output": "123456789"
+    },
+    {
+      "input": {
+        "strings": [
+          "a",
+          "b",
+          "aa",
+          "bb"
+        ]
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "strings": [
+          "dog",
+          "cat",
+          "horse",
+          "cow"
+        ]
+      },
+      "output": "horse"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "banana",
+          "pear"
+        ]
+      },
+      "output": "banana"
+    },
+    {
+      "input": {
+        "strings": [
+          "123",
+          "12",
+          "1234",
+          "1",
+          "12345"
+        ]
+      },
+      "output": "12345"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "bb",
+          "cc",
+          "aaa",
+          "bb",
+          "cccc"
+        ]
+      },
+      "output": "cccc"
+    },
+    {
+      "input": {
+        "strings": [
+          "aaa",
+          "aa",
+          "a",
+          "aaaa"
+        ]
+      },
+      "output": "aaaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "a"
+        ]
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "z",
+          "p",
+          "q"
+        ]
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "bb",
+          "cc",
+          "aaa",
+          "123",
+          "cccc",
+          "cc",
+          "cccc"
+        ]
+      },
+      "output": "cccc"
+    },
+    {
+      "input": {
+        "strings": [
+          "dog",
+          "cat",
+          "horse",
+          "cow",
+          "q"
+        ]
+      },
+      "output": "horse"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "a",
+          "aa",
+          "aaa",
+          "aa"
+        ]
+      },
+      "output": "aaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "banana",
+          "banna",
+          "banana"
+        ]
+      },
+      "output": "banana"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "bb",
+          "cc",
+          "aaa",
+          "123",
+          "cccc",
+          "cccc",
+          "ccaaa"
+        ]
+      },
+      "output": "ccaaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "a",
+          "cow",
+          "aaa",
+          "aa"
+        ]
+      },
+      "output": "cow"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "z",
+          "p",
+          "qq"
+        ]
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "apple",
+          "p",
+          "qq",
+          "apple"
+        ]
+      },
+      "output": "apple"
+    },
+    {
+      "input": {
+        "strings": [
+          "dog",
+          "cat",
+          "horse"
+        ]
+      },
+      "output": "horse"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "banana",
+          "pear",
+          "horse",
+          "pear"
+        ]
+      },
+      "output": "banana"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "bb",
+          "cc",
+          "aaa",
+          "1233",
+          "cccc",
+          "cccc",
+          "ccaaa"
+        ]
+      },
+      "output": "ccaaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "bb",
+          "cc",
+          "aaa",
+          "123",
+          "cccc",
+          "cc",
+          "cccc",
+          "123"
+        ]
+      },
+      "output": "cccc"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "a",
+          "1234",
+          "dog",
+          "aa"
+        ]
+      },
+      "output": "1234"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "apple",
+          "p",
+          "qq",
+          "apple",
+          "p"
+        ]
+      },
+      "output": "apple"
+    },
+    {
+      "input": {
+        "strings": [
+          "cat",
+          "horse"
+        ]
+      },
+      "output": "horse"
+    },
+    {
+      "input": {
+        "strings": [
+          "dog",
+          "cat",
+          "horse",
+          "cow",
+          "hore",
+          "horse"
+        ]
+      },
+      "output": "horse"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "apple",
+          "p",
+          "qq",
+          "apple",
+          "p",
+          "p",
+          "aa"
+        ]
+      },
+      "output": "apple"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "banana",
+          "banna",
+          "banana",
+          "banana"
+        ]
+      },
+      "output": "banana"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "banana",
+          "pear",
+          "horse",
+          "pear",
+          "apple"
+        ]
+      },
+      "output": "banana"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "z",
+          "p",
+          "qq",
+          "aa",
+          ""
+        ]
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "cc",
+          "aaa",
+          "123",
+          "cccc",
+          "cc",
+          "cccc",
+          "123",
+          "aa"
+        ]
+      },
+      "output": "cccc"
+    },
+    {
+      "input": {
+        "strings": [
+          "aa",
+          "bb",
+          "cc",
+          "aaa",
+          "bb",
+          "cccc",
+          "aa",
+          "aa"
+        ]
+      },
+      "output": "cccc"
+    },
+    {
+      "input": {
+        "strings": [
+          "dog",
+          "cat"
+        ]
+      },
+      "output": "dog"
+    },
+    {
+      "input": {
+        "strings": [
+          "apple",
+          "p",
+          "qq",
+          "apple",
+          "p",
+          "pear"
+        ]
+      },
+      "output": "apple"
+    },
+    {
+      "input": {
+        "strings": [
+          "aaa",
+          "z",
+          "p",
+          "qq",
+          "qqq"
+        ]
+      },
+      "output": "aaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "a",
+          "aa",
+          "aaa",
+          "aa",
+          "a"
+        ]
+      },
+      "output": "aaa"
+    },
+    {
+      "input": {
+        "strings": [
+          "",
+          "hore",
+          "",
+          "nWa",
+          "aaa",
+          "pear",
+          "wRQ",
+          "qq"
+        ]
+      },
+      "output": "hore"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of multiple\n    strings of the same length. Return None in case the input list is empty.\n    >>> longest([])\n\n    >>> longest(['a', 'b', 'c'])\n    'a'\n    >>> longest(['a', 'bb', 'ccc'])\n    'ccc'\n    \"\"\"\n\n    if not strings:\n        return None\n\n    maxlen = max(len(x) for x in strings)\n    for s in strings:\n        if len(s) == maxlen:\n            return s\n\n"
+  }
+}

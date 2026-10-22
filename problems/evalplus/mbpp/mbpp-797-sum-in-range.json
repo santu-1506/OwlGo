@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-797-sum-in-range",
+  "title": "Sum In Range",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the sum of all odd natural numbers within the range l and r.",
+  "entry_point": "sum_in_range",
+  "params": [
+    "l",
+    "r"
+  ],
+  "function_signature": {
+    "python": "def sum_in_range(l, r):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": 2,
+        "r": 5
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "l": 5,
+        "r": 7
+      },
+      "output": 12
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": 2,
+        "r": 5
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "l": 5,
+        "r": 7
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "l": 7,
+        "r": 13
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "l": 1,
+        "r": 10000
+      },
+      "output": 25000000
+    },
+    {
+      "input": {
+        "l": 100,
+        "r": 100000
+      },
+      "output": 2499997500
+    },
+    {
+      "input": {
+        "l": 0,
+        "r": 10000
+      },
+      "output": 25000000
+    },
+    {
+      "input": {
+        "l": 100,
+        "r": 100
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 1,
+        "r": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "l": 101,
+        "r": 99999
+      },
+      "output": 2499997500
+    },
+    {
+      "input": {
+        "l": 1,
+        "r": 10001
+      },
+      "output": 25010001
+    },
+    {
+      "input": {
+        "l": 100,
+        "r": 10000
+      },
+      "output": 24997500
+    },
+    {
+      "input": {
+        "l": 0,
+        "r": 100
+      },
+      "output": 2500
+    },
+    {
+      "input": {
+        "l": 99,
+        "r": 100
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "l": 0,
+        "r": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 100,
+        "r": 101
+      },
+      "output": 101
+    },
+    {
+      "input": {
+        "l": 0,
+        "r": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "l": 99,
+        "r": 99
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "l": 10001,
+        "r": 10001
+      },
+      "output": 10001
+    },
+    {
+      "input": {
+        "l": 10000,
+        "r": 99999
+      },
+      "output": 2475000000
+    },
+    {
+      "input": {
+        "l": 99,
+        "r": 100000
+      },
+      "output": 2499997599
+    },
+    {
+      "input": {
+        "l": 101,
+        "r": 101
+      },
+      "output": 101
+    },
+    {
+      "input": {
+        "l": 0,
+        "r": 99
+      },
+      "output": 2500
+    },
+    {
+      "input": {
+        "l": 2,
+        "r": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 10000,
+        "r": 100000
+      },
+      "output": 2475000000
+    },
+    {
+      "input": {
+        "l": 99,
+        "r": 101
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "l": 100000,
+        "r": 100000
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 101,
+        "r": 9999
+      },
+      "output": 24997500
+    },
+    {
+      "input": {
+        "l": false,
+        "r": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 10000,
+        "r": 10000
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 98,
+        "r": 100
+      },
+      "output": 99
+    },
+    {
+      "input": {
+        "l": 1,
+        "r": 100
+      },
+      "output": 2500
+    },
+    {
+      "input": {
+        "l": 2,
+        "r": 99999
+      },
+      "output": 2499999999
+    },
+    {
+      "input": {
+        "l": 99,
+        "r": 9999
+      },
+      "output": 24997599
+    },
+    {
+      "input": {
+        "l": 99,
+        "r": 10000
+      },
+      "output": 24997599
+    },
+    {
+      "input": {
+        "l": 97,
+        "r": 101
+      },
+      "output": 297
+    },
+    {
+      "input": {
+        "l": 101,
+        "r": 10001
+      },
+      "output": 25007501
+    },
+    {
+      "input": {
+        "l": 97,
+        "r": 99
+      },
+      "output": 196
+    },
+    {
+      "input": {
+        "l": 10000,
+        "r": 10001
+      },
+      "output": 10001
+    },
+    {
+      "input": {
+        "l": 1,
+        "r": 100000
+      },
+      "output": 2500000000
+    },
+    {
+      "input": {
+        "l": 9999,
+        "r": 99999
+      },
+      "output": 2475009999
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def sum_odd(n): \n    terms = (n + 1) // 2\n    sum1 = terms * terms \n    return sum1  \ndef sum_in_range(l,r): \n    return sum_odd(r) - sum_odd(l - 1)\n"
+  }
+}

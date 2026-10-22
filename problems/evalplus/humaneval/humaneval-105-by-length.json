@@ -1,0 +1,1006 @@
+{
+  "id": "humaneval-105-by-length",
+  "title": "By Length",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given an array of integers, sort the integers that are between 1 and 9 inclusive,\nreverse the resulting array, and then replace each digit by its corresponding name from\n\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\nFor example:\n  arr = [2, 1, 1, 4, 5, 8, 2, 3]   \n        -> sort arr -> [1, 1, 2, 2, 3, 4, 5, 8] \n        -> reverse arr -> [8, 5, 4, 3, 2, 2, 1, 1]\n  return [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n\n  If the array is empty, return an empty array:\n  arr = []\n  return []\n\n  If the array has any strange number ignore it:\n  arr = [1, -1 , 55] \n        -> sort arr -> [-1, 1, 55]\n        -> reverse arr -> [55, 1, -1]\n  return = ['One']",
+  "entry_point": "by_length",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def by_length(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          1,
+          4,
+          5,
+          8,
+          2,
+          3
+        ]
+      },
+      "output": [
+        "Eight",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": []
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          2,
+          1,
+          1,
+          4,
+          5,
+          8,
+          2,
+          3
+        ]
+      },
+      "output": [
+        "Eight",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          -1,
+          55
+        ]
+      },
+      "output": [
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          -1,
+          3,
+          2
+        ]
+      },
+      "output": [
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          4,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Four"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          5,
+          6,
+          10
+        ]
+      },
+      "output": [
+        "Six",
+        "Five"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1,
+          1,
+          5,
+          6,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Six",
+        "Five",
+        "Five",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          9,
+          7,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": [
+        "Three",
+        "Three",
+        "Three",
+        "Three",
+        "Three",
+        "Three"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          9,
+          9,
+          8,
+          8,
+          8,
+          7,
+          7,
+          7,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": [
+        "Nine",
+        "Nine",
+        "Nine",
+        "Eight",
+        "Eight",
+        "Eight",
+        "Seven",
+        "Seven",
+        "Seven",
+        "One",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          3,
+          2,
+          1,
+          9,
+          8,
+          7,
+          6
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          8,
+          15,
+          6,
+          7,
+          21,
+          9
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": [
+        "Six",
+        "Three",
+        "Three",
+        "Three",
+        "Three"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          8,
+          7,
+          6
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          8,
+          9,
+          7,
+          5,
+          4,
+          3,
+          2,
+          1,
+          5
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Five",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1,
+          1,
+          5,
+          6,
+          0,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Six",
+        "Five",
+        "Five",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1,
+          1,
+          8,
+          5,
+          6,
+          0,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Eight",
+        "Six",
+        "Five",
+        "Five",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Five",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1,
+          1,
+          5,
+          21,
+          6,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Six",
+        "Five",
+        "Five",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          2,
+          1,
+          9,
+          8,
+          7,
+          6,
+          2
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Three",
+        "Two",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          0,
+          1,
+          1,
+          5,
+          6,
+          0,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Six",
+        "Five",
+        "Five",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1,
+          1,
+          5,
+          6,
+          0,
+          8,
+          5
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Six",
+        "Five",
+        "Five",
+        "Five",
+        "Two",
+        "One",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          6,
+          4,
+          5,
+          10,
+          6,
+          7,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Seven",
+        "Six",
+        "Six",
+        "Five",
+        "Four",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          21,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          5,
+          4,
+          4,
+          3,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Five",
+        "Four",
+        "Four",
+        "Three",
+        "Two",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          1
+        ]
+      },
+      "output": [
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Four",
+        "Three",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          22,
+          2,
+          3,
+          4,
+          6,
+          21,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          2,
+          2,
+          1,
+          9,
+          8,
+          7,
+          6,
+          2
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Two",
+        "Two",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          4
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          2,
+          1,
+          9,
+          8,
+          7,
+          6,
+          2
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Two",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          21,
+          7,
+          8,
+          9,
+          10,
+          2
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Three",
+        "Two",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          3,
+          5,
+          6,
+          2,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Three",
+        "Two",
+        "Two",
+        "Two"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          8,
+          3,
+          4,
+          7,
+          6,
+          5,
+          4,
+          3,
+          1
+        ]
+      },
+      "output": [
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Four",
+        "Four",
+        "Three",
+        "Three",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          3,
+          1,
+          9,
+          8,
+          7,
+          6,
+          2
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Four",
+        "Three",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          5,
+          2,
+          1,
+          5,
+          8,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Eight",
+        "Five",
+        "Five",
+        "Two",
+        "One"
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          6,
+          21,
+          7,
+          8,
+          9,
+          10,
+          10,
+          8
+        ]
+      },
+      "output": [
+        "Nine",
+        "Eight",
+        "Eight",
+        "Seven",
+        "Six",
+        "Three",
+        "Two",
+        "One"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef by_length(arr):\n    \"\"\"\n    Given an array of integers, sort the integers that are between 1 and 9 inclusive,\n    reverse the resulting array, and then replace each digit by its corresponding name from\n    \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\n    For example:\n      arr = [2, 1, 1, 4, 5, 8, 2, 3]   \n            -> sort arr -> [1, 1, 2, 2, 3, 4, 5, 8] \n            -> reverse arr -> [8, 5, 4, 3, 2, 2, 1, 1]\n      return [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n    \n      If the array is empty, return an empty array:\n      arr = []\n      return []\n    \n      If the array has any strange number ignore it:\n      arr = [1, -1 , 55] \n            -> sort arr -> [-1, 1, 55]\n            -> reverse arr -> [55, 1, -1]\n      return = ['One']\n    \"\"\"\n\n    def to_word(x: int) -> str:\n      if x == 1:\n        return \"One\"\n      elif x == 2:\n        return \"Two\"\n      elif x == 3:\n        return \"Three\"\n      elif x == 4:\n        return \"Four\"\n      elif x == 5:\n        return \"Five\"\n      elif x == 6:\n        return \"Six\"\n      elif x == 7:\n        return \"Seven\"\n      elif x == 8:\n        return \"Eight\"\n      else:\n        return \"Nine\"\n    sorted_list, ans = sorted(arr)[::-1], []\n    for x in sorted_list:\n      if 1 <= x <= 9:\n        ans.append(to_word(x))\n    return ans\n\n"
+  }
+}

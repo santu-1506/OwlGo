@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-135-hexagonal-num",
+  "title": "Hexagonal Num",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the nth hexagonal number.",
+  "entry_point": "hexagonal_num",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def hexagonal_num(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 190
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 45
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 190
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 45
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 91
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 19900
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 1999000
+    },
+    {
+      "input": {
+        "n": 10000
+      },
+      "output": 199990000
+    },
+    {
+      "input": {
+        "n": 9999
+      },
+      "output": 199950003
+    },
+    {
+      "input": {
+        "n": 9998
+      },
+      "output": 199910010
+    },
+    {
+      "input": {
+        "n": 10001
+      },
+      "output": 200030001
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 19503
+    },
+    {
+      "input": {
+        "n": 9997
+      },
+      "output": 199870021
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 2003001
+    },
+    {
+      "input": {
+        "n": 10002
+      },
+      "output": 200070006
+    },
+    {
+      "input": {
+        "n": 9996
+      },
+      "output": 199830036
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 20301
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 90
+      },
+      "output": 16110
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 19110
+    },
+    {
+      "input": {
+        "n": 97
+      },
+      "output": 18721
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": 2007006
+    },
+    {
+      "input": {
+        "n": 10003
+      },
+      "output": 200110015
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 20706
+    },
+    {
+      "input": {
+        "n": 1003
+      },
+      "output": 2011015
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": 7626
+    },
+    {
+      "input": {
+        "n": 1004
+      },
+      "output": 2015028
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 96
+      },
+      "output": 18336
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 21115
+    },
+    {
+      "input": {
+        "n": 9995
+      },
+      "output": 199790055
+    },
+    {
+      "input": {
+        "n": 104
+      },
+      "output": 21528
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 7875
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 8128
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": 16471
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": 7381
+    },
+    {
+      "input": {
+        "n": 1005
+      },
+      "output": 2019045
+    },
+    {
+      "input": {
+        "n": 89
+      },
+      "output": 15753
+    },
+    {
+      "input": {
+        "n": 1006
+      },
+      "output": 2023066
+    },
+    {
+      "input": {
+        "n": 60
+      },
+      "output": 7140
+    },
+    {
+      "input": {
+        "n": 105
+      },
+      "output": 21945
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": 8646
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def hexagonal_num(n): \n\treturn n * (2 * n - 1)\n"
+  }
+}

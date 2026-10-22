@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-138-is-sum-of-powers-of-two",
+  "title": "Is Sum Of Powers Of Two",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether the given number can be represented as sum of non-zero powers of 2 or not.",
+  "entry_point": "is_Sum_Of_Powers_Of_Two",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_Sum_Of_Powers_Of_Two(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 123456789
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -14
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483648
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -15
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456788
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -2147483647
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456787
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483649
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483650
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483651
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -16
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483646
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456786
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -17
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -88
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -18
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -19
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456785
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483652
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483653
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483645
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483654
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456784
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -86
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483643
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -87
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456783
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -2147483655
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -85
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -9
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -21
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_Sum_Of_Powers_Of_Two(n): \n    return n > 0 and n % 2 == 0\n"
+  }
+}

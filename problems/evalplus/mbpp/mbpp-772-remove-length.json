@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-772-remove-length",
+  "title": "Remove Length",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove all the words with k length in the given string.",
+  "entry_point": "remove_length",
+  "params": [
+    "test_str",
+    "K"
+  ],
+  "function_signature": {
+    "python": "def remove_length(test_str, K):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_str": "The person is most value tet",
+        "K": 3
+      },
+      "output": "person is most value"
+    },
+    {
+      "input": {
+        "test_str": "If you told me about this ok",
+        "K": 4
+      },
+      "output": "If you me about ok"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_str": "The person is most value tet",
+        "K": 3
+      },
+      "output": "person is most value"
+    },
+    {
+      "input": {
+        "test_str": "If you told me about this ok",
+        "K": 4
+      },
+      "output": "If you me about ok"
+    },
+    {
+      "input": {
+        "test_str": "Forces of darkeness is come into the play",
+        "K": 4
+      },
+      "output": "Forces of darkeness is the"
+    },
+    {
+      "input": {
+        "test_str": "",
+        "K": 3
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "",
+        "K": 5
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "",
+        "K": 10
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "This is a very long and complex sentence that contains words of different lengths such as abracadabra, internationalization, and antidisestablishmentarianism.",
+        "K": 10
+      },
+      "output": "This is a very long and complex sentence that contains words of different lengths such as abracadabra, internationalization, and antidisestablishmentarianism."
+    },
+    {
+      "input": {
+        "test_str": "This is a Test of the Function",
+        "K": 4
+      },
+      "output": "is a of the Function"
+    },
+    {
+      "input": {
+        "test_str": "This is a test sentence with all words having length of five.",
+        "K": 5
+      },
+      "output": "This is a test sentence with all having length of"
+    },
+    {
+      "input": {
+        "test_str": "This is a very long and complex sentence that contains words of different lengthsa such as abracadabra, internationalization, and antidisestablishmentarianism.",
+        "K": 10
+      },
+      "output": "This is a very long and complex sentence that contains words of different lengthsa such as abracadabra, internationalization, and antidisestablishmentarianism."
+    },
+    {
+      "input": {
+        "test_str": "Test",
+        "K": 6
+      },
+      "output": "Test"
+    },
+    {
+      "input": {
+        "test_str": "This is a test sentence with all words having length of five.",
+        "K": 10
+      },
+      "output": "This is a test sentence with all words having length of five."
+    },
+    {
+      "input": {
+        "test_str": "Test",
+        "K": 10
+      },
+      "output": "Test"
+    },
+    {
+      "input": {
+        "test_str": "T",
+        "K": 11
+      },
+      "output": "T"
+    },
+    {
+      "input": {
+        "test_str": "",
+        "K": 6
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "",
+        "K": 4
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "Tesallt",
+        "K": 6
+      },
+      "output": "Tesallt"
+    },
+    {
+      "input": {
+        "test_str": "abracadabra,Test",
+        "K": 10
+      },
+      "output": "abracadabra,Test"
+    },
+    {
+      "input": {
+        "test_str": "This is a Test Thisof the Function",
+        "K": 4
+      },
+      "output": "is a Thisof the Function"
+    },
+    {
+      "input": {
+        "test_str": "five.",
+        "K": 4
+      },
+      "output": "five."
+    },
+    {
+      "input": {
+        "test_str": "This is a Test Thisof the Fuwith",
+        "K": 6
+      },
+      "output": "This is a Test the"
+    },
+    {
+      "input": {
+        "test_str": "Fuwith",
+        "K": 10
+      },
+      "output": "Fuwith"
+    },
+    {
+      "input": {
+        "test_str": "contains",
+        "K": 5
+      },
+      "output": "contains"
+    },
+    {
+      "input": {
+        "test_str": "iThis is a test sentence with all words having length of five.",
+        "K": 5
+      },
+      "output": "is a test sentence with all having length of"
+    },
+    {
+      "input": {
+        "test_str": "contais",
+        "K": 5
+      },
+      "output": "contais"
+    },
+    {
+      "input": {
+        "test_str": "",
+        "K": 9
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "test_str": "This is a test sentence with all words having length of five.t of the Function",
+        "K": 4
+      },
+      "output": "is a sentence all words having length of five.t of the Function"
+    },
+    {
+      "input": {
+        "test_str": "abracadabra,Test",
+        "K": 11
+      },
+      "output": "abracadabra,Test"
+    },
+    {
+      "input": {
+        "test_str": "This is a Test Thisof the Fuwith",
+        "K": 7
+      },
+      "output": "This is a Test Thisof the Fuwith"
+    },
+    {
+      "input": {
+        "test_str": "This is a Test Thisof the Fuwith",
+        "K": 5
+      },
+      "output": "This is a Test Thisof the Fuwith"
+    },
+    {
+      "input": {
+        "test_str": "all",
+        "K": 6
+      },
+      "output": "all"
+    },
+    {
+      "input": {
+        "test_str": "contais",
+        "K": 3
+      },
+      "output": "contais"
+    },
+    {
+      "input": {
+        "test_str": "abracadabra,Test",
+        "K": 5
+      },
+      "output": "abracadabra,Test"
+    },
+    {
+      "input": {
+        "test_str": "This is a very long and complex sentence that contains words of different lengthsa such as abracadabra, internationalization, and antidisestablishmentarianism.",
+        "K": 9
+      },
+      "output": "This is a very long and complex sentence that contains words of lengthsa such as abracadabra, internationalization, and antidisestablishmentarianism."
+    },
+    {
+      "input": {
+        "test_str": "TeT",
+        "K": 10
+      },
+      "output": "TeT"
+    },
+    {
+      "input": {
+        "test_str": "iThis is a test sentence with all words having length of five.",
+        "K": 10
+      },
+      "output": "iThis is a test sentence with all words having length of five."
+    },
+    {
+      "input": {
+        "test_str": "very",
+        "K": 9
+      },
+      "output": "very"
+    },
+    {
+      "input": {
+        "test_str": "Test",
+        "K": 9
+      },
+      "output": "Test"
+    },
+    {
+      "input": {
+        "test_str": "Fuwith",
+        "K": 5
+      },
+      "output": "Fuwith"
+    },
+    {
+      "input": {
+        "test_str": "This is a Test of the unction",
+        "K": 4
+      },
+      "output": "is a of the unction"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def remove_length(test_str, K):\n  return ' '.join([i for i in test_str.split() if len(i) != K])\n"
+  }
+}

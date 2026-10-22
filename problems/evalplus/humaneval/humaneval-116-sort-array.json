@@ -1,0 +1,851 @@
+{
+  "id": "humaneval-116-sort-array",
+  "title": "Sort Array",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "In this Kata, you have to sort an array of non-negative integers according to\nnumber of ones in their binary representation in ascending order.\nFor similar number of ones, sort based on decimal value.\n\nIt must be implemented like this:\n>>> sort_array([1, 5, 2, 3, 4]) == [1, 2, 3, 4, 5]\n>>> sort_array([-2, -3, -4, -5, -6]) == [-6, -5, -4, -3, -2]\n>>> sort_array([1, 0, 2, 3, 4]) [0, 1, 2, 3, 4]",
+  "entry_point": "sort_array",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def sort_array(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          5,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": [
+        1,
+        2,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -3,
+          -4,
+          -5,
+          -6
+        ]
+      },
+      "output": [
+        -4,
+        -2,
+        -6,
+        -5,
+        -3
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          5,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": [
+        1,
+        2,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -3,
+          -4,
+          -5,
+          -6
+        ]
+      },
+      "output": [
+        -4,
+        -2,
+        -6,
+        -5,
+        -3
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          0,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "input": {
+        "arr": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          5,
+          77,
+          4,
+          5,
+          3,
+          5,
+          7,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": [
+        2,
+        2,
+        4,
+        4,
+        3,
+        3,
+        5,
+        5,
+        5,
+        7,
+        77
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          6,
+          44,
+          12,
+          32,
+          5
+        ]
+      },
+      "output": [
+        32,
+        3,
+        5,
+        6,
+        12,
+        44
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "output": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "output": [
+        4,
+        3,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          12,
+          11,
+          9
+        ]
+      },
+      "output": [
+        8,
+        9,
+        10,
+        12,
+        11
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          111,
+          222,
+          333,
+          444
+        ]
+      },
+      "output": [
+        333,
+        111,
+        222,
+        444
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          100000000,
+          0,
+          10101010,
+          111111111,
+          100000
+        ]
+      },
+      "output": [
+        0,
+        100000,
+        10101010,
+        100000000,
+        111111111
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          15,
+          3,
+          7,
+          12
+        ]
+      },
+      "output": [
+        0,
+        3,
+        12,
+        7,
+        15
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "output": [
+        2,
+        4,
+        8,
+        6,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          16,
+          32,
+          64,
+          128,
+          256
+        ]
+      },
+      "output": [
+        16,
+        32,
+        64,
+        128,
+        256
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1023,
+          511,
+          255,
+          127,
+          63
+        ]
+      },
+      "output": [
+        63,
+        127,
+        255,
+        511,
+        1023
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          10
+        ]
+      },
+      "output": [
+        2,
+        4,
+        8,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          33,
+          16,
+          32,
+          64,
+          128,
+          256,
+          32
+        ]
+      },
+      "output": [
+        16,
+        32,
+        32,
+        64,
+        128,
+        256,
+        33
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          7,
+          12,
+          11,
+          9
+        ]
+      },
+      "output": [
+        9,
+        12,
+        7,
+        11
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          7,
+          6,
+          6,
+          5,
+          4
+        ]
+      },
+      "output": [
+        4,
+        3,
+        5,
+        6,
+        6,
+        7
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          111,
+          221,
+          222,
+          333,
+          444,
+          222,
+          222
+        ]
+      },
+      "output": [
+        3,
+        333,
+        111,
+        221,
+        222,
+        222,
+        222,
+        444
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          111,
+          511,
+          222,
+          3,
+          333,
+          444,
+          222,
+          222,
+          222
+        ]
+      },
+      "output": [
+        3,
+        3,
+        333,
+        111,
+        222,
+        222,
+        222,
+        222,
+        444,
+        511
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          127,
+          32,
+          12,
+          11,
+          9
+        ]
+      },
+      "output": [
+        32,
+        9,
+        12,
+        11,
+        127
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          111,
+          511,
+          222,
+          3,
+          333,
+          444,
+          222,
+          221,
+          222,
+          512
+        ]
+      },
+      "output": [
+        512,
+        3,
+        3,
+        333,
+        111,
+        221,
+        222,
+        222,
+        222,
+        444,
+        511
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          15,
+          0,
+          10101010,
+          0,
+          100000
+        ]
+      },
+      "output": [
+        0,
+        0,
+        15,
+        100000,
+        10101010
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          111,
+          15,
+          222,
+          333,
+          444
+        ]
+      },
+      "output": [
+        15,
+        333,
+        111,
+        222,
+        444
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          111,
+          511,
+          222,
+          3,
+          333,
+          444,
+          222,
+          222
+        ]
+      },
+      "output": [
+        3,
+        3,
+        333,
+        111,
+        222,
+        222,
+        222,
+        444,
+        511
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          15,
+          3,
+          7,
+          12,
+          3
+        ]
+      },
+      "output": [
+        0,
+        3,
+        3,
+        12,
+        7,
+        15
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          6,
+          10,
+          10
+        ]
+      },
+      "output": [
+        2,
+        4,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          15,
+          3,
+          7,
+          12,
+          12,
+          3,
+          3
+        ]
+      },
+      "output": [
+        0,
+        3,
+        3,
+        3,
+        12,
+        12,
+        7,
+        15
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          111,
+          511,
+          222,
+          3,
+          333,
+          444,
+          222,
+          222,
+          222,
+          111
+        ]
+      },
+      "output": [
+        3,
+        3,
+        333,
+        111,
+        111,
+        222,
+        222,
+        222,
+        222,
+        444,
+        511
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          111,
+          15,
+          222,
+          333,
+          444,
+          333
+        ]
+      },
+      "output": [
+        15,
+        333,
+        333,
+        111,
+        222,
+        444
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          511,
+          16,
+          32,
+          2,
+          128,
+          256
+        ]
+      },
+      "output": [
+        2,
+        16,
+        32,
+        128,
+        256,
+        511
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          15,
+          3,
+          12
+        ]
+      },
+      "output": [
+        0,
+        3,
+        12,
+        15
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          15,
+          3,
+          12,
+          3
+        ]
+      },
+      "output": [
+        0,
+        3,
+        3,
+        12,
+        15
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          100000,
+          3,
+          7,
+          12
+        ]
+      },
+      "output": [
+        0,
+        3,
+        12,
+        7,
+        100000
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          7,
+          12,
+          11,
+          9,
+          12
+        ]
+      },
+      "output": [
+        9,
+        12,
+        12,
+        7,
+        11
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          127,
+          32,
+          12,
+          11,
+          9,
+          12
+        ]
+      },
+      "output": [
+        32,
+        9,
+        12,
+        12,
+        11,
+        127
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "output": [
+        4,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          2,
+          6,
+          8,
+          10,
+          8
+        ]
+      },
+      "output": [
+        2,
+        2,
+        4,
+        8,
+        8,
+        6,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          6,
+          10,
+          10
+        ]
+      },
+      "output": [
+        4,
+        6,
+        10,
+        10
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef sort_array(arr):\n    \"\"\"\n    In this Kata, you have to sort an array of non-negative integers according to\n    number of ones in their binary representation in ascending order.\n    For similar number of ones, sort based on decimal value.\n\n    It must be implemented like this:\n    >>> sort_array([1, 5, 2, 3, 4]) == [1, 2, 3, 4, 5]\n    >>> sort_array([-2, -3, -4, -5, -6]) == [-6, -5, -4, -3, -2]\n    >>> sort_array([1, 0, 2, 3, 4]) [0, 1, 2, 3, 4]\n    \"\"\"\n\n    from functools import cmp_to_key\n    def cmp(x: int, y: int) -> int:\n        x1 = len(list(filter(lambda ch: ch == \"1\", bin(x))))\n        y1 = len(list(filter(lambda ch: ch == \"1\", bin(y))))\n        if x1 != y1: return x1 - y1\n        return x - y\n    return sorted(arr, key=cmp_to_key(cmp))\n\n"
+  }
+}

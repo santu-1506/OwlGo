@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-395-first-non-repeating-character",
+  "title": "First Non Repeating Character",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the first non-repeated character in a given string.",
+  "entry_point": "first_non_repeating_character",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def first_non_repeating_character(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "abcabc"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "abc"
+      },
+      "output": "a"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "abcabc"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "abc"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "ababc"
+      },
+      "output": "c"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "GEwgGwwH"
+      },
+      "output": "E"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "GEwgGwwwH"
+      },
+      "output": "E"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaawgGwwH"
+      },
+      "output": "g"
+    },
+    {
+      "input": {
+        "str1": "aaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaaaaaaaaaaaaa"
+      },
+      "output": null
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def first_non_repeating_character(str1):\n  for ch in str1:\n    if str1.count(ch) == 1:\n      return ch\n  return None\n"
+  }
+}

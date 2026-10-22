@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-56-check",
+  "title": "Check",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check if a given number is one less than twice its reverse.",
+  "entry_point": "check",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def check(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 70
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 70
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 33
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 44
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 55
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 88
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 34
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 43
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 87
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 90
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 45
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 42
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 54
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def check(n):    \n    return n == 2 * int(str(n)[::-1]) - 1\n"
+  }
+}

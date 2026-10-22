@@ -1,0 +1,532 @@
+{
+  "id": "humaneval-112-reverse-delete",
+  "title": "Reverse Delete",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Task\nWe are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\nthen check if the result string is palindrome.\nA string is called palindrome if it reads the same backward as forward.\nYou should return a tuple containing the result string and True/False for the check.\nExample\nFor s = \"abcde\", c = \"ae\", the result should be ('bcd',False)\nFor s = \"abcdef\", c = \"b\"  the result should be ('acdef',False)\nFor s = \"abcdedcba\", c = \"ab\", the result should be ('cdedc',True)",
+  "entry_point": "reverse_delete",
+  "params": [
+    "s",
+    "c"
+  ],
+  "function_signature": {
+    "python": "def reverse_delete(s, c):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "abcde",
+        "c": "ae"
+      },
+      "output": {
+        "$tuple": [
+          "bcd",
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcdef",
+        "c": "b"
+      },
+      "output": {
+        "$tuple": [
+          "acdef",
+          false
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "abcde",
+        "c": "ae"
+      },
+      "output": {
+        "$tuple": [
+          "bcd",
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcdef",
+        "c": "b"
+      },
+      "output": {
+        "$tuple": [
+          "acdef",
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcdedcba",
+        "c": "ab"
+      },
+      "output": {
+        "$tuple": [
+          "cdedc",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "dwik",
+        "c": "w"
+      },
+      "output": {
+        "$tuple": [
+          "dik",
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "a",
+        "c": "a"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcdedcba",
+        "c": ""
+      },
+      "output": {
+        "$tuple": [
+          "abcdedcba",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcdedcba",
+        "c": "v"
+      },
+      "output": {
+        "$tuple": [
+          "abcdedcba",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "vabba",
+        "c": "v"
+      },
+      "output": {
+        "$tuple": [
+          "abba",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "mamma",
+        "c": "mia"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "racecar",
+        "c": "ace"
+      },
+      "output": {
+        "$tuple": [
+          "rr",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "level",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "ll",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "noon",
+        "c": "on"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcba",
+        "c": "bc"
+      },
+      "output": {
+        "$tuple": [
+          "aa",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "kayak",
+        "c": "ka"
+      },
+      "output": {
+        "$tuple": [
+          "y",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "deified",
+        "c": "de"
+      },
+      "output": {
+        "$tuple": [
+          "ifi",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "radar",
+        "c": "ad"
+      },
+      "output": {
+        "$tuple": [
+          "rr",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "tenet",
+        "c": "ne"
+      },
+      "output": {
+        "$tuple": [
+          "tt",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "reviver",
+        "c": "er"
+      },
+      "output": {
+        "$tuple": [
+          "viv",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "refer",
+        "c": "fe"
+      },
+      "output": {
+        "$tuple": [
+          "rr",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "non",
+        "c": "on"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "abcba",
+        "c": "ne"
+      },
+      "output": {
+        "$tuple": [
+          "abcba",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "radar",
+        "c": "a"
+      },
+      "output": {
+        "$tuple": [
+          "rdr",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "vee",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "ave",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "a",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "level",
+        "c": "ave"
+      },
+      "output": {
+        "$tuple": [
+          "ll",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "ve",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "er",
+        "c": "ervee"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "bc",
+        "c": "ervee"
+      },
+      "output": {
+        "$tuple": [
+          "bc",
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "noon",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "noon",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "ve",
+        "c": "v"
+      },
+      "output": {
+        "$tuple": [
+          "e",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "deified",
+        "c": "ne"
+      },
+      "output": {
+        "$tuple": [
+          "difid",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "WqHkuRXIf",
+        "c": "WqHkuRXIf"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "ervee",
+        "c": "vrefere"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "vnonrefere",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "nonrfr",
+          false
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "nooon",
+        "c": "noon"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "vrevivere",
+        "c": "ve"
+      },
+      "output": {
+        "$tuple": [
+          "rir",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "racecar",
+        "c": "racecar"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "ratcetenetcar",
+        "c": "racetenetcar"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    },
+    {
+      "input": {
+        "s": "deified",
+        "c": "deifiedracecar"
+      },
+      "output": {
+        "$tuple": [
+          "",
+          true
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef reverse_delete(s,c):\n    \"\"\"Task\n    We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\n    then check if the result string is palindrome.\n    A string is called palindrome if it reads the same backward as forward.\n    You should return a tuple containing the result string and True/False for the check.\n    Example\n    For s = \"abcde\", c = \"ae\", the result should be ('bcd',False)\n    For s = \"abcdef\", c = \"b\"  the result should be ('acdef',False)\n    For s = \"abcdedcba\", c = \"ab\", the result should be ('cdedc',True)\n    \"\"\"\n\n    ss = \"\".join(filter(lambda ch: ch not in c, s))\n    return ss, ss == ss[::-1]\n\n"
+  }
+}

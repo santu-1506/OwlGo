@@ -1,0 +1,445 @@
+{
+  "id": "humaneval-158-find-max",
+  "title": "Find Max",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that accepts a list of strings.\nThe list contains different words. Return the word with maximum number\nof unique characters. If multiple strings have maximum number of unique\ncharacters, return the one which comes first in lexicographical order.\n\nfind_max([\"name\", \"of\", \"string\"]) == \"string\"\nfind_max([\"name\", \"enam\", \"game\"]) == \"enam\"\nfind_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"",
+  "entry_point": "find_max",
+  "params": [
+    "words"
+  ],
+  "function_signature": {
+    "python": "def find_max(words):"
+  },
+  "examples": [
+    {
+      "input": {
+        "words": [
+          "name",
+          "of",
+          "string"
+        ]
+      },
+      "output": "string"
+    },
+    {
+      "input": {
+        "words": [
+          "name",
+          "enam",
+          "game"
+        ]
+      },
+      "output": "enam"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "words": [
+          "name",
+          "of",
+          "string"
+        ]
+      },
+      "output": "string"
+    },
+    {
+      "input": {
+        "words": [
+          "name",
+          "enam",
+          "game"
+        ]
+      },
+      "output": "enam"
+    },
+    {
+      "input": {
+        "words": [
+          "aaaaaaa",
+          "bb",
+          "cc"
+        ]
+      },
+      "output": "aaaaaaa"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "cba"
+        ]
+      },
+      "output": "abc"
+    },
+    {
+      "input": {
+        "words": [
+          "play",
+          "this",
+          "game",
+          "of",
+          "footbott"
+        ]
+      },
+      "output": "footbott"
+    },
+    {
+      "input": {
+        "words": [
+          "we",
+          "are",
+          "gonna",
+          "rock"
+        ]
+      },
+      "output": "gonna"
+    },
+    {
+      "input": {
+        "words": [
+          "we",
+          "are",
+          "a",
+          "mad",
+          "nation"
+        ]
+      },
+      "output": "nation"
+    },
+    {
+      "input": {
+        "words": [
+          "this",
+          "is",
+          "a",
+          "prrk"
+        ]
+      },
+      "output": "this"
+    },
+    {
+      "input": {
+        "words": [
+          "b"
+        ]
+      },
+      "output": "b"
+    },
+    {
+      "input": {
+        "words": [
+          "play",
+          "play",
+          "play"
+        ]
+      },
+      "output": "play"
+    },
+    {
+      "input": {
+        "words": [
+          "abcdefg",
+          "hijklmnop",
+          "qrstuvwxyz"
+        ]
+      },
+      "output": "qrstuvwxyz"
+    },
+    {
+      "input": {
+        "words": [
+          "abacbdce",
+          "edcbacba",
+          "dbcaebda"
+        ]
+      },
+      "output": "abacbdce"
+    },
+    {
+      "input": {
+        "words": [
+          "aabbcc",
+          "dddeee",
+          "fff"
+        ]
+      },
+      "output": "aabbcc"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "bcd",
+          "def",
+          "efg"
+        ]
+      },
+      "output": "abc"
+    },
+    {
+      "input": {
+        "words": [
+          "abcd",
+          "bcde",
+          "cdef",
+          "defg"
+        ]
+      },
+      "output": "abcd"
+    },
+    {
+      "input": {
+        "words": [
+          "aaaa",
+          "bbbb",
+          "cccc"
+        ]
+      },
+      "output": "aaaa"
+    },
+    {
+      "input": {
+        "words": [
+          "hello"
+        ]
+      },
+      "output": "hello"
+    },
+    {
+      "input": {
+        "words": [
+          "xyz",
+          "pqr"
+        ]
+      },
+      "output": "pqr"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "defg"
+        ]
+      },
+      "output": "defg"
+    },
+    {
+      "input": {
+        "words": [
+          "aaa",
+          "bbb",
+          "ccc",
+          "aaa"
+        ]
+      },
+      "output": "aaa"
+    },
+    {
+      "input": {
+        "words": [
+          "hellfffo"
+        ]
+      },
+      "output": "hellfffo"
+    },
+    {
+      "input": {
+        "words": [
+          "aabbcc",
+          "aabbdbabcdcaebdacc",
+          "dddeee",
+          "fff"
+        ]
+      },
+      "output": "aabbdbabcdcaebdacc"
+    },
+    {
+      "input": {
+        "words": [
+          "aabbdbabcdcaebdacc",
+          "dddeee",
+          "fff"
+        ]
+      },
+      "output": "aabbdbabcdcaebdacc"
+    },
+    {
+      "input": {
+        "words": [
+          "helloyxyz",
+          "helloxyz"
+        ]
+      },
+      "output": "helloxyz"
+    },
+    {
+      "input": {
+        "words": [
+          "pqr",
+          "pqr",
+          "pqr"
+        ]
+      },
+      "output": "pqr"
+    },
+    {
+      "input": {
+        "words": [
+          "abcdefg",
+          "qrstuvwxyz",
+          "qrstuvwxyz"
+        ]
+      },
+      "output": "qrstuvwxyz"
+    },
+    {
+      "input": {
+        "words": [
+          "xyyyz",
+          "xyyz",
+          "pqr"
+        ]
+      },
+      "output": "pqr"
+    },
+    {
+      "input": {
+        "words": [
+          "rpqr",
+          "xyz",
+          "pqr"
+        ]
+      },
+      "output": "pqr"
+    },
+    {
+      "input": {
+        "words": [
+          "hello",
+          "hello"
+        ]
+      },
+      "output": "hello"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "aabbcc",
+          "defg"
+        ]
+      },
+      "output": "defg"
+    },
+    {
+      "input": {
+        "words": [
+          "helloxyz"
+        ]
+      },
+      "output": "helloxyz"
+    },
+    {
+      "input": {
+        "words": [
+          "helloxyz",
+          "aaaa",
+          "helloxyz"
+        ]
+      },
+      "output": "helloxyz"
+    },
+    {
+      "input": {
+        "words": [
+          "helloyxyz",
+          "aaaa",
+          "helloxyz"
+        ]
+      },
+      "output": "helloxyz"
+    },
+    {
+      "input": {
+        "words": [
+          "hellfff",
+          "hellfffo",
+          "hellffbbbfo"
+        ]
+      },
+      "output": "hellffbbbfo"
+    },
+    {
+      "input": {
+        "words": [
+          "llo"
+        ]
+      },
+      "output": "llo"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "aaaaa",
+          "aaaa"
+        ]
+      },
+      "output": "abc"
+    },
+    {
+      "input": {
+        "words": [
+          "helloxyabcdefgz",
+          "helloxyz"
+        ]
+      },
+      "output": "helloxyabcdefgz"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "bcd",
+          "def",
+          "bbcd",
+          "efg"
+        ]
+      },
+      "output": "abc"
+    },
+    {
+      "input": {
+        "words": [
+          "rpqr",
+          "xyz",
+          "pqr",
+          "pqr"
+        ]
+      },
+      "output": "pqr"
+    },
+    {
+      "input": {
+        "words": [
+          "abc",
+          "bcd",
+          "bbcd",
+          "efg"
+        ]
+      },
+      "output": "abc"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef find_max(words):\n    \"\"\"Write a function that accepts a list of strings.\n    The list contains different words. Return the word with maximum number\n    of unique characters. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    find_max([\"name\", \"of\", \"string\"]) == \"string\"\n    find_max([\"name\", \"enam\", \"game\"]) == \"enam\"\n    find_max([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n\n\n    mx_ch_cnt, ans = 0, \"\"\n    for word in words:\n        ch_cnt = len(set(word)) \n        if ch_cnt > mx_ch_cnt or (ch_cnt == mx_ch_cnt and word < ans):\n            mx_ch_cnt, ans = ch_cnt, word\n    return ans\n\n"
+  }
+}

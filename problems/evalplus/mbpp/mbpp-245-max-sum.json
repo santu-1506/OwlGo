@@ -1,0 +1,807 @@
+{
+  "id": "mbpp-245-max-sum",
+  "title": "Max Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes an array and finds the maximum sum of a bitonic subsequence for the given array, where a sequence is bitonic if it is first increasing and then decreasing.",
+  "entry_point": "max_sum",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def max_sum(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          15,
+          51,
+          45,
+          33,
+          100,
+          12,
+          18,
+          9
+        ]
+      },
+      "output": 194
+    },
+    {
+      "input": {
+        "arr": [
+          80,
+          60,
+          30,
+          40,
+          20,
+          10
+        ]
+      },
+      "output": 210
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          15,
+          51,
+          45,
+          33,
+          100,
+          12,
+          18,
+          9
+        ]
+      },
+      "output": 194
+    },
+    {
+      "input": {
+        "arr": [
+          80,
+          60,
+          30,
+          40,
+          20,
+          10
+        ]
+      },
+      "output": 210
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          14,
+          16,
+          21,
+          23,
+          29,
+          30
+        ]
+      },
+      "output": 138
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 53
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 50
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          9
+        ]
+      },
+      "output": 53
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          10
+        ]
+      },
+      "output": 53
+    },
+    {
+      "input": {
+        "arr": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          10
+        ]
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 51
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          9,
+          8,
+          7,
+          7,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          9,
+          8,
+          7,
+          7,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          5,
+          8
+        ]
+      },
+      "output": 38
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          9,
+          7,
+          6,
+          5,
+          3,
+          3,
+          2,
+          1,
+          9
+        ]
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          9,
+          6,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          9
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          7,
+          10,
+          5,
+          4,
+          4,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          10,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          5,
+          6
+        ]
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          8,
+          7,
+          6,
+          5,
+          3,
+          3,
+          2,
+          10
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          4,
+          9,
+          8,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          9
+        ]
+      },
+      "output": 53
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          9,
+          7,
+          5,
+          3,
+          3,
+          2,
+          1,
+          9
+        ]
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          4,
+          9,
+          8,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          6,
+          9
+        ]
+      },
+      "output": 52
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          9,
+          6,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          9,
+          9,
+          9
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          9,
+          7,
+          5,
+          3,
+          3,
+          2,
+          9
+        ]
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          10,
+          7,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          5,
+          6
+        ]
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          9,
+          6,
+          7,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          9,
+          9
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          4,
+          5,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 47
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          5,
+          9,
+          8,
+          7,
+          7,
+          5,
+          4,
+          0,
+          3,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 43
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          4,
+          5,
+          4,
+          4,
+          3,
+          3,
+          9,
+          1,
+          6
+        ]
+      },
+      "output": 47
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          5,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          4,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          9,
+          6,
+          2,
+          7,
+          0,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          9
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          10,
+          7,
+          7,
+          6,
+          4,
+          3,
+          3,
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      "output": 31
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          9,
+          6,
+          2,
+          7,
+          0,
+          6,
+          5,
+          9,
+          4,
+          4,
+          3,
+          3,
+          1,
+          6,
+          6
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          9,
+          6,
+          2,
+          7,
+          0,
+          6,
+          5,
+          9,
+          4,
+          8,
+          2,
+          4,
+          3,
+          3,
+          1,
+          6,
+          6,
+          4
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          7,
+          4,
+          4,
+          3,
+          2,
+          1,
+          7
+        ]
+      },
+      "output": 35
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          9,
+          7,
+          5,
+          3,
+          3,
+          2,
+          0,
+          9
+        ]
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "arr": [
+          7,
+          10,
+          5,
+          4,
+          4,
+          3,
+          1,
+          6
+        ]
+      },
+      "output": 30
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          1,
+          6,
+          6
+        ]
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          9,
+          7,
+          6,
+          5,
+          4,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 47
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def max_sum(arr): \n\tMSIBS = arr[:] \n\tfor i in range(len(arr)): \n\t\tfor j in range(0, i): \n\t\t\tif arr[i] > arr[j] and MSIBS[i] < MSIBS[j] + arr[i]: \n\t\t\t\tMSIBS[i] = MSIBS[j] + arr[i] \n\tMSDBS = arr[:] \n\tfor i in range(1, len(arr) + 1): \n\t\tfor j in range(1, i): \n\t\t\tif arr[-i] > arr[-j] and MSDBS[-i] < MSDBS[-j] + arr[-i]: \n\t\t\t\tMSDBS[-i] = MSDBS[-j] + arr[-i] \n\tmax_sum = float(\"-Inf\") \n\tfor i, j, k in zip(MSIBS, MSDBS, arr): \n\t\tmax_sum = max(max_sum, i + j - k) \n\treturn max_sum\n"
+  }
+}

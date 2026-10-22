@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-58-opposite-signs",
+  "title": "Opposite Signs",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether the given two integers have opposite sign or not.",
+  "entry_point": "opposite_Signs",
+  "params": [
+    "x",
+    "y"
+  ],
+  "function_signature": {
+    "python": "def opposite_Signs(x, y):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 1,
+        "y": -2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 3,
+        "y": 2
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 1,
+        "y": -2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 3,
+        "y": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -10,
+        "y": -10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -2,
+        "y": 2
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 1000000000000,
+        "y": -1000000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 999999999999,
+        "y": -999999999999
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 1000000000,
+        "y": -1000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 999999999,
+        "y": -999999999
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 987654321,
+        "y": -987654321
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 1000000000000,
+        "y": -1000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -1000000000,
+        "y": 999999999
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -987654321,
+        "y": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1000000000000,
+        "y": 987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1000000000000,
+        "y": 987654322
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 999999999,
+        "y": -1000000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 999999999,
+        "y": 999999999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 999999999999,
+        "y": 1000000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -1000000000000,
+        "y": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -1000000000000,
+        "y": -1000000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -999999999999,
+        "y": -1000000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 987654321,
+        "y": 987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1000000000,
+        "y": 999999999999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1000000000,
+        "y": -1000000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 987654321,
+        "y": 987654322
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -987654319,
+        "y": -987654320
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -999999998,
+        "y": -999999999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 987654321,
+        "y": 1000000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -1000000000,
+        "y": -1000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1000000000000,
+        "y": 1000000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1000000000001,
+        "y": -1000000000000
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 1000000000000,
+        "y": -1000000000001
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 999999999999,
+        "y": -987654319
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -1000000000,
+        "y": 987654321
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 999999999999,
+        "y": 999999999999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 987654322,
+        "y": 987654322
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -987654321,
+        "y": -999999998
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -987654322,
+        "y": -987654321
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 999999999,
+        "y": -987654321
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -1000000000000,
+        "y": -987654320
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -987654320,
+        "y": -987654320
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def opposite_Signs(x,y): \n    return ((x ^ y) < 0)\n"
+  }
+}

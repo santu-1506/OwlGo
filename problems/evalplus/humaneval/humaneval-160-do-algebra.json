@@ -1,0 +1,724 @@
+{
+  "id": "humaneval-160-do-algebra",
+  "title": "Do Algebra",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given two lists operator, and operand. The first list has basic algebra operations, and \nthe second list is a list of integers. Use the two given lists to build the algebric \nexpression and return the evaluation of this expression.\n\nThe basic algebra operations:\nAddition ( + ) \nSubtraction ( - ) \nMultiplication ( * ) \nFloor division ( // ) \nExponentiation ( ** ) \n\nExample:\noperator['+', '*', '-']\narray = [2, 3, 4, 5]\nresult = 2 + 3 * 4 - 5\n=> result = 9\n\nNote:\n    The length of operator list is equal to the length of operand list minus one.\n    Operand is a list of of non-negative integers.\n    Operator list has at least one operator, and operand list has at least two operands.",
+  "entry_point": "do_algebra",
+  "params": [
+    "operator",
+    "operand"
+  ],
+  "function_signature": {
+    "python": "def do_algebra(operator, operand):"
+  },
+  "examples": [
+    {
+      "input": {
+        "operator": [
+          "**",
+          "*",
+          "+"
+        ],
+        "operand": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "operator": [
+          "+",
+          "*",
+          "-"
+        ],
+        "operand": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 9
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "operator": [
+          "**",
+          "*",
+          "+"
+        ],
+        "operand": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "operator": [
+          "+",
+          "*",
+          "-"
+        ],
+        "operand": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "operator": [
+          "//",
+          "*"
+        ],
+        "operand": [
+          7,
+          3,
+          4
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "operator": [
+          "+",
+          "-",
+          "*",
+          "//"
+        ],
+        "operand": [
+          5,
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "operator": [
+          "**",
+          "-",
+          "//"
+        ],
+        "operand": [
+          9,
+          2,
+          5,
+          3
+        ]
+      },
+      "output": 80
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "-",
+          "*",
+          "//"
+        ],
+        "operand": [
+          3,
+          6,
+          2,
+          4,
+          2
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "//",
+          "+",
+          "*"
+        ],
+        "operand": [
+          10,
+          2,
+          4,
+          3,
+          6
+        ]
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "operator": [
+          "+",
+          "-",
+          "*",
+          "**"
+        ],
+        "operand": [
+          2,
+          3,
+          4,
+          5,
+          2
+        ]
+      },
+      "output": -95
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "+",
+          "-"
+        ],
+        "operand": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "+",
+          "*",
+          "**"
+        ],
+        "operand": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "//",
+          "-"
+        ],
+        "operand": [
+          10,
+          5,
+          3,
+          2
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "operator": [
+          "**",
+          "+",
+          "-"
+        ],
+        "operand": [
+          3,
+          2,
+          1,
+          4
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "+",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          3,
+          8
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "+",
+          "*",
+          "**"
+        ],
+        "operand": [
+          5,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "-",
+          "*"
+        ],
+        "operand": [
+          10,
+          5,
+          3,
+          2
+        ]
+      },
+      "output": 44
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "//",
+          "-"
+        ],
+        "operand": [
+          10,
+          5,
+          3,
+          2
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "*",
+          "-"
+        ],
+        "operand": [
+          10,
+          5,
+          3,
+          2
+        ]
+      },
+      "output": 148
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "+",
+          "*",
+          "**"
+        ],
+        "operand": [
+          5,
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      "output": 14
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "*",
+          "-"
+        ],
+        "operand": [
+          9,
+          10,
+          3,
+          2
+        ]
+      },
+      "output": 268
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "-",
+          "*",
+          "//"
+        ],
+        "operand": [
+          2,
+          6,
+          2,
+          4,
+          2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "operator": [
+          "+",
+          "-",
+          "*",
+          "*"
+        ],
+        "operand": [
+          2,
+          3,
+          4,
+          5,
+          2
+        ]
+      },
+      "output": -35
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "+",
+          "//"
+        ],
+        "operand": [
+          2,
+          3,
+          8,
+          5
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "//",
+          "+",
+          "*"
+        ],
+        "operand": [
+          9,
+          2,
+          4,
+          3,
+          6
+        ]
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "+",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "-",
+          "**"
+        ],
+        "operand": [
+          10,
+          5,
+          3,
+          2
+        ]
+      },
+      "output": 41
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "+",
+          "*",
+          "**"
+        ],
+        "operand": [
+          5,
+          3,
+          2,
+          2,
+          2
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "//",
+          "+"
+        ],
+        "operand": [
+          10,
+          2,
+          4,
+          3
+        ]
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "//",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          8,
+          5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "//",
+          "-"
+        ],
+        "operand": [
+          10,
+          2,
+          3,
+          2
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          5
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "+",
+          "**",
+          "**"
+        ],
+        "operand": [
+          5,
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      "output": 83
+    },
+    {
+      "input": {
+        "operator": [
+          "**",
+          "**",
+          "//"
+        ],
+        "operand": [
+          9,
+          2,
+          5,
+          3
+        ]
+      },
+      "output": 1144561273430837494885949696427
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "-",
+          "*",
+          "//"
+        ],
+        "operand": [
+          2,
+          6,
+          2,
+          3,
+          2
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "//",
+          "+"
+        ],
+        "operand": [
+          2,
+          5,
+          8,
+          5
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "operator": [
+          "-",
+          "+",
+          "*",
+          "**"
+        ],
+        "operand": [
+          5,
+          4,
+          3,
+          2,
+          2
+        ]
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "operator": [
+          "//",
+          "//",
+          "+"
+        ],
+        "operand": [
+          2,
+          4,
+          3,
+          4
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "operator": [
+          "+",
+          "//",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "operator": [
+          "**",
+          "//",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "operator": [
+          "**",
+          "+",
+          "//"
+        ],
+        "operand": [
+          2,
+          5,
+          4,
+          8
+        ]
+      },
+      "output": 32
+    },
+    {
+      "input": {
+        "operator": [
+          "*",
+          "//",
+          "//"
+        ],
+        "operand": [
+          2,
+          3,
+          8,
+          5
+        ]
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef do_algebra(operator, operand):\n    \"\"\"\n    Given two lists operator, and operand. The first list has basic algebra operations, and \n    the second list is a list of integers. Use the two given lists to build the algebric \n    expression and return the evaluation of this expression.\n\n    The basic algebra operations:\n    Addition ( + ) \n    Subtraction ( - ) \n    Multiplication ( * ) \n    Floor division ( // ) \n    Exponentiation ( ** ) \n\n    Example:\n    operator['+', '*', '-']\n    array = [2, 3, 4, 5]\n    result = 2 + 3 * 4 - 5\n    => result = 9\n\n    Note:\n        The length of operator list is equal to the length of operand list minus one.\n        Operand is a list of of non-negative integers.\n        Operator list has at least one operator, and operand list has at least two operands.\n\n    \"\"\"\n\n\n    exp = \"\"\n    for i in range(len(operator)):\n        exp += str(operand[i]) + operator[i]\n    exp += str(operand[-1])\n    return eval(exp)\n\n"
+  }
+}

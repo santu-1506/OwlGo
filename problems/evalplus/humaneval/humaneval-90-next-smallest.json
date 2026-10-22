@@ -1,0 +1,599 @@
+{
+  "id": "humaneval-90-next-smallest",
+  "title": "Next Smallest",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given a list of integers.\nWrite a function next_smallest() that returns the 2nd smallest element of the list.\nReturn None if there is no such element.\n\nnext_smallest([1, 2, 3, 4, 5]) == 2\nnext_smallest([5, 1, 4, 3, 2]) == 2\nnext_smallest([]) == None\nnext_smallest([1, 1]) == None",
+  "entry_point": "next_smallest",
+  "params": [
+    "lst"
+  ],
+  "function_signature": {
+    "python": "def next_smallest(lst):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          1,
+          4,
+          3,
+          2
+        ]
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          1,
+          4,
+          3,
+          2
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": []
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          1
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          -35,
+          34,
+          12,
+          -45
+        ]
+      },
+      "output": -35
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": [
+          10,
+          8,
+          14,
+          9,
+          7,
+          15
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "lst": [
+          -5,
+          -3,
+          -2,
+          -8,
+          -1
+        ]
+      },
+      "output": -5
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          5,
+          5,
+          5,
+          1
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          4,
+          2,
+          6,
+          9,
+          0,
+          -1,
+          -5
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "lst": [
+          4,
+          15,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "lst": [
+          7,
+          5,
+          4,
+          5
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          7,
+          6,
+          5,
+          4,
+          4
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          2
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          4,
+          2,
+          6,
+          9,
+          0,
+          -1,
+          -5,
+          1
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          5,
+          5,
+          -5,
+          5,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          2,
+          1,
+          2,
+          2,
+          10,
+          2,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          4,
+          10,
+          6,
+          9,
+          0,
+          -1,
+          -5,
+          1,
+          -1
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          4,
+          2,
+          6,
+          9,
+          0,
+          -1,
+          -5,
+          -5
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "lst": [
+          4,
+          15,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          5,
+          2,
+          5,
+          5,
+          1,
+          5,
+          5
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": [
+          6,
+          5,
+          5,
+          5,
+          1
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          5,
+          5,
+          -5,
+          5,
+          1,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          2,
+          5,
+          2,
+          5,
+          5,
+          5,
+          1,
+          5,
+          5
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "lst": [
+          -5,
+          5,
+          5,
+          5,
+          -5,
+          5,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          9,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          7,
+          -2,
+          10,
+          4
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "lst": [
+          10,
+          8,
+          14,
+          9,
+          15
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "lst": [
+          13,
+          10,
+          8,
+          14,
+          9,
+          7
+        ]
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "lst": [
+          3,
+          1,
+          4,
+          2,
+          6,
+          9,
+          0,
+          -1,
+          -5,
+          -1
+        ]
+      },
+      "output": -1
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          7,
+          6,
+          5,
+          4,
+          8,
+          4
+        ]
+      },
+      "output": 5
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef next_smallest(lst):\n    \"\"\"\n    You are given a list of integers.\n    Write a function next_smallest() that returns the 2nd smallest element of the list.\n    Return None if there is no such element.\n    \n    next_smallest([1, 2, 3, 4, 5]) == 2\n    next_smallest([5, 1, 4, 3, 2]) == 2\n    next_smallest([]) == None\n    next_smallest([1, 1]) == None\n    \"\"\"\n\n    if len(lst) <= 1: return None\n    sorted_list = sorted(lst)\n    for x in sorted_list:\n        if x != sorted_list[0]:\n            return x \n\n"
+  }
+}

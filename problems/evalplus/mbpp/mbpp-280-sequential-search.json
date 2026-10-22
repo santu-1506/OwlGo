@@ -1,0 +1,987 @@
+{
+  "id": "mbpp-280-sequential-search",
+  "title": "Sequential Search",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes in an array and element and returns a tuple containing a boolean that indicates if the element is in the array and the index position of the element (or -1 if the element is not found).",
+  "entry_point": "sequential_search",
+  "params": [
+    "dlist",
+    "item"
+  ],
+  "function_signature": {
+    "python": "def sequential_search(dlist, item):"
+  },
+  "examples": [
+    {
+      "input": {
+        "dlist": [
+          11,
+          23,
+          58,
+          31,
+          56,
+          77,
+          43,
+          12,
+          65,
+          19
+        ],
+        "item": 31
+      },
+      "output": {
+        "$tuple": [
+          true,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          12,
+          32,
+          45,
+          62,
+          35,
+          47,
+          44,
+          61
+        ],
+        "item": 61
+      },
+      "output": {
+        "$tuple": [
+          true,
+          7
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "dlist": [
+          11,
+          23,
+          58,
+          31,
+          56,
+          77,
+          43,
+          12,
+          65,
+          19
+        ],
+        "item": 31
+      },
+      "output": {
+        "$tuple": [
+          true,
+          3
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          12,
+          32,
+          45,
+          62,
+          35,
+          47,
+          44,
+          61
+        ],
+        "item": 61
+      },
+      "output": {
+        "$tuple": [
+          true,
+          7
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56
+        ],
+        "item": 48
+      },
+      "output": {
+        "$tuple": [
+          true,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [],
+        "item": 10
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8
+        ],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          true,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "item": -2
+      },
+      "output": {
+        "$tuple": [
+          true,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1000000000,
+          2000000000,
+          3000000000,
+          4000000000
+        ],
+        "item": 2000000000
+      },
+      "output": {
+        "$tuple": [
+          true,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56
+        ],
+        "item": 50
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [],
+        "item": 2
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          true,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          8
+        ],
+        "item": 3000000000
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [],
+        "item": []
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1000000000,
+          2000000000,
+          3000000000,
+          999999999,
+          4000000000
+        ],
+        "item": [
+          1000000000,
+          2000000000,
+          3000000000,
+          999999999,
+          4000000000
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          4000000000,
+          2000000000,
+          999999999,
+          4000000000
+        ],
+        "item": [
+          4000000000,
+          2000000000,
+          999999999,
+          4000000000
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          8
+        ],
+        "item": 1
+      },
+      "output": {
+        "$tuple": [
+          true,
+          0
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          -2
+        ],
+        "item": [
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          -2
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          3,
+          19,
+          22,
+          39,
+          48,
+          56
+        ],
+        "item": 50
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56
+        ],
+        "item": 2
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1000000000,
+          2000000000,
+          3000000000,
+          999999999,
+          4000000000,
+          3000000000
+        ],
+        "item": [
+          1000000000,
+          2000000000,
+          3000000000,
+          999999999,
+          4000000000,
+          3000000000
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          5,
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "item": -2
+      },
+      "output": {
+        "$tuple": [
+          true,
+          1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          1
+        ],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          true,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56,
+          9
+        ],
+        "item": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56,
+          9
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          5
+        ],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          true,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          "VgBMzYA",
+          "vPdnkp",
+          "YfFpcqtFRz",
+          "VUS",
+          "RfrFzbvRve",
+          "lWGk",
+          "fCyMNDqiso",
+          "vSEYYDj"
+        ],
+        "item": [
+          2000000000,
+          "RB"
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          8,
+          8
+        ],
+        "item": 6
+      },
+      "output": {
+        "$tuple": [
+          true,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          4000000000,
+          2000000000,
+          8,
+          4000000000
+        ],
+        "item": [
+          4000000000,
+          2000000000,
+          8,
+          4000000000
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          2,
+          6,
+          7,
+          8
+        ],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          true,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          3,
+          19,
+          22,
+          39,
+          48,
+          56
+        ],
+        "item": 48
+      },
+      "output": {
+        "$tuple": [
+          true,
+          6
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          3000000000,
+          8
+        ],
+        "item": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          7,
+          3000000000,
+          8
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "item": -1
+      },
+      "output": {
+        "$tuple": [
+          true,
+          2
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          3000000000,
+          8,
+          3000000000
+        ],
+        "item": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          3000000000,
+          8,
+          3000000000
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          1000000000,
+          48,
+          56,
+          9
+        ],
+        "item": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          1000000000,
+          48,
+          56,
+          9
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [],
+        "item": 4
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          19,
+          19,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56,
+          9,
+          19
+        ],
+        "item": [
+          9,
+          19,
+          19,
+          10,
+          17,
+          19,
+          22,
+          39,
+          48,
+          56,
+          9,
+          19
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          1000000000,
+          48,
+          56,
+          9,
+          56
+        ],
+        "item": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          1000000000,
+          48,
+          56,
+          9,
+          56
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          8,
+          8
+        ],
+        "item": 5
+      },
+      "output": {
+        "$tuple": [
+          true,
+          4
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          17,
+          19,
+          22,
+          39,
+          56
+        ],
+        "item": 2
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          9,
+          10,
+          3,
+          19,
+          22,
+          39,
+          48,
+          56
+        ],
+        "item": 47
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    },
+    {
+      "input": {
+        "dlist": [
+          2000000000,
+          8,
+          4000000000,
+          4000000000
+        ],
+        "item": [
+          2000000000,
+          8,
+          4000000000,
+          4000000000
+        ]
+      },
+      "output": {
+        "$tuple": [
+          false,
+          -1
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def sequential_search(dlist, item):\n    return item in dlist, (dlist.index(item) if item in dlist else -1)\n"
+  }
+}

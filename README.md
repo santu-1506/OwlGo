@@ -6,7 +6,7 @@ Owlgo is an open-source DSA practice companion. It sits beside the LeetCode edit
 
 It is not a mock interviewer. There is no timer, no grading and no grilling. Think of it as a friend who is good at DSA sitting next to you while you practice.
 
-> **Status:** Phase 0 (project setup) is done. Phase 1 (problem bank) is next. Nothing usable yet. See the [roadmap](#roadmap).
+> **Status:** Phase 1 is done: 534 verified problems and a code runner. Phase 2 (prompted baseline and evaluation) is next. See the [roadmap](#roadmap).
 
 ## The Help Dial
 
@@ -37,7 +37,7 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 ## Roadmap
 
 - [x] **Phase 0:** Project setup
-- [ ] **Phase 1:** Problem bank and code runner, assembled from verified open data
+- [x] **Phase 1:** Problem bank and code runner, assembled from verified open data
 - [ ] **Phase 2:** Prompted baseline and evaluation (a score to beat)
 - [ ] **Phase 3:** Training data (solver personas, bug injection)
 - [ ] **Phase 4:** Fine-tuning and export to Ollama
@@ -62,6 +62,16 @@ uv run python -m owlgo.problems.verify   # verify the whole bank
 | Folder | Problems | Source |
 |---|---|---|
 | `problems/original/` | 5 | Hand-written, LeetCode-style, with full hints and executable mistakes. Reserved for the test split. |
+| `problems/evalplus/mbpp/` | 372 | [MBPP+](https://huggingface.co/datasets/evalplus/mbppplus) (Apache 2.0; MBPP is CC BY 4.0) |
+| `problems/evalplus/humaneval/` | 157 | [HumanEval+](https://huggingface.co/datasets/evalplus/humanevalplus) (Apache 2.0; HumanEval is MIT) |
+
+Imported problems have no hints or pattern tags yet; Phase 2 drafts them with a strong model and verifies them by execution. To re-import (about 4 MB download, under a minute):
+
+```bash
+uv run python -m owlgo.problems.import_evalplus
+```
+
+Every skipped problem and the reason is listed in [problems/_reports/evalplus_import.json](problems/_reports/evalplus_import.json). The gate also requires the reference to use under 25% of the time limit per test, so tests that are slow even for the correct answer are removed rather than left to be flaky.
 
 ## Development
 

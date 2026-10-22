@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-102-snake-to-camel",
+  "title": "Snake To Camel",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to convert a snake case string to camel case string.",
+  "entry_point": "snake_to_camel",
+  "params": [
+    "word"
+  ],
+  "function_signature": {
+    "python": "def snake_to_camel(word):"
+  },
+  "examples": [
+    {
+      "input": {
+        "word": "python_program"
+      },
+      "output": "PythonProgram"
+    },
+    {
+      "input": {
+        "word": "python_language"
+      },
+      "output": "PythonLanguage"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "word": "python_program"
+      },
+      "output": "PythonProgram"
+    },
+    {
+      "input": {
+        "word": "python_language"
+      },
+      "output": "PythonLanguage"
+    },
+    {
+      "input": {
+        "word": "programming_language"
+      },
+      "output": "ProgrammingLanguage"
+    },
+    {
+      "input": {
+        "word": "___python_program"
+      },
+      "output": "___PythonProgram"
+    },
+    {
+      "input": {
+        "word": "__12_python__language___"
+      },
+      "output": "__12Python_Language___"
+    },
+    {
+      "input": {
+        "word": "your_programming__langu__age___"
+      },
+      "output": "YourProgramming_Langu_Age___"
+    },
+    {
+      "input": {
+        "word": "another__ex44ample___"
+      },
+      "output": "Another_Ex44ample___"
+    },
+    {
+      "input": {
+        "word": "_"
+      },
+      "output": "__"
+    },
+    {
+      "input": {
+        "word": "word"
+      },
+      "output": "Word"
+    },
+    {
+      "input": {
+        "word": "no_underscores"
+      },
+      "output": "NoUnderscores"
+    },
+    {
+      "input": {
+        "word": "_leading"
+      },
+      "output": "_Leading"
+    },
+    {
+      "input": {
+        "word": "trailing_"
+      },
+      "output": "Trailing_"
+    },
+    {
+      "input": {
+        "word": "__multiple_consecutive__underscores__"
+      },
+      "output": "__MultipleConsecutive_Underscores__"
+    },
+    {
+      "input": {
+        "word": "__12_python__languag_"
+      },
+      "output": "__12Python_Languag_"
+    },
+    {
+      "input": {
+        "word": "___p_ythonram"
+      },
+      "output": "___PYthonram"
+    },
+    {
+      "input": {
+        "word": "your_nprogramming__langu__age___"
+      },
+      "output": "YourNprogramming_Langu_Age___"
+    },
+    {
+      "input": {
+        "word": "your_nprogramming_another__ex44ample____langu__age___"
+      },
+      "output": "YourNprogrammingAnother_Ex44ample___Langu_Age___"
+    },
+    {
+      "input": {
+        "word": "__12_pythonno_underscores__languag_"
+      },
+      "output": "__12PythonnoUnderscores_Languag_"
+    },
+    {
+      "input": {
+        "word": "_lwordeading"
+      },
+      "output": "_Lwordeading"
+    },
+    {
+      "input": {
+        "word": "your_nprogramming_another__ex4no_underscores4ample____langu__age___"
+      },
+      "output": "YourNprogrammingAnother_Ex4noUnderscores4ample___Langu_Age___"
+    },
+    {
+      "input": {
+        "word": "your_programming__langu____12_python__languag_age___"
+      },
+      "output": "YourProgramming_Langu___12Python_LanguagAge___"
+    },
+    {
+      "input": {
+        "word": "__12_pyth_"
+      },
+      "output": "__12Pyth_"
+    },
+    {
+      "input": {
+        "word": "__1__12_python__languag_2_pythonno_underscores__languag_"
+      },
+      "output": "__1_12Python_Languag2PythonnoUnderscores_Languag_"
+    },
+    {
+      "input": {
+        "word": "___pgram"
+      },
+      "output": "___Pgram"
+    },
+    {
+      "input": {
+        "word": "_lwordeadin__12_python__language___g"
+      },
+      "output": "_Lwordeadin_12Python_Language__G"
+    },
+    {
+      "input": {
+        "word": "your_prtrailing___"
+      },
+      "output": "YourPrtrailing___"
+    },
+    {
+      "input": {
+        "word": "__12_pythonno_underscores__langu_ag_"
+      },
+      "output": "__12PythonnoUnderscores_LanguAg_"
+    },
+    {
+      "input": {
+        "word": "aiN"
+      },
+      "output": "Ain"
+    },
+    {
+      "input": {
+        "word": "worod"
+      },
+      "output": "Worod"
+    },
+    {
+      "input": {
+        "word": "_lwordeadin__12_python__languaage___g"
+      },
+      "output": "_Lwordeadin_12Python_Languaage__G"
+    },
+    {
+      "input": {
+        "word": "qaiNnJa"
+      },
+      "output": "Qainnja"
+    },
+    {
+      "input": {
+        "word": "aiN_lwordeading"
+      },
+      "output": "AinLwordeading"
+    },
+    {
+      "input": {
+        "word": "_lwordeadin__1_2_python__language___g"
+      },
+      "output": "_Lwordeadin_12Python_Language__G"
+    },
+    {
+      "input": {
+        "word": "your_nprogrammi__12_pyth_ng_another__ex4no_underscores4ample____langu__age___your_nprogramming__langu__age___"
+      },
+      "output": "YourNprogrammi_12PythNgAnother_Ex4noUnderscores4ample___Langu_Age__YourNprogramming_Langu_Age___"
+    },
+    {
+      "input": {
+        "word": "your_pryour_nprogramming_another__ex4no_underscores4ample____langu__age___iling___"
+      },
+      "output": "YourPryourNprogrammingAnother_Ex4noUnderscores4ample___Langu_Age__Iling___"
+    },
+    {
+      "input": {
+        "word": "__1____12_pythonno_underscores__langu_ag_12_python__languag_2_pythonno_underscores__languag_"
+      },
+      "output": "__1___12PythonnoUnderscores_LanguAg12Python_Languag2PythonnoUnderscores_Languag_"
+    },
+    {
+      "input": {
+        "word": "CVh"
+      },
+      "output": "Cvh"
+    },
+    {
+      "input": {
+        "word": "_leadin_lwordeadin__12_python__languaage___gg"
+      },
+      "output": "_LeadinLwordeadin_12Python_Languaage__Gg"
+    },
+    {
+      "input": {
+        "word": "_th_"
+      },
+      "output": "_Th_"
+    },
+    {
+      "input": {
+        "word": "_lwordeadin__1_2_py__language___g"
+      },
+      "output": "_Lwordeadin_12Py_Language__G"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def snake_to_camel(word):\n    return ''.join(x.capitalize() or '_' for x in word.split('_'))\n"
+  }
+}

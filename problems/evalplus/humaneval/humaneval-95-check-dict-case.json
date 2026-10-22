@@ -1,0 +1,501 @@
+{
+  "id": "humaneval-95-check-dict-case",
+  "title": "Check Dict Case",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a dictionary, return True if all keys are strings in lower \ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nExamples:\ncheck_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\ncheck_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\ncheck_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\ncheck_dict_case({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\ncheck_dict_case({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.",
+  "entry_point": "check_dict_case",
+  "params": [
+    "dict"
+  ],
+  "function_signature": {
+    "python": "def check_dict_case(dict):"
+  },
+  "examples": [
+    {
+      "input": {
+        "dict": {
+          "p": "pineapple",
+          "b": "banana"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "p": "pineapple",
+          "A": "banana",
+          "B": "banana"
+        }
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "dict": {
+          "p": "pineapple",
+          "b": "banana"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "p": "pineapple",
+          "A": "banana",
+          "B": "banana"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "p": "pineapple",
+          "5": "banana",
+          "a": "apple"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "Name": "John",
+          "Age": "36",
+          "City": "Houston"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "STATE": "NC",
+          "ZIP": "12345"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "fruit": "Orange",
+          "taste": "Sweet"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {}
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "FIRST_NAME": "John",
+          "LAST_NAME": "DOE",
+          "AGE": 35,
+          "CITY": "NEW YORK",
+          "INCOME": "$50,000"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "last_name": "Doe",
+          "age": 35,
+          "city": "New York",
+          "income": "$50,000"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": 35,
+          "cItY": "new york",
+          "Income": "$50,000"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Last_Name": "Doe",
+          "Age": 35,
+          "city": "New York",
+          "Income": "$50,000",
+          "FIRST_NAME": "Jane"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "1": "apple",
+          "2": "banana",
+          "3": "cherry"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "orange": "fruit"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "8": "banana"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "yellow": "color"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "2019": "year"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "PI": 3.14159
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": 35,
+          "Income": "$50,000"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Last_Name": "Doe",
+          "city": "New York",
+          "FIRST_NAME": "cherry"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Age": 35,
+          "city": "New York",
+          "Income": "$50,000",
+          "FIRST_NAME": "Jane"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "2019": "yeyar"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "1": "apple",
+          "2": "banana",
+          "3": "cherry",
+          "Income": "chINCEOMEerry"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "FIRST_NAME": "John",
+          "LAST_NAME": "DOE",
+          "AGE": 35,
+          "CITY": "NK",
+          "INCOME": "$50,000"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Last_Name": "Dooe",
+          "Age": 35,
+          "city": "New York",
+          "Income": "$50,000",
+          "FIRST_NAME": "Jane",
+          "1": 36,
+          "Incyellowome": "INCOMEJohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": "D",
+          "cItY": "new york",
+          "Income": "$50,000"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Last_Name": "Dooe",
+          "Age": 35,
+          "city": "New York",
+          "Income": "$50,000",
+          "FIRST_NAME": "Jane",
+          "Incyellowome": "INCOMEJohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "FIRST_NAME": "John",
+          "LAST_NAME": "DOE",
+          "AGE": 35,
+          "CITY": "NEW YORK",
+          "INCOME": "$50,000",
+          "COME": "$50,0000"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Age": 35,
+          "city": "New York",
+          "Income": "$50,000",
+          "FIRST_NAME": "Jane",
+          "1": 36,
+          "Incyellowome": "INCOMEJohn"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "1": "apple",
+          "2": "banana",
+          "3": "cherry",
+          "Income": "New York"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "yellow": "color",
+          "yell": "clor"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": 35,
+          "cItY": "new yorok",
+          "Income": "$50,000",
+          "cItIY": 36
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": "D",
+          "cItY": "new yorAgek",
+          "Income": "$50,000"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "FIRST_NAME": "John",
+          "LAST_NAME": "DOE",
+          "AGE": 35,
+          "INCOME": "$50,000"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "$dict": [
+            [
+              "2",
+              "banana"
+            ],
+            [
+              "3",
+              "cherry"
+            ],
+            [
+              "Income",
+              "New York"
+            ],
+            [
+              "$50,000",
+              "chrerry"
+            ],
+            [
+              "Inconme",
+              "bana"
+            ]
+          ]
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "last_name": "Doe",
+          "age": 35,
+          "city": "New York",
+          "income": "$50,000",
+          "ageage": "Dooe"
+        }
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "dict": {
+          "FIRST_NAME": "John",
+          "LAST_NAME": "DOE",
+          "AGE": 35,
+          "CITY": "NK",
+          "INCOME": "$50,000",
+          "1": 35
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": "D",
+          "cItY": "new yorAgek",
+          "Income": "$50,000",
+          "IncIome": "FIRST_NAME"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "firstName": "John",
+          "LASTNAME": "DOE",
+          "Age": "D",
+          "cItY": "new yorAgek",
+          "Income": "$50,000",
+          "LASTNAE": "new yorAgeIncIomek"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "2": "banana",
+          "3": "cherry",
+          "Income": "New York"
+        }
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "dict": {
+          "first_name": "John",
+          "Last_Name": "Doe",
+          "Age": 35,
+          "city": "new yorAgek",
+          "Income": "$50,000",
+          "FIRST_NAME": "Jane"
+        }
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef check_dict_case(dict):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\n    check_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\n    check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\n    check_dict_case({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\n    check_dict_case({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.\n    \"\"\"\n\n    keys = list(dict.keys())\n    if keys == []: return False\n    lower, upper = True, True\n    for k in keys:\n        if type(k) != str:\n            lower = upper = False\n            break\n        if not k.islower(): lower = False\n        if not k.isupper(): upper = False\n    return lower or upper\n\n"
+  }
+}

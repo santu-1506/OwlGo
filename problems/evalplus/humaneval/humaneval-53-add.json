@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-53-add",
+  "title": "Add",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Add two numbers x and y\n>>> add(2, 3)\n5\n>>> add(5, 7)\n12",
+  "entry_point": "add",
+  "params": [
+    "x",
+    "y"
+  ],
+  "function_signature": {
+    "python": "def add(x: int, y: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 0,
+        "y": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 0,
+        "y": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "x": 2,
+        "y": 3
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "x": 5,
+        "y": 7
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "x": 7,
+        "y": 5
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "x": 480,
+        "y": 593
+      },
+      "output": 1073
+    },
+    {
+      "input": {
+        "x": 139,
+        "y": 579
+      },
+      "output": 718
+    },
+    {
+      "input": {
+        "x": 300,
+        "y": 77
+      },
+      "output": 377
+    },
+    {
+      "input": {
+        "x": 569,
+        "y": 756
+      },
+      "output": 1325
+    },
+    {
+      "input": {
+        "x": 911,
+        "y": 703
+      },
+      "output": 1614
+    },
+    {
+      "input": {
+        "x": 197,
+        "y": 326
+      },
+      "output": 523
+    },
+    {
+      "input": {
+        "x": 123,
+        "y": 102
+      },
+      "output": 225
+    },
+    {
+      "input": {
+        "x": 671,
+        "y": 705
+      },
+      "output": 1376
+    },
+    {
+      "input": {
+        "x": 101,
+        "y": 721
+      },
+      "output": 822
+    },
+    {
+      "input": {
+        "x": 735,
+        "y": 413
+      },
+      "output": 1148
+    },
+    {
+      "input": {
+        "x": 923,
+        "y": 369
+      },
+      "output": 1292
+    },
+    {
+      "input": {
+        "x": 938,
+        "y": 221
+      },
+      "output": 1159
+    },
+    {
+      "input": {
+        "x": 59,
+        "y": 772
+      },
+      "output": 831
+    },
+    {
+      "input": {
+        "x": 540,
+        "y": 790
+      },
+      "output": 1330
+    },
+    {
+      "input": {
+        "x": 244,
+        "y": 6
+      },
+      "output": 250
+    },
+    {
+      "input": {
+        "x": 705,
+        "y": 148
+      },
+      "output": 853
+    },
+    {
+      "input": {
+        "x": 890,
+        "y": 180
+      },
+      "output": 1070
+    },
+    {
+      "input": {
+        "x": 342,
+        "y": 129
+      },
+      "output": 471
+    },
+    {
+      "input": {
+        "x": 946,
+        "y": 559
+      },
+      "output": 1505
+    },
+    {
+      "input": {
+        "x": 623,
+        "y": 593
+      },
+      "output": 1216
+    },
+    {
+      "input": {
+        "x": 825,
+        "y": 294
+      },
+      "output": 1119
+    },
+    {
+      "input": {
+        "x": 124,
+        "y": 732
+      },
+      "output": 856
+    },
+    {
+      "input": {
+        "x": 333,
+        "y": 987
+      },
+      "output": 1320
+    },
+    {
+      "input": {
+        "x": 269,
+        "y": 347
+      },
+      "output": 616
+    },
+    {
+      "input": {
+        "x": 826,
+        "y": 822
+      },
+      "output": 1648
+    },
+    {
+      "input": {
+        "x": 157,
+        "y": 479
+      },
+      "output": 636
+    },
+    {
+      "input": {
+        "x": 534,
+        "y": 184
+      },
+      "output": 718
+    },
+    {
+      "input": {
+        "x": 418,
+        "y": 549
+      },
+      "output": 967
+    },
+    {
+      "input": {
+        "x": 855,
+        "y": 765
+      },
+      "output": 1620
+    },
+    {
+      "input": {
+        "x": 666,
+        "y": 55
+      },
+      "output": 721
+    },
+    {
+      "input": {
+        "x": 428,
+        "y": 315
+      },
+      "output": 743
+    },
+    {
+      "input": {
+        "x": 704,
+        "y": 645
+      },
+      "output": 1349
+    },
+    {
+      "input": {
+        "x": 183,
+        "y": 272
+      },
+      "output": 455
+    },
+    {
+      "input": {
+        "x": 966,
+        "y": 528
+      },
+      "output": 1494
+    },
+    {
+      "input": {
+        "x": 571,
+        "y": 697
+      },
+      "output": 1268
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef add(x: int, y: int):\n    \"\"\"Add two numbers x and y\n    >>> add(2, 3)\n    5\n    >>> add(5, 7)\n    12\n    \"\"\"\n\n    return x + y\n\n"
+  }
+}

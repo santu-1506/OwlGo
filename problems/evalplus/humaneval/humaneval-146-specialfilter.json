@@ -1,0 +1,566 @@
+{
+  "id": "humaneval-146-specialfilter",
+  "title": "Specialfilter",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that takes an array of numbers as input and returns \nthe number of elements in the array that are greater than 10 and both \nfirst and last digits of a number are odd (1, 3, 5, 7, 9).\nFor example:\nspecialFilter([15, -73, 14, -15]) => 1 \nspecialFilter([33, -2, -3, 45, 21, 109]) => 2",
+  "entry_point": "specialFilter",
+  "params": [
+    "nums"
+  ],
+  "function_signature": {
+    "python": "def specialFilter(nums):"
+  },
+  "examples": [
+    {
+      "input": {
+        "nums": [
+          5,
+          -2,
+          1,
+          -5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          15,
+          -73,
+          14,
+          -15
+        ]
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "nums": [
+          5,
+          -2,
+          1,
+          -5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          15,
+          -73,
+          14,
+          -15
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          33,
+          -2,
+          -3,
+          45,
+          21,
+          109
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          43,
+          -12,
+          93,
+          125,
+          121,
+          109
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "nums": [
+          71,
+          -2,
+          -33,
+          75,
+          21,
+          19
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "nums": [
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          9,
+          37,
+          -71,
+          -18
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          -23,
+          -15,
+          42,
+          99,
+          104
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          6,
+          89,
+          -12,
+          77,
+          13,
+          196
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          101,
+          -35,
+          16,
+          44,
+          -67
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          22,
+          -33,
+          -46,
+          89,
+          -91,
+          128
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          55,
+          -62,
+          7,
+          99,
+          23,
+          18
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          14,
+          -8,
+          62,
+          71,
+          -123,
+          39
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          12,
+          22,
+          -76,
+          37
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          39,
+          153,
+          240,
+          -339
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          11,
+          232,
+          324,
+          -876,
+          799
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          -23,
+          -15,
+          42,
+          99,
+          56,
+          104,
+          42
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          6,
+          89,
+          -12,
+          77,
+          13,
+          196,
+          196
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          37,
+          -71,
+          -18
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          -23,
+          -15,
+          42,
+          99,
+          56,
+          104,
+          42
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          71,
+          55,
+          -62,
+          7,
+          99,
+          23,
+          18
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          -23,
+          -15,
+          42,
+          99,
+          56,
+          104,
+          42,
+          42
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          9,
+          37,
+          -71,
+          -91,
+          -18,
+          -71,
+          -18
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          9,
+          37,
+          -71,
+          -91,
+          -71,
+          -18
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          -15,
+          42,
+          99,
+          56,
+          104,
+          42
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          6,
+          12,
+          77,
+          13,
+          196,
+          196,
+          89,
+          196
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          9,
+          37,
+          -71,
+          -35,
+          -25
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          -23,
+          -15,
+          42,
+          99,
+          56,
+          104,
+          42,
+          104
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          -23,
+          -15,
+          42,
+          56,
+          104,
+          42,
+          42
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          104,
+          14,
+          -8,
+          62,
+          72,
+          39
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          -23,
+          -15,
+          42,
+          56,
+          104,
+          42,
+          42,
+          104
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          12,
+          22,
+          12
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          6,
+          12,
+          22,
+          12
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          6,
+          12,
+          324,
+          12
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          14,
+          -8,
+          62,
+          5,
+          6,
+          -123,
+          39
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          9,
+          -91,
+          -71,
+          -91,
+          -71,
+          -18
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "nums": [
+          39,
+          152,
+          240,
+          -339
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "nums": [
+          57,
+          57,
+          -15,
+          42,
+          99,
+          104
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "nums": [
+          24,
+          -25,
+          9,
+          37,
+          -71,
+          -17
+        ]
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n\n    ans, odd = 0, [\"1\", \"3\", \"5\", \"7\", \"9\"]\n    for num in nums:\n        if num > 10 and str(num)[0] in odd and str(num)[-1] in odd:\n            ans += 1\n    return ans\n\n"
+  }
+}

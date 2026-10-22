@@ -1,0 +1,485 @@
+{
+  "id": "humaneval-101-words-string",
+  "title": "Words String",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You will be given a string of words separated by commas or spaces. Your task is\nto split the string into words and return an array of the words.\n\nFor example:\nwords_string(\"Hi, my name is John\") == [\"Hi\", \"my\", \"name\", \"is\", \"John\"]\nwords_string(\"One, two, three, four, five, six\") == [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]",
+  "entry_point": "words_string",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def words_string(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "Hi, my name is John"
+      },
+      "output": [
+        "Hi",
+        "my",
+        "name",
+        "is",
+        "John"
+      ]
+    },
+    {
+      "input": {
+        "s": "One, two, three, four, five, six"
+      },
+      "output": [
+        "One",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "Hi, my name is John"
+      },
+      "output": [
+        "Hi",
+        "my",
+        "name",
+        "is",
+        "John"
+      ]
+    },
+    {
+      "input": {
+        "s": "One, two, three, four, five, six"
+      },
+      "output": [
+        "One",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six"
+      ]
+    },
+    {
+      "input": {
+        "s": "Hi, my name"
+      },
+      "output": [
+        "Hi",
+        "my",
+        "name"
+      ]
+    },
+    {
+      "input": {
+        "s": "One,, two, three, four, five, six,"
+      },
+      "output": [
+        "One",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six"
+      ]
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "ahmed     , gamal"
+      },
+      "output": [
+        "ahmed",
+        "gamal"
+      ]
+    },
+    {
+      "input": {
+        "s": ",,,,"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": " "
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "Elephant,giraffe,,lion,zebra"
+      },
+      "output": [
+        "Elephant",
+        "giraffe",
+        "lion",
+        "zebra"
+      ]
+    },
+    {
+      "input": {
+        "s": "Hi,there is,a lot,of,space   ,     ,"
+      },
+      "output": [
+        "Hi",
+        "there",
+        "is",
+        "a",
+        "lot",
+        "of",
+        "space"
+      ]
+    },
+    {
+      "input": {
+        "s": "        "
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "apple,"
+      },
+      "output": [
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "s": "cat dog, fish"
+      },
+      "output": [
+        "cat",
+        "dog",
+        "fish"
+      ]
+    },
+    {
+      "input": {
+        "s": "hello,  world"
+      },
+      "output": [
+        "hello",
+        "world"
+      ]
+    },
+    {
+      "input": {
+        "s": "One,two ,  three , four"
+      },
+      "output": [
+        "One",
+        "two",
+        "three",
+        "four"
+      ]
+    },
+    {
+      "input": {
+        "s": "The quick brown fox jumps over the lazy dog"
+      },
+      "output": [
+        "The",
+        "quick",
+        "brown",
+        "fox",
+        "jumps",
+        "over",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "hello,  oworld"
+      },
+      "output": [
+        "hello",
+        "oworld"
+      ]
+    },
+    {
+      "input": {
+        "s": "         "
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "The quick brown f the lazy dog"
+      },
+      "output": [
+        "The",
+        "quick",
+        "brown",
+        "f",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "          "
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "The quickbrown f the lazy dog"
+      },
+      "output": [
+        "The",
+        "quickbrown",
+        "f",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "   "
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "The quickbrowny f the lazy dog"
+      },
+      "output": [
+        "The",
+        "quickbrowny",
+        "f",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "The quTick brown f the lazy dog"
+      },
+      "output": [
+        "The",
+        "quTick",
+        "brown",
+        "f",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "The quick brown fox jumps over tohe lazy dog"
+      },
+      "output": [
+        "The",
+        "quick",
+        "brown",
+        "fox",
+        "jumps",
+        "over",
+        "tohe",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "The quickbrown y dog"
+      },
+      "output": [
+        "The",
+        "quickbrown",
+        "y",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "One,two ,  three , fouOne,two ,  three , fourr"
+      },
+      "output": [
+        "One",
+        "two",
+        "three",
+        "fouOne",
+        "two",
+        "three",
+        "fourr"
+      ]
+    },
+    {
+      "input": {
+        "s": "cagt dog, fish"
+      },
+      "output": [
+        "cagt",
+        "dog",
+        "fish"
+      ]
+    },
+    {
+      "input": {
+        "s": "Elephant,gieraffe,,lion,zebra"
+      },
+      "output": [
+        "Elephant",
+        "gieraffe",
+        "lion",
+        "zebra"
+      ]
+    },
+    {
+      "input": {
+        "s": ",,"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "s": "The quickbrown  dog"
+      },
+      "output": [
+        "The",
+        "quickbrown",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": ",The quTick brown f the lazy dog,"
+      },
+      "output": [
+        "The",
+        "quTick",
+        "brown",
+        "f",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "cat dofish"
+      },
+      "output": [
+        "cat",
+        "dofish"
+      ]
+    },
+    {
+      "input": {
+        "s": "hehello,  oworldllo,  oworld"
+      },
+      "output": [
+        "hehello",
+        "oworldllo",
+        "oworld"
+      ]
+    },
+    {
+      "input": {
+        "s": " cat dofish       "
+      },
+      "output": [
+        "cat",
+        "dofish"
+      ]
+    },
+    {
+      "input": {
+        "s": ",         ,The quickbrown  dog"
+      },
+      "output": [
+        "The",
+        "quickbrown",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "The quTick brown f One,two ,  three , fourthe lazy dog"
+      },
+      "output": [
+        "The",
+        "quTick",
+        "brown",
+        "f",
+        "One",
+        "two",
+        "three",
+        "fourthe",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": ",The quTick bThe quick brown fox jumps over tohe lazy dogrown f the lazy dog,"
+      },
+      "output": [
+        "The",
+        "quTick",
+        "bThe",
+        "quick",
+        "brown",
+        "fox",
+        "jumps",
+        "over",
+        "tohe",
+        "lazy",
+        "dogrown",
+        "f",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "The quTickf the lazy dog"
+      },
+      "output": [
+        "The",
+        "quTickf",
+        "the",
+        "lazy",
+        "dog"
+      ]
+    },
+    {
+      "input": {
+        "s": "app cat dofish       e,"
+      },
+      "output": [
+        "app",
+        "cat",
+        "dofish",
+        "e"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef words_string(s):\n    \"\"\"\n    You will be given a string of words separated by commas or spaces. Your task is\n    to split the string into words and return an array of the words.\n    \n    For example:\n    words_string(\"Hi, my name is John\") == [\"Hi\", \"my\", \"name\", \"is\", \"John\"]\n    words_string(\"One, two, three, four, five, six\") == [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]\n    \"\"\"\n\n    words = (s.replace(\",\", \" \")).split()\n    return [word for word in words if word != \"\"]\n\n"
+  }
+}

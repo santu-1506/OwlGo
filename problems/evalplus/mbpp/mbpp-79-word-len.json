@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-79-word-len",
+  "title": "Word Len",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether the length of the word is odd or not.",
+  "entry_point": "word_len",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def word_len(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "Hadoop"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "great"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "Hadoop"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "great"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "structure"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "a"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "longstringwithmixture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixturegstringwithmixture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixturegstringwithmixturlongstringwithmixturee"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixturegstringwithmxture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "longstringwithmiixtiure"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lnongstringwithmixture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "alongstringwithmiixtiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwitlongstringwithmiixtiurehmixturegstringwithmxture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixturegstringwithlongstringwithmixturemixture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lonlongstringwitringwithmixture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lnongstringwithmixturea"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "mlongstringwithmiixtiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstrringwithmixturegstringwithlongstringwitnhmixturemixture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "longstringwithmiixlonlongstringwithmixturegstringwithmxturetiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwitringwhithmixture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixturegstringwithmixturlongstringwithmixturelongstringwithmiixlonlongstringwithmixturegstringwithmxturetiuree"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixlonlongstringwithmixturegstringwithmixtureturegstringwithmixture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwitringwithmixtongtstringwitringwhithmixture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lnongstringwithmixlonlongstringwithmixturegstringwithmxtureturea"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lnmlongstringwithmiixtiureongstringwithmixturea"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "longstringwithmiixlonlongstringwithmixturegstlringwithmxturetiure"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "TtYAzEr"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lonlongstrlonlongstrringwithmixturegstringwithlongstringwitnhmixturemixtureingwithmixturegstringwithmxture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lnmlongstringwithmiixtiureongstringwithmixturelonlongstringwitringwhithmixturea"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "longstlongstringwithmiixlonlongstringwithmixturegstringwithmxturetiureringwithmiixtiure"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lonlongstrlonlongstrringwithmixturegstringwithlongstringwitwnhmixturemixtureingwithmixturegstrinhmtxture"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "aa"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "longastringwithmiixtiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "longastringxwithmiixtiure"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "liongastringwithmixtiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixlonlongstrilongstringwithmixturengwithmixturegstringwithmixtureturegstringwithmixture"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "lnongstriengwithmixturea"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "longstringwithmiixlonlongstringwithmialongstringwithmiixtiurexturegstringwithmxturetiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "longstringwithmiixlonnlongstringwithmixturegstringwithmxturetiure"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s": "alongslongastringwithmiixtiuretringwithmiixtiure"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s": "lonlongstringwithmixturegstrinurlongstringwithmixturee"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def word_len(s): \n    return len(s) % 2 == 1\n"
+  }
+}

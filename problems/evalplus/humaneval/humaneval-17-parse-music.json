@@ -1,0 +1,611 @@
+{
+  "id": "humaneval-17-parse-music",
+  "title": "Parse Music",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Input to this function is a string representing musical notes in a special ASCII format.\nYour task is to parse this string and return list of integers corresponding to how many beats does each\nnot last.\n\nHere is a legend:\n'o' - whole note, lasts four beats\n'o|' - half note, lasts two beats\n'.|' - quater note, lasts one beat\n\n>>> parse_music('o o| .| o| o| .| .| .| .| o o')\n[4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]",
+  "entry_point": "parse_music",
+  "params": [
+    "music_string"
+  ],
+  "function_signature": {
+    "python": "def parse_music(music_string: str) -> List[int]:"
+  },
+  "examples": [
+    {
+      "input": {
+        "music_string": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "music_string": "o o o o"
+      },
+      "output": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "music_string": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "music_string": "o o o o"
+      },
+      "output": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| .| .|"
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| .| .| o o o o"
+      },
+      "output": [
+        2,
+        2,
+        1,
+        1,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| .| o| .| o o| o o|"
+      },
+      "output": [
+        2,
+        1,
+        2,
+        1,
+        4,
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| o|"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o| o| .|"
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| .| o| .|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o| o| o| o| .| .| o| o| o| o| o| o| o o o o"
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o| o| .| .| o| o|"
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| .| .| .| o| o|"
+      },
+      "output": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o| .| .| .| .|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| o| .| o| o| .| o| .|"
+      },
+      "output": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| o| o| o| o| o|"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o| o| o| o| o| .| o| o| o| o| o| o o o o o o o| o|"
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o| o|"
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o| o| o| o|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o| .| .| .|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| o| o| o"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o|"
+      },
+      "output": [
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o|"
+      },
+      "output": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| .| .| .| o| o| .| .| o| o|"
+      },
+      "output": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o| o| .| .| .| .| o| .| o| .|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| o| o|"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o| o| o"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| .|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o|"
+      },
+      "output": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| o| o"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| .| .| o| o|"
+      },
+      "output": [
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o| o| o|"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o|"
+      },
+      "output": [
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| .| .| o| o| o| o| o| .| o| o| o| o| o| o o o o o o o| o| o| o| o"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o"
+      },
+      "output": [
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| .| .| o| o| .| .| o| o|"
+      },
+      "output": [
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": ".| .| o| o| o| o o o"
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| o| o| o"
+      },
+      "output": [
+        2,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o"
+      },
+      "output": [
+        4,
+        2,
+        4
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o| .| .| .| o|"
+      },
+      "output": [
+        2,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "input": {
+        "music_string": "o o| o| .| .| o| o| o| o| o| .| o o o o o o o o| o| o| o| o"
+      },
+      "output": [
+        4,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        4
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef parse_music(music_string: str) -> List[int]:\n    \"\"\" Input to this function is a string representing musical notes in a special ASCII format.\n    Your task is to parse this string and return list of integers corresponding to how many beats does each\n    not last.\n\n    Here is a legend:\n    'o' - whole note, lasts four beats\n    'o|' - half note, lasts two beats\n    '.|' - quater note, lasts one beat\n\n    >>> parse_music('o o| .| o| o| .| .| .| .| o o')\n    [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]\n    \"\"\"\n\n\n    def count_beats(note: str) -> int:\n        if note == \"o\": return 4\n        elif note == \"o|\": return 2\n        elif note == \".|\": return 1\n    \n    if music_string == \"\": return []\n    return list(map(count_beats, music_string.split(\" \")))\n\n"
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "id": "humaneval-52-below-threshold",
+  "title": "Below Threshold",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return True if all numbers in the list l are below threshold t.\n>>> below_threshold([1, 2, 4, 10], 100)\nTrue\n>>> below_threshold([1, 20, 4, 10], 5)\nFalse",
+  "entry_point": "below_threshold",
+  "params": [
+    "l",
+    "t"
+  ],
+  "function_signature": {
+    "python": "def below_threshold(l: list, t: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          10
+        ],
+        "t": 100
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          20,
+          4,
+          10
+        ],
+        "t": 5
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          10
+        ],
+        "t": 100
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          20,
+          4,
+          10
+        ],
+        "t": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          20,
+          4,
+          10
+        ],
+        "t": 21
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          20,
+          4,
+          10
+        ],
+        "t": 22
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          8,
+          4,
+          10
+        ],
+        "t": 11
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          8,
+          4,
+          10
+        ],
+        "t": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "t": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "t": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -1,
+          -2,
+          -3,
+          -4
+        ],
+        "t": 0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "t": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [],
+        "t": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "t": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "t": -5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          10
+        ],
+        "t": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "t": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          3.5,
+          2.2,
+          1.1
+        ],
+        "t": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          4
+        ],
+        "t": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          4,
+          7,
+          10
+        ],
+        "t": -2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          4,
+          -4,
+          7,
+          10
+        ],
+        "t": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          -1,
+          4
+        ],
+        "t": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          5,
+          7,
+          5
+        ],
+        "t": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          4,
+          -4,
+          7,
+          10
+        ],
+        "t": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "t": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          4,
+          7,
+          10,
+          7
+        ],
+        "t": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          -4,
+          -3,
+          -2,
+          4,
+          -4
+        ],
+        "t": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          -1,
+          4
+        ],
+        "t": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "t": 11
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "t": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          4,
+          7,
+          9
+        ],
+        "t": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          -4,
+          4
+        ],
+        "t": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          true,
+          false
+        ],
+        "t": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -1,
+          -2,
+          -4
+        ],
+        "t": 0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          true,
+          false
+        ],
+        "t": 4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          7,
+          5
+        ],
+        "t": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          -1,
+          4,
+          4
+        ],
+        "t": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          10,
+          4
+        ],
+        "t": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          3,
+          1,
+          4,
+          7,
+          10,
+          7
+        ],
+        "t": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1.1,
+          3.5,
+          2.2,
+          1.1
+        ],
+        "t": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -4,
+          -3,
+          4,
+          -4
+        ],
+        "t": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          4,
+          7,
+          9,
+          1
+        ],
+        "t": 10
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef below_threshold(l: list, t: int):\n    \"\"\"Return True if all numbers in the list l are below threshold t.\n    >>> below_threshold([1, 2, 4, 10], 100)\n    True\n    >>> below_threshold([1, 20, 4, 10], 5)\n    False\n    \"\"\"\n\n    return all(x < t for x in l)\n\n"
+  }
+}

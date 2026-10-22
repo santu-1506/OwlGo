@@ -1,0 +1,639 @@
+{
+  "id": "mbpp-468-max-product",
+  "title": "Max Product",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the maximum product formed by multiplying numbers of an increasing subsequence of that array.",
+  "entry_point": "max_product",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def max_product(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          3,
+          100,
+          4,
+          5,
+          150,
+          6
+        ]
+      },
+      "output": 3000
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          42,
+          55,
+          68,
+          80
+        ]
+      },
+      "output": 50265600
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          3,
+          100,
+          4,
+          5,
+          150,
+          6
+        ]
+      },
+      "output": 3000
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          42,
+          55,
+          68,
+          80
+        ]
+      },
+      "output": 50265600
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          22,
+          9,
+          33,
+          21,
+          50,
+          41,
+          60
+        ]
+      },
+      "output": 2460
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          -100,
+          -4,
+          -5,
+          -150,
+          -6
+        ]
+      },
+      "output": 900
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          -5,
+          2,
+          6,
+          -1,
+          4,
+          -3
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          3,
+          4,
+          5,
+          3,
+          6
+        ]
+      },
+      "output": 60
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          -3,
+          3,
+          4,
+          -5,
+          3,
+          -6
+        ]
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          200,
+          150,
+          300,
+          250,
+          400
+        ]
+      },
+      "output": 1000000
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          -2,
+          3,
+          -4,
+          5,
+          -6,
+          7
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          6,
+          5,
+          1,
+          9,
+          7,
+          4,
+          3,
+          2
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          -4,
+          5,
+          -2,
+          6,
+          -1,
+          7,
+          -8,
+          9,
+          -10,
+          11
+        ]
+      },
+      "output": 48
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          200,
+          100,
+          150,
+          300,
+          250,
+          400,
+          100
+        ]
+      },
+      "output": 4500000
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          -4,
+          5,
+          -2,
+          5,
+          6,
+          200,
+          10,
+          -1,
+          7,
+          -8,
+          9,
+          -10,
+          11
+        ]
+      },
+      "output": 48000
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          7,
+          6,
+          4
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          250,
+          150,
+          300,
+          250,
+          400
+        ]
+      },
+      "output": 100000
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          250,
+          6,
+          150,
+          300,
+          250,
+          400
+        ]
+      },
+      "output": 270000
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          3,
+          -5,
+          2,
+          6,
+          -1,
+          4,
+          -3
+        ]
+      },
+      "output": 20
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          7,
+          6,
+          5,
+          4,
+          3
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          -3,
+          150,
+          300,
+          250,
+          400
+        ]
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          8,
+          5,
+          4,
+          3,
+          4
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          -8,
+          3
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          -5,
+          2,
+          6,
+          4,
+          -3
+        ]
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          250,
+          150,
+          300,
+          250,
+          1,
+          400
+        ]
+      },
+      "output": 45000
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          50,
+          100,
+          200,
+          100,
+          150,
+          300,
+          250,
+          400,
+          100
+        ]
+      },
+      "output": 4500000
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          50,
+          100,
+          200,
+          100,
+          150,
+          300,
+          400,
+          100
+        ]
+      },
+      "output": 1800000000
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          5,
+          4,
+          3,
+          9
+        ]
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "arr": [
+          -6,
+          249,
+          6,
+          150,
+          250,
+          400
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          250,
+          150,
+          250,
+          400
+        ]
+      },
+      "output": 15000000
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          7,
+          7,
+          6,
+          5,
+          5,
+          4,
+          3,
+          9
+        ]
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          -3,
+          150,
+          300,
+          250,
+          400,
+          100
+        ]
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          -3,
+          150,
+          300,
+          250,
+          400,
+          300
+        ]
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          5,
+          4,
+          9
+        ]
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "arr": [
+          3,
+          -5,
+          2,
+          -1,
+          -6,
+          4,
+          -3
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          -3,
+          150,
+          250,
+          400
+        ]
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          8,
+          5,
+          1,
+          9,
+          7,
+          4,
+          3,
+          2,
+          6,
+          6
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          10
+        ]
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "arr": [
+          50,
+          100,
+          150,
+          250,
+          400
+        ]
+      },
+      "output": 75000000000
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          -100,
+          -4,
+          -5,
+          -150,
+          -6,
+          -4
+        ]
+      },
+      "output": 900
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def max_product(arr):   \n  # record the correspond ending element to maintain the increasing subsequence\n  ret = max_ending = min_ending = (arr[0], arr[0])\n  for n in arr[1:]:\n    if n > max_ending[1]:\n      max_ending = max((max_ending[0] * n, n), max_ending, key=lambda x: x[0])\n    else:\n      max_ending = (n, n)\n    if n > min_ending[1]:\n      min_ending = min((min_ending[0] * n, n), min_ending, key=lambda x: x[0])\n    else:\n      min_ending = (n, n)\n    ret = max(ret, max_ending, min_ending, key=lambda x: x[0])\n  return ret[0]\n"
+  }
+}

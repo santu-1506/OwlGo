@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-139-circle-circumference",
+  "title": "Circle Circumference",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the circumference of a circle.",
+  "entry_point": "circle_circumference",
+  "params": [
+    "r"
+  ],
+  "function_signature": {
+    "python": "def circle_circumference(r):"
+  },
+  "examples": [
+    {
+      "input": {
+        "r": 10
+      },
+      "output": 62.83185307179586
+    },
+    {
+      "input": {
+        "r": 5
+      },
+      "output": 31.41592653589793
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "r": 10
+      },
+      "output": 62.83185307179586
+    },
+    {
+      "input": {
+        "r": 5
+      },
+      "output": 31.41592653589793
+    },
+    {
+      "input": {
+        "r": 4
+      },
+      "output": 25.132741228718345
+    },
+    {
+      "input": {
+        "r": 1000000
+      },
+      "output": 6283185.307179586
+    },
+    {
+      "input": {
+        "r": 1000001
+      },
+      "output": 6283191.590364893
+    },
+    {
+      "input": {
+        "r": 999999
+      },
+      "output": 6283179.023994279
+    },
+    {
+      "input": {
+        "r": true
+      },
+      "output": 6.283185307179586
+    },
+    {
+      "input": {
+        "r": 1000002
+      },
+      "output": 6283197.873550201
+    },
+    {
+      "input": {
+        "r": 1000003
+      },
+      "output": 6283204.156735508
+    },
+    {
+      "input": {
+        "r": 999998
+      },
+      "output": 6283172.740808972
+    },
+    {
+      "input": {
+        "r": 999997
+      },
+      "output": 6283166.457623664
+    },
+    {
+      "input": {
+        "r": 19
+      },
+      "output": 119.38052083641213
+    },
+    {
+      "input": {
+        "r": 51
+      },
+      "output": 320.4424506661589
+    },
+    {
+      "input": {
+        "r": 999996
+      },
+      "output": 6283160.174438357
+    },
+    {
+      "input": {
+        "r": 18
+      },
+      "output": 113.09733552923255
+    },
+    {
+      "input": {
+        "r": 999995
+      },
+      "output": 6283153.89125305
+    },
+    {
+      "input": {
+        "r": 20
+      },
+      "output": 125.66370614359172
+    },
+    {
+      "input": {
+        "r": 999994
+      },
+      "output": 6283147.6080677435
+    },
+    {
+      "input": {
+        "r": 50
+      },
+      "output": 314.1592653589793
+    },
+    {
+      "input": {
+        "r": 999993
+      },
+      "output": 6283141.324882436
+    },
+    {
+      "input": {
+        "r": 17
+      },
+      "output": 106.81415022205297
+    },
+    {
+      "input": {
+        "r": 49
+      },
+      "output": 307.8760800517997
+    },
+    {
+      "input": {
+        "r": 52
+      },
+      "output": 326.7256359733385
+    },
+    {
+      "input": {
+        "r": 21
+      },
+      "output": 131.94689145077132
+    },
+    {
+      "input": {
+        "r": 16
+      },
+      "output": 100.53096491487338
+    },
+    {
+      "input": {
+        "r": 78
+      },
+      "output": 490.0884539600077
+    },
+    {
+      "input": {
+        "r": 77
+      },
+      "output": 483.80526865282815
+    },
+    {
+      "input": {
+        "r": 48
+      },
+      "output": 301.59289474462014
+    },
+    {
+      "input": {
+        "r": 15
+      },
+      "output": 94.24777960769379
+    },
+    {
+      "input": {
+        "r": 1000004
+      },
+      "output": 6283210.439920815
+    },
+    {
+      "input": {
+        "r": 22
+      },
+      "output": 138.23007675795088
+    },
+    {
+      "input": {
+        "r": 1000005
+      },
+      "output": 6283216.723106123
+    },
+    {
+      "input": {
+        "r": 14
+      },
+      "output": 87.96459430051421
+    },
+    {
+      "input": {
+        "r": 999992
+      },
+      "output": 6283135.041697129
+    },
+    {
+      "input": {
+        "r": 53
+      },
+      "output": 333.0088212805181
+    },
+    {
+      "input": {
+        "r": 79
+      },
+      "output": 496.37163926718733
+    },
+    {
+      "input": {
+        "r": 76
+      },
+      "output": 477.5220833456485
+    },
+    {
+      "input": {
+        "r": 80
+      },
+      "output": 502.6548245743669
+    },
+    {
+      "input": {
+        "r": 81
+      },
+      "output": 508.93800988154646
+    },
+    {
+      "input": {
+        "r": 83
+      },
+      "output": 521.5043804959057
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0001
+  },
+  "reference_solutions": {
+    "python": "import math\ndef circle_circumference(r):\n  return 2 * math.pi * r\n"
+  }
+}

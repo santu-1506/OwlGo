@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-86-anti-shuffle",
+  "title": "Anti Shuffle",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that takes a string and returns an ordered version of it.\nOrdered version of string, is a string where all words (separated by space)\nare replaced by a new word where all the characters arranged in\nascending order based on ascii value.\nNote: You should keep the order of words and blank spaces in the sentence.\n\nFor example:\nanti_shuffle('Hi') returns 'Hi'\nanti_shuffle('hello') returns 'ehllo'\nanti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'",
+  "entry_point": "anti_shuffle",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def anti_shuffle(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "Hi"
+      },
+      "output": "Hi"
+    },
+    {
+      "input": {
+        "s": "hello"
+      },
+      "output": "ehllo"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "Hi"
+      },
+      "output": "Hi"
+    },
+    {
+      "input": {
+        "s": "hello"
+      },
+      "output": "ehllo"
+    },
+    {
+      "input": {
+        "s": "number"
+      },
+      "output": "bemnru"
+    },
+    {
+      "input": {
+        "s": "abcd"
+      },
+      "output": "abcd"
+    },
+    {
+      "input": {
+        "s": "Hello World!!!"
+      },
+      "output": "Hello !!!Wdlor"
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "Hi. My name is Mister Robot. How are you?"
+      },
+      "output": ".Hi My aemn is Meirst .Rboot How aer ?ouy"
+    },
+    {
+      "input": {
+        "s": "12345"
+      },
+      "output": "12345"
+    },
+    {
+      "input": {
+        "s": "\n\n123 456\n789\n"
+      },
+      "output": "\n\n123 \n\n456789"
+    },
+    {
+      "input": {
+        "s": "Mary had a little lamb"
+      },
+      "output": "Mary adh a eilltt ablm"
+    },
+    {
+      "input": {
+        "s": "Racecar"
+      },
+      "output": "Raaccer"
+    },
+    {
+      "input": {
+        "s": "!!!"
+      },
+      "output": "!!!"
+    },
+    {
+      "input": {
+        "s": "The quick brown fox jumps over the lazy dog."
+      },
+      "output": "Teh cikqu bnorw fox jmpsu eorv eht alyz .dgo"
+    },
+    {
+      "input": {
+        "s": "This is a test."
+      },
+      "output": "This is a .estt"
+    },
+    {
+      "input": {
+        "s": "1, 2, 3, testing!"
+      },
+      "output": ",1 ,2 ,3 !eginstt"
+    },
+    {
+      "input": {
+        "s": "Quick brown fox"
+      },
+      "output": "Qciku bnorw fox"
+    },
+    {
+      "input": {
+        "s": "The quick brown fox jumps over the lazy dog"
+      },
+      "output": "Teh cikqu bnorw fox jmpsu eorv eht alyz dgo"
+    },
+    {
+      "input": {
+        "s": "The quick brown fox jumps over thhe lazy dog"
+      },
+      "output": "Teh cikqu bnorw fox jmpsu eorv ehht alyz dgo"
+    },
+    {
+      "input": {
+        "s": "r"
+      },
+      "output": "r"
+    },
+    {
+      "input": {
+        "s": "Raccecar"
+      },
+      "output": "Raacccer"
+    },
+    {
+      "input": {
+        "s": "56\n789\n"
+      },
+      "output": "\n\n56789"
+    },
+    {
+      "input": {
+        "s": "The quicmk brown fox jumps over the lazy dog."
+      },
+      "output": "Teh cikmqu bnorw fox jmpsu eorv eht alyz .dgo"
+    },
+    {
+      "input": {
+        "s": "lDQH"
+      },
+      "output": "DHQl"
+    },
+    {
+      "input": {
+        "s": "The quick brown fox jumps over the lag."
+      },
+      "output": "Teh cikqu bnorw fox jmpsu eorv eht .agl"
+    },
+    {
+      "input": {
+        "s": "This is a test.r"
+      },
+      "output": "This is a .erstt"
+    },
+    {
+      "input": {
+        "s": "lThe quick brown fox jumps over thhe lazy dogDQH"
+      },
+      "output": "Tehl cikqu bnorw fox jmpsu eorv ehht alyz DHQdgo"
+    },
+    {
+      "input": {
+        "s": "This is a t."
+      },
+      "output": "This is a .t"
+    },
+    {
+      "input": {
+        "s": "1, 2,1 3, testing!"
+      },
+      "output": ",1 ,12 ,3 !eginstt"
+    },
+    {
+      "input": {
+        "s": "1, 2, 31, testing!"
+      },
+      "output": ",1 ,2 ,13 !eginstt"
+    },
+    {
+      "input": {
+        "s": "This is a testt.r"
+      },
+      "output": "This is a .ersttt"
+    },
+    {
+      "input": {
+        "s": "1, 2, 31, Racecartesting!"
+      },
+      "output": ",1 ,2 ,13 !Raacceeginrstt"
+    },
+    {
+      "input": {
+        "s": "Quick bfrown fox"
+      },
+      "output": "Qciku bfnorw fox"
+    },
+    {
+      "input": {
+        "s": "!!1, 2,1 3, testing!!"
+      },
+      "output": "!!,1 ,12 ,3 !!eginstt"
+    },
+    {
+      "input": {
+        "s": "\n\n1232 456\n789\n"
+      },
+      "output": "\n\n1223 \n\n456789"
+    },
+    {
+      "input": {
+        "s": "1, 2, 31,t Racecartesting!"
+      },
+      "output": ",1 ,2 ,13t !Raacceeginrstt"
+    },
+    {
+      "input": {
+        "s": "Raceca"
+      },
+      "output": "Raacce"
+    },
+    {
+      "input": {
+        "s": "!!1, 2,1 The quick brown fox jumps over the lag.3, testing!!"
+      },
+      "output": "!!,1 ,12 Teh cikqu bnorw fox jmpsu eorv eht ,.3agl !!eginstt"
+    },
+    {
+      "input": {
+        "s": "Raceca!!1, 2,1 The quick brown fox jumps over the lag.3, testing!!"
+      },
+      "output": "!!,1Raacce ,12 Teh cikqu bnorw fox jmpsu eorv eht ,.3agl !!eginstt"
+    },
+    {
+      "input": {
+        "s": "The quick brown fox ju1, 2, 31, testing!mps over thhe lazy dog"
+      },
+      "output": "Teh cikqu bnorw fox ,1ju ,2 ,13 !egimnpsstt eorv ehht alyz dgo"
+    },
+    {
+      "input": {
+        "s": "Racc!!1, 2,1 The quick brown fox jumps over the lag.3, testing!!car"
+      },
+      "output": "!!,1Racc ,12 Teh cikqu bnorw fox jmpsu eorv eht ,.3agl !!aceginrstt"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef anti_shuffle(s):\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    anti_shuffle('Hi') returns 'Hi'\n    anti_shuffle('hello') returns 'ehllo'\n    anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'\n    \"\"\"\n\n    words = s.split(\" \")\n    return \" \".join(map(lambda x: \"\".join(sorted(x, key=lambda ch: ord(ch))), words))\n\n"
+  }
+}

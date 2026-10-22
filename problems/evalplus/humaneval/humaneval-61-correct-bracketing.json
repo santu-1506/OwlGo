@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-61-correct-bracketing",
+  "title": "Correct Bracketing",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "brackets is a string of \"(\" and \")\".\nreturn True if every opening bracket has a corresponding closing bracket.\n\n>>> correct_bracketing(\"(\")\nFalse\n>>> correct_bracketing(\"()\")\nTrue\n>>> correct_bracketing(\"(()())\")\nTrue\n>>> correct_bracketing(\")(()\")\nFalse",
+  "entry_point": "correct_bracketing",
+  "params": [
+    "brackets"
+  ],
+  "function_signature": {
+    "python": "def correct_bracketing(brackets: str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "brackets": "()"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "(()())"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "brackets": "()"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "(()())"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "()()(()())()"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "()()((()()())())(()()(()))"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "((()())))"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")(()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "(((("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "(()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "()()(()())())(()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "()()(()())()))()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "()()()()()"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "((((()))))"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "((())))("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")()()))("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((())"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "(()))()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((()))"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": ")()()()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")))))))"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((())((())"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")()()))()()()()()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "))("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "(())))()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")()()))()()()())(()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "()(()))"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((()))()()))()()()())(()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((())))()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "(("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((()))()(())))"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "()(((())))()))((())))"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")()()))()()()())(()((((())((())))())))"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")()()()()))()()()())(())()"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": ")(("
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "(())"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": ")(((())"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "brackets": "((()(())))"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "brackets": "((()))())(())))"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n\n\n    cnt = 0\n    for x in brackets:\n        if x == \"(\": cnt += 1\n        if x == \")\": cnt -= 1\n        if cnt < 0: return False\n    return cnt == 0\n\n"
+  }
+}

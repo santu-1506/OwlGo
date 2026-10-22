@@ -1,0 +1,500 @@
+{
+  "id": "humaneval-72-will-it-fly",
+  "title": "Will It Fly",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.\n\nExample:\nwill_it_fly([1, 2], 5) ➞ False \n# 1+2 is less than the maximum possible weight, but it's unbalanced.\n\nwill_it_fly([3, 2, 3], 1) ➞ False\n# it's balanced, but 3+2+3 is more than the maximum possible weight.\n\nwill_it_fly([3, 2, 3], 9) ➞ True\n# 3+2+3 is less than the maximum possible weight, and it's balanced.\n\nwill_it_fly([3], 5) ➞ True\n# 3 is less than the maximum possible weight, and it's balanced.",
+  "entry_point": "will_it_fly",
+  "params": [
+    "q",
+    "w"
+  ],
+  "function_signature": {
+    "python": "def will_it_fly(q, w):"
+  },
+  "examples": [
+    {
+      "input": {
+        "q": [
+          3,
+          2,
+          3
+        ],
+        "w": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2
+        ],
+        "w": 5
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "q": [
+          3,
+          2,
+          3
+        ],
+        "w": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2
+        ],
+        "w": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          3
+        ],
+        "w": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          3,
+          2,
+          3
+        ],
+        "w": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3
+        ],
+        "w": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          5
+        ],
+        "w": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          0
+        ],
+        "w": 0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          1
+        ],
+        "w": 4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          2,
+          3,
+          2
+        ],
+        "w": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          4,
+          2,
+          1,
+          2,
+          4
+        ],
+        "w": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          4,
+          2,
+          1,
+          2,
+          4
+        ],
+        "w": 12
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "w": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3
+        ],
+        "w": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "w": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "w": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          4,
+          2,
+          1,
+          2,
+          4,
+          4
+        ],
+        "w": 14
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          0
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          1,
+          0
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          7,
+          2,
+          3
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          1
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          1
+        ],
+        "w": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          0
+        ],
+        "w": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          10,
+          1
+        ],
+        "w": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          4,
+          1,
+          2,
+          3
+        ],
+        "w": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          4,
+          2,
+          1,
+          2,
+          4,
+          4
+        ],
+        "w": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1
+        ],
+        "w": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          2,
+          3,
+          2
+        ],
+        "w": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          0,
+          1,
+          1
+        ],
+        "w": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          3,
+          2,
+          1,
+          2,
+          4
+        ],
+        "w": 13
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1
+        ],
+        "w": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          10,
+          1
+        ],
+        "w": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          6
+        ],
+        "w": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          13,
+          1,
+          0
+        ],
+        "w": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3
+        ],
+        "w": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "w": 7
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "w": 5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          2,
+          1
+        ],
+        "w": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "q": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "w": 0
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef will_it_fly(q,w):\n    '''\n    Write a function that returns True if the object q will fly, and False otherwise.\n    The object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.\n\n    Example:\n    will_it_fly([1, 2], 5) ➞ False \n    # 1+2 is less than the maximum possible weight, but it's unbalanced.\n\n    will_it_fly([3, 2, 3], 1) ➞ False\n    # it's balanced, but 3+2+3 is more than the maximum possible weight.\n\n    will_it_fly([3, 2, 3], 9) ➞ True\n    # 3+2+3 is less than the maximum possible weight, and it's balanced.\n\n    will_it_fly([3], 5) ➞ True\n    # 3 is less than the maximum possible weight, and it's balanced.\n    '''\n\n    return q == q[::-1] and sum(q) <= w\n\n"
+  }
+}

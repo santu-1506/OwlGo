@@ -1,0 +1,1589 @@
+{
+  "id": "mbpp-94-index-minimum",
+  "title": "Index Minimum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Given a list of tuples, write a function that returns the first value of the tuple with the smallest second value.",
+  "entry_point": "index_minimum",
+  "params": [
+    "test_list"
+  ],
+  "function_signature": {
+    "python": "def index_minimum(test_list):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Rash",
+              143
+            ]
+          },
+          {
+            "$tuple": [
+              "Manjeet",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "Varsha",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Varsha"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Yash",
+              185
+            ]
+          },
+          {
+            "$tuple": [
+              "Dawood",
+              125
+            ]
+          },
+          {
+            "$tuple": [
+              "Sanya",
+              175
+            ]
+          }
+        ]
+      },
+      "output": "Dawood"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Rash",
+              143
+            ]
+          },
+          {
+            "$tuple": [
+              "Manjeet",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "Varsha",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Varsha"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Yash",
+              185
+            ]
+          },
+          {
+            "$tuple": [
+              "Dawood",
+              125
+            ]
+          },
+          {
+            "$tuple": [
+              "Sanya",
+              175
+            ]
+          }
+        ]
+      },
+      "output": "Dawood"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Sai",
+              345
+            ]
+          },
+          {
+            "$tuple": [
+              "Salman",
+              145
+            ]
+          },
+          {
+            "$tuple": [
+              "Ayesha",
+              96
+            ]
+          }
+        ]
+      },
+      "output": "Ayesha"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              300
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "Jim",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "Jill",
+              175
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true,
+              "Chicago"
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "Jim",
+              200
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              true,
+              false,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true,
+              "Charlie"
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              150
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true,
+              "Charlie"
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "Benjamin"
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA"
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              "NYBenjamin",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              true,
+              false,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Jane",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "Jim",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "Jill",
+              175
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Jim",
+              200
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Charlie",
+              101
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true
+            ]
+          }
+        ]
+      },
+      "output": "Adam"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              200,
+              "Chicago",
+              true,
+              "Chicago"
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200,
+              "Bob"
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              true,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              300
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              101
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              101
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Adam",
+              150,
+              "NYC",
+              true
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              125,
+              "Miami",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA"
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100,
+              "LA",
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      "output": "Benjamin"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200,
+              "Bob"
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              300
+            ]
+          },
+          {
+            "$tuple": [
+              "Benjamin",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Jim",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "Jill",
+              175
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "John"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Charlie",
+              101
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              100
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    },
+    {
+      "input": {
+        "test_list": [
+          {
+            "$tuple": [
+              "Alice",
+              101,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              300
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              true,
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "John",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              200
+            ]
+          }
+        ]
+      },
+      "output": "Alice"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from operator import itemgetter \ndef index_minimum(test_list):\n  res = min(test_list, key = itemgetter(1))[0]\n  return (res)\n"
+  }
+}

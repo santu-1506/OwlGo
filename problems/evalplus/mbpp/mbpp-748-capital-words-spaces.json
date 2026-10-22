@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-748-capital-words-spaces",
+  "title": "Capital Words Spaces",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to put spaces between words starting with capital letters in a given string.",
+  "entry_point": "capital_words_spaces",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def capital_words_spaces(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "Python"
+      },
+      "output": "Python"
+    },
+    {
+      "input": {
+        "str1": "PythonProgrammingExamples"
+      },
+      "output": "Python Programming Examples"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "Python"
+      },
+      "output": "Python"
+    },
+    {
+      "input": {
+        "str1": "PythonProgrammingExamples"
+      },
+      "output": "Python Programming Examples"
+    },
+    {
+      "input": {
+        "str1": "GetReadyToBeCodingFreak"
+      },
+      "output": "Get Ready To Be Coding Freak"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "MyNameIsAIAndIAmHereToHelpYou"
+      },
+      "output": "My Name Is AI And IAm Here To Help You"
+    },
+    {
+      "input": {
+        "str1": "ThisIsATestStringWithMultipleCamelCaseWords"
+      },
+      "output": "This Is ATest String With Multiple Camel Case Words"
+    },
+    {
+      "input": {
+        "str1": "IAmAProgrammerAndIWritingCodeInPython"
+      },
+      "output": "I Am AProgrammer And IWriting Code In Python"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbers123InIt"
+      },
+      "output": "This String Has Some Numbers123 In It"
+    },
+    {
+      "input": {
+        "str1": "PleaseDOntDisturbWhileTestIsRunning"
+      },
+      "output": "Please DOnt Disturb While Test Is Running"
+    },
+    {
+      "input": {
+        "str1": "LetsUseThisOPportunityToLearnSomethingNew"
+      },
+      "output": "Lets Use This OPportunity To Learn Something New"
+    },
+    {
+      "input": {
+        "str1": "ImSureYouWillFigureItOut"
+      },
+      "output": "Im Sure You Will Figure It Out"
+    },
+    {
+      "input": {
+        "str1": "ILOVEPYTHON"
+      },
+      "output": "I LO VE PY TH ON"
+    },
+    {
+      "input": {
+        "str1": "pythonprogrammingexamples"
+      },
+      "output": "pythonprogrammingexamples"
+    },
+    {
+      "input": {
+        "str1": "LetsUseThisOPsportunityToLearnSomethingNew"
+      },
+      "output": "Lets Use This OPsportunity To Learn Something New"
+    },
+    {
+      "input": {
+        "str1": "ThisStriingHasSomeNumbers123InIt"
+      },
+      "output": "This Striing Has Some Numbers123 In It"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbers123InThisStriingHasSomeNumbers123InItIt"
+      },
+      "output": "This String Has Some Numbers123 In This Striing Has Some Numbers123 In It It"
+    },
+    {
+      "input": {
+        "str1": "cCTa"
+      },
+      "output": "c CTa"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumThisStriingHasSomeNumbers123InItbers123InThisStriingHasSomeNumbers123InItIt"
+      },
+      "output": "This String Has Some Num This Striing Has Some Numbers123 In Itbers123 In This Striing Has Some Numbers123 In It It"
+    },
+    {
+      "input": {
+        "str1": "LetsUseThisOPsportunityTosLearnSomethingNew"
+      },
+      "output": "Lets Use This OPsportunity Tos Learn Something New"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbeers12t3InIt"
+      },
+      "output": "This String Has Some Numbeers12t3 In It"
+    },
+    {
+      "input": {
+        "str1": "ImOSureYouWillFigureItOut"
+      },
+      "output": "Im OSure You Will Figure It Out"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbeLetsUseThisOPsportunityToLearnSomethingNewrs123InIt"
+      },
+      "output": "This String Has Some Numbe Lets Use This OPsportunity To Learn Something Newrs123 In It"
+    },
+    {
+      "input": {
+        "str1": "LetsUseThisOPsomethingNew"
+      },
+      "output": "Lets Use This OPsomething New"
+    },
+    {
+      "input": {
+        "str1": "PleaseDOntDIAmAProgrammerAndIWritingCodeInPythonisturbWhileTestIsRunning"
+      },
+      "output": "Please DOnt DI Am AProgrammer And IWriting Code In Pythonisturb While Test Is Running"
+    },
+    {
+      "input": {
+        "str1": "LetsUseThisOPportunityToLearnSThisStringHasSomeNumThisStriingHasSomeNumbers123InItbers123InThisStriingHasSomeNumbers123InItItomethingNew"
+      },
+      "output": "Lets Use This OPportunity To Learn SThis String Has Some Num This Striing Has Some Numbers123 In Itbers123 In This Striing Has Some Numbers123 In It Itomething New"
+    },
+    {
+      "input": {
+        "str1": "PleaseDOntDistImSureYouWillFigureItOuturbWhileTestIsRunning"
+      },
+      "output": "Please DOnt Dist Im Sure You Will Figure It Outurb While Test Is Running"
+    },
+    {
+      "input": {
+        "str1": "pmingexamples"
+      },
+      "output": "pmingexamples"
+    },
+    {
+      "input": {
+        "str1": "ThisIsATestStringWiothMultipleCamelCasePleaseDOntDisturbWhileTestIsRunningWords"
+      },
+      "output": "This Is ATest String Wioth Multiple Camel Case Please DOnt Disturb While Test Is Running Words"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbers123InThisStriiLetsUseThisOPportunityToLearnSThisStringHasSomeNumThisStriingHasSomeNumbers123IHasSomeNumbers123InItItomethingNewngHasSomeNumbers123InItIt"
+      },
+      "output": "This String Has Some Numbers123 In This Strii Lets Use This OPportunity To Learn SThis String Has Some Num This Striing Has Some Numbers123 IHas Some Numbers123 In It Itomething Newng Has Some Numbers123 In It It"
+    },
+    {
+      "input": {
+        "str1": "ImOThisIsATestStringWiothMultipleCamelCasePleaseDOntDisturbWhileTestIsRunningWordsSureYouWillFigureItOut"
+      },
+      "output": "Im OThis Is ATest String Wioth Multiple Camel Case Please DOnt Disturb While Test Is Running Words Sure You Will Figure It Out"
+    },
+    {
+      "input": {
+        "str1": "ImOSureYouWillFigureItOu"
+      },
+      "output": "Im OSure You Will Figure It Ou"
+    },
+    {
+      "input": {
+        "str1": "pmingexamplles"
+      },
+      "output": "pmingexamplles"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbers123InThisStriingHThisIsATestStringWiothMultipleCamelCasePleaseDOntDisturbWhileTestIsRunningWordsasSomeNumbers123InItIt"
+      },
+      "output": "This String Has Some Numbers123 In This Striing HThis Is ATest String Wioth Multiple Camel Case Please DOnt Disturb While Test Is Running Wordsas Some Numbers123 In It It"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasSomeNumbeLetsUseThisOPsportunityToLearnSomethingNewrs1MyNameIsAIAndIAmHereToHelpYou23InIt"
+      },
+      "output": "This String Has Some Numbe Lets Use This OPsportunity To Learn Something Newrs1 My Name Is AI And IAm Here To Help You23 In It"
+    },
+    {
+      "input": {
+        "str1": "LetsUseThisOPsppythonprogrammingexamplesortuThisIsATestStringWithMultipleCamelCaseWordsnityToLearnSomethingNew"
+      },
+      "output": "Lets Use This OPsppythonprogrammingexamplesortu This Is ATest String With Multiple Camel Case Wordsnity To Learn Something New"
+    },
+    {
+      "input": {
+        "str1": "ThisStringHasLetsUseThisOPportunityToLearnSomethingNewbeers12t3InIt"
+      },
+      "output": "This String Has Lets Use This OPportunity To Learn Something Newbeers12t3 In It"
+    },
+    {
+      "input": {
+        "str1": "ThisIsATesitStringWithMultipleCamelCaseWords"
+      },
+      "output": "This Is ATesit String With Multiple Camel Case Words"
+    },
+    {
+      "input": {
+        "str1": "PleaseDOntDIAmAProgrammerAndIWritingCodeInPytThisStriingHasSomeNumbers123InIthonisturbWhileTestIsRunning"
+      },
+      "output": "Please DOnt DI Am AProgrammer And IWriting Code In Pyt This Striing Has Some Numbers123 In Ithonisturb While Test Is Running"
+    },
+    {
+      "input": {
+        "str1": "ImSureYouWillFiureItOut"
+      },
+      "output": "Im Sure You Will Fiure It Out"
+    },
+    {
+      "input": {
+        "str1": "pythonprogramMyNameIsAIAndIAmHereToHelpYoumingexamples"
+      },
+      "output": "pythonprogram My Name Is AI And IAm Here To Help Youmingexamples"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef capital_words_spaces(str1):\n  return re.sub(r\"(\\w)([A-Z])\", r\"\\1 \\2\", str1)\n"
+  }
+}

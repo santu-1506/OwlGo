@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-78-hex-key",
+  "title": "Hex Key",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You have been tasked to write a function that receives \na hexadecimal number as a string and counts the number of hexadecimal \ndigits that are primes (prime number, or a prime, is a natural number \ngreater than 1 that is not a product of two smaller natural numbers).\nHexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.\nPrime numbers are 2, 3, 5, 7, 11, 13, 17,...\nSo you have to determine a number of the following digits: 2, 3, 5, 7, \nB (=decimal 11), D (=decimal 13).\nNote: you may assume the input is always correct or empty string, \nand symbols A,B,C,D,E,F are always uppercase.\nExamples:\nFor num = \"AB\" the output should be 1.\nFor num = \"1077E\" the output should be 2.\nFor num = \"ABED1A33\" the output should be 4.\nFor num = \"123456789ABCDEF0\" the output should be 6.\nFor num = \"2020\" the output should be 2.",
+  "entry_point": "hex_key",
+  "params": [
+    "num"
+  ],
+  "function_signature": {
+    "python": "def hex_key(num):"
+  },
+  "examples": [
+    {
+      "input": {
+        "num": "AB"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": "1077E"
+      },
+      "output": 2
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "num": "AB"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "num": "1077E"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "num": "ABED1A33"
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "num": "2020"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "num": "123456789ABCDEF0"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "112233445566778899AABBCCDDEEFF00"
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "num": []
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "ABCDEF"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "num": "999999"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "77777"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "num": "898989"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "67ABCD23"
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "num": "111"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "444"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "1"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "9"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "777777"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "1111"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "8998989"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "8898989"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "11111"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "7767ABCD237777"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "num": "11111777777"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "444444"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "679D99999ABCD23"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "1679D99999ABCD23"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "89679D99999ABCD2398989"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "6979D99999ABCD23"
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "num": "7767ABCD23777"
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "num": "77C67ABCD237777"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "num": "88898989"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "4944"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "8988898989"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "888989"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "num": "776B7ABCD23777"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "num": "1679D999799ABCD23"
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "num": "77C67ABCD2C37777"
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "num": "1C679D999799A9B7CD23"
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "num": "44888989894"
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef hex_key(num):\n    \"\"\"You have been tasked to write a function that receives \n    a hexadecimal number as a string and counts the number of hexadecimal \n    digits that are primes (prime number, or a prime, is a natural number \n    greater than 1 that is not a product of two smaller natural numbers).\n    Hexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.\n    Prime numbers are 2, 3, 5, 7, 11, 13, 17,...\n    So you have to determine a number of the following digits: 2, 3, 5, 7, \n    B (=decimal 11), D (=decimal 13).\n    Note: you may assume the input is always correct or empty string, \n    and symbols A,B,C,D,E,F are always uppercase.\n    Examples:\n    For num = \"AB\" the output should be 1.\n    For num = \"1077E\" the output should be 2.\n    For num = \"ABED1A33\" the output should be 4.\n    For num = \"123456789ABCDEF0\" the output should be 6.\n    For num = \"2020\" the output should be 2.\n    \"\"\"\n\n    \n    return len(list(filter(lambda x: x in \"2357BD\", num)))\n\n"
+  }
+}

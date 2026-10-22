@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-54-same-chars",
+  "title": "Same Chars",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Check if two words have the same characters.\n>>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')\nTrue\n>>> same_chars('abcd', 'dddddddabc')\nTrue\n>>> same_chars('dddddddabc', 'abcd')\nTrue\n>>> same_chars('eabcd', 'dddddddabc')\nFalse\n>>> same_chars('abcd', 'dddddddabce')\nFalse\n>>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')\nFalse",
+  "entry_point": "same_chars",
+  "params": [
+    "s0",
+    "s1"
+  ],
+  "function_signature": {
+    "python": "def same_chars(s0: str, s1: str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s0": "eabcdzzzz",
+        "s1": "dddzzzzzzzddeddabc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abcd",
+        "s1": "dddddddabc"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s0": "eabcdzzzz",
+        "s1": "dddzzzzzzzddeddabc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abcd",
+        "s1": "dddddddabc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "dddddddabc",
+        "s1": "abcd"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "eabcd",
+        "s1": "dddddddabc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "abcd",
+        "s1": "dddddddabcf"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "eabcdzzzz",
+        "s1": "dddzzzzzzzddddabc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "aabb",
+        "s1": "aaccc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "ab",
+        "s1": "cd"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "abcd",
+        "s1": "cbad"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "aaa",
+        "s1": "aaa"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abc",
+        "s1": "def"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "aaabbbccc",
+        "s1": "abbabcbc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abcdefg",
+        "s1": "gfedcba"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abbcccddddeeeee",
+        "s1": "abcde"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "12345",
+        "s1": "54321"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "hello",
+        "s1": "world"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "",
+        "s1": ""
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "524321",
+        "s1": "5432"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "cdcd",
+        "s1": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "aaabbbccc",
+        "s1": "abbbabcbc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abbabcbc",
+        "s1": "abc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "123445",
+        "s1": "54321"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "hoelldefo",
+        "s1": "helldefo"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "aaabbbccc",
+        "s1": "world"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "adbbcccddddeeeeehelldefo",
+        "s1": "abcde"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "abcde",
+        "s1": "abcde"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "abecde",
+        "s1": "abecde"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "5432cababecdead",
+        "s1": "cababecdead"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "5432cababecdead",
+        "s1": "5432cababecdead"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "5432caaaababecdead",
+        "s1": "5432cababecdead"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "ab54321fg",
+        "s1": "gfedcba"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "aaa1234a5bbbccc",
+        "s1": "aaa1234a5bbbccc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "123445",
+        "s1": "514321"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "5432caaaabacababecdeadbecdead",
+        "s1": "5432cababecdead"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "ab",
+        "s1": "cbad"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "abcdegfedcba",
+        "s1": "abcdegfedcba"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "s0": "5432",
+        "s1": "cdcd5432"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "543543221",
+        "s1": "abcdeadbbcccddddeeeeehelldefogfedcba"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "5432caaaabacaabcd",
+        "s1": "abcd"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "s0": "abbcccddddeeeee",
+        "s1": ""
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef same_chars(s0: str, s1: str):\n    \"\"\"\n    Check if two words have the same characters.\n    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')\n    True\n    >>> same_chars('abcd', 'dddddddabc')\n    True\n    >>> same_chars('dddddddabc', 'abcd')\n    True\n    >>> same_chars('eabcd', 'dddddddabc')\n    False\n    >>> same_chars('abcd', 'dddddddabce')\n    False\n    >>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')\n    False\n    \"\"\"\n\n    return set(s0) == set(s1)\n\n"
+  }
+}

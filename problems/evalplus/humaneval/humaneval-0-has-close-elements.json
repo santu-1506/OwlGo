@@ -1,0 +1,588 @@
+{
+  "id": "humaneval-0-has-close-elements",
+  "title": "Has Close Elements",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Check if in given list of numbers, are any two numbers closer to each other than\ngiven threshold.\n>>> has_close_elements([1.0, 2.0, 3.0], 0.5)\nFalse\n>>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\nTrue",
+  "entry_point": "has_close_elements",
+  "params": [
+    "numbers",
+    "threshold"
+  ],
+  "function_signature": {
+    "python": "def has_close_elements(numbers: List[float], threshold: float) -> bool:"
+  },
+  "examples": [
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.9,
+          4.0,
+          5.0,
+          2.2
+        ],
+        "threshold": 0.3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.9,
+          4.0,
+          5.0,
+          2.2
+        ],
+        "threshold": 0.05
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.9,
+          4.0,
+          5.0,
+          2.2
+        ],
+        "threshold": 0.3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.9,
+          4.0,
+          5.0,
+          2.2
+        ],
+        "threshold": 0.05
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          5.9,
+          4.0,
+          5.0
+        ],
+        "threshold": 0.95
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          5.9,
+          4.0,
+          5.0
+        ],
+        "threshold": 0.8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          2.0
+        ],
+        "threshold": 0.1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.1,
+          4.1,
+          5.1
+        ],
+        "threshold": 1.0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.1,
+          4.1,
+          5.1
+        ],
+        "threshold": 0.5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.5,
+          3.0,
+          4.5,
+          5.0,
+          6.5
+        ],
+        "threshold": 0.4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          2.9,
+          5.0,
+          6.0
+        ],
+        "threshold": 0.1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "threshold": 0.05
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          10.5,
+          20.5,
+          30.5,
+          25.5,
+          40.5
+        ],
+        "threshold": 4.0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.1,
+          2.2,
+          3.3,
+          4.4,
+          5.5,
+          6.6,
+          7.7
+        ],
+        "threshold": 0.2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          0.1,
+          0.5,
+          1.0,
+          1.5,
+          2.0
+        ],
+        "threshold": 0.1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.2,
+          2.4,
+          3.6,
+          4.8
+        ],
+        "threshold": 0.8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -0.5,
+          0.0,
+          0.5,
+          1.0
+        ],
+        "threshold": 0.3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "threshold": 1.5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        "threshold": 0.5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          2.9,
+          5.0,
+          6.0
+        ],
+        "threshold": 4.4
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        "threshold": 1.0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          4.0
+        ],
+        "threshold": 6.6
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.5,
+          3.0,
+          4.5,
+          5.0,
+          6.5
+        ],
+        "threshold": 0.5837785211547324
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          6.0
+        ],
+        "threshold": 1.4684959831900988
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          4.0
+        ],
+        "threshold": 1.5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          0.1,
+          0.5,
+          1.0,
+          1.5,
+          2.0
+        ],
+        "threshold": 5.0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          6.0
+        ],
+        "threshold": 0.5
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          4.0,
+          3.1145064227603365
+        ],
+        "threshold": 1.5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          2.9,
+          5.0,
+          6.0,
+          6.6
+        ],
+        "threshold": 0.1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          -2.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "threshold": 1.7909669082553559
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          -1.0,
+          -0.5,
+          0.0,
+          0.5,
+          1.0
+        ],
+        "threshold": 0.05
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          0.1,
+          0.5,
+          1.5,
+          2.0
+        ],
+        "threshold": 0.1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          10.5,
+          20.5,
+          30.5,
+          25.5,
+          40.5,
+          -1.0
+        ],
+        "threshold": 4.0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          1.4684959831900988,
+          3.0,
+          4.0,
+          5.0,
+          4.0
+        ],
+        "threshold": 6.6
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0
+        ],
+        "threshold": 1.4684959831900988
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          2.9,
+          5.0,
+          3.1145064227603365,
+          6.6
+        ],
+        "threshold": 0.001597775988153055
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          4.0,
+          0.001597775988153055
+        ],
+        "threshold": 6.622770022559026
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          0.5,
+          0.7,
+          0.8,
+          0.9
+        ],
+        "threshold": 0.05
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        "threshold": 1.4453152842907233
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          2.5,
+          3.0,
+          4.5,
+          5.0,
+          6.5
+        ],
+        "threshold": 0.3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          2.2,
+          3.3,
+          4.4,
+          5.5,
+          6.6,
+          7.7
+        ],
+        "threshold": 0.2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "numbers": [
+          1.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        "threshold": 0.5
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n\n\n    sorted_numbers = sorted(numbers)\n    for i in range(len(sorted_numbers) - 1):\n        if sorted_numbers[i + 1] - sorted_numbers[i] < threshold:\n            return True\n    return False\n\n"
+  }
+}

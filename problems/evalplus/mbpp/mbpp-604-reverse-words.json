@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-604-reverse-words",
+  "title": "Reverse Words",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to reverse words seperated by spaces in a given string.",
+  "entry_point": "reverse_words",
+  "params": [
+    "s"
+  ],
+  "function_signature": {
+    "python": "def reverse_words(s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "s": "python program"
+      },
+      "output": "program python"
+    },
+    {
+      "input": {
+        "s": "java language"
+      },
+      "output": "language java"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "s": "python program"
+      },
+      "output": "program python"
+    },
+    {
+      "input": {
+        "s": "java language"
+      },
+      "output": "language java"
+    },
+    {
+      "input": {
+        "s": "indian man"
+      },
+      "output": "man indian"
+    },
+    {
+      "input": {
+        "s": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": " "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "   "
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "s": "word"
+      },
+      "output": "word"
+    },
+    {
+      "input": {
+        "s": "a"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "s": "ab"
+      },
+      "output": "ab"
+    },
+    {
+      "input": {
+        "s": "   word   "
+      },
+      "output": "word"
+    },
+    {
+      "input": {
+        "s": " a a a a a a  "
+      },
+      "output": "a a a a a a"
+    },
+    {
+      "input": {
+        "s": "word1   word2   word3"
+      },
+      "output": "word3 word2 word1"
+    },
+    {
+      "input": {
+        "s": "word1  word2  word3"
+      },
+      "output": "word3 word2 word1"
+    },
+    {
+      "input": {
+        "s": "    a a a a a a"
+      },
+      "output": "a a a a a a"
+    },
+    {
+      "input": {
+        "s": "  java language  "
+      },
+      "output": "language java"
+    },
+    {
+      "input": {
+        "s": "word1         word2         word3"
+      },
+      "output": "word3 word2 word1"
+    },
+    {
+      "input": {
+        "s": "abb"
+      },
+      "output": "abb"
+    },
+    {
+      "input": {
+        "s": "java"
+      },
+      "output": "java"
+    },
+    {
+      "input": {
+        "s": "word1"
+      },
+      "output": "word1"
+    },
+    {
+      "input": {
+        "s": "word1         word2         word3java"
+      },
+      "output": "word3java word2 word1"
+    },
+    {
+      "input": {
+        "s": "language"
+      },
+      "output": "language"
+    },
+    {
+      "input": {
+        "s": "    a a a a a "
+      },
+      "output": "a a a a a"
+    },
+    {
+      "input": {
+        "s": " a a a a a a a"
+      },
+      "output": "a a a a a a a"
+    },
+    {
+      "input": {
+        "s": "u  java language  "
+      },
+      "output": "language java u"
+    },
+    {
+      "input": {
+        "s": "wordword11"
+      },
+      "output": "wordword11"
+    },
+    {
+      "input": {
+        "s": "word    a a  a a a "
+      },
+      "output": "a a a a a word"
+    },
+    {
+      "input": {
+        "s": " j java language  "
+      },
+      "output": "language java j"
+    },
+    {
+      "input": {
+        "s": "word11"
+      },
+      "output": "word11"
+    },
+    {
+      "input": {
+        "s": "  word3java "
+      },
+      "output": "word3java"
+    },
+    {
+      "input": {
+        "s": "word1   wo rd2   word3"
+      },
+      "output": "word3 rd2 wo word1"
+    },
+    {
+      "input": {
+        "s": "rwordword11"
+      },
+      "output": "rwordword11"
+    },
+    {
+      "input": {
+        "s": "worword1         word2         word3javad1"
+      },
+      "output": "word3javad1 word2 worword1"
+    },
+    {
+      "input": {
+        "s": "    a a a a a  "
+      },
+      "output": "a a a a a"
+    },
+    {
+      "input": {
+        "s": "worword1"
+      },
+      "output": "worword1"
+    },
+    {
+      "input": {
+        "s": "u  java langu  java language   "
+      },
+      "output": "language java langu java u"
+    },
+    {
+      "input": {
+        "s": "    word   j java language  "
+      },
+      "output": "language java j word"
+    },
+    {
+      "input": {
+        "s": "u  java languageword1  "
+      },
+      "output": "languageword1 java u"
+    },
+    {
+      "input": {
+        "s": "    a   a a a a  "
+      },
+      "output": "a a a a a"
+    },
+    {
+      "input": {
+        "s": "javaabb"
+      },
+      "output": "javaabb"
+    },
+    {
+      "input": {
+        "s": "javvaabb"
+      },
+      "output": "javvaabb"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def reverse_words(s):\n\treturn ' '.join(reversed(s.split()))\n"
+  }
+}

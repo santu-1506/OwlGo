@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-154-cycpattern-check",
+  "title": "Cycpattern Check",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\ncycpattern_check(\"abcd\",\"abd\") => False\ncycpattern_check(\"hello\",\"ell\") => True\ncycpattern_check(\"whassup\",\"psus\") => False\ncycpattern_check(\"abab\",\"baa\") => True\ncycpattern_check(\"efef\",\"eeff\") => False\ncycpattern_check(\"himenss\",\"simen\") => True",
+  "entry_point": "cycpattern_check",
+  "params": [
+    "a",
+    "b"
+  ],
+  "function_signature": {
+    "python": "def cycpattern_check(a, b):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": "xyzw",
+        "b": "xyw"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "yello",
+        "b": "ell"
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": "xyzw",
+        "b": "xyw"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "yello",
+        "b": "ell"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "whattup",
+        "b": "ptut"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "efef",
+        "b": "fee"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "abab",
+        "b": "aabb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "winemtt",
+        "b": "tinem"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "hello",
+        "b": "olelh"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "abcdefg",
+        "b": "cde"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "banana",
+        "b": "nab"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "python",
+        "b": "nthy"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "onomatopoeia",
+        "b": "onat"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "racecar",
+        "b": "race"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "mississippi",
+        "b": "sis"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "coffee",
+        "b": "ffeco"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "programming",
+        "b": "ammiprogr"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "anagram",
+        "b": "margana"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "mississipi",
+        "b": "mississipi"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "scdeis",
+        "b": "sis"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "python",
+        "b": "nythy"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "marganaa",
+        "b": "marganaa"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "anagram",
+        "b": "anagram"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "nthny",
+        "b": "nythny"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "ntnabhny",
+        "b": "nthny"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "nthnyanagram",
+        "b": "nythny"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "racanagramecar",
+        "b": "race"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "racanagrameca",
+        "b": "race"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "banana",
+        "b": "nthnyanagram"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "pyammscdeisiprogrthon",
+        "b": "pyammiprogrthon"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "mississipi",
+        "b": "mississipionomatopoeia"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "missiissippi",
+        "b": "sis"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "race",
+        "b": "race"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "racanagramecaanagram",
+        "b": "anagram"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "mississippi",
+        "b": "siss"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "coffee",
+        "b": "ffolelheco"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "miffecossissipi",
+        "b": "miffescossissipi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "ntnabhny",
+        "b": "anagrammiffescossissipi"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "mississispi",
+        "b": "mississispi"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "marganaaffolelheco",
+        "b": "marganaaffolelheco"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "a": "mississispi",
+        "b": "mississispii"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "a": "abcdefg",
+        "b": "cmississipionomatopoeiade"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n\n    if a == b:\n        return True\n    if b == \"\":\n        return True\n    for i in range(0, len(b)):\n        if b[i:] + b[:i] in a:\n            return True\n    return False\n\n"
+  }
+}

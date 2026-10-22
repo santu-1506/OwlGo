@@ -1,0 +1,793 @@
+{
+  "id": "humaneval-88-sort-array",
+  "title": "Sort Array",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given an array of non-negative integers, return a copy of the given array after sorting,\nyou will sort the given array in ascending order if the sum( first index value, last index value) is odd,\nor sort it in descending order if the sum( first index value, last index value) is even.\n\nNote:\n* don't change the given array.\n\nExamples:\n* sort_array([]) => []\n* sort_array([5]) => [5]\n* sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]\n* sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]",
+  "entry_point": "sort_array",
+  "params": [
+    "array"
+  ],
+  "function_signature": {
+    "python": "def sort_array(array):"
+  },
+  "examples": [
+    {
+      "input": {
+        "array": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "array": [
+          5
+        ]
+      },
+      "output": [
+        5
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "array": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "array": [
+          5
+        ]
+      },
+      "output": [
+        5
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          2,
+          4,
+          3,
+          0,
+          1,
+          5
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          2,
+          4,
+          3,
+          0,
+          1,
+          5,
+          6
+        ]
+      },
+      "output": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          2,
+          1
+        ]
+      },
+      "output": [
+        1,
+        2
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          15,
+          42,
+          87,
+          32,
+          11,
+          0
+        ]
+      },
+      "output": [
+        0,
+        11,
+        15,
+        32,
+        42,
+        87
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          21,
+          14,
+          23,
+          11
+        ]
+      },
+      "output": [
+        23,
+        21,
+        14,
+        11
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "output": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          4,
+          2,
+          3,
+          1
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          9,
+          2,
+          8,
+          3,
+          7,
+          4,
+          6,
+          5
+        ]
+      },
+      "output": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          5,
+          7,
+          9,
+          11
+        ]
+      },
+      "output": [
+        11,
+        9,
+        7,
+        5
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          30,
+          20,
+          10,
+          5
+        ]
+      },
+      "output": [
+        5,
+        10,
+        20,
+        30
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          0,
+          1,
+          11,
+          0,
+          0,
+          0
+        ]
+      },
+      "output": [
+        11,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          7,
+          9,
+          11
+        ]
+      },
+      "output": [
+        11,
+        9,
+        7
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          7,
+          9,
+          9
+        ]
+      },
+      "output": [
+        9,
+        9,
+        7
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          9,
+          7,
+          9
+        ]
+      },
+      "output": [
+        9,
+        9,
+        7
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          30,
+          2,
+          20,
+          10,
+          5
+        ]
+      },
+      "output": [
+        2,
+        5,
+        10,
+        20,
+        30
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          7,
+          9,
+          11,
+          11
+        ]
+      },
+      "output": [
+        11,
+        11,
+        9,
+        7
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          10,
+          9,
+          7,
+          9,
+          7
+        ]
+      },
+      "output": [
+        7,
+        7,
+        9,
+        9,
+        10
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          2,
+          3,
+          1
+        ]
+      },
+      "output": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          9,
+          2,
+          8,
+          3,
+          7,
+          4,
+          6,
+          5,
+          2
+        ]
+      },
+      "output": [
+        1,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          9,
+          2,
+          8,
+          3,
+          7,
+          4,
+          6,
+          5,
+          5
+        ]
+      },
+      "output": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          3,
+          1,
+          9,
+          2,
+          8,
+          3,
+          7,
+          4,
+          6,
+          5
+        ]
+      },
+      "output": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          7,
+          9,
+          7
+        ]
+      },
+      "output": [
+        9,
+        7,
+        7
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          2,
+          3,
+          4
+        ]
+      },
+      "output": [
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          0,
+          1,
+          2,
+          3,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          3
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          8,
+          9,
+          9,
+          7,
+          9
+        ]
+      },
+      "output": [
+        7,
+        8,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          30,
+          2,
+          20,
+          1,
+          5
+        ]
+      },
+      "output": [
+        1,
+        2,
+        5,
+        20,
+        30
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          10,
+          7,
+          9,
+          11,
+          11,
+          9
+        ]
+      },
+      "output": [
+        7,
+        9,
+        9,
+        10,
+        11,
+        11
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      "output": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          9,
+          7
+        ]
+      },
+      "output": [
+        9,
+        7
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          9,
+          2,
+          7,
+          3,
+          7,
+          4,
+          6,
+          5,
+          5
+        ]
+      },
+      "output": [
+        9,
+        7,
+        7,
+        6,
+        5,
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          1,
+          1,
+          2,
+          8,
+          1,
+          5,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": [
+        8,
+        5,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "input": {
+        "array": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef sort_array(array):\n    \"\"\"\n    Given an array of non-negative integers, return a copy of the given array after sorting,\n    you will sort the given array in ascending order if the sum( first index value, last index value) is odd,\n    or sort it in descending order if the sum( first index value, last index value) is even.\n\n    Note:\n    * don't change the given array.\n\n    Examples:\n    * sort_array([]) => []\n    * sort_array([5]) => [5]\n    * sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]\n    * sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]\n    \"\"\"\n\n\n    if array == []: return []\n    return sorted(array, reverse=(array[0]+array[-1]) % 2 == 0)\n\n"
+  }
+}

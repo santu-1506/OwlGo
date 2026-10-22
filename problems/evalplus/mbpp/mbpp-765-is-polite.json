@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-765-is-polite",
+  "title": "Is Polite",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find nth polite number. geeksforgeeks.org/n-th-polite-number/",
+  "entry_point": "is_polite",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_polite(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 7
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 13
+    },
+    {
+      "input": {
+        "n": 10000000
+      },
+      "output": 10000024
+    },
+    {
+      "input": {
+        "n": 1000000000
+      },
+      "output": 1000000030
+    },
+    {
+      "input": {
+        "n": 999999999
+      },
+      "output": 1000000029
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 123456789
+      },
+      "output": 123456816
+    },
+    {
+      "input": {
+        "n": 99999999
+      },
+      "output": 100000026
+    },
+    {
+      "input": {
+        "n": 1000000001
+      },
+      "output": 1000000031
+    },
+    {
+      "input": {
+        "n": 10000001
+      },
+      "output": 10000025
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "n": 123456790
+      },
+      "output": 123456817
+    },
+    {
+      "input": {
+        "n": 100000000
+      },
+      "output": 100000027
+    },
+    {
+      "input": {
+        "n": 99999998
+      },
+      "output": 100000025
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 999999998
+      },
+      "output": 1000000028
+    },
+    {
+      "input": {
+        "n": 9999999
+      },
+      "output": 10000023
+    },
+    {
+      "input": {
+        "n": 1000000002
+      },
+      "output": 1000000032
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "n": 10000002
+      },
+      "output": 10000026
+    },
+    {
+      "input": {
+        "n": 10000003
+      },
+      "output": 10000027
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "n": 999999997
+      },
+      "output": 1000000027
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "n": 10000004
+      },
+      "output": 10000028
+    },
+    {
+      "input": {
+        "n": 100000001
+      },
+      "output": 100000028
+    },
+    {
+      "input": {
+        "n": 100000002
+      },
+      "output": 100000029
+    },
+    {
+      "input": {
+        "n": 51
+      },
+      "output": 57
+    },
+    {
+      "input": {
+        "n": 10000005
+      },
+      "output": 10000029
+    },
+    {
+      "input": {
+        "n": 123456791
+      },
+      "output": 123456818
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 26
+    },
+    {
+      "input": {
+        "n": 100000003
+      },
+      "output": 100000030
+    },
+    {
+      "input": {
+        "n": 9999997
+      },
+      "output": 10000021
+    },
+    {
+      "input": {
+        "n": 999999996
+      },
+      "output": 1000000026
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 27
+    },
+    {
+      "input": {
+        "n": 10000006
+      },
+      "output": 10000030
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math \ndef is_polite(n): \n\tn = n + 1\n\treturn (int)(n+(math.log((n + math.log(n, 2)), 2)))\n"
+  }
+}

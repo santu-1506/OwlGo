@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-441-surfacearea-cube",
+  "title": "Surfacearea Cube",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the surface area of a cube of a given size.",
+  "entry_point": "surfacearea_cube",
+  "params": [
+    "l"
+  ],
+  "function_signature": {
+    "python": "def surfacearea_cube(l):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": 5
+      },
+      "output": 150
+    },
+    {
+      "input": {
+        "l": 3
+      },
+      "output": 54
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": 5
+      },
+      "output": 150
+    },
+    {
+      "input": {
+        "l": 3
+      },
+      "output": 54
+    },
+    {
+      "input": {
+        "l": 10
+      },
+      "output": 600
+    },
+    {
+      "input": {
+        "l": -3
+      },
+      "output": 54
+    },
+    {
+      "input": {
+        "l": -2.5
+      },
+      "output": 37.5
+    },
+    {
+      "input": {
+        "l": 4.87
+      },
+      "output": 142.3014
+    },
+    {
+      "input": {
+        "l": 0.25
+      },
+      "output": 0.375
+    },
+    {
+      "input": {
+        "l": -1.5
+      },
+      "output": 13.5
+    },
+    {
+      "input": {
+        "l": 1000000000
+      },
+      "output": 6000000000000000000
+    },
+    {
+      "input": {
+        "l": 1e-07
+      },
+      "output": 6e-14
+    },
+    {
+      "input": {
+        "l": -3.14159
+      },
+      "output": 59.21752636859999
+    },
+    {
+      "input": {
+        "l": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "l": 2.5
+      },
+      "output": 37.5
+    },
+    {
+      "input": {
+        "l": -10.75
+      },
+      "output": 693.375
+    },
+    {
+      "input": {
+        "l": 1000.99
+      },
+      "output": 6011885.880600001
+    },
+    {
+      "input": {
+        "l": 0.5
+      },
+      "output": 1.5
+    },
+    {
+      "input": {
+        "l": -0.5
+      },
+      "output": 1.5
+    },
+    {
+      "input": {
+        "l": 0.1
+      },
+      "output": 0.06000000000000001
+    },
+    {
+      "input": {
+        "l": -0.1
+      },
+      "output": 0.06000000000000001
+    },
+    {
+      "input": {
+        "l": 7.5
+      },
+      "output": 337.5
+    },
+    {
+      "input": {
+        "l": -7.5
+      },
+      "output": 337.5
+    },
+    {
+      "input": {
+        "l": -100
+      },
+      "output": 60000
+    },
+    {
+      "input": {
+        "l": 1000000000.0
+      },
+      "output": 6e+18
+    },
+    {
+      "input": {
+        "l": 1e-09
+      },
+      "output": 6.000000000000001e-18
+    },
+    {
+      "input": {
+        "l": -0.7833397694106897
+      },
+      "output": 3.6817271660423554
+    },
+    {
+      "input": {
+        "l": 0.8494504982876602
+      },
+      "output": 4.329396894246925
+    },
+    {
+      "input": {
+        "l": 0.15352390338434846
+      },
+      "output": 0.14141753346220057
+    },
+    {
+      "input": {
+        "l": -1.5921304345343799
+      },
+      "output": 15.209275923423798
+    },
+    {
+      "input": {
+        "l": 649.4568442171686
+      },
+      "output": 2530765.155003142
+    },
+    {
+      "input": {
+        "l": -98
+      },
+      "output": 57624
+    },
+    {
+      "input": {
+        "l": 1213822087.9025333
+      },
+      "output": 8.840184366480391e+18
+    },
+    {
+      "input": {
+        "l": -3.3073827123371813
+      },
+      "output": 65.6326824352011
+    },
+    {
+      "input": {
+        "l": -0.7173157124933989
+      },
+      "output": 3.087250988339475
+    },
+    {
+      "input": {
+        "l": 0.060867338964320276
+      },
+      "output": 0.02222899771558477
+    },
+    {
+      "input": {
+        "l": 0.14202999273585748
+      },
+      "output": 0.12103511301928638
+    },
+    {
+      "input": {
+        "l": 0.07731273407773312
+      },
+      "output": 0.035863553103445654
+    },
+    {
+      "input": {
+        "l": 0.21845268051821995
+      },
+      "output": 0.28632944175357283
+    },
+    {
+      "input": {
+        "l": -0.7897050637830042
+      },
+      "output": 3.7418045265871123
+    },
+    {
+      "input": {
+        "l": -2.077650969935703
+      },
+      "output": 25.899801317248606
+    },
+    {
+      "input": {
+        "l": -51
+      },
+      "output": 15606
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def surfacearea_cube(l):\n  return 6 * l * l\n"
+  }
+}

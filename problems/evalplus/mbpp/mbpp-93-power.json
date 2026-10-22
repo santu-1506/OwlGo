@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-93-power",
+  "title": "Power",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate the value of 'a' to the power 'b'.",
+  "entry_point": "power",
+  "params": [
+    "a",
+    "b"
+  ],
+  "function_signature": {
+    "python": "def power(a, b):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 3,
+        "b": 4
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3
+      },
+      "output": 8
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 3,
+        "b": 4
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 5
+      },
+      "output": 3125
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": -2
+      },
+      "output": 0.0625
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": 3
+      },
+      "output": -8
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": -3,
+        "b": -4
+      },
+      "output": 0.012345679012345678
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": -1
+      },
+      "output": 0.1
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": -3
+      },
+      "output": 0.125
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 100
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": 100
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 10
+      },
+      "output": 9765625
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": -3,
+        "b": 2
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 9
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": 10
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": -2
+      },
+      "output": 0.04
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 9
+      },
+      "output": 262144
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -2
+      },
+      "output": 0.25
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 99
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 5
+      },
+      "output": 10000000000
+    },
+    {
+      "input": {
+        "a": 99,
+        "b": 2
+      },
+      "output": 9801
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 100
+      },
+      "output": 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    },
+    {
+      "input": {
+        "a": -4,
+        "b": -2
+      },
+      "output": 0.0625
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 3
+      },
+      "output": 1000000
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 11
+      },
+      "output": 48828125
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 1
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": 4,
+        "b": 4
+      },
+      "output": 256
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 6
+      },
+      "output": 1000000000000
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 4
+      },
+      "output": 100000000
+    },
+    {
+      "input": {
+        "a": 11,
+        "b": 5
+      },
+      "output": 161051
+    },
+    {
+      "input": {
+        "a": -4,
+        "b": -4
+      },
+      "output": 0.00390625
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 9
+      },
+      "output": 1953125
+    },
+    {
+      "input": {
+        "a": 11,
+        "b": 99
+      },
+      "output": 12527829399838427440107579247354215251149392000034969484678615956504532008683916069945559954314411495091
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": -1
+      },
+      "output": 0.01
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def power(a, b):\n\treturn a ** b\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-742-area-tetrahedron",
+  "title": "Area Tetrahedron",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to caluclate the area of a tetrahedron.",
+  "entry_point": "area_tetrahedron",
+  "params": [
+    "side"
+  ],
+  "function_signature": {
+    "python": "def area_tetrahedron(side):"
+  },
+  "examples": [
+    {
+      "input": {
+        "side": 3
+      },
+      "output": 15.588457268119894
+    },
+    {
+      "input": {
+        "side": 20
+      },
+      "output": 692.8203230275509
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "side": 3
+      },
+      "output": 15.588457268119894
+    },
+    {
+      "input": {
+        "side": 20
+      },
+      "output": 692.8203230275509
+    },
+    {
+      "input": {
+        "side": 10
+      },
+      "output": 173.20508075688772
+    },
+    {
+      "input": {
+        "side": 1000000
+      },
+      "output": 1732050807568.8772
+    },
+    {
+      "input": {
+        "side": true
+      },
+      "output": 1.7320508075688772
+    },
+    {
+      "input": {
+        "side": 1.5
+      },
+      "output": 3.8971143170299736
+    },
+    {
+      "input": {
+        "side": 1e+30
+      },
+      "output": 1.7320508075688773e+60
+    },
+    {
+      "input": {
+        "side": 999999
+      },
+      "output": 1732047343468.9941
+    },
+    {
+      "input": {
+        "side": 1.59978534789254
+      },
+      "output": 4.4328604244420475
+    },
+    {
+      "input": {
+        "side": 77.8793434560892
+      },
+      "output": 10505.220939213666
+    },
+    {
+      "input": {
+        "side": 3.074373143508511
+      },
+      "output": 16.370946252078475
+    },
+    {
+      "input": {
+        "side": 8.346368082095324e+29
+      },
+      "output": 1.206578811500298e+60
+    },
+    {
+      "input": {
+        "side": 1.6546636717000622
+      },
+      "output": 4.742202459326623
+    },
+    {
+      "input": {
+        "side": 1.7090994554410526
+      },
+      "output": 5.059356692929017
+    },
+    {
+      "input": {
+        "side": 1.3964870190521956
+      },
+      "output": 3.3778039059695466
+    },
+    {
+      "input": {
+        "side": 1.6514502037380507
+      },
+      "output": 4.723800993900108
+    },
+    {
+      "input": {
+        "side": 7.206728093437386e+29
+      },
+      "output": 8.995740122480381e+59
+    },
+    {
+      "input": {
+        "side": 1.504068222763319
+      },
+      "output": 3.918282088794527
+    },
+    {
+      "input": {
+        "side": 0.9574615822299601
+      },
+      "output": 1.5878275812238438
+    },
+    {
+      "input": {
+        "side": 1.978952603905947
+      },
+      "output": 6.783149878847407
+    },
+    {
+      "input": {
+        "side": 1.0821151020776618
+      },
+      "output": 2.028184893354492
+    },
+    {
+      "input": {
+        "side": 1.8101404959122165
+      },
+      "output": 5.675252597596262
+    },
+    {
+      "input": {
+        "side": 77.46339000072932
+      },
+      "output": 10393.3038757002
+    },
+    {
+      "input": {
+        "side": 2.126409359720457
+      },
+      "output": 7.831669969520146
+    },
+    {
+      "input": {
+        "side": 1.7994080508660149
+      },
+      "output": 5.608154193928296
+    },
+    {
+      "input": {
+        "side": 2.0863282509978003
+      },
+      "output": 7.539211122255337
+    },
+    {
+      "input": {
+        "side": 1.9889979847423371
+      },
+      "output": 6.852188687574209
+    },
+    {
+      "input": {
+        "side": 2.209910516014096
+      },
+      "output": 8.45882430373593
+    },
+    {
+      "input": {
+        "side": 11.754053944629632
+      },
+      "output": 239.29630157994552
+    },
+    {
+      "input": {
+        "side": 2.9745432990981775
+      },
+      "output": 15.325025916466405
+    },
+    {
+      "input": {
+        "side": 1.9380485812956483
+      },
+      "output": 6.505638784466277
+    },
+    {
+      "input": {
+        "side": 1.8160105066755527
+      },
+      "output": 5.71212024372129
+    },
+    {
+      "input": {
+        "side": 0.8026534982703593
+      },
+      "output": 1.1158783024210321
+    },
+    {
+      "input": {
+        "side": 1.8582712873153935
+      },
+      "output": 5.981069658298963
+    },
+    {
+      "input": {
+        "side": 1.3225487947269854
+      },
+      "output": 3.029591233912308
+    },
+    {
+      "input": {
+        "side": 1.537011943546412
+      },
+      "output": 4.091806725785741
+    },
+    {
+      "input": {
+        "side": 2.554675341633787
+      },
+      "output": 11.303997675989958
+    },
+    {
+      "input": {
+        "side": 13.323445662082547
+      },
+      "output": 307.4636209308897
+    },
+    {
+      "input": {
+        "side": 3.132314634383419
+      },
+      "output": 16.99383457903968
+    },
+    {
+      "input": {
+        "side": 1.1652257607369096
+      },
+      "output": 2.3516938433070482
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0001
+  },
+  "reference_solutions": {
+    "python": "import math\ndef area_tetrahedron(side):\n  return math.sqrt(3)*(side*side)\n"
+  }
+}

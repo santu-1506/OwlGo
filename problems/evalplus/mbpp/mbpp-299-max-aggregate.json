@@ -1,0 +1,1779 @@
+{
+  "id": "mbpp-299-max-aggregate",
+  "title": "Max Aggregate",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to calculate the maximum aggregate from the list of tuples.",
+  "entry_point": "max_aggregate",
+  "params": [
+    "stdata"
+  ],
+  "function_signature": {
+    "python": "def max_aggregate(stdata):"
+  },
+  "examples": [
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Juan Whelan",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Peter Nichols",
+              7
+            ]
+          },
+          {
+            "$tuple": [
+              "Juan Whelan",
+              122
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              84
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Juan Whelan",
+          212
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Juan Whelan",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              48
+            ]
+          },
+          {
+            "$tuple": [
+              "Peter Nichols",
+              37
+            ]
+          },
+          {
+            "$tuple": [
+              "Juan Whelan",
+              22
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              14
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Juan Whelan",
+          72
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Juan Whelan",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              88
+            ]
+          },
+          {
+            "$tuple": [
+              "Peter Nichols",
+              7
+            ]
+          },
+          {
+            "$tuple": [
+              "Juan Whelan",
+              122
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              84
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Juan Whelan",
+          212
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Juan Whelan",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              48
+            ]
+          },
+          {
+            "$tuple": [
+              "Peter Nichols",
+              37
+            ]
+          },
+          {
+            "$tuple": [
+              "Juan Whelan",
+              22
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              14
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Juan Whelan",
+          72
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Juan Whelan",
+              10
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              20
+            ]
+          },
+          {
+            "$tuple": [
+              "Peter Nichols",
+              30
+            ]
+          },
+          {
+            "$tuple": [
+              "Juan Whelan",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Sabah Colley",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Sabah Colley",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          140
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          -50
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          110
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          160
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              60
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              100
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              110
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              120
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              130
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              140
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              150
+            ]
+          },
+          {
+            "$tuple": [
+              "David",
+              160
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "David",
+          360
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          110
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          -100
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          80
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          110
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          210
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Ali",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Bob",
+          190
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          110
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "AlDavidice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          -50
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          150
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          150
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "AlDavidice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "AlDavidice",
+          -50
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Bob",
+              110
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          80
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -89
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Ali",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              41,
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Bob",
+          190
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "AlDavidice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "AlDavidice",
+          -50
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          140
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          -150
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "AlDavidice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "AlDavidice",
+          -50
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Bob",
+          230
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Alice",
+          -200
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bo",
+              -90
+            ]
+          },
+          {
+            "$tuple": [
+              "Bobb",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          110
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "AlDavidice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "AlDavidice",
+          -50
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Alice",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              41
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -60
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Charlie",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "AlDavidice",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "AlDavidice",
+          70
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "Ali",
+              80
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              90
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              60
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              40
+            ]
+          },
+          {
+            "$tuple": [
+              "Bob",
+              50
+            ]
+          },
+          {
+            "$tuple": [
+              "Charlie",
+              70
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "Bob",
+          190
+        ]
+      }
+    },
+    {
+      "input": {
+        "stdata": [
+          {
+            "$tuple": [
+              "AlDavidice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          },
+          {
+            "$tuple": [
+              "Alice",
+              -50
+            ]
+          }
+        ]
+      },
+      "output": {
+        "$tuple": [
+          "AlDavidice",
+          -50
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from collections import defaultdict\ndef max_aggregate(stdata):\n    temp = defaultdict(int)\n    for name, marks in stdata:\n        temp[name] += marks\n    return max(temp.items(), key=lambda x: x[1])\n"
+  }
+}

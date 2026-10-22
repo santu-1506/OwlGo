@@ -1,0 +1,632 @@
+{
+  "id": "mbpp-132-tup-string",
+  "title": "Tup String",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to convert a tuple to a string.",
+  "entry_point": "tup_string",
+  "params": [
+    "tup1"
+  ],
+  "function_signature": {
+    "python": "def tup_string(tup1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "e",
+            "x",
+            "e",
+            "r",
+            "c",
+            "i",
+            "s",
+            "e",
+            "s"
+          ]
+        }
+      },
+      "output": "exercises"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "p",
+            "y",
+            "t",
+            "h",
+            "o",
+            "n"
+          ]
+        }
+      },
+      "output": "python"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "e",
+            "x",
+            "e",
+            "r",
+            "c",
+            "i",
+            "s",
+            "e",
+            "s"
+          ]
+        }
+      },
+      "output": "exercises"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "p",
+            "y",
+            "t",
+            "h",
+            "o",
+            "n"
+          ]
+        }
+      },
+      "output": "python"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "p",
+            "r",
+            "o",
+            "g",
+            "r",
+            "a",
+            "m"
+          ]
+        }
+      },
+      "output": "program"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": []
+        }
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "a"
+          ]
+        }
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "aa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZaZvCAMhNaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "aa",
+            "a"
+          ]
+        }
+      },
+      "output": "ZaZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "aa",
+            "a",
+            "aa"
+          ]
+        }
+      },
+      "output": "ZaZvCAMhNaaaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZ",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZaZvCAMhNaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "a",
+            "ZvCAMhN",
+            "aaZ",
+            "a",
+            "aa",
+            "a"
+          ]
+        }
+      },
+      "output": "aZvCAMhNaaZaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "mKxDJT",
+            "VekfW",
+            "ZvCAMhN",
+            "aaZ",
+            "FiUaYFBklh",
+            "PBEOJoMiY",
+            "aFELUEp",
+            "aaZ",
+            "ZZ"
+          ]
+        }
+      },
+      "output": "mKxDJTVekfWZvCAMhNaaZFiUaYFBklhPBEOJoMiYaFELUEpaaZZZ"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZaZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZ",
+            "",
+            "ZvCAMhN",
+            "aa",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "mKxDJTaa",
+            "a"
+          ]
+        }
+      },
+      "output": "aamKxDJTaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "ZvCAMhN",
+            "a"
+          ]
+        }
+      },
+      "output": "aaZvCAMhNa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "VekfW",
+            "a"
+          ]
+        }
+      },
+      "output": "aaVekfWa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a",
+            "Z",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZvCAMhNaaaZa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZZ",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZZaZvCAMhNaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZZ",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZZaZvCAMhNaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aFELUEpZ",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "aa",
+            "a",
+            "aa"
+          ]
+        }
+      },
+      "output": "aFELUEpZaZvCAMhNaaaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "mKxDJTaa",
+            "aa"
+          ]
+        }
+      },
+      "output": "aamKxDJTaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "a",
+            ""
+          ]
+        }
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "SkpnaC",
+            "Z",
+            "a",
+            "qHPQEqCm",
+            "PyvCTG",
+            "aFELUEp",
+            "tDuJm",
+            "IWSYg",
+            "Z"
+          ]
+        }
+      },
+      "output": "SkpnaCZaqHPQEqCmPyvCTGaFELUEptDuJmIWSYgZ"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "ZvCAMhN",
+            "a",
+            "aa"
+          ]
+        }
+      },
+      "output": "aaZvCAMhNaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZ",
+            "ZvCAMhN",
+            "aa",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "aa",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZaZvCAMhNaaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "mKxDJT",
+            "ZvCAMhN",
+            "aaZ",
+            "a",
+            "aa",
+            "a"
+          ]
+        }
+      },
+      "output": "mKxDJTZvCAMhNaaZaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "aFELUEpZ"
+          ]
+        }
+      },
+      "output": "aaaFELUEpZ"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "mKxDJT",
+            "ZvCAMhN",
+            "aZ",
+            "ZZ",
+            "a",
+            "aa",
+            "a"
+          ]
+        }
+      },
+      "output": "mKxDJTZvCAMhNaZZZaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "aaZ",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZaaZaZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZZ",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "aFELUEpa",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZZZaZvCAMhNaaFELUEpaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aFELUEp",
+            "ZvCAMhN",
+            "a",
+            "aa",
+            "a"
+          ]
+        }
+      },
+      "output": "aFELUEpZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "aaZ",
+            "IWSYga",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "ZaaZIWSYgaaZvCAMhNaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aZZ",
+            "aFELUEpZ"
+          ]
+        }
+      },
+      "output": "aZZaFELUEpZ"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZZ",
+            "tDuJma",
+            "a",
+            "ZvCAMhN",
+            "a",
+            "a",
+            "ZZ"
+          ]
+        }
+      },
+      "output": "ZZZtDuJmaaZvCAMhNaaZZ"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "ZZ",
+            "ZvCAMhN",
+            "aa",
+            "a",
+            "a",
+            "ZvCAMhN"
+          ]
+        }
+      },
+      "output": "ZZZvCAMhNaaaaZvCAMhN"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "ZvCAMhN",
+            "aa"
+          ]
+        }
+      },
+      "output": "aaZvCAMhNaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "Z",
+            "a",
+            "a",
+            "a",
+            "a"
+          ]
+        }
+      },
+      "output": "Zaaaa"
+    },
+    {
+      "input": {
+        "tup1": {
+          "$tuple": [
+            "aa",
+            "ZvCAMhN",
+            "aa",
+            "aa"
+          ]
+        }
+      },
+      "output": "aaZvCAMhNaaaa"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def tup_string(tup1):\n  return ''.join(tup1)\n"
+  }
+}

@@ -2,7 +2,8 @@
 
 Checks (docs/spec.json -> anti_hallucination.data_rules):
 1. The reference solution passes every test, under two different hash seeds,
-   so no expected answer depends on set or dict ordering.
+   so no expected answer depends on set or dict ordering, and it does so well
+   within the time limit, so no test is flaky on a slower machine.
 2. The reference solution reproduces every example shown in the statement.
 3. A slow solution passes every normal test and times out on a stress test,
    which proves the stress tests really catch slow code.
@@ -19,6 +20,10 @@ from dataclasses import dataclass, field
 from owlgo.problems.loader import load_problems
 from owlgo.problems.schema import Problem, ProblemTest
 from owlgo.runner import LocalRunner, RunResult
+
+# Share of the per-test time limit the reference may use: 25% on normal tests,
+# 50% on stress tests (which are big by design). The rest is headroom for slower machines.
+TIME_MARGIN = {False: 0.25, True: 0.5}
 
 
 @dataclass
@@ -42,7 +47,7 @@ def verify_problem(problem: Problem, per_test_seconds: float = 1.0) -> Verificat
     reference = problem.reference_solutions["python"]
     runner = LocalRunner(per_test_seconds=per_test_seconds)
 
-    # 1. The reference passes everything, under two hash seeds.
+    # 1. The reference passes everything, under two hash seeds...
     for seed in (1, 2):
         result = LocalRunner(per_test_seconds=per_test_seconds, hash_seed=seed).run(
             problem, reference
@@ -50,6 +55,15 @@ def verify_problem(problem: Problem, per_test_seconds: float = 1.0) -> Verificat
         if result.verdict != "accepted":
             report.issues.append(f"reference solution, hash seed {seed}: {describe(result)}")
             break
+        # ...with plenty of time to spare, so a slower machine can't turn it into a timeout.
+        for test in result.tests:
+            budget = per_test_seconds * 1000 * TIME_MARGIN[problem.tests[test.index].stress]
+            if test.time_ms is not None and test.time_ms > budget:
+                report.issues.append(
+                    f"reference takes {test.time_ms:.0f} ms on test {test.index}, over the "
+                    f"{budget:.0f} ms safety margin; the test would be flaky"
+                )
+                break
 
     # 2. The examples in the statement are true.
     if problem.examples:

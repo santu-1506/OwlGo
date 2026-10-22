@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-226-odd-values-string",
+  "title": "Odd Values String",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to remove the characters which have odd index values of a given string.",
+  "entry_point": "odd_values_string",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def odd_values_string(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "abcdef"
+      },
+      "output": "ace"
+    },
+    {
+      "input": {
+        "str1": "python"
+      },
+      "output": "pto"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "abcdef"
+      },
+      "output": "ace"
+    },
+    {
+      "input": {
+        "str1": "python"
+      },
+      "output": "pto"
+    },
+    {
+      "input": {
+        "str1": "data"
+      },
+      "output": "dt"
+    },
+    {
+      "input": {
+        "str1": "lambs"
+      },
+      "output": "lms"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyz"
+      },
+      "output": "acegikmoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "bbbbbbbb"
+      },
+      "output": "bbbb"
+    },
+    {
+      "input": {
+        "str1": "abcdijklmnopqrstuvwxyz"
+      },
+      "output": "acikmoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "ZD"
+      },
+      "output": "Z"
+    },
+    {
+      "input": {
+        "str1": "ZZD"
+      },
+      "output": "ZD"
+    },
+    {
+      "input": {
+        "str1": "abcdefghiZDjklmnopqrstuvwxyz"
+      },
+      "output": "acegiDkmoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "babcdefghijklmnopqrstuvwxyzbbbbbbb"
+      },
+      "output": "bbdfhjlnprtvxzbbb"
+    },
+    {
+      "input": {
+        "str1": "bbbbbbbbb"
+      },
+      "output": "bbbbb"
+    },
+    {
+      "input": {
+        "str1": "abcdefghbbbbbbbbbijklabcdijklmnopqrstuvwxyzmnopqrstuvwxyz"
+      },
+      "output": "acegbbbbbjlbdjlnprtvxznprtvxz"
+    },
+    {
+      "input": {
+        "str1": "abcdefghbbbbbbbbbijpklabcdijklmnopqrstuvwxyzmnopqrstuvwxyz"
+      },
+      "output": "acegbbbbbjkacikmoqsuwymoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "abcdijkljmnopqrstuvwxyz"
+      },
+      "output": "acikjnprtvxz"
+    },
+    {
+      "input": {
+        "str1": "bbbbbbbbbZZD"
+      },
+      "output": "bbbbbZ"
+    },
+    {
+      "input": {
+        "str1": "abcdlefghijklmnopqrstuvwxyz"
+      },
+      "output": "aclfhjlnprtvxz"
+    },
+    {
+      "input": {
+        "str1": "abcdlmnopqrstuvwxyz"
+      },
+      "output": "aclnprtvxz"
+    },
+    {
+      "input": {
+        "str1": "babcdefghijklmnopqrstuvwxyzbbbbbbbb"
+      },
+      "output": "bbdfhjlnprtvxzbbbb"
+    },
+    {
+      "input": {
+        "str1": "bbbbbbbbbbb"
+      },
+      "output": "bbbbbb"
+    },
+    {
+      "input": {
+        "str1": "abcdefghbbbbbbbbbijklabcdmijklmnopqrstuvwxyzmnopqrstuvwxyz"
+      },
+      "output": "acegbbbbbjlbdikmoqsuwymoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "abcdefghijkqrstuvwxyz"
+      },
+      "output": "acegikrtvxz"
+    },
+    {
+      "input": {
+        "str1": "abcdefghbbbbbbbbbijpklabcdijklmnopqrbabcdefghijklmnopqrstuvwxyzbbbbbbbstuvwxyzmnopqrstuvwxyz"
+      },
+      "output": "acegbbbbbjkacikmoqbbdfhjlnprtvxzbbbsuwymoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "ZDZD"
+      },
+      "output": "ZZ"
+    },
+    {
+      "input": {
+        "str1": "DAxuCd"
+      },
+      "output": "DxC"
+    },
+    {
+      "input": {
+        "str1": "abicdijklmnopqrstuvwxyz"
+      },
+      "output": "aidjlnprtvxz"
+    },
+    {
+      "input": {
+        "str1": "ababcdefghiZDjklmnopqrstuvwxyzcdefghbbbbbbbbbijklabcdijklmnopqrstuvwxyzmnopqrstuvwxyz"
+      },
+      "output": "aacegiDkmoqsuwycegbbbbbjlbdjlnprtvxznprtvxz"
+    },
+    {
+      "input": {
+        "str1": "abcdefghiZDjkelmnopqrstuvwxyz"
+      },
+      "output": "acegiDklnprtvxz"
+    },
+    {
+      "input": {
+        "str1": "abcdefghbbbbbbbbbijpklabbcdijklmnopqrbabcdefghijklmnopqrstuvwxyzbbbbbbbstuvwxyzmnopqrstuvwxyz"
+      },
+      "output": "acegbbbbbjkabdjlnpracegikmoqsuwybbbbtvxznprtvxz"
+    },
+    {
+      "input": {
+        "str1": "abicdijklmnopqrwstuvwxyz"
+      },
+      "output": "aidjlnprsuwy"
+    },
+    {
+      "input": {
+        "str1": "babcdefghijklmnopqrsabcdlefghijklmnopqrstuvwxyz"
+      },
+      "output": "bbdfhjlnpraclfhjlnprtvxz"
+    },
+    {
+      "input": {
+        "str1": "bbbb"
+      },
+      "output": "bb"
+    },
+    {
+      "input": {
+        "str1": "bbbbbbbabcdefghbbbbbbbbbijklabcdmijklmnopqrstuvwxyzmnopqrstuvwxyzbbZZD"
+      },
+      "output": "bbbbbdfhbbbbikacmjlnprtvxznprtvxzbZ"
+    },
+    {
+      "input": {
+        "str1": "zz"
+      },
+      "output": "z"
+    },
+    {
+      "input": {
+        "str1": "abcdefghijkqrstuvwxwyz"
+      },
+      "output": "acegikrtvxy"
+    },
+    {
+      "input": {
+        "str1": "ZDDZD"
+      },
+      "output": "ZDD"
+    },
+    {
+      "input": {
+        "str1": "xy"
+      },
+      "output": "x"
+    },
+    {
+      "input": {
+        "str1": "abcdefghijkqrstuvwxyzbabcdefghijklmnopqrsabcdlefghijklmnopqrstuvwxyz"
+      },
+      "output": "acegikrtvxzacegikmoqsbdegikmoqsuwy"
+    },
+    {
+      "input": {
+        "str1": "abcdefghiZDjokelmnopqrstuvwxyz"
+      },
+      "output": "acegiDoemoqsuwy"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def odd_values_string(str1):\n    return ''.join(str1[i] for i in range(0, len(str1), 2))\n"
+  }
+}

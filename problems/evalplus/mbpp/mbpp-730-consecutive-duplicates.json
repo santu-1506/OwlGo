@@ -1,0 +1,1450 @@
+{
+  "id": "mbpp-730-consecutive-duplicates",
+  "title": "Consecutive Duplicates",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to remove consecutive duplicates of a given list.",
+  "entry_point": "consecutive_duplicates",
+  "params": [
+    "nums"
+  ],
+  "function_signature": {
+    "python": "def consecutive_duplicates(nums):"
+  },
+  "examples": [
+    {
+      "input": {
+        "nums": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          10,
+          15,
+          19,
+          18,
+          18,
+          17,
+          26,
+          26,
+          17,
+          18,
+          10
+        ]
+      },
+      "output": [
+        10,
+        15,
+        19,
+        18,
+        17,
+        26,
+        17,
+        18,
+        10
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "nums": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          10,
+          10,
+          15,
+          19,
+          18,
+          18,
+          17,
+          26,
+          26,
+          17,
+          18,
+          10
+        ]
+      },
+      "output": [
+        10,
+        15,
+        19,
+        18,
+        17,
+        26,
+        17,
+        18,
+        10
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "b",
+          "c",
+          "d",
+          "d"
+        ]
+      },
+      "output": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "b",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a"
+        ]
+      },
+      "output": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "a"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "orange",
+          "apple",
+          "banana",
+          "banana",
+          "banana",
+          "kiwi",
+          "kiwi",
+          "orange"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "orange",
+        "apple",
+        "banana",
+        "kiwi",
+        "orange"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "b",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "e",
+          "f",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j"
+        ]
+      },
+      "output": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "orange",
+          "apple",
+          "banana",
+          "banana",
+          "banana",
+          "kiwi",
+          "kiwi",
+          "orange",
+          "apple",
+          "orange",
+          "kiwi",
+          "kiwi",
+          "kiwi"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "orange",
+        "apple",
+        "banana",
+        "kiwi",
+        "orange",
+        "apple",
+        "orange",
+        "kiwi"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "b",
+          "c",
+          "d",
+          "d",
+          "e",
+          "f",
+          "g",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "k",
+          "k",
+          "k",
+          "l",
+          "m",
+          "m"
+        ]
+      },
+      "output": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4,
+          3,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4,
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4,
+          3,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "nums": []
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          7,
+          7,
+          7,
+          8,
+          8,
+          9
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "bb",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          3,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          8,
+          8,
+          9
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "bb",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "bb",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          9
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "banana",
+          "lm",
+          "d",
+          "g",
+          "k",
+          "CPAKrs",
+          "y",
+          "l"
+        ]
+      },
+      "output": [
+        "banana",
+        "lm",
+        "d",
+        "g",
+        "k",
+        "CPAKrs",
+        "y",
+        "l"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "orange",
+          "apple",
+          "banana",
+          "banana",
+          "banana",
+          "kiwi",
+          "kiwi",
+          "orange",
+          "apple",
+          "orange",
+          "kiwi",
+          "kiwi"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "orange",
+        "apple",
+        "banana",
+        "kiwi",
+        "orange",
+        "apple",
+        "orange",
+        "kiwi"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "j",
+          "bb",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "j",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "bb",
+          "apple",
+          "XkdbOWvF",
+          "wUpBgeXR",
+          "UKW",
+          "e",
+          "f",
+          "l",
+          "lm",
+          "CPAKrs"
+        ]
+      },
+      "output": [
+        "bb",
+        "apple",
+        "XkdbOWvF",
+        "wUpBgeXR",
+        "UKW",
+        "e",
+        "f",
+        "l",
+        "lm",
+        "CPAKrs"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "apple",
+          "banana",
+          "banana",
+          "banana",
+          "kiwi",
+          "kiwi",
+          "orange",
+          "apple"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "apple",
+        "banana",
+        "kiwi",
+        "orange",
+        "apple"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "c",
+          "d",
+          "g",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "c",
+        "d",
+        "g",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          9,
+          4
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "j",
+          "bbe",
+          "bb",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "j",
+        "bbe",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          true,
+          null
+        ]
+      },
+      "output": [
+        true,
+        null
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          3,
+          6,
+          6,
+          7,
+          6,
+          7,
+          7,
+          8,
+          9
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        3,
+        6,
+        7,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          0,
+          0,
+          1,
+          2,
+          4,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4,
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          4,
+          4,
+          3,
+          2,
+          2,
+          1,
+          0,
+          0
+        ]
+      },
+      "output": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "lm",
+          "orange",
+          "apple",
+          "banana",
+          "banana",
+          "banana",
+          "apple",
+          "kiwi",
+          "orange"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "lm",
+        "orange",
+        "apple",
+        "banana",
+        "apple",
+        "kiwi",
+        "orange"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "apple",
+          "bbe",
+          "banana",
+          "banana",
+          "kiwi",
+          "kiwi",
+          "orange",
+          "apple",
+          "bbe"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "apple",
+        "bbe",
+        "banana",
+        "kiwi",
+        "orange",
+        "apple",
+        "bbe"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "bb",
+          "c",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          true,
+          false,
+          null
+        ]
+      },
+      "output": [
+        true,
+        false,
+        null
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "beb",
+          "c",
+          "d",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "f",
+          "g",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "beb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "banana",
+          "lm",
+          "d",
+          "g",
+          "k",
+          "CPAKrs",
+          "y",
+          "ll",
+          "CPAKrs"
+        ]
+      },
+      "output": [
+        "banana",
+        "lm",
+        "d",
+        "g",
+        "k",
+        "CPAKrs",
+        "y",
+        "ll",
+        "CPAKrs"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "apple",
+          "apple",
+          "banana",
+          "orange",
+          "apple",
+          "banana",
+          "banana",
+          "banana",
+          "kiwi",
+          "kiwi",
+          "orange",
+          "apple",
+          "orange",
+          "kiwi",
+          "kiwi",
+          "kiwi",
+          "kiwi"
+        ]
+      },
+      "output": [
+        "apple",
+        "banana",
+        "orange",
+        "apple",
+        "banana",
+        "kiwi",
+        "orange",
+        "apple",
+        "orange",
+        "kiwi"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          9,
+          7
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        7
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "",
+          "bb",
+          "c",
+          "d",
+          "a",
+          "a",
+          "e",
+          "f",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          6,
+          7,
+          7,
+          7,
+          8,
+          8,
+          9,
+          1
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        1
+      ]
+    },
+    {
+      "input": {
+        "nums": [
+          "a",
+          "a",
+          "bb",
+          "c",
+          "d",
+          "a",
+          "a",
+          "e",
+          "h",
+          "f",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "j",
+          "f"
+        ]
+      },
+      "output": [
+        "a",
+        "bb",
+        "c",
+        "d",
+        "a",
+        "e",
+        "h",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "f"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from itertools import groupby\ndef consecutive_duplicates(nums):\n    return [key for key, _ in groupby(nums)]\n"
+  }
+}

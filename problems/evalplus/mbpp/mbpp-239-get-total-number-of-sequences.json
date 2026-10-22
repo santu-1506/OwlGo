@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-239-get-total-number-of-sequences",
+  "title": "Get Total Number Of Sequences",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes in positive integers m and n and finds the number of possible sequences of length n, such that each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m.",
+  "entry_point": "get_total_number_of_sequences",
+  "params": [
+    "m",
+    "n"
+  ],
+  "function_signature": {
+    "python": "def get_total_number_of_sequences(m, n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "m": 10,
+        "n": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "m": 5,
+        "n": 2
+      },
+      "output": 6
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "m": 10,
+        "n": 4
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "m": 5,
+        "n": 2
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "m": 16,
+        "n": 3
+      },
+      "output": 84
+    },
+    {
+      "input": {
+        "m": 100,
+        "n": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 50,
+        "n": 5
+      },
+      "output": 2264
+    },
+    {
+      "input": {
+        "m": 20,
+        "n": 8
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 200,
+        "n": 6
+      },
+      "output": 2598596
+    },
+    {
+      "input": {
+        "m": 20,
+        "n": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 199,
+        "n": 6
+      },
+      "output": 2519482
+    },
+    {
+      "input": {
+        "m": 49,
+        "n": 6
+      },
+      "output": 238
+    },
+    {
+      "input": {
+        "m": 5,
+        "n": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 200,
+        "n": 100
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 5,
+        "n": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 49,
+        "n": 49
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 49,
+        "n": 50
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 199,
+        "n": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 50,
+        "n": 6
+      },
+      "output": 284
+    },
+    {
+      "input": {
+        "m": 50,
+        "n": 49
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 199,
+        "n": 8
+      },
+      "output": 42774
+    },
+    {
+      "input": {
+        "m": 10,
+        "n": 8
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 49,
+        "n": 5
+      },
+      "output": 2028
+    },
+    {
+      "input": {
+        "m": 20,
+        "n": 5
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "m": 49,
+        "n": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 7,
+        "n": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 20,
+        "n": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 8,
+        "n": 200
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 8,
+        "n": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 11,
+        "n": 10
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 200,
+        "n": 200
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 6,
+        "n": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 50,
+        "n": 50
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 49,
+        "n": 199
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 199,
+        "n": 199
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 5,
+        "n": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 11,
+        "n": 7
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 11,
+        "n": 12
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 200,
+        "n": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 50,
+        "n": 201
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 9,
+        "n": 8
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "m": 100,
+        "n": 100
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def get_total_number_of_sequences(m, n):\n\tT=[[0 for _ in range(n + 1)] for _ in range(m + 1)] \n\tfor i in range(m + 1): \n\t\tfor j in range(n + 1): \n\t\t\tif i==0 or j==0: \n\t\t\t\tT[i][j] = 0\n\t\t\telif i<j: \n\t\t\t\tT[i][j] = 0\n\t\t\telif j==1: \n\t\t\t\tT[i][j] = i \n\t\t\telse: \n\t\t\t\tT[i][j] = T[i-1][j] + T[i//2][j-1] \n\treturn T[m][n]\n"
+  }
+}

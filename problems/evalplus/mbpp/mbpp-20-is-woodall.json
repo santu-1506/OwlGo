@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-20-is-woodall",
+  "title": "Is Woodall",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if the given number is woodball or not.",
+  "entry_point": "is_woodall",
+  "params": [
+    "x"
+  ],
+  "function_signature": {
+    "python": "def is_woodall(x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 383
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 254
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 383
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 254
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 200
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 123456789
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 123456788
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 123456790
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -71
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -43.858003490436445
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -29.61114685387961
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 123456791
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -26.959954047393943
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -36.19806730921029
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": false
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 123456792
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 123456793
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -29.871125367901588
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -29.522652685174876
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -28.83173048562741
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -36.46340914477242
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -21.3952610510801
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -54.31098212859848
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -29.97825041127243
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -69.13149487461008
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -69.25331473635698
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -30.672425597981977
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -70
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -31.492472971818966
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -23.37512371019188
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -26.87584184061303
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -68.8018442158572
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -72
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -68.9582596167829
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -38.639304621786174
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -36.762574512172826
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -29.71114112102485
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -29.147181618179903
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -45.96312293984687
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -62.29011681998471
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -102.18510964864885
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_woodall(x): \n\tif not isinstance(x, int):\n\t\treturn False\n\tif x <= 0 or x % 2 == 0:\n\t\treturn False\n\tif (x == 1): \n\t\treturn True\n\tx += 1 \n\ti = 0\n\twhile (x % 2 == 0): \n\t\tx /= 2\n\t\ti += 1\n\t\tif (i == x): \n\t\t\treturn True\n\treturn False\n"
+  }
+}

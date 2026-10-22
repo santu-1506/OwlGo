@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-77-is-diff",
+  "title": "Is Diff",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find whether a number is divisible by 11.",
+  "entry_point": "is_Diff",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_Diff(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 12345
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1212112
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 12345
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1212112
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 1212
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 12345678901234567890
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 98765432109876543210
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -1212
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -12345
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -12345678901234567890
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654321098765432109876543210
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -123456789012345678901234567890
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456789012345678901234567890
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -987654321098765432109876543210
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9876543210987654321098765432110
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9876543210987654321098765432101
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -9876543210987654321098765432110
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -9876543210987654321098765432101
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -1000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -65
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -12345678901234567889
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -56
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 98765432109876543209
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 9876543210987654321098765432102
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -64
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -9876543210987654321098765432100
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -12344
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -63
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 987654321098765432109876543211
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -999
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 98765432109876543211
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -57
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -66
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -55
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -123456789012345678901234567891
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": -987654321098765432109876543211
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 123456789012345678901234567891
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_Diff(n): \n    return n % 11 == 0\n"
+  }
+}

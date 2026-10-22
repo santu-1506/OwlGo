@@ -1,0 +1,626 @@
+{
+  "id": "mbpp-463-max-subarray-product",
+  "title": "Max Subarray Product",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the maximum product subarray of the given array.",
+  "entry_point": "max_subarray_product",
+  "params": [
+    "arr"
+  ],
+  "function_signature": {
+    "python": "def max_subarray_product(arr):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          -2,
+          -3,
+          0,
+          7,
+          -8,
+          -2
+        ]
+      },
+      "output": 112
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          -3,
+          -10,
+          0,
+          2
+        ]
+      },
+      "output": 180
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          -2,
+          -3,
+          0,
+          7,
+          -8,
+          -2
+        ]
+      },
+      "output": 112
+    },
+    {
+      "input": {
+        "arr": [
+          6,
+          -3,
+          -10,
+          0,
+          2
+        ]
+      },
+      "output": 180
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -40,
+          0,
+          -2,
+          -3
+        ]
+      },
+      "output": 80
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "output": 720
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          4,
+          -6,
+          8,
+          10,
+          -12,
+          14,
+          -16
+        ]
+      },
+      "output": 10321920
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "output": 3840
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -2,
+          -8,
+          -9,
+          -6,
+          -4,
+          -3
+        ]
+      },
+      "output": 17280
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -10,
+          -2,
+          -8,
+          -4
+        ]
+      },
+      "output": 800
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -2,
+          -8,
+          -9,
+          -6,
+          -4,
+          -3,
+          -8
+        ]
+      },
+      "output": 414720
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          6
+        ]
+      },
+      "output": 23040
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -2,
+          -8,
+          -4
+        ]
+      },
+      "output": 640
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -10,
+          -2,
+          -8,
+          5,
+          -4
+        ]
+      },
+      "output": 4000
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -2,
+          4,
+          -6,
+          8,
+          10,
+          -12,
+          -16,
+          8
+        ]
+      },
+      "output": 5898240
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          4,
+          5,
+          -10
+        ]
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          6,
+          10
+        ]
+      },
+      "output": 120
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -8,
+          -9,
+          -6,
+          -4,
+          -3,
+          -8
+        ]
+      },
+      "output": 41472
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -2,
+          6,
+          -6,
+          10,
+          -12,
+          -16,
+          8,
+          8
+        ]
+      },
+      "output": 8847360
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -2,
+          -8,
+          -9,
+          -3
+        ]
+      },
+      "output": 720
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -10,
+          -2,
+          -8,
+          5,
+          -1,
+          -4,
+          -5,
+          -8
+        ]
+      },
+      "output": 640000
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -5,
+          -10,
+          -2,
+          -8,
+          5,
+          -1,
+          -4,
+          -5,
+          -8,
+          -8,
+          -5
+        ]
+      },
+      "output": 25600000
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -2,
+          -17,
+          4,
+          -6,
+          8,
+          10,
+          -12,
+          -16,
+          8,
+          -12
+        ]
+      },
+      "output": 1203240960
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -5,
+          -10,
+          -8,
+          5,
+          -1,
+          -4,
+          -5,
+          -8,
+          -8,
+          -5,
+          -4
+        ]
+      },
+      "output": 51200000
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -1,
+          -8,
+          -9,
+          -6,
+          -4,
+          -3,
+          -8
+        ]
+      },
+      "output": 207360
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -2,
+          -8,
+          8,
+          -4
+        ]
+      },
+      "output": 5120
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -10,
+          -2,
+          -8,
+          5,
+          -4,
+          5
+        ]
+      },
+      "output": 16000
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -8,
+          -9,
+          -6,
+          -4,
+          -3,
+          -8,
+          -3
+        ]
+      },
+      "output": 124416
+    },
+    {
+      "input": {
+        "arr": [
+          -6,
+          -1,
+          -8,
+          -9,
+          -6,
+          -4,
+          -3,
+          -8
+        ]
+      },
+      "output": 248832
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -1,
+          -8,
+          -9,
+          -4,
+          -3,
+          -8,
+          -8
+        ]
+      },
+      "output": 276480
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -5,
+          -10,
+          -2,
+          -8,
+          5,
+          -1,
+          -4,
+          -5,
+          -8,
+          -8,
+          -5,
+          -2
+        ]
+      },
+      "output": 102400000
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          4
+        ]
+      },
+      "output": 2880
+    },
+    {
+      "input": {
+        "arr": [
+          -5,
+          -10,
+          -2,
+          -8,
+          5
+        ]
+      },
+      "output": 4000
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -1,
+          -2,
+          4,
+          -6,
+          8,
+          10,
+          -12,
+          -16,
+          8
+        ]
+      },
+      "output": 11796480
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -2,
+          8,
+          -4
+        ]
+      },
+      "output": 160
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          4,
+          8,
+          10,
+          -12,
+          6,
+          14,
+          -16
+        ]
+      },
+      "output": 5160960
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -2,
+          -6,
+          8,
+          10,
+          -12,
+          -16,
+          8,
+          -6,
+          -2,
+          10
+        ]
+      },
+      "output": 176947200
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          -10,
+          3,
+          4,
+          5,
+          6,
+          -16
+        ]
+      },
+      "output": 115200
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          -2,
+          -1,
+          -8,
+          8,
+          -4
+        ]
+      },
+      "output": 1280
+    },
+    {
+      "input": {
+        "arr": [
+          10,
+          -2,
+          6,
+          -8,
+          5,
+          -4
+        ]
+      },
+      "output": 4800
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          -5,
+          -10,
+          -2,
+          -8,
+          5,
+          -1,
+          -3,
+          -4,
+          -5,
+          -8,
+          -8,
+          -5
+        ]
+      },
+      "output": 153600000
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          -10,
+          2,
+          4,
+          5,
+          6,
+          -16,
+          5
+        ]
+      },
+      "output": 384000
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def max_subarray_product(arr):\n\tmax_so_far = min_ending = max_ending = arr[0]\n\tfor n in arr[1:]:\n\t\tmin_ending, max_ending = min(n, min_ending * n, max_ending * n), max(n, min_ending * n, max_ending * n)\n\t\tmax_so_far = max(max_so_far, max_ending)\n\treturn max_so_far\n"
+  }
+}

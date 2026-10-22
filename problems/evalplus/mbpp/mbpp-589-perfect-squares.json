@@ -1,0 +1,384 @@
+{
+  "id": "mbpp-589-perfect-squares",
+  "title": "Perfect Squares",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find perfect squares between two given numbers.",
+  "entry_point": "perfect_squares",
+  "params": [
+    "a",
+    "b"
+  ],
+  "function_signature": {
+    "python": "def perfect_squares(a, b):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 1,
+        "b": 30
+      },
+      "output": [
+        1,
+        4,
+        9,
+        16,
+        25
+      ]
+    },
+    {
+      "input": {
+        "a": 50,
+        "b": 100
+      },
+      "output": [
+        64,
+        81,
+        100
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 1,
+        "b": 30
+      },
+      "output": [
+        1,
+        4,
+        9,
+        16,
+        25
+      ]
+    },
+    {
+      "input": {
+        "a": 50,
+        "b": 100
+      },
+      "output": [
+        64,
+        81,
+        100
+      ]
+    },
+    {
+      "input": {
+        "a": 100,
+        "b": 200
+      },
+      "output": [
+        100,
+        121,
+        144,
+        169,
+        196
+      ]
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1000,
+        "b": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 0
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": -1000
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 1
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": -1
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "a": true,
+        "b": true
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": false,
+        "b": false
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "a": -1000,
+        "b": -1000
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": true,
+        "b": false
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": -999,
+        "b": -2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": 1
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": -999,
+        "b": -1000
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -999,
+        "b": -999
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -999,
+        "b": 0
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -2
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -10,
+        "b": 1
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": -3
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 1000001,
+        "b": 1000001
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": 1
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -10
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1001,
+        "b": -1001
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 2
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": -1000
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -999
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": -999
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": -999
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "a": -3,
+        "b": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1000,
+        "b": -1001
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -2,
+        "b": -998
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -3,
+        "b": -1001
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1001,
+        "b": 1
+      },
+      "output": [
+        0,
+        1
+      ]
+    },
+    {
+      "input": {
+        "a": -999,
+        "b": -998
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -998,
+        "b": -1
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": -1001,
+        "b": -999
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "a": 1000000,
+        "b": 1000000
+      },
+      "output": [
+        1000000
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import math\ndef perfect_squares(a, b):\n    if a > b:\n        a, b = b, a\n    if b < 0:\n        return []\n    if a < 0:\n        a = 0\n    return list(filter(lambda x: math.sqrt(x).is_integer(), range(a, b+1)))\n"
+  }
+}

@@ -1,0 +1,676 @@
+{
+  "id": "humaneval-120-maximum",
+  "title": "Maximum",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given an array arr of integers and a positive integer k, return a sorted list \nof length k with the maximum k numbers in arr.\n\nExample 1:\n\n    Input: arr = [-3, -4, 5], k = 3\n    Output: [-4, -3, 5]\n\nExample 2:\n\n    Input: arr = [4, -4, 4], k = 2\n    Output: [4, 4]\n\nExample 3:\n\n    Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n    Output: [2]\n\nNote:\n    1. The length of the array will be in the range of [1, 1000].\n    2. The elements in the array will be in the range of [-1000, 1000].\n    3. 0 <= k <= len(arr)",
+  "entry_point": "maximum",
+  "params": [
+    "arr",
+    "k"
+  ],
+  "function_signature": {
+    "python": "def maximum(arr, k):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          -3,
+          -4,
+          5
+        ],
+        "k": 3
+      },
+      "output": [
+        -4,
+        -3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          -4,
+          4
+        ],
+        "k": 2
+      },
+      "output": [
+        4,
+        4
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          -3,
+          -4,
+          5
+        ],
+        "k": 3
+      },
+      "output": [
+        -4,
+        -3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          -4,
+          4
+        ],
+        "k": 2
+      },
+      "output": [
+        4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -3,
+          2,
+          1,
+          2,
+          -1,
+          -2,
+          1
+        ],
+        "k": 1
+      },
+      "output": [
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          123,
+          -123,
+          20,
+          0,
+          1,
+          2,
+          -3
+        ],
+        "k": 3
+      },
+      "output": [
+        2,
+        20,
+        123
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -123,
+          20,
+          0,
+          1,
+          2,
+          -3
+        ],
+        "k": 4
+      },
+      "output": [
+        0,
+        1,
+        2,
+        20
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          15,
+          0,
+          3,
+          -13,
+          -8,
+          0
+        ],
+        "k": 7
+      },
+      "output": [
+        -13,
+        -8,
+        0,
+        0,
+        3,
+        5,
+        15
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          0,
+          2,
+          5,
+          3,
+          -10
+        ],
+        "k": 2
+      },
+      "output": [
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          0,
+          5,
+          -7
+        ],
+        "k": 1
+      },
+      "output": [
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          4,
+          -4
+        ],
+        "k": 2
+      },
+      "output": [
+        -4,
+        4
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -10,
+          10
+        ],
+        "k": 2
+      },
+      "output": [
+        -10,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          -23,
+          243,
+          -400,
+          0
+        ],
+        "k": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "k": 3
+      },
+      "output": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          -3,
+          -4,
+          -5
+        ],
+        "k": 2
+      },
+      "output": [
+        -2,
+        -1
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 3
+      },
+      "output": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "k": 4
+      },
+      "output": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ],
+        "k": 1
+      },
+      "output": [
+        3
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1
+        ],
+        "k": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          0
+        ],
+        "k": 1
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          5,
+          10,
+          3,
+          8
+        ],
+        "k": 4
+      },
+      "output": [
+        3,
+        5,
+        8,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -1000,
+          0,
+          1000
+        ],
+        "k": 3
+      },
+      "output": [
+        -1000,
+        0,
+        1000
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          5,
+          2,
+          1
+        ],
+        "k": 1
+      },
+      "output": [
+        5
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -2,
+          5,
+          4,
+          10,
+          3,
+          8
+        ],
+        "k": 4
+      },
+      "output": [
+        4,
+        5,
+        8,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 3
+      },
+      "output": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          4,
+          4
+        ],
+        "k": 1
+      },
+      "output": [
+        4
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1
+        ],
+        "k": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 2
+      },
+      "output": [
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          -3,
+          2
+        ],
+        "k": 1
+      },
+      "output": [
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 2
+      },
+      "output": [
+        2,
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1
+        ],
+        "k": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 1
+      },
+      "output": [
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1
+        ],
+        "k": 1
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3
+        ],
+        "k": 2
+      },
+      "output": [
+        2,
+        3
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -3,
+          -2,
+          -3,
+          -4,
+          10,
+          -5
+        ],
+        "k": 2
+      },
+      "output": [
+        -1,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 1
+      },
+      "output": [
+        2
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          3,
+          2,
+          2,
+          2
+        ],
+        "k": 1
+      },
+      "output": [
+        3
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          3
+        ],
+        "k": 1
+      },
+      "output": [
+        3
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "k": 0
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "arr": [
+          -1,
+          -2,
+          -3,
+          -3,
+          10,
+          -5
+        ],
+        "k": 3
+      },
+      "output": [
+        -2,
+        -1,
+        10
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          2,
+          2,
+          8,
+          2,
+          2,
+          2
+        ],
+        "k": 2
+      },
+      "output": [
+        2,
+        8
+      ]
+    },
+    {
+      "input": {
+        "arr": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "k": 5
+      },
+      "output": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef maximum(arr, k):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, return a sorted list \n    of length k with the maximum k numbers in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n\n\n    return sorted(sorted(arr)[::-1][:k])\n\n"
+  }
+}

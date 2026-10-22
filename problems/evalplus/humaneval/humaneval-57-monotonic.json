@@ -1,0 +1,519 @@
+{
+  "id": "humaneval-57-monotonic",
+  "title": "Monotonic",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return True is list elements are monotonically increasing or decreasing.\n>>> monotonic([1, 2, 4, 20])\nTrue\n>>> monotonic([1, 20, 4, 10])\nFalse\n>>> monotonic([4, 1, 0, -10])\nTrue",
+  "entry_point": "monotonic",
+  "params": [
+    "l"
+  ],
+  "function_signature": {
+    "python": "def monotonic(l: list):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          20
+        ]
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          4,
+          20
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          20,
+          4,
+          10
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          4,
+          1,
+          0,
+          -10
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          4,
+          1,
+          1,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          2,
+          5,
+          60
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          60
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          9,
+          9,
+          9,
+          9
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          10,
+          9,
+          8,
+          7,
+          6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -5,
+          -7,
+          -9,
+          -11
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1,
+          2,
+          3,
+          3,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          3,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          2,
+          4
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          3,
+          4,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          1,
+          1,
+          -7,
+          1,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          1,
+          2
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          1,
+          -7,
+          -9,
+          1,
+          5,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          1,
+          -7,
+          -9,
+          1,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          10,
+          9,
+          8,
+          6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -5,
+          -7,
+          -9,
+          -9,
+          -11
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -7,
+          -9,
+          1,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          10,
+          9,
+          8,
+          7,
+          7
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          4,
+          3,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          1,
+          -9,
+          1,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          10,
+          -11,
+          9,
+          8,
+          7,
+          6,
+          6
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          10,
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          1,
+          -10,
+          -7,
+          -9,
+          1,
+          2,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -7,
+          -9,
+          1,
+          3,
+          -9,
+          5
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          7,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -7,
+          -9,
+          -11
+        ]
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef monotonic(l: list):\n    \"\"\"Return True is list elements are monotonically increasing or decreasing.\n    >>> monotonic([1, 2, 4, 20])\n    True\n    >>> monotonic([1, 20, 4, 10])\n    False\n    >>> monotonic([4, 1, 0, -10])\n    True\n    \"\"\"\n\n    inc, dec = True, True\n    for i in range(len(l) - 1):\n        if l[i] > l[i + 1]: inc = False\n        if l[i] < l[i + 1]: dec = False\n    return inc or dec\n\n"
+  }
+}

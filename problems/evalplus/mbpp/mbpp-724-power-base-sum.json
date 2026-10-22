@@ -1,0 +1,322 @@
+{
+  "id": "mbpp-724-power-base-sum",
+  "title": "Power Base Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes base and power as arguments and calculate the sum of all digits of the base to the specified power.",
+  "entry_point": "power_base_sum",
+  "params": [
+    "base",
+    "power"
+  ],
+  "function_signature": {
+    "python": "def power_base_sum(base, power):"
+  },
+  "examples": [
+    {
+      "input": {
+        "base": 2,
+        "power": 100
+      },
+      "output": 115
+    },
+    {
+      "input": {
+        "base": 8,
+        "power": 10
+      },
+      "output": 37
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "base": 2,
+        "power": 100
+      },
+      "output": 115
+    },
+    {
+      "input": {
+        "base": 8,
+        "power": 10
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "base": 8,
+        "power": 15
+      },
+      "output": 62
+    },
+    {
+      "input": {
+        "base": 3,
+        "power": 3
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "base": 1,
+        "power": 1000000
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 0,
+        "power": 500
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "base": 11,
+        "power": 100
+      },
+      "output": 439
+    },
+    {
+      "input": {
+        "base": 7,
+        "power": 200
+      },
+      "output": 697
+    },
+    {
+      "input": {
+        "base": 5,
+        "power": 1000
+      },
+      "output": 3172
+    },
+    {
+      "input": {
+        "base": 5,
+        "power": 1
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "base": 201,
+        "power": 200
+      },
+      "output": 2106
+    },
+    {
+      "input": {
+        "base": 5,
+        "power": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 1,
+        "power": 500
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 5,
+        "power": 8
+      },
+      "output": 25
+    },
+    {
+      "input": {
+        "base": 1,
+        "power": 11
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 1,
+        "power": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 11,
+        "power": 1
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "base": 10,
+        "power": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 11,
+        "power": 8
+      },
+      "output": 40
+    },
+    {
+      "input": {
+        "base": 0,
+        "power": 11
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "base": 500,
+        "power": 200
+      },
+      "output": 556
+    },
+    {
+      "input": {
+        "base": 999,
+        "power": 5
+      },
+      "output": 81
+    },
+    {
+      "input": {
+        "base": 200,
+        "power": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 99,
+        "power": 999
+      },
+      "output": 9081
+    },
+    {
+      "input": {
+        "base": 201,
+        "power": 201
+      },
+      "output": 1980
+    },
+    {
+      "input": {
+        "base": 8,
+        "power": 8
+      },
+      "output": 37
+    },
+    {
+      "input": {
+        "base": 202,
+        "power": 201
+      },
+      "output": 2062
+    },
+    {
+      "input": {
+        "base": 498,
+        "power": 200
+      },
+      "output": 2421
+    },
+    {
+      "input": {
+        "base": 200,
+        "power": 999
+      },
+      "output": 1367
+    },
+    {
+      "input": {
+        "base": 999,
+        "power": 999
+      },
+      "output": 13536
+    },
+    {
+      "input": {
+        "base": 200,
+        "power": 200
+      },
+      "output": 256
+    },
+    {
+      "input": {
+        "base": 1,
+        "power": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 5,
+        "power": 202
+      },
+      "output": 616
+    },
+    {
+      "input": {
+        "base": 1001,
+        "power": 1000
+      },
+      "output": 13417
+    },
+    {
+      "input": {
+        "base": 0,
+        "power": 998
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "base": 1000000,
+        "power": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "base": 201,
+        "power": 202
+      },
+      "output": 2016
+    },
+    {
+      "input": {
+        "base": 11,
+        "power": 201
+      },
+      "output": 917
+    },
+    {
+      "input": {
+        "base": 11,
+        "power": 202
+      },
+      "output": 898
+    },
+    {
+      "input": {
+        "base": 0,
+        "power": 0
+      },
+      "output": 1
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def power_base_sum(base, power):\n    return sum([int(i) for i in str(pow(base, power))])\n"
+  }
+}

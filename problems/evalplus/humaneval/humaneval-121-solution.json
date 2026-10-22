@@ -1,0 +1,553 @@
+{
+  "id": "humaneval-121-solution",
+  "title": "Solution",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n\n\nExamples\nsolution([5, 8, 7, 1]) ==> 12\nsolution([3, 3, 3, 3, 3]) ==> 9\nsolution([30, 13, 24, 321]) ==>0",
+  "entry_point": "solution",
+  "params": [
+    "lst"
+  ],
+  "function_signature": {
+    "python": "def solution(lst):"
+  },
+  "examples": [
+    {
+      "input": {
+        "lst": [
+          5,
+          8,
+          7,
+          1
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "lst": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 9
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "lst": [
+          5,
+          8,
+          7,
+          1
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "lst": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "lst": [
+          30,
+          13,
+          24,
+          321
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          5,
+          9
+        ]
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          4,
+          8
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          30,
+          13,
+          23,
+          32
+        ]
+      },
+      "output": 23
+    },
+    {
+      "input": {
+        "lst": [
+          3,
+          13,
+          2,
+          9
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "lst": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          5,
+          10,
+          11,
+          18
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          3,
+          5,
+          8,
+          13
+        ]
+      },
+      "output": 18
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          7
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          5,
+          10,
+          11,
+          11
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          4,
+          0,
+          6,
+          8,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          10,
+          11,
+          18
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          2,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          7,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          5,
+          10,
+          11,
+          2,
+          11,
+          11
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          1,
+          1,
+          3,
+          4,
+          5,
+          5,
+          7
+        ]
+      },
+      "output": 7
+    },
+    {
+      "input": {
+        "lst": [
+          4,
+          10,
+          11,
+          18
+        ]
+      },
+      "output": 11
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          3,
+          13,
+          5,
+          6
+        ]
+      },
+      "output": 9
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          13,
+          5,
+          10,
+          11,
+          2,
+          11,
+          11
+        ]
+      },
+      "output": 24
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          5,
+          11,
+          2,
+          11,
+          11
+        ]
+      },
+      "output": 22
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          1,
+          2,
+          6,
+          2,
+          1
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          5
+        ]
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          7,
+          1,
+          2,
+          3,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          3,
+          2,
+          7
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          7,
+          1,
+          2,
+          3,
+          1,
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      "output": 4
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          1,
+          2,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "lst": [
+          2,
+          4,
+          8,
+          10
+        ]
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "lst": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          2
+        ]
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "lst": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          2,
+          1,
+          2
+        ]
+      },
+      "output": 3
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.\n    \n\n    Examples\n    solution([5, 8, 7, 1]) ==> 12\n    solution([3, 3, 3, 3, 3]) ==> 9\n    solution([30, 13, 24, 321]) ==>0\n    \"\"\"\n\n\n    return sum(lst[i] for i in range(len(lst)) if i % 2 == 0 and lst[i] % 2 == 1)\n\n"
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "id": "mbpp-424-extract-rear",
+  "title": "Extract Rear",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to extract only the rear index element of each string in the given tuple.",
+  "entry_point": "extract_rear",
+  "params": [
+    "test_tuple"
+  ],
+  "function_signature": {
+    "python": "def extract_rear(test_tuple):"
+  },
+  "examples": [
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Mers",
+            "for",
+            "Vers"
+          ]
+        }
+      },
+      "output": [
+        "s",
+        "r",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Avenge",
+            "for",
+            "People"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "r",
+        "e"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Mers",
+            "for",
+            "Vers"
+          ]
+        }
+      },
+      "output": [
+        "s",
+        "r",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Avenge",
+            "for",
+            "People"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "r",
+        "e"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Gotta",
+            "get",
+            "go"
+          ]
+        }
+      },
+      "output": [
+        "a",
+        "t",
+        "o"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Lorem",
+            "ipsum",
+            "dolor",
+            "sit",
+            "amet"
+          ]
+        }
+      },
+      "output": [
+        "m",
+        "m",
+        "r",
+        "t",
+        "t"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Quick",
+            "brown",
+            "fox",
+            "jumps",
+            "over",
+            "the",
+            "lazy",
+            "dog"
+          ]
+        }
+      },
+      "output": [
+        "k",
+        "n",
+        "x",
+        "s",
+        "r",
+        "e",
+        "y",
+        "g"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Python",
+            "is",
+            "a",
+            "widely",
+            "used",
+            "programming",
+            "language"
+          ]
+        }
+      },
+      "output": [
+        "n",
+        "s",
+        "a",
+        "y",
+        "d",
+        "g",
+        "e"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "This",
+            "is",
+            "a",
+            "test",
+            "for",
+            "the",
+            "function"
+          ]
+        }
+      },
+      "output": [
+        "s",
+        "s",
+        "a",
+        "t",
+        "r",
+        "e",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Complex",
+            "input",
+            "to",
+            "test",
+            "the",
+            "function",
+            "with"
+          ]
+        }
+      },
+      "output": [
+        "x",
+        "t",
+        "o",
+        "t",
+        "e",
+        "n",
+        "h"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "I",
+            "love",
+            "writing",
+            "code",
+            "in",
+            "Python"
+          ]
+        }
+      },
+      "output": [
+        "I",
+        "e",
+        "g",
+        "e",
+        "n",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "The",
+            "function",
+            "should",
+            "handle",
+            "both",
+            "strings",
+            "and",
+            "numbers"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "n",
+        "d",
+        "e",
+        "h",
+        "s",
+        "d",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "We",
+            "expect",
+            "the",
+            "output",
+            "to",
+            "be",
+            "a",
+            "list",
+            "of",
+            "characters"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "t",
+        "e",
+        "t",
+        "o",
+        "e",
+        "a",
+        "t",
+        "f",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": []
+        }
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Hello",
+            "World!",
+            "12345"
+          ]
+        }
+      },
+      "output": [
+        "o",
+        "!",
+        "5"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "123",
+            "abc",
+            "456"
+          ]
+        }
+      },
+      "output": [
+        "3",
+        "c",
+        "6"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Hello World",
+            "This is a test",
+            "for the function"
+          ]
+        }
+      },
+      "output": [
+        "d",
+        "t",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "apple",
+            "banana",
+            "cherry",
+            "durian"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "a",
+        "y",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "apple",
+            "orange",
+            "mango",
+            "kiwi",
+            "papaya"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "e",
+        "o",
+        "i",
+        "a"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "dog",
+            "cat",
+            "hamster",
+            "guinea pig",
+            "rabbit",
+            "gerbil"
+          ]
+        }
+      },
+      "output": [
+        "g",
+        "t",
+        "r",
+        "g",
+        "t",
+        "l"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "The",
+            "quick",
+            "brown",
+            "fox",
+            "jumps",
+            "over",
+            "the",
+            "lazy",
+            "dog!"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "k",
+        "n",
+        "x",
+        "s",
+        "r",
+        "e",
+        "y",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "hello123",
+            "world456",
+            "python789"
+          ]
+        }
+      },
+      "output": [
+        "3",
+        "6",
+        "9"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      },
+      "output": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "-1",
+            "-2",
+            "-3",
+            "-4",
+            "-5"
+          ]
+        }
+      },
+      "output": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "9",
+            "a",
+            "b",
+            "1",
+            "2"
+          ]
+        }
+      },
+      "output": [
+        "9",
+        "a",
+        "b",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "input",
+            "kiwi",
+            "app4le",
+            "papaya"
+          ]
+        }
+      },
+      "output": [
+        "t",
+        "i",
+        "e",
+        "a"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Hello",
+            "World!",
+            "12345",
+            "He",
+            "12345"
+          ]
+        }
+      },
+      "output": [
+        "o",
+        "!",
+        "5",
+        "e",
+        "5"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "apple",
+            "banana",
+            "mango",
+            "cherry",
+            "durian",
+            "bananna",
+            "durian",
+            "durian"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "a",
+        "o",
+        "y",
+        "n",
+        "a",
+        "n",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "The",
+            "function",
+            "over",
+            "should",
+            "handle",
+            "both",
+            "strings",
+            "and",
+            "numbers"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "n",
+        "r",
+        "d",
+        "e",
+        "h",
+        "s",
+        "d",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "strings",
+            "This is a test",
+            "for the function"
+          ]
+        }
+      },
+      "output": [
+        "s",
+        "t",
+        "n"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "banana",
+            "durian",
+            "apple"
+          ]
+        }
+      },
+      "output": [
+        "a",
+        "n",
+        "e"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "Hello World",
+            "This is a test"
+          ]
+        }
+      },
+      "output": [
+        "d",
+        "t"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "The",
+            "quick",
+            "brown",
+            "fox",
+            "jumps",
+            "over",
+            "the",
+            "World",
+            "lazy",
+            "dog!"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "k",
+        "n",
+        "x",
+        "s",
+        "r",
+        "e",
+        "d",
+        "y",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "banana",
+            "durian",
+            "fox"
+          ]
+        }
+      },
+      "output": [
+        "a",
+        "n",
+        "x"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "The",
+            "quic",
+            "brown",
+            "fox",
+            "jumps",
+            "over",
+            "the",
+            "World",
+            "lazy",
+            "dgd!"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "c",
+        "n",
+        "x",
+        "s",
+        "r",
+        "e",
+        "d",
+        "y",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "The",
+            "function",
+            "over",
+            "should",
+            "handle",
+            "both",
+            "strings",
+            "and",
+            "numbers",
+            "strings"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "n",
+        "r",
+        "d",
+        "e",
+        "h",
+        "s",
+        "d",
+        "s",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "dog",
+            "cat",
+            "hamster",
+            "guinea pig",
+            "rabbit",
+            "gerbil",
+            "guinea pig"
+          ]
+        }
+      },
+      "output": [
+        "g",
+        "t",
+        "r",
+        "g",
+        "t",
+        "l",
+        "g"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "brown",
+            "fox",
+            "jumps",
+            "over",
+            "the",
+            "lazy",
+            "dog"
+          ]
+        }
+      },
+      "output": [
+        "n",
+        "x",
+        "s",
+        "r",
+        "e",
+        "y",
+        "g"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "dog",
+            "cat",
+            "love",
+            "used",
+            "hamster",
+            "guinea pig",
+            "rabbit",
+            "gerbil"
+          ]
+        }
+      },
+      "output": [
+        "g",
+        "t",
+        "e",
+        "d",
+        "r",
+        "g",
+        "t",
+        "l"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "strings",
+            "This is a test",
+            "for the function",
+            "strings"
+          ]
+        }
+      },
+      "output": [
+        "s",
+        "t",
+        "n",
+        "s"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "apple",
+            "orange",
+            "maoutputngo",
+            "kiwi",
+            "papaya"
+          ]
+        }
+      },
+      "output": [
+        "e",
+        "e",
+        "o",
+        "i",
+        "a"
+      ]
+    },
+    {
+      "input": {
+        "test_tuple": {
+          "$tuple": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "dolor"
+          ]
+        }
+      },
+      "output": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "r"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def extract_rear(test_tuple):\n  return [ele[-1] for ele in test_tuple]\n"
+  }
+}

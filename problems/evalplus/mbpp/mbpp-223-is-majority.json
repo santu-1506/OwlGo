@@ -1,0 +1,439 @@
+{
+  "id": "mbpp-223-is-majority",
+  "title": "Is Majority",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that takes in a sorted array, its length (n), and an element and returns whether the element is the majority element in the given sorted array. (The majority element is the element that occurs more than n/2 times.)",
+  "entry_point": "is_majority",
+  "params": [
+    "arr",
+    "n",
+    "x"
+  ],
+  "function_signature": {
+    "python": "def is_majority(arr, n, x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          10
+        ],
+        "n": 7,
+        "x": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          2,
+          4,
+          4,
+          4,
+          6,
+          6
+        ],
+        "n": 8,
+        "x": 4
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "arr": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          3,
+          10
+        ],
+        "n": 7,
+        "x": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          2,
+          4,
+          4,
+          4,
+          6,
+          6
+        ],
+        "n": 8,
+        "x": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "n": 5,
+        "x": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 0,
+        "x": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 1,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 1,
+        "x": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 0,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 0,
+        "x": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          true
+        ],
+        "n": 1,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 2,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 2,
+        "x": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 2,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 1,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 2,
+        "x": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 0,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52
+        ],
+        "n": 2,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 1,
+        "x": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52
+        ],
+        "n": 2,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 3,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 52,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 53,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 52,
+        "x": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 52,
+        "x": 53
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          true
+        ],
+        "n": 2,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52
+        ],
+        "n": 3,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 52,
+        "x": 52
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 53,
+        "x": 53
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 52,
+        "x": -1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 3,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 53,
+        "x": 3
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 52,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 2,
+        "x": 53
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52,
+          52
+        ],
+        "n": 3,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52,
+          52
+        ],
+        "n": 4,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52
+        ],
+        "n": 3,
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [],
+        "n": 4,
+        "x": 1
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52,
+          52,
+          52
+        ],
+        "n": 52,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52,
+          52
+        ],
+        "n": 53,
+        "x": 53
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52,
+          52,
+          52,
+          52
+        ],
+        "n": 52,
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "arr": [
+          52,
+          52,
+          52
+        ],
+        "n": 53,
+        "x": 53
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "from bisect import bisect_left, bisect_right\ndef is_majority(arr, n, x):\n\tif x not in arr:\n\t\treturn False\n\tl = bisect_left(arr, x)\n\tr = bisect_right(arr, x)\n\treturn r - l > n / 2\n"
+  }
+}

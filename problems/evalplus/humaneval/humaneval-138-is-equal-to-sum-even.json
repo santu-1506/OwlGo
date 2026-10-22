@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-138-is-equal-to-sum-even",
+  "title": "Is Equal To Sum Even",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\nExample\nis_equal_to_sum_even(4) == False\nis_equal_to_sum_even(6) == False\nis_equal_to_sum_even(8) == True",
+  "entry_point": "is_equal_to_sum_even",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def is_equal_to_sum_even(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 40
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 42
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 48
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 50
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 41
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 39
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 49
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 51
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 52
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 47
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 37
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 34
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -79
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 53
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 57
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": -2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n\n    return n >= 8 and n % 2 == 0\n\n"
+  }
+}

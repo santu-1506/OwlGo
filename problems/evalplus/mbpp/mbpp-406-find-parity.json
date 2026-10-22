@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-406-find-parity",
+  "title": "Find Parity",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find whether the parity of a given number is odd.",
+  "entry_point": "find_Parity",
+  "params": [
+    "x"
+  ],
+  "function_signature": {
+    "python": "def find_Parity(x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 12
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 7
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 12
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 0
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 9876543210
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 100000000000000000000000000000000000000000
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 99999999999999999999999999999999999999999999999999999999999998
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 100000000000000000000000000000000000000001
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 3
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -42
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": false
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 99999999999999999999999999999999999999999999999999999999999997
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 99999999999999999999999999999999999999999
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 99999999999999999999999999999999999999999999999999999999999996
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -1
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 100000000000000000000000000000000000000002
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -48
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -2
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 9876543211
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -11
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 99999999999999999999999999999999999999999999999999999999999995
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 100000000000000000000000000000000000000003
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 11
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 99999999999999999999999999999999999999999999999999999999999994
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 9876543212
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": 4
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -47
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 8
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "x": -7
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -41
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": -61
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "x": 14
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_Parity(x): \n    return x % 2 != 0\n"
+  }
+}

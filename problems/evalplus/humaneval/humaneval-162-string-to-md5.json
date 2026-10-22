@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-162-string-to-md5",
+  "title": "String To Md5",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a string 'text', return its md5 hash equivalent string.\nIf 'text' is an empty string, return None.\n\n>>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'",
+  "entry_point": "string_to_md5",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def string_to_md5(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "Hello world"
+      },
+      "output": "3e25960a79dbc69b674cd4ec67a72c62"
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": null
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "Hello world"
+      },
+      "output": "3e25960a79dbc69b674cd4ec67a72c62"
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "A B C"
+      },
+      "output": "0ef78513b0cb8cef12743f5aeb35f888"
+    },
+    {
+      "input": {
+        "text": "password"
+      },
+      "output": "5f4dcc3b5aa765d61d8327deb882cf99"
+    },
+    {
+      "input": {
+        "text": "5873hajsdklh"
+      },
+      "output": "0dbb501bb9d84c751d2cf6394d9308c0"
+    },
+    {
+      "input": {
+        "text": "This is a long string to hash to MD5"
+      },
+      "output": "68b815d9746af477c06423c983860af9"
+    },
+    {
+      "input": {
+        "text": " \t \n \r \f "
+      },
+      "output": "de770a3b085331041645531bd9be7d70"
+    },
+    {
+      "input": {
+        "text": "89704560917293019"
+      },
+      "output": "6af63c9a5d2e45bff1b65efa69f1a3b5"
+    },
+    {
+      "input": {
+        "text": "abc"
+      },
+      "output": "900150983cd24fb0d6963f7d28e17f72"
+    },
+    {
+      "input": {
+        "text": "abcd1234"
+      },
+      "output": "e19d5cd5af0378da05f63f891c7467af"
+    },
+    {
+      "input": {
+        "text": "John Doe 1234!"
+      },
+      "output": "878d64322e069bc4d77f3cfbf43e493e"
+    },
+    {
+      "input": {
+        "text": "\n\t   "
+      },
+      "output": "0b7d028299b34a3eca02793c59da5e21"
+    },
+    {
+      "input": {
+        "text": "this is a test"
+      },
+      "output": "54b0c58c7ce9f2a8b551351102ee0938"
+    },
+    {
+      "input": {
+        "text": "test123"
+      },
+      "output": "cc03e747a6afbbcbf8be7668acfebee5"
+    },
+    {
+      "input": {
+        "text": "ab"
+      },
+      "output": "187ef4436122d1cc2f40dc2b92f0eba0"
+    },
+    {
+      "input": {
+        "text": "a89704560917293019bc"
+      },
+      "output": "1b7c0b20324038dddfbce74231a3f1ee"
+    },
+    {
+      "input": {
+        "text": "\n\t5873hajsdklh   "
+      },
+      "output": "c7505bbbd6db5480f054937bee01b623"
+    },
+    {
+      "input": {
+        "text": "abcd12"
+      },
+      "output": "d57587b0f5bbb0c3fe9d8cb16e97b0fe"
+    },
+    {
+      "input": {
+        "text": "  \t \n \r \f "
+      },
+      "output": "f400c189f1bfee27b44a83cda3575a59"
+    },
+    {
+      "input": {
+        "text": "  \t \n \r"
+      },
+      "output": "27a08a85b7c4022151f901e0ab2856ae"
+    },
+    {
+      "input": {
+        "text": "ab4"
+      },
+      "output": "d7af5d83fa0ee375faf1a386528f437d"
+    },
+    {
+      "input": {
+        "text": "ab4  \t \n \r \f "
+      },
+      "output": "58ddca11bbb9c539afe1e7dc01f005a0"
+    },
+    {
+      "input": {
+        "text": "this is st"
+      },
+      "output": "7f6a2764f2a2a6abc11019b9044db3de"
+    },
+    {
+      "input": {
+        "text": " \t \n \r"
+      },
+      "output": "ef60b923422832320c221c0a4354037c"
+    },
+    {
+      "input": {
+        "text": "this is a"
+      },
+      "output": "10b643f048c7b33a2e734fe583fce2c3"
+    },
+    {
+      "input": {
+        "text": "t his is  st"
+      },
+      "output": "97b62810db1c71b18a44f02090144bc8"
+    },
+    {
+      "input": {
+        "text": "abb"
+      },
+      "output": "ea01e5fd8e4d8832825acdd20eac5104"
+    },
+    {
+      "input": {
+        "text": "5873ha  \t \n \rjsdklh"
+      },
+      "output": "fc4a3d359e27890285eefcfd6827c088"
+    },
+    {
+      "input": {
+        "text": "athis is abcstbb"
+      },
+      "output": "cd154bd87a89854170746b844059943b"
+    },
+    {
+      "input": {
+        "text": "athiisathis is abcstbbbcstbb"
+      },
+      "output": "98b41b5512c5ebc21b8ce44a3c588e72"
+    },
+    {
+      "input": {
+        "text": "bab"
+      },
+      "output": "d9d7dbddc29177b121a6aa1bb09d15fd"
+    },
+    {
+      "input": {
+        "text": "abcd1 \tab4 \n \r2"
+      },
+      "output": "25a2f8f207802171a206ea295cbb9a92"
+    },
+    {
+      "input": {
+        "text": "897047560917293019"
+      },
+      "output": "e249c1d0180904739fec5234d7059737"
+    },
+    {
+      "input": {
+        "text": "athis iathis is aba89704560917293019bccstbbs abcstbb"
+      },
+      "output": "d9dde746564b34de694461e891996502"
+    },
+    {
+      "input": {
+        "text": "\n\t58kl5h   "
+      },
+      "output": "4eee678436400d8c2bc8834bc52d88c2"
+    },
+    {
+      "input": {
+        "text": "Ze"
+      },
+      "output": "906055940fdb58b2c0b472c956d38e9c"
+    },
+    {
+      "input": {
+        "text": "Thhis is a long string to hash to MD5"
+      },
+      "output": "8cb44d7e2ea08275d429662a393019f8"
+    },
+    {
+      "input": {
+        "text": " \t \n \r \f abcd12"
+      },
+      "output": "611b7715f7326fe0b6d0d607497fcbf1"
+    },
+    {
+      "input": {
+        "text": "teathabcstbbbcsbtbb123"
+      },
+      "output": "fa19e98ccbb261fe97d2c562b9c4afe0"
+    },
+    {
+      "input": {
+        "text": "89704560\n\t   917293019"
+      },
+      "output": "acef87348167c77dbf679514585b935d"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n\n    if text == \"\": return None\n    import hashlib\n    m = hashlib.md5()\n    m.update(text.encode(\"utf-8\"))\n    return m.hexdigest()\n\n"
+  }
+}

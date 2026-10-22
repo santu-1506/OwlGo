@@ -1,0 +1,383 @@
+{
+  "id": "humaneval-125-split-words",
+  "title": "Split Words",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\nshould split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\nalphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\nExamples\nsplit_words(\"Hello world!\") ➞ [\"Hello\", \"world!\"]\nsplit_words(\"Hello,world!\") ➞ [\"Hello\", \"world!\"]\nsplit_words(\"abcdef\") == 3 ",
+  "entry_point": "split_words",
+  "params": [
+    "txt"
+  ],
+  "function_signature": {
+    "python": "def split_words(txt):"
+  },
+  "examples": [
+    {
+      "input": {
+        "txt": "Hello world!"
+      },
+      "output": [
+        "Hello",
+        "world!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello,world!"
+      },
+      "output": [
+        "Hello",
+        "world!"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "txt": "Hello world!"
+      },
+      "output": [
+        "Hello",
+        "world!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello,world!"
+      },
+      "output": [
+        "Hello",
+        "world!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello world,!"
+      },
+      "output": [
+        "Hello",
+        "world,!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello,Hello,world !"
+      },
+      "output": [
+        "Hello,Hello,world",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "abcdef"
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "txt": "aaabb"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "txt": "aaaBb"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": ""
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "txt": "Hello?"
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "txt": "abc deg"
+      },
+      "output": [
+        "abc",
+        "deg"
+      ]
+    },
+    {
+      "input": {
+        "txt": "aaa,bbb"
+      },
+      "output": [
+        "aaa",
+        "bbb"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello World!"
+      },
+      "output": [
+        "Hello",
+        "World!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "123,456"
+      },
+      "output": [
+        "123",
+        "456"
+      ]
+    },
+    {
+      "input": {
+        "txt": "abc123"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": "Hello , world !"
+      },
+      "output": [
+        "Hello",
+        ",",
+        "world",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "apple, banana, orange, grapefruit"
+      },
+      "output": [
+        "apple,",
+        "banana,",
+        "orange,",
+        "grapefruit"
+      ]
+    },
+    {
+      "input": {
+        "txt": "1234"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "txt": "HELLO WORLD"
+      },
+      "output": [
+        "HELLO",
+        "WORLD"
+      ]
+    },
+    {
+      "input": {
+        "txt": "aabc123"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": "Hellabc123o , world !"
+      },
+      "output": [
+        "Hellabc123o",
+        ",",
+        "world",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "HELLOHELLO WORLD WOORLD"
+      },
+      "output": [
+        "HELLOHELLO",
+        "WORLD",
+        "WOORLD"
+      ]
+    },
+    {
+      "input": {
+        "txt": "g"
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "txt": "aaabc123"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": "Hello ,Hello? world !"
+      },
+      "output": [
+        "Hello",
+        ",Hello?",
+        "world",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello dWorlld!"
+      },
+      "output": [
+        "Hello",
+        "dWorlld!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Hello WdWorlld!"
+      },
+      "output": [
+        "Hello",
+        "WdWorlld!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "abc de"
+      },
+      "output": [
+        "abc",
+        "de"
+      ]
+    },
+    {
+      "input": {
+        "txt": "aabc123Hello World!"
+      },
+      "output": [
+        "aabc123Hello",
+        "World!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "abcd de"
+      },
+      "output": [
+        "abcd",
+        "de"
+      ]
+    },
+    {
+      "input": {
+        "txt": "2aaabc123"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": "abcHELLOHELLO WOORLD WOORLD de"
+      },
+      "output": [
+        "abcHELLOHELLO",
+        "WOORLD",
+        "WOORLD",
+        "de"
+      ]
+    },
+    {
+      "input": {
+        "txt": "abcHello World! deg"
+      },
+      "output": [
+        "abcHello",
+        "World!",
+        "deg"
+      ]
+    },
+    {
+      "input": {
+        "txt": "NDcwhK"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": "abca123"
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "txt": "abcHELLOHELLO WRLD de"
+      },
+      "output": [
+        "abcHELLOHELLO",
+        "WRLD",
+        "de"
+      ]
+    },
+    {
+      "input": {
+        "txt": "Helalabc123o , world !"
+      },
+      "output": [
+        "Helalabc123o",
+        ",",
+        "world",
+        "!"
+      ]
+    },
+    {
+      "input": {
+        "txt": "dabcd de"
+      },
+      "output": [
+        "dabcd",
+        "de"
+      ]
+    },
+    {
+      "input": {
+        "txt": "ab cd deg"
+      },
+      "output": [
+        "ab",
+        "cd",
+        "deg"
+      ]
+    },
+    {
+      "input": {
+        "txt": "abcHELLOHELLO WRabcHELLOHELLO WOORLD WOORLD deLD de"
+      },
+      "output": [
+        "abcHELLOHELLO",
+        "WRabcHELLOHELLO",
+        "WOORLD",
+        "WOORLD",
+        "deLD",
+        "de"
+      ]
+    },
+    {
+      "input": {
+        "txt": "NDcwK"
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef split_words(txt):\n    '''\n    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\n    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\n    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n    Examples\n    split_words(\"Hello world!\") ➞ [\"Hello\", \"world!\"]\n    split_words(\"Hello,world!\") ➞ [\"Hello\", \"world!\"]\n    split_words(\"abcdef\") == 3 \n    '''\n\n    whitespace = tuple(' \\n\\r\\t')\n    if any([x in txt for x in whitespace]): return txt.split()\n    if \",\" in txt: return txt.split(\",\")\n    cnt = 0\n    for ch in txt:\n        if ch.islower() and (ord(ch) - ord(\"a\")) % 2 == 1: cnt += 1\n    return cnt\n\n"
+  }
+}

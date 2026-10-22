@@ -1,0 +1,426 @@
+{
+  "id": "mbpp-563-extract-values",
+  "title": "Extract Values",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to extract values between quotation marks from a string.",
+  "entry_point": "extract_values",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def extract_values(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "\"Python\", \"PHP\", \"Java\""
+      },
+      "output": [
+        "Python",
+        "PHP",
+        "Java"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"python\",\"program\",\"language\""
+      },
+      "output": [
+        "python",
+        "program",
+        "language"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "\"Python\", \"PHP\", \"Java\""
+      },
+      "output": [
+        "Python",
+        "PHP",
+        "Java"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"python\",\"program\",\"language\""
+      },
+      "output": [
+        "python",
+        "program",
+        "language"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"red\",\"blue\",\"green\",\"yellow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yellow"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a test input."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"green\" \"yellow\" \"red\" \"blue\" \"green\" \"yellow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "yellow"
+      ]
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"This is a \"complex\" input with nested \"quotes\" inside a string\""
+      },
+      "output": [
+        "This is a ",
+        " input with nested ",
+        " inside a string"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"\"\"\"\"\"\"\"\"\""
+      },
+      "output": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text": "\"This is a \"nested\"\" input string.\""
+      },
+      "output": [
+        "This is a ",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text": "withtt"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "Th.is is a test input."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "Th.is tis a test input."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"nested\"\""
+      },
+      "output": [
+        "nested"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"green\" \"yellow\" \"red\" \"blue\" \"green\" \"yeltestlow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "yeltestlow"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"yeltestlow\""
+      },
+      "output": [
+        "yeltestlow"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is a tesnt input."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "Th.is tis a test inpTut."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"\"\"\"\"inside\"\"\"\"\""
+      },
+      "output": [
+        "",
+        "",
+        "inside",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text": "is"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"green\" \"yellow\" \"red\" \"blue\" \"green\" e\"yeltestlow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "yeltestlow"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"green\" \"yellow\" \"red\"e \"blue\" \"green\" \"yeltestlow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "yeltestlow"
+      ]
+    },
+    {
+      "input": {
+        "text": "i\"\"\"\"\"inside\"\"\"\"\"\"nested\"\"s"
+      },
+      "output": [
+        "",
+        "",
+        "inside",
+        "",
+        "",
+        "nested"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"\"tesnt\"\"\"\"\"\"\"\""
+      },
+      "output": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text": "\"testlow\""
+      },
+      "output": [
+        "testlow"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"green\" \"yow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yow"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"string\"yeltestlow\""
+      },
+      "output": [
+        "string"
+      ]
+    },
+    {
+      "input": {
+        "text": "This is withtt input."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"red\" \"bluetesnt\" \"green\" \"yellow\" \"red\" \"blue\" \"green\" \"yellow\""
+      },
+      "output": [
+        "red",
+        "bluetesnt",
+        "green",
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "yellow"
+      ]
+    },
+    {
+      "input": {
+        "text": "nested"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"bluetesnt\"Th.is"
+      },
+      "output": [
+        "bluetesnt"
+      ]
+    },
+    {
+      "input": {
+        "text": "Th.is tis a test inputinpTut.."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "\"\"tesnt\"\"\"\"\"\"\"\"\""
+      },
+      "output": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"grinpTut.een\" \"yow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "grinpTut.een",
+        "yow"
+      ]
+    },
+    {
+      "input": {
+        "text": "i\"\"\"\"is\"inside\"\"\"\"\"\"nested\"\"s"
+      },
+      "output": [
+        "",
+        "",
+        "inside",
+        "",
+        "",
+        "nested"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"red\" \"blue\" \"green\" \"yellow\" \"red\"\"yellow\" \"blue\" \"green\" e\"yeltestlow\""
+      },
+      "output": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "yellow",
+        "blue",
+        "green",
+        "yeltestlow"
+      ]
+    },
+    {
+      "input": {
+        "text": "Th\"red\"ut."
+      },
+      "output": [
+        "red"
+      ]
+    },
+    {
+      "input": {
+        "text": "\"green\""
+      },
+      "output": [
+        "green"
+      ]
+    },
+    {
+      "input": {
+        "text": " This is a test input."
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "AuCeUjnbN"
+      },
+      "output": []
+    },
+    {
+      "input": {
+        "text": "Te\"yeltestlow\"h.is tis a utinpTut.."
+      },
+      "output": [
+        "yeltestlow"
+      ]
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef extract_values(text):\n return (re.findall(r'\"(.*?)\"', text))\n"
+  }
+}

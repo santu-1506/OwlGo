@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-72-dif-square",
+  "title": "Dif Square",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to check whether the given number can be represented as the difference of two squares or not.",
+  "entry_point": "dif_Square",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def dif_Square(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 991
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 567
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 568
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 992
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 569
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 990
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 566
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 989
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 565
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 988
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 993
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 564
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 563
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 994
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 995
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 996
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 997
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 987
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 45
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "n": 562
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "n": 570
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def dif_Square(n): \n    # see https://www.quora.com/Which-numbers-can-be-expressed-as-the-difference-of-two-squares\n    return n % 4 != 2\n"
+  }
+}

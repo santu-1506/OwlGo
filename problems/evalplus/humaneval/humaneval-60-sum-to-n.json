@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-60-sum-to-n",
+  "title": "Sum To N",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "sum_to_n is a function that sums numbers from 1 to n.\n>>> sum_to_n(30)\n465\n>>> sum_to_n(100)\n5050\n>>> sum_to_n(5)\n15\n>>> sum_to_n(10)\n55\n>>> sum_to_n(1)\n1",
+  "entry_point": "sum_to_n",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def sum_to_n(n: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 21
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 66
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 465
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 5050
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 28
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 120
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 210
+    },
+    {
+      "input": {
+        "n": 25
+      },
+      "output": 325
+    },
+    {
+      "input": {
+        "n": 50
+      },
+      "output": 1275
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 2850
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 500500
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 105
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 15
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 136
+    },
+    {
+      "input": {
+        "n": 26
+      },
+      "output": 351
+    },
+    {
+      "input": {
+        "n": 92
+      },
+      "output": 4278
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 190
+    },
+    {
+      "input": {
+        "n": 93
+      },
+      "output": 4371
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 4465
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 499500
+    },
+    {
+      "input": {
+        "n": 51
+      },
+      "output": 1326
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 153
+    },
+    {
+      "input": {
+        "n": 21
+      },
+      "output": 231
+    },
+    {
+      "input": {
+        "n": 22
+      },
+      "output": 253
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 36
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 2775
+    },
+    {
+      "input": {
+        "n": 52
+      },
+      "output": 1378
+    },
+    {
+      "input": {
+        "n": 23
+      },
+      "output": 276
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": 4186
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 2926
+    },
+    {
+      "input": {
+        "n": 24
+      },
+      "output": 300
+    },
+    {
+      "input": {
+        "n": 90
+      },
+      "output": 4095
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 171
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 91
+    },
+    {
+      "input": {
+        "n": 27
+      },
+      "output": 378
+    },
+    {
+      "input": {
+        "n": 998
+      },
+      "output": 498501
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef sum_to_n(n: int):\n    \"\"\"sum_to_n is a function that sums numbers from 1 to n.\n    >>> sum_to_n(30)\n    465\n    >>> sum_to_n(100)\n    5050\n    >>> sum_to_n(5)\n    15\n    >>> sum_to_n(10)\n    55\n    >>> sum_to_n(1)\n    1\n    \"\"\"\n\n\n    return (n + 1) * n // 2\n\n"
+  }
+}

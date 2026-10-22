@@ -1,0 +1,509 @@
+{
+  "id": "humaneval-43-pairs-sum-to-zero",
+  "title": "Pairs Sum To Zero",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "pairs_sum_to_zero takes a list of integers as an input.\nit returns True if there are two distinct elements in the list that\nsum to zero, and False otherwise.\n>>> pairs_sum_to_zero([1, 3, 5, 0])\nFalse\n>>> pairs_sum_to_zero([1, 3, -2, 1])\nFalse\n>>> pairs_sum_to_zero([1, 2, 3, 7])\nFalse\n>>> pairs_sum_to_zero([2, 4, -5, 3, 5, 7])\nTrue\n>>> pairs_sum_to_zero([1])\nFalse",
+  "entry_point": "pairs_sum_to_zero",
+  "params": [
+    "l"
+  ],
+  "function_signature": {
+    "python": "def pairs_sum_to_zero(l):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          5,
+          0
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          -2,
+          1
+        ]
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          5,
+          0
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          3,
+          -2,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          2,
+          3,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -5,
+          3,
+          5,
+          7
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          -3,
+          9,
+          -1,
+          3,
+          2,
+          30
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -3,
+          9,
+          -1,
+          3,
+          2,
+          31
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -3,
+          9,
+          -1,
+          4,
+          2,
+          30
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          -3,
+          9,
+          -1,
+          4,
+          2,
+          31
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          0,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          0,
+          1,
+          -1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          -1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1,
+          -1,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -2,
+          -4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -2,
+          -4,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -2,
+          -4,
+          6,
+          -6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -2,
+          2,
+          -4,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": []
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          3,
+          4,
+          5,
+          -9
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          -4,
+          4,
+          -2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -2,
+          -4,
+          -2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          -4,
+          5,
+          4,
+          -2,
+          -4,
+          6,
+          -6,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          0
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -4,
+          6,
+          -6
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -2,
+          -4,
+          1,
+          -2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          5,
+          -4,
+          5
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -4,
+          6,
+          -9
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          -4,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          5,
+          4,
+          -2,
+          -4,
+          6,
+          -6,
+          2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          -2,
+          -4,
+          1,
+          -2,
+          -2
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -2,
+          2,
+          -4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -1,
+          75,
+          -2,
+          -6,
+          -1,
+          26,
+          -54
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          0,
+          0,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -2,
+          2,
+          -4,
+          75,
+          4,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          3,
+          -2,
+          -4,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          0,
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          3,
+          0,
+          0
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          5,
+          2,
+          -4,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          5,
+          -4,
+          5,
+          4
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -2,
+          -1,
+          6,
+          75,
+          4,
+          4
+        ]
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef pairs_sum_to_zero(l):\n    \"\"\"\n    pairs_sum_to_zero takes a list of integers as an input.\n    it returns True if there are two distinct elements in the list that\n    sum to zero, and False otherwise.\n    >>> pairs_sum_to_zero([1, 3, 5, 0])\n    False\n    >>> pairs_sum_to_zero([1, 3, -2, 1])\n    False\n    >>> pairs_sum_to_zero([1, 2, 3, 7])\n    False\n    >>> pairs_sum_to_zero([2, 4, -5, 3, 5, 7])\n    True\n    >>> pairs_sum_to_zero([1])\n    False\n    \"\"\"\n\n    for i in range(len(l)):\n        for j in range(len(l)):\n            if i != j and l[i] + l[j] == 0:\n                return True\n    return False\n\n"
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "id": "mbpp-440-find-adverb-position",
+  "title": "Find Adverb Position",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the first adverb and their positions in a given sentence.",
+  "entry_point": "find_adverb_position",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def find_adverb_position(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "clearly!! we can see the sky"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7,
+          "clearly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "seriously!! there are many roses"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          9,
+          "seriously"
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "clearly!! we can see the sky"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7,
+          "clearly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "seriously!! there are many roses"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          9,
+          "seriously"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "unfortunately!! sita is going to home"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          13,
+          "unfortunately"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "heavily and quickly we ran down the steep hill"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7,
+          "heavily"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "they swiftly and silently tiptoed through the dark room"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "quickly and quietly, the bird flew away"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7,
+          "quickly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "flew"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "they swiftly and silentlywe tiptoed through the dark room"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "swiftly"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "dhillrk"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "quicklthey flew away"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "they swiftly and silentlywe tiptoede through the dark room"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "and"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "they"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "dark"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "awaquicklyy"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          10,
+          "awaquickly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "ran"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "andran"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "they swiftly and silently tiptoed thr ough the dark room"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "ttiptoed"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "they swiftly and silentlywe tiptoede through the dark om"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "ann"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "ythey"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "dhilllrk"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "they swiftly and silentlywe dtiptoede through the dark om"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "darkran"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "yththey swiftly and silently tiptoed through the dark roomey"
+      },
+      "output": {
+        "$tuple": [
+          8,
+          15,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "they swiftly and silently tiptoedd through the dark room"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "dhillhrdtiptoedek"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "aran"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "awaquickalyy"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          11,
+          "awaquickaly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "silentlywe"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          8,
+          "silently"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "tsilentyhey"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "annthey"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "quietly,"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          7,
+          "quietly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "awfayfle"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "text": "tthey swiftly and silently tiptoed through the dark roomheey"
+      },
+      "output": {
+        "$tuple": [
+          6,
+          13,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "fswiftlylew"
+      },
+      "output": {
+        "$tuple": [
+          0,
+          8,
+          "fswiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "dathey swiftly and silentlywe tiptoede through the dark roomrk"
+      },
+      "output": {
+        "$tuple": [
+          7,
+          14,
+          "swiftly"
+        ]
+      }
+    },
+    {
+      "input": {
+        "text": "they swiftly and silentlywe tiptoed th rough the dark room"
+      },
+      "output": {
+        "$tuple": [
+          5,
+          12,
+          "swiftly"
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef find_adverb_position(text):\n    for m in re.finditer(r\"\\w+ly\", text):\n        return (m.start(), m.end(), m.group(0))\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-287-square-sum",
+  "title": "Square Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function takes in an integer n and returns the sum of squares of first n even natural numbers.",
+  "entry_point": "square_Sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def square_Sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 20.0
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 56.0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 20.0
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 56.0
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 120.0
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 1353400.0
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 4.0
+    },
+    {
+      "input": {
+        "n": 1000000
+      },
+      "output": 1.333335333334e+18
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 1540.0
+    },
+    {
+      "input": {
+        "n": 10000
+      },
+      "output": 1333533340000.0
+    },
+    {
+      "input": {
+        "n": 90
+      },
+      "output": 988260.0
+    },
+    {
+      "input": {
+        "n": 89
+      },
+      "output": 955860.0
+    },
+    {
+      "input": {
+        "n": 1000002
+      },
+      "output": 1.333343333358e+18
+    },
+    {
+      "input": {
+        "n": 91
+      },
+      "output": 1021384.0
+    },
+    {
+      "input": {
+        "n": 1000001
+      },
+      "output": 1.333339333342e+18
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 4.0
+    },
+    {
+      "input": {
+        "n": 1000003
+      },
+      "output": 1.333347333382e+18
+    },
+    {
+      "input": {
+        "n": 92
+      },
+      "output": 1055240.0
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 1140.0
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 7140.0
+    },
+    {
+      "input": {
+        "n": 10001
+      },
+      "output": 1333933420004.0
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 1394204.0
+    },
+    {
+      "input": {
+        "n": 93
+      },
+      "output": 1089836.0
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 1313400.0
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 816.0
+    },
+    {
+      "input": {
+        "n": 999999
+      },
+      "output": 1.333331333334e+18
+    },
+    {
+      "input": {
+        "n": 87
+      },
+      "output": 893200.0
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 1435820.0
+    },
+    {
+      "input": {
+        "n": 9999
+      },
+      "output": 1333133340000.0
+    },
+    {
+      "input": {
+        "n": 94
+      },
+      "output": 1125180.0
+    },
+    {
+      "input": {
+        "n": 103
+      },
+      "output": 1478256.0
+    },
+    {
+      "input": {
+        "n": 86
+      },
+      "output": 862924.0
+    },
+    {
+      "input": {
+        "n": 98
+      },
+      "output": 1274196.0
+    },
+    {
+      "input": {
+        "n": 105
+      },
+      "output": 1565620.0
+    },
+    {
+      "input": {
+        "n": 88
+      },
+      "output": 924176.0
+    },
+    {
+      "input": {
+        "n": 49
+      },
+      "output": 161700.0
+    },
+    {
+      "input": {
+        "n": 85
+      },
+      "output": 833340.0
+    },
+    {
+      "input": {
+        "n": 50
+      },
+      "output": 171700.0
+    },
+    {
+      "input": {
+        "n": 1000004
+      },
+      "output": 1.333351333414e+18
+    },
+    {
+      "input": {
+        "n": 9998
+      },
+      "output": 1332733419996.0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def square_Sum(n):  \n    return 2 * n * (n + 1) * (2 * n + 1) /3\n"
+  }
+}

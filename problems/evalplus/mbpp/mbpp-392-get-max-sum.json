@@ -1,0 +1,237 @@
+{
+  "id": "mbpp-392-get-max-sum",
+  "title": "Get Max Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the maximum sum possible by using the given equation f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n).",
+  "entry_point": "get_max_sum",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def get_max_sum(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 60
+      },
+      "output": 106
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 12
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 60
+      },
+      "output": 106
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 12
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 100
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "n": 1000
+      },
+      "output": 3300
+    },
+    {
+      "input": {
+        "n": 10000
+      },
+      "output": 55358
+    },
+    {
+      "input": {
+        "n": 100000
+      },
+      "output": 940774
+    },
+    {
+      "input": {
+        "n": 500
+      },
+      "output": 1404
+    },
+    {
+      "input": {
+        "n": 99
+      },
+      "output": 192
+    },
+    {
+      "input": {
+        "n": 498
+      },
+      "output": 1391
+    },
+    {
+      "input": {
+        "n": 499
+      },
+      "output": 1391
+    },
+    {
+      "input": {
+        "n": 101
+      },
+      "output": 200
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": 9999
+      },
+      "output": 55188
+    },
+    {
+      "input": {
+        "n": 1001
+      },
+      "output": 3300
+    },
+    {
+      "input": {
+        "n": 501
+      },
+      "output": 1404
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 1002
+      },
+      "output": 3300
+    },
+    {
+      "input": {
+        "n": 10001
+      },
+      "output": 55358
+    },
+    {
+      "input": {
+        "n": 502
+      },
+      "output": 1404
+    },
+    {
+      "input": {
+        "n": 999
+      },
+      "output": 3264
+    },
+    {
+      "input": {
+        "n": 100001
+      },
+      "output": 940774
+    },
+    {
+      "input": {
+        "n": 100002
+      },
+      "output": 940774
+    },
+    {
+      "input": {
+        "n": 497
+      },
+      "output": 1391
+    },
+    {
+      "input": {
+        "n": 9998
+      },
+      "output": 55188
+    },
+    {
+      "input": {
+        "n": 100003
+      },
+      "output": 940774
+    },
+    {
+      "input": {
+        "n": 1003
+      },
+      "output": 3300
+    },
+    {
+      "input": {
+        "n": 496
+      },
+      "output": 1391
+    },
+    {
+      "input": {
+        "n": 100004
+      },
+      "output": 940774
+    },
+    {
+      "input": {
+        "n": 1004
+      },
+      "output": 3300
+    },
+    {
+      "input": {
+        "n": 99999
+      },
+      "output": 939948
+    },
+    {
+      "input": {
+        "n": 99998
+      },
+      "output": 939948
+    },
+    {
+      "input": {
+        "n": 102
+      },
+      "output": 200
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def get_max_sum (n):\n\t# if n = 0, f(0) = max(5(f(0), 0)), so f(0) = 5f(0) or f(0) = 0, for both cases f(0) = 0\n\tres = [0]\n\tfor i in range(1, n + 1):\n\t\tres.append(max(res[i // 2] + res[i // 3] + res[i // 4] + res[i // 5], i))\n\treturn res[n]\n"
+  }
+}

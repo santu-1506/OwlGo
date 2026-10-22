@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-80-tetrahedral-number",
+  "title": "Tetrahedral Number",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to find the nth tetrahedral number.",
+  "entry_point": "tetrahedral_number",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def tetrahedral_number(n):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 35.0
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 56.0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 35.0
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 56.0
+    },
+    {
+      "input": {
+        "n": 7
+      },
+      "output": 84.0
+    },
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 220.0
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 286.0
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0.0
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 364.0
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 455.0
+    },
+    {
+      "input": {
+        "n": 9
+      },
+      "output": 165.0
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 560.0
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 120.0
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 680.0
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 816.0
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 67525.0
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 969.0
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 70300.0
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 73150.0
+    },
+    {
+      "input": {
+        "n": 76
+      },
+      "output": 76076.0
+    },
+    {
+      "input": {
+        "n": 29
+      },
+      "output": 4495.0
+    },
+    {
+      "input": {
+        "n": 78
+      },
+      "output": 82160.0
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 1140.0
+    },
+    {
+      "input": {
+        "n": 77
+      },
+      "output": 79079.0
+    },
+    {
+      "input": {
+        "n": 19
+      },
+      "output": 1330.0
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 64824.0
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": 4060.0
+    },
+    {
+      "input": {
+        "n": 30
+      },
+      "output": 4960.0
+    },
+    {
+      "input": {
+        "n": 55
+      },
+      "output": 29260.0
+    },
+    {
+      "input": {
+        "n": 56
+      },
+      "output": 30856.0
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 10.0
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 4.0
+    },
+    {
+      "input": {
+        "n": 57
+      },
+      "output": 32509.0
+    },
+    {
+      "input": {
+        "n": 79
+      },
+      "output": 85320.0
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 20.0
+    },
+    {
+      "input": {
+        "n": 20
+      },
+      "output": 1540.0
+    },
+    {
+      "input": {
+        "n": 31
+      },
+      "output": 5456.0
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1.0
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 62196.0
+    },
+    {
+      "input": {
+        "n": 84
+      },
+      "output": 102340.0
+    },
+    {
+      "input": {
+        "n": 54
+      },
+      "output": 27720.0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def tetrahedral_number(n): \n\treturn (n * (n + 1) * (n + 2)) / 6\n"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-624-is-upper",
+  "title": "Is Upper",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to convert a given string to uppercase.",
+  "entry_point": "is_upper",
+  "params": [
+    "string"
+  ],
+  "function_signature": {
+    "python": "def is_upper(string):"
+  },
+  "examples": [
+    {
+      "input": {
+        "string": "person"
+      },
+      "output": "PERSON"
+    },
+    {
+      "input": {
+        "string": "final"
+      },
+      "output": "FINAL"
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "string": "person"
+      },
+      "output": "PERSON"
+    },
+    {
+      "input": {
+        "string": "final"
+      },
+      "output": "FINAL"
+    },
+    {
+      "input": {
+        "string": "Valid"
+      },
+      "output": "VALID"
+    },
+    {
+      "input": {
+        "string": ""
+      },
+      "output": ""
+    },
+    {
+      "input": {
+        "string": "abcdefghijklmnopqrstuvwxyz"
+      },
+      "output": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+      "input": {
+        "string": "He11o W0r1d!"
+      },
+      "output": "HE11O W0R1D!"
+    },
+    {
+      "input": {
+        "string": "Thi5 is @ complex 1nput!"
+      },
+      "output": "THI5 IS @ COMPLEX 1NPUT!"
+    },
+    {
+      "input": {
+        "string": "Test1ng fUtur3"
+      },
+      "output": "TEST1NG FUTUR3"
+    },
+    {
+      "input": {
+        "string": "I l0v3 c0d1ng!!"
+      },
+      "output": "I L0V3 C0D1NG!!"
+    },
+    {
+      "input": {
+        "string": "H@ppy New Year 2022"
+      },
+      "output": "H@PPY NEW YEAR 2022"
+    },
+    {
+      "input": {
+        "string": "Th3 Qu1ck Br0wn F0x Jumps 0ver the L@zy D0g!"
+      },
+      "output": "TH3 QU1CK BR0WN F0X JUMPS 0VER THE L@ZY D0G!"
+    },
+    {
+      "input": {
+        "string": "@!$"
+      },
+      "output": "@!$"
+    },
+    {
+      "input": {
+        "string": "Thi5 is lnput!"
+      },
+      "output": "THI5 IS LNPUT!"
+    },
+    {
+      "input": {
+        "string": "D0g!"
+      },
+      "output": "D0G!"
+    },
+    {
+      "input": {
+        "string": "W0r1d!"
+      },
+      "output": "W0R1D!"
+    },
+    {
+      "input": {
+        "string": "Thi5 is lnput!!"
+      },
+      "output": "THI5 IS LNPUT!!"
+    },
+    {
+      "input": {
+        "string": "l03"
+      },
+      "output": "L03"
+    },
+    {
+      "input": {
+        "string": "l003"
+      },
+      "output": "L003"
+    },
+    {
+      "input": {
+        "string": "Th3 Qu1ck Br0wn F0x Jumps 0veD0g!he L@zy D0g!"
+      },
+      "output": "TH3 QU1CK BR0WN F0X JUMPS 0VED0G!HE L@ZY D0G!"
+    },
+    {
+      "input": {
+        "string": "YearHe1is1o We0r1d!"
+      },
+      "output": "YEARHE1IS1O WE0R1D!"
+    },
+    {
+      "input": {
+        "string": "cBr0wn0d1ng!!"
+      },
+      "output": "CBR0WN0D1NG!!"
+    },
+    {
+      "input": {
+        "string": "Thi5 @is @ complex 1nput!"
+      },
+      "output": "THI5 @IS @ COMPLEX 1NPUT!"
+    },
+    {
+      "input": {
+        "string": "Thi5 @is @ comnplex 1nput!"
+      },
+      "output": "THI5 @IS @ COMNPLEX 1NPUT!"
+    },
+    {
+      "input": {
+        "string": "H@ppy New Yea0verr 2022"
+      },
+      "output": "H@PPY NEW YEA0VERR 2022"
+    },
+    {
+      "input": {
+        "string": "F0x"
+      },
+      "output": "F0X"
+    },
+    {
+      "input": {
+        "string": "complelx"
+      },
+      "output": "COMPLELX"
+    },
+    {
+      "input": {
+        "string": "lnput!F0x"
+      },
+      "output": "LNPUT!F0X"
+    },
+    {
+      "input": {
+        "string": "Qu1ck"
+      },
+      "output": "QU1CK"
+    },
+    {
+      "input": {
+        "string": "Thi5"
+      },
+      "output": "THI5"
+    },
+    {
+      "input": {
+        "string": "l00@is3"
+      },
+      "output": "L00@IS3"
+    },
+    {
+      "input": {
+        "string": "@isQu1ck"
+      },
+      "output": "@ISQU1CK"
+    },
+    {
+      "input": {
+        "string": "Th3 Qu1ck Br0wn F0xNew Jumps 0ver the L@zy D0g!"
+      },
+      "output": "TH3 QU1CK BR0WN F0XNEW JUMPS 0VER THE L@ZY D0G!"
+    },
+    {
+      "input": {
+        "string": "c0d1ngg!!"
+      },
+      "output": "C0D1NGG!!"
+    },
+    {
+      "input": {
+        "string": "Thi5 lnput!!is lnput!!"
+      },
+      "output": "THI5 LNPUT!!IS LNPUT!!"
+    },
+    {
+      "input": {
+        "string": "@!$Th3 Qu1ck Br0wn F0xNew Jumps 0ver the L@zy D0g!"
+      },
+      "output": "@!$TH3 QU1CK BR0WN F0XNEW JUMPS 0VER THE L@ZY D0G!"
+    },
+    {
+      "input": {
+        "string": "YearHe1is1oa We0r1d!"
+      },
+      "output": "YEARHE1IS1OA WE0R1D!"
+    },
+    {
+      "input": {
+        "string": "Thi5 @is @ lnput!comnplex 1nput!"
+      },
+      "output": "THI5 @IS @ LNPUT!COMNPLEX 1NPUT!"
+    },
+    {
+      "input": {
+        "string": "D0g!cBr0wn0d1ng!!"
+      },
+      "output": "D0G!CBR0WN0D1NG!!"
+    },
+    {
+      "input": {
+        "string": "YearHe1is1o"
+      },
+      "output": "YEARHE1IS1O"
+    },
+    {
+      "input": {
+        "string": "Yea0verr"
+      },
+      "output": "YEA0VERR"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_upper(string):\n  return string.upper()\n"
+  }
+}

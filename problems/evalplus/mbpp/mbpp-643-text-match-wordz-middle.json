@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-643-text-match-wordz-middle",
+  "title": "Text Match Wordz Middle",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function that checks if a strings contains 'z', except at the start and end of the word.",
+  "entry_point": "text_match_wordz_middle",
+  "params": [
+    "text"
+  ],
+  "function_signature": {
+    "python": "def text_match_wordz_middle(text):"
+  },
+  "examples": [
+    {
+      "input": {
+        "text": "pythonzabc."
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zxyabc."
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "text": "pythonzabc."
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zxyabc."
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "  lang  ."
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyz zzzz abczyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "baaz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyz zzzzzxyabczzzzz abczyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzzzzxyabczzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzbaaz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "xxzzxxyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyz zzzzzxyabczzzzz abczyyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzzzzxyabczzzzzxyabczzz xxzzxxyz zzzzzxyabczzzzz abczyz baaz azzbzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "azzbzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "baabaazz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yabczyyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "gfzzzzzzzxyabczzzzzxyabczzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzzabczyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yz"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "text": "baabazazz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzzzzxyabczzzzzxyabczzz xxzzxxyz zzzzzxyabczyz baaz azzbzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzxzzxyabczyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyz zzzzczxyabczzzzz abczyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyzzzzzzxyabczzzzz zzzzczxyabczzzzz abczyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyz zzzzzxyabzzzzzzzxzyabczzzzzxyabczzz xxzzxxyz zzzzzxyabczzzzz abczyz baaz azzbzzzczzzzz abczyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "azazzbzzzczzzzzzbzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "azabzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "abczyyz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yabczyyzzzxyabczzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzzzzxyabczyyzzzxyabczzzzyabczzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzzzzzzzzzxyabzzzzzzzxzyabczzzzzxyabczzzxyabczyyzzzxyabczzzzyabczzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "xxzzxxyzzzzzzxyabczzzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yabczyyzzzxyxabczzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yabczyyzzxxzzxxyzzxyabczzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "gfzzzzzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yabczyyabczzzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "yabczzxxyzzxyabczz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzxyabczzz xxzzxxyz zzzzczxyabczzzzzzzxyabczzz xxzzxxyzzzzzzxyabczzzzz zzzzczxyabczzzzz abczyz baaz azzbzzz abczyz baaz azzbzz"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "text": "zzzzazzbzzzczzzzz"
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "import re\ndef text_match_wordz_middle(text):\n\treturn re.search(r'\\Bz\\B',  text) is not None\n"
+  }
+}

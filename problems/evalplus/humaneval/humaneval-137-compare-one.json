@@ -1,0 +1,322 @@
+{
+  "id": "humaneval-137-compare-one",
+  "title": "Compare One",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Create a function that takes integers, floats, or strings representing\nreal numbers, and returns the larger variable in its given variable type.\nReturn None if the values are equal.\nNote: If a real number is represented as a string, the floating point might be . or ,\n\ncompare_one(1, 2.5) ➞ 2.5\ncompare_one(1, \"2,3\") ➞ \"2,3\"\ncompare_one(\"5,1\", \"6\") ➞ \"6\"\ncompare_one(\"1\", 1) ➞ None",
+  "entry_point": "compare_one",
+  "params": [
+    "a",
+    "b"
+  ],
+  "function_signature": {
+    "python": "def compare_one(a, b):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": 1,
+        "b": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 2.5
+      },
+      "output": 2.5
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": 1,
+        "b": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 2.5
+      },
+      "output": 2.5
+    },
+    {
+      "input": {
+        "a": 2,
+        "b": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "a": 5,
+        "b": 6
+      },
+      "output": 6
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": "2,3"
+      },
+      "output": "2,3"
+    },
+    {
+      "input": {
+        "a": "5,1",
+        "b": "6"
+      },
+      "output": "6"
+    },
+    {
+      "input": {
+        "a": "1",
+        "b": "2"
+      },
+      "output": "2"
+    },
+    {
+      "input": {
+        "a": "1",
+        "b": 1
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": 3,
+        "b": 3
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": -1
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 0
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": -2.5,
+        "b": 2.5
+      },
+      "output": 2.5
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": "10.0"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": "5,000",
+        "b": 5000
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "a": "7.3",
+        "b": 7.3
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": -3,
+        "b": "-3.0"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": "-4,1",
+        "b": "-4.0"
+      },
+      "output": "-4.0"
+    },
+    {
+      "input": {
+        "a": -2.0,
+        "b": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": 0
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": "77.3",
+        "b": "7.3"
+      },
+      "output": "77.3"
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": 0
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "a": -1.0425166390148266,
+        "b": -1.123543564552395
+      },
+      "output": -1.0425166390148266
+    },
+    {
+      "input": {
+        "a": "5,000",
+        "b": 4999
+      },
+      "output": 4999
+    },
+    {
+      "input": {
+        "a": "773.3",
+        "b": "7.3"
+      },
+      "output": "773.3"
+    },
+    {
+      "input": {
+        "a": 1,
+        "b": -1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": "7.3",
+        "b": -2.5
+      },
+      "output": "7.3"
+    },
+    {
+      "input": {
+        "a": 5000,
+        "b": 0
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "a": 4999,
+        "b": 5000
+      },
+      "output": 5000
+    },
+    {
+      "input": {
+        "a": 4999,
+        "b": -1
+      },
+      "output": 4999
+    },
+    {
+      "input": {
+        "a": "7.3",
+        "b": -2.0
+      },
+      "output": "7.3"
+    },
+    {
+      "input": {
+        "a": -1,
+        "b": 10
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "a": "7.30",
+        "b": "-3.0"
+      },
+      "output": "7.30"
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": "77.3"
+      },
+      "output": "77.3"
+    },
+    {
+      "input": {
+        "a": 5001,
+        "b": 0
+      },
+      "output": 5001
+    },
+    {
+      "input": {
+        "a": 5000,
+        "b": 5001
+      },
+      "output": 5001
+    },
+    {
+      "input": {
+        "a": 5000,
+        "b": 5000
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "a": 0,
+        "b": 5001
+      },
+      "output": 5001
+    },
+    {
+      "input": {
+        "a": -2.0,
+        "b": 2.5
+      },
+      "output": 2.5
+    },
+    {
+      "input": {
+        "a": 10,
+        "b": -1
+      },
+      "output": 10
+    },
+    {
+      "input": {
+        "a": "5,0050",
+        "b": 10
+      },
+      "output": 10
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\ndef compare_one(a, b):\n    \"\"\"\n    Create a function that takes integers, floats, or strings representing\n    real numbers, and returns the larger variable in its given variable type.\n    Return None if the values are equal.\n    Note: If a real number is represented as a string, the floating point might be . or ,\n\n    compare_one(1, 2.5) ➞ 2.5\n    compare_one(1, \"2,3\") ➞ \"2,3\"\n    compare_one(\"5,1\", \"6\") ➞ \"6\"\n    compare_one(\"1\", 1) ➞ None\n    \"\"\"\n\n\n    num_a = float(str(a).replace(\",\", \".\"))\n    num_b = float(str(b).replace(\",\", \".\"))\n    if num_a == num_b:\n        return None\n    return a if num_a > num_b else b\n\n"
+  }
+}

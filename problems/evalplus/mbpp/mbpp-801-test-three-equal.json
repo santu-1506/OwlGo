@@ -1,0 +1,365 @@
+{
+  "id": "mbpp-801-test-three-equal",
+  "title": "Test Three Equal",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to count the number of equal numbers from three given integers.",
+  "entry_point": "test_three_equal",
+  "params": [
+    "x",
+    "y",
+    "z"
+  ],
+  "function_signature": {
+    "python": "def test_three_equal(x, y, z):"
+  },
+  "examples": [
+    {
+      "input": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "x": -1,
+        "y": -2,
+        "z": -3
+      },
+      "output": 0
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "x": -1,
+        "y": -2,
+        "z": -3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 2,
+        "z": 2
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 2,
+        "z": 3
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 10,
+        "y": 10,
+        "z": 20
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": 0,
+        "z": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 99,
+        "z": 101
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 7,
+        "y": 7,
+        "z": 7
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "x": 10000000000,
+        "y": 9999999999,
+        "z": 10000000000
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 9999999999,
+        "y": 9999999999,
+        "z": 10000000000
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 100,
+        "z": 100
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "x": 9876543210,
+        "y": 1234567890,
+        "z": 9876543210
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 9999999999,
+        "y": 9999999999,
+        "z": 9999999999
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "x": 9876543210,
+        "y": 9876543210,
+        "z": 9876543210
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "x": 8,
+        "y": 7,
+        "z": 7
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 9999999999,
+        "y": 3,
+        "z": 9999999999
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 99,
+        "y": 10000000000,
+        "z": 9999999999
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 9876543210,
+        "y": 5,
+        "z": 9876543210
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 6,
+        "z": 9876543210
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 99,
+        "y": 6,
+        "z": 9999999999
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 8,
+        "y": 7,
+        "z": 100
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": -5,
+        "z": 5
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 99,
+        "y": 0,
+        "z": 9999999999
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 99,
+        "y": 10,
+        "z": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 9999999999,
+        "y": 101,
+        "z": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 7,
+        "z": 100
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 8,
+        "y": -5,
+        "z": 100
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 1234567890,
+        "y": 1,
+        "z": 1234567890
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 7,
+        "y": 10000000000,
+        "z": 9999999999
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 101,
+        "z": 6
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 8,
+        "z": 9999999999
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 2,
+        "z": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 8,
+        "y": 9999999999,
+        "z": 9999999999
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 5,
+        "z": 101
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": 101,
+        "y": 99,
+        "z": 101
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 3,
+        "y": 10,
+        "z": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "x": -5,
+        "y": -5,
+        "z": 6
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 1234567890,
+        "y": 7,
+        "z": 7
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 100,
+        "y": 9999999999,
+        "z": 9999999999
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "x": 3,
+        "y": 3,
+        "z": 2
+      },
+      "output": 2
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def test_three_equal(x,y,z):\n  result = set([x,y,z])\n  if len(result) == 3:\n    return 0\n  elif len(result) == 2:\n    return 2\n  else:\n    return 3\n"
+  }
+}

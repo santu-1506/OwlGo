@@ -1,0 +1,768 @@
+{
+  "id": "mbpp-69-is-sublist",
+  "title": "Is Sublist",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check whether a list contains the given sublist or not.",
+  "entry_point": "is_sublist",
+  "params": [
+    "l",
+    "s"
+  ],
+  "function_signature": {
+    "python": "def is_sublist(l, s):"
+  },
+  "examples": [
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          3,
+          5,
+          7
+        ],
+        "s": [
+          3,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          3,
+          5,
+          7
+        ],
+        "s": [
+          4,
+          3
+        ]
+      },
+      "output": true
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          3,
+          5,
+          7
+        ],
+        "s": [
+          3,
+          7
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          3,
+          5,
+          7
+        ],
+        "s": [
+          4,
+          3
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          2,
+          4,
+          3,
+          5,
+          7
+        ],
+        "s": [
+          1,
+          6
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [],
+        "s": [
+          1
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          "r"
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sfIngs",
+          "GYVu",
+          "r"
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu"
+        ],
+        "s": [
+          false,
+          "klXTmRZyQ"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          false,
+          99.97028427774339,
+          82,
+          "GYVu",
+          false,
+          "Ok",
+          null,
+          [
+            1,
+            -71.80691717114227
+          ]
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sgfIngs",
+          "GYVu",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "sgfIngs",
+          "GYVu",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYV",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYV",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "sfIngs",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sfIngs",
+          "GYVu"
+        ],
+        "s": [
+          "sfIngs",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sgfIngs",
+          "sfIngs",
+          "GYVu",
+          "r",
+          "r",
+          "sfIngs"
+        ],
+        "s": [
+          "sgfIngs",
+          "sfIngs",
+          "GYVu",
+          "r",
+          "r",
+          "sfIngs"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GYVu",
+          "r"
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GYVu",
+          "r"
+        ],
+        "s": [
+          "r",
+          "GYVu",
+          "r"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sgfIngs",
+          "sfIngs",
+          "GYVu",
+          "sfIngsr",
+          "GYV",
+          "r",
+          "sfIngs"
+        ],
+        "s": [
+          "sgfIngs",
+          "sfIngs",
+          "GYVu",
+          "sfIngsr",
+          "GYV",
+          "r",
+          "sfIngs"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          1
+        ],
+        "s": [
+          1
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          null,
+          false,
+          {
+            "sfIngsr": 42.34905566158099,
+            "FHvMaMnTCg": -74.03921201241215,
+            "hKRFjm": -74.21853866002988,
+            "rKQ": 40.63712034844792
+          },
+          {
+            "24.822944608944297": "pfIhkuLtSg",
+            "-22.735241874996206": "s",
+            "-13.009939375362165": "sfIngsr",
+            "-71.80691717114227": "VtqKcYvzg",
+            "99.97028427774339": "DBzU",
+            "68.8678541991217": "GYVu",
+            "-83.5332401941628": "PctAoxwD"
+          },
+          [
+            66,
+            1,
+            -51,
+            1,
+            -59,
+            1,
+            false,
+            -71
+          ],
+          true,
+          "sfIngs",
+          1
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "GYVu",
+          "pfIhkuLtSg",
+          "O",
+          "Odpagl",
+          "Casb"
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYV",
+          "GYVu",
+          "GYV"
+        ],
+        "s": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYV",
+          "GYVu",
+          "GYV"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          -42,
+          8,
+          -83.5332401941628,
+          -82,
+          38.16772877208774,
+          {
+            "VtqKcYvzg": 47.40072133316414,
+            "sLmQQSONWn": -13.009939375362165,
+            "O": 36,
+            "rKQ": [
+              48,
+              -59
+            ]
+          },
+          -40
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          8,
+          null,
+          false,
+          {
+            "sfIngsr": 42.34905566158099,
+            "FHvMaMnTCg": -74.03921201241215,
+            "hKRFjm": -74.21853866002988,
+            "rKQ": 40.63712034844792
+          },
+          {
+            "24.822944608944297": "pfIhkuLtSg",
+            "-22.735241874996206": "s",
+            "-13.009939375362165": "sfIngsr",
+            "-71.80691717114227": "VtqKcYvzg",
+            "99.97028427774339": "DBzU",
+            "68.8678541991217": "GYVu",
+            "-83.5332401941628": "PctAoxwD"
+          },
+          [
+            66,
+            1,
+            -51,
+            1,
+            -59,
+            1,
+            false,
+            -71
+          ],
+          true,
+          "sfIngs",
+          1
+        ],
+        "s": []
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "s"
+        ],
+        "s": [
+          false,
+          "klXTmRZyQ"
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sgfIngs",
+          "GYVu",
+          "pfIhkuLtSgr",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "sgfIngs",
+          "GYVu",
+          "pfIhkuLtSgr",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          [
+            95.17158052544048,
+            "SFVVgWCfDj",
+            -0.3414328935261324
+          ],
+          90.16807182684596,
+          "qyujtuO",
+          82,
+          75.22089802044161,
+          82
+        ],
+        "s": [
+          [
+            95.17158052544048,
+            "SFVVgWCfDj",
+            -0.3414328935261324
+          ],
+          90.16807182684596,
+          "qyujtuO",
+          82,
+          75.22089802044161,
+          82
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYV",
+          "GYVu",
+          "r"
+        ],
+        "s": [
+          "r",
+          "sfIngs",
+          "GYVu",
+          "GYVu",
+          "GYV",
+          "GYVu",
+          "r"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "GYVur",
+          "sgfIngs",
+          "GYVu",
+          "GYVu"
+        ],
+        "s": [
+          "GYVur",
+          "sgfIngs",
+          "GYVu",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sfIngsGYVu",
+          "sfIngs",
+          "GYVu"
+        ],
+        "s": [
+          "sfIngsGYVu",
+          "sfIngs",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GYVu",
+          "r",
+          "r"
+        ],
+        "s": [
+          "r",
+          "GYVu",
+          "r",
+          "r"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sfIngSFVGYVVgWCfDjsGYVu",
+          "sfIngSFVVgWCfDjsGYVu",
+          "sfIngs",
+          "GYVu"
+        ],
+        "s": [
+          "sfIngSFVGYVVgWCfDjsGYVu",
+          "sfIngSFVVgWCfDjsGYVu",
+          "sfIngs",
+          "GYVu"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GYVu",
+          "r"
+        ],
+        "s": [
+          true,
+          true,
+          true,
+          false,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          "r"
+        ],
+        "s": [
+          "r"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GSFVVgWCfDju",
+          "GYVu",
+          "r"
+        ],
+        "s": [
+          "r",
+          "GSFVVgWCfDju",
+          "GYVu",
+          "r"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [
+          "sgfIngs",
+          "sfIngs",
+          "GYVu",
+          "sfIngsr",
+          "GYV",
+          "r",
+          "GYV"
+        ],
+        "s": [
+          "sgfIngs",
+          "sfIngs",
+          "GYVu",
+          "sfIngsr",
+          "GYV",
+          "r",
+          "GYV"
+        ]
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "l": [],
+        "s": [
+          true,
+          false,
+          true
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GYVu",
+          "r"
+        ],
+        "s": [
+          -49.293443668830214,
+          11.89338685730192,
+          38.68012886425632,
+          64.91527494125927,
+          -74.03921201241215,
+          0.3374408817541621
+        ]
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "l": [
+          "r",
+          "GYVu",
+          "GYVu",
+          "GYVu",
+          "GYVu",
+          "GYVu"
+        ],
+        "s": [
+          "r",
+          "GYVu",
+          "GYVu",
+          "GYVu",
+          "GYVu",
+          "GYVu"
+        ]
+      },
+      "output": true
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def is_sublist(l, s):\n\tif len(l) < len(s):\n\t\treturn False\n\treturn any(l[i:i+len(s)] == s for i in range(len(l)-len(s)+1))\n"
+  }
+}

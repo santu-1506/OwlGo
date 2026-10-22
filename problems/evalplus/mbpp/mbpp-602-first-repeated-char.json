@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-602-first-repeated-char",
+  "title": "First Repeated Char",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a python function to find the first repeated character in a given string.",
+  "entry_point": "first_repeated_char",
+  "params": [
+    "str1"
+  ],
+  "function_signature": {
+    "python": "def first_repeated_char(str1):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": "abcabc"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abc"
+      },
+      "output": null
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": "abcabc"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abc"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "123123"
+      },
+      "output": "1"
+    },
+    {
+      "input": {
+        "str1": ""
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwxyz"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "abcabcxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "ABCaBC"
+      },
+      "output": "B"
+    },
+    {
+      "input": {
+        "str1": "a"
+      },
+      "output": null
+    },
+    {
+      "input": {
+        "str1": "aaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaabcabcxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabcxyzz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abcdefghinjklmnopqrstuvwxyz"
+      },
+      "output": "n"
+    },
+    {
+      "input": {
+        "str1": "aaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabcxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaabcabcxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaabcabcxyzzaaaaABCaaBC"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaabcabaaaaaaabcabcxyzzcxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaabcabcabcdefghinjklmnopqrstuvwxyzxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabcxyzzaaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaabcabcabcdABCaBCeafghinjklmnopqrstuvwxyzxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abcdefgxhinjklmnopqrstuvwxyz"
+      },
+      "output": "n"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabaaacxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabacxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaabcabcabcdABCaBaCeafghinjklmnopqrstuvwxyzxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabaaaaaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abccdefghinjzklabcdefghijklmnopqrstuvwxyzmnopxyz"
+      },
+      "output": "c"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabcABCaBCxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaabcabcABCaBCzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaazcxyzzaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abcdefgxaahinjklmnopqrsaaaaaaabcabaaacxyzzaaaatuvwxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "ababcdefghinjklmnopqrstuvwxyzcdefghinjklmnopqrstuvwxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abcdefghijklmnopqrstuvwvz"
+      },
+      "output": "v"
+    },
+    {
+      "input": {
+        "str1": "abcdefgxhzinjklmnopqrstuvwxyz"
+      },
+      "output": "n"
+    },
+    {
+      "input": {
+        "str1": "aaaaaabcabcxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "abcdefgxaahinjklmnopaaaaaabcabcxyzqrsaaaaaaabcabaaacxyzzaaaatuvwxyz"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaaaaaabaaaaaaaa"
+      },
+      "output": "a"
+    },
+    {
+      "input": {
+        "str1": "aaaabcabcABCaBCabcdABCaBCeafghinjklmnopqrstuvwxyzxyz"
+      },
+      "output": "a"
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def first_repeated_char(str1):\n  for index, c in enumerate(str1):\n    if str1[:index + 1].count(c) > 1:\n      return c\n  return None\n"
+  }
+}

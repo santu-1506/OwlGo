@@ -1,0 +1,279 @@
+{
+  "id": "mbpp-123-amicable-numbers-sum",
+  "title": "Amicable Numbers Sum",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to sum all amicable numbers from 1 to a specified number.",
+  "entry_point": "amicable_numbers_sum",
+  "params": [
+    "limit"
+  ],
+  "function_signature": {
+    "python": "def amicable_numbers_sum(limit):"
+  },
+  "examples": [
+    {
+      "input": {
+        "limit": 999
+      },
+      "output": 504
+    },
+    {
+      "input": {
+        "limit": 9999
+      },
+      "output": 31626
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "limit": 999
+      },
+      "output": 504
+    },
+    {
+      "input": {
+        "limit": 9999
+      },
+      "output": 31626
+    },
+    {
+      "input": {
+        "limit": 99
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 10000
+      },
+      "output": 31626
+    },
+    {
+      "input": {
+        "limit": 5000
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 4999
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 4998
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 5001
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 90
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 92
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 89
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 91
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 10001
+      },
+      "output": 31626
+    },
+    {
+      "input": {
+        "limit": 93
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 5002
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 4997
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": true
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 94
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 4996
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 4995
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 10002
+      },
+      "output": 31626
+    },
+    {
+      "input": {
+        "limit": 88
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 10003
+      },
+      "output": 31626
+    },
+    {
+      "input": {
+        "limit": 5003
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 5004
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 21
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 87
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 22
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 4994
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 95
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 86
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 96
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 20
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 9998
+      },
+      "output": 31626
+    },
+    {
+      "input": {
+        "limit": 4993
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 23
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 47
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 97
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "limit": 5005
+      },
+      "output": 8442
+    },
+    {
+      "input": {
+        "limit": 10004
+      },
+      "output": 31626
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def div_sum(num):\n    res = 1\n    i = 2\n    while i * i <= num:\n        if num % i == 0:\n            res += i\n            if i * i != num:\n                res += num / i\n        i += 1\n    return res\ndef amicable_numbers_sum(limit):\n    amicables = set()\n    for num in range(2, limit + 1):\n        if num in amicables:\n            continue\n        sum_fact = div_sum(num)\n        sum_fact2 = div_sum(sum_fact)\n        if num == sum_fact2 and num != sum_fact:\n            amicables.add(num)\n            amicables.add(sum_fact2)\n    return sum(amicables)\n"
+  }
+}

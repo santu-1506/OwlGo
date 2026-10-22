@@ -1,0 +1,636 @@
+{
+  "id": "mbpp-168-frequency",
+  "title": "Frequency",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to count the number of occurrences of a number in a given list.",
+  "entry_point": "frequency",
+  "params": [
+    "a",
+    "x"
+  ],
+  "function_signature": {
+    "python": "def frequency(a, x):"
+  },
+  "examples": [
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4
+        ],
+        "x": 3
+      },
+      "output": 3
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          1,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4
+        ],
+        "x": 3
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "a": [
+          0,
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "x": 1
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          false
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077,
+          92.53457117882732
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077
+        ],
+        "x": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          "CL",
+          "vGL",
+          "VjygOQ",
+          "IV",
+          "VjPshwex",
+          "ICMkS",
+          "",
+          ""
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077
+        ],
+        "x": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ],
+        "x": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          "CL",
+          "vGL",
+          "VjygOQ",
+          "IV",
+          "VjPVjygOQshwex",
+          "VjPshwex",
+          "ICMkS",
+          "",
+          ""
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [],
+        "x": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          20.12336259087077
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732
+        ],
+        "x": true
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077,
+          20.12336259087077
+        ],
+        "x": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          "CL",
+          "vGL",
+          "VjygOQ",
+          "IV",
+          "VjPVjygOQshwex",
+          "VjPshwex",
+          "ICMkS",
+          "",
+          "",
+          "CL",
+          "IV"
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        "x": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          6.671642720053646,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          "CL",
+          "vGL",
+          "VjygOQ",
+          "IV",
+          "VjPVjygOQshwex",
+          "VjPshwex",
+          "ICMkS",
+          "VjPVjygOQshwVjPshwexex",
+          "",
+          "",
+          "CL",
+          "IV"
+        ],
+        "x": 5
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          false,
+          false
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          5.159327309211834,
+          4.779178548584724
+        ],
+        "x": 1
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          73.08137236933901,
+          92.53457117882732,
+          20.12336259087077
+        ],
+        "x": true
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          true,
+          false
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          23.020319535944452,
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ],
+          "",
+          [],
+          false,
+          2,
+          "VjPVjygOQshwex",
+          "VjPVjygOQshwVjPshwexex",
+          "q"
+        ],
+        "x": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          20.12336259087077,
+          4.779178548584724
+        ],
+        "x": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077,
+          92.53457117882732
+        ],
+        "x": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          true,
+          true
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          "CL",
+          "vGL",
+          "VjygOQ",
+          "IV",
+          "VjPVjygOQshwex",
+          "ICMkS",
+          "",
+          "",
+          "CL",
+          "IV"
+        ],
+        "x": -50
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          5
+        ],
+        "x": 2
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          23.020319535944452,
+          "IV",
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ],
+          "",
+          [],
+          false,
+          2,
+          "VjPVjygOQshwex",
+          "VjPVjygOQshwVjPshwexex",
+          "q",
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ]
+        ],
+        "x": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "a": [
+          5
+        ],
+        "x": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          23.020319535944452,
+          "IV",
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ],
+          "",
+          [],
+          false,
+          2,
+          "VjPVjygOQshwex",
+          "VjPVjygOQshwex",
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ]
+        ],
+        "x": -50
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          5,
+          5
+        ],
+        "x": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          4.779178548584724,
+          72.59056638104303,
+          92.53457117882732,
+          20.12336259087077
+        ],
+        "x": true
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          72.59056638104303,
+          92.53457117882732,
+          23.408003718694573,
+          20.12336259087077,
+          92.53457117882732
+        ],
+        "x": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          60,
+          4,
+          4,
+          -43,
+          4,
+          81,
+          -50,
+          5,
+          99,
+          -97
+        ],
+        "x": 4
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "a": [
+          5.599696065924146
+        ],
+        "x": 4
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": [
+          23.020319535944452,
+          "IV",
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ],
+          "VIV",
+          "",
+          [],
+          false,
+          2,
+          "VjPVjygOQshwex",
+          "VjPVjygOQshwex",
+          [
+            5,
+            false,
+            -74,
+            -50,
+            -9,
+            5,
+            4,
+            -97
+          ]
+        ],
+        "x": -51
+      },
+      "output": 0
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def frequency(a,x): \n    return a.count(x)\n"
+  }
+}

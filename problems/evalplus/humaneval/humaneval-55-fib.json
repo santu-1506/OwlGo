@@ -1,0 +1,279 @@
+{
+  "id": "humaneval-55-fib",
+  "title": "Fib",
+  "source": "evalplus/humanevalplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/humanevalplus",
+  "license": "Apache-2.0 (EvalPlus); the original HumanEval is MIT",
+  "difficulty": "easy",
+  "statement": "Return n-th Fibonacci number.\n>>> fib(10)\n55\n>>> fib(1)\n1\n>>> fib(8)\n21",
+  "entry_point": "fib",
+  "params": [
+    "n"
+  ],
+  "function_signature": {
+    "python": "def fib(n: int):"
+  },
+  "examples": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "n": 10
+      },
+      "output": 55
+    },
+    {
+      "input": {
+        "n": 1
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 8
+      },
+      "output": 21
+    },
+    {
+      "input": {
+        "n": 11
+      },
+      "output": 89
+    },
+    {
+      "input": {
+        "n": 12
+      },
+      "output": 144
+    },
+    {
+      "input": {
+        "n": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": false
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "n": true
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 16
+      },
+      "output": 987
+    },
+    {
+      "input": {
+        "n": 2
+      },
+      "output": 1
+    },
+    {
+      "input": {
+        "n": 17
+      },
+      "output": 1597
+    },
+    {
+      "input": {
+        "n": 15
+      },
+      "output": 610
+    },
+    {
+      "input": {
+        "n": 14
+      },
+      "output": 377
+    },
+    {
+      "input": {
+        "n": 63
+      },
+      "output": 6557470319842
+    },
+    {
+      "input": {
+        "n": 64
+      },
+      "output": 10610209857723
+    },
+    {
+      "input": {
+        "n": 13
+      },
+      "output": 233
+    },
+    {
+      "input": {
+        "n": 3
+      },
+      "output": 2
+    },
+    {
+      "input": {
+        "n": 71
+      },
+      "output": 308061521170129
+    },
+    {
+      "input": {
+        "n": 72
+      },
+      "output": 498454011879264
+    },
+    {
+      "input": {
+        "n": 70
+      },
+      "output": 190392490709135
+    },
+    {
+      "input": {
+        "n": 35
+      },
+      "output": 9227465
+    },
+    {
+      "input": {
+        "n": 62
+      },
+      "output": 4052739537881
+    },
+    {
+      "input": {
+        "n": 69
+      },
+      "output": 117669030460994
+    },
+    {
+      "input": {
+        "n": 36
+      },
+      "output": 14930352
+    },
+    {
+      "input": {
+        "n": 34
+      },
+      "output": 5702887
+    },
+    {
+      "input": {
+        "n": 61
+      },
+      "output": 2504730781961
+    },
+    {
+      "input": {
+        "n": 67
+      },
+      "output": 44945570212853
+    },
+    {
+      "input": {
+        "n": 4
+      },
+      "output": 3
+    },
+    {
+      "input": {
+        "n": 5
+      },
+      "output": 5
+    },
+    {
+      "input": {
+        "n": 66
+      },
+      "output": 27777890035288
+    },
+    {
+      "input": {
+        "n": 65
+      },
+      "output": 17167680177565
+    },
+    {
+      "input": {
+        "n": 74
+      },
+      "output": 1304969544928657
+    },
+    {
+      "input": {
+        "n": 73
+      },
+      "output": 806515533049393
+    },
+    {
+      "input": {
+        "n": 75
+      },
+      "output": 2111485077978050
+    },
+    {
+      "input": {
+        "n": 44
+      },
+      "output": 701408733
+    },
+    {
+      "input": {
+        "n": 28
+      },
+      "output": 317811
+    },
+    {
+      "input": {
+        "n": 18
+      },
+      "output": 2584
+    },
+    {
+      "input": {
+        "n": 6
+      },
+      "output": 8
+    },
+    {
+      "input": {
+        "n": 45
+      },
+      "output": 1134903170
+    },
+    {
+      "input": {
+        "n": 68
+      },
+      "output": 72723460248141
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "\n\ndef fib(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib(10)\n    55\n    >>> fib(1)\n    1\n    >>> fib(8)\n    21\n    \"\"\"\n\n\n    if n == 0: return 0\n    if n <= 2: return 1\n    a, b = 1, 1\n    for _ in range(3, n + 1):\n        a, b, = b, a + b\n    return b\n\n"
+  }
+}

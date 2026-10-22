@@ -1,0 +1,468 @@
+{
+  "id": "mbpp-91-find-substring",
+  "title": "Find Substring",
+  "source": "evalplus/mbppplus",
+  "source_url": "https://huggingface.co/datasets/evalplus/mbppplus",
+  "license": "Apache-2.0 (EvalPlus); the original MBPP is CC-BY-4.0",
+  "difficulty": "easy",
+  "statement": "Write a function to check if a string is present as a substring in a given list of string values.",
+  "entry_point": "find_substring",
+  "params": [
+    "str1",
+    "sub_str"
+  ],
+  "function_signature": {
+    "python": "def find_substring(str1, sub_str):"
+  },
+  "examples": [
+    {
+      "input": {
+        "str1": [
+          "red",
+          "black",
+          "white",
+          "green",
+          "orange"
+        ],
+        "sub_str": "ack"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "str1": [
+          "red",
+          "black",
+          "white",
+          "green",
+          "orange"
+        ],
+        "sub_str": "abc"
+      },
+      "output": false
+    }
+  ],
+  "tests": [
+    {
+      "input": {
+        "str1": [
+          "red",
+          "black",
+          "white",
+          "green",
+          "orange"
+        ],
+        "sub_str": "ack"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "str1": [
+          "red",
+          "black",
+          "white",
+          "green",
+          "orange"
+        ],
+        "sub_str": "abc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "red",
+          "black",
+          "white",
+          "green",
+          "orange"
+        ],
+        "sub_str": "ange"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "abc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": ""
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "abac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "aabac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "aabac",
+          "",
+          "aabac",
+          "mHUIYqZU"
+        ],
+        "sub_str": "aabac"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "acbc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "aabaac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "acbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "aabac",
+          "",
+          "aabac"
+        ],
+        "sub_str": "aabac"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "str1": [
+          "acbc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbcc"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "str1": [
+          "acbc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acabcbc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "mHUIYqZU",
+          "acabcbc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "aabac",
+          "",
+          "aabac",
+          "mHUIYqZU"
+        ],
+        "sub_str": "aacbac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbacbcc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccaacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "aabac",
+          "",
+          "aabac",
+          "mHUIYqZU"
+        ],
+        "sub_str": "aabaac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acabcbc",
+          "acbabcbc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "acbacbccacbacbcc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "acbacbccaacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "acbacbccacbacbcc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "acbacbccaaccbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "amHUIYqZUcbc",
+          "acbc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acabcbc",
+          "acbacbcc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "abcbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "acbacbccacbacbcc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "mHUIYqZU"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "acbacbccacbacbcc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "amHUIYqZUcbc",
+          "abc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "acbacbccaaccbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "acbacbccaaccbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "acbacbccaaccacbacbccaaccbacbccbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "aacbacacbacbccacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbacbcc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccaacbaccc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "accbc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [],
+        "sub_str": "acbacbccacbcacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "aabac",
+          "",
+          "aabac",
+          "mHUIYqZU"
+        ],
+        "sub_str": "aacb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "",
+          "aabac",
+          "mHUIYqZU"
+        ],
+        "sub_str": "aabaac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "aabac",
+          "abc",
+          "aabac",
+          "mHUIYqZU"
+        ],
+        "sub_str": "aabaac"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbcacbcc",
+          "acbacbccacbacbcc",
+          "aacbacacbacbccacbacbc",
+          "aacbacacbacbccacbacbcc",
+          "acbacbcc",
+          "acbacbccacbacbcc"
+        ],
+        "sub_str": "mHUIYqZU"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbaccbcc"
+        ],
+        "sub_str": "acbacbccaacbacbcc"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acbacbccacbacbcc",
+          "mHUIYqZU"
+        ],
+        "sub_str": "abcaacb"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "str1": [
+          "acabcbc",
+          "acbacbccaacbacbcc",
+          "acbacbcc"
+        ],
+        "sub_str": "acbacbccacbacbcc"
+      },
+      "output": false
+    }
+  ],
+  "comparison": {
+    "mode": "exact",
+    "atol": 0.0
+  },
+  "reference_solutions": {
+    "python": "def find_substring(str1, sub_str):\n   return any(sub_str in s for s in str1)\n"
+  }
+}
