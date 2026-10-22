@@ -1,5 +1,5 @@
 {
-  "spec_version": "1.2",
+  "spec_version": "1.3",
 
   "changelog": [
     { "version": "1.0", "changes": ["Initial companion spec."] },
@@ -23,6 +23,15 @@
         "Main model candidates are Gemma 4 12B and Qwen3.5-9B, decided in Phase 2. The small version is Qwen3.5-4B or Gemma 4 E4B.",
         "The model is served from a hosted API behind a proxy; local mode through Ollama stays as an option.",
         "Piston and the TACO import move to Phase 3, when untrusted code first needs a sandbox."
+      ]
+    },
+    {
+      "version": "1.3",
+      "changes": [
+        "Qwen3.5-9B is the chosen base model; Gemma 4 31B on Kaggle is the judge (a different family).",
+        "Local mode through Ollama is the default because it is free; the hosted API becomes optional.",
+        "The context block shows the user's code with line numbers, so replies can point at exact lines.",
+        "Phase 2 starts with an eval set built from the 15 verified mistakes in the hand-written problems."
       ]
     }
   ],
@@ -218,7 +227,8 @@
       "last_run": "null, or { kind: run | submit, status: accepted | wrong_answer | time_limit_exceeded | memory_limit_exceeded | runtime_error | output_limit_exceeded | compile_error, input, expected, output, error, error_line (line number from the stack trace, if any) }",
       "history": "The chat so far follows the system message, capped at the last 6 messages, so the model sees its own earlier hints and doesn't repeat them."
     },
-    "template": "You are Owlgo, a friendly DSA practice companion. Never give more help than the help level allows.\n\n## Help level\n{help_level} ({help_level_name}): {help_level_rule}\n\n## Problem\n{title} ({difficulty}){solved_marker}\n{statement}\n\n## Language\n{language}\n\n## User's code\n{code}\n\n## Last run\n{last_run_or_none}",
+    "template": "You are Owlgo, a friendly DSA practice companion. Never give more help than the help level allows.\n\n## Help level\n{help_level} ({help_level_name}): {help_level_rule}\n\n## Problem\n{title} ({difficulty}){solved_marker}\n{statement}\n\n## Language\n{language}\n\n## User's code\n{numbered_code}\n\n## Last run\n{last_run_or_none}",
+    "code_rendering": "The code is shown with right-aligned line numbers ('  6| if ch in last:') so the companion can point at an exact line, and so that pointing at the wrong line is detectable. The template lives in src/owlgo/companion/context.py.",
     "prompt_variants": {
       "fine_tuned": "The template only. The behavior is learned, so a short prompt keeps latency low.",
       "prompted_baseline": "The template plus help_dial, intents and companion_behavior_spec appended as instructions."
@@ -458,7 +468,8 @@
         "Qwen/Qwen3.5-9B (Apache 2.0): LiveCodeBench v6 65.6 and IFEval 91.5 on its card. Hybrid linear attention, so some tools may lag."
       ],
       "small_version": "Qwen/Qwen3.5-4B or google/gemma-4-E4B-it, for local or in-browser use.",
-      "decision": "Phase 2 runs both main candidates on our own eval set, and the winner is fine-tuned. Card scores are vendor-reported and measure solving, not tutoring.",
+      "decision": "Qwen/Qwen3.5-9B (Ollama tag qwen3.5:9b), chosen on 2026-10-22. On the 16 GB M4 it ran at 17 tokens/s against 7 for Gemma 4 12B, uses 6.6 GB instead of 8.0, and has the best instruction-following score. In the first smoke test both models pointed at the wrong character for the 'abba' bug, which is the weakness the training data targets.",
+      "thinking_off": "On Ollama's OpenAI-compatible endpoint, send reasoning_effort: 'none'. 'think: false' is ignored there, and with thinking on the model can spend its whole token budget thinking and return an empty reply.",
       "note": "Both are thinking models. Train and serve with thinking off, except in the hidden diagnosis experiment, where their native <think> tags can hold the diagnosis. Both ship a vision encoder we don't use. Check Hugging Face again before Phase 4."
     },
     "lora_hyperparameters_starting_point": {
@@ -509,12 +520,13 @@
 
   "evaluation_plan": {
     "models_to_compare": [
-      "base small model, minimal prompt",
-      "base small model, prompted_baseline prompt",
-      "fine-tuned small model",
-      "strong large model with prompted_baseline prompt (upper reference)"
+      "qwen3.5:9b, minimal prompt (context block only)",
+      "qwen3.5:9b, prompted_baseline prompt (context block plus behavior rules)",
+      "fine-tuned qwen3.5:9b",
+      "a large open model on Kaggle with the prompted_baseline prompt (upper reference)"
     ],
     "eval_set": {
+      "first_set": "Built in Phase 2 from the 15 verified common mistakes in the hand-written problems: each buggy program is run to get its real failing test, then asked about at help levels 0 to 3, plus one 'just give me the code' request per problem. Lines changed against the reference solution are the ground-truth bug location.",
       "single_reply_items": "300 items on the 15 test problems: fixed context block + fixed history + one user message, so every model sees identical input. Covers every intent at several help levels. Debug items use verified injected bugs.",
       "live_sessions": "20 short sessions with the solver simulator, used for the human preference test."
     },
@@ -532,7 +544,7 @@
       "human_preference": { "how": "Blind test: 10 students compare transcripts without knowing which model.", "target": "fine-tuned preferred over prompted base" }
     },
     "llm_as_judge": {
-      "judge_model": "The strongest model available, from a different family than the companion if possible.",
+      "judge_model": "Gemma 4 31B (google/gemma-4-31B-it, Apache 2.0), a different family from Qwen so it doesn't favour its own habits. Runs on Kaggle's free GPU.",
       "judge_inputs": ["context block", "help level", "intent", "the reply", "reference solution", "injected bug ground truth when present", "this spec's help_dial and behavior spec"],
       "judge_output_format": "JSON with boolean flags (exceeds_level, spoiler, premature, irrelevant, repeated, false_praise, factual_error, answered_question, points_at_bug) and a 1 to 5 quality score with a one-line reason.",
       "flag_source": "premature, spoiler, irrelevant and repeated follow the invalid-question categories from the Socratic debugging research (umass-ml4ed). That dataset has no license, so use the categories only, not the data.",
@@ -542,9 +554,10 @@
   },
 
   "deployment": {
-    "hosted_api": "The fine-tuned model runs on a dedicated GPU endpoint with scale-to-zero (Hugging Face Inference Endpoints, Modal or RunPod; compare current prices in Phase 4). Custom LoRA models generally need a dedicated deployment rather than per-token serverless pricing.",
+    "default": "Local mode. It is free, private and works offline. The hosted API below is optional and only worth adding if users ask for it.",
+    "hosted_api": "Optional, later. The fine-tuned model runs on a dedicated GPU endpoint with scale-to-zero (Hugging Face Inference Endpoints, Modal or RunPod; compare current prices in Phase 4). Custom LoRA models generally need a dedicated deployment rather than per-token serverless pricing.",
     "proxy": "A tiny proxy (for example a Cloudflare Worker) sits between the extension and the endpoint. It holds the API key and rate-limits each user. Never put an API key inside the extension, because anyone can unpack it.",
-    "local_mode": "The same model, quantized to GGUF, runs through Ollama for users who want privacy or offline use.",
+    "local_mode": "The default. The model, quantized to GGUF, runs through Ollama on the user's own machine.",
     "privacy": "In hosted mode, the user's code and the problem text go to our server. The Chrome Web Store listing needs a privacy policy that says so."
   },
 
@@ -567,8 +580,8 @@
       "No pop-ups and no unprompted messages."
     ],
     "model_backends": {
-      "owlgo_api": "Phase 5 default. Streams from the Owlgo proxy, which forwards to the hosted model.",
-      "ollama": "Local mode. Calls http://localhost:11434 with streaming. If Ollama returns 403, start it with OLLAMA_ORIGINS=\"chrome-extension://*\".",
+      "ollama": "Phase 5 default (local mode). Calls http://localhost:11434 with streaming. If Ollama returns 403, start it with OLLAMA_ORIGINS=\"chrome-extension://*\".",
+      "owlgo_api": "Optional, later. Streams from the Owlgo proxy, which forwards to the hosted model.",
       "webllm": "Phase 6. Runs the fine-tuned model inside Chrome with WebGPU (@mlc-ai/web-llm). Convert weights with mlc_llm convert_weight and gen_config. No install, no server, works offline.",
       "openai_compatible": "Optional. The user's own endpoint and key. Warn clearly that page text and code are sent to that provider."
     },
@@ -655,21 +668,21 @@
       "name": "Prompted baseline and evaluation (a score to beat)",
       "commits": [
         "feat(llm): add OpenAI-compatible client wrapper with config-driven model",
-        "feat(problems): draft patterns, hints and mistakes with a strong model, verified by execution",
-        "feat(companion): add context builder (problem, code, run result, help level)",
-        "feat(companion): add system prompt for help dial levels 0-5",
+        "feat(companion): add context builder (problem, numbered code, run result, help level)",
+        "feat(companion): add system prompts for help dial levels 0-5",
         "feat(guard): add rule-based spoiler guard with regenerate-once fallback",
-        "test(guard): cover code blocks, algorithm names and step lists per level",
         "feat(cli): add terminal playground to chat with companion on a problem",
-        "feat(eval): add scripted eval sessions and rule-based metrics",
-        "feat(eval): add LLM judge with JSON flags and calibration script",
-        "docs(eval): record prompted baseline scores"
+        "refactor(problems): make hand-written mistakes minimal edits of the reference",
+        "feat(eval): build debug scenarios from verified mistakes and add rule-based metrics",
+        "docs(eval): record qwen3.5:9b baseline scores",
+        "feat(eval): add LLM judge (Gemma 4 31B on Kaggle) with JSON flags and calibration",
+        "feat(problems): draft patterns, hints and mistakes with a strong model, verified by execution"
       ],
       "acceptance_criteria": [
-        "The CLI playground works against Ollama and against a hosted model by changing config only.",
-        "The 15 test problems are frozen in eval/test_problems.json.",
-        "Judge agrees with 100 hand labels at least 85 percent of the time.",
-        "Baseline scores for all four models_to_compare are in the README."
+        "The CLI playground works against Ollama, and against any other OpenAI-compatible server by changing config only.",
+        "Every eval item is built from a verified bug with a known failing test and known changed lines.",
+        "Rule-based baseline scores for both prompt variants are in the README.",
+        "Judge agrees with 100 hand labels at least 85 percent of the time before its scores are trusted."
       ]
     },
     {
@@ -701,7 +714,7 @@
         "feat(train): add hidden diagnosis training format and A/B eval",
         "feat(train): add DPO stage with cross-level preference pairs",
         "feat(export): fuse adapter, convert to GGUF Q4_K_M, add Ollama Modelfile",
-        "feat(deploy): serve the fine-tuned model from a hosted endpoint behind a proxy",
+        "feat(deploy): optional hosted endpoint behind a proxy",
         "docs(eval): add base vs prompted vs fine-tuned comparison table"
       ],
       "acceptance_criteria": [
@@ -719,15 +732,15 @@
         "feat(ext): read problem title and statement on leetcode.com/problems/*",
         "feat(ext): read editor code and language via MAIN-world script",
         "feat(ext): capture last Run result (WA, TLE, MLE, RE with line, CE)",
-        "feat(ext): stream replies from the Owlgo API with help dial UI",
+        "feat(ext): stream replies from local Ollama with help dial UI",
         "feat(ext): add summon hotkey and port spoiler guard to TypeScript",
         "feat(ext): disable on contest pages",
-        "docs(ext): add local mode guide (Ollama with OLLAMA_ORIGINS)"
+        "docs(ext): add Ollama setup guide with OLLAMA_ORIGINS"
       ],
       "acceptance_criteria": [
         "Loads unpacked in Chrome. The hotkey opens the side panel on a problem page.",
         "The context preview shows the right problem, code and last run.",
-        "Replies stream from the Owlgo API, and from Ollama in local mode. The spoiler guard runs on every reply.",
+        "Replies stream from local Ollama. The spoiler guard runs on every reply.",
         "On a contest URL it shows 'off during contests' and sends nothing.",
         "DevTools Network shows no requests except to the chosen model backend."
       ]

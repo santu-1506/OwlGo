@@ -6,7 +6,7 @@ Owlgo is an open-source DSA practice companion. It sits beside the LeetCode edit
 
 It is not a mock interviewer. There is no timer, no grading and no grilling. Think of it as a friend who is good at DSA sitting next to you while you practice.
 
-> **Status:** Phase 1 is done: 534 verified problems and a code runner. Phase 2 (prompted baseline and evaluation) is next. See the [roadmap](#roadmap).
+> **Status:** Phase 1 is done: 534 verified problems and a code runner. Phase 2 (prompted baseline and evaluation) is in progress. See the [roadmap](#roadmap).
 
 ## The Help Dial
 
@@ -26,12 +26,12 @@ You choose how much help you want. Owlgo is trained to stay exactly at that leve
 - **It reads your context.** Problem, code, language and the last Run result, so it helps with *your* bug, not a generic one.
 - **Bug-injection training data.** Real bugs are added to correct solutions and verified by actually running them. That lets us measure whether the model points at the right line.
 - **Grounded, not guessed.** Every fact Owlgo learns from is verified by running code. Tests, bugs and "this input breaks your code" claims are all checked by execution.
-- **A small fine-tuned model.** Served from the Owlgo API, with a local mode through Ollama for privacy and offline use.
+- **A small fine-tuned model on your own machine.** Qwen3.5-9B, fine-tuned, running through Ollama: free, private and offline. A hosted API may come later.
 
 ## Ground rules
 
 - **Off during contests.** Owlgo switches itself off on `leetcode.com/contest/*`. LeetCode's contest rules ban AI help.
-- **Clear about your data.** Page text and code go only to the Owlgo API, or stay on your machine in local mode. No analytics.
+- **Your data stays with you.** Page text and code go only to the model on your own machine. No analytics.
 - **No LeetCode content in training.** Training and eval use original problems and permissively licensed datasets only (APPS, TACO without its LeetCode/GFG/HackerRank parts, CodeContests).
 
 ## Roadmap
