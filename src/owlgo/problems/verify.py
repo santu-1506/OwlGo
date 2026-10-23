@@ -56,14 +56,10 @@ def verify_problem(problem: Problem, per_test_seconds: float = 1.0) -> Verificat
             report.issues.append(f"reference solution, hash seed {seed}: {describe(result)}")
             break
         # ...with plenty of time to spare, so a slower machine can't turn it into a timeout.
-        for test in result.tests:
-            budget = per_test_seconds * 1000 * TIME_MARGIN[problem.tests[test.index].stress]
-            if test.time_ms is not None and test.time_ms > budget:
-                report.issues.append(
-                    f"reference takes {test.time_ms:.0f} ms on test {test.index}, over the "
-                    f"{budget:.0f} ms safety margin; the test would be flaky"
-                )
-                break
+        slow = _first_slow_test(problem, reference, result, per_test_seconds)
+        if slow:
+            report.issues.append(slow)
+            break
 
     # 2. The examples in the statement are true.
     if problem.examples:
@@ -118,6 +114,32 @@ def verify_problems(
     """Verify many problems in parallel (each run is its own process)."""
     with ThreadPoolExecutor(max_workers=workers) as pool:
         return list(pool.map(lambda p: verify_problem(p, per_test_seconds), problems))
+
+
+def _first_slow_test(
+    problem: Problem, reference: str, result: RunResult, per_test_seconds: float
+) -> str | None:
+    """An issue for the first test the reference is too slow on, or None.
+
+    One slow timing can just mean the machine was busy at that moment, so a test over
+    budget is re-timed twice on its own and judged by its fastest run.
+    """
+    runner = LocalRunner(per_test_seconds=per_test_seconds)
+    for test in result.tests:
+        budget = per_test_seconds * 1000 * TIME_MARGIN[problem.tests[test.index].stress]
+        if test.time_ms is None or test.time_ms <= budget:
+            continue
+        retimed = [
+            runner.run(problem, reference, only_tests=[test.index]).tests[0].time_ms
+            for _ in range(2)
+        ]
+        fastest = min([test.time_ms, *(ms for ms in retimed if ms is not None)])
+        if fastest > budget:
+            return (
+                f"reference takes {fastest:.0f} ms on test {test.index} (fastest of 3 runs), "
+                f"over the {budget:.0f} ms safety margin; the test would be flaky"
+            )
+    return None
 
 
 def describe(result: RunResult) -> str:
