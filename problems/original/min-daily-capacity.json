@@ -212,15 +212,15 @@
   "common_mistakes": [
     {
       "description": "Starting the search below the heaviest box, so a box that can never fit goes unnoticed.",
-      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = 1, sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        used, load = 1, 0\n        for weight in weights:\n            if load + weight > mid:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n"
+      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = 1, sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        if days_needed(weights, mid) <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n\n\ndef days_needed(weights, capacity):\n    used, load = 1, 0\n    for weight in weights:\n        if load + weight > capacity:\n            used += 1\n            load = 0\n        load += weight\n    return used\n"
     },
     {
       "description": "Counting days from 0 instead of 1, so every capacity looks like it needs one day less.",
-      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        used, load = 0, 0\n        for weight in weights:\n            if load + weight > mid:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n"
+      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        if days_needed(weights, mid) <= days:\n            high = mid\n        else:\n            low = mid + 1\n    return low\n\n\ndef days_needed(weights, capacity):\n    used, load = 0, 0\n    for weight in weights:\n        if load + weight > capacity:\n            used += 1\n            load = 0\n        load += weight\n    return used\n"
     },
     {
       "description": "Setting high = mid - 1 when mid works, which can skip over the answer.",
-      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        used, load = 1, 0\n        for weight in weights:\n            if load + weight > mid:\n                used += 1\n                load = 0\n            load += weight\n        if used <= days:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return low\n"
+      "python": "def solve(weights: list[int], days: int) -> int:\n    low, high = max(weights), sum(weights)\n    while low < high:\n        mid = (low + high) // 2\n        if days_needed(weights, mid) <= days:\n            high = mid - 1\n        else:\n            low = mid + 1\n    return low\n\n\ndef days_needed(weights, capacity):\n    used, load = 1, 0\n    for weight in weights:\n        if load + weight > capacity:\n            used += 1\n            load = 0\n        load += weight\n    return used\n"
     }
   ]
 }
