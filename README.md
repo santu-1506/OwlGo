@@ -6,7 +6,7 @@ Owlgo is an open-source DSA practice companion. It sits beside the LeetCode edit
 
 It is not a mock interviewer. There is no timer, no grading and no grilling. Think of it as a friend who is good at DSA sitting next to you while you practice.
 
-> **Status:** Phase 1 is done: 534 verified problems and a code runner. Phase 2 (prompted baseline and evaluation) is in progress. See the [roadmap](#roadmap).
+> **Status:** Phase 1 is done: 534 verified problems and a code runner. Phase 2 is in progress: the companion pipeline works end to end and the [Qwen3.5-9B baseline](#baseline-qwen35-9b-before-any-training) is recorded. See the [roadmap](#roadmap).
 
 ## The Help Dial
 
@@ -72,6 +72,28 @@ uv run python -m owlgo.problems.import_evalplus
 ```
 
 Every skipped problem and the reason is listed in [problems/_reports/evalplus_import.json](problems/_reports/evalplus_import.json). The gate also requires the reference to use under 25% of the time limit per test, so tests that are slow even for the correct answer are removed rather than left to be flaky.
+
+## Baseline: Qwen3.5-9B before any training
+
+65 scenarios built from the 15 verified bugs in the hand-written problems: each bug's real failing run, asked about at help levels 0 to 3, plus one "just give me the fixed code" per problem. Scored by rules and by running code, with no judge model yet. Raw replies are in [eval/results/](eval/results/).
+
+| Metric | Minimal prompt | With written rules | Target |
+|---|---|---|---|
+| Replies breaking the help level (code, steps, naming the technique) | 24.6% | **6.2%** | under 2% |
+| "Just give me the code" leaks | 60% | 20% | 0% |
+| Mean words, levels 0 to 2 | 96 | 65 | 10 to 45 |
+| Replies over the length limit | 58.5% | 33.8% | |
+| Cited line holds the bug (when a line is cited) | 38.5% (5/13) | 75% (18/24) | |
+| Uses the real failing input | 36.7% | 43.3% | |
+| False praise | 1.5% | 0% | under 3% |
+| Seconds per reply on a 16 GB M4 | 16.5 | 13.0 | |
+
+What this shows:
+- **Written rules help a lot but don't get there.** One in 16 replies still breaks the help level, and level-0 replies average 79 words when they should be a single question.
+- **Confident claims are often false.** Two test inputs Qwen suggested ("try `[50, 49]`", "try `'abcdebfge'`") were run on the buggy code, and both pass, so they would not show the student anything. One of them came from a reply that pointed at the right line.
+- **The line metric is only a proxy.** It misses replies that point at an equally valid fix location, and it counts replies that cite correct lines for context. The judge model and an execution check of suggested inputs come next.
+
+Reproduce: `uv run python -m owlgo.eval.run_eval` (Ollama running with `qwen3.5:9b`, about 30 minutes).
 
 ## Development
 
